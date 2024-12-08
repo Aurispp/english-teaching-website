@@ -29,27 +29,29 @@ function App() {
               English with Auris
             </div>
             
-            {/* Mobile menu button */}
-            <button 
-              className="md:hidden p-2 text-primary-600 hover:text-primary-700"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-12">
-              {['challenges', 'about', 'stories', 'contact'].map((item) => (
-                <a 
-                  key={item}
-                  href={`#${item}`} 
-                  className="font-medium text-gray-600 hover:text-primary-600 transition-all duration-300 relative group py-2"
-                >
-                  {t(`nav.${item}`)}
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-                </a>
-              ))}
+            <div className="flex items-center space-x-4">
               <LanguageSwitcher />
+              {/* Mobile menu button */}
+              <button 
+                className="md:hidden p-2 text-primary-600 hover:text-primary-700"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center space-x-12">
+                {['challenges', 'about', 'stories', 'contact'].map((item) => (
+                  <a 
+                    key={item}
+                    href={`#${item}`} 
+                    className="font-medium text-gray-600 hover:text-primary-600 transition-all duration-300 relative group py-2"
+                  >
+                    {t(`nav.${item}`)}
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -66,9 +68,6 @@ function App() {
                   {t(`nav.${item}`)}
                 </a>
               ))}
-              <div className="py-2">
-                <LanguageSwitcher />
-              </div>
             </div>
           </div>
         </div>
