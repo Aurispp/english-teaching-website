@@ -115,7 +115,24 @@ export const translations = {
     contact: {
       title: 'Curious to learn more?',
       subtitle: "Let's have a friendly chat about your goals and how we can achieve them together",
-      cta: 'schedule a conversation'
+      cta: 'schedule a conversation',
+      form: {
+        name: 'Name',
+        email: 'Email',
+        message: 'Message',
+        namePlaceholder: 'Your name',
+        emailPlaceholder: 'your@email.com',
+        messagePlaceholder: 'What would you like to know?',
+        sending: 'Sending...',
+        send: 'Send Message',
+        successMessage: "Message sent successfully! We'll get back to you soon.",
+        errorMessage: 'Failed to send message: '
+      },
+      // Add these new fields:
+      directContact: 'Contact Information',
+      sendMessage: 'Send Message',
+      switchToForm: 'Or send a message instead',
+      switchToDirect: 'Or contact me directly'
     }
   },
   es: {
@@ -234,7 +251,24 @@ export const translations = {
     contact: {
       title: '¿Quieres saber más?',
       subtitle: "Tengamos una charla amistosa sobre tus objetivos y cómo podemos lograrlos juntos",
-      cta: 'agenda una conversación'
+      cta: 'agenda una conversación',
+      form: {
+        name: 'Nombre',
+        email: 'Correo electrónico',
+        message: 'Mensaje',
+        namePlaceholder: 'Tu nombre',
+        emailPlaceholder: 'tu@correo.com',
+        messagePlaceholder: '¿Qué te gustaría saber?',
+        sending: 'Enviando...',
+        send: 'Enviar Mensaje',
+        successMessage: '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.',
+        errorMessage: 'Error al enviar el mensaje: '
+      },
+      // Add these new fields:
+      directContact: 'Información de Contacto',
+      sendMessage: 'Enviar Mensaje',
+      switchToForm: 'O envía un mensaje',
+      switchToDirect: 'O contáctame directamente'
     }
   }
 };
