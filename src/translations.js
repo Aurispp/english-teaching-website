@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     nav: {
-      challenges: 'Experiences',
+      scenarios: 'Experiences',
       about: 'About',
       method: 'My Method',
       stories: 'Student Stories',
@@ -9,8 +9,8 @@ export const translations = {
     },
     hero: {
       title: "Hello! I'm Auris, and I help Spanish speakers feel confident in English",
-      subtitle: 'Through personalized lessons and proven learning techniques',
-      tagline: 'Together we can make English feel natural and achievable',
+      subtitle: 'Learn English naturally, through engaging classes that motivate you',
+      tagline: "Together we can make English feel natural and achievable",
       cta: 'book a friendly chat'
     },
     challenges: {
@@ -137,17 +137,17 @@ export const translations = {
   },
   es: {
     nav: {
-      challenges: 'Experiencias',
+      scenarios: 'Experiencias',
       about: 'Sobre mí',
       method: 'Mi Método',
       stories: 'Estudiantes',
       contact: 'Contacto'
     },
     hero: {
-      title: "¡Hola! Soy Auris, y ayudo a hispanohablantes a sentirse seguros con el inglés",
-      subtitle: 'A través de clases personalizadas y técnicas de aprendizaje probadas',
-      tagline: 'Juntos podemos hacer que el inglés se sienta natural y alcanzable',
-      cta: 'agenda una charla'
+      title: "¡Hola! Soy Auris, te ayudo a sentirte seguro hablando inglés",
+      subtitle: "Aprende inglés de forma natural, con clases dinámicas que te motivan",
+      tagline: "Ya sea en el trabajo, estudios o tu crecimiento personal, no dejes que el inglés te frene",
+      cta: "agenda una charla"
     },
     challenges: {
       title: 'Experiencias Comunes de Aprendizaje',
