@@ -1,13 +1,17 @@
 [[headers]]
-  for = "/*.png"
+  for = "/favicons/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/favicons/*.png"
+  [headers.values]
     Content-Type = "image/png"
 
 [[headers]]
-  for = "/*.html"
+  for = "/favicons/*.svg"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Content-Type = "image/svg+xml"
 
 [[redirects]]
   from = "/*"
