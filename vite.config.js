@@ -21,7 +21,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name.endsWith('.png') || assetInfo.name.endsWith('.ico')) {
+          // Keep original names for favicon files
+          if (assetInfo.name.match(/\.(ico|png|svg)$/)) {
             return '[name][extname]'
           }
           return 'assets/[name]-[hash][extname]'
