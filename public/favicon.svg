@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Background -->
+<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <rect width="32" height="32" rx="6" fill="#FF914D"/>
-  <!-- Letter A - made larger, bolder strokes -->
-  <path 
-    d="M10 26L16 6L22 26M11.5 20H20.5" 
-    stroke="black" 
-    stroke-width="3"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
+  <path d="M10 26L16 6L22 26M11.5 20H20.5" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>

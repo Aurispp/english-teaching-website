@@ -9,4 +9,24 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    fs: {
+      strict: false
+    },
+    headers: {
+      'Cache-Control': 'no-store',
+    }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name.endsWith('.png') || assetInfo.name.endsWith('.ico')) {
+            return '[name][extname]'
+          }
+          return 'assets/[name]-[hash][extname]'
+        }
+      }
+    }
+  }
 })
