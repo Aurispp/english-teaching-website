@@ -9,6 +9,7 @@ import HeroSection from './components/HeroSection';
 import PlateauGraph from './components/PlateauGraph';
 import barcaImage from './barca.png';
 import English2Logo from './English-2.png'
+import ToolsSection from './components/ToolsSection';
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -208,6 +209,7 @@ function App() {
         </div>
       </section>
 
+      <ToolsSection />
       <ContactSection />
 
       {/* Footer */}

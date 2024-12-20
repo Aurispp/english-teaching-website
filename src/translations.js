@@ -27,6 +27,28 @@ export const translations = {
         paragraph3: "My own life changed completely after learning Spanish and moving to Barcelona in 2014 at 22. It has enriched my life both personally and professionally. In fact, learning Spanish sparked my passion for teaching. It made me dive deep into language learning and constantly refine my teaching methods, which I continue to do today."
       }
     },
+    toolsSection: {
+      title: "How We'll Work Together",
+      features: [
+        {
+          title: "Improve while Speaking",
+          description: "You will get to speak a lot. But my focus is also to push you towards your knowledge gaps and correcting some bad habits. Most of my students aren't learning English for the first time, and often we have to also focus on 'unlearning' our common mistakes or bad tendencies. My goal is to make that process smooth, encouraging and actually giving you the confidence that you CAN improve."
+        },
+        {
+          title: "Progress Tracking",
+          description: "Our memories aren't perfect - we have the tendency to forget. That's why I make sure to track your progress and review what you learn with me periodically, so you don't simply forget what we covered. With your permission, we can even record our classes, keep transcripts and gain further insights into our English abilities"
+        },
+        {
+          title: "Commitment Matters",
+          description: "I like to imagine my classes as going to the gym for your mind. I'm your trainer and my goal is to help you reach your goals, however I can. But it only works if you are willing to put in the effort. Are you up for the challenge?"
+        },
+        {
+          title: "Using Tech",
+          description: "I'm a tech nerd, always thinking of ways to improve my teaching—whether it's using Anki to help us review vocabulary effectively, Claude for creating customized content tailored to our needs, or recordings for progress tracking and pronunciation practice.",
+          tools: ["Anki", "Claude", "Zoom", "Google Docs"]
+        }
+      ]
+    },
     challenges: {
       title: 'Common Learning Experiences',
       items: [
@@ -183,27 +205,7 @@ export const translations = {
         paragraph3: "Mi propia vida cambió completamente después de aprender español y mudarme a Barcelona en 2014 a los 22 años. Ha enriquecido mi vida tanto personal como profesionalmente. De hecho, aprender español despertó mi pasión por la enseñanza. Me hizo profundizar en el aprendizaje de idiomas y refinar constantemente mis métodos de enseñanza, algo que continúo haciendo hoy en día."
       }
     },
-    challenges: {
-      title: 'Experiencias Comunes de Aprendizaje',
-      items: [
-        {
-          title: "¿Algunos sonidos del inglés te resultan difíciles?",
-          description: "Algunos sonidos del inglés no existen en español. Vamos a dominarlos juntos con práctica específica.",
-          solution: "Práctica regular de pronunciación con feedback personalizado en cada clase."
-        },
-        {
-          title: "¿Piensas demasiado antes de hablar?",
-          description: "Es común sentirse dudoso al hablar inglés. Construyamos tu confianza paso a paso.",
-          solution: "Práctica en un ambiente de apoyo donde los errores son parte del aprendizaje."
-        },
-        {
-          title: "¿Quieres pensar directamente en inglés?",
-          description: "Libérate del hábito de traducir en tu cabeza durante las conversaciones.",
-          solution: "Aprende a expresarte naturalmente a través de práctica conversacional regular."
-        }
-      ]
-    },
-    about: {
+       about: {
       title: 'Sobre mí',
       intro: "¡Hola! Soy Aurimas (aunque todos me llaman Auris) y ayudo a hispanohablantes a alcanzar sus metas con el inglés de una manera amena y efectiva. Ya sea para conseguir ese trabajo o ascenso donde el inglés es fundamental, hablar con seguridad y mejor pronunciación, o simplemente abrir puertas a nuevas oportunidades en todos los aspectos de la vida.",
       method: "Soy profesor por vocación y también estudiante de idiomas. Nací en Lituania, crecí en Irlanda, donde me licencié en Desarrollo de Aplicaciones Multimedia en Waterford y obtuve mi certificación CELT como profesor en Galway. Desde entonces, llevo más de una década enseñando inglés en Barcelona, trabajando tanto con grupos de empresa como con estudiantes particulares, ayudando a cada persona a alcanzar sus objetivos específicos con el inglés.",
@@ -262,6 +264,28 @@ export const translations = {
           text: "¡Genial! Es muy buen profesor, formal y recto, a la par que afable y cercano. Mi hija sacó mucho provecho a sus clases de inglés. Sin duda Auris es un profesor superrecomendable!",
           author: "Silvia",
           highlight: "Excelente para jóvenes estudiantes"
+        }
+      ]
+    },
+    toolsSection: {
+      title: "Cómo Trabajaremos Juntos",
+      features: [
+        {
+          title: "Mejora mientras Hablas",
+          description: 'Hablarás muchísimo en las clases. Pero también me centro en identificar tus puntos débiles y corregir ciertos hábitos. La mayoría de mis estudiantes ya tienen una base de inglés, y muchas veces tenemos que "desaprender" errores y costumbres que se nos han quedado grabados. Mi objetivo es hacer que este proceso sea fluido y motivador, y demostrarte que SÍ puedes mejorar.'
+        },
+        {
+          title: "Seguimiento del Progreso",
+          description: "La memoria nos falla - es normal olvidar las cosas. Por eso hago un seguimiento detallado de tu progreso y repasamos periódicamente lo que vas aprendiendo, para que no se pierda lo que hemos trabajado. Si te parece bien, también podemos grabar las clases y guardar transcripciones, lo que nos permite analizar mejor cómo vamos mejorando el inglés."
+        },
+        {
+          title: "El Compromiso Importa",
+          description: "Me gusta comparar mis clases con ir al gimnasio. Soy tu entrenador y mi objetivo es ayudarte a alcanzar tus metas como sea posible, pero solo funciona si estás dispuesto a esforzarte. ¿Te atreves a dar el paso?"
+        },
+        {
+          title: "Usando la Tecnología",
+          description: "Soy un apasionado de la tecnología y siempre estoy buscando maneras de mejorar mi enseñanza, ya sea utilizando Anki para repasar vocabulario de manera efectiva, Claude para crear contenido personalizado según nuestras necesidades, o grabaciones para hacer seguimiento de los progresos y trabajar en la pronunciación.",
+          tools: ["Anki", "Claude", "Zoom", "Google Docs"]
         }
       ]
     },
