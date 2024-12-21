@@ -6,10 +6,10 @@ import LanguageSwitcher from './components/LanguageSwitcher';
 import { useLanguage } from './context/LanguageContext';
 import ContactSection from './components/ContactSection';
 import HeroSection from './components/HeroSection';
-import PlateauGraph from './components/PlateauGraph';
-import barcaImage from './barca.png';
+import TeachingPillars from './components/TeachingPillars';
 import English2Logo from './English-2.png'
-import ToolsSection from './components/ToolsSection';
+import Navbar from './components/Navbar';
+
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -26,121 +26,9 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50/70 to-white">
-
-{/* Navigation */}
-<nav className="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-primary-100">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-    <div className="flex justify-between items-center">
-      <div 
-        onClick={scrollToTop}
-        className="flex items-center cursor-pointer group"
-      >
-        {/* Logo container with orange background */}
-        <div className="bg-[#FF914D] rounded-lg px-4 py-2 flex items-center space-x-2">
-  <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
-  <div className="text-xl sm:text-2xl font-display text-black">
-    <span className="font-bold">English</span>
-    <span className="font-light text-lg sm:text-xl">&nbsp;&nbsp;with&nbsp;&nbsp;</span>
-    <span className="font-bold">Auris</span>
-  </div>
-</div>
-      </div>
-      
-      <div className="flex items-center space-x-4">
-        <LanguageSwitcher />
-        <button 
-          className="md:hidden p-2 text-primary-600 hover:text-primary-700"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-
-        <div className="hidden md:flex items-center space-x-12">
-          {navItems.map((item) => (
-            <a 
-              key={item}
-              href={`#${item}`} 
-              className="font-medium text-gray-600 hover:text-primary-600 transition-all duration-300 relative group py-2"
-            >
-              {t(`nav.${item}`)}
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    {/* Mobile Navigation */}
-    <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} pt-4`}>
-      <div className="flex flex-col space-y-4">
-        {navItems.map((item) => (
-          <a 
-            key={item}
-            href={`#${item}`} 
-            className="font-medium text-gray-600 hover:text-primary-600 transition-all duration-300 py-2"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {t(`nav.${item}`)}
-          </a>
-        ))}
-      </div>
-    </div>
-  </div>
-</nav>
-
-      <HeroSection />
-
-      {/* Scenarios Section */}
-      <section id="scenarios" className="w-full">
-        {/* First Scenario */}
-        <div className="bg-slate-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <h2 className="text-3xl sm:text-4xl font-display text-slate-800 font-light">
-                  {t('scenarios.breakingThrough.title')}
-                </h2>
-                
-                <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
-                  <p>{t('scenarios.breakingThrough.paragraph1')}</p>
-                  <p>{t('scenarios.breakingThrough.paragraph2')}</p>
-                </div>
-              </div>
-              
-              <div className="relative bg-white p-8 rounded-lg shadow-lg">
-                <PlateauGraph />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Second Scenario */}
-        <div className="bg-indigo-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="lg:order-2 space-y-6">
-                <h2 className="text-3xl sm:text-4xl font-display text-slate-800 font-light">
-                  {t('scenarios.findingPath.title')}
-                </h2>
-                
-                <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
-                  <p>{t('scenarios.findingPath.paragraph1')}</p>
-                  <p>{t('scenarios.findingPath.paragraph2')}</p>
-                  <p>{t('scenarios.findingPath.paragraph3')}</p>
-                </div>
-              </div>
-              
-              <div className="lg:order-1 relative bg-white p-8 rounded-lg shadow-lg overflow-hidden">
-                <img 
-                  src={barcaImage} 
-                  alt={t('images.barcelona')} 
-                  className="w-full h-auto object-cover rounded-lg filter saturate-75"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<Navbar />
+<HeroSection />
+<TeachingPillars />
 
       {/* About Section */}
       <section id="about" className="py-16 sm:py-32 bg-white relative overflow-hidden">
@@ -208,8 +96,6 @@ function App() {
           </div>
         </div>
       </section>
-
-      <ToolsSection />
       <ContactSection />
 
       {/* Footer */}

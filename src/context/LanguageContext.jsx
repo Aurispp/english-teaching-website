@@ -16,12 +16,8 @@ export const LanguageProvider = ({ children }) => {
     return value;
   };
 
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'es' : 'en');
-  };
-
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

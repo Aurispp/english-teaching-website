@@ -9,10 +9,30 @@ export const translations = {
       contact: 'Contact'
     },
     hero: {
-      title: "Hello! I'm Auris, and I help Spanish speakers feel confident in English",
-      subtitle: 'Learn English naturally, through engaging classes that motivate you',
-      tagline: "Together we can make English feel natural and achievable",
-      cta: 'book a friendly chat'
+      journey: "Your English Journey Starts Here",
+      title: "Hello! I'm Auris, and I help Spanish speakers speak English with confidence",
+      subtitle: "Online English classes focused on real conversation and constant improvement",
+      cta: "Book a free trial class",
+      badges: {
+        online: "Online Classes",
+        groups: "Individual & Small Groups",
+        trial: "Free Trial Class"
+      }
+    },
+    pillars: {
+      title: "My Teaching Method",
+      learnBySpeaking: {
+        title: "Learn by Speaking",
+        description: "I believe speaking is the most engaging and effective way to learn languages. In your classes with me, you will get plenty of opportunities to speak and develop your fluency. As we practice speaking, we'll naturally improve all aspects of your English - pronunciation, vocabulary, and grammar."
+      },
+      makeFastProgress: {
+        title: "Make Fast Progress",
+        description: "If you're feeling stuck, you can make a lot of progress with the right approach and dedication. I will help identify your weaknesses and help you overcome them. Many of my students tell me that they made more progress in a few months than they did in previous years of learning English."
+      },
+      modernApproach: {
+        title: "Modern Approach",
+        description: "Forget about traditional textbook classes. We'll learn through natural conversations while using modern tools to help you improve faster. We'll use Anki to help remember new vocabulary, record parts of our classes to work on pronunciation, and focus on topics that interest you."
+      }
     },
     scenarios: {
       breakingThrough: {
@@ -187,10 +207,15 @@ export const translations = {
       contact: 'Contacto'
     },
     hero: {
-      title: "¡Hola! Soy Auris, te ayudo a sentirte seguro hablando inglés",
-      subtitle: "Aprende inglés de forma natural, con clases dinámicas que te motivan",
-      tagline: "Ya sea en el trabajo, estudios o tu crecimiento personal, no dejes que el inglés te frene",
-      cta: "agenda una charla"
+      journey: "Tu viaje con el inglés empieza aquí",
+      title: "¡Hola! Soy Auris, y ayudo a hispanohablantes a hablar inglés con confianza",
+      subtitle: "Clases de inglés online centradas en la conversación real y la mejora constante",
+      cta: "Reserva una clase de prueba gratis",
+      badges: {
+        online: "Clases Online",
+        groups: "Clases Individuales y Grupos",
+        trial: "Clase de Prueba Gratis"
+      }
     },
     scenarios: {
       breakingThrough: {
@@ -205,6 +230,21 @@ export const translations = {
         paragraph3: "Mi propia vida cambió completamente después de aprender español y mudarme a Barcelona en 2014 a los 22 años. Ha enriquecido mi vida tanto personal como profesionalmente. De hecho, aprender español despertó mi pasión por la enseñanza. Me hizo profundizar en el aprendizaje de idiomas y refinar constantemente mis métodos de enseñanza, algo que continúo haciendo hoy en día."
       }
     },
+    pillars: {
+      title: "Mi Método de Enseñanza",
+      learnBySpeaking: {
+        title: "Aprende Hablando",
+        description: "Creo que hablar es la forma más efectiva y motivadora de aprender idiomas. En tus clases conmigo, tendrás muchas oportunidades para hablar y desarrollar tu fluidez. Mientras practicamos hablando, mejoraremos naturalmente todos los aspectos de tu inglés - pronunciación, vocabulario y gramática."
+      },
+      makeFastProgress: {
+        title: "Progresa Rápidamente",
+        description: "Si te sientes estancado, puedes hacer un gran progreso con el enfoque y la dedicación adecuados. Te ayudaré a identificar tus puntos débiles y a superarlos. Muchos de mis estudiantes me dicen que progresaron más en unos meses que en años anteriores estudiando inglés."
+      },
+      modernApproach: {
+        title: "Enfoque Moderno",
+        description: "Olvídate de las clases tradicionales con libros de texto. Aprenderemos a través de conversaciones naturales mientras usamos herramientas modernas para ayudarte a mejorar más rápido. Usaremos Anki para recordar nuevo vocabulario, grabaremos partes de nuestras clases para trabajar la pronunciación y nos centraremos en temas que te interesen."
+      }
+    },    
        about: {
       title: 'Sobre mí',
       intro: "¡Hola! Soy Aurimas (aunque todos me llaman Auris) y ayudo a hispanohablantes a alcanzar sus metas con el inglés de una manera amena y efectiva. Ya sea para conseguir ese trabajo o ascenso donde el inglés es fundamental, hablar con seguridad y mejor pronunciación, o simplemente abrir puertas a nuevas oportunidades en todos los aspectos de la vida.",
