@@ -1,6 +1,7 @@
 import React from 'react';
-import { Phone, Mail, MessageCircle } from 'lucide-react';
+import { Phone, Mail, GraduationCap } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import whatsappIcon from '../whatsapp.png';
 
 const Navbar = () => {
   const { language, setLanguage } = useLanguage();
@@ -12,7 +13,7 @@ const Navbar = () => {
       label: "Call"
     },
     {
-      icon: <MessageCircle className="w-5 h-5" />,
+      icon: <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5" />,
       href: "https://wa.me/34684082221",
       label: "WhatsApp"
     },
@@ -24,16 +25,19 @@ const Navbar = () => {
   ];
 
   return (
-<nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-primary-100">
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-primary-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Language Selection */}
           <div className="flex items-center gap-8">
             {/* Logo */}
             <a href="/" className="flex items-center">
-              <div className="bg-[#FF914D] px-4 py-2 rounded-lg">
-                <span className="text-white font-semibold flex items-center gap-1">
-                  English with Auris
+              <div className="bg-[#FF914D] px-4 py-2 rounded-lg flex items-center gap-2">
+                <GraduationCap className="w-5 h-5 text-black" />
+                <span className="text-black flex items-center">
+                  <span className="font-bold">English</span>
+                  <span className="mx-1 text-sm font-normal">with</span>
+                  <span className="font-bold">Auris</span>
                 </span>
               </div>
             </a>

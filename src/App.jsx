@@ -25,8 +25,9 @@ function App() {
   const navItems = ['scenarios', 'about', 'stories', 'contact'];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50/70 to-white">
+<div className="min-h-screen bg-gradient-to-b from-amber-50/70 to-white flex flex-col">
 <Navbar />
+<main className="flex-1">
 <HeroSection />
 <TeachingPillars />
 
@@ -61,6 +62,7 @@ function App() {
           </div>
         </div>
       </section>
+      </main>
 
       {/* Stories Section */}
       <section id="stories" className="py-16 sm:py-32 relative bg-gradient-to-b from-white to-primary-50/30">
