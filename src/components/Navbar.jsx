@@ -13,7 +13,7 @@ const Navbar = () => {
       label: "Call"
     },
     {
-      icon: <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5" />,
+      icon: <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5 object-contain" />,
       href: "https://wa.me/34684082221",
       label: "WhatsApp"
     },
@@ -26,27 +26,27 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-primary-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="flex justify-between items-center h-16 gap-2">
           {/* Logo and Language Selection */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-2 sm:gap-8">
             {/* Logo */}
-            <a href="/" className="flex items-center">
-              <div className="bg-[#FF914D] px-4 py-2 rounded-lg flex items-center gap-2">
+            <a href="/" className="flex-shrink-0">
+              <div className="bg-[#FF914D] px-3 sm:px-4 py-2 rounded-lg flex items-center gap-2">
                 <GraduationCap className="w-5 h-5 text-black" />
-                <span className="text-black flex items-center">
+                <span className="text-black flex items-center text-sm sm:text-base">
                   <span className="font-bold">English</span>
-                  <span className="mx-1 text-sm font-normal">with</span>
+                  <span className="mx-1 text-xs sm:text-sm font-normal">with</span>
                   <span className="font-bold">Auris</span>
                 </span>
               </div>
             </a>
             
             {/* Language Toggle */}
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-1 sm:gap-2 text-sm">
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-3 py-1 rounded-full transition-colors ${
+                className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${
                   language === 'en' 
                     ? 'bg-[#FF914D] text-white' 
                     : 'text-gray-600 hover:bg-gray-100'
@@ -56,7 +56,7 @@ const Navbar = () => {
               </button>
               <button
                 onClick={() => setLanguage('es')}
-                className={`px-3 py-1 rounded-full transition-colors ${
+                className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${
                   language === 'es' 
                     ? 'bg-[#FF914D] text-white' 
                     : 'text-gray-600 hover:bg-gray-100'
@@ -68,14 +68,15 @@ const Navbar = () => {
           </div>
 
           {/* Contact Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1 sm:gap-3">
             {contactLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
                 target={link.href.startsWith('http') ? '_blank' : '_self'}
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                className="inline-flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                className="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label={link.label}
               >
                 {link.icon}
                 <span className="hidden sm:inline">{link.label}</span>
