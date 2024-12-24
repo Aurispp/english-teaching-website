@@ -1,32 +1,51 @@
-[[headers]]
-  for = "/favicons/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/favicons/*.png"
-  [headers.values]
-    Content-Type = "image/png"
-
-[[headers]]
-  for = "/favicons/*.svg"
-  [headers.values]
-    Content-Type = "image/svg+xml"
-
-[[headers]]
-  for = "/favicons/*.ico"
-  [headers.values]
-    Content-Type = "image/x-icon"
-
-# Handle root favicon.ico requests
+# Handle root-level favicon requests first
 [[redirects]]
   from = "/favicon.ico"
   to = "/favicons/favicon.ico"
   status = 200
   force = true
 
-# SPA fallback
+[[redirects]]
+  from = "/apple-touch-icon.png"
+  to = "/favicons/apple-touch-icon.png"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/safari-pinned-tab.svg"
+  to = "/favicons/safari-pinned-tab.svg"
+  status = 200
+  force = true
+
+# Headers for favicon files
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Content-Type = "image/x-icon"
+    Cache-Control = "public, max-age=31536000, immutable"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Content-Type = "image/png"
+    Cache-Control = "public, max-age=31536000, immutable"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Content-Type = "image/svg+xml"
+    Cache-Control = "public, max-age=31536000, immutable"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/favicons/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    X-Content-Type-Options = "nosniff"
+
+# SPA fallback - this should be last
 [[redirects]]
   from = "/*"
   to = "/index.html"
