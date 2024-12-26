@@ -32,15 +32,15 @@ const Navbar = () => {
           <div className="flex items-center gap-2 sm:gap-8">
             {/* Logo */}
             <a href="/" className="flex-shrink-0">
-              <div className="bg-[#FF914D] px-3 sm:px-4 py-2 rounded-lg flex items-center gap-2">
-                <GraduationCap className="w-5 h-5 text-black" />
-                <span className="text-black flex items-center text-sm sm:text-base">
-                  <span className="font-bold">English</span>
-                  <span className="mx-1 text-xs sm:text-sm font-normal">with</span>
-                  <span className="font-bold">Auris</span>
-                </span>
-              </div>
-            </a>
+  <div className="bg-[#FF914D] px-3 sm:px-4 py-2 rounded-lg flex items-center gap-2">
+    <GraduationCap className="w-5 h-5 text-black" />
+    <span className="text-black flex items-center text-base sm:text-lg font-['Cabinet_Grotesk']">
+      <span className="font-bold">English</span>
+      <span className="mx-1 text-sm sm:text-base font-normal">with</span>
+      <span className="font-bold">Auris</span>
+    </span>
+  </div>
+</a>
             
             {/* Language Toggle */}
             <div className="flex items-center gap-1 sm:gap-2 text-sm">
