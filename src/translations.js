@@ -12,11 +12,11 @@ export const translations = {
       journey: "Your English Journey Starts Here",
       title: "Hello! I'm Auris, and I help Spanish speakers speak English with confidence",
       subtitle: "Online English classes focused on real conversation and constant improvement",
-      cta: "Book a free trial class",
+      cta: "Get in touch",
       badges: {
         online: "Online Classes",
         groups: "Individual & Small Groups",
-        trial: "Free Trial Class"
+        trial: "Progress Tracking"
       }
     },
     pricing: {
@@ -245,13 +245,13 @@ export const translations = {
     },
     hero: {
       journey: "Tu viaje con el inglés empieza aquí",
-      title: "¡Hola! Soy Auris, y ayudo a hispanohablantes a hablar inglés con confianza",
+      title: "¡Hola! Soy Auris, y ayudo a la gente hablar inglés con confianza",
       subtitle: "Clases de inglés online centradas en la conversación real y la mejora constante",
-      cta: "Reserva una clase de prueba gratis",
+      cta: "Contáctame",
       badges: {
         online: "Clases Online",
         groups: "Clases Individuales y Grupos",
-        trial: "Clase de Prueba Gratis"
+        trial: "Seguimiento de progreso"
       }
     },
     pricing: {

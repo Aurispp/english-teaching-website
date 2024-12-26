@@ -106,11 +106,7 @@ function App() {
       <footer className="py-6 sm:py-8 text-center bg-gradient-to-b from-white to-primary-50/30 border-t border-primary-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-center mb-3 sm:mb-4">
-  <img 
-    src={English2Logo} 
-    alt="English with Auris" 
-    className="w-5 h-5 mr-2"
-  />
+  
   <span className="text-primary-600 font-medium">{t('nav.brand')}</span>
 </div>
           <p className="text-sm text-gray-500">

@@ -126,12 +126,7 @@ const PricingSection = () => {
           </Card>
         </div>
 
-        {/* Trial class message */}
-        <div className="text-center mt-12">
-          <span className="inline-block px-6 py-3 bg-gray-50 rounded-full text-lg text-gray-700">
-            {t.trialClass}
-          </span>
-        </div>
+        
       </div>
     </div>
   );
