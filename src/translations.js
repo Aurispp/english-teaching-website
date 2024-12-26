@@ -19,6 +19,43 @@ export const translations = {
         trial: "Free Trial Class"
       }
     },
+    pricing: {
+      title: "Classes & Pricing",
+      subtitle: "",
+      trialClass: "Free trial class available for all options",
+      contact: {
+        button: "Contact me",
+        dialog: {
+          title: "Let's get in touch",
+          description: "Choose how you'd like to connect:",
+          phone: "Give me a call",
+          whatsapp: "WhatsApp me",
+          email: "Send an email",
+          close: "Close"
+        }
+      },
+      private: {
+        title: "Private Classes",
+        description: "",
+        price: "30€/hour",
+        features: [
+          "Focused on your specific needs",
+          "Flexible scheduling",
+          "Continuous feedback and progress tracking"
+        ]
+      },
+      group: {
+        title: "Group Classes",
+        description: "",
+        price: "15€/hour",
+        waitlist: "Join the waiting list",
+        features: [
+          "Small groups (2-4 students)",
+          "Shared learning experience with other motivated learners",
+          "Continuous feedback and progress tracking"
+        ]
+      }
+    },
     pillars: {
       title: "My Teaching Method",
       learnBySpeaking: {
@@ -217,17 +254,41 @@ export const translations = {
         trial: "Clase de Prueba Gratis"
       }
     },
-    scenarios: {
-      breakingThrough: {
-        title: "Impulsa tu Inglés",
-        paragraph1: "Has llegado a ese punto en tu camino con el inglés donde puedes expresarte en general, pero no con la confianza y fluidez que deseas. En momentos importantes—como esa presentación ante clientes o entrevista de trabajo que necesitas dominar—quizás te encuentres bloqueado o atrapado en el hábito de la traducción mental.",
-        paragraph2: "Puedes comunicarte, pero tal vez estés conformándote con roles menos desafiantes porque aún no te sientes lo suficientemente seguro para buscar oportunidades donde el inglés juega un papel más importante. Esas reuniones de equipo, llamadas internacionales o presentaciones cruciales podrían estar causándote más estrés del necesario, impidiéndote mostrar tu verdadero valor profesional."
+    pricing: {
+      title: "Clases y Precios",
+      subtitle: "",
+      trialClass: "Clase de prueba gratuita disponible para todas las opciones",
+      contact: {
+        button: "Contáctame",
+        dialog: {
+          title: "Ponte en contacto",
+          description: "Elige cómo quieres conectar:",
+          phone: "Llámame",
+          whatsapp: "WhatsApp",
+          email: "Enviar un email",
+          close: "Cerrar"
+        }
       },
-      findingPath: {
-        title: "Encuentra tu camino con el inglés",
-        paragraph1: "Aprender inglés ha sido difícil. Quizás la forma en que te lo enseñaron en la escuela no funcionó para ti, y tu vida ocupada te ha llevado a dejarlo de lado. Pero ahora estás pensando en todas las oportunidades que hablar inglés podría abrir: más posibilidades laborales, experiencias de vida y conexiones que de otro modo serían imposibles.",
-        paragraph2: "Puede ser difícil imaginarte hablando con fluidez. Y no te mentiré: es un proceso. Pero he visto a muchos estudiantes pasar por esta transformación y avanzar con esta habilidad invaluable.",
-        paragraph3: "Mi propia vida cambió completamente después de aprender español y mudarme a Barcelona en 2014 a los 22 años. Ha enriquecido mi vida tanto personal como profesionalmente. De hecho, aprender español despertó mi pasión por la enseñanza. Me hizo profundizar en el aprendizaje de idiomas y refinar constantemente mis métodos de enseñanza, algo que continúo haciendo hoy en día."
+      private: {
+        title: "Clases Privadas",
+        description: "",
+        price: "30€/hora",
+        features: [
+          "Enfocado en tus necesidades específicas",
+          "Horario flexible",
+          "Seguimiento y feedback continuo"
+        ]
+      },
+      group: {
+        title: "Clases en Grupo",
+        description: "",
+        price: "15€/hora",
+        waitlist: "Únete a la lista de espera",
+        features: [
+          "Grupos pequeños (2-4 estudiantes)",
+          "Aprendizaje compartida con otros estudiantes motivados",
+          "Seguimiento y feedback continuo"
+        ]
       }
     },
     pillars: {
