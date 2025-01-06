@@ -65,7 +65,6 @@ function App() {
           </div>
         </div>
       </section>
-<PricingSection />
       {/* About Section */}
       <section id="about" className="py-16 sm:py-32 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary-50/80 to-transparent transform skew-x-12"></div>
