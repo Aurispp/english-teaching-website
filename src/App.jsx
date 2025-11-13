@@ -10,6 +10,7 @@ import TeachingPillars from './components/TeachingPillars';
 import English2Logo from './English-2.png'
 import Navbar from './components/Navbar';
 import PricingSection from './components/PricingSection';
+import FAQSection from './components/FAQSection';
 
 
 const scrollToTop = () => {
@@ -49,14 +50,14 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="group relative">
-                <div className="absolute inset-0 bg-white rounded-2xl shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:scale-[1.02]"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white to-primary-50/30 rounded-2xl shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:scale-[1.03] group-hover:-translate-y-1"></div>
                 <div className="relative p-6 sm:p-8 flex flex-col h-full">
                   <div className="flex items-start mb-6">
-                    <Quote className="w-6 h-6 text-primary-500 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm font-medium text-primary-600 ml-2">{testimonial.highlight}</span>
+                    <Quote className="w-6 h-6 text-primary-500 flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
+                    <span className="text-sm font-medium text-primary-600 ml-2 group-hover:text-primary-700 transition-colors">{testimonial.highlight}</span>
                   </div>
-                  <p className="text-gray-600 mb-6 flex-grow">{testimonial.text}</p>
-                  <div className="border-t border-primary-100 pt-4">
+                  <p className="text-gray-600 mb-6 flex-grow leading-relaxed">{testimonial.text}</p>
+                  <div className="border-t border-primary-100 pt-4 group-hover:border-primary-200 transition-colors">
                     <p className="font-medium text-gray-900">{testimonial.author}</p>
                   </div>
                 </div>
@@ -75,11 +76,11 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16 items-start">
             <div className="space-y-6 sm:space-y-8">
               {['intro', 'method', 'approach'].map((key) => (
-                <div 
+                <div
                   key={key}
-                  className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:translate-y-[-2px]"
+                  className="group bg-white p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 transform hover:translate-y-[-4px] hover:scale-[1.01] border border-transparent hover:border-primary-100"
                 >
-                  <p className="text-gray-600 leading-relaxed">{t(`about.${key}`)}</p>
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">{t(`about.${key}`)}</p>
                 </div>
               ))}
             </div>
@@ -96,6 +97,13 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Pricing Section */}
+      <PricingSection />
+
+      {/* FAQ Section */}
+      <FAQSection />
+
       </main>
 
 

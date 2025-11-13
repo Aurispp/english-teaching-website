@@ -11,8 +11,9 @@ export const translations = {
     hero: {
       journey: "Your English Journey Starts Here",
       title: "Hello! I'm Auris, and I help Spanish speakers speak English with confidence",
-      subtitle: "Online English classes focused on real conversation and constant improvement",
+      subtitle: "100% Online English classes focused on real conversation and constant improvement",
       cta: "Get in touch",
+      ctaSecondary: "See Pricing",
       badges: {
         online: "Online Classes",
         groups: "Individual & Small Groups",
@@ -230,6 +231,31 @@ export const translations = {
       barcelona: 'Barcelona cityscape',
       teacher: 'Auris teaching English'
     },
+    faq: {
+      title: 'Frequently Asked Questions',
+      questions: [
+        {
+          question: 'What type of students do you teach?',
+          answer: 'I work with teenagers, adults, and professionals who want to improve their English fluency. My students range from those just starting their English journey to advanced learners looking to perfect their skills.'
+        },
+        {
+          question: 'Do you offer a free trial class?',
+          answer: 'Yes! I offer a free first class so we can get to know each other and see if we\'re a good fit for working together.'
+        },
+        {
+          question: 'Are your classes online or in-person?',
+          answer: 'All classes are conducted online via Zoom, making them accessible from anywhere in Spain or globally. This provides flexibility in scheduling and eliminates travel time.'
+        },
+        {
+          question: 'What is your teaching method?',
+          answer: 'I focus on conversation-based learning with modern tools. We use Anki for vocabulary retention, record sessions for pronunciation practice, and focus on topics that interest you. The goal is natural fluency, not just textbook learning.'
+        },
+        {
+          question: 'Do you prepare students for English exams like IELTS?',
+          answer: 'Yes, I offer structured preparation for IELTS, Cambridge, and TOEFL exams, along with general conversation practice and business English.'
+        }
+      ]
+    },
     footer: {
       rights: 'All rights reserved'
     }
@@ -246,8 +272,9 @@ export const translations = {
     hero: {
       journey: "Tu viaje con el inglés empieza aquí",
       title: "¡Hola! Soy Auris, y ayudo a la gente hablar inglés con confianza",
-      subtitle: "Clases de inglés online centradas en la conversación real y la mejora constante",
+      subtitle: "Clases de inglés 100% online centradas en la conversación real y la mejora constante",
       cta: "Contáctame",
+      ctaSecondary: "Ver Precios",
       badges: {
         online: "Clases Online",
         groups: "Clases Individuales y Grupos",
@@ -431,6 +458,31 @@ export const translations = {
     images: {
       barcelona: 'Vista de Barcelona',
       teacher: 'Auris enseñando inglés'
+    },
+    faq: {
+      title: 'Preguntas Frecuentes',
+      questions: [
+        {
+          question: '¿Qué tipo de estudiantes enseñas?',
+          answer: 'Trabajo con adolescentes, adultos y profesionales que quieren mejorar su fluidez en inglés. Mis estudiantes van desde aquellos que están comenzando su viaje con el inglés hasta estudiantes avanzados que buscan perfeccionar sus habilidades.'
+        },
+        {
+          question: '¿Ofreces una clase de prueba gratuita?',
+          answer: '¡Sí! Ofrezco una primera clase gratuita para que podamos conocernos y ver si somos una buena opción para trabajar juntos.'
+        },
+        {
+          question: '¿Las clases son online o presenciales?',
+          answer: 'Todas las clases se realizan online a través de Zoom, lo que las hace accesibles desde cualquier lugar de España o del mundo. Esto proporciona flexibilidad en la programación y elimina el tiempo de viaje.'
+        },
+        {
+          question: '¿Cuál es tu método de enseñanza?',
+          answer: 'Me enfoco en el aprendizaje basado en la conversación con herramientas modernas. Usamos Anki para la retención de vocabulario, grabamos las sesiones para practicar la pronunciación y nos enfocamos en temas que te interesan. El objetivo es la fluidez natural, no solo el aprendizaje de libros de texto.'
+        },
+        {
+          question: '¿Preparas a estudiantes para exámenes de inglés como IELTS?',
+          answer: 'Sí, ofrezco preparación estructurada para exámenes IELTS, Cambridge y TOEFL, junto con práctica general de conversación e inglés de negocios.'
+        }
+      ]
     },
     footer: {
       rights: 'Todos los derechos reservados'

@@ -50,13 +50,21 @@ const HeroSection = () => {
               />
             </div>
 
-            <a 
-              href="#contact" 
-              className="group inline-flex items-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              <span className="text-sm font-medium mr-2">{t('hero.cta')}</span>
-              <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#contact"
+                className="group inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <span className="text-sm font-medium mr-2">{t('hero.cta')}</span>
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="#pricing"
+                className="group inline-flex items-center justify-center border-2 border-primary-500 text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-primary-50 transition-all duration-300 transform hover:-translate-y-0.5"
+              >
+                <span className="text-sm font-medium">{t('hero.ctaSecondary')}</span>
+              </a>
+            </div>
           </div>
 
           {/* Image */}

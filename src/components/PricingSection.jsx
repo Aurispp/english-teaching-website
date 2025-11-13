@@ -70,10 +70,11 @@ const PricingSection = () => {
   const t = translations[language].pricing;
 
   return (
-    <div className="w-full py-16 px-4">
+    <section id="pricing" className="w-full py-16 sm:py-24 px-4 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">{t.title}</h2>
+          <h2 className="text-3xl sm:text-4xl font-display font-light mb-4">{t.title}</h2>
+          <p className="text-lg text-[#FF914D] font-medium mb-2">{t.trialClass}</p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
@@ -126,9 +127,9 @@ const PricingSection = () => {
           </Card>
         </div>
 
-        
+
       </div>
-    </div>
+    </section>
   );
 };
 

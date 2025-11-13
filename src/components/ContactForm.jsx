@@ -40,9 +40,9 @@ const ContactForm = ({ type }) => {
         </button>
 
         <div className="bg-white rounded-2xl shadow-sm p-8">
-          <h1 className="text-3xl font-display font-light mb-2">
+          <h2 className="text-3xl font-display font-light mb-2">
             {t(`contact.${type}.title`)}
-          </h1>
+          </h2>
           <p className="text-gray-600 mb-8">
             {t(`contact.${type}.subtitle`)}
           </p>
