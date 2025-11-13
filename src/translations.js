@@ -251,8 +251,8 @@ export const translations = {
           answer: 'I focus on conversation-based learning with modern tools. We use Anki for vocabulary retention, record sessions for pronunciation practice, and focus on topics that interest you. The goal is natural fluency, not just textbook learning.'
         },
         {
-          question: 'Do you prepare students for English exams like IELTS?',
-          answer: 'Yes, I offer structured preparation for IELTS, Cambridge, and TOEFL exams, along with general conversation practice and business English.'
+          question: 'Do you prepare students for English exams like First Certificate?',
+          answer: 'Yes, I offer structured preparation for Cambridge exams (like First Certificate, CAE), IELTS, and TOEFL, along with general conversation practice and business English.'
         }
       ]
     },
@@ -479,8 +479,8 @@ export const translations = {
           answer: 'Me enfoco en el aprendizaje basado en la conversación con herramientas modernas. Usamos Anki para la retención de vocabulario, grabamos las sesiones para practicar la pronunciación y nos enfocamos en temas que te interesan. El objetivo es la fluidez natural, no solo el aprendizaje de libros de texto.'
         },
         {
-          question: '¿Preparas a estudiantes para exámenes de inglés como IELTS?',
-          answer: 'Sí, ofrezco preparación estructurada para exámenes IELTS, Cambridge y TOEFL, junto con práctica general de conversación e inglés de negocios.'
+          question: '¿Preparas a estudiantes para exámenes de inglés como First Certificate?',
+          answer: 'Sí, ofrezco preparación estructurada para exámenes de Cambridge (como First Certificate, CAE), IELTS y TOEFL, junto con práctica general de conversación e inglés de negocios.'
         }
       ]
     },
