@@ -36,17 +36,17 @@ const HeroSection = () => {
 
             {/* Custom Badges */}
             <div className="flex flex-wrap gap-3 mb-8 md:mb-12">
-              <Badge 
-                icon={Globe} 
-                text={t('hero.badges.online')} 
+              <Badge
+                icon={Globe}
+                text={t('hero.badges.online')}
               />
-              <Badge 
-                icon={Users} 
-                text={t('hero.badges.groups') || 'Individual & Small Groups'} 
+              <Badge
+                icon={Users}
+                text={t('hero.badges.groups') || 'Individual & Small Groups'}
               />
-              <Badge 
-                icon={Sparkles} 
-                text={t('hero.badges.trial')} 
+              <Badge
+                icon={Sparkles}
+                text={t('hero.badges.trial')}
               />
             </div>
 
@@ -65,18 +65,25 @@ const HeroSection = () => {
                 <span className="text-sm font-medium">{t('hero.ctaSecondary')}</span>
               </a>
             </div>
+
+            <div className="mt-8 flex items-center gap-2 text-sm text-gray-500">
+              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-600 font-bold text-xs">
+                CELT
+              </div>
+              <span>Qualified Teacher with over a decade of experience</span>
+            </div>
           </div>
 
           {/* Image */}
           <div className="flex-shrink-0 w-full md:w-[420px] lg:w-[480px]">
             <div className="relative">
-              <img 
+              <img
                 src={aurisPhoto}
-                alt={t('images.teacher')} 
-                className="w-full h-[400px] md:h-[480px] lg:h-[520px] object-cover object-center rounded-3xl shadow-lg transform transition-all duration-500 hover:scale-[1.02] hover:shadow-xl"
+                alt={t('images.teacher')}
+                className="w-full h-[400px] md:h-[480px] lg:h-[520px] object-cover object-center rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl"
               />
               {/* Decorative elements */}
-              <div className="absolute -z-10 top-4 right-4 w-full h-full bg-primary-100 rounded-3xl"></div>
+              <div className="absolute -z-10 top-4 right-4 w-full h-full bg-primary-50 rounded-3xl"></div>
             </div>
           </div>
         </div>

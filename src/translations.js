@@ -111,19 +111,19 @@ export const translations = {
       title: 'Common Learning Experiences',
       items: [
         {
-          title: "Finding certain English sounds tricky?",
-          description: "Some English sounds don't exist in Spanish. Let's master them together through targeted practice.",
-          solution: "Regular pronunciation practice with personalized feedback in every lesson."
+          title: "Struggling with 'Beach' vs 'Bitch'?",
+          description: "Pronunciation can be tricky. We'll master the subtle differences that make you sound like a native.",
+          solution: "Targeted pronunciation practice in every lesson."
         },
         {
-          title: "Thinking too much before speaking?",
-          description: "It's common to feel hesitant when speaking English. Let's build your confidence step by step.",
-          solution: "Practice in a supportive environment where mistakes are part of learning."
+          title: "Confused by 'Make' vs 'Do'?",
+          description: "Stop translating from Spanish. Learn the natural collocations that English speakers actually use.",
+          solution: "Learn patterns and context, not just rules."
         },
         {
-          title: "Want to think directly in English?",
-          description: "Break free from the habit of translating in your head during conversations.",
-          solution: "Learn to express yourself naturally through regular conversation practice."
+          title: "Freezing up when speaking?",
+          description: "You know the grammar, but the words don't come out. We'll build your confidence to speak without hesitation.",
+          solution: "Safe, supportive environment to make mistakes and learn."
         }
       ]
     },
@@ -332,8 +332,8 @@ export const translations = {
         title: "Enfoque Moderno",
         description: "Olvídate de las clases tradicionales con libros de texto. Aprenderemos a través de conversaciones naturales mientras usamos herramientas modernas para ayudarte a mejorar más rápido. Usaremos Anki para recordar nuevo vocabulario, grabaremos partes de nuestras clases para trabajar la pronunciación y nos centraremos en temas que te interesen."
       }
-    },    
-       about: {
+    },
+    about: {
       title: 'Sobre mí',
       intro: "¡Hola! Soy Aurimas (aunque todos me llaman Auris) y ayudo a hispanohablantes a alcanzar sus metas con el inglés de una manera amena y efectiva. Ya sea para conseguir ese trabajo o ascenso donde el inglés es fundamental, hablar con seguridad y mejor pronunciación, o simplemente abrir puertas a nuevas oportunidades en todos los aspectos de la vida.",
       method: "Soy profesor por vocación y también estudiante de idiomas. Nací en Lituania, crecí en Irlanda, donde me licencié en Desarrollo de Aplicaciones Multimedia en Waterford y obtuve mi certificación CELT como profesor en Galway. Desde entonces, llevo más de una década enseñando inglés en Barcelona, trabajando tanto con grupos de empresa como con estudiantes particulares, ayudando a cada persona a alcanzar sus objetivos específicos con el inglés.",
@@ -414,6 +414,26 @@ export const translations = {
           title: "Usando la Tecnología",
           description: "Soy un apasionado de la tecnología y siempre estoy buscando maneras de mejorar mi enseñanza, ya sea utilizando Anki para repasar vocabulario de manera efectiva, Claude para crear contenido personalizado según nuestras necesidades, o grabaciones para hacer seguimiento de los progresos y trabajar en la pronunciación.",
           tools: ["Anki", "Claude", "Zoom", "Google Docs"]
+        }
+      ]
+    },
+    challenges: {
+      title: 'Experiencias Comunes de Aprendizaje',
+      items: [
+        {
+          title: "¿Te cuesta diferenciar 'Beach' y 'Bitch'?",
+          description: "La pronunciación puede ser difícil. Dominaremos las diferencias sutiles para que suenes más natural.",
+          solution: "Práctica de pronunciación específica en cada clase."
+        },
+        {
+          title: "¿Confundido con 'Make' vs 'Do'?",
+          description: "Deja de traducir del español. Aprende las combinaciones naturales que usan los nativos.",
+          solution: "Aprende patrones y contexto, no solo reglas."
+        },
+        {
+          title: "¿Te bloqueas al hablar?",
+          description: "Sabes la gramática, pero las palabras no salen. Construiremos tu confianza para hablar sin dudar.",
+          solution: "Un entorno seguro y de apoyo para cometer errores y aprender."
         }
       ]
     },

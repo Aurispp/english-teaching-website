@@ -75,21 +75,19 @@ const ContactSection = () => {
         <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="flex border-b border-gray-100">
             <button
-              className={`flex-1 px-6 py-4 text-sm font-medium transition-colors ${
-                activeTab === 'direct'
-                  ? 'text-primary-600 border-b-2 border-primary-500'
-                  : 'text-gray-600 hover:text-primary-600'
-              }`}
+              className={`flex-1 px-6 py-4 text-sm font-medium transition-colors ${activeTab === 'direct'
+                ? 'text-primary-600 border-b-2 border-primary-500'
+                : 'text-gray-600 hover:text-primary-600'
+                }`}
               onClick={() => setActiveTab('direct')}
             >
               {t('contact.directContact')}
             </button>
             <button
-              className={`flex-1 px-6 py-4 text-sm font-medium transition-colors ${
-                activeTab === 'form'
-                  ? 'text-primary-600 border-b-2 border-primary-500'
-                  : 'text-gray-600 hover:text-primary-600'
-              }`}
+              className={`flex-1 px-6 py-4 text-sm font-medium transition-colors ${activeTab === 'form'
+                ? 'text-primary-600 border-b-2 border-primary-500'
+                : 'text-gray-600 hover:text-primary-600'
+                }`}
               onClick={() => setActiveTab('form')}
             >
               {t('contact.sendMessage')}
@@ -99,15 +97,15 @@ const ContactSection = () => {
           <div className="p-8">
             {activeTab === 'direct' ? (
               <div className="space-y-6">
-                <a 
-                  href="mailto:aurienglish@gmail.com" 
+                <a
+                  href="mailto:aurienglish@gmail.com"
                   className="flex items-center justify-center space-x-3 text-gray-600 hover:text-primary-600 transition-colors py-4 px-6 rounded-lg hover:bg-primary-50 group"
                 >
                   <Mail className="w-5 h-5 text-primary-500 group-hover:scale-110 transition-transform" />
                   <span className="font-medium">aurienglish@gmail.com</span>
                 </a>
-                <a 
-                  href="tel:+34684082221" 
+                <a
+                  href="tel:+34684082221"
                   className="flex items-center justify-center space-x-3 text-gray-600 hover:text-primary-600 transition-colors py-4 px-6 rounded-lg hover:bg-primary-50 group"
                 >
                   <Phone className="w-5 h-5 text-primary-500 group-hover:scale-110 transition-transform" />

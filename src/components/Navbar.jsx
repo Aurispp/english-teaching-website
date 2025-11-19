@@ -25,42 +25,40 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-primary-100">
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-primary-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex justify-between items-center h-16 gap-2">
           {/* Logo and Language Selection */}
           <div className="flex items-center gap-2 sm:gap-8">
             {/* Logo */}
             <a href="/" className="flex-shrink-0">
-  <div className="bg-[#FF914D] px-3 sm:px-4 py-2 rounded-lg flex items-center gap-2">
-    <GraduationCap className="w-5 h-5 text-black" />
-    <span className="text-black flex items-center text-base sm:text-lg font-['Cabinet_Grotesk']">
-      <span className="font-bold">English</span>
-      <span className="mx-1 text-sm sm:text-base font-normal">with</span>
-      <span className="font-bold">Auris</span>
-    </span>
-  </div>
-</a>
-            
+              <div className="bg-[#FF914D] px-3 sm:px-4 py-2 rounded-lg flex items-center gap-2">
+                <GraduationCap className="w-5 h-5 text-black" />
+                <span className="text-black flex items-center text-base sm:text-lg font-['Cabinet_Grotesk']">
+                  <span className="font-bold">English</span>
+                  <span className="mx-1 text-sm sm:text-base font-normal">with</span>
+                  <span className="font-bold">Auris</span>
+                </span>
+              </div>
+            </a>
+
             {/* Language Toggle */}
             <div className="flex items-center gap-1 sm:gap-2 text-sm">
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${
-                  language === 'en' 
-                    ? 'bg-[#FF914D] text-white' 
+                className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'en'
+                    ? 'bg-[#FF914D] text-white'
                     : 'text-gray-600 hover:bg-gray-100'
-                }`}
+                  }`}
               >
                 EN
               </button>
               <button
                 onClick={() => setLanguage('es')}
-                className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${
-                  language === 'es' 
-                    ? 'bg-[#FF914D] text-white' 
+                className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'es'
+                    ? 'bg-[#FF914D] text-white'
                     : 'text-gray-600 hover:bg-gray-100'
-                }`}
+                  }`}
               >
                 ES
               </button>

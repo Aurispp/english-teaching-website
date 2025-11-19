@@ -32,15 +32,15 @@ const ContactDialog = ({ t }) => {
           </AlertDialogDescription>
         </AlertDialogHeader>
         <div className="flex flex-col gap-3 py-4">
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             className="w-full flex justify-center items-center gap-2 text-lg py-6"
             onClick={() => window.open('tel:+34684082221')}
           >
             <Phone className="h-5 w-5" />
             {t.contact.dialog.phone}
           </Button>
-          <Button 
+          <Button
             variant="outline"
             className="w-full flex justify-center items-center gap-2 text-lg py-6"
             onClick={() => window.open('https://wa.me/34684082221')}
@@ -48,7 +48,7 @@ const ContactDialog = ({ t }) => {
             <MessageCircle className="h-5 w-5" />
             {t.contact.dialog.whatsapp}
           </Button>
-          <Button 
+          <Button
             variant="outline"
             className="w-full flex justify-center items-center gap-2 text-lg py-6"
             onClick={() => window.open('mailto:aurienglish@gmail.com')}
@@ -76,7 +76,7 @@ const PricingSection = () => {
           <h2 className="text-3xl sm:text-4xl font-display font-light mb-4">{t.title}</h2>
           <p className="text-lg text-[#FF914D] font-medium mb-2">{t.trialClass}</p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           {/* Private Classes Card */}
           <Card className="relative overflow-hidden group hover:shadow-lg transition-shadow duration-300">
