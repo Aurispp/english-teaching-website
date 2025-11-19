@@ -20,7 +20,7 @@ const HeroSection = () => {
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-16">
           {/* Content */}
-          <div className="flex-1 animate-fade-up md:max-w-[640px] lg:max-w-[800px]">
+          <div className="flex-1 animate-fade-up md:max-w-[640px] lg:max-w-[800px] order-2 md:order-1">
             <div className="flex items-center mb-6 md:mb-8">
               <Sparkles className="w-5 h-5 text-primary-500 mr-2" />
               <span className="text-primary-600 font-medium">
@@ -75,7 +75,7 @@ const HeroSection = () => {
           </div>
 
           {/* Image */}
-          <div className="flex-shrink-0 w-full md:w-[420px] lg:w-[480px]">
+          <div className="flex-shrink-0 w-full md:w-[420px] lg:w-[480px] order-1 md:order-2">
             <div className="relative">
               <img
                 src={aurisPhoto}

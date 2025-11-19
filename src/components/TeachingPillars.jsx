@@ -66,21 +66,21 @@ const TeachingPillars = () => {
             >
               <div className="flex flex-col items-center mb-6">
                 {pillar.customIcons ? (
-                  <div className="flex justify-center space-x-6 mb-2">
+                  <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 max-w-full">
                     {techIcons.map((icon, i) => (
                       <div
                         key={i}
-                        className="relative group"
+                        className="relative"
                       >
-                        <div className="flex items-center justify-center bg-[#FF914D]/10 rounded-full p-3 w-16 h-16 hover:bg-[#FF914D]/20 hover:scale-110 transition-all duration-300 cursor-pointer">
+                        <div className="peer flex items-center justify-center bg-[#FF914D]/10 rounded-full p-2 sm:p-2.5 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 hover:bg-[#FF914D]/20 hover:scale-110 transition-all duration-300 cursor-pointer">
                           <img
                             src={icon.src}
                             alt={icon.alt}
-                            className={`w-10 h-10 object-contain ${icon.className || ''}`}
+                            className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 object-contain ${icon.className || ''}`}
                           />
                         </div>
                         {/* Tooltip */}
-                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 peer-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
                           {icon.tooltip}
                           <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-900"></div>
                         </div>

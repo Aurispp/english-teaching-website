@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Mail, Phone } from 'lucide-react';
+import { ArrowRight, Mail, MessageCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -105,11 +105,18 @@ const ContactSection = () => {
                   <span className="font-medium">aurienglish@gmail.com</span>
                 </a>
                 <a
-                  href="tel:+34684082221"
-                  className="flex items-center justify-center space-x-3 text-gray-600 hover:text-primary-600 transition-colors py-4 px-6 rounded-lg hover:bg-primary-50 group"
+                  href="https://wa.me/34684082221"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-3 text-gray-600 hover:text-[#25D366] transition-colors py-4 px-6 rounded-lg hover:bg-[#25D366]/10 group"
                 >
-                  <Phone className="w-5 h-5 text-primary-500 group-hover:scale-110 transition-transform" />
-                  <span className="font-medium">+34 684 082 221</span>
+                  <div className="relative">
+                    <MessageCircle className="w-5 h-5 text-[#25D366] group-hover:scale-110 transition-transform" fill="currentColor" />
+                  </div>
+                  <div className="flex flex-col items-start">
+                    <span className="font-medium">WhatsApp</span>
+                    <span className="text-sm text-gray-500">+34 684 082 221</span>
+                  </div>
                 </a>
                 <button
                   onClick={() => setActiveTab('form')}
