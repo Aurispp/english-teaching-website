@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import teacherPhoto from '../1687023565448.jpeg';
+import teacherPhoto from '../profile2.webp';
 
 const AboutSection = () => {
     const { t } = useLanguage();
@@ -29,6 +29,8 @@ const AboutSection = () => {
                             <img
                                 src={teacherPhoto}
                                 alt={t('images.teacher')}
+                                loading="lazy"
+                                decoding="async"
                                 className="relative rounded-2xl shadow-lg w-full h-auto transform transition-all duration-500 hover:rotate-[-2deg] hover:shadow-xl object-cover"
                             />
                         </div>

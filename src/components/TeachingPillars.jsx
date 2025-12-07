@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { MessageCircle, TrendingUp } from 'lucide-react';
-import claudeIcon from '../claude.png';
-import ankiIcon from '../anki.png';
-import recIcon from '../rec.png';
-import zoomIcon from '../zoom.png';
+import claudeIcon from '../claude.webp';
+import ankiIcon from '../anki.webp';
+import recIcon from '../rec.webp';
+import zoomIcon from '../zoom.webp';
 
 const TeachingPillars = () => {
   const { t } = useLanguage();
@@ -76,6 +76,8 @@ const TeachingPillars = () => {
                           <img
                             src={icon.src}
                             alt={icon.alt}
+                            loading="lazy"
+                            decoding="async"
                             className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 object-contain ${icon.className || ''}`}
                           />
                         </div>

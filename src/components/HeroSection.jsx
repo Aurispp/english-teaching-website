@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Sparkles, ArrowRight, Globe, Users } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import aurisPhoto from '../auris2.webp';
@@ -14,6 +14,7 @@ const Badge = ({ icon: Icon, text }) => (
 
 const HeroSection = () => {
   const { t } = useLanguage();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <section className="relative min-h-[90vh] flex items-center bg-amber-50/70">
@@ -77,12 +78,18 @@ const HeroSection = () => {
           {/* Image */}
           <div className="flex-shrink-0 w-full md:w-[420px] lg:w-[480px] order-1 md:order-2">
             <div className="relative">
+              {/* Blur placeholder - shows while image loads */}
+              <div
+                className={`absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-200 via-primary-100 to-amber-100 transition-opacity duration-500 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`}
+                style={{ filter: 'blur(0px)' }}
+              />
               <img
                 src={aurisPhoto}
                 alt={t('images.teacher')}
                 fetchpriority="high"
                 decoding="async"
-                className="w-full h-[400px] md:h-[480px] lg:h-[520px] object-cover object-center rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl"
+                onLoad={() => setImageLoaded(true)}
+                className={`w-full h-[400px] md:h-[480px] lg:h-[520px] object-cover object-center rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               />
               {/* Decorative elements */}
               <div className="absolute -z-10 top-4 right-4 w-full h-full bg-primary-50 rounded-3xl"></div>

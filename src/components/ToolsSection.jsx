@@ -1,11 +1,11 @@
 // components/ToolsSection.jsx
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import ankiIcon from '../anki.png';
-import claudeIcon from '../claude.png';
-import zoomIcon from '../zoom.png';
-import docsIcon from '../docs.png';
-import recIcon from '../rec.png';
+import ankiIcon from '../anki.webp';
+import claudeIcon from '../claude.webp';
+import zoomIcon from '../zoom.webp';
+import docsIcon from '../docs.webp';
+import recIcon from '../rec.webp';
 
 const TOOLS = [
   { name: "Anki", icon: ankiIcon },
@@ -62,9 +62,11 @@ const ToolsSection = () => {
             <div className="grid grid-cols-2 md:grid-cols-5 gap-12 items-center justify-items-center max-w-5xl mx-auto">
               {TOOLS.map(({ name, icon }) => (
                 <div key={name} className="flex items-center justify-center">
-                  <img 
+                  <img
                     src={icon}
                     alt={name}
+                    loading="lazy"
+                    decoding="async"
                     className={getIconClass(name)}
                   />
                 </div>
