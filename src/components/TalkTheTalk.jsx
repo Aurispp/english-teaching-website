@@ -469,11 +469,11 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                         </div>
 
                         {/* Duration Selection */}
-                        <div>
+                        <div className="flex flex-col items-center">
                             <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
                                 Set Duration
                             </h2>
-                            <div className="flex flex-wrap items-center gap-3">
+                            <div className="flex flex-wrap items-center justify-center gap-3">
                                 {[60, 90, 120, 180, 300].map((secs) => (
                                     <button
                                         key={secs}
@@ -493,7 +493,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                         {formatTime(secs)}
                                     </button>
                                 ))}
-                                <div className="flex items-center gap-2 px-3 py-2 bg-white border border-gray-400 rounded-xl shadow-sm ml-3">
+                                <div className="flex items-center gap-2 px-3 py-2 bg-white border border-gray-400 rounded-xl shadow-sm">
                                     <input
                                         type="text"
                                         inputMode="numeric"
