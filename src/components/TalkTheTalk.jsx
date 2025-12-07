@@ -361,7 +361,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
 
             {/* Main Content */}
             <main
-                className={`max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-8 pb-20 sm:pb-32 transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+                className={`max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-8 pb-32 sm:pb-40 transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
                 style={{ transitionDuration: `${transitionMs}ms` }}
             >
                 {/* Selection Screen */}
@@ -650,7 +650,6 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                     <div className="max-w-md mx-auto">
                         <button
                             onClick={startPractice}
-                            className="w-full flex items-center justify-center gap-3 py-4 bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 text-white font-semibold text-lg rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl hover:scale-[1.02] transition-all duration-200"
                         >
                             <Play className="w-5 h-5" />
                             Start Speaking
