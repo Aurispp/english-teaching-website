@@ -4,7 +4,6 @@ import { useLanguage } from './context/LanguageContext';
 import ContactSection from './components/ContactSection';
 import HeroSection from './components/HeroSection';
 import TeachingPillars from './components/TeachingPillars';
-import PricingSection from './components/PricingSection';
 import English2Logo from './English-2.png';
 
 const AppContent = () => {
@@ -49,7 +48,6 @@ const AppContent = () => {
           </div>
         </section>
 
-        <PricingSection />
         <ContactSection />
 
         {/* Footer */}

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Phone, Mail, GraduationCap, LogIn } from 'lucide-react';
+import { Phone, Mail, GraduationCap, LogIn, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import whatsappIcon from '../whatsapp.png';
 
-const Navbar = () => {
+const Navbar = ({ onTalkTheTalkClick }) => {
   const { language, setLanguage, t } = useLanguage();
 
   const contactLinks = [
@@ -67,6 +67,18 @@ const Navbar = () => {
 
           {/* Contact Buttons and Student Login */}
           <div className="flex items-center gap-1 sm:gap-3">
+            {/* Talk the Talk - Free Practice Tool */}
+            <button
+              onClick={onTalkTheTalkClick}
+              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 text-sm font-semibold bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 text-white rounded-lg transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-100"
+              aria-label="Talk the Talk - Free Speaking Practice"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span className="hidden sm:inline bg-gradient-to-r from-white to-white bg-clip-text">Talk the Talk</span>
+            </button>
+
+            <div className="hidden sm:block w-px h-6 bg-gray-200" />
+
             {/* Student Login - subtle link */}
             <a
               href="https://english-with-auris-portal.netlify.app/login"

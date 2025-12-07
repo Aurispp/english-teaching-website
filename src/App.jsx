@@ -8,10 +8,10 @@ import TeachingPillars from './components/TeachingPillars';
 import TestimonialsSection from './components/TestimonialsSection';
 import AboutSection from './components/AboutSection';
 import ToolsSection from './components/ToolsSection';
-import PricingSection from './components/PricingSection';
 import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import TalkTheTalk from './components/TalkTheTalk';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,6 +51,7 @@ const ScrollToTop = () => {
 
 function App() {
   const { t } = useLanguage();
+  const [isTalkTheTalkOpen, setIsTalkTheTalkOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50/70 to-white flex flex-col">
@@ -60,7 +61,8 @@ function App() {
         <meta name="theme-color" content="#ED8936" />
       </Helmet>
 
-      <Navbar />
+      <Navbar onTalkTheTalkClick={() => setIsTalkTheTalkOpen(true)} />
+      <TalkTheTalk isOpen={isTalkTheTalkOpen} onClose={() => setIsTalkTheTalkOpen(false)} />
 
       <main className="flex-1">
         <HeroSection />
@@ -68,7 +70,6 @@ function App() {
         <TestimonialsSection />
         <AboutSection />
         <ToolsSection />
-        <PricingSection />
         <FAQSection />
       </main>
 
