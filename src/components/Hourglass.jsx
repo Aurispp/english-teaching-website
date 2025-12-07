@@ -105,10 +105,10 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
             topLeft: { x: g.centerX - g.bulbRadius, y: g.topBulbY - g.bulbRadius },
             topRight: { x: g.centerX + g.bulbRadius, y: g.topBulbY - g.bulbRadius },
             topCenter: { x: g.centerX, y: g.topBulbY },
-            neckTopLeft: { x: g.centerX - g.neckWidth/2, y: g.centerY - g.neckHeight/2 },
-            neckTopRight: { x: g.centerX + g.neckWidth/2, y: g.centerY - g.neckHeight/2 },
-            neckBottomLeft: { x: g.centerX - g.neckWidth/2, y: g.centerY + g.neckHeight/2 },
-            neckBottomRight: { x: g.centerX + g.neckWidth/2, y: g.centerY + g.neckHeight/2 },
+            neckTopLeft: { x: g.centerX - g.neckWidth / 2, y: g.centerY - g.neckHeight / 2 },
+            neckTopRight: { x: g.centerX + g.neckWidth / 2, y: g.centerY - g.neckHeight / 2 },
+            neckBottomLeft: { x: g.centerX - g.neckWidth / 2, y: g.centerY + g.neckHeight / 2 },
+            neckBottomRight: { x: g.centerX + g.neckWidth / 2, y: g.centerY + g.neckHeight / 2 },
             bottomLeft: { x: g.centerX - g.bulbRadius, y: g.bottomBulbY + g.bulbRadius },
             bottomRight: { x: g.centerX + g.bulbRadius, y: g.bottomBulbY + g.bulbRadius },
             bottomCenter: { x: g.centerX, y: g.bottomBulbY }
@@ -231,7 +231,7 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
             }
 
             const columnIndex = Math.floor((particle.x - (state.centerX - state.bulbRadius)) /
-                                          (state.bulbRadius * 2) * config.columnCount);
+                (state.bulbRadius * 2) * config.columnCount);
 
             if (columnIndex >= 0 && columnIndex < config.columnCount) {
                 const sandHeight = state.bottomHeights[columnIndex];
@@ -262,14 +262,14 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
 
             if (particle.y >= state.bottomBulbY + state.bulbRadius) {
                 const col = Math.floor((particle.x - (state.centerX - state.bulbRadius)) /
-                                      (state.bulbRadius * 2) * config.columnCount);
+                    (state.bulbRadius * 2) * config.columnCount);
                 if (col >= 0 && col < config.columnCount) {
                     state.bottomHeights[col] = Math.min(maxHeight, state.bottomHeights[col] + grainHeight * 0.4);
                 }
                 return false;
             }
 
-            const halfWidth = state.bulbRadius * 0.9;
+            const halfWidth = state.bulbRadius * 0.85; // Tighter bounds to prevent spilling
             if (particle.x < state.centerX - halfWidth || particle.x > state.centerX + halfWidth) {
                 particle.vx *= -0.4;
                 particle.x = Math.max(state.centerX - halfWidth, Math.min(state.centerX + halfWidth, particle.x));
@@ -310,7 +310,7 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
         const hasTopSand = topFactor > 0.012;
 
         // Gradually weaken stream well before end; aim for disappearance by ~last 5s
-        const endFalloff = nearEnd ? Math.max(0, (0.97 - progress) / 0.32) : 1;
+        const endFalloff = nearEnd ? Math.max(0, (0.99 - progress) / 0.25) : 1;
         const endFalloffShaped = Math.pow(Math.max(0, endFalloff), 1.8);
         state.streamVisibility = endFalloffShaped;
 
@@ -437,15 +437,16 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
 
             ctx.save();
             ctx.beginPath();
-            ctx.arc(state.centerX, state.topBulbY, state.bulbRadius - 1, 0, Math.PI * 2);
+            // Stricter clipping for top bulb
+            ctx.arc(state.centerX, state.topBulbY, state.bulbRadius - 3.5, 0, Math.PI * 2);
             ctx.clip();
 
             ctx.beginPath();
             ctx.moveTo(state.centerX - state.bulbRadius, surfaceY);
             ctx.quadraticCurveTo(state.centerX - state.bulbRadius * 0.5, surfaceY - 4, state.centerX, surfaceY + depression);
             ctx.quadraticCurveTo(state.centerX + state.bulbRadius * 0.5, surfaceY - 4, state.centerX + state.bulbRadius, surfaceY);
-            ctx.lineTo(state.centerX + state.neckWidth/2, state.centerY - state.neckHeight/2);
-            ctx.lineTo(state.centerX - state.neckWidth/2, state.centerY - state.neckHeight/2);
+            ctx.lineTo(state.centerX + state.neckWidth / 2, state.centerY - state.neckHeight / 2);
+            ctx.lineTo(state.centerX - state.neckWidth / 2, state.centerY - state.neckHeight / 2);
             ctx.closePath();
             ctx.fill();
             ctx.restore();
@@ -460,7 +461,8 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
 
         ctx.save();
         ctx.beginPath();
-        ctx.arc(state.centerX, state.bottomBulbY, state.bulbRadius - 1, 0, Math.PI * 2);
+        // Stricter clipping for bottom bulb
+        ctx.arc(state.centerX, state.bottomBulbY, state.bulbRadius - 3.5, 0, Math.PI * 2);
         ctx.clip();
 
         ctx.beginPath();
@@ -468,7 +470,7 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
         const columnWidth = (state.bulbRadius * 2) / config.columnCount;
         ctx.moveTo(startX, state.bottomBulbY + state.bulbRadius);
 
-        // Use bezier curves for smooth sand surface
+        // Use bezier curves for smooth sand surface - allow full width to avoid gaps
         for (let i = 0; i < config.columnCount; i++) {
             const x = startX + i * columnWidth;
             const height = state.bottomHeights[i];
@@ -495,13 +497,13 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
         if (progress > 0 && progress < 1 && state.topSandLevel > 0.003 && state.streamVisibility > 0.01 && state.streamWidth > 0.18) {
             const streamCenter = state.centerX + state.streamBaseOffset;
             const streamGrad = ctx.createLinearGradient(
-                streamCenter, state.centerY - state.neckHeight/2,
-                streamCenter, state.centerY + state.neckHeight/2 + 20
+                streamCenter, state.centerY - state.neckHeight / 2,
+                streamCenter, state.centerY + state.neckHeight / 2 + 20
             );
             streamGrad.addColorStop(0, config.colors.sand[1]);
             streamGrad.addColorStop(1, config.colors.sand[2]);
-        ctx.fillStyle = streamGrad;
-        ctx.globalAlpha = Math.min(0.9, Math.max(0, state.streamVisibility * 1.1));
+            ctx.fillStyle = streamGrad;
+            ctx.globalAlpha = Math.min(0.9, Math.max(0, state.streamVisibility * 1.1));
 
             const halfW = state.streamWidth * 0.5;
             ctx.beginPath();
@@ -597,9 +599,9 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
             // Allow particles/stream to settle for a short grace period
             state.idleHold += deltaTime;
             const shouldContinue = state.particles.length > 0 ||
-                                   state.topSandLevel > 0.0004 ||
-                                   state.streamWidth > 0.15 ||
-                                   state.idleHold < 4.0;
+                state.topSandLevel > 0.0004 ||
+                state.streamWidth > 0.15 ||
+                state.idleHold < 4.0;
             if (shouldContinue) {
                 animationRef.current = requestAnimationFrame(animate);
             }
@@ -676,7 +678,6 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
         <canvas
             ref={canvasRef}
             className="w-full h-full"
-            style={{ maxWidth: '200px', maxHeight: '300px' }}
         />
     );
 };

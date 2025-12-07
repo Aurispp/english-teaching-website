@@ -1,7 +1,7 @@
 import React from 'react';
 import { Sparkles, ArrowRight, Globe, Users } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import aurisPhoto from '../auris2.jpeg';
+import aurisPhoto from '../auris2.webp';
 
 const Badge = ({ icon: Icon, text }) => (
   <div className="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-primary-100 hover:shadow-md transition-all">
@@ -80,6 +80,8 @@ const HeroSection = () => {
               <img
                 src={aurisPhoto}
                 alt={t('images.teacher')}
+                fetchpriority="high"
+                decoding="async"
                 className="w-full h-[400px] md:h-[480px] lg:h-[520px] object-cover object-center rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl"
               />
               {/* Decorative elements */}

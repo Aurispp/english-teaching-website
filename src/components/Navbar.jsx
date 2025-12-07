@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, Mail, GraduationCap, LogIn, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import whatsappIcon from '../whatsapp.png';
+import whatsappIcon from '../whatsapp.webp';
 
 const Navbar = ({ onTalkTheTalkClick }) => {
   const { language, setLanguage, t } = useLanguage();

@@ -4,7 +4,7 @@ import { themes, difficulties, getRandomTopic } from '../data/speakingTopics';
 import { getThemeIcon, getDifficultyIcon } from './ThemeIcons';
 import { useLanguage } from '../context/LanguageContext';
 import Hourglass from './Hourglass';
-import whatsappIcon from '../whatsapp.png';
+import whatsappIcon from '../whatsapp.webp';
 
 /**
  * Talk the Talk - Free Speech Practice Tool
@@ -287,7 +287,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                     className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'en'
                                         ? 'bg-[#FF914D] text-white'
                                         : 'text-gray-600 hover:bg-gray-100'
-                                    }`}
+                                        }`}
                                 >
                                     EN
                                 </button>
@@ -296,7 +296,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                     className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'es'
                                         ? 'bg-[#FF914D] text-white'
                                         : 'text-gray-600 hover:bg-gray-100'
-                                    }`}
+                                        }`}
                                 >
                                     ES
                                 </button>
@@ -350,18 +350,18 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
             </nav>
 
             {/* Talk the Talk Title */}
-            <div className="text-center py-6 border-b border-gray-100 bg-white/50">
-                <h1 className="text-2xl sm:text-3xl font-display font-bold">
+            <div className="text-center py-3 sm:py-6 border-b border-gray-100 bg-white/50">
+                <h1 className="text-xl sm:text-3xl font-display font-bold">
                     <span className="bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 bg-clip-text text-transparent">
                         Talk the Talk
                     </span>
                 </h1>
-                <p className="text-sm text-gray-500 mt-1">Speaking Practice</p>
+                <p className="text-xs sm:text-sm text-gray-500 mt-1 hidden sm:block">Speaking Practice</p>
             </div>
 
             {/* Main Content */}
             <main
-                className={`max-w-4xl mx-auto px-4 sm:px-6 py-8 pb-32 transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+                className={`max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-8 pb-20 sm:pb-32 transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
                 style={{ transitionDuration: `${transitionMs}ms` }}
             >
                 {/* Selection Screen */}
@@ -389,22 +389,19 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                         <button
                                             key={theme.id}
                                             onClick={() => setSelectedTheme(theme.id)}
-                                            className={`relative flex items-center gap-4 p-4 rounded-xl border-2 transition-all duration-200 text-left group ${
-                                                isSelected
-                                                    ? 'border-orange-400 bg-orange-50 shadow-lg shadow-orange-100'
-                                                    : 'border-gray-100 bg-white hover:border-gray-200 hover:shadow-md'
-                                            }`}
+                                            className={`relative flex items-center gap-4 p-4 rounded-xl border-2 transition-all duration-200 text-left group ${isSelected
+                                                ? 'border-orange-400 bg-orange-50 shadow-lg shadow-orange-100'
+                                                : 'border-gray-100 bg-white hover:border-gray-200 hover:shadow-md'
+                                                }`}
                                         >
-                                            <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
-                                                isSelected
-                                                    ? 'bg-gradient-to-br from-orange-400 to-rose-400 text-white'
-                                                    : 'bg-gray-100 text-gray-500 group-hover:bg-gray-200'
-                                            }`}>
+                                            <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${isSelected
+                                                ? 'bg-gradient-to-br from-orange-400 to-rose-400 text-white'
+                                                : 'bg-gray-100 text-gray-500 group-hover:bg-gray-200'
+                                                }`}>
                                                 <Icon className="w-5 h-5" />
                                             </div>
-                                            <span className={`font-medium transition-colors ${
-                                                isSelected ? 'text-gray-900' : 'text-gray-700'
-                                            }`}>
+                                            <span className={`font-medium transition-colors ${isSelected ? 'text-gray-900' : 'text-gray-700'
+                                                }`}>
                                                 {theme.name}
                                             </span>
                                             {isSelected && (
@@ -426,20 +423,19 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                             <div className="relative inline-grid grid-cols-3 bg-gray-100 rounded-xl p-1.5">
                                 {/* Sliding background indicator */}
                                 <div
-                                    className={`absolute top-1.5 bottom-1.5 rounded-lg transition-all duration-300 ease-out shadow-md ${
-                                        selectedDifficulty === 'easy'
-                                            ? 'bg-gradient-to-r from-green-400 to-emerald-500'
-                                            : selectedDifficulty === 'medium'
+                                    className={`absolute top-1.5 bottom-1.5 rounded-lg transition-all duration-300 ease-out shadow-md ${selectedDifficulty === 'easy'
+                                        ? 'bg-gradient-to-r from-green-400 to-emerald-500'
+                                        : selectedDifficulty === 'medium'
                                             ? 'bg-gradient-to-r from-orange-400 to-rose-500'
                                             : 'bg-gradient-to-r from-purple-500 to-indigo-500'
-                                    }`}
+                                        }`}
                                     style={{
                                         width: 'calc(33.333% - 4px)',
                                         left: selectedDifficulty === 'easy'
                                             ? '6px'
                                             : selectedDifficulty === 'medium'
-                                            ? 'calc(33.333% + 2px)'
-                                            : 'calc(66.666% - 2px)'
+                                                ? 'calc(33.333% + 2px)'
+                                                : 'calc(66.666% - 2px)'
                                     }}
                                 />
                                 {/* Difficulty options */}
@@ -450,11 +446,10 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                         <button
                                             key={diff.id}
                                             onClick={() => setSelectedDifficulty(diff.id)}
-                                            className={`relative z-10 flex flex-col items-center justify-center gap-1 py-3 rounded-lg transition-colors duration-300 w-[110px] sm:w-[130px] ${
-                                                isSelected
-                                                    ? 'text-white'
-                                                    : 'text-gray-500 hover:text-gray-700'
-                                            }`}
+                                            className={`relative z-10 flex flex-col items-center justify-center gap-1 py-3 rounded-lg transition-colors duration-300 w-[110px] sm:w-[130px] ${isSelected
+                                                ? 'text-white'
+                                                : 'text-gray-500 hover:text-gray-700'
+                                                }`}
                                         >
                                             <DiffIcon className="w-5 h-5" />
                                             <span className="font-semibold text-sm whitespace-nowrap">{diff.name}</span>
@@ -484,11 +479,10 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                             setCustomMinutes(mm);
                                             setCustomSeconds(ss);
                                         }}
-                                        className={`px-5 py-3 text-sm font-medium rounded-xl transition-all duration-200 ${
-                                            duration === secs
-                                                ? 'bg-gradient-to-r from-orange-500 to-rose-500 text-white shadow-lg shadow-orange-200'
-                                                : 'bg-white border border-gray-200 text-gray-700 hover:border-gray-300 hover:shadow-sm'
-                                        }`}
+                                        className={`px-5 py-3 text-sm font-medium rounded-xl transition-all duration-200 ${duration === secs
+                                            ? 'bg-gradient-to-r from-orange-500 to-rose-500 text-white shadow-lg shadow-orange-200'
+                                            : 'bg-white border border-gray-200 text-gray-700 hover:border-gray-300 hover:shadow-sm'
+                                            }`}
                                     >
                                         {formatTime(secs)}
                                     </button>
@@ -523,7 +517,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                 {screen === 'practice' && (
                     <div className="space-y-8 animate-fade-in">
                         {/* Topic Display */}
-                        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
+                        <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-sm border border-gray-100">
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-rose-400 flex items-center justify-center text-white">
                                     <ThemeIcon className="w-4 h-4" />
@@ -532,13 +526,12 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                 {(() => {
                                     const DiffIcon = getDifficultyIcon(selectedDifficulty);
                                     return (
-                                        <span className={`inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full font-medium ${
-                                            selectedDifficulty === 'easy'
-                                                ? 'bg-green-100 text-green-700'
-                                                : selectedDifficulty === 'medium'
+                                        <span className={`inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full font-medium ${selectedDifficulty === 'easy'
+                                            ? 'bg-green-100 text-green-700'
+                                            : selectedDifficulty === 'medium'
                                                 ? 'bg-orange-100 text-orange-700'
                                                 : 'bg-purple-100 text-purple-700'
-                                        }`}>
+                                            }`}>
                                             <DiffIcon className="w-3 h-3" />
                                             {currentDifficulty.name}
                                         </span>
@@ -551,44 +544,42 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                         </div>
 
                         {/* Hourglass and Timer */}
-                        <div className="flex flex-col items-center py-6">
-                            <div className="w-40 h-60 mb-6">
+                        <div className="flex flex-col items-center py-2 sm:py-6">
+                            <div className="w-40 h-52 sm:w-48 sm:h-72 mb-1 sm:mb-6">
                                 <Hourglass
                                     getProgress={getProgress}
                                     isRunning={isTimerRunning}
                                 />
                             </div>
-                            <div className="text-5xl sm:text-6xl font-mono font-bold text-gray-900 tabular-nums">
+                            <div className="text-4xl sm:text-6xl font-mono font-bold text-gray-900 tabular-nums">
                                 {formatTime(timeRemaining)}
                             </div>
-                            <p className="text-gray-500 mt-2">
+                            <p className="text-xs sm:text-base text-gray-500 mt-1 sm:mt-2">
                                 {isTimerRunning ? 'Keep talking!' : 'Review your topic, then hit Ready to start.'}
                             </p>
                         </div>
 
                         {/* Action Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+                        <div className="grid grid-cols-2 sm:flex sm:flex-row gap-2 sm:gap-3 max-w-xl mx-auto">
                             <button
                                 onClick={skipTopic}
-                                className="flex-1 flex items-center justify-center gap-2 py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all"
+                                className="col-start-1 row-start-1 flex-1 flex items-center justify-center gap-2 py-3 sm:py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all text-sm sm:text-base"
                             >
                                 <Shuffle className="w-4 h-4" />
                                 New Topic
                             </button>
                             <button
                                 onClick={readyToSpeak}
-                                className={`flex-1 flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-opacity duration-700 ${
-                                    readyHidden ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                                }`}
+                                className={`col-start-2 row-start-1 flex-1 flex items-center justify-center gap-2 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-opacity duration-700 text-sm sm:text-base ${readyHidden ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                                    }`}
                             >
                                 <Play className="w-4 h-4" />
                                 Ready
                             </button>
                             <button
                                 onClick={finishEarly}
-                                className={`flex-1 flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-opacity duration-700 ${
-                                    hasStarted && showDone ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                                }`}
+                                className={`col-start-2 row-start-1 flex-1 flex items-center justify-center gap-2 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-opacity duration-700 text-sm sm:text-base ${hasStarted && showDone ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'
+                                    }`}
                             >
                                 <Check className="w-4 h-4" />
                                 I'm Done
