@@ -293,10 +293,19 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
             state.topSandLevel = 0;
         } else {
             const remaining = Math.max(0, 1 - progress);
+
+            // Realistic physics: Volume to Height mapping
+            // For a sphere/cone, height decreases slower at first and faster at the end relative to volume
+            // h ~ V^(1/3) for sphere, but sand forms a cone, so approximation around V^0.6 looks best 
+            // This ensures sand is visible until the very last moments
+            const volumeHeight = Math.pow(remaining, 0.65);
+
             // Keep a visible cushion of sand until final seconds, then taper
-            const targetTopLevel = Math.max(0, Math.min(remaining * 1.05, remaining + 0.08));
-            // Smooth exponential interpolation
-            state.topSandLevel += (targetTopLevel - state.topSandLevel) * (1 - Math.exp(-dt * 3.2));
+            // We gently mix the geometric height with a small linear factor for the very end
+            const targetTopLevel = volumeHeight * 0.95 + remaining * 0.05;
+
+            // Smooth simple interpolation
+            state.topSandLevel += (targetTopLevel - state.topSandLevel) * (1 - Math.exp(-dt * 5.0));
         }
 
         // Calculate flow intensity
@@ -433,7 +442,9 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
 
             const sandHeight = state.topSandLevel * state.bulbRadius * 1.2;
             const surfaceY = state.topBulbY + state.bulbRadius - sandHeight;
-            const depression = Math.min(12, (1 - state.topSandLevel) * 15);
+            // Funnel depth scales with size and forms a sharper cone as it drains
+            const maxFunnelDepth = state.bulbRadius * 0.5;
+            const depression = Math.min(maxFunnelDepth, (1 - state.topSandLevel) * state.bulbRadius * 0.8 + 5);
 
             ctx.save();
             ctx.beginPath();
@@ -443,8 +454,20 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
 
             ctx.beginPath();
             ctx.moveTo(state.centerX - state.bulbRadius, surfaceY);
-            ctx.quadraticCurveTo(state.centerX - state.bulbRadius * 0.5, surfaceY - 4, state.centerX, surfaceY + depression);
-            ctx.quadraticCurveTo(state.centerX + state.bulbRadius * 0.5, surfaceY - 4, state.centerX + state.bulbRadius, surfaceY);
+
+            // Draw a deeper, more realistic funnel curvature
+            // Control points pull the surface down towards the neck
+            ctx.bezierCurveTo(
+                state.centerX - state.bulbRadius * 0.3, surfaceY,
+                state.centerX - state.bulbRadius * 0.1, surfaceY + depression * 0.8,
+                state.centerX, surfaceY + depression
+            );
+            ctx.bezierCurveTo(
+                state.centerX + state.bulbRadius * 0.1, surfaceY + depression * 0.8,
+                state.centerX + state.bulbRadius * 0.3, surfaceY,
+                state.centerX + state.bulbRadius, surfaceY
+            );
+
             ctx.lineTo(state.centerX + state.neckWidth / 2, state.centerY - state.neckHeight / 2);
             ctx.lineTo(state.centerX - state.neckWidth / 2, state.centerY - state.neckHeight / 2);
             ctx.closePath();
@@ -553,6 +576,10 @@ const Hourglass = ({ getProgress = () => 0, isRunning = false, onFinish }) => {
 
         // Draw glass highlights
         ctx.save();
+        // Clip to glass body for highlights
+        traceGlassPath(ctx);
+        ctx.clip();
+
         ctx.globalAlpha = 0.5;
         const topHighlight = ctx.createRadialGradient(
             state.centerX - state.bulbRadius * 0.45, state.topBulbY - state.bulbRadius * 0.5, 0,

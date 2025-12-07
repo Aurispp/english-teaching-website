@@ -563,27 +563,31 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                         <div className="grid grid-cols-2 sm:flex sm:flex-row gap-2 sm:gap-3 max-w-xl mx-auto">
                             <button
                                 onClick={skipTopic}
-                                className="col-start-1 row-start-1 flex-1 flex items-center justify-center gap-2 py-3 sm:py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all text-sm sm:text-base"
+                                className="col-start-1 flex-1 flex items-center justify-center gap-2 py-3 sm:py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all text-sm sm:text-base"
                             >
                                 <Shuffle className="w-4 h-4" />
                                 New Topic
                             </button>
-                            <button
-                                onClick={readyToSpeak}
-                                className={`col-start-2 row-start-1 flex-1 flex items-center justify-center gap-2 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-opacity duration-700 text-sm sm:text-base ${readyHidden ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                                    }`}
-                            >
-                                <Play className="w-4 h-4" />
-                                Ready
-                            </button>
-                            <button
-                                onClick={finishEarly}
-                                className={`col-start-2 row-start-1 flex-1 flex items-center justify-center gap-2 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-opacity duration-700 text-sm sm:text-base ${hasStarted && showDone ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'
-                                    }`}
-                            >
-                                <Check className="w-4 h-4" />
-                                I'm Done
-                            </button>
+
+                            {/* Overlapping Ready/Done Buttons Wrapper */}
+                            <div className="col-start-2 sm:flex-1 grid grid-cols-1 grid-rows-1">
+                                <button
+                                    onClick={readyToSpeak}
+                                    className={`col-start-1 row-start-1 w-full flex items-center justify-center gap-2 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-opacity duration-700 text-sm sm:text-base ${readyHidden ? 'opacity-0 pointer-events-none' : 'opacity-100 z-10'
+                                        }`}
+                                >
+                                    <Play className="w-4 h-4" />
+                                    Ready
+                                </button>
+                                <button
+                                    onClick={finishEarly}
+                                    className={`col-start-1 row-start-1 w-full flex items-center justify-center gap-2 py-3 sm:py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all text-sm sm:text-base ${hasStarted && showDone ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'
+                                        }`}
+                                >
+                                    <Check className="w-4 h-4" />
+                                    I'm Done
+                                </button>
+                            </div>
                         </div>
                     </div>
                 )}
