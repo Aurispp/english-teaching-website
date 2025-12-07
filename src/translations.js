@@ -257,8 +257,10 @@ export const translations = {
       ]
     },
     footer: {
-      rights: 'All rights reserved'
-    }
+      rights: 'All rights reserved',
+      studentPortal: 'Student Portal'
+    },
+    studentLogin: 'Student Login'
   },
   es: {
     nav: {
@@ -505,7 +507,9 @@ export const translations = {
       ]
     },
     footer: {
-      rights: 'Todos los derechos reservados'
-    }
+      rights: 'Todos los derechos reservados',
+      studentPortal: 'Portal de Estudiantes'
+    },
+    studentLogin: 'Acceso Estudiantes'
   }
 };

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Phone, Mail, GraduationCap } from 'lucide-react';
+import { Phone, Mail, GraduationCap, LogIn } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import whatsappIcon from '../whatsapp.png';
 
 const Navbar = () => {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   const contactLinks = [
     {
@@ -65,8 +65,22 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Contact Buttons */}
+          {/* Contact Buttons and Student Login */}
           <div className="flex items-center gap-1 sm:gap-3">
+            {/* Student Login - subtle link */}
+            <a
+              href="https://english-with-auris-portal.netlify.app/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-2 sm:px-3 py-2 text-sm text-gray-600 hover:text-[#FF914D] hover:bg-orange-50 rounded-lg transition-colors"
+              aria-label={t('studentLogin')}
+            >
+              <LogIn className="w-4 h-4" />
+              <span className="hidden md:inline">{t('studentLogin')}</span>
+            </a>
+
+            <div className="hidden sm:block w-px h-6 bg-gray-200" />
+
             {contactLinks.map((link, index) => (
               <a
                 key={index}
