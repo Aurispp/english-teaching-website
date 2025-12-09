@@ -60,8 +60,8 @@ const Navbar = ({ onTalkTheTalkClick }) => {
               <button
                 onClick={() => setLanguage('en')}
                 className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'en'
-                    ? 'bg-[#FF914D] text-white'
-                    : 'text-gray-600 hover:bg-gray-100'
+                  ? 'bg-[#FF914D] text-white'
+                  : 'text-gray-600 hover:bg-gray-100'
                   }`}
               >
                 EN
@@ -69,8 +69,8 @@ const Navbar = ({ onTalkTheTalkClick }) => {
               <button
                 onClick={() => setLanguage('es')}
                 className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'es'
-                    ? 'bg-[#FF914D] text-white'
-                    : 'text-gray-600 hover:bg-gray-100'
+                  ? 'bg-[#FF914D] text-white'
+                  : 'text-gray-600 hover:bg-gray-100'
                   }`}
               >
                 ES
@@ -79,7 +79,7 @@ const Navbar = ({ onTalkTheTalkClick }) => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             {/* Talk the Talk - Free Practice Tool */}
             <button
               onClick={onTalkTheTalkClick}
@@ -122,7 +122,7 @@ const Navbar = ({ onTalkTheTalkClick }) => {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="flex sm:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2">
             {/* Student Login - with text on mobile */}
             <a
               href="https://english-with-auris-portal.netlify.app/login"

@@ -644,7 +644,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
             {/* Sticky Footer - Start Button (only on select screen) */}
             {screen === 'select' && (
                 <div
-                    className={`fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-gray-100 p-4 sm:p-6 transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+                    className={`fixed bottom-0 left-0 right-0 z-30 bg-white/90 backdrop-blur-md border-t border-gray-100 p-4 sm:p-6 transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
                     style={{ transitionDuration: `${transitionMs}ms` }}
                 >
                     <div className="max-w-md mx-auto">
