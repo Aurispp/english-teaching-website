@@ -361,7 +361,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
 
             {/* Main Content */}
             <main
-                className={`max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-8 pb-32 sm:pb-40 transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+                className={`max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-8 ${screen === 'select' ? 'pb-32 sm:pb-40' : 'pb-4 sm:pb-6'} transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
                 style={{ transitionDuration: `${transitionMs}ms` }}
             >
                 {/* Selection Screen */}
@@ -515,10 +515,10 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
 
                 {/* Practice Screen */}
                 {screen === 'practice' && (
-                    <div className="space-y-8 animate-fade-in">
+                    <div className="space-y-4 sm:space-y-6 animate-fade-in">
                         {/* Topic Display */}
-                        <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-sm border border-gray-100">
-                            <div className="flex items-center gap-3 mb-4">
+                        <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-100">
+                            <div className="flex items-center gap-3 mb-3">
                                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-rose-400 flex items-center justify-center text-white">
                                     <ThemeIcon className="w-4 h-4" />
                                 </div>
@@ -544,17 +544,17 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                         </div>
 
                         {/* Hourglass and Timer */}
-                        <div className="flex flex-col items-center py-2 sm:py-6">
-                            <div className="w-40 h-52 sm:w-48 sm:h-72 mb-1 sm:mb-6">
+                        <div className="flex flex-col items-center py-2 sm:py-4">
+                            <div className="w-32 h-40 sm:w-36 sm:h-48 mb-1 sm:mb-4">
                                 <Hourglass
                                     getProgress={getProgress}
                                     isRunning={isTimerRunning}
                                 />
                             </div>
-                            <div className="text-4xl sm:text-6xl font-mono font-bold text-gray-900 tabular-nums">
+                            <div className="text-4xl sm:text-5xl font-mono font-bold text-gray-900 tabular-nums">
                                 {formatTime(timeRemaining)}
                             </div>
-                            <p className="text-xs sm:text-base text-gray-500 mt-1 sm:mt-2">
+                            <p className="text-xs sm:text-sm text-gray-500 mt-1 sm:mt-2">
                                 {isTimerRunning ? 'Keep talking!' : 'Review your topic, then hit Ready to start.'}
                             </p>
                         </div>
@@ -563,7 +563,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                         <div className="grid grid-cols-2 sm:flex sm:flex-row gap-2 sm:gap-3 max-w-xl mx-auto">
                             <button
                                 onClick={skipTopic}
-                                className="col-start-1 flex-1 flex items-center justify-center gap-2 py-3 sm:py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all text-sm sm:text-base"
+                                className="col-start-1 flex-1 flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all text-sm sm:text-base"
                             >
                                 <Shuffle className="w-4 h-4" />
                                 New Topic
@@ -573,7 +573,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                             <div className="col-start-2 sm:flex-1 grid grid-cols-1 grid-rows-1">
                                 <button
                                     onClick={readyToSpeak}
-                                    className={`col-start-1 row-start-1 w-full flex items-center justify-center gap-2 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-opacity duration-700 text-sm sm:text-base ${readyHidden ? 'opacity-0 pointer-events-none' : 'opacity-100 z-10'
+                                    className={`col-start-1 row-start-1 w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-opacity duration-700 text-sm sm:text-base ${readyHidden ? 'opacity-0 pointer-events-none' : 'opacity-100 z-10'
                                         }`}
                                 >
                                     <Play className="w-4 h-4" />
@@ -581,7 +581,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                 </button>
                                 <button
                                     onClick={finishEarly}
-                                    className={`col-start-1 row-start-1 w-full flex items-center justify-center gap-2 py-3 sm:py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all text-sm sm:text-base ${hasStarted && showDone ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'
+                                    className={`col-start-1 row-start-1 w-full flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all text-sm sm:text-base ${hasStarted && showDone ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'
                                         }`}
                                 >
                                     <Check className="w-4 h-4" />

@@ -51,7 +51,30 @@ const ScrollToTop = () => {
 
 function App() {
   const { t } = useLanguage();
-  const [isTalkTheTalkOpen, setIsTalkTheTalkOpen] = useState(false);
+  const [isTalkTheTalkOpen, setIsTalkTheTalkOpen] = useState(() => {
+    // Check if URL is /talkthetalk on initial load
+    return window.location.pathname === '/talkthetalk';
+  });
+
+  // Sync URL with Talk the Talk state
+  useEffect(() => {
+    const handlePopState = () => {
+      setIsTalkTheTalkOpen(window.location.pathname === '/talkthetalk');
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const openTalkTheTalk = () => {
+    setIsTalkTheTalkOpen(true);
+    window.history.pushState({}, '', '/talkthetalk');
+  };
+
+  const closeTalkTheTalk = () => {
+    setIsTalkTheTalkOpen(false);
+    window.history.pushState({}, '', '/');
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50/70 to-white flex flex-col">
@@ -61,8 +84,8 @@ function App() {
         <meta name="theme-color" content="#ED8936" />
       </Helmet>
 
-      <Navbar onTalkTheTalkClick={() => setIsTalkTheTalkOpen(true)} />
-      <TalkTheTalk isOpen={isTalkTheTalkOpen} onClose={() => setIsTalkTheTalkOpen(false)} />
+      <Navbar onTalkTheTalkClick={openTalkTheTalk} />
+      <TalkTheTalk isOpen={isTalkTheTalkOpen} onClose={closeTalkTheTalk} />
 
       <main className="flex-1">
         <HeroSection />
