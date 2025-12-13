@@ -13,7 +13,6 @@ export const translations = {
       title: "Hello! I'm Auris, and I help Spanish speakers speak English with confidence",
       subtitle: "100% Online English classes focused on real conversation and constant improvement",
       cta: "Get in touch",
-      ctaSecondary: "See Pricing",
       badges: {
         online: "Online Classes",
         groups: "Individual & Small Groups",
@@ -276,7 +275,6 @@ export const translations = {
       title: "¡Hola! Soy Auris, y ayudo a la gente hablar inglés con confianza",
       subtitle: "Clases de inglés 100% online centradas en la conversación real y la mejora constante",
       cta: "Contáctame",
-      ctaSecondary: "Ver Precios",
       badges: {
         online: "Clases Online",
         groups: "Clases Individuales y Grupos",
