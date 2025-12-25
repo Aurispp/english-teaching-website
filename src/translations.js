@@ -273,7 +273,7 @@ export const translations = {
     hero: {
       journey: "Tu viaje con el inglés empieza aquí",
       title: "¡Hola! Soy Auris, y ayudo a la gente hablar inglés con confianza",
-      subtitle: "Clases de inglés 100% online centradas en la conversación real y la mejora constante",
+      subtitle: "Clases de inglés 100% online para hispanohablantes. Centradas en la conversación real y la mejora constante",
       cta: "Contáctame",
       badges: {
         online: "Clases Online",
@@ -336,7 +336,7 @@ export const translations = {
     about: {
       title: 'Sobre mí',
       intro: "¡Hola! Soy Aurimas (aunque todos me llaman Auris) y ayudo a hispanohablantes a alcanzar sus metas con el inglés de una manera amena y efectiva. Ya sea para conseguir ese trabajo o ascenso donde el inglés es fundamental, hablar con seguridad y mejor pronunciación, o simplemente abrir puertas a nuevas oportunidades en todos los aspectos de la vida.",
-      method: "Soy profesor por vocación y también estudiante de idiomas. Nací en Lituania, crecí en Irlanda, donde me licencié en Desarrollo de Aplicaciones Multimedia en Waterford y obtuve mi certificación CELT como profesor en Galway. Desde entonces, llevo más de una década enseñando inglés en Barcelona, trabajando tanto con grupos de empresa como con estudiantes particulares, ayudando a cada persona a alcanzar sus objetivos específicos con el inglés.",
+      method: "Soy profesor por vocación y también estudiante de idiomas. Nací en Lituania, crecí en Irlanda, donde me licencié en Desarrollo de Aplicaciones Multimedia en Waterford y obtuve mi certificación CELT como profesor en Galway. Desde entonces, llevo más de una década enseñando inglés en Barcelona, viviendo en Castelldefels. Trabajo tanto con grupos de empresa como con estudiantes particulares, ayudando a cada persona a alcanzar sus objetivos específicos con el inglés.",
       approach: "Te ofrezco una primera clase gratuita para conocernos y ver si conectamos. Escríbeme y tengamos una charla sobre cómo podría ayudarte."
     },
     method: {

@@ -79,8 +79,17 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50/70 to-white flex flex-col">
       <Helmet>
-        <title>{t('nav.brand')} - {t('hero.journey')}</title>
-        <meta name="description" content={t('hero.subtitle')} />
+        {isTalkTheTalkOpen ? (
+          <>
+            <title>Talk the Talk - Free English Speaking Practice | English with Auris</title>
+            <meta name="description" content="Free English speaking practice tool. Choose a topic, set a timer, and practice speaking out loud. Improve your English fluency with daily speaking exercises." />
+          </>
+        ) : (
+          <>
+            <title>{t('nav.brand')} - {t('hero.journey')}</title>
+            <meta name="description" content={t('hero.subtitle')} />
+          </>
+        )}
         <meta name="theme-color" content="#ED8936" />
       </Helmet>
 
