@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 const CALENDLY_URL =
@@ -15,6 +15,34 @@ const BADGE_TEXT = {
 
 const CalendlyBadge = () => {
   const { language } = useLanguage();
+  const [scrolled, setScrolled] = useState(false);
+
+  // Show the badge only after the user scrolls past the hero's own CTA.
+  // Avoids a duplicate "Book your free trial class" button at the top.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.pageYOffset > 600);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const apply = () => {
+      const badge = document.querySelector('.calendly-badge-widget');
+      if (!badge) return false;
+      badge.style.display = scrolled ? '' : 'none';
+      return true;
+    };
+    if (apply()) return;
+    const id = window.setInterval(() => {
+      if (apply()) window.clearInterval(id);
+    }, 200);
+    const stop = window.setTimeout(() => window.clearInterval(id), 5000);
+    return () => {
+      window.clearInterval(id);
+      window.clearTimeout(stop);
+    };
+  }, [scrolled]);
 
   // Mount the badge exactly once. Re-initialising on every language change
   // tripped Calendly's internal destroy (removeChild on a detached node)

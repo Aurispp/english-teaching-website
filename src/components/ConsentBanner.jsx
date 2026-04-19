@@ -42,7 +42,7 @@ const ConsentBanner = () => {
   const copy = COPY[language] || COPY.en;
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md z-50 bg-white border border-gray-200 shadow-lg rounded-xl p-4 text-sm text-gray-700">
+    <div className="fixed bottom-4 left-4 right-4 md:right-auto md:max-w-md z-50 bg-white border border-gray-200 shadow-lg rounded-xl p-4 text-sm text-gray-700">
       <p className="mb-3 leading-relaxed">{copy.message}</p>
       <div className="flex gap-2 justify-end">
         <button
