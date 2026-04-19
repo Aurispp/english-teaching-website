@@ -9,6 +9,7 @@ import PricingSection from './components/PricingSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import AboutSection from './components/AboutSection';
 import ToolsSection from './components/ToolsSection';
+import PlatformShowcase from './components/PlatformShowcase';
 import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
@@ -131,6 +132,7 @@ function App() {
         <TestimonialsSection />
         <AboutSection />
         <ToolsSection />
+        <PlatformShowcase />
         <FAQSection />
       </main>
 

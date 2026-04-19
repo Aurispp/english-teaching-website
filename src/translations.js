@@ -121,6 +121,34 @@ export const translations = {
         }
       ]
     },
+    showcase: {
+      title: "Your Student Portal",
+      subtitle: "A space built for my students — your materials, flashcards, and progress tracking all in one place.",
+      dashboard: {
+        title: "Your Home Base",
+        description: "Upcoming tasks, flashcards to review, and what's next — all in one place between classes."
+      },
+      flashcards: {
+        title: "Smart Flashcards",
+        description: "Spaced-repetition review of the vocabulary and phrases from our classes — rate each card and the schedule adapts so you actually remember."
+      },
+      story: {
+        title: "Interactive Reading",
+        description: "Tap any word for its definition and pronunciation — no more pausing to hunt through a dictionary."
+      },
+      exam: {
+        title: "Exam Prep",
+        description: "Cambridge-style practice tests for PET, FCE, CAE, and CPE — timed questions with instant feedback."
+      },
+      scenario: {
+        title: "Role-Play Scenarios",
+        description: "Job interviews, customer calls, travel situations — practise real conversations with clear goals."
+      },
+      kiwi: {
+        title: "Kiwi's Run",
+        description: "A vocabulary game that turns verb drills into something you actually want to do. Beat the fox, keep your streak."
+      }
+    },
     challenges: {
       title: 'Common Learning Experiences',
       items: [
@@ -144,7 +172,7 @@ export const translations = {
     about: {
       title: 'About Me',
       intro: "Hey there! I'm Aurimas (or Auris for short) and I'm here to help Spanish speakers reach their English learning goals in a fun, engaging, yet rigorous way. Get that job or promotion where English is a must, speak with confidence and better pronunciation, open yourself to many more opportunities in all areas of life.",
-      method: "I'm a passionate and experienced teacher and language learner. Born in Lithuania, raised in Ireland. I got my degree in Multimedia Application Development in Waterford and then my CELT teacher qualification in Galway. Since then, I have spent over a decade teaching English in Barcelona. I love working with both company groups and individual students, helping each person reach their unique English goals.",
+      method: "I'm a passionate and experienced teacher and language learner. Born in Lithuania, raised in Ireland. I got my degree in Multimedia Application Development in Waterford and then my CELT teacher qualification in Galway. Since then, I have spent over a decade teaching English in Barcelona and now live in Castelldefels. I love working with both company groups and individual students, helping each person reach their unique English goals.",
       approach: "I offer a free first class for us to get to know each other and for you to see if we are a good fit. Message me and let's have a chat about how I could help you."
     },
     method: {
@@ -261,7 +289,7 @@ export const translations = {
         },
         {
           question: 'Are your classes online or in-person?',
-          answer: "Most classes happen online via Google Meet, which keeps things flexible and works from anywhere in Spain or beyond. If you're nearby and somewhere I can easily reach, in-person is also an option — get in touch and we'll see if we can make it work."
+          answer: "Most classes happen online via Google Meet, which keeps things flexible and works from anywhere in Spain or beyond. I'm based in Castelldefels and can teach in-person there, in Gavà, and other nearby areas on the Barcelona south coast — get in touch and we'll see if we can make it work."
         },
         {
           question: 'What is your teaching method?',
@@ -450,6 +478,34 @@ export const translations = {
         }
       ]
     },
+    showcase: {
+      title: "Tu Portal de Estudiante",
+      subtitle: "Un espacio creado para mis estudiantes — tus materiales, tarjetas de repaso y progreso, todo en un solo lugar.",
+      dashboard: {
+        title: "Tu Punto de Partida",
+        description: "Tareas próximas, tarjetas para repasar y lo siguiente que toca — todo en un mismo lugar entre clases."
+      },
+      flashcards: {
+        title: "Tarjetas Inteligentes",
+        description: "Repaso con repetición espaciada del vocabulario y frases de nuestras clases — puntúa cada tarjeta y el calendario se adapta para que de verdad lo recuerdes."
+      },
+      story: {
+        title: "Lectura Interactiva",
+        description: "Toca cualquier palabra para ver su definición y pronunciación — sin parar a buscar en el diccionario."
+      },
+      exam: {
+        title: "Preparación de Exámenes",
+        description: "Simulacros tipo Cambridge para PET, FCE, CAE y CPE — preguntas cronometradas con feedback al momento."
+      },
+      scenario: {
+        title: "Role-Plays",
+        description: "Entrevistas de trabajo, llamadas con clientes, situaciones de viaje — practica conversaciones reales con objetivos claros."
+      },
+      kiwi: {
+        title: "Kiwi's Run",
+        description: "Un juego de vocabulario que convierte el repaso de verbos en algo divertido. Gana al zorro y mantén tu racha."
+      }
+    },
     challenges: {
       title: 'Experiencias Comunes de Aprendizaje',
       items: [
@@ -528,7 +584,7 @@ export const translations = {
         },
         {
           question: '¿Las clases son online o presenciales?',
-          answer: 'La mayoría de las clases se realizan online a través de Google Meet, lo que las hace flexibles y accesibles desde cualquier lugar de España o del mundo. Si estás cerca y en un lugar al que pueda llegar fácilmente, también es posible en persona — escríbeme y vemos si podemos organizarlo.'
+          answer: 'La mayoría de las clases se realizan online a través de Google Meet, lo que las hace flexibles y accesibles desde cualquier lugar de España o del mundo. Vivo en Castelldefels y puedo dar clases presenciales allí, en Gavà y otras zonas cercanas del Baix Llobregat — escríbeme y vemos si podemos organizarlo.'
         },
         {
           question: '¿Cuál es tu método de enseñanza?',
