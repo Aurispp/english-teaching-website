@@ -22,7 +22,7 @@ const TestimonialsSection = () => {
                     </p>
 
                     {/* Google Reviews Badge */}
-                    <GoogleReviewsBadge rating={5.0} reviewCount={14} />
+                    <GoogleReviewsBadge rating={5.0} reviewCount={15} />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
