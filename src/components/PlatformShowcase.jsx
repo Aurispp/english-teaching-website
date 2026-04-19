@@ -80,9 +80,24 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">{t('showcase.subtitle')}</p>
         </div>
 
-        {/* Tab Chips - Responsive: snap scrolling on mobile */}
-        <div 
-          className="flex overflow-x-auto snap-x snap-mandatory justify-start md:justify-center gap-2 mb-4 md:mb-6 pb-2 px-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        {/* Mobile: single pill showing the current feature */}
+        <div className="md:hidden flex justify-center mb-4">
+          <div
+            key={activeFeature.id}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary-500 text-white text-sm font-semibold shadow-lg shadow-primary-500/30 animate-fade-in-up"
+            aria-live="polite"
+          >
+            <span className="text-xs font-medium opacity-80">
+              {activeIndex + 1} / {FEATURES.length}
+            </span>
+            <span className="w-px h-3 bg-white/40" />
+            <span>{t(`showcase.${activeFeature.id}.title`)}</span>
+          </div>
+        </div>
+
+        {/* Desktop: full tab chips */}
+        <div
+          className="hidden md:flex justify-center gap-2 mb-6"
           role="tablist"
           aria-label="Platform features"
         >
@@ -93,7 +108,7 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
               aria-selected={activeIndex === index}
               aria-controls={`panel-${f.id}`}
               onClick={() => setActiveIndex(index)}
-              className={`flex-shrink-0 snap-center px-4 md:px-5 py-2 md:py-2.5 rounded-full text-sm font-medium transition-all outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 ${
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 ${
                 activeIndex === index
                   ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30 scale-105'
                   : 'bg-white text-gray-700 hover:bg-primary-50 active:bg-primary-100 border border-gray-200 hover:border-primary-200'
@@ -172,21 +187,7 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
                 ))}
               </div>
 
-              {/* Floating Dynamic Description Overlay */}
-              <div className="absolute bottom-10 md:bottom-12 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-max md:min-w-[400px] md:max-w-xl z-30 pointer-events-none">
-                <div 
-                  key={activeFeature.id} /* Re-mount to trigger animation */
-                  className="bg-white/85 backdrop-blur-xl px-5 py-3 md:px-6 md:py-4 rounded-2xl shadow-xl border border-white/50 text-center animate-fade-in-up shadow-black/5"
-                  id={`panel-${activeFeature.id}`}
-                  role="tabpanel"
-                >
-                  <p className="text-gray-800 text-sm md:text-base font-medium m-0 leading-snug">
-                    {t(`showcase.${activeFeature.id}.description`)}
-                  </p>
-                </div>
-              </div>
-              
-              {/* Internal slide indicator dots */}
+              {/* Slide indicator dots */}
               <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 z-30 px-3 py-2 rounded-full bg-gray-900/40 backdrop-blur-md shadow-inner border border-white/10">
                 {FEATURES.map((_, i) => (
                   <button
@@ -202,6 +203,18 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
               </div>
 
             </div>
+          </div>
+
+          {/* Description below the frame */}
+          <div
+            key={activeFeature.id}
+            id={`panel-${activeFeature.id}`}
+            role="tabpanel"
+            className="mt-5 md:mt-6 text-center max-w-3xl mx-auto animate-fade-in-up"
+          >
+            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+              {t(`showcase.${activeFeature.id}.description`)}
+            </p>
           </div>
         </div>
       </div>
