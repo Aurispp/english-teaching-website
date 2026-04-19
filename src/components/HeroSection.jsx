@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, ArrowRight, Globe, Users } from 'lucide-react';
+import { Sparkles, ArrowRight, Globe, Users, LogIn } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import aurisPhoto from '../auris2.webp';
 
@@ -51,7 +51,7 @@ const HeroSection = () => {
               />
             </div>
 
-            <div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
               <a
                 href="#contact"
                 className="group inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg"
@@ -59,14 +59,20 @@ const HeroSection = () => {
                 <span className="text-sm font-medium mr-2">{t('hero.cta')}</span>
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
               </a>
+              <div className="flex items-center gap-1.5 text-sm text-gray-600">
+                <span>{t('hero.alreadyStudent')}</span>
+                <a
+                  href="https://english-with-auris-portal.netlify.app/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-1 font-medium text-primary-600 hover:text-primary-700 underline underline-offset-4 decoration-primary-300 hover:decoration-primary-600 transition-colors"
+                >
+                  {t('hero.loginLink')}
+                  <LogIn className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
+                </a>
+              </div>
             </div>
 
-            <div className="mt-8 flex items-center gap-2 text-sm text-gray-500">
-              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-600 font-bold text-xs">
-                CELT
-              </div>
-              <span>Qualified Teacher with over a decade of experience</span>
-            </div>
           </div>
 
           {/* Image */}

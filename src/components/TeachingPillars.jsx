@@ -1,36 +1,32 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { MessageCircle, TrendingUp } from 'lucide-react';
+import { MessageCircle, TrendingUp, Layers } from 'lucide-react';
 import claudeIcon from '../claude.webp';
-import ankiIcon from '../anki.webp';
-import recIcon from '../rec.webp';
-import zoomIcon from '../zoom.webp';
+import meetsIcon from '../meets.png';
 
 const TeachingPillars = () => {
   const { t } = useLanguage();
 
   const techIcons = [
     {
-      src: ankiIcon,
-      alt: 'Anki',
-      tooltip: 'Spaced repetition flashcards for vocabulary retention'
+      type: 'lucide',
+      Icon: Layers,
+      alt: 'Flashcards',
+      tooltip: 'Personalized flashcards inside your student portal',
     },
     {
+      type: 'image',
       src: claudeIcon,
       alt: 'Claude',
       className: 'rounded-lg',
-      tooltip: 'AI-powered personalized learning and instant feedback'
+      tooltip: 'AI-powered personalized learning and instant feedback',
     },
     {
-      src: recIcon,
-      alt: 'Recording',
-      tooltip: 'Class recordings to review and track your progress'
+      type: 'image',
+      src: meetsIcon,
+      alt: 'Google Meet',
+      tooltip: 'Interactive online classes from anywhere',
     },
-    {
-      src: zoomIcon,
-      alt: 'Zoom',
-      tooltip: 'Interactive online classes from anywhere'
-    }
   ];
 
   const pillars = [
@@ -57,7 +53,7 @@ const TeachingPillars = () => {
         <h2 className="text-3xl sm:text-4xl font-display font-light text-center mb-12 sm:mb-16">
           {t('pillars.title')}
         </h2>
-        
+
         <div className="grid md:grid-cols-3 gap-8">
           {pillars.map((pillar, index) => (
             <div
@@ -73,13 +69,20 @@ const TeachingPillars = () => {
                         className="relative"
                       >
                         <div className="peer flex items-center justify-center bg-[#FF914D]/10 rounded-full p-2 sm:p-2.5 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 hover:bg-[#FF914D]/20 hover:scale-110 transition-all duration-300 cursor-pointer">
-                          <img
-                            src={icon.src}
-                            alt={icon.alt}
-                            loading="lazy"
-                            decoding="async"
-                            className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 object-contain ${icon.className || ''}`}
-                          />
+                          {icon.type === 'lucide' ? (
+                            <icon.Icon
+                              className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-[#FF914D]"
+                              aria-label={icon.alt}
+                            />
+                          ) : (
+                            <img
+                              src={icon.src}
+                              alt={icon.alt}
+                              loading="lazy"
+                              decoding="async"
+                              className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 object-contain ${icon.className || ''}`}
+                            />
+                          )}
                         </div>
                         {/* Tooltip */}
                         <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 peer-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">

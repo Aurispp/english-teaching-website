@@ -11,8 +11,10 @@ export const translations = {
     hero: {
       journey: "Your English Journey Starts Here",
       title: "Hello! I'm Auris, and I help Spanish speakers speak English with confidence",
-      subtitle: "100% Online English classes focused on real conversation and constant improvement",
-      cta: "Get in touch",
+      subtitle: "Online English classes focused on real conversation and constant improvement — in-person possible if I can easily reach you",
+      cta: "Book your free trial class",
+      alreadyStudent: "Already a student?",
+      loginLink: "Log in to your portal",
       badges: {
         online: "Online Classes",
         groups: "Individual & Small Groups",
@@ -21,10 +23,21 @@ export const translations = {
     },
     pricing: {
       title: "Classes & Pricing",
-      subtitle: "",
-      trialClass: "Free trial class available for all options",
+      trialClass: "First class is free — a chance for us to meet and see if we're a good fit",
+      trialCta: "Book your free trial",
+      mostPopular: "Most popular",
+      perHour: "per hour",
+      included: {
+        title: "Included with every class",
+        items: [
+          "Personal student portal access",
+          "Custom flashcard decks in your portal",
+          "Tailored materials prepared for you",
+          "Progress tracking & reviews"
+        ]
+      },
       contact: {
-        button: "Contact me",
+        button: "Book free trial",
         dialog: {
           title: "Let's get in touch",
           description: "Choose how you'd like to connect:",
@@ -36,23 +49,25 @@ export const translations = {
       },
       private: {
         title: "Private Classes",
-        description: "",
-        price: "30€/hour",
+        description: "1-on-1 lessons tailored to you",
+        price: "30€",
         features: [
-          "Focused on your specific needs",
+          "Focused on your specific goals",
           "Flexible scheduling",
-          "Continuous feedback and progress tracking"
+          "Continuous feedback and progress tracking",
+          "Full access to the student portal"
         ]
       },
       group: {
         title: "Group Classes",
-        description: "",
-        price: "15€/hour",
+        description: "Small groups of 2–4 motivated learners",
+        price: "15€",
         waitlist: "Join the waiting list",
         features: [
-          "Small groups (2-4 students)",
-          "Shared learning experience with other motivated learners",
-          "Continuous feedback and progress tracking"
+          "Small groups (2–4 students)",
+          "Lower price per person",
+          "Shared learning with motivated peers",
+          "Full access to the student portal"
         ]
       }
     },
@@ -68,7 +83,7 @@ export const translations = {
       },
       modernApproach: {
         title: "Modern Approach",
-        description: "Forget about traditional textbook classes. We'll learn through natural conversations while using modern tools to help you improve faster. We'll use Anki to help remember new vocabulary, record parts of our classes to work on pronunciation, and focus on topics that interest you."
+        description: "Forget about traditional textbook classes. We'll learn through natural conversations while using modern tools to help you improve faster. You'll get personalized flashcards in your student portal to help remember new vocabulary, tailored materials prepared for each class, and we'll focus on topics that interest you."
       }
     },
     scenarios: {
@@ -93,16 +108,16 @@ export const translations = {
         },
         {
           title: "Progress Tracking",
-          description: "Our memories aren't perfect - we have the tendency to forget. That's why I make sure to track your progress and review what you learn with me periodically, so you don't simply forget what we covered. With your permission, we can even record our classes, keep transcripts and gain further insights into our English abilities"
+          description: "Our memories aren't perfect - we have the tendency to forget. That's why I make sure to track your progress and review what you learn with me periodically, so you don't simply forget what we covered. Your student portal keeps your personalized flashcards ready so you can reinforce what we've learned between classes."
         },
         {
           title: "Commitment Matters",
           description: "I like to imagine my classes as going to the gym for your mind. I'm your trainer and my goal is to help you reach your goals, however I can. But it only works if you are willing to put in the effort. Are you up for the challenge?"
         },
         {
-          title: "Using Tech",
-          description: "I'm a tech nerd, always thinking of ways to improve my teaching—whether it's using Anki to help us review vocabulary effectively, Claude for creating customized content tailored to our needs, or recordings for progress tracking and pronunciation practice.",
-          tools: ["Anki", "Claude", "Zoom", "Google Docs"]
+          title: "Leveraging Tech",
+          description: "Tech isn't the point — your learning is. I use it to make class more engaging: real conversations at the centre, flashcards that stick with you between sessions, and less friction so we spend our time actually speaking.",
+          tools: ["Flashcards", "Claude", "Google Meet", "Google Docs"]
         }
       ]
     },
@@ -141,7 +156,7 @@ export const translations = {
       },
       spaced: {
         title: 'Spaced Repetition',
-        description: 'Using personalized Anki flashcards, we ensure you retain vocabulary and grammar patterns effectively.'
+        description: 'Using personalized flashcards inside your student portal, we ensure you retain vocabulary and grammar patterns effectively.'
       },
       interactive: {
         title: 'Interactive Learning',
@@ -223,6 +238,9 @@ export const translations = {
       },
       directContact: 'Contact Information',
       sendMessage: 'Send Message',
+      bookTrial: 'Book free trial',
+      bookTrialHeading: 'Pick a time for your free 1-hour trial class',
+      bookTrialSub: "First class is free — a chance for us to meet and see if we're a good fit.",
       switchToForm: 'Or send a message instead',
       switchToDirect: 'Or contact me directly'
     },
@@ -243,11 +261,11 @@ export const translations = {
         },
         {
           question: 'Are your classes online or in-person?',
-          answer: 'All classes are conducted online via Zoom, making them accessible from anywhere in Spain or globally. This provides flexibility in scheduling and eliminates travel time.'
+          answer: "Most classes happen online via Google Meet, which keeps things flexible and works from anywhere in Spain or beyond. If you're nearby and somewhere I can easily reach, in-person is also an option — get in touch and we'll see if we can make it work."
         },
         {
           question: 'What is your teaching method?',
-          answer: 'I focus on conversation-based learning with modern tools. We use Anki for vocabulary retention, record sessions for pronunciation practice, and focus on topics that interest you. The goal is natural fluency, not just textbook learning.'
+          answer: 'I focus on conversation-based learning with modern tools. You get personalized flashcards in your student portal for vocabulary retention, tailored materials prepared before each class, and we focus on topics that interest you. The goal is natural fluency, not just textbook learning.'
         },
         {
           question: 'Do you prepare students for English exams like First Certificate?',
@@ -273,8 +291,10 @@ export const translations = {
     hero: {
       journey: "Tu viaje con el inglés empieza aquí",
       title: "¡Hola! Soy Auris, y ayudo a la gente hablar inglés con confianza",
-      subtitle: "Clases de inglés 100% online para hispanohablantes. Centradas en la conversación real y la mejora constante",
-      cta: "Contáctame",
+      subtitle: "Clases de inglés online para hispanohablantes, centradas en la conversación real y la mejora constante — presenciales también posibles si puedo llegar fácilmente",
+      cta: "Reserva tu clase de prueba gratis",
+      alreadyStudent: "¿Ya eres estudiante?",
+      loginLink: "Accede a tu portal",
       badges: {
         online: "Clases Online",
         groups: "Clases Individuales y Grupos",
@@ -283,10 +303,21 @@ export const translations = {
     },
     pricing: {
       title: "Clases y Precios",
-      subtitle: "",
-      trialClass: "Clase de prueba gratuita disponible para todas las opciones",
+      trialClass: "La primera clase es gratis — para conocernos y ver si encajamos",
+      trialCta: "Reserva tu prueba gratis",
+      mostPopular: "Más popular",
+      perHour: "por hora",
+      included: {
+        title: "Incluido en cada clase",
+        items: [
+          "Acceso a tu portal de estudiante",
+          "Tarjetas de memoria personalizadas en tu portal",
+          "Materiales adaptados preparados para ti",
+          "Seguimiento de progreso y repasos"
+        ]
+      },
       contact: {
-        button: "Contáctame",
+        button: "Reserva prueba gratis",
         dialog: {
           title: "Ponte en contacto",
           description: "Elige cómo quieres conectar:",
@@ -298,23 +329,25 @@ export const translations = {
       },
       private: {
         title: "Clases Privadas",
-        description: "",
-        price: "30€/hora",
+        description: "Clases 1-a-1 adaptadas a ti",
+        price: "30€",
         features: [
-          "Enfocado en tus necesidades específicas",
+          "Enfocadas en tus objetivos específicos",
           "Horario flexible",
-          "Seguimiento y feedback continuo"
+          "Seguimiento y feedback continuo",
+          "Acceso completo al portal de estudiante"
         ]
       },
       group: {
         title: "Clases en Grupo",
-        description: "",
-        price: "15€/hora",
+        description: "Grupos pequeños de 2–4 estudiantes motivados",
+        price: "15€",
         waitlist: "Únete a la lista de espera",
         features: [
-          "Grupos pequeños (2-4 estudiantes)",
-          "Aprendizaje compartida con otros estudiantes motivados",
-          "Seguimiento y feedback continuo"
+          "Grupos pequeños (2–4 estudiantes)",
+          "Precio más bajo por persona",
+          "Aprendizaje compartido con personas motivadas",
+          "Acceso completo al portal de estudiante"
         ]
       }
     },
@@ -330,7 +363,7 @@ export const translations = {
       },
       modernApproach: {
         title: "Enfoque Moderno",
-        description: "Olvídate de las clases tradicionales con libros de texto. Aprenderemos a través de conversaciones naturales mientras usamos herramientas modernas para ayudarte a mejorar más rápido. Usaremos Anki para recordar nuevo vocabulario, grabaremos partes de nuestras clases para trabajar la pronunciación y nos centraremos en temas que te interesen."
+        description: "Olvídate de las clases tradicionales con libros de texto. Aprenderemos a través de conversaciones naturales mientras usamos herramientas modernas para ayudarte a mejorar más rápido. Tendrás tarjetas de memoria personalizadas en tu portal de estudiante para recordar el vocabulario nuevo, materiales adaptados preparados para cada clase, y nos centraremos en temas que te interesen."
       }
     },
     about: {
@@ -348,7 +381,7 @@ export const translations = {
       },
       spaced: {
         title: 'Repetición Espaciada',
-        description: 'Usando tarjetas Anki personalizadas, aseguramos que retengas el vocabulario y los patrones gramaticales de manera efectiva.'
+        description: 'Usando tarjetas de memoria personalizadas dentro de tu portal de estudiante, aseguramos que retengas el vocabulario y los patrones gramaticales de manera efectiva.'
       },
       interactive: {
         title: 'Aprendizaje Interactivo',
@@ -404,16 +437,16 @@ export const translations = {
         },
         {
           title: "Seguimiento del Progreso",
-          description: "La memoria nos falla - es normal olvidar las cosas. Por eso hago un seguimiento detallado de tu progreso y repasamos periódicamente lo que vas aprendiendo, para que no se pierda lo que hemos trabajado. Si te parece bien, también podemos grabar las clases y guardar transcripciones, lo que nos permite analizar mejor cómo vamos mejorando el inglés."
+          description: "La memoria nos falla - es normal olvidar las cosas. Por eso hago un seguimiento detallado de tu progreso y repasamos periódicamente lo que vas aprendiendo, para que no se pierda lo que hemos trabajado. Tu portal de estudiante mantiene listas tus tarjetas personalizadas para que puedas reforzar entre clases lo que hemos aprendido juntos."
         },
         {
           title: "El Compromiso Importa",
           description: "Me gusta comparar mis clases con ir al gimnasio. Soy tu entrenador y mi objetivo es ayudarte a alcanzar tus metas como sea posible, pero solo funciona si estás dispuesto a esforzarte. ¿Te atreves a dar el paso?"
         },
         {
-          title: "Usando la Tecnología",
-          description: "Soy un apasionado de la tecnología y siempre estoy buscando maneras de mejorar mi enseñanza, ya sea utilizando Anki para repasar vocabulario de manera efectiva, Claude para crear contenido personalizado según nuestras necesidades, o grabaciones para hacer seguimiento de los progresos y trabajar en la pronunciación.",
-          tools: ["Anki", "Claude", "Zoom", "Google Docs"]
+          title: "Aprovechando la Tecnología",
+          description: "La tecnología no es el objetivo — tu aprendizaje sí. La uso para que la clase sea más atractiva: conversaciones reales en el centro, flashcards que te acompañan entre sesiones y menos fricción para dedicar el tiempo a hablar.",
+          tools: ["Tarjetas", "Claude", "Google Meet", "Google Docs"]
         }
       ]
     },
@@ -472,6 +505,9 @@ export const translations = {
       },
       directContact: 'Información de Contacto',
       sendMessage: 'Enviar Mensaje',
+      bookTrial: 'Reservar prueba gratis',
+      bookTrialHeading: 'Elige un horario para tu clase de prueba gratis (1 hora)',
+      bookTrialSub: 'La primera clase es gratis — para conocernos y ver si encajamos.',
       switchToForm: 'O envía un mensaje',
       switchToDirect: 'O contáctame directamente'
     },
@@ -492,11 +528,11 @@ export const translations = {
         },
         {
           question: '¿Las clases son online o presenciales?',
-          answer: 'Todas las clases se realizan online a través de Zoom, lo que las hace accesibles desde cualquier lugar de España o del mundo. Esto proporciona flexibilidad en la programación y elimina el tiempo de viaje.'
+          answer: 'La mayoría de las clases se realizan online a través de Google Meet, lo que las hace flexibles y accesibles desde cualquier lugar de España o del mundo. Si estás cerca y en un lugar al que pueda llegar fácilmente, también es posible en persona — escríbeme y vemos si podemos organizarlo.'
         },
         {
           question: '¿Cuál es tu método de enseñanza?',
-          answer: 'Me enfoco en el aprendizaje basado en la conversación con herramientas modernas. Usamos Anki para la retención de vocabulario, grabamos las sesiones para practicar la pronunciación y nos enfocamos en temas que te interesan. El objetivo es la fluidez natural, no solo el aprendizaje de libros de texto.'
+          answer: 'Me enfoco en el aprendizaje basado en la conversación con herramientas modernas. Tendrás tarjetas de memoria personalizadas en tu portal de estudiante para retener vocabulario, materiales adaptados preparados antes de cada clase, y nos enfocamos en temas que te interesan. El objetivo es la fluidez natural, no solo el aprendizaje de libros de texto.'
         },
         {
           question: '¿Preparas a estudiantes para exámenes de inglés como First Certificate?',

@@ -5,6 +5,7 @@ import { useLanguage } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import TeachingPillars from './components/TeachingPillars';
+import PricingSection from './components/PricingSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import AboutSection from './components/AboutSection';
 import ToolsSection from './components/ToolsSection';
@@ -12,6 +13,8 @@ import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import TalkTheTalk from './components/TalkTheTalk';
+import CalendlyBadge from './components/CalendlyBadge';
+import ConsentBanner from './components/ConsentBanner';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -66,6 +69,31 @@ function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  // Fire GA4 page_view whenever the SPA route (/ vs /talkthetalk) changes
+  useEffect(() => {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', 'page_view', {
+      page_path: window.location.pathname,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [isTalkTheTalkOpen]);
+
+  // Calendly conversion tracking — fires when a visitor completes a booking
+  useEffect(() => {
+    const onMessage = (e) => {
+      if (e?.data?.event === 'calendly.event_scheduled' && typeof window.gtag === 'function') {
+        window.gtag('event', 'trial_booked', {
+          event_category: 'conversion',
+          event_label: 'Calendly',
+          value: 30,
+        });
+      }
+    };
+    window.addEventListener('message', onMessage);
+    return () => window.removeEventListener('message', onMessage);
+  }, []);
+
   const openTalkTheTalk = () => {
     setIsTalkTheTalkOpen(true);
     window.history.pushState({}, '', '/talkthetalk');
@@ -99,6 +127,7 @@ function App() {
       <main className="flex-1">
         <HeroSection />
         <TeachingPillars />
+        <PricingSection />
         <TestimonialsSection />
         <AboutSection />
         <ToolsSection />
@@ -108,6 +137,8 @@ function App() {
       <ContactSection />
       <Footer />
       <ScrollToTop />
+      {!isTalkTheTalkOpen && <CalendlyBadge />}
+      <ConsentBanner />
     </div>
   );
 }

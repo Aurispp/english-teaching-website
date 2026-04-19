@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Mail, MessageCircle } from 'lucide-react';
+import { ArrowRight, Calendar, Mail, MessageCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useLanguage } from '../context/LanguageContext';
 
+const CALENDLY_URL =
+  import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/aurienglish/trial-class';
+
 const ContactSection = () => {
   const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState('direct');
+  const [activeTab, setActiveTab] = useState('calendly');
+  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
   const [formStatus, setFormStatus] = useState({
     submitting: false,
     submitted: false,
@@ -15,6 +19,23 @@ const ContactSection = () => {
   useEffect(() => {
     emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   }, []);
+
+  // Lazy-load Calendly widget script the first time the booking tab is shown.
+  useEffect(() => {
+    if (activeTab !== 'calendly' || calendlyLoaded) return;
+    const existing = document.querySelector(
+      'script[src="https://assets.calendly.com/assets/external/widget.js"]',
+    );
+    if (existing) {
+      setCalendlyLoaded(true);
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.onload = () => setCalendlyLoaded(true);
+    document.body.appendChild(script);
+  }, [activeTab, calendlyLoaded]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,7 +85,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-t from-primary-50 to-white"></div>
-      <div className="max-w-xl mx-auto px-6 relative">
+      <div className="max-w-2xl mx-auto px-6 relative">
         <div className="flex flex-col items-center mb-16">
           <h2 className="text-4xl font-display font-light text-center mb-4">{t('contact.title')}</h2>
           <p className="text-gray-600 text-center">
@@ -75,7 +96,17 @@ const ContactSection = () => {
         <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="flex border-b border-gray-100">
             <button
-              className={`flex-1 px-6 py-4 text-sm font-medium transition-colors ${activeTab === 'direct'
+              className={`flex-1 px-4 sm:px-6 py-4 text-sm font-medium transition-colors inline-flex items-center justify-center gap-2 ${activeTab === 'calendly'
+                ? 'text-primary-600 border-b-2 border-primary-500'
+                : 'text-gray-600 hover:text-primary-600'
+                }`}
+              onClick={() => setActiveTab('calendly')}
+            >
+              <Calendar className="w-4 h-4" />
+              {t('contact.bookTrial')}
+            </button>
+            <button
+              className={`flex-1 px-4 sm:px-6 py-4 text-sm font-medium transition-colors ${activeTab === 'direct'
                 ? 'text-primary-600 border-b-2 border-primary-500'
                 : 'text-gray-600 hover:text-primary-600'
                 }`}
@@ -84,7 +115,7 @@ const ContactSection = () => {
               {t('contact.directContact')}
             </button>
             <button
-              className={`flex-1 px-6 py-4 text-sm font-medium transition-colors ${activeTab === 'form'
+              className={`flex-1 px-4 sm:px-6 py-4 text-sm font-medium transition-colors ${activeTab === 'form'
                 ? 'text-primary-600 border-b-2 border-primary-500'
                 : 'text-gray-600 hover:text-primary-600'
                 }`}
@@ -95,7 +126,26 @@ const ContactSection = () => {
           </div>
 
           <div className="p-8">
-            {activeTab === 'direct' ? (
+            {activeTab === 'calendly' ? (
+              <div>
+                <div className="text-center mb-6">
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                    {t('contact.bookTrialHeading')}
+                  </h3>
+                  <p className="text-sm text-gray-500">{t('contact.bookTrialSub')}</p>
+                </div>
+                <div
+                  className="calendly-inline-widget rounded-xl overflow-hidden"
+                  data-url={CALENDLY_URL}
+                  style={{ minWidth: '280px', height: '680px' }}
+                />
+                {!calendlyLoaded && (
+                  <div className="text-center text-xs text-gray-400 mt-3">
+                    Loading booking calendar…
+                  </div>
+                )}
+              </div>
+            ) : activeTab === 'direct' ? (
               <div className="space-y-6">
                 <a
                   href="mailto:aurienglish@gmail.com"
