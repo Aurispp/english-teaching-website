@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, Calendar, Mail, MessageCircle } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowRight, Calendar, Mail, MessageCircle, UserCircle, Users } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useLanguage } from '../context/LanguageContext';
 
-const CALENDLY_URL =
+const CALENDLY_TRIAL_URL =
   import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/aurienglish/trial-class';
+const CALENDLY_GROUP_URL =
+  import.meta.env.VITE_CALENDLY_GROUP_URL ||
+  'https://calendly.com/aurienglish/30min-meeting-for-group-placement';
 
 const ContactSection = () => {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('calendly');
-  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
+  const [bookingType, setBookingType] = useState('trial');
+  const [calendlyReady, setCalendlyReady] = useState(() => typeof window !== 'undefined' && !!window.Calendly);
+  const calendlyRef = useRef(null);
   const [formStatus, setFormStatus] = useState({
     submitting: false,
     submitted: false,
@@ -20,22 +25,61 @@ const ContactSection = () => {
     emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   }, []);
 
-  // Lazy-load Calendly widget script the first time the booking tab is shown.
+  // Deep-link support: #book-group opens the group placement flow.
   useEffect(() => {
-    if (activeTab !== 'calendly' || calendlyLoaded) return;
-    const existing = document.querySelector(
-      'script[src="https://assets.calendly.com/assets/external/widget.js"]',
-    );
-    if (existing) {
-      setCalendlyLoaded(true);
+    const applyHash = () => {
+      const hash = window.location.hash;
+      if (hash === '#book-group') {
+        setActiveTab('calendly');
+        setBookingType('group');
+        setTimeout(() => {
+          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      } else if (hash === '#book-trial') {
+        setActiveTab('calendly');
+        setBookingType('trial');
+      }
+    };
+    applyHash();
+    window.addEventListener('hashchange', applyHash);
+    return () => window.removeEventListener('hashchange', applyHash);
+  }, []);
+
+  // Lazy-load the Calendly widget script the first time the booking tab is shown,
+  // then (re)mount the inline widget whenever the booking type changes. Manual
+  // init lets us swap URLs without reloading the page.
+  useEffect(() => {
+    if (activeTab !== 'calendly') return;
+    const SRC = 'https://assets.calendly.com/assets/external/widget.js';
+
+    const mount = () => {
+      if (!window.Calendly || !calendlyRef.current) return;
+      calendlyRef.current.innerHTML = '';
+      window.Calendly.initInlineWidget({
+        url: bookingType === 'group' ? CALENDLY_GROUP_URL : CALENDLY_TRIAL_URL,
+        parentElement: calendlyRef.current,
+      });
+    };
+
+    if (window.Calendly) {
+      mount();
       return;
     }
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    script.onload = () => setCalendlyLoaded(true);
-    document.body.appendChild(script);
-  }, [activeTab, calendlyLoaded]);
+
+    let script = document.querySelector(`script[src="${SRC}"]`);
+    if (!script) {
+      script = document.createElement('script');
+      script.src = SRC;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    const onLoad = () => {
+      setCalendlyReady(true);
+      mount();
+    };
+    script.addEventListener('load', onLoad);
+    return () => script.removeEventListener('load', onLoad);
+  }, [activeTab, bookingType]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -128,18 +172,60 @@ const ContactSection = () => {
           <div className="p-8">
             {activeTab === 'calendly' ? (
               <div>
-                <div className="text-center mb-6">
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">
-                    {t('contact.bookTrialHeading')}
-                  </h3>
-                  <p className="text-sm text-gray-500">{t('contact.bookTrialSub')}</p>
+                <div className="flex justify-center mb-6">
+                  <div
+                    className="inline-flex p-1 rounded-full bg-gray-100 gap-1"
+                    role="tablist"
+                    aria-label="Booking type"
+                  >
+                    <button
+                      role="tab"
+                      aria-selected={bookingType === 'trial'}
+                      onClick={() => setBookingType('trial')}
+                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                        bookingType === 'trial'
+                          ? 'bg-white text-primary-600 shadow-sm'
+                          : 'text-gray-600 hover:text-gray-900'
+                      }`}
+                    >
+                      <UserCircle className="w-4 h-4" />
+                      {t('contact.booking.trial')}
+                    </button>
+                    <button
+                      role="tab"
+                      aria-selected={bookingType === 'group'}
+                      onClick={() => setBookingType('group')}
+                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                        bookingType === 'group'
+                          ? 'bg-white text-primary-600 shadow-sm'
+                          : 'text-gray-600 hover:text-gray-900'
+                      }`}
+                    >
+                      <Users className="w-4 h-4" />
+                      {t('contact.booking.group')}
+                    </button>
+                  </div>
                 </div>
+
+                <div key={bookingType} className="text-center mb-6 animate-fade-in-up">
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                    {bookingType === 'group'
+                      ? t('contact.bookGroupHeading')
+                      : t('contact.bookTrialHeading')}
+                  </h3>
+                  <p className="text-sm text-gray-500">
+                    {bookingType === 'group'
+                      ? t('contact.bookGroupSub')
+                      : t('contact.bookTrialSub')}
+                  </p>
+                </div>
+
                 <div
-                  className="calendly-inline-widget rounded-xl overflow-hidden"
-                  data-url={CALENDLY_URL}
+                  ref={calendlyRef}
+                  className="rounded-xl overflow-hidden"
                   style={{ minWidth: '280px', height: '680px' }}
                 />
-                {!calendlyLoaded && (
+                {!calendlyReady && (
                   <div className="text-center text-xs text-gray-400 mt-3">
                     Loading booking calendar…
                   </div>

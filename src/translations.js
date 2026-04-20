@@ -62,7 +62,7 @@ export const translations = {
         title: "Group Classes",
         description: "Small groups of 2–4 motivated learners",
         price: "15€",
-        waitlist: "Join the waiting list",
+        waitlist: "Find your group",
         features: [
           "Small groups (2–4 students)",
           "Lower price per person",
@@ -123,7 +123,7 @@ export const translations = {
     },
     showcase: {
       title: "Your Student Portal",
-      subtitle: "A space built for my students — your materials, flashcards, and progress tracking all in one place.",
+      subtitle: "I built this so learning keeps going between our classes — your materials, flashcards, and progress, all in one place.",
       dashboard: {
         title: "Your Home Base",
         description: "Upcoming tasks, flashcards to review, and what's next — all in one place between classes."
@@ -266,9 +266,15 @@ export const translations = {
       },
       directContact: 'Contact Information',
       sendMessage: 'Send Message',
-      bookTrial: 'Book free trial',
+      bookTrial: 'Book',
       bookTrialHeading: 'Pick a time for your free 1-hour trial class',
       bookTrialSub: "First class is free — a chance for us to meet and see if we're a good fit.",
+      bookGroupHeading: 'Book a group placement call',
+      bookGroupSub: 'A 30-minute chat to find the right group and schedule for you.',
+      booking: {
+        trial: 'Free trial (1-on-1)',
+        group: 'Placement call (groups)'
+      },
       switchToForm: 'Or send a message instead',
       switchToDirect: 'Or contact me directly'
     },
@@ -370,7 +376,7 @@ export const translations = {
         title: "Clases en Grupo",
         description: "Grupos pequeños de 2–4 estudiantes motivados",
         price: "15€",
-        waitlist: "Únete a la lista de espera",
+        waitlist: "Encuentra tu grupo",
         features: [
           "Grupos pequeños (2–4 estudiantes)",
           "Precio más bajo por persona",
@@ -480,7 +486,7 @@ export const translations = {
     },
     showcase: {
       title: "Tu Portal de Estudiante",
-      subtitle: "Un espacio creado para mis estudiantes — tus materiales, tarjetas de repaso y progreso, todo en un solo lugar.",
+      subtitle: "Lo he creado para que el aprendizaje continúe entre clases — tus materiales, tarjetas de repaso y progreso, todo en un mismo lugar.",
       dashboard: {
         title: "Tu Punto de Partida",
         description: "Tareas próximas, tarjetas para repasar y lo siguiente que toca — todo en un mismo lugar entre clases."
@@ -561,9 +567,15 @@ export const translations = {
       },
       directContact: 'Información de Contacto',
       sendMessage: 'Enviar Mensaje',
-      bookTrial: 'Reservar prueba gratis',
+      bookTrial: 'Reservar',
       bookTrialHeading: 'Elige un horario para tu clase de prueba gratis (1 hora)',
       bookTrialSub: 'La primera clase es gratis — para conocernos y ver si encajamos.',
+      bookGroupHeading: 'Reserva una llamada de nivel',
+      bookGroupSub: 'Una charla de 30 minutos para encontrar el grupo y horario que te encaja.',
+      booking: {
+        trial: 'Prueba gratis (1-a-1)',
+        group: 'Llamada de nivel (grupos)'
+      },
       switchToForm: 'O envía un mensaje',
       switchToDirect: 'O contáctame directamente'
     },

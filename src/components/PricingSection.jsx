@@ -120,7 +120,7 @@ const PricingSection = () => {
             perHour={t('pricing.perHour')}
             features={t('pricing.group.features')}
             ctaLabel={t('pricing.group.waitlist')}
-            ctaHref="#contact"
+            ctaHref="#book-group"
           />
         </div>
 
