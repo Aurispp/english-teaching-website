@@ -1,7 +1,7 @@
 import React from 'react';
 import { Quote } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import GoogleReviewsBadge from './GoogleReviewsBadge';
+import GoogleReviewsSection from './GoogleReviewsSection';
 
 const TestimonialsSection = () => {
     const { t } = useLanguage();
@@ -21,8 +21,7 @@ const TestimonialsSection = () => {
                         {t('stories.subtitle')}
                     </p>
 
-                    {/* Google Reviews Badge */}
-                    <GoogleReviewsBadge rating={5.0} reviewCount={15} />
+                    <GoogleReviewsSection />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

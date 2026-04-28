@@ -4,7 +4,7 @@ Goal: show your real Google Business reviews on the site, auto-updating, without
 exposing your API key in the frontend.
 
 Architecture:
-`browser → /api/google-reviews (Netlify Function) → Google Places API`. The
+`browser → /.netlify/functions/google-reviews → Google Places API`. The
 function caches results so we don't hit the API on every visit.
 
 ---
@@ -17,7 +17,8 @@ function caches results so we don't hit the API on every visit.
 2. In the "Place ID Finder" map, search **English with Auris** (or your business
    address in Castelldefels).
 3. Click your business — a popup shows the **Place ID** (starts with `ChIJ…`).
-4. Copy it. Send it to me, or drop it straight into the env variable below.
+4. Copy it. For this site, the current Place ID is:
+   `ChIJZVelFN8UvY4RnXmuix7pudg`.
 
 ### 2. Enable the Places API and get a key
 
@@ -51,14 +52,26 @@ review fetches. With the caching we'll add (1 fetch / 6 hours), you'll use
 2. Set a **budget alert** at €5/month so you're notified if anything spikes:
    **Billing** → **Budgets & alerts** → **Create budget**.
 
-### 4. Hand me:
+### 4. Add the Netlify environment variables
 
-- Your **Place ID** (starts `ChIJ…`)
-- Your **API key**
+In Netlify, go to **Project configuration → Environment variables → Add a
+variable**.
 
-I'll put the key in Netlify env vars (never committed to git), wire the
-Netlify function, and replace `GoogleReviewsBadge` with a live widget that
-shows the 4–5 most recent 5-star reviews with real author names and photos.
+Add:
+
+- `GOOGLE_MAPS_API_KEY`: your Google API key
+- `GOOGLE_PLACE_ID`: `ChIJZVelFN8UvY4RnXmuix7pudg`
+
+Make sure the variable scope includes **Functions**. If Netlify offers **All
+scopes**, that is fine.
+
+Do not put the API key in `netlify.toml`. Netlify's docs note that variables
+declared there are not available to functions.
+
+### 5. Redeploy the site
+
+After the redeploy, the site will call `/.netlify/functions/google-reviews` and
+render the public Google reviews returned by the API.
 
 ---
 

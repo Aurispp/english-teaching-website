@@ -1,3 +1,6 @@
+[functions]
+  directory = "netlify/functions"
+
 # Handle root-level favicon requests first
 [[redirects]]
   from = "/favicon.ico"
