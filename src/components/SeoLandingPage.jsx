@@ -18,7 +18,7 @@ import { useLanguage } from '../context/LanguageContext';
 import GoogleReviewsSection from './GoogleReviewsSection';
 import classMomentInPersonRoom from '../class-moment-inperson-room.webp';
 import classMomentOnlineLesson from '../class-moment-online-lesson.webp';
-import portalDashboard from '../portal/dashboard.webp';
+import classMomentOnlineTeam from '../class-moment-online-team.webp';
 
 const landingCopy = {
   local: {
@@ -218,15 +218,15 @@ const pageMeta = {
     contactHash: '#contact',
     visual: classMomentInPersonRoom,
     visualAlt: 'Professional English class with Auris in a meeting room',
-    supportVisual: portalDashboard,
-    supportAlt: 'English with Auris student portal dashboard',
+    supportVisual: classMomentOnlineTeam,
+    supportAlt: 'Online English class with professionals',
     finalIcon: Building2,
   },
 };
 
-const LandingBadge = ({ children }) => (
-  <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-primary-100">
-    <Check className="h-4 w-4 text-primary-600" />
+const LandingBadge = ({ children, type }) => (
+  <span className={`inline-flex items-center gap-1.5 rounded-full bg-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-sm ring-1 ${type === 'business' ? 'text-gray-700 ring-gray-200/80' : 'text-gray-700 ring-primary-100/80'}`}>
+    <Check className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${type === 'business' ? 'text-gray-900' : 'text-primary-600'}`} />
     {children}
   </span>
 );
@@ -249,37 +249,37 @@ const SeoLandingPage = ({ type = 'local' }) => {
 
   return (
     <>
-      <section className="bg-amber-50/70 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.82fr] lg:items-center">
+      <section className={`px-4 py-10 sm:px-6 sm:py-14 lg:px-8 ${type === 'business' ? 'bg-slate-50/60' : 'bg-amber-50/70'}`}>
+        <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
           <div>
             {content.eyebrow && (
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary-700">
-                <Sparkles className="h-3.5 w-3.5" />
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary-100/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary-800">
+                <Sparkles className="h-3 w-3" />
                 {content.eyebrow}
               </div>
             )}
-            <h1 className="font-display text-4xl font-light leading-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-[2.5rem] font-light leading-[1.1] text-gray-900 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.12]">
               {content.title}
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-gray-600">
+            <p className="mt-5 sm:mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
               {content.intro}
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-6 sm:mt-8 flex flex-wrap gap-2.5">
               {content.badges.map((badge) => (
-                <LandingBadge key={badge}>{badge}</LandingBadge>
+                <LandingBadge key={badge} type={type}>{badge}</LandingBadge>
               ))}
             </div>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 sm:mt-10 flex flex-col gap-3 sm:flex-row">
               <a
                 href={meta.contactHash}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-500/20 transition hover:-translate-y-0.5 hover:from-primary-600 hover:to-primary-700"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-7 py-3 sm:px-8 sm:py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/20 transition hover:-translate-y-0.5 hover:from-primary-600 hover:to-primary-700"
               >
                 {content.primaryCta}
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href={meta.talkHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-gray-200 transition hover:-translate-y-0.5 hover:text-primary-700 hover:ring-primary-200"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 sm:px-8 sm:py-3.5 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-gray-200 transition hover:-translate-y-0.5 hover:text-primary-700 hover:ring-primary-200"
               >
                 {type === 'business' ? <Users className="h-4 w-4" /> : <MessageCircle className="h-4 w-4" />}
                 {content.secondaryCta}
@@ -287,28 +287,28 @@ const SeoLandingPage = ({ type = 'local' }) => {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="overflow-hidden rounded-[2rem] bg-white shadow-xl ring-1 ring-primary-100">
+          <div className="relative mt-6 lg:mt-0">
+            <div className={`overflow-hidden shadow-2xl ring-1 ${type === 'business' ? 'rounded-2xl ring-gray-900/5' : 'rounded-[2rem] ring-primary-100 bg-white'}`}>
               <img
                 src={meta.visual}
                 alt={meta.visualAlt}
-                className="aspect-[4/3] w-full object-cover"
+                className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full object-cover"
                 loading="eager"
                 decoding="async"
               />
             </div>
-            <div className="absolute -bottom-6 left-6 right-6 overflow-hidden rounded-2xl bg-white/95 p-3 shadow-xl ring-1 ring-primary-100 backdrop-blur">
-              <div className="grid grid-cols-[88px_1fr] items-center gap-4">
+            <div className="absolute -bottom-5 left-4 right-4 sm:-bottom-6 sm:left-8 sm:right-8 overflow-hidden rounded-2xl bg-white/95 p-3 sm:p-4 shadow-xl ring-1 ring-gray-900/5 backdrop-blur">
+              <div className={`grid items-center gap-3 sm:gap-4 ${type === 'business' ? 'grid-cols-[112px_1fr] sm:grid-cols-[154px_1fr]' : 'grid-cols-[72px_1fr] sm:grid-cols-[88px_1fr]'}`}>
                 <img
                   src={meta.supportVisual}
                   alt={meta.supportAlt}
-                  className="h-20 w-full rounded-xl object-cover"
+                  className="h-16 sm:h-20 w-full rounded-xl object-cover"
                   loading="lazy"
                   decoding="async"
                 />
                 <div>
-                  <p className="text-sm font-semibold text-gray-900">{content.proofTitle}</p>
-                  <p className="mt-1 line-clamp-3 text-xs leading-relaxed text-gray-500">{content.proofText}</p>
+                  <p className="text-xs sm:text-sm font-semibold text-gray-900">{content.proofTitle}</p>
+                  <p className="mt-0.5 sm:mt-1 line-clamp-2 sm:line-clamp-3 text-[11px] sm:text-xs leading-relaxed text-gray-500">{content.proofText}</p>
                 </div>
               </div>
             </div>
