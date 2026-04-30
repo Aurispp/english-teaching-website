@@ -50,12 +50,6 @@ const HeroSection = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-14">
           {/* Content */}
           <div className="flex-1 animate-fade-up md:max-w-[640px] lg:max-w-[800px] order-1">
-            <div className="flex items-center mb-6 md:mb-8">
-              <Sparkles className="w-5 h-5 text-primary-500 mr-2" />
-              <span className="text-primary-600 font-medium">
-                {t('hero.journey') || 'Your English Journey Starts Here'}
-              </span>
-            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-light text-gray-900 mb-6 md:mb-8 leading-[1.15]">
               {t('hero.title')}
             </h1>
