@@ -12,6 +12,7 @@ import AboutSection from './components/AboutSection';
 import ToolsSection from './components/ToolsSection';
 import PlatformShowcase from './components/PlatformShowcase';
 import FAQSection from './components/FAQSection';
+import SeoLandingPage from './components/SeoLandingPage';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import CalendlyBadge from './components/CalendlyBadge';
@@ -26,7 +27,18 @@ const TalkTheTalkFallback = () => (
   </div>
 );
 
-const isTalkTheTalkPath = () => window.location.pathname.replace(/\/$/, '') === '/talkthetalk';
+const normalizePath = (pathname = window.location.pathname) => pathname.replace(/\/$/, '') || '/';
+const isTalkTheTalkPath = (pathname = window.location.pathname) => normalizePath(pathname) === '/talkthetalk';
+const getLandingPageType = (pathname = window.location.pathname) => {
+  switch (normalizePath(pathname)) {
+    case '/clases-ingles-castelldefels':
+      return 'local';
+    case '/ingles-empresas-castelldefels':
+      return 'business';
+    default:
+      return null;
+  }
+};
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -66,15 +78,19 @@ const ScrollToTop = () => {
 
 function App() {
   const { t } = useLanguage();
+  const [pathname, setPathname] = useState(() => normalizePath());
   const [isTalkTheTalkOpen, setIsTalkTheTalkOpen] = useState(() => {
     // Check if URL is /talkthetalk on initial load
-    return isTalkTheTalkPath();
+    return isTalkTheTalkPath(pathname);
   });
+  const landingPageType = !isTalkTheTalkOpen ? getLandingPageType(pathname) : null;
 
   // Sync URL with Talk the Talk state
   useEffect(() => {
     const handlePopState = () => {
-      setIsTalkTheTalkOpen(isTalkTheTalkPath());
+      const nextPathname = normalizePath();
+      setPathname(nextPathname);
+      setIsTalkTheTalkOpen(isTalkTheTalkPath(nextPathname));
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -85,13 +101,17 @@ function App() {
   useEffect(() => {
     if (typeof window.gtag !== 'function') return;
     window.gtag('event', 'page_view', {
-      page_path: window.location.pathname,
+      page_path: pathname,
       page_location: window.location.href,
       page_title: isTalkTheTalkOpen
         ? 'Free English Speaking Practice Tool | Talk the Talk'
-        : document.title,
+        : landingPageType === 'local'
+          ? 'Clases de Inglés Online y Presenciales en Castelldefels, Gavà y Viladecans'
+          : landingPageType === 'business'
+            ? 'Inglés para Empresas y Profesionales en Castelldefels'
+            : document.title,
     });
-  }, [isTalkTheTalkOpen]);
+  }, [isTalkTheTalkOpen, landingPageType, pathname]);
 
   // Calendly conversion tracking — fires when a visitor completes a booking
   useEffect(() => {
@@ -114,6 +134,7 @@ function App() {
       location: 'site_navigation',
     });
     setIsTalkTheTalkOpen(true);
+    setPathname('/talkthetalk');
     window.history.pushState({}, '', '/talkthetalk');
   };
 
@@ -122,6 +143,7 @@ function App() {
       event_category: 'engagement',
     });
     setIsTalkTheTalkOpen(false);
+    setPathname('/');
     window.history.pushState({}, '', '/');
   };
 
@@ -132,6 +154,18 @@ function App() {
           <>
             <title>Free English Speaking Practice Tool | Talk the Talk</title>
             <meta name="description" content="Practise speaking English out loud with random conversation prompts, timers, role plays, interview questions, and fluency challenges." />
+          </>
+        ) : landingPageType === 'local' ? (
+          <>
+            <title>Clases de Inglés Online y Presenciales en Castelldefels, Gavà y Viladecans</title>
+            <meta name="description" content="Clases de inglés online con opción presencial en Castelldefels, Gavà, Viladecans y alrededores. Conversación, confianza, preparación de exámenes e inglés para el trabajo con Auris." />
+            <link rel="canonical" href="https://englishwithauris.com/clases-ingles-castelldefels" />
+          </>
+        ) : landingPageType === 'business' ? (
+          <>
+            <title>Inglés para Empresas y Profesionales en Castelldefels | English with Auris</title>
+            <meta name="description" content="Clases de inglés para empresas, equipos y profesionales. Formación online o local en Castelldefels, Gavà y Viladecans, con factura con NIF disponible." />
+            <link rel="canonical" href="https://englishwithauris.com/ingles-empresas-castelldefels" />
           </>
         ) : (
           <>
@@ -150,15 +184,21 @@ function App() {
       )}
 
       <main className="flex-1">
-        <HeroSection />
-        <ClassMomentsSection />
-        <TeachingPillars />
-        <PricingSection />
-        <TestimonialsSection />
-        <AboutSection />
-        <ToolsSection />
-        <PlatformShowcase />
-        <FAQSection />
+        {landingPageType ? (
+          <SeoLandingPage type={landingPageType} />
+        ) : (
+          <>
+            <HeroSection />
+            <ClassMomentsSection />
+            <TeachingPillars />
+            <PricingSection />
+            <TestimonialsSection />
+            <AboutSection />
+            <ToolsSection />
+            <PlatformShowcase />
+            <FAQSection />
+          </>
+        )}
       </main>
 
       <ContactSection />

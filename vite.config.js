@@ -23,6 +23,8 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html'),
         talkthetalk: path.resolve(__dirname, 'talkthetalk/index.html'),
+        clasesInglesCastelldefels: path.resolve(__dirname, 'clases-ingles-castelldefels/index.html'),
+        inglesEmpresasCastelldefels: path.resolve(__dirname, 'ingles-empresas-castelldefels/index.html'),
       },
       output: {
         assetFileNames: (assetInfo) => {
