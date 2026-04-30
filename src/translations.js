@@ -66,7 +66,7 @@ export const translations = {
         title: "Group Classes",
         description: "Small groups of 2–4 motivated learners",
         price: "15€",
-        waitlist: "Find your group",
+        waitlist: "Book a placement call",
         features: [
           "Small groups (2–4 students)",
           "Lower price per person",
@@ -158,7 +158,7 @@ export const translations = {
       items: [
         {
           title: "Struggling with 'Beach' vs 'Bitch'?",
-          description: "Pronunciation can be tricky. We'll master the subtle differences that make you sound like a native.",
+          description: "Pronunciation can be tricky. We will work on the sounds that often trip up Spanish speakers so you can speak more clearly.",
           solution: "Targeted pronunciation practice in every lesson."
         },
         {
@@ -360,7 +360,7 @@ export const translations = {
       },
       billing: {
         title: "Factura con NIF disponible",
-        description: "Para empresas, equipos y profesionales: trabajo de forma profesional como autónomo y puedo emitir factura con NIF."
+        description: "Trabajo como autónomo dado de alta, así que para empresas, equipos y profesionales puedo emitir factura con NIF."
       },
       contact: {
         button: "Reserva prueba gratis",
@@ -388,7 +388,7 @@ export const translations = {
         title: "Clases en Grupo",
         description: "Grupos pequeños de 2–4 estudiantes motivados",
         price: "15€",
-        waitlist: "Encuentra tu grupo",
+        waitlist: "Reserva llamada de nivel",
         features: [
           "Grupos pequeños (2–4 estudiantes)",
           "Precio más bajo por persona",
@@ -414,7 +414,7 @@ export const translations = {
     },
     about: {
       title: 'Sobre mí',
-      intro: "¡Hola! Soy Auris. Me crié en Irlanda y llevo 11 años enseñando inglés en Barcelona. Soy bilingüe, y ayudo a estudiantes y profesionales a ganar soltura, confianza y claridad al usar el inglés en situaciones reales.",
+      intro: "¡Hola! Soy Auris. Me crié en Irlanda, soy bilingüe y llevo 11 años enseñando inglés en Barcelona. Ayudo a estudiantes y profesionales a ganar soltura, confianza y claridad al usar el inglés en situaciones reales.",
       method: "Mis clases son prácticas y adaptadas a cada persona: conversación, pronunciación, vocabulario, gramática útil, preparación Cambridge o inglés para el trabajo. Después de años enseñando a hispanohablantes, conozco bien dificultades como traducir mentalmente, bloquearse al hablar o usar estructuras del español en inglés.",
       approach: "También uso una plataforma propia para estudiantes, donde puedes repasar vocabulario, guardar materiales, practicar con tarjetas personalizadas y seguir tu progreso entre clases."
     },
@@ -529,7 +529,7 @@ export const translations = {
       items: [
         {
           title: "¿Te cuesta diferenciar 'Beach' y 'Bitch'?",
-          description: "La pronunciación puede ser difícil. Dominaremos las diferencias sutiles para que suenes más natural.",
+          description: "La pronunciación puede ser difícil. Trabajaremos las diferencias que suelen costar a los hispanohablantes para que hables con más claridad.",
           solution: "Práctica de pronunciación específica en cada clase."
         },
         {

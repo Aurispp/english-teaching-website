@@ -77,7 +77,7 @@ const ScrollToTop = () => {
 };
 
 function App() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [pathname, setPathname] = useState(() => normalizePath());
   const [isTalkTheTalkOpen, setIsTalkTheTalkOpen] = useState(() => {
     // Check if URL is /talkthetalk on initial load
@@ -169,8 +169,19 @@ function App() {
           </>
         ) : (
           <>
-            <title>{t('nav.brand')} - {t('hero.journey')}</title>
-            <meta name="description" content={t('hero.subtitle')} />
+            <title>
+              {language === 'es'
+                ? 'Clases de Inglés Online y en Castelldefels | English with Auris'
+                : 'English Classes Online & in Castelldefels | English with Auris'}
+            </title>
+            <meta
+              name="description"
+              content={
+                language === 'es'
+                  ? 'Clases de inglés online centradas en conversación real, confianza y mejora constante. Presenciales por Castelldefels cuando encaja.'
+                  : 'Online English classes focused on real conversation, confidence and steady progress. In-person available around Castelldefels when it fits.'
+              }
+            />
           </>
         )}
         <meta name="theme-color" content="#ED8936" />

@@ -57,7 +57,7 @@ const ToolsSection = () => {
           <div className="relative overflow-hidden rounded-2xl p-12 shadow-lg bg-gradient-to-br from-white via-amber-50/40 to-primary-50/40 border border-primary-100/50">
             <Suspense fallback={null}>
               <ParticleBackground
-                colors={['#22D3EE', '#6366F1', '#A855F7']}
+                colors={['#FF914D', '#FDBA74', '#FCD9B6']}
                 density={160}
                 particlesScale={0.75}
                 alpha={0.7}
@@ -73,7 +73,7 @@ const ToolsSection = () => {
               </div>
 
               <div ref={gridRef} className="relative grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center max-w-4xl mx-auto">
-                <LiquidGlassLens targetRef={gridRef} colors={['#22D3EE', '#6366F1', '#A855F7']} />
+                <LiquidGlassLens targetRef={gridRef} colors={['#FF914D', '#FDBA74', '#FCD9B6']} />
                 {TOOLS.map((tool) => (
                   <div 
                     key={tool.name} 

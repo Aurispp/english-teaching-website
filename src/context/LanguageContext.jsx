@@ -4,19 +4,12 @@ import { translations } from '../translations';
 const LanguageContext = createContext();
 
 const getInitialLanguage = () => {
-  if (typeof window === 'undefined') return 'en';
+  if (typeof window === 'undefined') return 'es';
 
   const languageParam = new URLSearchParams(window.location.search).get('lang');
   if (languageParam === 'en' || languageParam === 'es') return languageParam;
 
-  const spanishFirstPaths = [
-    '/clases-ingles-castelldefels',
-    '/ingles-empresas-castelldefels',
-  ];
-  const pathname = window.location.pathname.replace(/\/$/, '');
-  if (spanishFirstPaths.includes(pathname)) return 'es';
-
-  return 'en';
+  return 'es';
 };
 
 export const LanguageProvider = ({ children }) => {
