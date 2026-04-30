@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from './context/LanguageContext';
@@ -14,9 +14,16 @@ import PlatformShowcase from './components/PlatformShowcase';
 import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import TalkTheTalk from './components/TalkTheTalk';
 import CalendlyBadge from './components/CalendlyBadge';
 import ConsentBanner from './components/ConsentBanner';
+
+const TalkTheTalk = lazy(() => import('./components/TalkTheTalk'));
+
+const TalkTheTalkFallback = () => (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-amber-50 via-white to-orange-50">
+    <div className="h-10 w-10 rounded-full border-4 border-primary-100 border-t-primary-500 animate-spin" />
+  </div>
+);
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -124,7 +131,11 @@ function App() {
       </Helmet>
 
       <Navbar onTalkTheTalkClick={openTalkTheTalk} />
-      <TalkTheTalk isOpen={isTalkTheTalkOpen} onClose={closeTalkTheTalk} />
+      {isTalkTheTalkOpen && (
+        <Suspense fallback={<TalkTheTalkFallback />}>
+          <TalkTheTalk isOpen={isTalkTheTalkOpen} onClose={closeTalkTheTalk} />
+        </Suspense>
+      )}
 
       <main className="flex-1">
         <HeroSection />
