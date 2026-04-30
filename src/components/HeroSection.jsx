@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { Sparkles, ArrowRight, Globe, Users, LogIn } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import aurisPhoto from '../auris-hero-2026.jpg';
-import classMomentInPerson from '../class-moment-inperson.webp';
-import classMomentOnlineGroup from '../class-moment-online-group.webp';
-import classMomentOnlineTeam from '../class-moment-online-team.webp';
 
 const Badge = ({ icon: Icon, text }) => (
   <div className="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-primary-100 hover:shadow-md transition-all">
@@ -14,24 +11,6 @@ const Badge = ({ icon: Icon, text }) => (
     <span className="text-gray-700 font-medium">{text}</span>
   </div>
 );
-
-const classMoments = [
-  {
-    src: classMomentOnlineGroup,
-    alt: 'Online English group class with Auris',
-    objectPosition: '50% 50%',
-  },
-  {
-    src: classMomentInPerson,
-    alt: 'In-person English class with students and Auris',
-    objectPosition: '50% 68%',
-  },
-  {
-    src: classMomentOnlineTeam,
-    alt: 'Online English class with adult students',
-    objectPosition: '50% 48%',
-  },
-];
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -98,53 +77,22 @@ const HeroSection = () => {
 
           {/* Image */}
           <div className="flex-shrink-0 w-full md:w-[420px] lg:w-[480px] order-1 md:order-2">
-            <div className="relative pb-14 sm:pb-16">
-              <div className="relative">
-                {/* Blur placeholder - shows while image loads */}
-                <div
-                  className={`absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-200 via-primary-100 to-amber-100 transition-opacity duration-500 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`}
-                  style={{ filter: 'blur(0px)' }}
-                />
-                <img
-                  src={aurisPhoto}
-                  alt={t('images.teacher')}
-                  fetchpriority="high"
-                  decoding="async"
-                  onLoad={() => setImageLoaded(true)}
-                  className={`w-full h-[400px] md:h-[480px] lg:h-[520px] object-cover object-[72%_center] rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                />
-                {/* Decorative elements */}
-                <div className="absolute -z-10 top-4 right-4 w-full h-full bg-primary-50 rounded-3xl"></div>
-              </div>
-
+            <div className="relative">
+              {/* Blur placeholder - shows while image loads */}
               <div
-                className="absolute left-3 right-3 bottom-0 rounded-2xl bg-white/90 p-2.5 shadow-xl shadow-primary-100/70 ring-1 ring-primary-100 backdrop-blur-md sm:left-5 sm:right-5"
-                aria-label="Real class moments"
-              >
-                <div className="mb-2 flex items-center justify-between gap-3 px-1">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-600">
-                    Real class moments
-                  </p>
-                  <p className="hidden text-[11px] font-medium text-gray-500 sm:block">
-                    Online and in person
-                  </p>
-                </div>
-                <div className="grid grid-cols-3 gap-2">
-                  {classMoments.map((moment) => (
-                    <div key={moment.alt} className="overflow-hidden rounded-xl bg-primary-50 ring-1 ring-primary-100/70">
-                      <img
-                        src={moment.src}
-                        alt={moment.alt}
-                        loading="lazy"
-                        decoding="async"
-                        draggable="false"
-                        className="h-16 w-full object-cover sm:h-20"
-                        style={{ objectPosition: moment.objectPosition }}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
+                className={`absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-200 via-primary-100 to-amber-100 transition-opacity duration-500 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`}
+                style={{ filter: 'blur(0px)' }}
+              />
+              <img
+                src={aurisPhoto}
+                alt={t('images.teacher')}
+                fetchpriority="high"
+                decoding="async"
+                onLoad={() => setImageLoaded(true)}
+                className={`w-full h-[400px] md:h-[480px] lg:h-[520px] object-cover object-[72%_center] rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              />
+              {/* Decorative elements */}
+              <div className="absolute -z-10 top-4 right-4 w-full h-full bg-primary-50 rounded-3xl"></div>
             </div>
           </div>
         </div>

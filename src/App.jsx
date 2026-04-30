@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLanguage } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
+import ClassMomentsSection from './components/ClassMomentsSection';
 import TeachingPillars from './components/TeachingPillars';
 import PricingSection from './components/PricingSection';
 import TestimonialsSection from './components/TestimonialsSection';
@@ -127,6 +128,7 @@ function App() {
 
       <main className="flex-1">
         <HeroSection />
+        <ClassMomentsSection />
         <TeachingPillars />
         <PricingSection />
         <TestimonialsSection />
