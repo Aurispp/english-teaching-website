@@ -113,7 +113,7 @@ const landingCopy = {
   },
   business: {
     en: {
-      eyebrow: 'Professional English with invoice available',
+      eyebrow: '',
       title: 'Business English classes for companies and professionals',
       intro:
         'Practical English classes with a bilingual teacher for professionals, teams and freelancers who need to use English more clearly in meetings, presentations, interviews and day-to-day work.',
@@ -157,7 +157,7 @@ const landingCopy = {
         'Tell me what you or your team need, and we can decide whether I can help.',
     },
     es: {
-      eyebrow: 'Inglés profesional con factura disponible',
+      eyebrow: '',
       title: 'Inglés para empresas y profesionales',
       intro:
         'Clases prácticas con un profesor bilingüe para profesionales, equipos y autónomos que necesitan usar el inglés con más claridad en reuniones, presentaciones, entrevistas y situaciones reales de trabajo.',
@@ -252,10 +252,12 @@ const SeoLandingPage = ({ type = 'local' }) => {
       <section className="bg-amber-50/70 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.82fr] lg:items-center">
           <div>
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary-700">
-              <Sparkles className="h-3.5 w-3.5" />
-              {content.eyebrow}
-            </div>
+            {content.eyebrow && (
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary-700">
+                <Sparkles className="h-3.5 w-3.5" />
+                {content.eyebrow}
+              </div>
+            )}
             <h1 className="font-display text-4xl font-light leading-tight text-gray-900 sm:text-5xl lg:text-6xl">
               {content.title}
             </h1>
