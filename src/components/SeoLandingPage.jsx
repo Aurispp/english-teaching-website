@@ -214,7 +214,7 @@ const pageMeta = {
     finalIcon: Calendar,
   },
   business: {
-    talkHref: '#contact',
+    talkHref: 'https://wa.me/34684082221?text=Hola%20Auris%2C%20queria%20consultar%20clases%20de%20ingles%20para%20empresa%20o%20profesionales.',
     contactHash: '#contact',
     visual: classMomentInPersonRoom,
     visualAlt: 'Professional English class with Auris in a meeting room',

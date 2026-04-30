@@ -9,7 +9,6 @@ import TeachingPillars from './components/TeachingPillars';
 import PricingSection from './components/PricingSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import AboutSection from './components/AboutSection';
-import ToolsSection from './components/ToolsSection';
 import PlatformShowcase from './components/PlatformShowcase';
 import FAQSection from './components/FAQSection';
 import SeoLandingPage from './components/SeoLandingPage';
@@ -113,6 +112,10 @@ function App() {
     });
   }, [isTalkTheTalkOpen, landingPageType, pathname]);
 
+  useEffect(() => {
+    document.documentElement.lang = isTalkTheTalkOpen ? 'en' : language;
+  }, [isTalkTheTalkOpen, language]);
+
   // Calendly conversion tracking — fires when a visitor completes a booking
   useEffect(() => {
     const onMessage = (e) => {
@@ -205,7 +208,6 @@ function App() {
             <PricingSection />
             <TestimonialsSection />
             <AboutSection />
-            <ToolsSection />
             <PlatformShowcase />
             <FAQSection />
           </>

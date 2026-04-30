@@ -16,7 +16,7 @@ const TALK_TRIAL_URL = `${CALENDLY_TRIAL_URL}${CALENDLY_TRIAL_URL.includes('?') 
  * Full-page speaking practice experience with elegant design
  */
 const TalkTheTalk = ({ isOpen, onClose }) => {
-    const { language, setLanguage, t } = useLanguage();
+    const { language, setLanguage } = useLanguage();
     const [screen, setScreen] = useState('select');
     const [selectedTheme, setSelectedTheme] = useState('relatable');
     const [selectedDifficulty, setSelectedDifficulty] = useState('easy');
@@ -143,7 +143,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
         setReadyHidden(false);
         setShowDone(false);
         trackTalkEvent('talk_started');
-        goToScreen('practice', 1200);
+        goToScreen('practice', 220);
     }, [duration, generateTopic, goToScreen, trackTalkEvent]);
 
     const readyToSpeak = useCallback(() => {
@@ -377,10 +377,10 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-1.5 px-2 sm:px-3 py-2 text-sm text-gray-600 hover:text-[#FF914D] hover:bg-orange-50 rounded-lg transition-colors"
-                                aria-label={t('studentLogin')}
+                                aria-label="Student Login"
                             >
                                 <LogIn className="w-4 h-4" />
-                                <span className="hidden md:inline">{t('studentLogin')}</span>
+                                <span className="hidden md:inline">Student Login</span>
                             </a>
 
                             <div className="hidden sm:block w-px h-6 bg-gray-200" />

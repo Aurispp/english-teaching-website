@@ -33,7 +33,7 @@ const HeroSection = () => {
         <img
           src={aurisPhoto}
           alt={t('images.teacher')}
-          fetchPriority="high"
+          fetchpriority="high"
           decoding="async"
           onLoad={() => setImageLoaded(true)}
           className={`relative z-10 w-full aspect-[1185/1008] md:aspect-auto md:h-[460px] lg:h-[520px] object-cover object-center md:object-[72%_center] transform transition-transform duration-700 group-hover:scale-[1.02] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
@@ -59,13 +59,14 @@ const HeroSection = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-light text-gray-900 mb-6 md:mb-8 leading-[1.15]">
               {t('hero.title')}
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600 mb-4 md:mb-6 font-light max-w-[90%] md:max-w-full">
-              {t('hero.subtitle')}
-            </p>
 
             <div className="mb-6 md:hidden">
               {heroImage}
             </div>
+
+            <p className="text-lg sm:text-xl text-gray-600 mb-4 md:mb-6 font-light max-w-[90%] md:max-w-full">
+              {t('hero.subtitle')}
+            </p>
 
             {/* Custom Badges */}
             <div className="flex flex-wrap gap-3 mb-8 md:mb-12">
