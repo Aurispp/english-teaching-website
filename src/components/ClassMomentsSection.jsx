@@ -31,6 +31,7 @@ const moments = [
     className: 'col-span-12 md:col-span-5',
     imageClassName: 'aspect-[16/9] md:aspect-[4/3]',
     contain: true,
+    containImageClassName: 'scale-[1.12] group-hover:scale-[1.15]',
   },
   {
     src: classMomentInPerson,
@@ -78,7 +79,7 @@ const MomentCard = ({ moment, layoutClassName, animate = false }) => (
           loading="lazy"
           decoding="async"
           draggable="false"
-          className={`relative z-10 w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.02] ${moment.imageClassName}`}
+          className={`relative z-10 w-full h-full object-contain transition-transform duration-700 ${moment.containImageClassName || 'group-hover:scale-[1.02]'} ${moment.imageClassName}`}
         />
       </>
     ) : (
