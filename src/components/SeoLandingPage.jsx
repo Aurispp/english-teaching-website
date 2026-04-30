@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import GoogleReviewsSection from './GoogleReviewsSection';
+import classMomentInPerson from '../class-moment-inperson.webp';
 import classMomentInPersonRoom from '../class-moment-inperson-room.webp';
 import classMomentOnlineLesson from '../class-moment-online-lesson.webp';
 import classMomentOnlineTeam from '../class-moment-online-team.webp';
@@ -32,7 +33,7 @@ const landingCopy = {
       badges: ['Online classes', 'Castelldefels area', 'Private and small groups'],
       proofTitle: 'Real classes, real progress',
       proofText:
-        'Classes are practical and personal: we speak a lot, correct what needs attention, and use simple materials to keep progress going between lessons.',
+        'Practical, personal classes with useful review between lessons.',
       sections: [
         {
           icon: Globe,
@@ -76,7 +77,7 @@ const landingCopy = {
       badges: ['Clases online', 'Zona Castelldefels', 'Individuales y grupos pequeños'],
       proofTitle: 'Clases reales, progreso real',
       proofText:
-        'Las clases son prácticas y personales: hablamos mucho, corregimos lo que haga falta y usamos materiales pensados para que puedas repasar entre clases.',
+        'Clases prácticas y personales, con repaso útil entre clases.',
       sections: [
         {
           icon: Globe,
@@ -211,6 +212,21 @@ const pageMeta = {
     visualAlt: 'In-person English class in Castelldefels',
     supportVisual: classMomentOnlineLesson,
     supportAlt: 'Online English class with Auris',
+    supportGallery: [
+      {
+        src: classMomentOnlineLesson,
+        alt: 'Online English class with Auris and a student',
+      },
+      {
+        src: classMomentInPerson,
+        alt: 'Small in-person English class with students and Auris',
+        objectPosition: '50% 58%',
+      },
+      {
+        src: classMomentOnlineTeam,
+        alt: 'Online English class with adult students',
+      },
+    ],
     finalIcon: Calendar,
   },
   business: {
@@ -241,34 +257,59 @@ const FeatureCard = ({ icon: Icon, title, text }) => (
   </article>
 );
 
-const HeroVisual = ({ meta, type, content, className = '' }) => (
-  <div className={`relative ${className}`}>
-    <div className={`overflow-hidden shadow-2xl ring-1 ${type === 'business' ? 'rounded-2xl ring-gray-900/5' : 'rounded-[2rem] ring-primary-100 bg-white'}`}>
-      <img
-        src={meta.visual}
-        alt={meta.visualAlt}
-        className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full object-cover"
-        loading="eager"
-        decoding="async"
-      />
-    </div>
-    <div className="absolute -bottom-5 left-4 right-4 sm:-bottom-6 sm:left-8 sm:right-8 overflow-hidden rounded-2xl bg-white/95 p-3 sm:p-4 shadow-xl ring-1 ring-gray-900/5 backdrop-blur">
-      <div className={`grid items-center gap-3 sm:gap-4 ${type === 'business' ? 'grid-cols-[112px_1fr] sm:grid-cols-[154px_1fr]' : 'grid-cols-[72px_1fr] sm:grid-cols-[88px_1fr]'}`}>
+const HeroVisual = ({ meta, type, content, className = '' }) => {
+  const hasSupportGallery = Array.isArray(meta.supportGallery) && meta.supportGallery.length > 1;
+  const proofGridClass = hasSupportGallery
+    ? 'grid-cols-[126px_1fr] sm:grid-cols-[180px_1fr]'
+    : type === 'business'
+      ? 'grid-cols-[112px_1fr] sm:grid-cols-[154px_1fr]'
+      : 'grid-cols-[72px_1fr] sm:grid-cols-[88px_1fr]';
+
+  return (
+    <div className={`relative ${className}`}>
+      <div className={`overflow-hidden shadow-2xl ring-1 ${type === 'business' ? 'rounded-2xl ring-gray-900/5' : 'rounded-[2rem] ring-primary-100 bg-white'}`}>
         <img
-          src={meta.supportVisual}
-          alt={meta.supportAlt}
-          className="h-16 sm:h-20 w-full rounded-xl object-cover"
-          loading="lazy"
+          src={meta.visual}
+          alt={meta.visualAlt}
+          className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full object-cover"
+          loading="eager"
           decoding="async"
         />
-        <div>
-          <p className="text-xs sm:text-sm font-semibold text-gray-900">{content.proofTitle}</p>
-          <p className="mt-0.5 sm:mt-1 line-clamp-2 sm:line-clamp-3 text-[11px] sm:text-xs leading-relaxed text-gray-500">{content.proofText}</p>
+      </div>
+      <div className="absolute -bottom-5 left-4 right-4 sm:-bottom-6 sm:left-8 sm:right-8 overflow-hidden rounded-2xl bg-white/95 p-3 sm:p-4 shadow-xl ring-1 ring-gray-900/5 backdrop-blur">
+        <div className={`grid items-center gap-3 sm:gap-4 ${proofGridClass}`}>
+          {hasSupportGallery ? (
+            <div className="grid h-16 sm:h-20 grid-cols-3 gap-1 overflow-hidden rounded-xl bg-amber-50/70">
+              {meta.supportGallery.map((image) => (
+                <img
+                  key={image.src}
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full min-w-0 object-cover"
+                  style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
+                  loading="lazy"
+                  decoding="async"
+                />
+              ))}
+            </div>
+          ) : (
+            <img
+              src={meta.supportVisual}
+              alt={meta.supportAlt}
+              className="h-16 sm:h-20 w-full rounded-xl object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          )}
+          <div>
+            <p className="text-xs sm:text-sm font-semibold text-gray-900">{content.proofTitle}</p>
+            <p className="mt-0.5 sm:mt-1 line-clamp-2 sm:line-clamp-3 text-[11px] sm:text-xs leading-relaxed text-gray-500">{content.proofText}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const SeoLandingPage = ({ type = 'local' }) => {
   const { language } = useLanguage();
