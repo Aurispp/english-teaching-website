@@ -10,10 +10,12 @@ const copy = {
   en: {
     title: 'Online and in-person classes',
     description: 'Focused online lessons and in-person classes in Castelldefels and nearby areas.',
+    localLink: 'See classes in Castelldefels, Gavà and Viladecans',
   },
   es: {
     title: 'Clases online y presenciales',
     description: 'Clases online y presenciales en Castelldefels y zonas cercanas.',
+    localLink: 'Ver clases en Castelldefels, Gavà y Viladecans',
   },
 };
 
@@ -144,7 +146,7 @@ const ClassMomentsSection = () => {
   }, [shouldRotateMobileMoments]);
 
   return (
-    <section aria-labelledby="class-moments-heading" className="bg-amber-50/70 pb-10 pt-4 sm:pb-16 sm:pt-8">
+    <section aria-labelledby="class-moments-heading" className="bg-amber-50/70 pb-16 sm:pb-24 pt-0 sm:pt-4">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-5 sm:gap-8 lg:grid-cols-[0.68fr_1.32fr] lg:items-center">
           <div className="max-w-md">
@@ -157,6 +159,12 @@ const ClassMomentsSection = () => {
             <p className="mt-3 text-base leading-relaxed text-gray-600 sm:mt-4 sm:text-lg">
               {sectionCopy.description}
             </p>
+            <a
+              href="/clases-ingles-castelldefels"
+              className="mt-3 inline-flex text-sm font-medium text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-800 hover:decoration-primary-500"
+            >
+              {sectionCopy.localLink}
+            </a>
           </div>
 
           <div ref={mobileGalleryRef} className="grid grid-cols-12 gap-3 md:hidden">

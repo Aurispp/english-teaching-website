@@ -74,10 +74,13 @@ const PriceCard = ({
 );
 
 const PricingSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const includedIcons = [Layers, BookOpen, Mic, BarChart3];
   const includedItems = t('pricing.included.items');
+  const businessLinkLabel = language === 'es'
+    ? 'Ver inglés para empresas y profesionales'
+    : 'See English for companies and professionals';
 
   return (
     <section
@@ -156,6 +159,12 @@ const PricingSection = () => {
               <p className="mt-1 text-sm leading-relaxed text-gray-600">
                 {t('pricing.billing.description')}
               </p>
+              <a
+                href="/ingles-empresas-castelldefels"
+                className="mt-2 inline-flex text-sm font-medium text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-800 hover:decoration-primary-500"
+              >
+                {businessLinkLabel}
+              </a>
             </div>
           </div>
         </div>
