@@ -89,7 +89,7 @@ const HeroSection = () => {
                 fetchpriority="high"
                 decoding="async"
                 onLoad={() => setImageLoaded(true)}
-                className={`w-full h-[400px] md:h-[480px] lg:h-[520px] object-cover object-center rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`w-full h-[400px] md:h-[480px] lg:h-[520px] object-cover object-[72%_center] rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               />
               {/* Decorative elements */}
               <div className="absolute -z-10 top-4 right-4 w-full h-full bg-primary-50 rounded-3xl"></div>
