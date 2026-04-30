@@ -26,6 +26,8 @@ const TalkTheTalkFallback = () => (
   </div>
 );
 
+const isTalkTheTalkPath = () => window.location.pathname.replace(/\/$/, '') === '/talkthetalk';
+
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -66,13 +68,13 @@ function App() {
   const { t } = useLanguage();
   const [isTalkTheTalkOpen, setIsTalkTheTalkOpen] = useState(() => {
     // Check if URL is /talkthetalk on initial load
-    return window.location.pathname === '/talkthetalk';
+    return isTalkTheTalkPath();
   });
 
   // Sync URL with Talk the Talk state
   useEffect(() => {
     const handlePopState = () => {
-      setIsTalkTheTalkOpen(window.location.pathname === '/talkthetalk');
+      setIsTalkTheTalkOpen(isTalkTheTalkPath());
     };
 
     window.addEventListener('popstate', handlePopState);

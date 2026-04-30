@@ -20,6 +20,13 @@
   status = 200
   force = true
 
+# Serve the dedicated Talk the Talk HTML without relying on the SPA fallback.
+[[redirects]]
+  from = "/talkthetalk"
+  to = "/talkthetalk/index.html"
+  status = 200
+  force = true
+
 # Headers for favicon files
 [[headers]]
   for = "/*.ico"
