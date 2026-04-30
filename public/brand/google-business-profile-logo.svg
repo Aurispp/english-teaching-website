@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-labelledby="title">
+  <title id="title">English with Auris logo</title>
+  <rect width="720" height="720" fill="#ffffff"/>
+  <rect x="40" y="282" width="640" height="156" rx="34" fill="#ff914d"/>
+  <g transform="translate(108 335)" fill="none" stroke="#000000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58.4 24.1a4 4 0 0 0-.08-7.35L24.03 1.13a8 8 0 0 0-6.64 0L-16.88 16.73a4 4 0 0 0 0 7.32l34.27 15.63a8 8 0 0 0 6.64 0z"/>
+    <path d="M60.72 20.41v24"/>
+    <path d="M-2.88 30.41v14a24 12 0 0 0 48 0v-14"/>
+  </g>
+  <text x="228" y="382" fill="#000000" font-family="Arial, Helvetica, sans-serif" font-size="56" dominant-baseline="middle">
+    <tspan font-weight="700">English</tspan>
+    <tspan dx="11" font-size="47" font-weight="400">with</tspan>
+    <tspan dx="11" font-weight="700">Auris</tspan>
+  </text>
+</svg>
