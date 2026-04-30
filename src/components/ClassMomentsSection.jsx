@@ -22,14 +22,14 @@ const moments = [
     src: classMomentInPersonRoom,
     alt: 'In-person English class in Castelldefels with Auris',
     className: 'col-span-12 md:col-span-7',
-    imageClassName: 'aspect-[16/11] md:aspect-[5/4]',
+    imageClassName: 'aspect-[16/11] md:aspect-[16/10]',
     objectPosition: '50% 56%',
   },
   {
     src: classMomentOnlineLesson,
     alt: 'Online English class with Auris and a student',
     className: 'col-span-12 md:col-span-5',
-    imageClassName: 'aspect-[16/11] md:aspect-[5/4]',
+    imageClassName: 'aspect-[16/11] md:aspect-[16/10]',
     objectPosition: '50% 50%',
   },
   {
@@ -60,7 +60,7 @@ const ClassMomentsSection = () => {
   const sectionCopy = copy[language] || copy.en;
 
   return (
-    <section aria-labelledby="class-moments-heading" className="bg-amber-50/70 py-12 sm:py-16">
+    <section aria-labelledby="class-moments-heading" className="bg-amber-50/70 pb-12 pt-6 sm:pb-16 sm:pt-8">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr] lg:items-center">
           <div className="max-w-md">

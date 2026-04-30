@@ -300,11 +300,11 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                         <div className="flex items-center gap-2 sm:gap-8">
                             {/* Logo */}
                             <a href="/" className="flex-shrink-0">
-                                <div className="bg-[#FF914D] px-3 sm:px-4 py-2 rounded-lg flex items-center gap-2">
-                                    <GraduationCap className="w-5 h-5 text-black" />
-                                    <span className="text-black flex items-center text-base sm:text-lg font-['Cabinet_Grotesk']">
+                                <div className="bg-[#FF914D] px-2.5 sm:px-4 py-2 rounded-lg flex items-center gap-1.5 sm:gap-2">
+                                    <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
+                                    <span className="text-black flex items-center text-sm sm:text-lg font-['Cabinet_Grotesk']">
                                         <span className="font-bold">English</span>
-                                        <span className="mx-1 text-sm sm:text-base font-normal">with</span>
+                                        <span className="mx-0.5 sm:mx-1 text-xs sm:text-base font-normal">with</span>
                                         <span className="font-bold">Auris</span>
                                     </span>
                                 </div>
@@ -314,6 +314,8 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                             <div className="flex items-center gap-1 sm:gap-2 text-sm">
                                 <button
                                     onClick={() => setLanguage('en')}
+                                    aria-label="Switch to English"
+                                    aria-pressed={language === 'en'}
                                     className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'en'
                                         ? 'bg-[#FF914D] text-white'
                                         : 'text-gray-600 hover:bg-gray-100'
@@ -323,6 +325,8 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                 </button>
                                 <button
                                     onClick={() => setLanguage('es')}
+                                    aria-label="Cambiar a español"
+                                    aria-pressed={language === 'es'}
                                     className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'es'
                                         ? 'bg-[#FF914D] text-white'
                                         : 'text-gray-600 hover:bg-gray-100'
@@ -367,7 +371,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                     href={link.href}
                                     target={link.href.startsWith('http') ? '_blank' : '_self'}
                                     rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                                    className="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                                    className="hidden sm:inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
                                     aria-label={link.label}
                                 >
                                     {link.icon}
@@ -716,13 +720,13 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                     </div>
                                 </div>
                             </div>
-                        <button
-                            onClick={startPractice}
+                            <button
+                                onClick={startPractice}
                                 className="w-full md:w-[330px] lg:w-[360px] flex-shrink-0 flex items-center justify-center gap-3 py-3 bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 text-white font-semibold text-base sm:text-lg rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl hover:scale-[1.015] transition-all duration-200"
-                        >
-                            <Play className="w-5 h-5" />
-                            Start Speaking
-                        </button>
+                            >
+                                <Play className="w-5 h-5" />
+                                Start Speaking
+                            </button>
                         </div>
                     </div>
                 </div>

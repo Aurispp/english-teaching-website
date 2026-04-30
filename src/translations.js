@@ -11,7 +11,7 @@ export const translations = {
     hero: {
       journey: "Your English Journey Starts Here",
       title: "Hello! I'm Auris, and I help Spanish speakers speak English with confidence",
-      subtitle: "Online English classes focused on real conversation and constant improvement — in-person available in Castelldefels and nearby areas",
+      subtitle: "Online English classes focused on real conversation and steady progress. In-person available in Castelldefels and nearby areas.",
       cta: "Book your free trial class",
       alreadyStudent: "Already a student?",
       loginLink: "Log in to your portal",
@@ -331,15 +331,15 @@ export const translations = {
       contact: 'Contacto'
     },
     hero: {
-      journey: "Tu viaje con el inglés empieza aquí",
-      title: "¡Hola! Soy Auris, y ayudo a la gente hablar inglés con confianza",
-      subtitle: "Clases de inglés online para hispanohablantes, centradas en la conversación real y la mejora constante — presenciales en Castelldefels y zonas cercanas",
+      journey: "Tu camino con el inglés empieza aquí",
+      title: "¡Hola! Soy Auris y ayudo a hispanohablantes a hablar inglés con confianza",
+      subtitle: "Clases de inglés online centradas en conversación real y mejora constante. Presenciales en Castelldefels y zonas cercanas.",
       cta: "Reserva tu clase de prueba gratis",
       alreadyStudent: "¿Ya eres estudiante?",
       loginLink: "Accede a tu portal",
       badges: {
         online: "Clases Online",
-        groups: "Clases Individuales y Grupos",
+        groups: "Individuales y grupos pequeños",
         trial: "Seguimiento de progreso"
       }
     },

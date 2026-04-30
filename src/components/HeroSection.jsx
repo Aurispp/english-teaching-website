@@ -17,11 +17,11 @@ const HeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-amber-50/70">
+    <section className="relative flex min-h-[calc(100svh-7rem)] items-center bg-amber-50/70 py-10 sm:py-12">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-16">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-14">
           {/* Content */}
-          <div className="flex-1 animate-fade-up md:max-w-[640px] lg:max-w-[800px] order-2 md:order-1">
+          <div className="flex-1 animate-fade-up md:max-w-[640px] lg:max-w-[800px] order-1">
             <div className="flex items-center mb-6 md:mb-8">
               <Sparkles className="w-5 h-5 text-primary-500 mr-2" />
               <span className="text-primary-600 font-medium">
@@ -76,7 +76,7 @@ const HeroSection = () => {
           </div>
 
           {/* Image */}
-          <div className="flex-shrink-0 w-full md:w-[420px] lg:w-[480px] order-1 md:order-2">
+          <div className="flex-shrink-0 w-full md:w-[420px] lg:w-[480px] order-2">
             <div className="relative">
               {/* Blur placeholder - shows while image loads */}
               <div
@@ -86,10 +86,10 @@ const HeroSection = () => {
               <img
                 src={aurisPhoto}
                 alt={t('images.teacher')}
-                fetchpriority="high"
+                fetchPriority="high"
                 decoding="async"
                 onLoad={() => setImageLoaded(true)}
-                className={`w-full h-[400px] md:h-[480px] lg:h-[520px] object-cover object-[72%_center] rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`w-full h-[340px] sm:h-[420px] md:h-[460px] lg:h-[500px] object-cover object-[72%_center] rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               />
               {/* Decorative elements */}
               <div className="absolute -z-10 top-4 right-4 w-full h-full bg-primary-50 rounded-3xl"></div>

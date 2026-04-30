@@ -45,11 +45,11 @@ const Navbar = ({ onTalkTheTalkClick }) => {
           <div className="flex items-center gap-2 sm:gap-8">
             {/* Logo */}
             <a href="/" className="flex-shrink-0">
-              <div className="bg-[#FF914D] px-3 sm:px-4 py-2 rounded-lg flex items-center gap-2">
-                <GraduationCap className="w-5 h-5 text-black" />
-                <span className="text-black flex items-center text-base sm:text-lg font-['Cabinet_Grotesk']">
+              <div className="bg-[#FF914D] px-2.5 sm:px-4 py-2 rounded-lg flex items-center gap-1.5 sm:gap-2">
+                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
+                <span className="text-black flex items-center text-sm sm:text-lg font-['Cabinet_Grotesk']">
                   <span className="font-bold">English</span>
-                  <span className="mx-1 text-sm sm:text-base font-normal">with</span>
+                  <span className="mx-0.5 sm:mx-1 text-xs sm:text-base font-normal">with</span>
                   <span className="font-bold">Auris</span>
                 </span>
               </div>
@@ -59,6 +59,8 @@ const Navbar = ({ onTalkTheTalkClick }) => {
             <div className="flex items-center gap-1 sm:gap-2 text-sm">
               <button
                 onClick={() => setLanguage('en')}
+                aria-label="Switch to English"
+                aria-pressed={language === 'en'}
                 className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'en'
                   ? 'bg-[#FF914D] text-white'
                   : 'text-gray-600 hover:bg-gray-100'
@@ -68,6 +70,8 @@ const Navbar = ({ onTalkTheTalkClick }) => {
               </button>
               <button
                 onClick={() => setLanguage('es')}
+                aria-label="Cambiar a español"
+                aria-pressed={language === 'es'}
                 className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'es'
                   ? 'bg-[#FF914D] text-white'
                   : 'text-gray-600 hover:bg-gray-100'
@@ -128,7 +132,7 @@ const Navbar = ({ onTalkTheTalkClick }) => {
               href="https://english-with-auris-portal.netlify.app/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-2 py-2 text-sm text-gray-600 hover:text-[#FF914D] hover:bg-orange-50 rounded-lg transition-colors"
+              className="hidden sm:inline-flex items-center gap-1.5 px-2 py-2 text-sm text-gray-600 hover:text-[#FF914D] hover:bg-orange-50 rounded-lg transition-colors"
               aria-label={t('studentLogin')}
             >
               <LogIn className="w-4 h-4" />
@@ -164,6 +168,19 @@ const Navbar = ({ onTalkTheTalkClick }) => {
                       <div className="text-xs text-gray-500">Free speaking practice</div>
                     </div>
                   </button>
+
+                  <a
+                    href="https://english-with-auris-portal.netlify.app/login"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors sm:hidden"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
+                      <LogIn className="w-4 h-4" />
+                    </div>
+                    <span className="font-medium">{t('studentLogin')}</span>
+                  </a>
 
                   <div className="my-2 border-t border-gray-100" />
 
