@@ -120,9 +120,9 @@ const landingCopy = {
       primaryCta: 'Book a first call',
       secondaryCta: 'Ask about company classes',
       badges: ['Invoice with NIF', 'Online or local', 'Teams and professionals'],
-      proofTitle: 'Professional, practical and trackable',
+      proofTitle: 'Online and in-person classes',
       proofText:
-        'I work professionally as a registered autónomo in Spain, so I can issue invoices with NIF. The classes stay focused on real communication.',
+        'Online, or in person near Castelldefels.',
       sections: [
         {
           icon: Briefcase,
@@ -164,9 +164,9 @@ const landingCopy = {
       primaryCta: 'Reserva una primera llamada',
       secondaryCta: 'Consulta clases para empresa',
       badges: ['Factura con NIF', 'Online o presencial', 'Equipos y profesionales'],
-      proofTitle: 'Profesional, práctico y con seguimiento',
+      proofTitle: 'Clases online y presenciales',
       proofText:
-        'Trabajo de forma profesional como autónomo, así que puedo emitir factura con NIF. Las clases se centran en comunicación real.',
+        'Online o presencial cerca de Castelldefels.',
       sections: [
         {
           icon: Briefcase,
