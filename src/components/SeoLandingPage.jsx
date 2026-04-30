@@ -241,6 +241,35 @@ const FeatureCard = ({ icon: Icon, title, text }) => (
   </article>
 );
 
+const HeroVisual = ({ meta, type, content, className = '' }) => (
+  <div className={`relative ${className}`}>
+    <div className={`overflow-hidden shadow-2xl ring-1 ${type === 'business' ? 'rounded-2xl ring-gray-900/5' : 'rounded-[2rem] ring-primary-100 bg-white'}`}>
+      <img
+        src={meta.visual}
+        alt={meta.visualAlt}
+        className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full object-cover"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+    <div className="absolute -bottom-5 left-4 right-4 sm:-bottom-6 sm:left-8 sm:right-8 overflow-hidden rounded-2xl bg-white/95 p-3 sm:p-4 shadow-xl ring-1 ring-gray-900/5 backdrop-blur">
+      <div className={`grid items-center gap-3 sm:gap-4 ${type === 'business' ? 'grid-cols-[112px_1fr] sm:grid-cols-[154px_1fr]' : 'grid-cols-[72px_1fr] sm:grid-cols-[88px_1fr]'}`}>
+        <img
+          src={meta.supportVisual}
+          alt={meta.supportAlt}
+          className="h-16 sm:h-20 w-full rounded-xl object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div>
+          <p className="text-xs sm:text-sm font-semibold text-gray-900">{content.proofTitle}</p>
+          <p className="mt-0.5 sm:mt-1 line-clamp-2 sm:line-clamp-3 text-[11px] sm:text-xs leading-relaxed text-gray-500">{content.proofText}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const SeoLandingPage = ({ type = 'local' }) => {
   const { language } = useLanguage();
   const content = landingCopy[type]?.[language] || landingCopy[type]?.es || landingCopy.local.es;
@@ -261,6 +290,7 @@ const SeoLandingPage = ({ type = 'local' }) => {
             <h1 className="font-display text-[2.5rem] font-light leading-[1.1] text-gray-900 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.12]">
               {content.title}
             </h1>
+            <HeroVisual meta={meta} type={type} content={content} className="mt-7 mb-12 lg:hidden" />
             <p className="mt-5 sm:mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
               {content.intro}
             </p>
@@ -287,32 +317,7 @@ const SeoLandingPage = ({ type = 'local' }) => {
             </div>
           </div>
 
-          <div className="relative mt-6 lg:mt-0">
-            <div className={`overflow-hidden shadow-2xl ring-1 ${type === 'business' ? 'rounded-2xl ring-gray-900/5' : 'rounded-[2rem] ring-primary-100 bg-white'}`}>
-              <img
-                src={meta.visual}
-                alt={meta.visualAlt}
-                className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full object-cover"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-            <div className="absolute -bottom-5 left-4 right-4 sm:-bottom-6 sm:left-8 sm:right-8 overflow-hidden rounded-2xl bg-white/95 p-3 sm:p-4 shadow-xl ring-1 ring-gray-900/5 backdrop-blur">
-              <div className={`grid items-center gap-3 sm:gap-4 ${type === 'business' ? 'grid-cols-[112px_1fr] sm:grid-cols-[154px_1fr]' : 'grid-cols-[72px_1fr] sm:grid-cols-[88px_1fr]'}`}>
-                <img
-                  src={meta.supportVisual}
-                  alt={meta.supportAlt}
-                  className="h-16 sm:h-20 w-full rounded-xl object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div>
-                  <p className="text-xs sm:text-sm font-semibold text-gray-900">{content.proofTitle}</p>
-                  <p className="mt-0.5 sm:mt-1 line-clamp-2 sm:line-clamp-3 text-[11px] sm:text-xs leading-relaxed text-gray-500">{content.proofText}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <HeroVisual meta={meta} type={type} content={content} className="hidden lg:block" />
         </div>
       </section>
 
