@@ -37,8 +37,8 @@ const TeachingPillars = () => {
     },
     {
       icon: <TrendingUp className="w-12 h-12 text-primary-500" />,
-      title: t('pillars.makeFastProgress.title'),
-      description: t('pillars.makeFastProgress.description'),
+      title: t('pillars.steadyProgress.title'),
+      description: t('pillars.steadyProgress.description'),
     },
     {
       title: t('pillars.modernApproach.title'),

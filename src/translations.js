@@ -81,7 +81,7 @@ export const translations = {
         title: "Learn by Speaking",
         description: "Speaking is at the centre of the class. We use real conversation to work on fluency, pronunciation, vocabulary and grammar in a natural way."
       },
-      makeFastProgress: {
+      steadyProgress: {
         title: "Build Steady Progress",
         description: "If you feel stuck, we slow things down, find what is blocking you, and work on it with consistency. The aim is steady progress that feels realistic and useful."
       },
@@ -403,7 +403,7 @@ export const translations = {
         title: "Aprende Hablando",
         description: "La conversación está en el centro de la clase. Usamos situaciones reales para trabajar fluidez, pronunciación, vocabulario y gramática de forma natural."
       },
-      makeFastProgress: {
+      steadyProgress: {
         title: "Avanza con Constancia",
         description: "Si te sientes estancado, buscamos qué te está frenando y lo trabajamos poco a poco. El objetivo es avanzar de una forma realista, útil y constante."
       },

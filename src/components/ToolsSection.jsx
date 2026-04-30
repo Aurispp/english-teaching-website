@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useRef } from 'react';
+import React, { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import { Layers } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import LiquidGlassLens from './LiquidGlassLens';
@@ -17,7 +17,32 @@ const TOOLS = [
 
 const ToolsSection = () => {
   const { t } = useLanguage();
+  const sectionRef = useRef(null);
   const gridRef = useRef(null);
+  const [shouldRenderParticles, setShouldRenderParticles] = useState(false);
+
+  useEffect(() => {
+    if (shouldRenderParticles || typeof window === 'undefined') return undefined;
+
+    const section = sectionRef.current;
+    if (!section || !('IntersectionObserver' in window)) {
+      setShouldRenderParticles(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldRenderParticles(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '400px 0px' },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [shouldRenderParticles]);
 
   const getIconClass = (toolName) => {
     let classes = 'w-28 h-28 object-contain transition-transform';
@@ -29,7 +54,7 @@ const ToolsSection = () => {
   };
 
   return (
-    <section className="py-16 px-4 relative overflow-hidden bg-gradient-to-b from-primary-50/30 to-white">
+    <section ref={sectionRef} className="py-16 px-4 relative overflow-hidden bg-gradient-to-b from-primary-50/30 to-white">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-12">{t('toolsSection.title')}</h2>
@@ -55,16 +80,18 @@ const ToolsSection = () => {
 
           {/* Tech tools section */}
           <div className="relative overflow-hidden rounded-2xl p-12 shadow-lg bg-gradient-to-br from-white via-amber-50/40 to-primary-50/40 border border-primary-100/50">
-            <Suspense fallback={null}>
-              <ParticleBackground
-                colors={['#FF914D', '#FDBA74', '#FCD9B6']}
-                density={160}
-                particlesScale={0.75}
-                alpha={0.7}
-                breathe
-                ringDisplacement={0.16}
-              />
-            </Suspense>
+            {shouldRenderParticles && (
+              <Suspense fallback={null}>
+                <ParticleBackground
+                  colors={['#FF914D', '#FDBA74', '#FCD9B6']}
+                  density={160}
+                  particlesScale={0.75}
+                  alpha={0.7}
+                  breathe
+                  ringDisplacement={0.16}
+                />
+              </Suspense>
+            )}
 
             <div className="relative z-10">
               <div className="max-w-3xl mx-auto mb-12 rounded-2xl bg-white/55 backdrop-blur-md border border-white/60 shadow-sm px-6 sm:px-10 py-6 sm:py-8">
