@@ -16,6 +16,26 @@ const HeroSection = () => {
   const { t } = useLanguage();
   const [imageLoaded, setImageLoaded] = useState(false);
 
+  const heroImage = (
+    <div className="relative">
+      {/* Blur placeholder - shows while image loads */}
+      <div
+        className={`absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-200 via-primary-100 to-amber-100 transition-opacity duration-500 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`}
+        style={{ filter: 'blur(0px)' }}
+      />
+      <img
+        src={aurisPhoto}
+        alt={t('images.teacher')}
+        fetchPriority="high"
+        decoding="async"
+        onLoad={() => setImageLoaded(true)}
+        className={`w-full h-[320px] sm:h-[420px] md:h-[460px] lg:h-[500px] object-cover object-[72%_center] rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+      />
+      {/* Decorative elements */}
+      <div className="absolute -z-10 top-4 right-4 w-full h-full bg-primary-50 rounded-3xl"></div>
+    </div>
+  );
+
   return (
     <section className="relative flex min-h-[calc(100svh-7rem)] items-center bg-amber-50/70 py-10 sm:py-12">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -34,6 +54,10 @@ const HeroSection = () => {
             <p className="text-lg sm:text-xl text-gray-600 mb-4 md:mb-6 font-light max-w-[90%] md:max-w-full">
               {t('hero.subtitle')}
             </p>
+
+            <div className="mb-6 md:hidden">
+              {heroImage}
+            </div>
 
             {/* Custom Badges */}
             <div className="flex flex-wrap gap-3 mb-8 md:mb-12">
@@ -76,24 +100,8 @@ const HeroSection = () => {
           </div>
 
           {/* Image */}
-          <div className="flex-shrink-0 w-full md:w-[420px] lg:w-[480px] order-2">
-            <div className="relative">
-              {/* Blur placeholder - shows while image loads */}
-              <div
-                className={`absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-200 via-primary-100 to-amber-100 transition-opacity duration-500 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`}
-                style={{ filter: 'blur(0px)' }}
-              />
-              <img
-                src={aurisPhoto}
-                alt={t('images.teacher')}
-                fetchPriority="high"
-                decoding="async"
-                onLoad={() => setImageLoaded(true)}
-                className={`w-full h-[340px] sm:h-[420px] md:h-[460px] lg:h-[500px] object-cover object-[72%_center] rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-              />
-              {/* Decorative elements */}
-              <div className="absolute -z-10 top-4 right-4 w-full h-full bg-primary-50 rounded-3xl"></div>
-            </div>
+          <div className="hidden flex-shrink-0 w-full md:block md:w-[420px] lg:w-[480px] order-2">
+            {heroImage}
           </div>
         </div>
       </div>

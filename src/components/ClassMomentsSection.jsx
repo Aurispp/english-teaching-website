@@ -28,15 +28,15 @@ const moments = [
   {
     src: classMomentOnlineLesson,
     alt: 'Online English class with Auris and a student',
-    className: 'col-span-6 md:col-span-5',
-    imageClassName: 'aspect-square md:aspect-[16/10]',
-    objectPosition: '42% 50%',
+    className: 'col-span-12 md:col-span-5',
+    imageClassName: 'aspect-[1200/585] md:aspect-[16/10]',
+    objectPosition: '50% 50%',
   },
   {
     src: classMomentInPerson,
     alt: 'Small in-person English class with students and Auris',
-    className: 'col-span-6 md:col-span-3',
-    imageClassName: 'aspect-square md:aspect-[4/3]',
+    className: 'hidden md:block md:col-span-3',
+    imageClassName: 'aspect-[4/3]',
     objectPosition: '50% 62%',
   },
   {
