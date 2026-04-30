@@ -23,7 +23,7 @@ import portalDashboard from '../portal/dashboard.webp';
 const landingCopy = {
   local: {
     en: {
-      eyebrow: 'Online first, local when it fits',
+      eyebrow: '',
       title: 'Online and in-person English classes in Castelldefels, Gavà and Viladecans',
       intro:
         'I grew up in Ireland, I am bilingual, and I have been teaching English in Barcelona for 11 years. I help students and professionals feel more comfortable using English in real situations, mainly online and sometimes in person around Castelldefels, Gavà and Viladecans.',
@@ -67,7 +67,7 @@ const landingCopy = {
         'It gives us time to meet, check your level, talk about your goals and decide whether I can help.',
     },
     es: {
-      eyebrow: 'Online primero, presencial cuando encaja',
+      eyebrow: '',
       title: 'Clases de inglés online y presenciales en Castelldefels, Gavà y Viladecans',
       intro:
         'Me crié en Irlanda, soy bilingüe y llevo 11 años enseñando inglés en Barcelona. Ayudo a estudiantes y profesionales a ganar soltura y claridad al usar el inglés en situaciones reales, principalmente online y a veces presencial en Castelldefels, Gavà y Viladecans.',
