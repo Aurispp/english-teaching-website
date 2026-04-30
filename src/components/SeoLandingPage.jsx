@@ -210,23 +210,25 @@ const pageMeta = {
     contactHash: '#contact',
     visual: classMomentInPersonRoom,
     visualAlt: 'In-person English class in Castelldefels',
-    supportVisual: classMomentOnlineLesson,
-    supportAlt: 'Online English class with Auris',
-    supportGallery: [
+    visualGallery: [
+      {
+        src: classMomentInPerson,
+        alt: 'Small in-person English class with students and Auris',
+        objectPosition: '50% 58%',
+        featured: true,
+      },
       {
         src: classMomentOnlineLesson,
         alt: 'Online English class with Auris and a student',
       },
       {
-        src: classMomentInPerson,
-        alt: 'Small in-person English class with students and Auris',
-        objectPosition: '50% 58%',
-      },
-      {
-        src: classMomentOnlineTeam,
-        alt: 'Online English class with adult students',
+        src: classMomentInPersonRoom,
+        alt: 'In-person English class in Castelldefels',
+        objectPosition: '50% 46%',
       },
     ],
+    supportVisual: classMomentOnlineTeam,
+    supportAlt: 'Online English class with adult students',
     finalIcon: Calendar,
   },
   business: {
@@ -259,6 +261,7 @@ const FeatureCard = ({ icon: Icon, title, text }) => (
 
 const HeroVisual = ({ meta, type, content, className = '' }) => {
   const hasSupportGallery = Array.isArray(meta.supportGallery) && meta.supportGallery.length > 1;
+  const hasVisualGallery = Array.isArray(meta.visualGallery) && meta.visualGallery.length > 1;
   const proofGridClass = hasSupportGallery
     ? 'grid-cols-[126px_1fr] sm:grid-cols-[180px_1fr]'
     : type === 'business'
@@ -268,13 +271,39 @@ const HeroVisual = ({ meta, type, content, className = '' }) => {
   return (
     <div className={`relative ${className}`}>
       <div className={`overflow-hidden shadow-2xl ring-1 ${type === 'business' ? 'rounded-2xl ring-gray-900/5' : 'rounded-[2rem] ring-primary-100 bg-white'}`}>
-        <img
-          src={meta.visual}
-          alt={meta.visualAlt}
-          className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full object-cover"
-          loading="eager"
-          decoding="async"
-        />
+        {hasVisualGallery ? (
+          <div className="grid aspect-[4/3] w-full grid-cols-[0.95fr_1.05fr] gap-2 bg-white p-2 sm:aspect-[16/10] lg:aspect-[4/3]">
+            <img
+              src={meta.visualGallery[0].src}
+              alt={meta.visualGallery[0].alt}
+              className="h-full w-full rounded-[1.4rem] object-cover"
+              style={meta.visualGallery[0].objectPosition ? { objectPosition: meta.visualGallery[0].objectPosition } : undefined}
+              loading="eager"
+              decoding="async"
+            />
+            <div className="grid h-full grid-rows-2 gap-2">
+              {meta.visualGallery.slice(1, 3).map((image) => (
+                <img
+                  key={image.src}
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full min-h-0 rounded-[1.25rem] object-cover"
+                  style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
+                  loading="eager"
+                  decoding="async"
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <img
+            src={meta.visual}
+            alt={meta.visualAlt}
+            className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        )}
       </div>
       <div className="absolute -bottom-5 left-4 right-4 sm:-bottom-6 sm:left-8 sm:right-8 overflow-hidden rounded-2xl bg-white/95 p-3 sm:p-4 shadow-xl ring-1 ring-gray-900/5 backdrop-blur">
         <div className={`grid items-center gap-3 sm:gap-4 ${proofGridClass}`}>
