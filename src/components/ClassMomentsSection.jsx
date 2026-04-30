@@ -56,7 +56,6 @@ const moments = [
 ];
 
 const ROTATION_INTERVAL_MS = 4800;
-const mobileRotatingMoments = moments.slice(1);
 
 const MomentCard = ({ moment, layoutClassName, animate = false }) => (
   <div
@@ -102,7 +101,12 @@ const ClassMomentsSection = () => {
   const mobileGalleryRef = useRef(null);
   const [mobileMomentIndex, setMobileMomentIndex] = useState(0);
   const [shouldRotateMobileMoments, setShouldRotateMobileMoments] = useState(false);
-  const activeMobileMoment = mobileRotatingMoments[mobileMomentIndex];
+  const visibleMobileMoments = moments.length > 1
+    ? [
+        moments[mobileMomentIndex % moments.length],
+        moments[(mobileMomentIndex + 1) % moments.length],
+      ]
+    : moments;
 
   useEffect(() => {
     if (typeof window === 'undefined') return undefined;
@@ -129,10 +133,10 @@ const ClassMomentsSection = () => {
   }, []);
 
   useEffect(() => {
-    if (!shouldRotateMobileMoments || mobileRotatingMoments.length < 2) return undefined;
+    if (!shouldRotateMobileMoments || moments.length < 2) return undefined;
 
     const rotation = window.setInterval(() => {
-      setMobileMomentIndex((index) => (index + 1) % mobileRotatingMoments.length);
+      setMobileMomentIndex((index) => (index + 1) % moments.length);
     }, ROTATION_INTERVAL_MS);
 
     return () => window.clearInterval(rotation);
@@ -155,15 +159,14 @@ const ClassMomentsSection = () => {
           </div>
 
           <div ref={mobileGalleryRef} className="grid grid-cols-12 gap-3 md:hidden">
-            <MomentCard moment={moments[0]} layoutClassName="col-span-12" />
-            {activeMobileMoment && (
+            {visibleMobileMoments.map((moment, index) => (
               <MomentCard
-                key={activeMobileMoment.alt}
-                moment={activeMobileMoment}
+                key={`${moment.alt}-${index}`}
+                moment={moment}
                 layoutClassName="col-span-12"
                 animate
               />
-            )}
+            ))}
           </div>
 
           <div className="hidden grid-cols-12 gap-3 sm:gap-4 lg:gap-5 md:grid">
