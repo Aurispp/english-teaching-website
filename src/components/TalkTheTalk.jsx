@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { ArrowLeft, Play, RotateCcw, Shuffle, Clock, Check, Phone, Mail, GraduationCap, LogIn, X } from 'lucide-react';
+import { Calendar, Play, RotateCcw, Shuffle, Check, Phone, Mail, GraduationCap, LogIn, X } from 'lucide-react';
 import { themes, difficulties, getRandomTopic } from '../data/speakingTopics';
 import { getThemeIcon, getDifficultyIcon } from './ThemeIcons';
 import { useLanguage } from '../context/LanguageContext';
 import Hourglass from './Hourglass';
 import whatsappIcon from '../whatsapp.webp';
+
+const CALENDLY_TRIAL_URL =
+    import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/aurienglish/trial-class';
+const TALK_TRIAL_URL = `${CALENDLY_TRIAL_URL}${CALENDLY_TRIAL_URL.includes('?') ? '&' : '?'}utm_source=talkthetalk&utm_medium=tool&utm_campaign=completion_cta`;
 
 /**
  * Talk the Talk - Free Speech Practice Tool
@@ -35,6 +39,18 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
     const transitionDurationDefault = 200; // ms crossfade
     const readyToDoneDelay = 2400; // ms delay before showing "I'm Done"
     const completionHoldMs = 5000; // ms hold on finished view before showing results
+    const howItWorks = ['Pick a topic', 'Speak until time runs out', 'Repeat or get feedback'];
+
+    const trackTalkEvent = useCallback((eventName, params = {}) => {
+        if (typeof window.gtag !== 'function') return;
+        window.gtag('event', eventName, {
+            event_category: 'talk_the_talk',
+            theme: selectedTheme,
+            difficulty: selectedDifficulty,
+            duration_seconds: duration,
+            ...params,
+        });
+    }, [duration, selectedDifficulty, selectedTheme]);
 
     const getProgress = useCallback(() => {
         if (duration === 0) return 0;
@@ -117,8 +133,9 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
         setHasStarted(false);
         setReadyHidden(false);
         setShowDone(false);
+        trackTalkEvent('talk_started');
         goToScreen('practice', 1200);
-    }, [duration, generateTopic, goToScreen]);
+    }, [duration, generateTopic, goToScreen, trackTalkEvent]);
 
     const readyToSpeak = useCallback(() => {
         if (doneDelayRef.current) {
@@ -152,6 +169,10 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
 
     const finishEarly = useCallback(() => {
         setIsTimerRunning(false);
+        trackTalkEvent('talk_completed', {
+            completion_type: 'manual',
+            practiced_seconds: duration - timeRemaining,
+        });
         if (completionTimeoutRef.current) {
             clearTimeout(completionTimeoutRef.current);
             completionTimeoutRef.current = null;
@@ -161,7 +182,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
             doneDelayRef.current = null;
         }
         goToScreen('complete');
-    }, [goToScreen]);
+    }, [duration, goToScreen, timeRemaining, trackTalkEvent]);
 
     useEffect(() => {
         if (isTimerRunning && timeRemaining > 0) {
@@ -170,6 +191,10 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                     if (prev <= 1) {
                         setIsTimerRunning(false);
                         if (!completionTimeoutRef.current) {
+                            trackTalkEvent('talk_completed', {
+                                completion_type: 'timer',
+                                practiced_seconds: duration,
+                            });
                             completionTimeoutRef.current = setTimeout(() => {
                                 goToScreen('complete');
                                 completionTimeoutRef.current = null;
@@ -187,7 +212,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                 clearInterval(timerRef.current);
             }
         };
-    }, [isTimerRunning]);
+    }, [completionHoldMs, duration, goToScreen, isTimerRunning, timeRemaining, trackTalkEvent]);
 
     useEffect(() => {
         if (!isOpen) {
@@ -356,7 +381,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                         Talk the Talk
                     </span>
                 </h1>
-                <p className="text-xs sm:text-sm text-gray-500 mt-1 hidden sm:block">Speaking Practice</p>
+                <p className="text-xs sm:text-sm text-gray-500 mt-1 hidden sm:block">Free English speaking practice</p>
             </div>
 
             {/* Main Content */}
@@ -370,10 +395,23 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                         {/* Instructions */}
                         <div className="text-center max-w-xl mx-auto">
                             <p className="text-lg text-gray-600 leading-relaxed">
-                                Choose a theme, set your timer, and start speaking out loud.
-                                <br className="hidden sm:block" />
-                                <span className="text-gray-500">Practice makes progress!</span>
+                                <span>Practise speaking English out loud with random prompts and a timer.</span>
+                                <span className="hidden text-gray-500 sm:inline">&nbsp;Choose a theme, speak until the timer ends, and build fluency one round at a time.</span>
+                                <span className="block text-gray-500 sm:hidden">Choose a theme, speak until the timer ends, and build fluency one round at a time.</span>
                             </p>
+                            <div className="mt-5 flex flex-wrap justify-center gap-2">
+                                {howItWorks.map((step, index) => (
+                                    <div
+                                        key={step}
+                                        className="inline-flex items-center gap-2 rounded-full border border-orange-100 bg-white/70 px-3 py-1.5 text-sm text-gray-600 shadow-sm"
+                                    >
+                                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-orange-100 text-xs font-semibold text-orange-700">
+                                            {index + 1}
+                                        </span>
+                                        {step}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
 
                         {/* Theme Selection */}
@@ -604,7 +642,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                 Great job!
                             </h2>
                             <p className="text-lg text-gray-600">
-                                You practiced speaking for <span className="font-semibold text-gray-900">{formatTime(duration - timeRemaining)}</span>
+                                You practised speaking for <span className="font-semibold text-gray-900">{formatTime(duration - timeRemaining)}</span>
                             </p>
                             <p className="text-gray-500 mt-1">
                                 Regular practice builds confidence!
@@ -617,26 +655,46 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                             <p className="text-gray-700 leading-relaxed whitespace-pre-line">{topic}</p>
                         </div>
 
+                        <div className="max-w-lg mx-auto p-5 bg-orange-50/80 rounded-xl border border-orange-100 text-left">
+                            <p className="text-sm font-semibold text-orange-700 mb-2">Want personal feedback?</p>
+                            <p className="text-gray-600 leading-relaxed">
+                                If it was hard to keep going, that is exactly what we can work on in class:
+                                fluency, vocabulary, pronunciation, and confidence.
+                            </p>
+                        </div>
+
                         {/* Action Buttons */}
-                        <div className="flex gap-3 max-w-md mx-auto">
-                            <button
-                                onClick={() => {
-                                    goToScreen('select');
-                                    setTimeRemaining(duration);
-                                }}
-                                className="flex-1 flex items-center justify-center gap-2 py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all"
+                        <div className="grid gap-3 max-w-lg mx-auto sm:grid-cols-2">
+                            <a
+                                href={TALK_TRIAL_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => trackTalkEvent('talk_trial_click', {
+                                    practiced_seconds: duration - timeRemaining,
+                                })}
+                                className="flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-all"
                             >
-                                <RotateCcw className="w-4 h-4" />
-                                Change Settings
-                            </button>
+                                <Calendar className="w-4 h-4" />
+                                Book a free trial
+                            </a>
                             <button
                                 onClick={startPractice}
-                                className="flex-1 flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-all"
+                                className="flex items-center justify-center gap-2 py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all"
                             >
                                 <Play className="w-4 h-4" />
                                 Practice Again
                             </button>
                         </div>
+                        <button
+                            onClick={() => {
+                                goToScreen('select');
+                                setTimeRemaining(duration);
+                            }}
+                            className="inline-flex items-center justify-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors"
+                        >
+                            <RotateCcw className="w-4 h-4" />
+                            Change settings
+                        </button>
                     </div>
                 )}
             </main>

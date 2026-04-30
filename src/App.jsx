@@ -110,8 +110,8 @@ function App() {
       <Helmet>
         {isTalkTheTalkOpen ? (
           <>
-            <title>Talk the Talk - Free English Speaking Practice | English with Auris</title>
-            <meta name="description" content="Free English speaking practice tool. Choose a topic, set a timer, and practice speaking out loud. Improve your English fluency with daily speaking exercises." />
+            <title>Free English Speaking Practice Tool | Talk the Talk</title>
+            <meta name="description" content="Practise speaking English out loud with random conversation prompts, timers, role plays, interview questions, and fluency challenges." />
           </>
         ) : (
           <>

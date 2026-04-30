@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Sparkles, UserCircle, Users, BookOpen, BarChart3, Mic, Layers } from 'lucide-react';
+import { Check, Sparkles, UserCircle, Users, BookOpen, BarChart3, Mic, Layers, FileText } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const FeatureItem = ({ text }) => (
@@ -141,6 +141,22 @@ const PricingSection = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        <div className="mt-6 max-w-4xl mx-auto rounded-2xl bg-white/80 ring-1 ring-primary-100 shadow-sm p-5 sm:p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-center sm:text-left">
+            <span className="mx-auto sm:mx-0 inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary-600">
+              <FileText className="h-5 w-5" />
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-gray-900">
+                {t('pricing.billing.title')}
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                {t('pricing.billing.description')}
+              </p>
+            </div>
           </div>
         </div>
       </div>

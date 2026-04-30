@@ -36,6 +36,10 @@ export const translations = {
           "Progress tracking & reviews"
         ]
       },
+      billing: {
+        title: "Professional billing available",
+        description: "For companies, teams, and freelancers: I am registered as an autónomo in Spain and can issue invoices with NIF for English training."
+      },
       contact: {
         button: "Book free trial",
         dialog: {
@@ -304,6 +308,10 @@ export const translations = {
         {
           question: 'Do you prepare students for English exams like First Certificate?',
           answer: 'Yes, I offer structured preparation for Cambridge exams (like First Certificate, CAE), IELTS, and TOEFL, along with general conversation practice and business English.'
+        },
+        {
+          question: 'Can you invoice companies or freelancers?',
+          answer: 'Yes. I am registered as an autónomo in Spain and can issue invoices with NIF for companies, teams, and freelancers who need English training.'
         }
       ]
     },
@@ -349,6 +357,10 @@ export const translations = {
           "Materiales adaptados preparados para ti",
           "Seguimiento de progreso y repasos"
         ]
+      },
+      billing: {
+        title: "Factura con NIF disponible",
+        description: "Para empresas, equipos y profesionales autónomos: estoy dado de alta como autónomo y puedo emitir factura con NIF por formación en inglés."
       },
       contact: {
         button: "Reserva prueba gratis",
@@ -605,6 +617,10 @@ export const translations = {
         {
           question: '¿Preparas a estudiantes para exámenes de inglés como First Certificate?',
           answer: 'Sí, ofrezco preparación estructurada para exámenes de Cambridge (como First Certificate, CAE), IELTS y TOEFL, junto con práctica general de conversación e inglés de negocios.'
+        },
+        {
+          question: '¿Puedes emitir factura para empresas o autónomos?',
+          answer: 'Sí. Estoy dado de alta como autónomo y puedo emitir factura con NIF para empresas, equipos y profesionales que necesiten formación en inglés.'
         }
       ]
     },
