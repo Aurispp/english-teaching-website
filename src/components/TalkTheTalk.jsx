@@ -18,7 +18,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
     const { language, setLanguage, t } = useLanguage();
     const [screen, setScreen] = useState('select');
     const [selectedTheme, setSelectedTheme] = useState('relatable');
-    const [selectedDifficulty, setSelectedDifficulty] = useState('medium');
+    const [selectedDifficulty, setSelectedDifficulty] = useState('easy');
     const [duration, setDuration] = useState(90);
     const [topic, setTopic] = useState('');
     const [timeRemaining, setTimeRemaining] = useState(90);
@@ -39,7 +39,12 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
     const transitionDurationDefault = 200; // ms crossfade
     const readyToDoneDelay = 2400; // ms delay before showing "I'm Done"
     const completionHoldMs = 5000; // ms hold on finished view before showing results
-    const howItWorks = ['Pick a topic', 'Speak until time runs out', 'Repeat or get feedback'];
+    const howItWorks = [
+        'Pick a topic',
+        'Record yourself (optional)',
+        'Speak until time runs out',
+        'Listen to your recording',
+    ];
 
     const trackTalkEvent = useCallback((eventName, params = {}) => {
         if (typeof window.gtag !== 'function') return;
@@ -262,7 +267,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
     }, []);
 
     const currentTheme = themes.find(t => t.id === selectedTheme) || themes[0];
-    const currentDifficulty = difficulties.find(d => d.id === selectedDifficulty) || difficulties[1];
+    const currentDifficulty = difficulties.find(d => d.id === selectedDifficulty) || difficulties[0];
     const ThemeIcon = getThemeIcon(selectedTheme);
 
     if (!isOpen) return null;
@@ -375,37 +380,37 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
             </nav>
 
             {/* Talk the Talk Title */}
-            <div className="text-center py-3 sm:py-6 border-b border-gray-100 bg-white/50">
+            <div className="text-center py-2.5 sm:py-4 border-b border-gray-100 bg-white/50">
                 <h1 className="text-xl sm:text-3xl font-display font-bold">
                     <span className="bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 bg-clip-text text-transparent">
                         Talk the Talk
                     </span>
                 </h1>
-                <p className="text-xs sm:text-sm text-gray-500 mt-1 hidden sm:block">Free English speaking practice</p>
+                <p className="text-xs sm:text-sm text-gray-500 mt-0.5 hidden sm:block">Free English speaking practice</p>
             </div>
 
             {/* Main Content */}
             <main
-                className={`max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-8 ${screen === 'select' ? 'pb-32 sm:pb-40' : 'pb-4 sm:pb-6'} transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+                className={`max-w-5xl mx-auto px-4 sm:px-6 ${screen === 'select' ? 'py-3 sm:py-4 pb-36 sm:pb-28' : 'py-4 sm:py-8 pb-4 sm:pb-6'} transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
                 style={{ transitionDuration: `${transitionMs}ms` }}
             >
                 {/* Selection Screen */}
                 {screen === 'select' && (
-                    <div className="space-y-8 animate-fade-in">
+                    <div className="space-y-4 animate-fade-in">
                         {/* Instructions */}
-                        <div className="text-center max-w-xl mx-auto">
-                            <p className="text-lg text-gray-600 leading-relaxed">
+                        <div className="text-center max-w-3xl mx-auto">
+                            <p className="text-base sm:text-[17px] text-gray-600 leading-relaxed">
                                 <span>Practise speaking English out loud with random prompts and a timer.</span>
                                 <span className="hidden text-gray-500 sm:inline">&nbsp;Choose a theme, speak until the timer ends, and build fluency one round at a time.</span>
                                 <span className="block text-gray-500 sm:hidden">Choose a theme, speak until the timer ends, and build fluency one round at a time.</span>
                             </p>
-                            <div className="mt-5 flex flex-wrap justify-center gap-2">
+                            <div className="mt-3 flex flex-wrap justify-center gap-1.5">
                                 {howItWorks.map((step, index) => (
                                     <div
                                         key={step}
-                                        className="inline-flex items-center gap-2 rounded-full border border-orange-100 bg-white/70 px-3 py-1.5 text-sm text-gray-600 shadow-sm"
+                                        className="inline-flex items-center gap-1.5 rounded-full border border-orange-100 bg-white/80 px-2 py-0.5 text-xs text-gray-600 shadow-sm"
                                     >
-                                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-orange-100 text-xs font-semibold text-orange-700">
+                                        <span className="flex h-[18px] w-[18px] items-center justify-center rounded-full bg-orange-100 text-[11px] font-semibold text-orange-700">
                                             {index + 1}
                                         </span>
                                         {step}
@@ -414,139 +419,94 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                             </div>
                         </div>
 
-                        {/* Theme Selection */}
-                        <div>
-                            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-                                Choose a Theme
-                            </h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                                {themes.map((theme) => {
-                                    const Icon = getThemeIcon(theme.id);
-                                    const isSelected = selectedTheme === theme.id;
-                                    return (
-                                        <button
-                                            key={theme.id}
-                                            onClick={() => setSelectedTheme(theme.id)}
-                                            className={`relative flex items-center gap-4 p-4 rounded-xl border-2 transition-all duration-200 text-left group ${isSelected
-                                                ? 'border-orange-400 bg-orange-50 shadow-lg shadow-orange-100'
-                                                : 'border-gray-100 bg-white hover:border-gray-200 hover:shadow-md'
-                                                }`}
-                                        >
-                                            <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${isSelected
-                                                ? 'bg-gradient-to-br from-orange-400 to-rose-400 text-white'
-                                                : 'bg-gray-100 text-gray-500 group-hover:bg-gray-200'
-                                                }`}>
-                                                <Icon className="w-5 h-5" />
-                                            </div>
-                                            <span className={`font-medium transition-colors ${isSelected ? 'text-gray-900' : 'text-gray-700'
-                                                }`}>
-                                                {theme.name}
-                                            </span>
-                                            {isSelected && (
-                                                <div className="absolute top-2 right-2">
-                                                    <Check className="w-4 h-4 text-orange-500" />
+                        <div className="rounded-2xl border border-orange-100/70 bg-white/70 p-3.5 shadow-sm backdrop-blur-sm sm:p-4 space-y-4">
+                            {/* Theme Selection */}
+                            <div>
+                                <h2 className="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2.5">
+                                    Choose a Theme
+                                </h2>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+                                    {themes.map((theme) => {
+                                        const Icon = getThemeIcon(theme.id);
+                                        const isSelected = selectedTheme === theme.id;
+                                        return (
+                                            <button
+                                                key={theme.id}
+                                                onClick={() => setSelectedTheme(theme.id)}
+                                                className={`relative flex min-h-[52px] items-center gap-2.5 rounded-xl border px-3 py-2 text-left transition-all duration-200 group ${isSelected
+                                                    ? 'border-orange-300 bg-orange-50 shadow-sm ring-1 ring-orange-200'
+                                                    : 'border-gray-100 bg-white hover:border-orange-100 hover:bg-orange-50/30 hover:shadow-sm'
+                                                    }`}
+                                            >
+                                                <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${isSelected
+                                                    ? 'bg-gradient-to-br from-orange-400 to-rose-400 text-white'
+                                                    : 'bg-gray-100 text-gray-500 group-hover:bg-white group-hover:text-orange-500'
+                                                    }`}>
+                                                    <Icon className="h-[18px] w-[18px]" />
                                                 </div>
-                                            )}
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                        </div>
-
-                        {/* Difficulty Selection - Slider Style */}
-                        <div className="flex flex-col items-center">
-                            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-                                Choose Difficulty
-                            </h2>
-                            <div className="relative inline-grid grid-cols-3 bg-gray-100 rounded-xl p-1.5">
-                                {/* Sliding background indicator */}
-                                <div
-                                    className={`absolute top-1.5 bottom-1.5 rounded-lg transition-all duration-300 ease-out shadow-md ${selectedDifficulty === 'easy'
-                                        ? 'bg-gradient-to-r from-green-400 to-emerald-500'
-                                        : selectedDifficulty === 'medium'
-                                            ? 'bg-gradient-to-r from-orange-400 to-rose-500'
-                                            : 'bg-gradient-to-r from-purple-500 to-indigo-500'
-                                        }`}
-                                    style={{
-                                        width: 'calc(33.333% - 4px)',
-                                        left: selectedDifficulty === 'easy'
-                                            ? '6px'
-                                            : selectedDifficulty === 'medium'
-                                                ? 'calc(33.333% + 2px)'
-                                                : 'calc(66.666% - 2px)'
-                                    }}
-                                />
-                                {/* Difficulty options */}
-                                {difficulties.map((diff) => {
-                                    const DiffIcon = getDifficultyIcon(diff.id);
-                                    const isSelected = selectedDifficulty === diff.id;
-                                    return (
-                                        <button
-                                            key={diff.id}
-                                            onClick={() => setSelectedDifficulty(diff.id)}
-                                            className={`relative z-10 flex flex-col items-center justify-center gap-1 py-3 rounded-lg transition-colors duration-300 w-[110px] sm:w-[130px] ${isSelected
-                                                ? 'text-white'
-                                                : 'text-gray-500 hover:text-gray-700'
-                                                }`}
-                                        >
-                                            <DiffIcon className="w-5 h-5" />
-                                            <span className="font-semibold text-sm whitespace-nowrap">{diff.name}</span>
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                            {/* Description below slider */}
-                            <p className="text-sm text-gray-500 mt-3 text-center transition-all duration-200">
-                                {currentDifficulty.description}
-                            </p>
-                        </div>
-
-                        {/* Duration Selection */}
-                        <div className="flex flex-col items-center">
-                            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-                                Set Duration
-                            </h2>
-                            <div className="flex flex-wrap items-center justify-center gap-3">
-                                {[60, 90, 120, 180, 300].map((secs) => (
-                                    <button
-                                        key={secs}
-                                        onClick={() => {
-                                            setDuration(secs);
-                                            setTimeRemaining(secs);
-                                            const [mm, ss] = formatTime(secs).split(':');
-                                            setCustomMinutes(mm);
-                                            setCustomSeconds(ss);
-                                        }}
-                                        className={`px-5 py-3 text-sm font-medium rounded-xl transition-all duration-200 ${duration === secs
-                                            ? 'bg-gradient-to-r from-orange-500 to-rose-500 text-white shadow-lg shadow-orange-200'
-                                            : 'bg-white border border-gray-200 text-gray-700 hover:border-gray-300 hover:shadow-sm'
-                                            }`}
-                                    >
-                                        {formatTime(secs)}
-                                    </button>
-                                ))}
-                                <div className="flex items-center gap-2 px-3 py-2 bg-white border border-gray-400 rounded-xl shadow-sm">
-                                    <input
-                                        type="text"
-                                        inputMode="numeric"
-                                        value={customMinutes}
-                                        onChange={(e) => handleMinutesChange(e.target.value)}
-                                        onBlur={handleCustomBlur}
-                                        placeholder="MM"
-                                        className="w-12 px-2 py-2 text-sm text-center border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent"
-                                    />
-                                    <span className="text-gray-500 font-semibold">:</span>
-                                    <input
-                                        type="text"
-                                        inputMode="numeric"
-                                        value={customSeconds}
-                                        onChange={(e) => handleSecondsChange(e.target.value)}
-                                        onBlur={handleCustomBlur}
-                                        placeholder="SS"
-                                        className="w-12 px-2 py-2 text-sm text-center border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent"
-                                    />
+                                                <span className={`text-sm font-semibold leading-tight transition-colors ${isSelected ? 'text-gray-900' : 'text-gray-700'
+                                                    }`}>
+                                                    {theme.name}
+                                                </span>
+                                                {isSelected && (
+                                                    <div className="absolute top-2 right-2">
+                                                        <Check className="w-3.5 h-3.5 text-orange-500" />
+                                                    </div>
+                                                )}
+                                            </button>
+                                        );
+                                    })}
                                 </div>
                             </div>
+
+                            {/* Difficulty Selection - Slider Style */}
+                            <div className="flex flex-col items-center">
+                                <h2 className="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2.5">
+                                    Choose Difficulty
+                                </h2>
+                                <div className="relative inline-grid grid-cols-3 bg-gray-100 rounded-xl p-1.5">
+                                    {/* Sliding background indicator */}
+                                    <div
+                                        className={`absolute top-1.5 bottom-1.5 rounded-lg transition-all duration-300 ease-out shadow-md ${selectedDifficulty === 'easy'
+                                            ? 'bg-gradient-to-r from-green-400 to-emerald-500'
+                                            : selectedDifficulty === 'medium'
+                                                ? 'bg-gradient-to-r from-orange-400 to-rose-500'
+                                                : 'bg-gradient-to-r from-purple-500 to-indigo-500'
+                                            }`}
+                                        style={{
+                                            width: 'calc(33.333% - 4px)',
+                                            left: selectedDifficulty === 'easy'
+                                                ? '6px'
+                                                : selectedDifficulty === 'medium'
+                                                    ? 'calc(33.333% + 2px)'
+                                                    : 'calc(66.666% - 2px)'
+                                        }}
+                                    />
+                                    {/* Difficulty options */}
+                                    {difficulties.map((diff) => {
+                                        const DiffIcon = getDifficultyIcon(diff.id);
+                                        const isSelected = selectedDifficulty === diff.id;
+                                        return (
+                                            <button
+                                                key={diff.id}
+                                                onClick={() => setSelectedDifficulty(diff.id)}
+                                                className={`relative z-10 flex flex-col items-center justify-center gap-0.5 py-2 rounded-lg transition-colors duration-300 w-[92px] sm:w-[112px] ${isSelected
+                                                    ? 'text-white'
+                                                    : 'text-gray-500 hover:text-gray-700'
+                                                    }`}
+                                            >
+                                                <DiffIcon className="h-[18px] w-[18px]" />
+                                                <span className="font-semibold text-xs sm:text-sm whitespace-nowrap">{diff.name}</span>
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                                {/* Description below slider */}
+                                <p className="text-sm text-gray-500 mt-2 text-center transition-all duration-200">
+                                    {currentDifficulty.description}
+                                </p>
+                            </div>
+
                         </div>
                     </div>
                 )}
@@ -702,17 +662,68 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
             {/* Sticky Footer - Start Button (only on select screen) */}
             {screen === 'select' && (
                 <div
-                    className={`fixed bottom-0 left-0 right-0 z-30 bg-white/90 backdrop-blur-md border-t border-gray-100 p-4 sm:p-6 transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+                    className={`pointer-events-none fixed bottom-0 left-0 right-0 z-30 bg-gradient-to-t from-white via-white/90 to-transparent p-2.5 sm:p-3 transition-opacity ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
                     style={{ transitionDuration: `${transitionMs}ms` }}
                 >
-                    <div className="max-w-md mx-auto">
+                    <div className="pointer-events-auto max-w-5xl mx-auto rounded-2xl bg-white/85 p-2 shadow-xl shadow-orange-100/70 ring-1 ring-orange-100 backdrop-blur-md">
+                        <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-4">
+                            <div className="min-w-0 md:flex md:items-center md:gap-3">
+                                <p className="mb-1.5 text-center text-[11px] font-semibold uppercase tracking-wider text-gray-500 md:mb-0 md:text-left">
+                                    Set Duration
+                                </p>
+                                <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 md:justify-start">
+                                    {[60, 90, 120, 180, 300].map((secs) => (
+                                        <button
+                                            key={secs}
+                                            onClick={() => {
+                                                setDuration(secs);
+                                                setTimeRemaining(secs);
+                                                const [mm, ss] = formatTime(secs).split(':');
+                                                setCustomMinutes(mm);
+                                                setCustomSeconds(ss);
+                                            }}
+                                            className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 ${duration === secs
+                                                ? 'bg-gradient-to-r from-orange-500 to-rose-500 text-white shadow-md shadow-orange-200'
+                                                : 'bg-white border border-gray-200 text-gray-700 hover:border-orange-100 hover:bg-orange-50/40 hover:shadow-sm'
+                                                }`}
+                                        >
+                                            {formatTime(secs)}
+                                        </button>
+                                    ))}
+                                    <div className="flex items-center gap-1.5 px-2 py-1 bg-white border border-gray-200 rounded-lg shadow-sm">
+                                        <span className="whitespace-nowrap text-[11px] font-semibold text-gray-500">
+                                            Set Time
+                                        </span>
+                                        <input
+                                            type="text"
+                                            inputMode="numeric"
+                                            value={customMinutes}
+                                            onChange={(e) => handleMinutesChange(e.target.value)}
+                                            onBlur={handleCustomBlur}
+                                            placeholder="MM"
+                                            className="w-10 px-1.5 py-1.5 text-sm text-center border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent"
+                                        />
+                                        <span className="text-gray-400 font-semibold">:</span>
+                                        <input
+                                            type="text"
+                                            inputMode="numeric"
+                                            value={customSeconds}
+                                            onChange={(e) => handleSecondsChange(e.target.value)}
+                                            onBlur={handleCustomBlur}
+                                            placeholder="SS"
+                                            className="w-10 px-1.5 py-1.5 text-sm text-center border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                         <button
                             onClick={startPractice}
-                            className="w-full flex items-center justify-center gap-3 py-4 bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 text-white font-semibold text-lg rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl hover:scale-[1.02] transition-all duration-200"
+                                className="w-full md:w-[330px] lg:w-[360px] flex-shrink-0 flex items-center justify-center gap-3 py-3 bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 text-white font-semibold text-base sm:text-lg rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl hover:scale-[1.015] transition-all duration-200"
                         >
                             <Play className="w-5 h-5" />
                             Start Speaking
                         </button>
+                        </div>
                     </div>
                 </div>
             )}
