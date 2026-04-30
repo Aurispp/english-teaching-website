@@ -244,7 +244,7 @@ export const translations = {
         },
         {
           title: "Step-by-Step Exam Prep",
-          description: "Structured preparation for IELTS, Cambridge, and TOEFL with proven study techniques"
+          description: "Structured preparation for Cambridge-style exams and speaking tasks"
         },
         {
           title: "Professional English",
@@ -307,7 +307,7 @@ export const translations = {
         },
         {
           question: 'Do you prepare students for English exams like First Certificate?',
-          answer: 'Yes, I offer structured preparation for Cambridge exams (like First Certificate, CAE), IELTS, and TOEFL, along with general conversation practice and business English.'
+          answer: 'Yes, I offer structured preparation for Cambridge exams like First Certificate and CAE, along with general conversation practice and business English.'
         },
         {
           question: 'Can you invoice companies or freelancers?',
@@ -553,7 +553,7 @@ export const translations = {
         },
         {
           title: "Preparación Paso a Paso",
-          description: "Preparación estructurada para IELTS, Cambridge y TOEFL con técnicas de estudio probadas"
+          description: "Preparación estructurada para exámenes tipo Cambridge y tareas de speaking"
         },
         {
           title: "Inglés Profesional",
@@ -616,7 +616,7 @@ export const translations = {
         },
         {
           question: '¿Preparas a estudiantes para exámenes de inglés como First Certificate?',
-          answer: 'Sí, ofrezco preparación estructurada para exámenes de Cambridge (como First Certificate, CAE), IELTS y TOEFL, junto con práctica general de conversación e inglés de negocios.'
+          answer: 'Sí, ofrezco preparación estructurada para exámenes de Cambridge como First Certificate y CAE, junto con práctica general de conversación e inglés profesional.'
         },
         {
           question: '¿Puedes emitir factura para empresas o autónomos?',

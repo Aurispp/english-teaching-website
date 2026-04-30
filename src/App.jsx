@@ -158,7 +158,7 @@ function App() {
         ) : landingPageType === 'local' ? (
           <>
             <title>Clases de Inglés Online y Presenciales en Castelldefels, Gavà y Viladecans</title>
-            <meta name="description" content="Clases de inglés online con opción presencial en Castelldefels, Gavà, Viladecans y alrededores. Conversación, confianza, preparación de exámenes e inglés para el trabajo con Auris." />
+            <meta name="description" content="Clases de inglés online con opción presencial en Castelldefels, Gavà, Viladecans y alrededores. Conversación, confianza, preparación Cambridge e inglés para el trabajo con Auris." />
             <link rel="canonical" href="https://englishwithauris.com/clases-ingles-castelldefels" />
           </>
         ) : landingPageType === 'business' ? (

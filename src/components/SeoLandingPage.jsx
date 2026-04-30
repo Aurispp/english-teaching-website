@@ -56,7 +56,7 @@ const landingCopy = {
         'Conversation and confidence',
         'Pronunciation and natural rhythm',
         'Practical grammar without overthinking',
-        'Cambridge, IELTS or interview preparation',
+        'Cambridge exam or interview preparation',
         'English for work, meetings and presentations',
         'Personalised review through your student portal',
       ],
@@ -100,7 +100,7 @@ const landingCopy = {
         'Conversación y confianza',
         'Pronunciación y ritmo natural',
         'Gramática práctica sin darle mil vueltas',
-        'Preparación Cambridge, IELTS o entrevistas',
+        'Preparación Cambridge o entrevistas',
         'Inglés para trabajo, reuniones y presentaciones',
         'Repaso personalizado con tu portal de estudiante',
       ],
@@ -115,7 +115,7 @@ const landingCopy = {
   business: {
     en: {
       eyebrow: 'Professional English with invoice available',
-      title: 'Business English classes for companies and professionals near Castelldefels',
+      title: 'Business English classes for companies and professionals',
       intro:
         'Practical English training for professionals, teams and freelancers who need to speak more clearly in meetings, presentations, interviews and international work situations.',
       primaryCta: 'Book a first call',
@@ -159,7 +159,7 @@ const landingCopy = {
     },
     es: {
       eyebrow: 'Inglés profesional con factura disponible',
-      title: 'Inglés para empresas y profesionales en Castelldefels y alrededores',
+      title: 'Inglés para empresas y profesionales',
       intro:
         'Formación práctica de inglés para profesionales, equipos y autónomos que necesitan comunicarse mejor en reuniones, presentaciones, entrevistas y situaciones de trabajo internacional.',
       primaryCta: 'Reserva una primera llamada',
@@ -217,10 +217,10 @@ const pageMeta = {
   business: {
     talkHref: '#contact',
     contactHash: '#contact',
-    visual: portalDashboard,
-    visualAlt: 'English with Auris student portal dashboard',
-    supportVisual: classMomentInPerson,
-    supportAlt: 'Small English class with Auris',
+    visual: classMomentInPersonRoom,
+    visualAlt: 'Professional English class with Auris in a meeting room',
+    supportVisual: portalDashboard,
+    supportAlt: 'English with Auris student portal dashboard',
     finalIcon: Building2,
   },
 };
