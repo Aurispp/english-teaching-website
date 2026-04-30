@@ -16,6 +16,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import CalendlyBadge from './components/CalendlyBadge';
 import ConsentBanner from './components/ConsentBanner';
+import { trackEvent } from './utils/analytics';
 
 const TalkTheTalk = lazy(() => import('./components/TalkTheTalk'));
 
@@ -84,7 +85,9 @@ function App() {
     window.gtag('event', 'page_view', {
       page_path: window.location.pathname,
       page_location: window.location.href,
-      page_title: document.title,
+      page_title: isTalkTheTalkOpen
+        ? 'Free English Speaking Practice Tool | Talk the Talk'
+        : document.title,
     });
   }, [isTalkTheTalkOpen]);
 
@@ -92,7 +95,7 @@ function App() {
   useEffect(() => {
     const onMessage = (e) => {
       if (e?.data?.event === 'calendly.event_scheduled' && typeof window.gtag === 'function') {
-        window.gtag('event', 'trial_booked', {
+        trackEvent('trial_booked', {
           event_category: 'conversion',
           event_label: 'Calendly',
           value: 30,
@@ -104,11 +107,18 @@ function App() {
   }, []);
 
   const openTalkTheTalk = () => {
+    trackEvent('talk_opened', {
+      event_category: 'engagement',
+      location: 'site_navigation',
+    });
     setIsTalkTheTalkOpen(true);
     window.history.pushState({}, '', '/talkthetalk');
   };
 
   const closeTalkTheTalk = () => {
+    trackEvent('talk_closed', {
+      event_category: 'engagement',
+    });
     setIsTalkTheTalkOpen(false);
     window.history.pushState({}, '', '/');
   };

@@ -20,6 +20,10 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        talkthetalk: path.resolve(__dirname, 'talkthetalk/index.html'),
+      },
       output: {
         assetFileNames: (assetInfo) => {
           // Keep original names for favicon files

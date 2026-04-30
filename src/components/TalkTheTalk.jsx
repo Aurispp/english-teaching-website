@@ -5,6 +5,7 @@ import { getThemeIcon, getDifficultyIcon } from './ThemeIcons';
 import { useLanguage } from '../context/LanguageContext';
 import Hourglass from './Hourglass';
 import whatsappIcon from '../whatsapp.webp';
+import { trackEvent } from '../utils/analytics';
 
 const CALENDLY_TRIAL_URL =
     import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/aurienglish/trial-class';
@@ -47,8 +48,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
     ];
 
     const trackTalkEvent = useCallback((eventName, params = {}) => {
-        if (typeof window.gtag !== 'function') return;
-        window.gtag('event', eventName, {
+        trackEvent(eventName, {
             event_category: 'talk_the_talk',
             theme: selectedTheme,
             difficulty: selectedDifficulty,
@@ -110,8 +110,12 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
     const handleCustomBlur = useCallback(() => {
         const mins = customMinutes.padStart(2, '0');
         const secs = customSeconds.padStart(2, '0');
+        trackTalkEvent('talk_setting_changed', {
+            setting_name: 'custom_duration',
+            setting_value: `${mins}:${secs}`,
+        });
         applyCustomTime(mins, secs);
-    }, [applyCustomTime, customMinutes, customSeconds]);
+    }, [applyCustomTime, customMinutes, customSeconds, trackTalkEvent]);
 
     const goToScreen = useCallback((target, duration = transitionDurationDefault) => {
         if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
@@ -150,10 +154,11 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
         setHasStarted(true);
         setReadyHidden(true);
         setShowDone(false);
+        trackTalkEvent('talk_ready_clicked');
         doneDelayRef.current = setTimeout(() => {
             setShowDone(true);
         }, readyToDoneDelay);
-    }, []);
+    }, [trackTalkEvent]);
 
     const skipTopic = useCallback(() => {
         if (completionTimeoutRef.current) {
@@ -170,7 +175,8 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
         setReadyHidden(false);
         setShowDone(false);
         setTimeRemaining(duration);
-    }, [duration, generateTopic]);
+        trackTalkEvent('talk_topic_skipped');
+    }, [duration, generateTopic, trackTalkEvent]);
 
     const finishEarly = useCallback(() => {
         setIsTimerRunning(false);
@@ -313,7 +319,14 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                             {/* Language Toggle */}
                             <div className="flex items-center gap-1 sm:gap-2 text-sm">
                                 <button
-                                    onClick={() => setLanguage('en')}
+                                    onClick={() => {
+                                        trackEvent('language_selected', {
+                                            event_category: 'engagement',
+                                            language: 'en',
+                                            location: 'talk_the_talk',
+                                        });
+                                        setLanguage('en');
+                                    }}
                                     aria-label="Switch to English"
                                     aria-pressed={language === 'en'}
                                     className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'en'
@@ -324,7 +337,14 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                     EN
                                 </button>
                                 <button
-                                    onClick={() => setLanguage('es')}
+                                    onClick={() => {
+                                        trackEvent('language_selected', {
+                                            event_category: 'engagement',
+                                            language: 'es',
+                                            location: 'talk_the_talk',
+                                        });
+                                        setLanguage('es');
+                                    }}
                                     aria-label="Cambiar a español"
                                     aria-pressed={language === 'es'}
                                     className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'es'
@@ -373,6 +393,11 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                     rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
                                     className="hidden sm:inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
                                     aria-label={link.label}
+                                    onClick={() => trackEvent('contact_click', {
+                                        event_category: 'lead',
+                                        contact_method: link.label.toLowerCase(),
+                                        location: 'talk_the_talk_nav',
+                                    })}
                                 >
                                     {link.icon}
                                     <span className="hidden sm:inline">{link.label}</span>
@@ -436,7 +461,13 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                         return (
                                             <button
                                                 key={theme.id}
-                                                onClick={() => setSelectedTheme(theme.id)}
+                                                onClick={() => {
+                                                    trackTalkEvent('talk_setting_changed', {
+                                                        setting_name: 'theme',
+                                                        setting_value: theme.id,
+                                                    });
+                                                    setSelectedTheme(theme.id);
+                                                }}
                                                 className={`relative flex min-h-[52px] items-center gap-2.5 rounded-xl border px-3 py-2 text-left transition-all duration-200 group ${isSelected
                                                     ? 'border-orange-300 bg-orange-50 shadow-sm ring-1 ring-orange-200'
                                                     : 'border-gray-100 bg-white hover:border-orange-100 hover:bg-orange-50/30 hover:shadow-sm'
@@ -493,7 +524,13 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                         return (
                                             <button
                                                 key={diff.id}
-                                                onClick={() => setSelectedDifficulty(diff.id)}
+                                                onClick={() => {
+                                                    trackTalkEvent('talk_setting_changed', {
+                                                        setting_name: 'difficulty',
+                                                        setting_value: diff.id,
+                                                    });
+                                                    setSelectedDifficulty(diff.id);
+                                                }}
                                                 className={`relative z-10 flex flex-col items-center justify-center gap-0.5 py-2 rounded-lg transition-colors duration-300 w-[92px] sm:w-[112px] ${isSelected
                                                     ? 'text-white'
                                                     : 'text-gray-500 hover:text-gray-700'
@@ -651,6 +688,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                         </div>
                         <button
                             onClick={() => {
+                                trackTalkEvent('talk_settings_returned');
                                 goToScreen('select');
                                 setTimeRemaining(duration);
                             }}
@@ -680,6 +718,10 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                         <button
                                             key={secs}
                                             onClick={() => {
+                                                trackTalkEvent('talk_setting_changed', {
+                                                    setting_name: 'duration',
+                                                    setting_value: secs,
+                                                });
                                                 setDuration(secs);
                                                 setTimeRemaining(secs);
                                                 const [mm, ss] = formatTime(secs).split(':');

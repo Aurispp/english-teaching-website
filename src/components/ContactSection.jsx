@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Calendar, Mail, MessageCircle, UserCircle, Users } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useLanguage } from '../context/LanguageContext';
+import { trackEvent } from '../utils/analytics';
 
 const CALENDLY_TRIAL_URL =
   import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/aurienglish/trial-class';
@@ -83,6 +84,9 @@ const ContactSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    trackEvent('contact_form_submit', {
+      event_category: 'lead',
+    });
     setFormStatus({ submitting: true, submitted: false, error: null });
 
     const formData = {
@@ -101,6 +105,9 @@ const ContactSection = () => {
       );
 
       console.log('Success:', result.text);
+      trackEvent('contact_form_submit_success', {
+        event_category: 'lead',
+      });
       setFormStatus({
         submitting: false,
         submitted: true,
@@ -118,6 +125,9 @@ const ContactSection = () => {
 
     } catch (error) {
       console.error('Email error:', error);
+      trackEvent('contact_form_submit_error', {
+        event_category: 'lead',
+      });
       setFormStatus({
         submitting: false,
         submitted: false,
@@ -144,7 +154,13 @@ const ContactSection = () => {
                 ? 'text-primary-600 border-b-2 border-primary-500'
                 : 'text-gray-600 hover:text-primary-600'
                 }`}
-              onClick={() => setActiveTab('calendly')}
+              onClick={() => {
+                trackEvent('contact_tab_selected', {
+                  event_category: 'lead',
+                  contact_tab: 'calendly',
+                });
+                setActiveTab('calendly');
+              }}
             >
               <Calendar className="w-4 h-4" />
               {t('contact.bookTrial')}
@@ -154,7 +170,13 @@ const ContactSection = () => {
                 ? 'text-primary-600 border-b-2 border-primary-500'
                 : 'text-gray-600 hover:text-primary-600'
                 }`}
-              onClick={() => setActiveTab('direct')}
+              onClick={() => {
+                trackEvent('contact_tab_selected', {
+                  event_category: 'lead',
+                  contact_tab: 'direct',
+                });
+                setActiveTab('direct');
+              }}
             >
               {t('contact.directContact')}
             </button>
@@ -163,7 +185,13 @@ const ContactSection = () => {
                 ? 'text-primary-600 border-b-2 border-primary-500'
                 : 'text-gray-600 hover:text-primary-600'
                 }`}
-              onClick={() => setActiveTab('form')}
+              onClick={() => {
+                trackEvent('contact_tab_selected', {
+                  event_category: 'lead',
+                  contact_tab: 'form',
+                });
+                setActiveTab('form');
+              }}
             >
               {t('contact.sendMessage')}
             </button>
@@ -181,7 +209,13 @@ const ContactSection = () => {
                     <button
                       role="tab"
                       aria-selected={bookingType === 'trial'}
-                      onClick={() => setBookingType('trial')}
+                      onClick={() => {
+                        trackEvent('booking_type_selected', {
+                          event_category: 'lead',
+                          booking_type: 'trial',
+                        });
+                        setBookingType('trial');
+                      }}
                       className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                         bookingType === 'trial'
                           ? 'bg-white text-primary-600 shadow-sm'
@@ -194,7 +228,13 @@ const ContactSection = () => {
                     <button
                       role="tab"
                       aria-selected={bookingType === 'group'}
-                      onClick={() => setBookingType('group')}
+                      onClick={() => {
+                        trackEvent('booking_type_selected', {
+                          event_category: 'lead',
+                          booking_type: 'group',
+                        });
+                        setBookingType('group');
+                      }}
                       className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                         bookingType === 'group'
                           ? 'bg-white text-primary-600 shadow-sm'
@@ -235,6 +275,11 @@ const ContactSection = () => {
               <div className="space-y-6">
                 <a
                   href="mailto:aurienglish@gmail.com"
+                  onClick={() => trackEvent('contact_click', {
+                    event_category: 'lead',
+                    contact_method: 'email',
+                    location: 'contact_section',
+                  })}
                   className="flex items-center justify-center space-x-3 text-gray-600 hover:text-primary-600 transition-colors py-4 px-6 rounded-lg hover:bg-primary-50 group"
                 >
                   <Mail className="w-5 h-5 text-primary-500 group-hover:scale-110 transition-transform" />
@@ -244,6 +289,11 @@ const ContactSection = () => {
                   href="https://wa.me/34684082221"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent('contact_click', {
+                    event_category: 'lead',
+                    contact_method: 'whatsapp',
+                    location: 'contact_section',
+                  })}
                   className="flex items-center justify-center space-x-3 text-gray-600 hover:text-[#25D366] transition-colors py-4 px-6 rounded-lg hover:bg-[#25D366]/10 group"
                 >
                   <div className="relative">
@@ -255,7 +305,14 @@ const ContactSection = () => {
                   </div>
                 </a>
                 <button
-                  onClick={() => setActiveTab('form')}
+                  onClick={() => {
+                    trackEvent('contact_tab_selected', {
+                      event_category: 'lead',
+                      contact_tab: 'form',
+                      location: 'direct_contact_panel',
+                    });
+                    setActiveTab('form');
+                  }}
                   className="w-full text-primary-600 hover:text-primary-700 text-sm mt-4"
                 >
                   {t('contact.switchToForm')}
@@ -330,7 +387,14 @@ const ContactSection = () => {
                   </button>
                 </form>
                 <button
-                  onClick={() => setActiveTab('direct')}
+                  onClick={() => {
+                    trackEvent('contact_tab_selected', {
+                      event_category: 'lead',
+                      contact_tab: 'direct',
+                      location: 'contact_form_panel',
+                    });
+                    setActiveTab('direct');
+                  }}
                   className="w-full text-primary-600 hover:text-primary-700 text-sm mt-6"
                 >
                   {t('contact.switchToDirect')}

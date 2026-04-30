@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Phone, Mail, GraduationCap, LogIn, MessageCircle, Menu, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import whatsappIcon from '../whatsapp.webp';
+import { trackEvent } from '../utils/analytics';
 
 const Navbar = ({ onTalkTheTalkClick }) => {
   const { language, setLanguage, t } = useLanguage();
@@ -58,7 +59,14 @@ const Navbar = ({ onTalkTheTalkClick }) => {
             {/* Language Toggle */}
             <div className="flex items-center gap-1 sm:gap-2 text-sm">
               <button
-                onClick={() => setLanguage('en')}
+                onClick={() => {
+                  trackEvent('language_selected', {
+                    event_category: 'engagement',
+                    language: 'en',
+                    location: 'navbar',
+                  });
+                  setLanguage('en');
+                }}
                 aria-label="Switch to English"
                 aria-pressed={language === 'en'}
                 className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'en'
@@ -69,7 +77,14 @@ const Navbar = ({ onTalkTheTalkClick }) => {
                 EN
               </button>
               <button
-                onClick={() => setLanguage('es')}
+                onClick={() => {
+                  trackEvent('language_selected', {
+                    event_category: 'engagement',
+                    language: 'es',
+                    location: 'navbar',
+                  });
+                  setLanguage('es');
+                }}
                 aria-label="Cambiar a español"
                 aria-pressed={language === 'es'}
                 className={`px-2 sm:px-3 py-1 rounded-full transition-colors ${language === 'es'
@@ -118,6 +133,11 @@ const Navbar = ({ onTalkTheTalkClick }) => {
                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
                 className="inline-flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
                 aria-label={link.label}
+                onClick={() => trackEvent('contact_click', {
+                  event_category: 'lead',
+                  contact_method: link.label.toLowerCase(),
+                  location: 'navbar',
+                })}
               >
                 {link.icon}
                 <span>{link.label}</span>
@@ -192,7 +212,14 @@ const Navbar = ({ onTalkTheTalkClick }) => {
                       target={link.href.startsWith('http') ? '_blank' : '_self'}
                       rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
                       className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors"
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => {
+                        trackEvent('contact_click', {
+                          event_category: 'lead',
+                          contact_method: link.label.toLowerCase(),
+                          location: 'mobile_nav',
+                        });
+                        setMobileMenuOpen(false);
+                      }}
                     >
                       <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
                         {link.icon}

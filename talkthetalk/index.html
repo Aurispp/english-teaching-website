@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Free English Speaking Practice Tool | Talk the Talk</title>
+
+  <!-- Google Analytics 4 (with Consent Mode v2 — starts denied, banner promotes to granted) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDW7H0VQBC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+
+    try {
+      if (localStorage.getItem('ewa_consent') === 'granted') {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+
+    gtag('config', 'G-VDW7H0VQBC', { anonymize_ip: true });
+  </script>
+
+  <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+  <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#FF914D" />
+
+  <link rel="canonical" href="https://englishwithauris.com/talkthetalk" />
+  <link rel="alternate" hreflang="en" href="https://englishwithauris.com/talkthetalk?lang=en" />
+  <link rel="alternate" hreflang="es" href="https://englishwithauris.com/talkthetalk?lang=es" />
+  <link rel="alternate" hreflang="x-default" href="https://englishwithauris.com/talkthetalk" />
+
+  <meta name="google" content="notranslate" />
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+  <meta name="description"
+    content="Practise speaking English out loud with random conversation prompts, timers, role plays, interview questions, and fluency challenges." />
+  <meta name="keywords"
+    content="English speaking practice, free English speaking tool, conversation prompts, fluency practice, English speaking timer, English practice for Spanish speakers, Talk the Talk" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ED8936" />
+
+  <meta property="og:title" content="Free English Speaking Practice Tool | Talk the Talk" />
+  <meta property="og:description"
+    content="Choose a theme, set a timer, and practise speaking English out loud with random prompts for real fluency practice." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://englishwithauris.com/talkthetalk" />
+  <meta property="og:image" content="https://englishwithauris.com/brand/google-business-profile-logo.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="es_ES" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free English Speaking Practice Tool | Talk the Talk" />
+  <meta name="twitter:description"
+    content="Practise speaking English out loud with random prompts, timers, role plays, interview questions, and fluency challenges." />
+  <meta name="twitter:image" content="https://englishwithauris.com/brand/google-business-profile-logo.png" />
+
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Talk the Talk",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "url": "https://englishwithauris.com/talkthetalk",
+      "description": "A free English speaking practice tool with random conversation prompts, timers, role plays, interview questions, and fluency challenges.",
+      "isAccessibleForFree": true,
+      "inLanguage": ["en", "es"],
+      "creator": {
+        "@type": "ProfessionalService",
+        "name": "English with Auris",
+        "url": "https://englishwithauris.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+    </script>
+</head>
+
+<body>
+  <div id="root">
+    <main style="font-family: Inter, system-ui, sans-serif; max-width: 760px; margin: 64px auto; padding: 0 24px; color: #111827;">
+      <p style="color: #ED8936; font-weight: 600; margin-bottom: 12px;">English with Auris</p>
+      <h1 style="font-size: clamp(2.25rem, 8vw, 4rem); line-height: 1.05; margin: 0 0 20px;">
+        Talk the Talk
+      </h1>
+      <p style="font-size: 1.125rem; line-height: 1.7; color: #4B5563; margin: 0;">
+        Practise speaking English out loud with random conversation prompts, timers, role plays,
+        interview questions, and fluency challenges. The interactive tool will load here.
+      </p>
+    </main>
+  </div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

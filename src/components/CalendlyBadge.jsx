@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { trackEvent } from '../utils/analytics';
 
 const CALENDLY_URL =
   import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/aurienglish/trial-class';
@@ -43,6 +44,38 @@ const CalendlyBadge = () => {
       window.clearTimeout(stop);
     };
   }, [scrolled]);
+
+  useEffect(() => {
+    let detach = null;
+    const attach = () => {
+      const badge = document.querySelector('.calendly-badge-widget');
+      if (!badge) return false;
+
+      const onClick = () => trackEvent('calendly_badge_click', {
+        event_category: 'lead',
+        location: 'floating_badge',
+      });
+
+      badge.addEventListener('click', onClick);
+      detach = () => badge.removeEventListener('click', onClick);
+      return true;
+    };
+
+    if (attach()) return () => detach?.();
+
+    const id = window.setInterval(() => {
+      if (attach()) {
+        window.clearInterval(id);
+      }
+    }, 200);
+    const stop = window.setTimeout(() => window.clearInterval(id), 5000);
+
+    return () => {
+      window.clearInterval(id);
+      window.clearTimeout(stop);
+      detach?.();
+    };
+  }, []);
 
   // Mount the badge exactly once. Re-initialising on every language change
   // tripped Calendly's internal destroy (removeChild on a detached node)
