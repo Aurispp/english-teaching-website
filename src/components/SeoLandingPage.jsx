@@ -18,7 +18,6 @@ import { useLanguage } from '../context/LanguageContext';
 import GoogleReviewsSection from './GoogleReviewsSection';
 import classMomentInPersonRoom from '../class-moment-inperson-room.webp';
 import classMomentOnlineLesson from '../class-moment-online-lesson.webp';
-import classMomentInPerson from '../class-moment-inperson.webp';
 import portalDashboard from '../portal/dashboard.webp';
 
 const landingCopy = {
@@ -27,28 +26,28 @@ const landingCopy = {
       eyebrow: 'Online first, local when it fits',
       title: 'Online and in-person English classes in Castelldefels, Gavà and Viladecans',
       intro:
-        'I teach conversation-focused English classes online, with in-person lessons available around Castelldefels, Gavà, Viladecans and nearby areas when the schedule and location work.',
+        'I help students and professionals feel more comfortable using English in real situations. Classes are mainly online, with in-person lessons around Castelldefels, Gavà and Viladecans when the schedule and location work.',
       primaryCta: 'Book your free trial class',
       secondaryCta: 'Try Talk the Talk',
       badges: ['Online classes', 'Castelldefels area', 'Private and small groups'],
       proofTitle: 'Real classes, real progress',
       proofText:
-        'Lessons are practical and personal: we speak a lot, correct the mistakes that hold you back, and keep track of what you need to review between classes.',
+        'Classes are practical and personal: we speak a lot, correct what needs attention, and use simple materials to keep progress going between lessons.',
       sections: [
         {
           icon: Globe,
           title: 'Mainly online',
-          text: 'Online classes make scheduling easier and let us keep a consistent rhythm from anywhere in Spain or beyond.',
+          text: 'Online classes make it easier to stay consistent and keep a clear rhythm from week to week.',
         },
         {
           icon: MapPin,
           title: 'Local in-person option',
-          text: 'I am based in Castelldefels and can offer in-person classes in Castelldefels, Gavà, Viladecans and nearby areas when feasible.',
+          text: 'I am based in Castelldefels and can sometimes offer in-person classes nearby when it makes sense.',
         },
         {
           icon: MessageCircle,
           title: 'Speaking at the centre',
-          text: 'We work on fluency, pronunciation, useful vocabulary and the habits that often make Spanish speakers feel blocked.',
+          text: 'We work on fluency, pronunciation, useful vocabulary and the habits that often block Spanish speakers.',
         },
       ],
       workTitle: 'What we can work on',
@@ -62,32 +61,32 @@ const landingCopy = {
       ],
       localTitle: 'Local areas',
       localText:
-        'If you prefer in-person classes, tell me where you are and what schedule you have in mind. Online is usually the easiest option, but local classes can work well around Castelldefels and nearby towns.',
+        'The idea is not to give a generic class, but to understand what you need and find a way to move forward that feels useful and realistic.',
       finalTitle: 'Start with a free first class',
       finalText:
-        'We can meet, check your level, talk about your goals and decide whether my classes are a good fit for you.',
+        'It gives us time to meet, check your level, talk about your goals and decide whether I can help.',
     },
     es: {
       eyebrow: 'Online primero, presencial cuando encaja',
       title: 'Clases de inglés online y presenciales en Castelldefels, Gavà y Viladecans',
       intro:
-        'Doy clases de inglés centradas en conversación y progreso real. Trabajo principalmente online, y también puedo dar clases presenciales en Castelldefels, Gavà, Viladecans y zonas cercanas cuando el horario y la ubicación encajan.',
+        'Ayudo a estudiantes y profesionales a ganar soltura, confianza y claridad al usar el inglés en situaciones reales. Trabajo principalmente online, y también puedo dar clases presenciales en Castelldefels, Gavà y Viladecans cuando encaja.',
       primaryCta: 'Reserva tu prueba gratis',
       secondaryCta: 'Prueba Talk the Talk',
       badges: ['Clases online', 'Zona Castelldefels', 'Individuales y grupos pequeños'],
       proofTitle: 'Clases reales, progreso real',
       proofText:
-        'Las clases son prácticas y personales: hablamos mucho, corregimos los errores que te frenan y hacemos seguimiento de lo que conviene repasar entre clases.',
+        'Las clases son prácticas y personales: hablamos mucho, corregimos lo que haga falta y usamos materiales pensados para que puedas repasar entre clases.',
       sections: [
         {
           icon: Globe,
           title: 'Principalmente online',
-          text: 'Las clases online facilitan mantener constancia y encontrar horarios sin depender tanto del desplazamiento.',
+          text: 'Las clases online ayudan a mantener constancia y encontrar horarios sin depender tanto del desplazamiento.',
         },
         {
           icon: MapPin,
           title: 'Opción presencial local',
-          text: 'Vivo en Castelldefels y puedo dar clases presenciales en Castelldefels, Gavà, Viladecans y zonas cercanas cuando sea viable.',
+          text: 'Vivo en Castelldefels y puedo dar clases presenciales por la zona cuando el horario y la ubicación encajan.',
         },
         {
           icon: MessageCircle,
@@ -106,10 +105,10 @@ const landingCopy = {
       ],
       localTitle: 'Zonas cercanas',
       localText:
-        'Si prefieres clases presenciales, dime dónde estás y qué horario tienes en mente. Online suele ser la opción más cómoda, pero las clases locales pueden funcionar bien por Castelldefels y alrededores.',
+        'La idea no es dar una clase genérica, sino entender qué necesitas tú y encontrar una forma de avanzar que sea clara, útil y realista.',
       finalTitle: 'Empieza con una primera clase gratuita',
       finalText:
-        'Nos sirve para conocernos, ver tu nivel, hablar de tus objetivos y decidir si mis clases encajan con lo que necesitas.',
+        'Nos sirve para conocernos, ver tu nivel, hablar de tus objetivos y decidir si puedo ayudarte.',
     },
   },
   business: {
@@ -117,28 +116,28 @@ const landingCopy = {
       eyebrow: 'Professional English with invoice available',
       title: 'Business English classes for companies and professionals',
       intro:
-        'Practical English training for professionals, teams and freelancers who need to speak more clearly in meetings, presentations, interviews and international work situations.',
+        'Practical English classes for professionals, teams and freelancers who need to use English more clearly in meetings, presentations, interviews and day-to-day work.',
       primaryCta: 'Book a first call',
       secondaryCta: 'Ask about company classes',
       badges: ['Invoice with NIF', 'Online or local', 'Teams and professionals'],
       proofTitle: 'Professional, practical and trackable',
       proofText:
-        'I work as a registered autónomo in Spain, so I can invoice companies and professionals. Classes are built around real communication tasks, not generic textbook units.',
+        'I work professionally as a registered autónomo in Spain, so I can issue invoices with NIF. The classes stay focused on real communication.',
       sections: [
         {
           icon: Briefcase,
           title: 'Business communication',
-          text: 'Meetings, presentations, client calls, negotiation, interviews and the situations where English has to work under pressure.',
+          text: 'Meetings, presentations, client calls, interviews and the work situations where English has to feel clear.',
         },
         {
           icon: FileText,
           title: 'Factura con NIF',
-          text: 'I can issue invoices for companies, teams and freelancers who need professional English training documented properly.',
+          text: 'For companies, teams and freelancers, I can issue proper invoices for English training.',
         },
         {
           icon: BarChart3,
           title: 'Progress between classes',
-          text: 'Your student portal keeps vocabulary, materials and review work organised so training does not disappear after the class ends.',
+          text: 'Your student portal keeps vocabulary, materials and review work organised between classes.',
         },
       ],
       workTitle: 'Useful for',
@@ -152,37 +151,37 @@ const landingCopy = {
       ],
       localTitle: 'Online or in the Barcelona south coast area',
       localText:
-        'Most company training is easiest online, but local sessions can be arranged around Castelldefels, Gavà, Viladecans and nearby areas when the format makes sense.',
+        'Classes can be online or local near Castelldefels when the format makes sense. The important thing is that the work feels relevant to your real needs.',
       finalTitle: 'Start with a practical first conversation',
       finalText:
-        'Tell me what your team or professional situation requires and I can suggest a realistic class format.',
+        'Tell me what you or your team need, and we can decide whether I can help.',
     },
     es: {
       eyebrow: 'Inglés profesional con factura disponible',
       title: 'Inglés para empresas y profesionales',
       intro:
-        'Formación práctica de inglés para profesionales, equipos y autónomos que necesitan comunicarse mejor en reuniones, presentaciones, entrevistas y situaciones de trabajo internacional.',
+        'Clases prácticas para profesionales, equipos y autónomos que necesitan usar el inglés con más claridad en reuniones, presentaciones, entrevistas y situaciones reales de trabajo.',
       primaryCta: 'Reserva una primera llamada',
       secondaryCta: 'Consulta clases para empresa',
       badges: ['Factura con NIF', 'Online o presencial', 'Equipos y profesionales'],
       proofTitle: 'Profesional, práctico y con seguimiento',
       proofText:
-        'Trabajo como autónomo dado de alta en España, así que puedo emitir factura a empresas y profesionales. Las clases se centran en comunicación real, no en unidades genéricas de libro.',
+        'Trabajo de forma profesional como autónomo, así que puedo emitir factura con NIF. Las clases se centran en comunicación real.',
       sections: [
         {
           icon: Briefcase,
           title: 'Comunicación profesional',
-          text: 'Reuniones, presentaciones, llamadas con clientes, negociación, entrevistas y situaciones donde el inglés tiene que funcionar bajo presión.',
+          text: 'Reuniones, presentaciones, llamadas, entrevistas y situaciones donde necesitas expresarte con claridad.',
         },
         {
           icon: FileText,
           title: 'Factura con NIF',
-          text: 'Puedo emitir factura para empresas, equipos y autónomos que necesitan formación de inglés documentada correctamente.',
+          text: 'Si eres empresa, profesional o necesitas clases para tu equipo, puedo emitir factura con NIF.',
         },
         {
           icon: BarChart3,
           title: 'Seguimiento entre clases',
-          text: 'El portal de estudiante mantiene vocabulario, materiales y repaso organizados para que la formación no se quede solo en la clase.',
+          text: 'El portal mantiene vocabulario, materiales y repaso organizados para seguir avanzando entre clases.',
         },
       ],
       workTitle: 'Útil para',
@@ -196,10 +195,10 @@ const landingCopy = {
       ],
       localTitle: 'Online o en la zona del Baix Llobregat / costa sur de Barcelona',
       localText:
-        'La formación para empresas suele funcionar muy bien online, pero también se pueden organizar sesiones locales por Castelldefels, Gavà, Viladecans y zonas cercanas cuando el formato tenga sentido.',
+        'Podemos trabajar online o de forma presencial cerca de Castelldefels cuando el formato tenga sentido. Lo importante es que las clases encajen con una necesidad real.',
       finalTitle: 'Empieza con una primera conversación práctica',
       finalText:
-        'Cuéntame qué necesita tu equipo o tu situación profesional y te propongo un formato realista.',
+        'Cuéntame qué necesitas tú o tu equipo y vemos si puedo ayudarte.',
     },
   },
 };

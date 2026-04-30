@@ -11,7 +11,7 @@ export const translations = {
     hero: {
       journey: "Your English Journey Starts Here",
       title: "Hello! I'm Auris, and I help Spanish speakers speak English with confidence",
-      subtitle: "Online English classes focused on real conversation and steady progress. In-person available in Castelldefels and nearby areas.",
+      subtitle: "Online English classes focused on real conversation, confidence and steady progress. In-person available around Castelldefels when it fits.",
       cta: "Book your free trial class",
       alreadyStudent: "Already a student?",
       loginLink: "Log in to your portal",
@@ -38,7 +38,7 @@ export const translations = {
       },
       billing: {
         title: "Professional billing available",
-        description: "For companies, teams, and freelancers: I am registered as an autónomo in Spain and can issue invoices with NIF for English training."
+        description: "For companies, teams and freelancers, I work professionally as a registered autónomo in Spain and can issue invoices with NIF."
       },
       contact: {
         button: "Book free trial",
@@ -79,15 +79,15 @@ export const translations = {
       title: "My Teaching Method",
       learnBySpeaking: {
         title: "Learn by Speaking",
-        description: "I believe speaking is the most engaging and effective way to learn languages. In your classes with me, you will get plenty of opportunities to speak and develop your fluency. As we practice speaking, we'll naturally improve all aspects of your English - pronunciation, vocabulary, and grammar."
+        description: "Speaking is at the centre of the class. We use real conversation to work on fluency, pronunciation, vocabulary and grammar in a natural way."
       },
       makeFastProgress: {
-        title: "Make Fast Progress",
-        description: "If you're feeling stuck, you can make a lot of progress with the right approach and dedication. I will help identify your weaknesses and help you overcome them. Many of my students tell me that they made more progress in a few months than they did in previous years of learning English."
+        title: "Build Steady Progress",
+        description: "If you feel stuck, we slow things down, find what is blocking you, and work on it with consistency. The aim is steady progress that feels realistic and useful."
       },
       modernApproach: {
         title: "Modern Approach",
-        description: "Forget about traditional textbook classes. We'll learn through natural conversations while using modern tools to help you improve faster. You'll get personalized flashcards in your student portal to help remember new vocabulary, tailored materials prepared for each class, and we'll focus on topics that interest you."
+        description: "We use natural conversation, useful materials and simple tools to keep learning active between classes. The student portal helps you review vocabulary, save materials and follow what we are working on."
       }
     },
     scenarios: {
@@ -108,15 +108,15 @@ export const translations = {
       features: [
         {
           title: "Improve while Speaking",
-          description: "You will get to speak a lot. But my focus is also to push you towards your knowledge gaps and correcting some bad habits. Most of my students aren't learning English for the first time, and often we have to also focus on 'unlearning' our common mistakes or bad tendencies. My goal is to make that process smooth, encouraging and actually giving you the confidence that you CAN improve."
+          description: "You will speak a lot, but not randomly. I help you notice the habits that hold you back, correct them naturally, and feel more comfortable using English in real situations."
         },
         {
           title: "Progress Tracking",
-          description: "Our memories aren't perfect - we have the tendency to forget. That's why I make sure to track your progress and review what you learn with me periodically, so you don't simply forget what we covered. Your student portal keeps your personalized flashcards ready so you can reinforce what we've learned between classes."
+          description: "We keep track of what comes up in class so it does not disappear afterwards. Your student portal keeps vocabulary, materials and review tasks organised between lessons."
         },
         {
           title: "Commitment Matters",
-          description: "I like to imagine my classes as going to the gym for your mind. I'm your trainer and my goal is to help you reach your goals, however I can. But it only works if you are willing to put in the effort. Are you up for the challenge?"
+          description: "There is no magic formula, but consistency helps a lot. I will guide you, correct you and give you structure, but the progress comes from regular practice."
         },
         {
           title: "Leveraging Tech",
@@ -175,28 +175,28 @@ export const translations = {
     },
     about: {
       title: 'About Me',
-      intro: "Hey there! I'm Aurimas (or Auris for short) and I'm here to help Spanish speakers reach their English learning goals in a fun, engaging, yet rigorous way. Get that job or promotion where English is a must, speak with confidence and better pronunciation, open yourself to many more opportunities in all areas of life.",
-      method: "I'm a passionate and experienced teacher and language learner. Born in Lithuania, raised in Ireland. I got my degree in Multimedia Application Development in Waterford and then my CELT teacher qualification in Galway. Since then, I have spent over a decade teaching English in Barcelona and now live in Castelldefels. I love working with both company groups and individual students, helping each person reach their unique English goals.",
-      approach: "I offer a free first class for us to get to know each other and for you to see if we are a good fit. Message me and let's have a chat about how I could help you."
+      intro: "Hi! I'm Auris. I grew up in Ireland and have been teaching English in Barcelona for 11 years. I am bilingual, and I help students and professionals gain fluency, confidence and clarity when using English in real situations.",
+      method: "My classes are practical and adapted to each person: conversation, pronunciation, useful vocabulary, practical grammar, Cambridge preparation or English for work. After years teaching Spanish speakers, I know common difficulties like translating in your head, freezing when speaking or using Spanish structures in English.",
+      approach: "I also use my own student platform, where you can review vocabulary, save materials, practise with personalised flashcards and follow your progress between classes."
     },
     method: {
       title: 'My Teaching Approach',
       subtitle: 'A structured path to fluency',
       tracking: {
         title: 'Progress Tracking',
-        description: 'I keep detailed records of your progress, helping us focus on areas that need attention while celebrating your improvements.'
+        description: 'I keep track of what we work on so we can review it and keep the next classes focused.'
       },
       spaced: {
         title: 'Spaced Repetition',
-        description: 'Using personalized flashcards inside your student portal, we ensure you retain vocabulary and grammar patterns effectively.'
+        description: 'Personalised flashcards help you review the vocabulary and phrases that appear in your own classes.'
       },
       interactive: {
         title: 'Interactive Learning',
-        description: 'Classes are dynamic and participative, focusing on real communication rather than passive learning.'
+        description: 'Classes are participative and focused on communication, not passive listening.'
       },
       consistent: {
         title: 'Consistent Improvement',
-        description: 'Regular review sessions and practical exercises help build lasting language skills.'
+        description: 'Regular practice and review help you build confidence gradually.'
       }
     },
     stories: {
@@ -240,21 +240,21 @@ export const translations = {
       items: [
         {
           title: "Real-Life Conversations",
-          description: "Practice English in everyday situations you'll actually encounter"
+          description: "Practise English in everyday situations you actually meet"
         },
         {
           title: "Step-by-Step Exam Prep",
-          description: "Structured preparation for Cambridge-style exams and speaking tasks"
+          description: "Clear preparation for Cambridge-style exams and speaking tasks"
         },
         {
           title: "Professional English",
-          description: "Master presentations, meetings, and international communication for your career"
+          description: "Work on presentations, meetings and professional communication"
         }
       ]
     },
     contact: {
       title: 'Curious to learn more?',
-      subtitle: "Let's have a friendly chat about your goals and how we can achieve them together",
+      subtitle: "Let's have a friendly chat about your goals and see if I can help",
       cta: 'schedule a conversation',
       form: {
         name: 'Name',
@@ -291,7 +291,7 @@ export const translations = {
       questions: [
         {
           question: 'What type of students do you teach?',
-          answer: 'I work with teenagers, adults, and professionals who want to improve their English fluency. My students range from those just starting their English journey to advanced learners looking to perfect their skills.'
+          answer: 'I work with teenagers, adults and professionals who want to feel more confident using English in real situations.'
         },
         {
           question: 'Do you offer a free trial class?',
@@ -299,7 +299,7 @@ export const translations = {
         },
         {
           question: 'Are your classes online or in-person?',
-          answer: "Most classes happen online via Google Meet, which keeps things flexible and works from anywhere in Spain or beyond. I'm based in Castelldefels and can teach in-person there, in Gavà, and other nearby areas on the Barcelona south coast — get in touch and we'll see if we can make it work."
+          answer: "Most classes happen online via Google Meet. I am based in Castelldefels and can sometimes teach in person in Castelldefels, Gavà and nearby areas when the schedule and location work."
         },
         {
           question: 'What is your teaching method?',
@@ -333,7 +333,7 @@ export const translations = {
     hero: {
       journey: "Tu camino con el inglés empieza aquí",
       title: "¡Hola! Soy Auris y ayudo a hispanohablantes a hablar inglés con confianza",
-      subtitle: "Clases de inglés online centradas en conversación real y mejora constante. Presenciales en Castelldefels y zonas cercanas.",
+      subtitle: "Clases de inglés online centradas en conversación real, confianza y mejora constante. Presenciales por Castelldefels cuando encaja.",
       cta: "Reserva tu clase de prueba gratis",
       alreadyStudent: "¿Ya eres estudiante?",
       loginLink: "Accede a tu portal",
@@ -360,7 +360,7 @@ export const translations = {
       },
       billing: {
         title: "Factura con NIF disponible",
-        description: "Para empresas, equipos y profesionales autónomos: estoy dado de alta como autónomo y puedo emitir factura con NIF por formación en inglés."
+        description: "Para empresas, equipos y profesionales: trabajo de forma profesional como autónomo y puedo emitir factura con NIF."
       },
       contact: {
         button: "Reserva prueba gratis",
@@ -401,41 +401,41 @@ export const translations = {
       title: "Mi Método de Enseñanza",
       learnBySpeaking: {
         title: "Aprende Hablando",
-        description: "Creo que hablar es la forma más efectiva y motivadora de aprender idiomas. En tus clases conmigo, tendrás muchas oportunidades para hablar y desarrollar tu fluidez. Mientras practicamos hablando, mejoraremos naturalmente todos los aspectos de tu inglés - pronunciación, vocabulario y gramática."
+        description: "La conversación está en el centro de la clase. Usamos situaciones reales para trabajar fluidez, pronunciación, vocabulario y gramática de forma natural."
       },
       makeFastProgress: {
-        title: "Progresa Rápidamente",
-        description: "Si te sientes estancado, puedes hacer un gran progreso con el enfoque y la dedicación adecuados. Te ayudaré a identificar tus puntos débiles y a superarlos. Muchos de mis estudiantes me dicen que progresaron más en unos meses que en años anteriores estudiando inglés."
+        title: "Avanza con Constancia",
+        description: "Si te sientes estancado, buscamos qué te está frenando y lo trabajamos poco a poco. El objetivo es avanzar de una forma realista, útil y constante."
       },
       modernApproach: {
         title: "Enfoque Moderno",
-        description: "Olvídate de las clases tradicionales con libros de texto. Aprenderemos a través de conversaciones naturales mientras usamos herramientas modernas para ayudarte a mejorar más rápido. Tendrás tarjetas de memoria personalizadas en tu portal de estudiante para recordar el vocabulario nuevo, materiales adaptados preparados para cada clase, y nos centraremos en temas que te interesen."
+        description: "Trabajamos con conversación natural, materiales útiles y herramientas sencillas para que el aprendizaje continúe entre clases. El portal te ayuda a repasar vocabulario, guardar materiales y seguir lo que vamos trabajando."
       }
     },
     about: {
       title: 'Sobre mí',
-      intro: "¡Hola! Soy Aurimas (aunque todos me llaman Auris) y ayudo a hispanohablantes a alcanzar sus metas con el inglés de una manera amena y efectiva. Ya sea para conseguir ese trabajo o ascenso donde el inglés es fundamental, hablar con seguridad y mejor pronunciación, o simplemente abrir puertas a nuevas oportunidades en todos los aspectos de la vida.",
-      method: "Soy profesor por vocación y también estudiante de idiomas. Nací en Lituania, crecí en Irlanda, donde me licencié en Desarrollo de Aplicaciones Multimedia en Waterford y obtuve mi certificación CELT como profesor en Galway. Desde entonces, llevo más de una década enseñando inglés en Barcelona, viviendo en Castelldefels. Trabajo tanto con grupos de empresa como con estudiantes particulares, ayudando a cada persona a alcanzar sus objetivos específicos con el inglés.",
-      approach: "Te ofrezco una primera clase gratuita para conocernos y ver si conectamos. Escríbeme y tengamos una charla sobre cómo podría ayudarte."
+      intro: "¡Hola! Soy Auris. Me crié en Irlanda y llevo 11 años enseñando inglés en Barcelona. Soy bilingüe, y ayudo a estudiantes y profesionales a ganar soltura, confianza y claridad al usar el inglés en situaciones reales.",
+      method: "Mis clases son prácticas y adaptadas a cada persona: conversación, pronunciación, vocabulario, gramática útil, preparación Cambridge o inglés para el trabajo. Después de años enseñando a hispanohablantes, conozco bien dificultades como traducir mentalmente, bloquearse al hablar o usar estructuras del español en inglés.",
+      approach: "También uso una plataforma propia para estudiantes, donde puedes repasar vocabulario, guardar materiales, practicar con tarjetas personalizadas y seguir tu progreso entre clases."
     },
     method: {
       title: 'Mi Enfoque de Enseñanza',
       subtitle: 'Un camino estructurado hacia la fluidez',
       tracking: {
         title: 'Seguimiento del Progreso',
-        description: 'Mantengo un registro detallado de tu progreso, ayudándonos a enfocarnos en áreas que necesitan atención mientras celebramos tus mejoras.'
+        description: 'Hago seguimiento de lo que trabajamos para poder repasarlo y mantener las siguientes clases bien enfocadas.'
       },
       spaced: {
         title: 'Repetición Espaciada',
-        description: 'Usando tarjetas de memoria personalizadas dentro de tu portal de estudiante, aseguramos que retengas el vocabulario y los patrones gramaticales de manera efectiva.'
+        description: 'Las tarjetas personalizadas te ayudan a repasar el vocabulario y las frases que aparecen en tus propias clases.'
       },
       interactive: {
         title: 'Aprendizaje Interactivo',
-        description: 'Las clases son dinámicas y participativas, enfocándose en la comunicación real en lugar del aprendizaje pasivo.'
+        description: 'Las clases son participativas y centradas en comunicación real, no en escuchar de forma pasiva.'
       },
       consistent: {
         title: 'Mejora Constante',
-        description: 'Sesiones regulares de repaso y ejercicios prácticos ayudan a construir habilidades lingüísticas duraderas.'
+        description: 'La práctica y el repaso regular ayudan a ganar seguridad poco a poco.'
       }
     },
     stories: {
@@ -479,15 +479,15 @@ export const translations = {
       features: [
         {
           title: "Mejora mientras Hablas",
-          description: 'Hablarás muchísimo en las clases. Pero también me centro en identificar tus puntos débiles y corregir ciertos hábitos. La mayoría de mis estudiantes ya tienen una base de inglés, y muchas veces tenemos que "desaprender" errores y costumbres que se nos han quedado grabados. Mi objetivo es hacer que este proceso sea fluido y motivador, y demostrarte que SÍ puedes mejorar.'
+          description: 'Hablarás mucho, pero no al azar. Me centro en detectar los hábitos que te frenan, corregirlos de forma natural y ayudarte a sentirte más cómodo usando el inglés en situaciones reales.'
         },
         {
           title: "Seguimiento del Progreso",
-          description: "La memoria nos falla - es normal olvidar las cosas. Por eso hago un seguimiento detallado de tu progreso y repasamos periódicamente lo que vas aprendiendo, para que no se pierda lo que hemos trabajado. Tu portal de estudiante mantiene listas tus tarjetas personalizadas para que puedas reforzar entre clases lo que hemos aprendido juntos."
+          description: "Hago seguimiento de lo que aparece en clase para que no se pierda después. Tu portal mantiene vocabulario, materiales y tareas de repaso organizadas entre clases."
         },
         {
           title: "El Compromiso Importa",
-          description: "Me gusta comparar mis clases con ir al gimnasio. Soy tu entrenador y mi objetivo es ayudarte a alcanzar tus metas como sea posible, pero solo funciona si estás dispuesto a esforzarte. ¿Te atreves a dar el paso?"
+          description: "No hay una fórmula mágica, pero la constancia ayuda mucho. Yo te guío, te corrijo y te doy estructura; el progreso viene de practicar con regularidad."
         },
         {
           title: "Aprovechando la Tecnología",
@@ -549,21 +549,21 @@ export const translations = {
       items: [
         {
           title: "Conversaciones Reales",
-          description: "Practica inglés en situaciones cotidianas que realmente encontrarás"
+          description: "Practica inglés en situaciones cotidianas y reales"
         },
         {
           title: "Preparación Paso a Paso",
-          description: "Preparación estructurada para exámenes tipo Cambridge y tareas de speaking"
+          description: "Preparación clara para exámenes tipo Cambridge y tareas de speaking"
         },
         {
           title: "Inglés Profesional",
-          description: "Domina presentaciones, reuniones y comunicación internacional para tu carrera"
+          description: "Trabaja presentaciones, reuniones y comunicación profesional"
         }
       ]
     },
     contact: {
       title: '¿Quieres saber más?',
-      subtitle: "Tengamos una charla amistosa sobre tus objetivos y cómo podemos lograrlos juntos",
+      subtitle: "Tengamos una charla sobre tus objetivos y vemos si puedo ayudarte",
       cta: 'agenda una conversación',
       form: {
         name: 'Nombre',
@@ -600,7 +600,7 @@ export const translations = {
       questions: [
         {
           question: '¿Qué tipo de estudiantes enseñas?',
-          answer: 'Trabajo con adolescentes, adultos y profesionales que quieren mejorar su fluidez en inglés. Mis estudiantes van desde aquellos que están comenzando su viaje con el inglés hasta estudiantes avanzados que buscan perfeccionar sus habilidades.'
+          answer: 'Trabajo con adolescentes, adultos y profesionales que quieren sentirse más cómodos usando el inglés en situaciones reales.'
         },
         {
           question: '¿Ofreces una clase de prueba gratuita?',
@@ -608,7 +608,7 @@ export const translations = {
         },
         {
           question: '¿Las clases son online o presenciales?',
-          answer: 'La mayoría de las clases se realizan online a través de Google Meet, lo que las hace flexibles y accesibles desde cualquier lugar de España o del mundo. Vivo en Castelldefels y puedo dar clases presenciales allí, en Gavà y otras zonas cercanas del Baix Llobregat — escríbeme y vemos si podemos organizarlo.'
+          answer: 'La mayoría de las clases se realizan online a través de Google Meet. Vivo en Castelldefels y a veces puedo dar clases presenciales en Castelldefels, Gavà y zonas cercanas si el horario y la ubicación encajan.'
         },
         {
           question: '¿Cuál es tu método de enseñanza?',
