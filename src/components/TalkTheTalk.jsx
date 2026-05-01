@@ -44,7 +44,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
         'Pick a topic',
         'Record yourself (optional)',
         'Speak until time runs out',
-        'Listen to your recording',
+        'Listen to your recording (optional)',
     ];
 
     const trackTalkEvent = useCallback((eventName, params = {}) => {
