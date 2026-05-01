@@ -93,10 +93,6 @@ const PricingSection = () => {
 
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
-            {t('pricing.trialClass')}
-          </div>
           <h2 className="text-3xl sm:text-4xl font-display font-light mb-3">
             {t('pricing.title')}
           </h2>
