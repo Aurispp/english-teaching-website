@@ -693,7 +693,7 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                         <div className="max-w-lg mx-auto p-5 bg-orange-50/80 rounded-xl border border-orange-100 text-left">
                             <p className="text-sm font-semibold text-orange-700 mb-2">Want personal feedback?</p>
                             <p className="text-gray-600 leading-relaxed">
-                                I offer practical guidance and accountability to help you speak with more fluency and clarity.
+                                I offer practical guidance to help you speak with more fluency and clarity.
                             </p>
                         </div>
 

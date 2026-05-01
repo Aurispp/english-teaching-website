@@ -82,7 +82,7 @@ export const translations = {
       },
       steadyProgress: {
         title: "Build Steady Progress",
-        description: "If you feel stuck, we slow things down, find what is blocking you, and work on it with consistency. The aim is steady progress that feels realistic and useful."
+        description: "If you feel stuck, we slow things down, find what is blocking you, and work on it with consistency. Regular lessons also give you structure and accountability, so progress feels realistic and useful."
       },
       modernApproach: {
         title: "Modern Approach",
@@ -403,7 +403,7 @@ export const translations = {
       },
       steadyProgress: {
         title: "Avanza con Constancia",
-        description: "Si te sientes estancado, buscamos qué te está frenando y lo trabajamos poco a poco. El objetivo es avanzar de una forma realista, útil y constante."
+        description: "Si te sientes estancado, buscamos qué te está frenando y lo trabajamos poco a poco. Tener una clase regular también te da estructura y acompañamiento, para mantener la constancia y avanzar de forma realista y útil."
       },
       modernApproach: {
         title: "Enfoque Moderno",
