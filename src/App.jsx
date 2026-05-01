@@ -208,8 +208,6 @@ function App() {
     <div className="min-h-screen bg-gradient-to-b from-amber-50/70 to-white flex flex-col">
       <Helmet>
         <title>{pageSeo.title}</title>
-        <meta name="description" content={pageSeo.description} />
-        <link rel="canonical" href={pageSeo.canonical} />
         <meta name="theme-color" content="#ED8936" />
       </Helmet>
 
