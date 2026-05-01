@@ -149,7 +149,7 @@ export const translations = {
       },
       kiwi: {
         title: "Kiwi's Run",
-        description: "A fast practice game for vocabulary, prepositions, syntax and sentence patterns. Beat the fox, keep your streak."
+        description: "Named after my cat, Kiwi's Run is a fast practice game for vocabulary, prepositions, syntax and sentence patterns. Beat the fox, keep your streak."
       }
     },
     challenges: {
@@ -519,7 +519,7 @@ export const translations = {
       },
       kiwi: {
         title: "Kiwi's Run",
-        description: "Un juego rápido para practicar vocabulario, preposiciones, sintaxis y estructuras de frase. Gana al zorro y mantén tu racha."
+        description: "Llamado así por mi gato, Kiwi's Run es un juego rápido para practicar vocabulario, preposiciones, sintaxis y estructuras de frase. Gana al zorro y mantén tu racha."
       }
     },
     challenges: {
