@@ -149,7 +149,7 @@ export const translations = {
       },
       kiwi: {
         title: "Kiwi's Run",
-        description: "A vocabulary game that turns verb drills into something you actually want to do. Beat the fox, keep your streak."
+        description: "A fast practice game for vocabulary, prepositions, syntax and sentence patterns. Beat the fox, keep your streak."
       }
     },
     challenges: {
@@ -519,7 +519,7 @@ export const translations = {
       },
       kiwi: {
         title: "Kiwi's Run",
-        description: "Un juego de vocabulario que convierte el repaso de verbos en algo divertido. Gana al zorro y mantén tu racha."
+        description: "Un juego rápido para practicar vocabulario, preposiciones, sintaxis y estructuras de frase. Gana al zorro y mantén tu racha."
       }
     },
     challenges: {
