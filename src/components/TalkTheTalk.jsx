@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Calendar, Play, RotateCcw, Shuffle, Check, Phone, Mail, GraduationCap, LogIn, X } from 'lucide-react';
+import { Calendar, Play, RotateCcw, Shuffle, Check, Phone, Mail, GraduationCap, LogIn, X, ChevronRight } from 'lucide-react';
 import { themes, difficulties, getRandomTopic } from '../data/speakingTopics';
 import { getThemeIcon, getDifficultyIcon } from './ThemeIcons';
 import { useLanguage } from '../context/LanguageContext';
@@ -194,6 +194,29 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
         }
         goToScreen('complete');
     }, [duration, goToScreen, timeRemaining, trackTalkEvent]);
+
+    const repeatSameTopic = useCallback(() => {
+        if (completionTimeoutRef.current) {
+            clearTimeout(completionTimeoutRef.current);
+            completionTimeoutRef.current = null;
+        }
+        if (doneDelayRef.current) {
+            clearTimeout(doneDelayRef.current);
+            doneDelayRef.current = null;
+        }
+        if (!topic) {
+            generateTopic();
+        }
+        setTimeRemaining(duration);
+        setIsTimerRunning(false);
+        setHasStarted(false);
+        setReadyHidden(false);
+        setShowDone(false);
+        trackTalkEvent('talk_same_topic_repeated', {
+            practiced_seconds: duration - timeRemaining,
+        });
+        goToScreen('practice', 220);
+    }, [duration, generateTopic, goToScreen, timeRemaining, topic, trackTalkEvent]);
 
     useEffect(() => {
         if (isTimerRunning && timeRemaining > 0) {
@@ -433,17 +456,28 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                 <span className="hidden text-gray-500 sm:inline">&nbsp;Choose a theme, speak until the timer ends, and build fluency one round at a time.</span>
                                 <span className="block text-gray-500 sm:hidden">Choose a theme, speak until the timer ends, and build fluency one round at a time.</span>
                             </p>
-                            <div className="mt-3 flex flex-wrap justify-center gap-1.5">
+                            <div className="mt-5 sm:mt-6 flex flex-wrap items-center justify-center max-w-4xl mx-auto gap-y-3">
                                 {howItWorks.map((step, index) => (
-                                    <div
-                                        key={step}
-                                        className="inline-flex items-center gap-1.5 rounded-full border border-orange-100 bg-white/80 px-2 py-0.5 text-xs text-gray-600 shadow-sm"
-                                    >
-                                        <span className="flex h-[18px] w-[18px] items-center justify-center rounded-full bg-orange-100 text-[11px] font-semibold text-orange-700">
-                                            {index + 1}
-                                        </span>
-                                        {step}
-                                    </div>
+                                    <React.Fragment key={step}>
+                                        <div className="flex items-center gap-2 group cursor-default px-1 sm:px-2">
+                                            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-100 text-[11px] font-bold text-orange-600 ring-1 ring-orange-200/50 transition-all duration-300 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-orange-400 group-hover:to-rose-400 group-hover:text-white group-hover:ring-orange-400 group-hover:shadow-md group-hover:shadow-orange-200">
+                                                {index + 1}
+                                            </div>
+                                            <span className="text-[13px] sm:text-[14px] font-medium text-gray-600 tracking-tight transition-colors duration-300 group-hover:text-gray-900">
+                                                {step}
+                                            </span>
+                                        </div>
+                                        {index < howItWorks.length - 1 && (
+                                            <div className="hidden sm:flex items-center px-1 lg:px-3 shrink-0">
+                                                <div className="h-[2px] w-6 lg:w-10 rounded-full bg-gradient-to-r from-orange-200/70 to-rose-200/70"></div>
+                                            </div>
+                                        )}
+                                        {index < howItWorks.length - 1 && (
+                                            <div className="sm:hidden px-0.5">
+                                                <ChevronRight className="h-3.5 w-3.5 text-orange-300" />
+                                            </div>
+                                        )}
+                                    </React.Fragment>
                                 ))}
                             </div>
                         </div>
@@ -659,13 +693,27 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                         <div className="max-w-lg mx-auto p-5 bg-orange-50/80 rounded-xl border border-orange-100 text-left">
                             <p className="text-sm font-semibold text-orange-700 mb-2">Want personal feedback?</p>
                             <p className="text-gray-600 leading-relaxed">
-                                If it was hard to keep going, that is exactly what we can work on in class:
-                                fluency, vocabulary, pronunciation, and confidence.
+                                I offer practical guidance, correction, and accountability to help you speak with more
+                                fluency and clarity.
                             </p>
                         </div>
 
                         {/* Action Buttons */}
-                        <div className="grid gap-3 max-w-lg mx-auto sm:grid-cols-2">
+                        <div className="grid gap-3 max-w-2xl mx-auto sm:grid-cols-3">
+                            <button
+                                onClick={repeatSameTopic}
+                                className="flex items-center justify-center gap-2 py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all"
+                            >
+                                <RotateCcw className="w-4 h-4" />
+                                Same topic
+                            </button>
+                            <button
+                                onClick={startPractice}
+                                className="flex items-center justify-center gap-2 py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all"
+                            >
+                                <Shuffle className="w-4 h-4" />
+                                New topic
+                            </button>
                             <a
                                 href={TALK_TRIAL_URL}
                                 target="_blank"
@@ -678,13 +726,6 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                 <Calendar className="w-4 h-4" />
                                 Book a free trial
                             </a>
-                            <button
-                                onClick={startPractice}
-                                className="flex items-center justify-center gap-2 py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all"
-                            >
-                                <Play className="w-4 h-4" />
-                                Practice Again
-                            </button>
                         </div>
                         <button
                             onClick={() => {
