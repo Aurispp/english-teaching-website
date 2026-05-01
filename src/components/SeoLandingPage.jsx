@@ -58,7 +58,7 @@ const landingCopy = {
         'Practical grammar without overthinking',
         'Cambridge exam or interview preparation',
         'English for work, meetings and presentations',
-        'Personalised review through your student portal',
+        'Personalised review in the student portal I built',
       ],
       localTitle: 'Local areas',
       localText:
@@ -102,7 +102,7 @@ const landingCopy = {
         'Gramática práctica sin darle mil vueltas',
         'Preparación Cambridge o entrevistas',
         'Inglés para trabajo, reuniones y presentaciones',
-        'Repaso personalizado con tu portal de estudiante',
+        'Repaso personalizado en el portal que he creado',
       ],
       localTitle: 'Zonas cercanas',
       localText:
@@ -138,7 +138,7 @@ const landingCopy = {
         {
           icon: BarChart3,
           title: 'Progress between classes',
-          text: 'Your student portal keeps vocabulary, materials and review work organised between classes.',
+          text: 'The student portal I built keeps vocabulary, materials and review work organised between classes.',
         },
       ],
       workTitle: 'Useful for',
@@ -182,7 +182,7 @@ const landingCopy = {
         {
           icon: BarChart3,
           title: 'Seguimiento entre clases',
-          text: 'El portal mantiene vocabulario, materiales y repaso organizados para seguir avanzando entre clases.',
+          text: 'El portal que he creado mantiene vocabulario, materiales y repaso organizados para seguir avanzando entre clases.',
         },
       ],
       workTitle: 'Útil para',

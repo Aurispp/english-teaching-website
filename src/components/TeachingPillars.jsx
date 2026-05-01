@@ -12,14 +12,14 @@ const TeachingPillars = () => {
       type: 'lucide',
       Icon: Layers,
       alt: 'Flashcards',
-      tooltip: 'Personalized flashcards inside your student portal',
+      tooltip: 'Flashcards in the student portal I built',
     },
     {
       type: 'image',
       src: claudeIcon,
       alt: 'Claude',
       className: 'rounded-lg',
-      tooltip: 'AI-powered personalized learning and instant feedback',
+      tooltip: 'AI support for tailored materials when useful',
     },
     {
       type: 'image',

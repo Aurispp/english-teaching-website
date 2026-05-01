@@ -86,7 +86,7 @@ export const translations = {
       },
       modernApproach: {
         title: "Modern Approach",
-        description: "We use natural conversation, useful materials and simple tools to keep learning active between classes. The student portal helps you review vocabulary, save materials and follow what we are working on."
+        description: "We use natural conversation, useful materials and simple tools to keep learning active between classes. I built the student portal so you can review vocabulary, save materials and follow what we are working on."
       }
     },
     scenarios: {
@@ -111,7 +111,7 @@ export const translations = {
         },
         {
           title: "Progress Tracking",
-          description: "We keep track of what comes up in class so it does not disappear afterwards. Your student portal keeps vocabulary, materials and review tasks organised between lessons."
+          description: "We keep track of what comes up in class so it does not disappear afterwards. The student portal I built keeps vocabulary, materials and review tasks organised between lessons."
         },
         {
           title: "Commitment Matters",
@@ -176,7 +176,7 @@ export const translations = {
       title: 'About Me',
       intro: "Hi! I'm Auris. I grew up in Ireland and have been teaching English in Barcelona for 11 years. I am bilingual, and I help students and professionals gain fluency, confidence and clarity when using English in real situations.",
       method: "My classes are practical and adapted to each person: conversation, pronunciation, useful vocabulary, practical grammar, Cambridge preparation or English for work. After years teaching Spanish speakers, I know common difficulties like translating in your head, freezing when speaking or using Spanish structures in English.",
-      approach: "I also use my own student platform, where you can review vocabulary, save materials, practise with personalised flashcards and follow your progress between classes."
+      approach: "I also built a simple student platform, where you can review vocabulary, save materials, practise with personalised flashcards and follow your progress between classes."
     },
     method: {
       title: 'My Teaching Approach',
@@ -302,7 +302,7 @@ export const translations = {
         },
         {
           question: 'What is your teaching method?',
-          answer: 'I focus on conversation-based learning with modern tools. You get personalized flashcards in your student portal for vocabulary retention, tailored materials prepared before each class, and we focus on topics that interest you. The goal is natural fluency, not just textbook learning.'
+          answer: 'I focus on conversation-based learning with modern tools. You get personalised flashcards in the student portal I built, tailored materials prepared before each class, and we focus on topics that interest you. The goal is natural fluency, not just textbook learning.'
         },
         {
           question: 'Do you prepare students for English exams like First Certificate?',
@@ -407,14 +407,14 @@ export const translations = {
       },
       modernApproach: {
         title: "Enfoque Moderno",
-        description: "Trabajamos con conversación natural, materiales útiles y herramientas sencillas para que el aprendizaje continúe entre clases. El portal te ayuda a repasar vocabulario, guardar materiales y seguir lo que vamos trabajando."
+        description: "Trabajamos con conversación natural, materiales útiles y herramientas sencillas para que el aprendizaje continúe entre clases. He creado el portal para que puedas repasar vocabulario, guardar materiales y seguir lo que vamos trabajando."
       }
     },
     about: {
       title: 'Sobre mí',
       intro: "¡Hola! Soy Auris. Me crié en Irlanda, soy bilingüe y llevo 11 años enseñando inglés en Barcelona. Ayudo a estudiantes y profesionales a ganar soltura, confianza y claridad al usar el inglés en situaciones reales.",
       method: "Mis clases son prácticas y adaptadas a cada persona: conversación, pronunciación, vocabulario, gramática útil, preparación Cambridge o inglés para el trabajo. Después de años enseñando a hispanohablantes, conozco bien dificultades como traducir mentalmente, bloquearse al hablar o usar estructuras del español en inglés.",
-      approach: "También uso una plataforma propia para estudiantes, donde puedes repasar vocabulario, guardar materiales, practicar con tarjetas personalizadas y seguir tu progreso entre clases."
+      approach: "También he creado una plataforma sencilla para estudiantes, donde puedes repasar vocabulario, guardar materiales, practicar con tarjetas personalizadas y seguir tu progreso entre clases."
     },
     method: {
       title: 'Mi Enfoque de Enseñanza',
@@ -481,7 +481,7 @@ export const translations = {
         },
         {
           title: "Seguimiento del Progreso",
-          description: "Hago seguimiento de lo que aparece en clase para que no se pierda después. Tu portal mantiene vocabulario, materiales y tareas de repaso organizadas entre clases."
+          description: "Hago seguimiento de lo que aparece en clase para que no se pierda después. El portal que he creado mantiene vocabulario, materiales y tareas de repaso organizadas entre clases."
         },
         {
           title: "El Compromiso Importa",
@@ -610,7 +610,7 @@ export const translations = {
         },
         {
           question: '¿Cuál es tu método de enseñanza?',
-          answer: 'Me enfoco en el aprendizaje basado en la conversación con herramientas modernas. Tendrás tarjetas de memoria personalizadas en tu portal de estudiante para retener vocabulario, materiales adaptados preparados antes de cada clase, y nos enfocamos en temas que te interesan. El objetivo es la fluidez natural, no solo el aprendizaje de libros de texto.'
+          answer: 'Me enfoco en el aprendizaje basado en la conversación con herramientas modernas. Tendrás tarjetas personalizadas en el portal que he creado, materiales adaptados preparados antes de cada clase, y nos enfocamos en temas que te interesan. El objetivo es la fluidez natural, no solo el aprendizaje de libros de texto.'
         },
         {
           question: '¿Preparas a estudiantes para exámenes de inglés como First Certificate?',
