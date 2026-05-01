@@ -23,7 +23,6 @@ export const translations = {
     },
     pricing: {
       title: "Classes & Pricing",
-      trialClass: "First class is free — a chance for us to meet and see if we're a good fit",
       trialCta: "Book your free trial",
       mostPopular: "Most popular",
       perHour: "per hour",
@@ -345,7 +344,6 @@ export const translations = {
     },
     pricing: {
       title: "Clases y Precios",
-      trialClass: "La primera clase es gratis — para conocernos y ver si encajamos",
       trialCta: "Reserva tu prueba gratis",
       mostPopular: "Más popular",
       perHour: "por hora",

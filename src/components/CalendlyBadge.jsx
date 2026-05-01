@@ -17,6 +17,7 @@ const BADGE_TEXT = {
 const CalendlyBadge = () => {
   const { language } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
+  const [blockedBySection, setBlockedBySection] = useState(false);
 
   // Show the badge only after the user scrolls past the hero's own CTA.
   // Avoids a duplicate "Book your free trial class" button at the top.
@@ -27,11 +28,54 @@ const CalendlyBadge = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // On phones the floating Calendly badge can cover pricing cards or the
+  // booking form itself. Hide it while those conversion sections are visible.
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    const blockedSelectors = ['#pricing', '#contact'];
+
+    const updateBlockedState = () => {
+      if (!mediaQuery.matches) {
+        setBlockedBySection(false);
+        return;
+      }
+
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const isBlocked = blockedSelectors.some((selector) => {
+        const section = document.querySelector(selector);
+        if (!section) return false;
+        const rect = section.getBoundingClientRect();
+        return rect.top < viewportHeight - 80 && rect.bottom > 120;
+      });
+
+      setBlockedBySection(isBlocked);
+    };
+
+    updateBlockedState();
+    window.addEventListener('scroll', updateBlockedState, { passive: true });
+    window.addEventListener('resize', updateBlockedState);
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', updateBlockedState);
+    } else {
+      mediaQuery.addListener(updateBlockedState);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', updateBlockedState);
+      window.removeEventListener('resize', updateBlockedState);
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', updateBlockedState);
+      } else {
+        mediaQuery.removeListener(updateBlockedState);
+      }
+    };
+  }, []);
+
   useEffect(() => {
     const apply = () => {
       const badge = document.querySelector('.calendly-badge-widget');
       if (!badge) return false;
-      badge.style.display = scrolled ? '' : 'none';
+      badge.style.display = scrolled && !blockedBySection ? '' : 'none';
       return true;
     };
     if (apply()) return;
@@ -43,7 +87,7 @@ const CalendlyBadge = () => {
       window.clearInterval(id);
       window.clearTimeout(stop);
     };
-  }, [scrolled]);
+  }, [blockedBySection, scrolled]);
 
   useEffect(() => {
     let detach = null;
