@@ -136,12 +136,12 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-32 relative">
+    <section id="contact" className="py-16 sm:py-24 lg:py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-t from-primary-50 to-white"></div>
-      <div className="max-w-2xl mx-auto px-6 relative">
-        <div className="flex flex-col items-center mb-16">
-          <h2 className="text-4xl font-display font-light text-center mb-4">{t('contact.title')}</h2>
-          <p className="text-gray-600 text-center">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 relative">
+        <div className="flex flex-col items-center mb-10 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-display font-light text-center mb-3 sm:mb-4">{t('contact.title')}</h2>
+          <p className="text-[15px] sm:text-base text-gray-600 text-center max-w-[90%]">
             {t('contact.subtitle')}
           </p>
         </div>
@@ -149,9 +149,9 @@ const ContactSection = () => {
         <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="flex border-b border-gray-100">
             <button
-              className={`flex-1 px-4 sm:px-6 py-4 text-sm font-medium transition-colors inline-flex items-center justify-center gap-2 ${activeTab === 'calendly'
-                ? 'text-primary-600 border-b-2 border-primary-500'
-                : 'text-gray-600 hover:text-primary-600'
+              className={`flex-1 px-2 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium transition-colors inline-flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 ${activeTab === 'calendly'
+                ? 'text-primary-600 border-b-2 border-primary-500 bg-primary-50/30'
+                : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
                 }`}
               onClick={() => {
                 trackEvent('contact_tab_selected', {
@@ -162,12 +162,12 @@ const ContactSection = () => {
               }}
             >
               <Calendar className="w-4 h-4" />
-              {t('contact.bookTrial')}
+              <span>{t('contact.bookTrial')}</span>
             </button>
             <button
-              className={`flex-1 px-4 sm:px-6 py-4 text-sm font-medium transition-colors ${activeTab === 'direct'
-                ? 'text-primary-600 border-b-2 border-primary-500'
-                : 'text-gray-600 hover:text-primary-600'
+              className={`flex-1 px-2 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium transition-colors inline-flex items-center justify-center text-center ${activeTab === 'direct'
+                ? 'text-primary-600 border-b-2 border-primary-500 bg-primary-50/30'
+                : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
                 }`}
               onClick={() => {
                 trackEvent('contact_tab_selected', {
@@ -177,12 +177,12 @@ const ContactSection = () => {
                 setActiveTab('direct');
               }}
             >
-              {t('contact.directContact')}
+              <span>{t('contact.directContact')}</span>
             </button>
             <button
-              className={`flex-1 px-4 sm:px-6 py-4 text-sm font-medium transition-colors ${activeTab === 'form'
-                ? 'text-primary-600 border-b-2 border-primary-500'
-                : 'text-gray-600 hover:text-primary-600'
+              className={`flex-1 px-2 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium transition-colors inline-flex items-center justify-center text-center ${activeTab === 'form'
+                ? 'text-primary-600 border-b-2 border-primary-500 bg-primary-50/30'
+                : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
                 }`}
               onClick={() => {
                 trackEvent('contact_tab_selected', {
@@ -192,11 +192,11 @@ const ContactSection = () => {
                 setActiveTab('form');
               }}
             >
-              {t('contact.sendMessage')}
+              <span>{t('contact.sendMessage')}</span>
             </button>
           </div>
 
-          <div className="p-8">
+          <div className="p-5 sm:p-8">
             {activeTab === 'calendly' ? (
               <div>
                 <div className="flex justify-center mb-6">

@@ -4,11 +4,11 @@ import { useLanguage } from '../context/LanguageContext';
 import aurisPhoto from '../auris-hero-2026.jpg';
 
 const Badge = ({ icon: Icon, text }) => (
-  <div className="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-primary-100 hover:shadow-md transition-all">
-    <div className="bg-[#FF914D] bg-opacity-10 p-1.5 rounded-full mr-2">
-      <Icon className="w-4 h-4 text-[#FF914D]" />
+  <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white rounded-full shadow-sm ring-1 ring-primary-100 hover:shadow-md transition-all">
+    <div className="bg-[#FF914D] bg-opacity-10 p-1 rounded-full mr-1.5 sm:mr-2">
+      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF914D]" />
     </div>
-    <span className="text-gray-700 font-medium">{text}</span>
+    <span className="text-xs sm:text-sm text-gray-700 font-medium">{text}</span>
   </div>
 );
 
@@ -63,7 +63,7 @@ const HeroSection = () => {
             </p>
 
             {/* Custom Badges */}
-            <div className="flex flex-wrap gap-3 mb-8 md:mb-12">
+            <div className="flex flex-wrap gap-2.5 mb-8 sm:mb-10">
               <Badge
                 icon={Globe}
                 text={t('hero.badges.online')}
