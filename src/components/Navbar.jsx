@@ -8,6 +8,9 @@ const Navbar = ({ onTalkTheTalkClick }) => {
   const { language, setLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const localClassesLabel = language === 'es' ? 'Clases particulares' : 'Private classes';
+  const businessClassesLabel = language === 'es' ? 'Empresas' : 'Business English';
+  const talkTheTalkLabel = 'Talk the Talk';
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -99,15 +102,34 @@ const Navbar = ({ onTalkTheTalkClick }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-3">
+            <a
+              href="/clases-ingles-castelldefels"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-[#FF914D] rounded-lg transition-colors"
+            >
+              {localClassesLabel}
+            </a>
+            <a
+              href="/ingles-empresas-castelldefels"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-[#FF914D] rounded-lg transition-colors"
+            >
+              {businessClassesLabel}
+            </a>
+
+            <div className="w-px h-6 bg-gray-200" />
+
             {/* Talk the Talk - Free Practice Tool */}
-            <button
-              onClick={onTalkTheTalkClick}
+            <a
+              href="/talkthetalk"
+              onClick={(event) => {
+                event.preventDefault();
+                onTalkTheTalkClick();
+              }}
               className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 text-white rounded-lg transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-100"
               aria-label="Talk the Talk - Free Speaking Practice"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Talk the Talk</span>
-            </button>
+              <span>{talkTheTalkLabel}</span>
+            </a>
 
             <div className="w-px h-6 bg-gray-200" />
 
@@ -173,8 +195,10 @@ const Navbar = ({ onTalkTheTalkClick }) => {
               {mobileMenuOpen && (
                 <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
                   {/* Talk the Talk */}
-                  <button
-                    onClick={() => {
+                  <a
+                    href="/talkthetalk"
+                    onClick={(event) => {
+                      event.preventDefault();
                       onTalkTheTalkClick();
                       setMobileMenuOpen(false);
                     }}
@@ -184,10 +208,26 @@ const Navbar = ({ onTalkTheTalkClick }) => {
                       <MessageCircle className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">Talk the Talk</div>
+                      <div className="font-semibold text-gray-900">{talkTheTalkLabel}</div>
                       <div className="text-xs text-gray-500">Free speaking practice</div>
                     </div>
-                  </button>
+                  </a>
+
+                  <a
+                    href="/clases-ingles-castelldefels"
+                    className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span className="font-medium">{localClassesLabel}</span>
+                  </a>
+
+                  <a
+                    href="/ingles-empresas-castelldefels"
+                    className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span className="font-medium">{businessClassesLabel}</span>
+                  </a>
 
                   <a
                     href="https://english-with-auris-portal.netlify.app/login"

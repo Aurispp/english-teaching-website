@@ -1,7 +1,11 @@
 /**
  * Pre-generated speaking practice topics for Talk the Talk
  * English only, organized by theme and difficulty level
- * ~200 prompts per level per theme for maximum variety
+ *
+ * Level intent:
+ * - Easy: simple topics with familiar vocabulary
+ * - Medium: bridge prompts that add reasons, examples, or light structure
+ * - Boss Mode: the previous medium tier, now reserved for more developed answers
  */
 
 export const themes = [
@@ -22,8 +26,8 @@ export const themes = [
 
 export const difficulties = [
     { id: 'easy', name: 'Easy', description: 'Simple topics, familiar vocabulary' },
-    { id: 'medium', name: 'Medium', description: 'More nuanced, requires some thinking' },
-    { id: 'boss', name: 'Boss Mode', description: 'Complex topics, deeper analysis' }
+    { id: 'medium', name: 'Medium', description: 'Familiar prompts with reasons, examples, and simple structure' },
+    { id: 'boss', name: 'Boss Mode', description: 'Nuanced prompts that require more developed answers' }
 ];
 
 export const topics = {
@@ -357,6 +361,335 @@ export const topics = {
             "Talk about an item you use every day"
         ],
         medium: [
+            // New Medium - Morning & Daily Routines
+            "Describe your morning routine. Include two details and explain why it matters to you.",
+            "What do you do first thing when you wake up? Explain your answer, then add one real-life detail.",
+            "Describe your evening routine before bed. Mention one detail people might notice and one small personal opinion.",
+            "What do you eat for breakfast? Answer with two details and one personal opinion.",
+            "How do you get ready for work or school? Give one reason and one specific example from your life.",
+            "Describe your perfect lazy Sunday. Add one real example and explain how you feel about it.",
+            "What time do you usually wake up? Say why, and add one detail that helps us picture it.",
+            "Do you prefer mornings or evenings? Answer with two details and one personal opinion.",
+            "What's the first thing you check on your phone? Give one reason and one specific example from your life.",
+            "Describe your commute to work or school. Add one real example and explain how you feel about it.",
+
+            // New Medium - Food & Eating
+            "Talk about your favorite food. Mention one detail people might notice and one small personal opinion.",
+            "What's your go-to comfort food? Answer with two details and one personal opinion.",
+            "Describe your favorite restaurant. Include two details and explain why it matters to you.",
+            "What did you eat yesterday? Explain your answer, then add one real-life detail.",
+            "Do you like cooking? What do you cook? Say why, and add one detail that helps us picture it.",
+            "What's your favorite snack? Answer with two details and one personal opinion.",
+            "Describe your ideal dinner. Include two details and explain why it matters to you.",
+            "What food do you hate? Explain your answer, then add one real-life detail.",
+            "Talk about a food you tried recently. Mention one detail people might notice and one small personal opinion.",
+            "What's your favorite dessert? Answer with two details and one personal opinion.",
+            "Do you prefer sweet or savory food? Give one reason and one specific example from your life.",
+            "What do you usually drink with meals? Explain your answer, then add one real-life detail.",
+            "Describe your favorite sandwich. Mention one detail people might notice and one small personal opinion.",
+            "What's your favorite fruit? Answer with two details and one personal opinion.",
+            "Do you eat breakfast every day? Give one reason and one specific example from your life.",
+
+            // New Medium - Home & Living Space
+            "Describe your room. Add one real example and explain how you feel about it.",
+            "What's your favorite spot in your home? Say why, and add one detail that helps us picture it.",
+            "Describe your neighborhood. Include one useful detail and one example from your life.",
+            "What do you like about where you live? Give one reason and one specific example from your life.",
+            "Describe your dream bedroom. Add one real example and explain how you feel about it.",
+            "What's on the walls of your room? Say why, and add one detail that helps us picture it.",
+            "Do you prefer a tidy or messy space? Answer with two details and one personal opinion.",
+            "Describe your kitchen. Include two details and explain why it matters to you.",
+            "What's your favorite piece of furniture? Explain your answer, then add one real-life detail.",
+            "Do you have any plants at home? Say why, and add one detail that helps us picture it.",
+
+            // New Medium - Friends & Family
+            "Describe your best friend. Include one useful detail and one example from your life.",
+            "Talk about a family member you admire. Include two details and explain why it matters to you.",
+            "What do you and your friends do for fun? Explain your answer, then add one real-life detail.",
+            "Describe your siblings (or being an only child). Mention one detail people might notice and one small personal opinion.",
+            "Who makes you laugh the most? Answer with two details and one personal opinion.",
+            "Describe your grandparents. Include two details and explain why it matters to you.",
+            "Talk about your closest cousin. Add one real example and explain how you feel about it.",
+            "Who do you call when you're sad? Say why, and add one detail that helps us picture it.",
+            "Describe a friend you've known for years. Include one useful detail and one example from your life.",
+            "What's your family like? Give one reason and one specific example from your life.",
+
+            // New Medium - Hobbies & Free Time
+            "Talk about a hobby you enjoy. Add one real example and explain how you feel about it.",
+            "What do you do on weekends? Say why, and add one detail that helps us picture it.",
+            "What do you do after work or school? Answer with two details and one personal opinion.",
+            "Describe your favorite way to relax. Include two details and explain why it matters to you.",
+            "What games do you like to play? Explain your answer, then add one real-life detail.",
+            "Do you have any collections? Say why, and add one detail that helps us picture it.",
+            "What do you do when you're bored? Answer with two details and one personal opinion.",
+            "Describe a skill you're learning. Include two details and explain why it matters to you.",
+            "What's your favorite thing to do alone? Explain your answer, then add one real-life detail.",
+            "How do you spend your free time? Say why, and add one detail that helps us picture it.",
+
+            // New Medium - Technology & Social Media
+            "What's on your phone's home screen? Answer with two details and one personal opinion.",
+            "Describe your favorite app. Include two details and explain why it matters to you.",
+            "Talk about your favorite social media. Add one real example and explain how you feel about it.",
+            "What video games do you play? Say why, and add one detail that helps us picture it.",
+            "How much time do you spend online? Answer with two details and one personal opinion.",
+            "What do you watch on YouTube? Give one reason and one specific example from your life.",
+            "Describe your favorite YouTuber or creator. Add one real example and explain how you feel about it.",
+            "Do you prefer texting or calling? Say why, and add one detail that helps us picture it.",
+            "What's the last photo you took? Answer with two details and one personal opinion.",
+            "Talk about your favorite website. Include two details and explain why it matters to you.",
+
+            // New Medium - Entertainment
+            "Talk about the last show you watched. Add one real example and explain how you feel about it.",
+            "What's your favorite movie? Say why, and add one detail that helps us picture it.",
+            "Describe your favorite TV series. Include one useful detail and one example from your life.",
+            "What kind of music do you like? Give one reason and one specific example from your life.",
+            "Talk about your favorite song right now. Add one real example and explain how you feel about it.",
+            "What podcasts do you listen to? Say why, and add one detail that helps us picture it.",
+            "Describe a concert you've been to. Include one useful detail and one example from your life.",
+            "What's the last book you read? Give one reason and one specific example from your life.",
+            "Who's your favorite actor or actress? Explain your answer, then add one real-life detail.",
+            "What's your favorite streaming service? Say why, and add one detail that helps us picture it.",
+
+            // New Medium - Places & Travel
+            "Describe your hometown. Include one useful detail and one example from your life.",
+            "Talk about your favorite place in your city. Include two details and explain why it matters to you.",
+            "Where do you like to go on weekends? Explain your answer, then add one real-life detail.",
+            "Describe a place that makes you happy. Mention one detail people might notice and one small personal opinion.",
+            "What's your favorite shop or store? Answer with two details and one personal opinion.",
+            "Talk about a place you visit often. Include two details and explain why it matters to you.",
+            "Describe your favorite cafe or coffee shop. Add one real example and explain how you feel about it.",
+            "Where do you go to think? Say why, and add one detail that helps us picture it.",
+            "What's the nicest place you've visited? Answer with two details and one personal opinion.",
+            "Describe your favorite park. Include two details and explain why it matters to you.",
+
+            // New Medium - Weather & Seasons
+            "What is your favorite season? Why? Explain your answer, then add one real-life detail.",
+            "Do you like rainy days? Say why, and add one detail that helps us picture it.",
+            "What do you do when it's hot outside? Answer with two details and one personal opinion.",
+            "Describe your favorite weather. Include two details and explain why it matters to you.",
+            "What do you wear in winter? Explain your answer, then add one real-life detail.",
+            "How does weather affect your mood? Say why, and add one detail that helps us picture it.",
+            "What's your least favorite season? Answer with two details and one personal opinion.",
+            "Do you like snow? Give one reason and one specific example from your life.",
+            "What do you do on sunny days? Explain your answer, then add one real-life detail.",
+            "Describe the weather today. Mention one detail people might notice and one small personal opinion.",
+
+            // New Medium - Memories & Experiences
+            "Describe a happy memory. Include one useful detail and one example from your life.",
+            "Talk about your favorite birthday. Include two details and explain why it matters to you.",
+            "Describe a fun trip you took. Add one real example and explain how you feel about it.",
+            "What's your favorite childhood memory? Say why, and add one detail that helps us picture it.",
+            "Talk about a time you laughed a lot. Include one useful detail and one example from your life.",
+            "Describe a nice surprise you got. Include two details and explain why it matters to you.",
+            "What's your earliest memory? Explain your answer, then add one real-life detail.",
+            "Talk about a memorable meal. Mention one detail people might notice and one small personal opinion.",
+            "Describe a fun day with friends. Include one useful detail and one example from your life.",
+            "What's your favorite holiday memory? Give one reason and one specific example from your life.",
+
+            // New Medium - School & Work
+            "What's the best thing about your job or school? Explain your answer, then add one real-life detail.",
+            "Describe your workplace or classroom. Mention one detail people might notice and one small personal opinion.",
+            "Talk about your favorite subject or task. Include one useful detail and one example from your life.",
+            "What do you like about your coworkers or classmates? Give one reason and one specific example from your life.",
+            "Describe your lunch break. Add one real example and explain how you feel about it.",
+            "What's something you learned recently? Say why, and add one detail that helps us picture it.",
+            "Talk about your favorite teacher or boss. Include one useful detail and one example from your life.",
+            "What time does your day start? Give one reason and one specific example from your life.",
+            "Describe a normal day at work or school. Add one real example and explain how you feel about it.",
+            "What do you wish was different about your job or school? Say why, and add one detail that helps us picture it.",
+
+            // New Medium - Pets & Animals
+            "Describe your pet (or dream pet). Include one useful detail and one example from your life.",
+            "What's your favorite animal? Give one reason and one specific example from your life.",
+            "Do you prefer cats or dogs? Explain your answer, then add one real-life detail.",
+            "Talk about an animal you find interesting. Mention one detail people might notice and one small personal opinion.",
+            "Have you ever had a pet? Answer with two details and one personal opinion.",
+            "What would you name a new pet? Give one reason and one specific example from your life.",
+            "Describe a cute animal you saw. Add one real example and explain how you feel about it.",
+            "Do you like going to zoos? Say why, and add one detail that helps us picture it.",
+            "What animal are you most like? Answer with two details and one personal opinion.",
+            "Talk about your friend's pet. Include two details and explain why it matters to you.",
+
+            // New Medium - Style & Appearance
+            "Describe your style - what do you like to wear? Explain your answer, then add one real-life detail.",
+            "What's your favorite outfit? Say why, and add one detail that helps us picture it.",
+            "Do you have a favorite color to wear? Answer with two details and one personal opinion.",
+            "Describe your favorite shoes. Include two details and explain why it matters to you.",
+            "How would you describe your look? Explain your answer, then add one real-life detail.",
+            "What do you wear on a typical day? Say why, and add one detail that helps us picture it.",
+            "Talk about your favorite accessory. Include one useful detail and one example from your life.",
+            "Do you follow fashion trends? Give one reason and one specific example from your life.",
+            "What's the most comfortable thing you own? Explain your answer, then add one real-life detail.",
+            "Describe what you're wearing today. Mention one detail people might notice and one small personal opinion.",
+
+            // New Medium - Health & Wellness
+            "How do you stay healthy? Answer with two details and one personal opinion.",
+            "Do you exercise? What kind? Give one reason and one specific example from your life.",
+            "What do you do when you're sick? Explain your answer, then add one real-life detail.",
+            "Talk about your sleep habits. Mention one detail people might notice and one small personal opinion.",
+            "What makes you feel energetic? Answer with two details and one personal opinion.",
+            "Do you drink enough water? Give one reason and one specific example from your life.",
+            "How do you deal with stress? Explain your answer, then add one real-life detail.",
+            "What's your favorite form of exercise? Say why, and add one detail that helps us picture it.",
+            "Do you take vitamins? Answer with two details and one personal opinion.",
+            "Talk about your self-care routine. Include two details and explain why it matters to you.",
+
+            // New Medium - Shopping & Money
+            "What do you like to shop for? Explain your answer, then add one real-life detail.",
+            "Do you prefer online or in-store shopping? Say why, and add one detail that helps us picture it.",
+            "Talk about the last thing you bought. Include one useful detail and one example from your life.",
+            "What's something you're saving for? Give one reason and one specific example from your life.",
+            "Do you use cash or card? Explain your answer, then add one real-life detail.",
+            "Describe your shopping habits. Mention one detail people might notice and one small personal opinion.",
+            "What's the best deal you ever found? Answer with two details and one personal opinion.",
+            "Where do you buy your clothes? Give one reason and one specific example from your life.",
+            "Talk about something you want to buy. Add one real example and explain how you feel about it.",
+            "Do you enjoy window shopping? Say why, and add one detail that helps us picture it.",
+
+            // New Medium - Simple Opinions
+            "What's the best day of the week? Answer with two details and one personal opinion.",
+            "Morning person or night owl? Give one reason and one specific example from your life.",
+            "Beach or mountains? Explain your answer, then add one real-life detail.",
+            "What's your lucky number? Say why, and add one detail that helps us picture it.",
+            "Sweet or salty snacks? Answer with two details and one personal opinion.",
+            "Hot drinks or cold drinks? Give one reason and one specific example from your life.",
+            "Early bird or late sleeper? Explain your answer, then add one real-life detail.",
+            "Indoor or outdoor activities? Say why, and add one detail that helps us picture it.",
+            "Quiet night in or night out? Answer with two details and one personal opinion.",
+            "What's your favorite holiday? Give one reason and one specific example from your life.",
+
+            // New Medium - Miscellaneous Easy
+            "What makes you smile? Explain your answer, then add one real-life detail.",
+            "Describe something that annoys you. Mention one detail people might notice and one small personal opinion.",
+            "What's your favorite smell? Answer with two details and one personal opinion.",
+            "Talk about something you're good at. Include two details and explain why it matters to you.",
+            "What do you do to cheer yourself up? Explain your answer, then add one real-life detail.",
+            "Describe your perfect weather. Mention one detail people might notice and one small personal opinion.",
+            "What's your favorite day of the year? Answer with two details and one personal opinion.",
+            "Talk about something you do every day. Include two details and explain why it matters to you.",
+            "What's in your bag right now? Explain your answer, then add one real-life detail.",
+            "Describe your favorite sound. Mention one detail people might notice and one small personal opinion.",
+            "What's on your to-do list today? Answer with two details and one personal opinion.",
+            "Talk about your favorite drink. Include two details and explain why it matters to you.",
+            "What do you do on holidays? Explain your answer, then add one real-life detail.",
+            "Describe your dream vacation spot. Mention one detail people might notice and one small personal opinion.",
+            "What's your favorite time of day? Answer with two details and one personal opinion.",
+            "Talk about your morning coffee or tea. Include two details and explain why it matters to you.",
+            "What makes a good day for you? Explain your answer, then add one real-life detail.",
+            "Describe your favorite photo. Mention one detail people might notice and one small personal opinion.",
+            "What's your current favorite thing? Answer with two details and one personal opinion.",
+            "Talk about something that makes you happy. Include two details and explain why it matters to you.",
+
+            // New Medium - Daily Life Extended
+            "What did you do this morning? Explain your answer, then add one real-life detail.",
+            "Describe your bedtime routine. Mention one detail people might notice and one small personal opinion.",
+            "What's the first thing you think about when you wake up? Answer with two details and one personal opinion.",
+            "How do you prepare for the next day? Give one reason and one specific example from your life.",
+            "What's your favorite room in your house? Explain your answer, then add one real-life detail.",
+            "Describe your workspace or study area. Mention one detail people might notice and one small personal opinion.",
+            "What do you do during your lunch break? Answer with two details and one personal opinion.",
+            "How do you spend your evenings? Give one reason and one specific example from your life.",
+            "What's your favorite thing about your daily routine? Explain your answer, then add one real-life detail.",
+            "Describe a typical Monday for you. Mention one detail people might notice and one small personal opinion.",
+
+            // New Medium - Food & Drinks Extended
+            "What's your favorite thing to cook? Answer with two details and one personal opinion.",
+            "Describe your ideal breakfast. Include two details and explain why it matters to you.",
+            "What snacks do you keep at home? Explain your answer, then add one real-life detail.",
+            "What's your favorite drink on a hot day? Say why, and add one detail that helps us picture it.",
+            "Describe a dish from your culture. Include one useful detail and one example from your life.",
+            "What food reminds you of home? Give one reason and one specific example from your life.",
+            "What's your guilty pleasure food? Explain your answer, then add one real-life detail.",
+            "Do you prefer cooking or ordering food? Say why, and add one detail that helps us picture it.",
+            "What's the strangest food you've eaten? Answer with two details and one personal opinion.",
+            "Describe your favorite homemade meal. Include two details and explain why it matters to you.",
+
+            // New Medium - People & Relationships
+            "Describe someone who makes you laugh. Add one real example and explain how you feel about it.",
+            "Who do you spend the most time with? Say why, and add one detail that helps us picture it.",
+            "Talk about a neighbor you like. Include one useful detail and one example from your life.",
+            "Describe your oldest friend. Include two details and explain why it matters to you.",
+            "Who taught you something important? Explain your answer, then add one real-life detail.",
+            "Talk about someone you admire. Mention one detail people might notice and one small personal opinion.",
+            "Describe a funny person you know. Include one useful detail and one example from your life.",
+            "Who gives you the best advice? Give one reason and one specific example from your life.",
+            "Talk about a kind person in your life. Add one real example and explain how you feel about it.",
+            "Describe someone who inspires you. Mention one detail people might notice and one small personal opinion.",
+
+            // New Medium - Hobbies Extended
+            "What do you do to pass the time? Answer with two details and one personal opinion.",
+            "Describe a hobby you want to start. Include two details and explain why it matters to you.",
+            "What's something you do every weekend? Explain your answer, then add one real-life detail.",
+            "Talk about a skill you're proud of. Mention one detail people might notice and one small personal opinion.",
+            "What do you do when you have free time? Answer with two details and one personal opinion.",
+            "Describe your favorite indoor activity. Include two details and explain why it matters to you.",
+            "What's your favorite outdoor activity? Explain your answer, then add one real-life detail.",
+            "Talk about something you do for fun. Mention one detail people might notice and one small personal opinion.",
+            "What hobby do your friends enjoy? Answer with two details and one personal opinion.",
+            "Describe a relaxing activity. Include two details and explain why it matters to you.",
+
+            // New Medium - Technology Extended
+            "What's your favorite thing about your phone? Explain your answer, then add one real-life detail.",
+            "Describe an app you use daily. Mention one detail people might notice and one small personal opinion.",
+            "What do you use the internet for most? Answer with two details and one personal opinion.",
+            "Talk about your favorite online content. Include two details and explain why it matters to you.",
+            "What technology makes your life easier? Explain your answer, then add one real-life detail.",
+            "Describe your computer or laptop. Mention one detail people might notice and one small personal opinion.",
+            "What's the best feature on your phone? Answer with two details and one personal opinion.",
+            "Talk about a website you visit often. Include two details and explain why it matters to you.",
+            "What do you watch when you're bored? Explain your answer, then add one real-life detail.",
+            "Describe your screen time habits. Mention one detail people might notice and one small personal opinion.",
+
+            // New Medium - Places Extended
+            "Describe your favorite room. Include one useful detail and one example from your life.",
+            "Where do you feel most comfortable? Give one reason and one specific example from your life.",
+            "Talk about a place you go to relax. Add one real example and explain how you feel about it.",
+            "What's your favorite local place? Say why, and add one detail that helps us picture it.",
+            "Describe a cozy place you know. Include one useful detail and one example from your life.",
+            "Where do you like to eat out? Give one reason and one specific example from your life.",
+            "Talk about a place with good memories. Add one real example and explain how you feel about it.",
+            "Describe your favorite outdoor spot. Mention one detail people might notice and one small personal opinion.",
+            "Where do you meet your friends? Answer with two details and one personal opinion.",
+            "What place do you visit regularly? Give one reason and one specific example from your life.",
+
+            // New Medium - Preferences Extended
+            "Are you a morning or evening person? Explain your answer, then add one real-life detail.",
+            "Do you prefer silence or music while working? Say why, and add one detail that helps us picture it.",
+            "Hot weather or cold weather? Answer with two details and one personal opinion.",
+            "Big city or small town? Give one reason and one specific example from your life.",
+            "Early dinner or late dinner? Explain your answer, then add one real-life detail.",
+            "Coffee or tea? Say why, and add one detail that helps us picture it.",
+            "Books or movies? Answer with two details and one personal opinion.",
+            "Cooking or eating out? Give one reason and one specific example from your life.",
+            "Phone calls or text messages? Explain your answer, then add one real-life detail.",
+            "Planned activities or spontaneous plans? Say why, and add one detail that helps us picture it.",
+
+            // New Medium - Simple Reflections
+            "What made you happy today? Answer with two details and one personal opinion.",
+            "Describe something you're looking forward to. Include two details and explain why it matters to you.",
+            "What's something small you enjoy? Explain your answer, then add one real-life detail.",
+            "Talk about your favorite part of the day. Mention one detail people might notice and one small personal opinion.",
+            "What's something you do every morning? Answer with two details and one personal opinion.",
+            "Describe your perfect day off. Include two details and explain why it matters to you.",
+            "What makes you feel relaxed? Explain your answer, then add one real-life detail.",
+            "Talk about a simple pleasure in your life. Mention one detail people might notice and one small personal opinion.",
+            "What's something you never get tired of? Answer with two details and one personal opinion.",
+            "Describe something that always cheers you up. Include two details and explain why it matters to you.",
+
+            // New Medium - Objects & Things
+            "What's in your pocket right now? Explain your answer, then add one real-life detail.",
+            "Describe your favorite mug or cup. Mention one detail people might notice and one small personal opinion.",
+            "What's on your nightstand? Answer with two details and one personal opinion.",
+            "Talk about your keys and keychains. Include two details and explain why it matters to you.",
+            "Describe your wallet or purse. Add one real example and explain how you feel about it.",
+            "What's your most used item? Say why, and add one detail that helps us picture it.",
+            "Talk about something on your desk. Include one useful detail and one example from your life.",
+            "Describe your favorite blanket or pillow. Include two details and explain why it matters to you.",
+            "What's always in your bag? Explain your answer, then add one real-life detail.",
+            "Talk about an item you use every day. Mention one detail people might notice and one small personal opinion."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // Routines & Habits
             "Describe your ideal morning routine and why it works for you",
             "How has your daily routine changed over the past few years?",
@@ -525,7 +858,7 @@ export const topics = {
             "What traditions have you adapted or changed?",
             "Describe a cultural tradition you appreciate",
 
-            // Miscellaneous Medium
+            // Miscellaneous Boss
             "Describe the most useful thing you've learned this year",
             "Talk about something you've changed your mind about",
             "What does a balanced life look like to you?",
@@ -542,7 +875,7 @@ export const topics = {
             "Talk about something that always puts you in a good mood",
             "What do you do to stay curious and keep learning?",
 
-            // Additional Medium - Deeper Daily Life
+            // Additional Boss - Deeper Daily Life
             "How do you decide what's worth spending money on?",
             "Describe your philosophy on punctuality",
             "Talk about how you handle interruptions to your plans",
@@ -554,7 +887,7 @@ export const topics = {
             "Describe how you handle unexpected guests",
             "How do you approach household chores and responsibilities?",
 
-            // Additional Medium - Social Dynamics
+            // Additional Boss - Social Dynamics
             "Describe how you navigate small talk",
             "Talk about your comfort level with silence in conversations",
             "How do you handle disagreements with friends?",
@@ -566,7 +899,7 @@ export const topics = {
             "Talk about your role in your friend group",
             "Describe how you handle gossip or rumors",
 
-            // Additional Medium - Personal Values
+            // Additional Boss - Personal Values
             "What principles guide your daily decisions?",
             "Describe something you would never compromise on",
             "Talk about how you define honesty in relationships",
@@ -578,7 +911,7 @@ export const topics = {
             "Describe how you show respect to others",
             "How do you balance being kind and being honest?",
 
-            // Additional Medium - Emotions & Self
+            // Additional Boss - Emotions & Self
             "Describe how you handle disappointment",
             "Talk about what makes you feel confident",
             "How do you deal with jealousy or envy?",
@@ -590,7 +923,7 @@ export const topics = {
             "What helps you feel grounded?",
             "Describe your relationship with criticism",
 
-            // Additional Medium - Life Perspectives
+            // Additional Boss - Life Perspectives
             "How has your definition of success changed?",
             "Describe what you consider a meaningful conversation",
             "Talk about your approach to risk-taking",
@@ -602,7 +935,7 @@ export const topics = {
             "Talk about your relationship with aging",
             "What do you think people misunderstand about your generation?",
 
-            // Additional Medium - Practical Life
+            // Additional Boss - Practical Life
             "Describe your approach to staying informed about current events",
             "Talk about how you handle financial decisions",
             "What's your philosophy on lending and borrowing?",
@@ -614,7 +947,7 @@ export const topics = {
             "What's your approach to learning from mistakes?",
             "Describe how you handle competing priorities",
 
-            // Additional Medium - Modern Challenges
+            // Additional Boss - Modern Challenges
             "How do you maintain focus in a distracted world?",
             "Describe your approach to digital detox",
             "Talk about how you curate your online presence",
@@ -626,7 +959,7 @@ export const topics = {
             "Talk about how social comparison affects you",
             "How do you handle information overload?",
 
-            // Additional Medium - Creativity & Expression
+            // Additional Boss - Creativity & Expression
             "Describe how you express yourself creatively",
             "Talk about what inspires you most",
             "How do you approach creative blocks?",
@@ -638,7 +971,7 @@ export const topics = {
             "How do you find your creative voice?",
             "Describe what aesthetic appeals to you most",
 
-            // Additional Medium - Growth & Learning
+            // Additional Boss - Growth & Learning
             "Talk about how you approach skill development",
             "Describe your ideal learning environment",
             "How do you know when you've truly learned something?",
@@ -650,7 +983,7 @@ export const topics = {
             "How do you balance depth versus breadth in learning?",
             "Talk about your approach to intellectual curiosity",
 
-            // Additional Medium - Community & Belonging
+            // Additional Boss - Community & Belonging
             "Describe where you feel you most belong",
             "Talk about your relationship with your neighborhood",
             "How do you contribute to your community?",
@@ -661,247 +994,6 @@ export const topics = {
             "Talk about the role of belonging in your wellbeing",
             "How do you balance solitude and social connection?",
             "Describe what makes you feel at home somewhere"
-        ],
-        boss: [
-            // Deep Self-Reflection
-            "Reflect on how your daily habits shape your long-term wellbeing",
-            "Analyze how your upbringing influences your current lifestyle choices",
-            "Describe how your priorities have evolved over the past five years",
-            "Discuss the relationship between your daily choices and your sense of purpose",
-            "Reflect on the moments that have most significantly shaped who you are",
-            "Analyze how your definition of success has changed throughout your life",
-            "Describe the internal conflicts you face between different aspects of your identity",
-            "Discuss how you reconcile your ideal self with your actual behavior",
-            "Reflect on the role of discomfort in your personal growth",
-            "Analyze how your fears have both limited and protected you",
-
-            // Comfort Zone & Change
-            "Talk about a time when stepping outside your comfort zone changed you",
-            "Analyze the tension between security and growth in your life",
-            "Describe how you've learned to embrace uncertainty",
-            "Discuss the most significant transformation you've undergone",
-            "Reflect on how resistance to change has affected your opportunities",
-            "Analyze the difference between forced change and chosen change",
-            "Describe how you handle the gap between expectations and reality",
-            "Discuss what you've had to unlearn to move forward",
-            "Reflect on a belief you held strongly that you've now abandoned",
-            "Analyze how your relationship with change has evolved",
-
-            // Work-Life & Modern Challenges
-            "Discuss the role of routine versus spontaneity in creating a fulfilling life",
-            "Talk about the balance between work and personal life in modern society",
-            "Analyze how technology has changed your daily interactions and relationships",
-            "Reflect on the pressure to be productive versus the need for rest",
-            "Discuss how social media shapes your perception of others' lives",
-            "Analyze the tension between ambition and contentment",
-            "Describe how you navigate information overload in daily life",
-            "Discuss the challenges of maintaining authenticity in a curated world",
-            "Reflect on how constant connectivity affects your mental space",
-            "Analyze the relationship between busy schedules and meaningful living",
-
-            // Relationships & Connection
-            "Discuss how cultural background shapes our concept of 'home'",
-            "Analyze the evolution of intimacy and connection in the digital age",
-            "Reflect on how your closest relationships have shaped your values",
-            "Discuss the balance between independence and interdependence",
-            "Analyze how past relationships influence your current patterns",
-            "Describe the most important lessons your relationships have taught you",
-            "Discuss how vulnerability functions in building deep connections",
-            "Reflect on the relationships you've outgrown and why",
-            "Analyze the role of conflict in strengthening or weakening bonds",
-            "Discuss how you maintain your sense of self within relationships",
-
-            // Meaning & Purpose
-            "Describe the most significant lesson life has taught you so far",
-            "Analyze what gives your daily life meaning beyond obligations",
-            "Reflect on how you find purpose in ordinary moments",
-            "Discuss the tension between seeking happiness and finding meaning",
-            "Analyze how your definition of a good life has changed",
-            "Describe what you would regret not doing or being",
-            "Discuss how you create meaning when external sources fail",
-            "Reflect on the difference between happiness and fulfillment",
-            "Analyze the role of struggle in creating a meaningful life",
-            "Discuss how you balance living in the moment with planning for the future",
-
-            // Material Life & Values
-            "Analyze the relationship between material possessions and happiness",
-            "Reflect on how consumer culture has shaped your desires",
-            "Discuss the tension between wanting more and appreciating what you have",
-            "Analyze how your spending reflects your true priorities",
-            "Describe the possessions that carry emotional significance versus those that don't",
-            "Discuss the relationship between financial security and freedom",
-            "Reflect on what you would keep if you had to simplify drastically",
-            "Analyze how advertising and media influence your sense of need",
-            "Discuss the role of comparison in your satisfaction with what you have",
-            "Reflect on whether experiences or things bring you more lasting joy",
-
-            // Time & Mortality
-            "Analyze how awareness of time passing affects your daily choices",
-            "Reflect on what you would change if you knew your time was limited",
-            "Discuss how you reconcile urgent tasks with important but non-urgent ones",
-            "Analyze the trade-offs you make between present enjoyment and future security",
-            "Describe how your relationship with time has changed as you've aged",
-            "Discuss how you decide what's worth your limited time and energy",
-            "Reflect on the legacy you want to create through daily actions",
-            "Analyze how fear of missing out influences your decisions",
-            "Discuss the tension between patience and urgency in pursuing goals",
-            "Reflect on how you want to be remembered by those closest to you",
-
-            // Society & Self
-            "Analyze how societal expectations have shaped your life choices",
-            "Reflect on the role of community in your personal development",
-            "Discuss how you navigate between conformity and authenticity",
-            "Analyze the influence of your generation on your worldview",
-            "Describe how you contribute to and receive from your community",
-            "Discuss the tension between individual fulfillment and social responsibility",
-            "Reflect on how privilege or disadvantage has shaped your path",
-            "Analyze how cultural norms around success affect your self-image",
-            "Discuss how you handle pressure to meet others' expectations",
-            "Reflect on the parts of yourself you hide from different audiences",
-
-            // Health, Mind & Body
-            "Analyze the relationship between physical health and mental clarity",
-            "Reflect on how your body has influenced your life experiences",
-            "Discuss the mental health challenges unique to modern living",
-            "Analyze how you care for your future self through present choices",
-            "Describe how stress manifests in your life and how you manage it",
-            "Discuss the relationship between rest and productivity in your life",
-            "Reflect on how aging has changed your priorities and perspectives",
-            "Analyze the tension between pushing yourself and practicing self-compassion",
-            "Discuss how you maintain mental wellness in challenging times",
-            "Reflect on the habits that sustain you versus those that deplete you",
-
-            // Knowledge & Learning
-            "Analyze how your education shaped your worldview for better and worse",
-            "Reflect on the difference between information and wisdom in your life",
-            "Discuss how you continue learning outside formal education",
-            "Analyze the role of curiosity in maintaining engagement with life",
-            "Describe the most transformative ideas you've encountered",
-            "Discuss how you evaluate what's worth knowing and learning",
-            "Reflect on knowledge you wish you had gained earlier",
-            "Analyze how echo chambers affect your understanding of the world",
-            "Discuss the relationship between intellectual growth and emotional growth",
-            "Reflect on how changing your mind has enriched your life",
-
-            // Miscellaneous Boss
-            "Analyze how your environment influences who you become",
-            "Reflect on the role of luck versus effort in your achievements",
-            "Discuss how you handle the gap between your values and your actions",
-            "Analyze the stories you tell yourself about your life",
-            "Describe how you've learned to accept aspects of yourself you once rejected",
-            "Discuss how you find stability in a constantly changing world",
-            "Reflect on what you've sacrificed to get where you are",
-            "Analyze the relationship between control and peace of mind",
-            "Discuss how you maintain hope when facing difficult realities",
-            "Reflect on the contradictions you've learned to live with",
-
-            // Additional Boss - Existential Themes
-            "Analyze how your mortality shapes your daily priorities",
-            "Reflect on the difference between living and existing",
-            "Discuss how you create authenticity in a performative world",
-            "Analyze the role of suffering in your personal development",
-            "Describe how you reconcile your individuality with your need to belong",
-            "Discuss the tension between acceptance and ambition",
-            "Reflect on what you've lost that you can never recover",
-            "Analyze how your fears of inadequacy influence your choices",
-            "Discuss the role of uncertainty in creating meaning",
-            "Reflect on the moments when you've felt most alive",
-
-            // Additional Boss - Identity & Self
-            "Analyze the gap between who you are and who you present yourself as",
-            "Reflect on the aspects of your identity you've inherited versus chosen",
-            "Discuss how trauma or difficulty has reshaped your sense of self",
-            "Analyze the multiple selves you inhabit in different contexts",
-            "Describe how your self-perception differs from others' views of you",
-            "Discuss the core of your identity that remains constant through change",
-            "Reflect on identities you've shed and why",
-            "Analyze how your insecurities shape your behavior",
-            "Discuss the role of self-deception in maintaining wellbeing",
-            "Reflect on aspects of yourself you're still discovering",
-
-            // Additional Boss - Relationships & Intimacy
-            "Analyze the cost of deep relationships versus the cost of isolation",
-            "Reflect on how you've been shaped by love and its absence",
-            "Discuss the boundaries between caring for others and losing yourself",
-            "Analyze patterns in your relationships that you've struggled to break",
-            "Describe the most honest relationship you've ever had",
-            "Discuss how intimacy requires risk and what you're willing to risk",
-            "Reflect on relationships that fundamentally changed your worldview",
-            "Analyze the role of disappointment in shaping your expectations of others",
-            "Discuss how you navigate the power dynamics in your relationships",
-            "Reflect on what you've learned about yourself through conflict with others",
-
-            // Additional Boss - Society & Responsibility
-            "Analyze your responsibility to strangers versus those close to you",
-            "Reflect on how your lifestyle choices impact the broader world",
-            "Discuss the tension between self-interest and collective wellbeing",
-            "Analyze how you justify the inequalities you participate in",
-            "Describe the social systems you benefit from but disagree with",
-            "Discuss your role in perpetuating or challenging status quo",
-            "Reflect on how you balance personal ambition with social responsibility",
-            "Analyze the compromises you make to exist within flawed systems",
-            "Discuss how you maintain integrity while navigating institutional demands",
-            "Reflect on the difference between being good and appearing good",
-
-            // Additional Boss - Work & Purpose
-            "Analyze the relationship between your work and your sense of self-worth",
-            "Reflect on what you would do if money were no object",
-            "Discuss the sacrifices you've made for career versus personal life",
-            "Analyze how capitalism has shaped your understanding of value",
-            "Describe the work that feels meaningful versus the work that pays",
-            "Discuss how you find purpose when your work feels meaningless",
-            "Reflect on the parts of yourself you've suppressed for professional success",
-            "Analyze the tension between ambition and contentment in your career",
-            "Discuss how you define success independently of external validation",
-            "Reflect on what you would regret not pursuing professionally",
-
-            // Additional Boss - Time & Change
-            "Analyze how your relationship with the past shapes your present",
-            "Reflect on the person you used to be that no longer exists",
-            "Discuss how you handle the irreversibility of your choices",
-            "Analyze the tension between honoring the past and embracing change",
-            "Describe how anticipation of the future affects your present experience",
-            "Discuss the things you're running out of time to do or become",
-            "Reflect on how aging has changed what matters to you",
-            "Analyze the role of nostalgia in your sense of wellbeing",
-            "Discuss how you process the passing of different life stages",
-            "Reflect on the versions of your future that will never exist",
-
-            // Additional Boss - Mind & Consciousness
-            "Analyze the relationship between your thoughts and your identity",
-            "Reflect on the parts of your mind you have no control over",
-            "Discuss how you handle intrusive or unwanted thoughts",
-            "Analyze the stories your mind tells you versus objective reality",
-            "Describe your relationship with your inner critic",
-            "Discuss how consciousness shapes your experience of daily life",
-            "Reflect on the unconscious patterns that drive your behavior",
-            "Analyze the gap between rational understanding and emotional experience",
-            "Discuss how you distinguish intuition from fear",
-            "Reflect on the limits of self-knowledge",
-
-            // Additional Boss - Values & Contradictions
-            "Analyze the values you hold but don't always live by",
-            "Reflect on the moral compromises you've accepted",
-            "Discuss how you've changed your position on fundamental issues",
-            "Analyze the tension between your ideals and practical constraints",
-            "Describe beliefs you hold that you can't fully justify",
-            "Discuss how you handle moral complexity without clear answers",
-            "Reflect on principles you've abandoned and why",
-            "Analyze how context changes what you believe is right",
-            "Discuss the most difficult ethical decisions you've faced",
-            "Reflect on what you would sacrifice your comfort for",
-
-            // Additional Boss - Meaning & Absurdity
-            "Analyze how you create meaning in an indifferent universe",
-            "Reflect on how you cope with the absurdity of existence",
-            "Discuss whether meaning is found or created",
-            "Analyze the role of narrative in making sense of your life",
-            "Describe how you find significance in mundane activities",
-            "Discuss how you maintain motivation without guaranteed outcomes",
-            "Reflect on what would make your life feel complete",
-            "Analyze the relationship between struggle and satisfaction",
-            "Discuss how you handle the gap between expectations and reality",
-            "Reflect on whether happiness is a worthy goal or a byproduct"
         ]
     },
     philosophical: {
@@ -1195,6 +1287,296 @@ export const topics = {
             "Why do we wonder about things?"
         ],
         medium: [
+            // New Medium - Happiness & Emotions
+            "What makes you happy? Explain your view with a simple reason and one everyday example.",
+            "Is happiness a choice? Give one personal example and one reason someone might disagree.",
+            "What is joy? Answer simply, then explain how this idea appears in daily life.",
+            "Can you be happy alone? Give your opinion and one situation that shaped it.",
+            "Why do we laugh? Explain your view with a simple reason and one everyday example.",
+            "What makes people sad? Give one personal example and one reason someone might disagree.",
+            "Is it okay to cry? Answer simply, then explain how this idea appears in daily life.",
+            "What is love? Give your opinion and one situation that shaped it.",
+            "Why do we feel angry? Explain your view with a simple reason and one everyday example.",
+            "Can you have too much happiness? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Good & Bad
+            "Is it better to be kind or honest? Answer simply, then explain how this idea appears in daily life.",
+            "What makes someone a good person? Give your opinion and one situation that shaped it.",
+            "Is lying always wrong? Explain your view with a simple reason and one everyday example.",
+            "What is fairness? Give one personal example and one reason someone might disagree.",
+            "Should we always follow rules? Answer simply, then explain how this idea appears in daily life.",
+            "What makes something right or wrong? Give your opinion and one situation that shaped it.",
+            "Is it okay to make mistakes? Explain your view with a simple reason and one everyday example.",
+            "Can bad things lead to good things? Give one personal example and one reason someone might disagree.",
+            "What is courage? Answer simply, then explain how this idea appears in daily life.",
+            "Is stealing ever okay? Give your opinion and one situation that shaped it.",
+
+            // New Medium - Life & Meaning
+            "What is a good life? Explain your view with a simple reason and one everyday example.",
+            "What is the most important thing in life? Give one personal example and one reason someone might disagree.",
+            "Why are we here? Answer simply, then explain how this idea appears in daily life.",
+            "What does success mean to you? Give your opinion and one situation that shaped it.",
+            "Is life fair? Explain your view with a simple reason and one everyday example.",
+            "What is the purpose of work? Give one personal example and one reason someone might disagree.",
+            "Why do we have dreams? Answer simply, then explain how this idea appears in daily life.",
+            "What makes life worth living? Give your opinion and one situation that shaped it.",
+            "Is there a meaning to everything? Explain your view with a simple reason and one everyday example.",
+            "What happens when we die? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Relationships
+            "Is it better to have more friends or a few close friends? Answer simply, then explain how this idea appears in daily life.",
+            "Why do people need friends? Give your opinion and one situation that shaped it.",
+            "What makes a good friend? Explain your view with a simple reason and one everyday example.",
+            "Is family important? Give one personal example and one reason someone might disagree.",
+            "Why do people argue? Answer simply, then explain how this idea appears in daily life.",
+            "Is it better to give or to receive? Give your opinion and one situation that shaped it.",
+            "Can you love someone you don't like? Explain your view with a simple reason and one everyday example.",
+            "Why do we need other people? Give one personal example and one reason someone might disagree.",
+            "What is trust? Answer simply, then explain how this idea appears in daily life.",
+            "Is forgiveness important? Give your opinion and one situation that shaped it.",
+
+            // New Medium - Success & Achievement
+            "Is it more important to try or to win? Explain your view with a simple reason and one everyday example.",
+            "Can money buy happiness? Give one personal example and one reason someone might disagree.",
+            "Is hard work always rewarded? Answer simply, then explain how this idea appears in daily life.",
+            "What is talent? Give your opinion and one situation that shaped it.",
+            "Is luck real? Explain your view with a simple reason and one everyday example.",
+            "Does everyone deserve success? Give one personal example and one reason someone might disagree.",
+            "Is competition good or bad? Answer simply, then explain how this idea appears in daily life.",
+            "What is ambition? Give your opinion and one situation that shaped it.",
+            "Is fame important? Explain your view with a simple reason and one everyday example.",
+            "What is wisdom? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Beauty & Art
+            "What is beauty? Answer simply, then explain how this idea appears in daily life.",
+            "Why do we like music? Give your opinion and one situation that shaped it.",
+            "Is art important? Explain your view with a simple reason and one everyday example.",
+            "What makes something beautiful? Give one personal example and one reason someone might disagree.",
+            "Why do we need stories? Answer simply, then explain how this idea appears in daily life.",
+            "Can nature be ugly? Give your opinion and one situation that shaped it.",
+            "What is creativity? Explain your view with a simple reason and one everyday example.",
+            "Why do people make art? Give one personal example and one reason someone might disagree.",
+            "Is beauty the same for everyone? Answer simply, then explain how this idea appears in daily life.",
+            "What makes a good story? Give your opinion and one situation that shaped it.",
+
+            // New Medium - Time & Change
+            "Why does time pass? Explain your view with a simple reason and one everyday example.",
+            "Is the past important? Give one personal example and one reason someone might disagree.",
+            "Can people change? Answer simply, then explain how this idea appears in daily life.",
+            "Is the future set? Give your opinion and one situation that shaped it.",
+            "Why do we grow old? Explain your view with a simple reason and one everyday example.",
+            "Is change good or bad? Give one personal example and one reason someone might disagree.",
+            "What is a memory? Answer simply, then explain how this idea appears in daily life.",
+            "Should we live in the moment? Give your opinion and one situation that shaped it.",
+            "Is tomorrow promised? Explain your view with a simple reason and one everyday example.",
+            "Why do we remember some things and forget others? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Truth & Knowledge
+            "What is truth? Answer simply, then explain how this idea appears in daily life.",
+            "Can you know everything? Give your opinion and one situation that shaped it.",
+            "Is seeing believing? Explain your view with a simple reason and one everyday example.",
+            "Why do people have different opinions? Give one personal example and one reason someone might disagree.",
+            "Is common sense real? Answer simply, then explain how this idea appears in daily life.",
+            "What is intelligence? Give your opinion and one situation that shaped it.",
+            "Can you learn too much? Explain your view with a simple reason and one everyday example.",
+            "Is knowledge power? Give one personal example and one reason someone might disagree.",
+            "Why do we ask questions? Answer simply, then explain how this idea appears in daily life.",
+            "Is there one truth or many? Give your opinion and one situation that shaped it.",
+
+            // New Medium - Freedom & Choice
+            "What is freedom? Explain your view with a simple reason and one everyday example.",
+            "Do we really have choices? Give one personal example and one reason someone might disagree.",
+            "Is too much freedom bad? Answer simply, then explain how this idea appears in daily life.",
+            "What is responsibility? Give your opinion and one situation that shaped it.",
+            "Can you be free and still have rules? Explain your view with a simple reason and one everyday example.",
+            "Why do people want to be free? Give one personal example and one reason someone might disagree.",
+            "What is independence? Answer simply, then explain how this idea appears in daily life.",
+            "Should everyone be equal? Give your opinion and one situation that shaped it.",
+            "Is it better to lead or follow? Explain your view with a simple reason and one everyday example.",
+            "What is power? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Nature & Animals
+            "Are humans special? Answer simply, then explain how this idea appears in daily life.",
+            "What makes humans different from animals? Give your opinion and one situation that shaped it.",
+            "Do animals have feelings? Explain your view with a simple reason and one everyday example.",
+            "Is nature important? Give one personal example and one reason someone might disagree.",
+            "Should we protect the environment? Answer simply, then explain how this idea appears in daily life.",
+            "Are some animals better than others? Give your opinion and one situation that shaped it.",
+            "What can we learn from nature? Explain your view with a simple reason and one everyday example.",
+            "Do animals have rights? Give one personal example and one reason someone might disagree.",
+            "Is the world alive? Answer simply, then explain how this idea appears in daily life.",
+            "Why do we love pets? Give your opinion and one situation that shaped it.",
+
+            // New Medium - Simple Big Questions
+            "What is real? Explain your view with a simple reason and one everyday example.",
+            "Why does anything exist? Give one personal example and one reason someone might disagree.",
+            "What is the soul? Answer simply, then explain how this idea appears in daily life.",
+            "Is there life after death? Give your opinion and one situation that shaped it.",
+            "What is the mind? Explain your view with a simple reason and one everyday example.",
+            "Are we alone in the universe? Give one personal example and one reason someone might disagree.",
+            "What is normal? Answer simply, then explain how this idea appears in daily life.",
+            "Is everything connected? Give your opinion and one situation that shaped it.",
+            "What is a thought? Explain your view with a simple reason and one everyday example.",
+            "Can we trust our senses? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Society & People
+            "Why do we have laws? Answer simply, then explain how this idea appears in daily life.",
+            "What is culture? Give your opinion and one situation that shaped it.",
+            "Why are people different? Explain your view with a simple reason and one everyday example.",
+            "Is it important to belong? Give one personal example and one reason someone might disagree.",
+            "What makes a good leader? Answer simply, then explain how this idea appears in daily life.",
+            "Why do we wear clothes? Give your opinion and one situation that shaped it.",
+            "Is tradition important? Explain your view with a simple reason and one everyday example.",
+            "Why do people fight? Give one personal example and one reason someone might disagree.",
+            "What is respect? Answer simply, then explain how this idea appears in daily life.",
+            "Should everyone think the same? Give your opinion and one situation that shaped it.",
+
+            // New Medium - Self & Identity
+            "Who am I? Explain your view with a simple reason and one everyday example.",
+            "What makes you, you? Give one personal example and one reason someone might disagree.",
+            "Can you change who you are? Answer simply, then explain how this idea appears in daily life.",
+            "What is your personality? Give your opinion and one situation that shaped it.",
+            "Are you the same person you were years ago? Explain your view with a simple reason and one everyday example.",
+            "What defines a person? Give one personal example and one reason someone might disagree.",
+            "Is your name important? Answer simply, then explain how this idea appears in daily life.",
+            "Do we have a true self? Give your opinion and one situation that shaped it.",
+            "What makes someone unique? Explain your view with a simple reason and one everyday example.",
+            "Are thoughts private? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Miscellaneous Easy Philosophy
+            "Is the glass half empty or half full? Answer simply, then explain how this idea appears in daily life.",
+            "What is patience? Give your opinion and one situation that shaped it.",
+            "Is perfection possible? Explain your view with a simple reason and one everyday example.",
+            "What is hope? Give one personal example and one reason someone might disagree.",
+            "Can you have everything? Answer simply, then explain how this idea appears in daily life.",
+            "Is silence golden? Give your opinion and one situation that shaped it.",
+            "What is peace? Explain your view with a simple reason and one everyday example.",
+            "Is simplicity good? Give one personal example and one reason someone might disagree.",
+            "What is comfort? Answer simply, then explain how this idea appears in daily life.",
+            "Is there good in everyone? Give your opinion and one situation that shaped it.",
+
+            // New Medium - Simple Ethics
+            "Is it ever okay to lie to help someone? Explain your view with a simple reason and one everyday example.",
+            "Should you always keep a promise? Give one personal example and one reason someone might disagree.",
+            "Is it wrong to ignore someone? Answer simply, then explain how this idea appears in daily life.",
+            "What makes something unfair? Give your opinion and one situation that shaped it.",
+            "Is being selfish always bad? Explain your view with a simple reason and one everyday example.",
+            "Should you help strangers? Give one personal example and one reason someone might disagree.",
+            "Is revenge ever okay? Answer simply, then explain how this idea appears in daily life.",
+            "What makes someone trustworthy? Give your opinion and one situation that shaped it.",
+            "Is it okay to judge others? Explain your view with a simple reason and one everyday example.",
+            "Should you always say sorry? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Feelings & Emotions
+            "Why do we feel fear? Answer simply, then explain how this idea appears in daily life.",
+            "Is it okay to be jealous? Give your opinion and one situation that shaped it.",
+            "What is loneliness? Explain your view with a simple reason and one everyday example.",
+            "Can you control your feelings? Give one personal example and one reason someone might disagree.",
+            "Why do we get bored? Answer simply, then explain how this idea appears in daily life.",
+            "What makes someone brave? Give your opinion and one situation that shaped it.",
+            "Is it okay to be proud? Explain your view with a simple reason and one everyday example.",
+            "What is guilt? Give one personal example and one reason someone might disagree.",
+            "Why do we feel shy? Answer simply, then explain how this idea appears in daily life.",
+            "Can you feel too much? Give your opinion and one situation that shaped it.",
+
+            // New Medium - People & Society
+            "Why do people follow leaders? Explain your view with a simple reason and one everyday example.",
+            "Is it better to be popular or liked? Give one personal example and one reason someone might disagree.",
+            "Why do people gossip? Answer simply, then explain how this idea appears in daily life.",
+            "What makes someone boring? Give your opinion and one situation that shaped it.",
+            "Is it hard to be different? Explain your view with a simple reason and one everyday example.",
+            "Why do people copy others? Give one personal example and one reason someone might disagree.",
+            "What is a hero? Answer simply, then explain how this idea appears in daily life.",
+            "Is being famous good? Give your opinion and one situation that shaped it.",
+            "Why do people make fun of others? Explain your view with a simple reason and one everyday example.",
+            "Is it okay to be ordinary? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Simple Philosophy
+            "If a tree falls and no one hears it, does it make a sound? Answer simply, then explain how this idea appears in daily life.",
+            "Is the future already decided? Give your opinion and one situation that shaped it.",
+            "Can dreams be real? Explain your view with a simple reason and one everyday example.",
+            "What is nothing? Give one personal example and one reason someone might disagree.",
+            "Is everything temporary? Answer simply, then explain how this idea appears in daily life.",
+            "Can something come from nothing? Give your opinion and one situation that shaped it.",
+            "Is there more to see than we can see? Explain your view with a simple reason and one everyday example.",
+            "What makes something real? Give one personal example and one reason someone might disagree.",
+            "Is there a reason for everything? Answer simply, then explain how this idea appears in daily life.",
+            "Can you think about nothing? Give your opinion and one situation that shaped it.",
+
+            // New Medium - Good & Bad Choices
+            "Is it okay to give up? Explain your view with a simple reason and one everyday example.",
+            "Should you always try your best? Give one personal example and one reason someone might disagree.",
+            "Is it wrong to say no? Answer simply, then explain how this idea appears in daily life.",
+            "What makes a bad decision? Give your opinion and one situation that shaped it.",
+            "Is taking risks smart or silly? Explain your view with a simple reason and one everyday example.",
+            "Should you always listen to advice? Give one personal example and one reason someone might disagree.",
+            "Is being careful the same as being scared? Answer simply, then explain how this idea appears in daily life.",
+            "What makes someone wise? Give your opinion and one situation that shaped it.",
+            "Is it okay to change your mind? Explain your view with a simple reason and one everyday example.",
+            "Should you always be honest about your feelings? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Life Questions
+            "Why do bad things happen to good people? Answer simply, then explain how this idea appears in daily life.",
+            "Is everything meant to be? Give your opinion and one situation that shaped it.",
+            "What is luck? Explain your view with a simple reason and one everyday example.",
+            "Can you make your own luck? Give one personal example and one reason someone might disagree.",
+            "Is life a test? Answer simply, then explain how this idea appears in daily life.",
+            "What is destiny? Give your opinion and one situation that shaped it.",
+            "Are some people born lucky? Explain your view with a simple reason and one everyday example.",
+            "Does everything happen for a reason? Give one personal example and one reason someone might disagree.",
+            "Is the world getting better or worse? Answer simply, then explain how this idea appears in daily life.",
+            "What is a miracle? Give your opinion and one situation that shaped it.",
+
+            // New Medium - Self & Others
+            "Is it okay to put yourself first? Explain your view with a simple reason and one everyday example.",
+            "What makes someone interesting? Give one personal example and one reason someone might disagree.",
+            "Is everyone special? Answer simply, then explain how this idea appears in daily life.",
+            "Can you know yourself completely? Give your opinion and one situation that shaped it.",
+            "What makes you different from everyone else? Explain your view with a simple reason and one everyday example.",
+            "Is it okay to be alone? Give one personal example and one reason someone might disagree.",
+            "What makes someone annoying? Answer simply, then explain how this idea appears in daily life.",
+            "Is everyone equal? Give your opinion and one situation that shaped it.",
+            "Can you be friends with yourself? Explain your view with a simple reason and one everyday example.",
+            "What makes someone mature? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Simple Wonders
+            "Why is the sky blue? Answer simply, then explain how this idea appears in daily life.",
+            "What is infinity? Give your opinion and one situation that shaped it.",
+            "Where does time go? Explain your view with a simple reason and one everyday example.",
+            "Why do we sleep? Give one personal example and one reason someone might disagree.",
+            "What is a coincidence? Answer simply, then explain how this idea appears in daily life.",
+            "Why do we age? Give your opinion and one situation that shaped it.",
+            "What is space? Explain your view with a simple reason and one everyday example.",
+            "Where do thoughts come from? Give one personal example and one reason someone might disagree.",
+            "What is the biggest number? Answer simply, then explain how this idea appears in daily life.",
+            "Why is there something instead of nothing? Give your opinion and one situation that shaped it.",
+
+            // New Medium - Values
+            "Is money important? Explain your view with a simple reason and one everyday example.",
+            "What is more valuable - time or money? Give one personal example and one reason someone might disagree.",
+            "Is health more important than wealth? Answer simply, then explain how this idea appears in daily life.",
+            "What matters most in life? Give your opinion and one situation that shaped it.",
+            "Is it better to be smart or kind? Explain your view with a simple reason and one everyday example.",
+            "What is the best age to be? Give one personal example and one reason someone might disagree.",
+            "Is fun important? Answer simply, then explain how this idea appears in daily life.",
+            "What is the point of school? Give your opinion and one situation that shaped it.",
+            "Is it better to be young or old? Explain your view with a simple reason and one everyday example.",
+            "What is true happiness? Give one personal example and one reason someone might disagree.",
+
+            // New Medium - Wonder Questions
+            "Do animals think like us? Answer simply, then explain how this idea appears in daily life.",
+            "Can machines feel? Give your opinion and one situation that shaped it.",
+            "What is imagination? Explain your view with a simple reason and one everyday example.",
+            "Are dreams important? Give one personal example and one reason someone might disagree.",
+            "What is consciousness? Answer simply, then explain how this idea appears in daily life.",
+            "Can you have memories of the future? Give your opinion and one situation that shaped it.",
+            "What makes something alive? Explain your view with a simple reason and one everyday example.",
+            "Is there other intelligent life? Give one personal example and one reason someone might disagree.",
+            "What is the most important question? Answer simply, then explain how this idea appears in daily life.",
+            "Why do we wonder about things? Give your opinion and one situation that shaped it."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // Meaning & Purpose
             "What makes a life meaningful - achievement, relationships, or something else?",
             "Is happiness the ultimate goal of life?",
@@ -1339,7 +1721,7 @@ export const topics = {
             "Can two people with different values both be right?",
             "What shapes our worldview?",
 
-            // Miscellaneous Medium
+            // Miscellaneous Boss
             "Is there inherent meaning in the universe or do we create it?",
             "What is the relationship between pain and pleasure?",
             "Can something be wrong even if it feels right?",
@@ -1351,7 +1733,7 @@ export const topics = {
             "Is authenticity always valuable?",
             "Can reason and emotion coexist?",
 
-            // Additional Medium - Deeper Ethics
+            // Additional Boss - Deeper Ethics
             "Is it possible to be ethical in an unethical system?",
             "Does intention matter more than outcome?",
             "Can you do the right thing for the wrong reasons?",
@@ -1363,7 +1745,7 @@ export const topics = {
             "Do we have obligations to people who don't exist yet?",
             "Is moral consistency always a virtue?",
 
-            // Additional Medium - Knowledge & Understanding
+            // Additional Boss - Knowledge & Understanding
             "What is the difference between understanding and information?",
             "Can we truly understand something without experiencing it?",
             "Is wisdom different from intelligence?",
@@ -1375,7 +1757,7 @@ export const topics = {
             "Can logic alone lead to truth?",
             "Is skepticism healthy or destructive?",
 
-            // Additional Medium - Personal Growth
+            // Additional Boss - Personal Growth
             "What is the relationship between struggle and growth?",
             "Can we change without suffering?",
             "Is self-improvement always valuable?",
@@ -1387,7 +1769,7 @@ export const topics = {
             "What role does failure play in becoming who we are?",
             "Is the examined life truly worth living?",
 
-            // Additional Medium - Society & Systems
+            // Additional Boss - Society & Systems
             "Can individuals be held responsible for systemic problems?",
             "Is competition necessary for progress?",
             "What makes a society worth belonging to?",
@@ -1399,7 +1781,7 @@ export const topics = {
             "What makes social change lasting?",
             "Is technological progress inevitable?",
 
-            // Additional Medium - Existence & Being
+            // Additional Boss - Existence & Being
             "What makes life valuable?",
             "Is existence a gift or a burden?",
             "What is the relationship between being and becoming?",
@@ -1411,7 +1793,7 @@ export const topics = {
             "What makes existence preferable to non-existence?",
             "Is there dignity in simply existing?",
 
-            // Additional Medium - Relationships & Connection
+            // Additional Boss - Relationships & Connection
             "Can we truly know another person?",
             "What is the nature of empathy?",
             "Is complete honesty possible in relationships?",
@@ -1423,7 +1805,7 @@ export const topics = {
             "Is it possible to love selflessly?",
             "What is the difference between connection and attachment?",
 
-            // Additional Medium - Choice & Action
+            // Additional Boss - Choice & Action
             "How do we make decisions when outcomes are uncertain?",
             "Is not choosing also a choice?",
             "What makes an action authentic?",
@@ -1435,7 +1817,7 @@ export const topics = {
             "What makes a choice truly free?",
             "Is it possible to act without judging?",
 
-            // Additional Medium - Time & Change
+            // Additional Boss - Time & Change
             "Is nostalgia a reliable guide to value?",
             "Can we escape the influence of our past?",
             "What is the relationship between memory and identity?",
@@ -1447,7 +1829,7 @@ export const topics = {
             "Is permanence an illusion?",
             "How does change affect what is valuable?",
 
-            // Additional Medium - Meaning & Purpose
+            // Additional Boss - Meaning & Purpose
             "Is a meaningful life the same as a happy one?",
             "Can life have meaning without purpose?",
             "What makes struggle meaningful?",
@@ -1459,7 +1841,7 @@ export const topics = {
             "What makes some experiences more meaningful than others?",
             "Is the search for meaning universal?",
 
-            // Additional Medium - Virtue & Character
+            // Additional Boss - Virtue & Character
             "Can virtue be taught?",
             "Is there a difference between being good and appearing good?",
             "What makes someone admirable?",
@@ -1470,271 +1852,6 @@ export const topics = {
             "Can character change throughout life?",
             "What distinguishes confidence from arrogance?",
             "Is patience always wise?"
-        ],
-        boss: [
-            // Free Will & Determinism
-            "Is free will an illusion or do we truly make our own choices?",
-            "If our choices are determined by prior causes, are we morally responsible?",
-            "Can the feeling of free will be meaningful even if it's illusory?",
-            "How does neuroscience challenge our understanding of choice?",
-            "Is randomness the same as freedom?",
-            "Can we be free if we don't choose our desires?",
-            "Does knowing why we do things undermine authentic choice?",
-            "Is freedom of will compatible with a lawful universe?",
-            "How does belief in free will affect society?",
-            "Can robots ever have free will?",
-
-            // Consciousness & Mind
-            "Can artificial intelligence ever truly understand consciousness?",
-            "Is the concept of 'self' an illusion created by the brain?",
-            "What is the nature of consciousness and can it be replicated?",
-            "Is consciousness fundamental to the universe or emergent?",
-            "Can we ever explain subjective experience scientifically?",
-            "What would it mean for a machine to be conscious?",
-            "Is there a 'hard problem' of consciousness that science cannot solve?",
-            "How does consciousness relate to physical reality?",
-            "Can consciousness exist without a body?",
-            "Is unified consciousness an illusion?",
-
-            // Morality & Ethics
-            "Is there such a thing as objective morality?",
-            "Is moral relativism compatible with human rights?",
-            "Can there be justice without equality?",
-            "What ethical obligations do we have to future generations?",
-            "Is it possible to act purely from duty without self-interest?",
-            "Can an action be wrong if it harms no one?",
-            "Is moral progress real or just change?",
-            "How do we resolve fundamental moral disagreements?",
-            "Can morality exist without God?",
-            "Is there a rational basis for ethics?",
-
-            // Reality & Existence
-            "Is reality fundamentally physical or mental?",
-            "Why is there something rather than nothing?",
-            "Are mathematical truths discovered or invented?",
-            "Is the universe deterministic at its core?",
-            "What does it mean for something to exist?",
-            "Is time real or a human construct?",
-            "Are there multiple realities or possible worlds?",
-            "Is the universe comprehensible or ultimately mysterious?",
-            "Does quantum mechanics imply reality is observer-dependent?",
-            "What is the relationship between language and reality?",
-
-            // Language & Thought
-            "What is the relationship between language and thought?",
-            "Can we think without words?",
-            "Does the language we speak shape how we see the world?",
-            "Can meaning be fixed or is it always shifting?",
-            "Is communication ever truly complete?",
-            "What is lost when a language dies?",
-            "Can animals have thoughts without language?",
-            "Is translation ever fully possible?",
-            "How do metaphors shape our understanding?",
-            "Is logic inherent in reality or imposed by our minds?",
-
-            // Science & Knowledge
-            "Can science answer questions about meaning and purpose?",
-            "What are the limits of scientific knowledge?",
-            "Is scientific knowledge the only valid knowledge?",
-            "Can we ever know the universe fully?",
-            "How does science progress - through accumulation or revolution?",
-            "What makes a theory scientific?",
-            "Is there knowledge that science can never access?",
-            "How do paradigms shape scientific discovery?",
-            "Can science tell us how to live?",
-            "Is objectivity achievable in any field?",
-
-            // Politics & Society
-            "Is democracy the best form of government or just the least bad?",
-            "Can individual liberty be reconciled with social equality?",
-            "Is nationalism incompatible with universal human values?",
-            "What makes political authority legitimate?",
-            "Can justice be achieved without punishment?",
-            "Is economic inequality inherently unjust?",
-            "What is the proper relationship between individual and state?",
-            "Can societies exist without hierarchy?",
-            "Is progress inevitable or contingent?",
-            "What is the role of tradition in a changing world?",
-
-            // Technology & Humanity
-            "Should artificial intelligence have legal rights?",
-            "How does technology change what it means to be human?",
-            "Is human enhancement through technology desirable?",
-            "What is lost when we outsource thinking to machines?",
-            "Can technology solve the problems it creates?",
-            "Is there a moral limit to technological development?",
-            "How do algorithms affect human agency?",
-            "Will technology make humans obsolete?",
-            "Is the virtual world less real than the physical?",
-            "What responsibilities do we have regarding AI development?",
-
-            // Death & Meaning
-            "How should we weigh present happiness against future wellbeing?",
-            "Does awareness of death give life meaning?",
-            "Is immortality desirable?",
-            "What is the relationship between mortality and value?",
-            "Can life have meaning without an afterlife?",
-            "Is it possible to prepare for death?",
-            "Does death make life urgent or absurd?",
-            "How do different cultures find meaning in mortality?",
-            "Is the fear of death rational?",
-            "What would eternal life mean for human experience?",
-
-            // Art & Truth
-            "Can we separate the art from the artist when evaluating creative works?",
-            "Is beauty objective or culturally constructed?",
-            "Can fiction reveal truths that facts cannot?",
-            "What is the relationship between art and morality?",
-            "Can art be objectively better or worse?",
-            "Is creative genius born or made?",
-            "What does it mean for art to be authentic?",
-            "Can art change society?",
-            "Is there such a thing as artistic truth?",
-            "What is the value of art that disturbs us?",
-
-            // Human Progress
-            "Is human progress linear or cyclical?",
-            "Are we becoming better or just different?",
-            "What would it mean to transcend human nature?",
-            "Is there a limit to human knowledge?",
-            "Can humanity survive its own success?",
-            "Is civilization fragile or resilient?",
-            "What do we owe to future generations?",
-            "Can progress be reversed?",
-            "Is there a direction to human history?",
-            "What would a truly flourishing humanity look like?",
-
-            // Miscellaneous Boss Philosophy
-            "Is suffering necessary for growth?",
-            "Can we be moral without being rational?",
-            "Is there a universal human nature?",
-            "What is the relationship between power and knowledge?",
-            "Can experience be shared or is it fundamentally private?",
-            "Is nihilism a valid philosophical position?",
-            "What is authenticity in a world of social construction?",
-            "Can philosophy change how we live?",
-            "Is there wisdom beyond knowledge?",
-            "What questions cannot be answered?",
-
-            // Additional Boss - Metaphysics
-            "Is the self a substance or a process?",
-            "Can something be identical to itself across time?",
-            "Is causation real or merely a useful concept?",
-            "Are properties real or just ways of describing things?",
-            "Does the universe have a structure independent of our minds?",
-            "Can there be objects without properties?",
-            "Is space real or a relation between objects?",
-            "Do abstract objects like numbers exist?",
-            "Is change real or an illusion of perspective?",
-            "Can there be existence without time?",
-
-            // Additional Boss - Philosophy of Mind
-            "Can mental states be reduced to brain states?",
-            "Is qualia irreducible to physical explanation?",
-            "What is the relationship between consciousness and self?",
-            "Can zombies (beings without consciousness) be conceivable?",
-            "Is introspection a reliable guide to mental states?",
-            "Can there be thoughts without thinkers?",
-            "Is the mind modular or unified?",
-            "What is the ontological status of mental representations?",
-            "Can phenomenal experience be communicated?",
-            "Is personal identity constituted by psychological continuity?",
-
-            // Additional Boss - Ethics Deep Dive
-            "Is there a foundation for ethics or is it groundless?",
-            "Can evolutionary explanations of morality undermine it?",
-            "Is there an asymmetry between causing and allowing harm?",
-            "What is the relationship between moral facts and natural facts?",
-            "Can ethics be reduced to decision theory?",
-            "Is there a moral difference between intended and foreseen consequences?",
-            "What makes some beings worthy of moral consideration?",
-            "Can contractualist ethics accommodate our moral intuitions?",
-            "Is moral realism compatible with pluralism?",
-            "What is the relationship between prudential and moral reasons?",
-
-            // Additional Boss - Epistemology
-            "Can we know anything with certainty?",
-            "What is the relationship between knowledge and justification?",
-            "Is there a criterion for distinguishing knowledge from true belief?",
-            "Can testimony be a source of knowledge?",
-            "What is the role of intuition in philosophical inquiry?",
-            "Can reliabilism solve the Gettier problem?",
-            "Is there a priori knowledge?",
-            "What is the epistemic status of moral beliefs?",
-            "Can coherentism provide a foundation for knowledge?",
-            "Is radical skepticism self-defeating?",
-
-            // Additional Boss - Philosophy of Language
-            "Is meaning determined by use or reference?",
-            "Can private language exist?",
-            "What is the relationship between sentence meaning and speaker meaning?",
-            "Is there a determinate fact about what words mean?",
-            "Can vagueness be eliminated from language?",
-            "What is the relationship between truth and meaning?",
-            "Is reference a causal or descriptive relation?",
-            "Can fiction refer to non-existent objects?",
-            "What makes an interpretation correct?",
-            "Is there a language of thought?",
-
-            // Additional Boss - Political Philosophy
-            "What is the basis of political obligation?",
-            "Can distributive justice be reconciled with liberty?",
-            "Is there a human right to democracy?",
-            "What makes civil disobedience justified?",
-            "Can cosmopolitanism be reconciled with national identity?",
-            "Is there a just war theory that works?",
-            "What are the limits of legitimate state coercion?",
-            "Can liberalism be neutral between conceptions of the good?",
-            "Is there a right to secession?",
-            "What is the relationship between justice and legitimacy?",
-
-            // Additional Boss - Philosophy of Science
-            "What distinguishes science from pseudoscience?",
-            "Is scientific realism defensible?",
-            "Can theories be underdetermined by evidence?",
-            "What is the status of unobservable entities posited by science?",
-            "Is there progress in science or just change?",
-            "Can naturalism accommodate normativity?",
-            "What is the relationship between explanation and understanding?",
-            "Is reduction possible across scientific domains?",
-            "Can there be sciences of the particular?",
-            "What is the ontological status of laws of nature?",
-
-            // Additional Boss - Existentialism
-            "What does it mean to live authentically?",
-            "Is existence prior to essence?",
-            "How do we confront the absurdity of existence?",
-            "Is bad faith inescapable?",
-            "What is the relationship between freedom and anxiety?",
-            "Can we create meaning in a meaningless universe?",
-            "Is death the horizon of authentic existence?",
-            "What role does commitment play in creating identity?",
-            "Can we transcend our facticity?",
-            "Is there such a thing as an authentic relationship with others?",
-
-            // Additional Boss - Value Theory
-            "Is value mind-dependent or objective?",
-            "Can there be incommensurable values?",
-            "What is the relationship between well-being and morality?",
-            "Is pleasure the only intrinsic good?",
-            "Can aesthetic value be reduced to other kinds of value?",
-            "What makes something valuable as an end rather than a means?",
-            "Is there a highest good?",
-            "Can value be aggregated across persons?",
-            "What is the relationship between value and motivation?",
-            "Is there such a thing as organic unity in value?",
-
-            // Additional Boss - Logic & Rationality
-            "Is there a correct logic?",
-            "Can rational agents have inconsistent beliefs?",
-            "What is the relationship between rationality and morality?",
-            "Is logic about form or content?",
-            "Can there be dialetheia (true contradictions)?",
-            "What is the normativity of logic?",
-            "Is classical logic the one true logic?",
-            "Can rationality be formalized?",
-            "What is the relationship between logic and language?",
-            "Is there a logic of practical reasoning?"
         ]
     },
     argument: {
@@ -1968,6 +2085,236 @@ export const topics = {
             "Night flights or day flights: which is better?"
         ],
         medium: [
+            // New Medium - Classic Preferences
+            "Cats or dogs: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Tea or coffee: which is better? Make your case, then answer one simple objection.",
+            "Early bird or night owl: which is better? Explain which option you prefer, when it works best, and why.",
+            "Summer or winter: which is your favorite? Give two arguments and one situation where the other side might be better.",
+            "Beach or mountains: where would you go? Choose a side and support it with two reasons and one real-life example.",
+            "City or countryside: where would you live? Make your case, then answer one simple objection.",
+            "Sweet or savory snacks: which do you prefer? Explain which option you prefer, when it works best, and why.",
+            "Hot weather or cold weather: which is better? Give two arguments and one situation where the other side might be better.",
+            "Books or movies: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Indoor or outdoor activities: which do you prefer? Make your case, then answer one simple objection.",
+
+            // New Medium - Food Debates
+            "Pizza or tacos: which is better? Explain which option you prefer, when it works best, and why.",
+            "Breakfast or dinner: which meal is best? Give two arguments and one situation where the other side might be better.",
+            "Chocolate or vanilla: which flavor is better? Choose a side and support it with two reasons and one real-life example.",
+            "Home cooking or eating out: which is better? Make your case, then answer one simple objection.",
+            "Fast food or slow food: which is better? Explain which option you prefer, when it works best, and why.",
+            "Fruits or vegetables: which is healthier? Give two arguments and one situation where the other side might be better.",
+            "Spicy food or mild food: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Hot drinks or cold drinks: which do you prefer? Make your case, then answer one simple objection.",
+            "Cake or ice cream: which is better? Explain which option you prefer, when it works best, and why.",
+            "Coffee or energy drinks: which is better? Give two arguments and one situation where the other side might be better.",
+
+            // New Medium - Technology & Media
+            "TikTok or YouTube: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Android or iPhone: which side are you on? Make your case, then answer one simple objection.",
+            "Spotify or Apple Music: which is better? Explain which option you prefer, when it works best, and why.",
+            "Netflix or cinema: which is better? Give two arguments and one situation where the other side might be better.",
+            "Video calls or phone calls: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Texting or calling a friend: which is better? Make your case, then answer one simple objection.",
+            "Online shopping or in-store shopping: which is better? Explain which option you prefer, when it works best, and why.",
+            "E-books or paper books: which do you prefer? Give two arguments and one situation where the other side might be better.",
+            "Social media or no social media: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Gaming console or PC: which is better? Make your case, then answer one simple objection.",
+
+            // New Medium - Daily Life
+            "Morning shower or night shower: which is better? Explain which option you prefer, when it works best, and why.",
+            "Neat desk or creative mess: which is better? Give two arguments and one situation where the other side might be better.",
+            "Planning ahead or being spontaneous: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Working alone or in a team: which is better? Make your case, then answer one simple objection.",
+            "Bus or bicycle for short trips: which is better? Explain which option you prefer, when it works best, and why.",
+            "Cash or card: which do you prefer? Give two arguments and one situation where the other side might be better.",
+            "Living at home vs. living alone: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Public transport or driving yourself: which is better? Make your case, then answer one simple objection.",
+            "Big breakfast or big dinner: which is better? Explain which option you prefer, when it works best, and why.",
+            "Early arrival or just on time: which is better? Give two arguments and one situation where the other side might be better.",
+
+            // New Medium - Entertainment
+            "Movies at home or at the cinema: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Subtitles on or off when watching shows? Make your case, then answer one simple objection.",
+            "Comedies or dramas: which is better? Explain which option you prefer, when it works best, and why.",
+            "Physical sports or esports: which is better? Give two arguments and one situation where the other side might be better.",
+            "Reading fiction or non-fiction: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Live music or recorded music: which is better? Make your case, then answer one simple objection.",
+            "Board games or video games: which is better? Explain which option you prefer, when it works best, and why.",
+            "Watching sports or playing sports: which is better? Give two arguments and one situation where the other side might be better.",
+            "Horror movies or romantic comedies: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Podcasts or music while commuting: which is better? Make your case, then answer one simple objection.",
+
+            // New Medium - Social & Lifestyle
+            "Big friend group or small friend group: which is better? Explain which option you prefer, when it works best, and why.",
+            "Group projects or solo work: which is better? Give two arguments and one situation where the other side might be better.",
+            "Vacation with friends or vacation with family: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Staying up late or waking up early: which is better? Make your case, then answer one simple objection.",
+            "Partying or quiet nights in: which is better? Explain which option you prefer, when it works best, and why.",
+            "Many hobbies or one deep hobby: which is better? Give two arguments and one situation where the other side might be better.",
+            "Weekend trips or long vacations: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Meeting new people or deepening old friendships: which is better? Make your case, then answer one simple objection.",
+            "Adventure travel or relaxation travel: which is better? Explain which option you prefer, when it works best, and why.",
+            "Celebrating birthdays big or small: which is better? Give two arguments and one situation where the other side might be better.",
+
+            // New Medium - School & Work
+            "Homework on Friday night or Sunday night: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Online classes or in-person classes: which is better? Make your case, then answer one simple objection.",
+            "Open office or private office: which is better? Explain which option you prefer, when it works best, and why.",
+            "Working from home or working at an office: which is better? Give two arguments and one situation where the other side might be better.",
+            "Morning classes or afternoon classes: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Strict teacher or relaxed teacher: which is better? Make your case, then answer one simple objection.",
+            "Digital notes or handwritten notes: which is better? Explain which option you prefer, when it works best, and why.",
+            "Multiple choice or essay exams: which is better? Give two arguments and one situation where the other side might be better.",
+            "Internships or classroom learning: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Salary or job satisfaction: which is more important? Make your case, then answer one simple objection.",
+
+            // New Medium - Lifestyle Choices
+            "Renting or buying a home: which is better? Explain which option you prefer, when it works best, and why.",
+            "Getting up with alarm or naturally: which is better? Give two arguments and one situation where the other side might be better.",
+            "Minimalist living or cozy clutter: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Gym workout or outdoor exercise: which is better? Make your case, then answer one simple objection.",
+            "Cooking for yourself or meal delivery: which is better? Explain which option you prefer, when it works best, and why.",
+            "Having pets or no pets: which is better? Give two arguments and one situation where the other side might be better.",
+            "City apartment or house with garden: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "New car or used car: which is better? Make your case, then answer one simple objection.",
+            "Saving money or enjoying life now: which is better? Explain which option you prefer, when it works best, and why.",
+            "Following trends or having your own style: which is better? Give two arguments and one situation where the other side might be better.",
+
+            // New Medium - Random Fun Debates
+            "Superpowers: flying or invisibility? Choose a side and support it with two reasons and one real-life example.",
+            "Time travel: past or future? Make your case, then answer one simple objection.",
+            "Breakfast for dinner or dinner for breakfast? Explain which option you prefer, when it works best, and why.",
+            "Window seat or aisle seat: which is better? Give two arguments and one situation where the other side might be better.",
+            "Round pizza or square pizza: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Sunrise or sunset: which is more beautiful? Make your case, then answer one simple objection.",
+            "Ocean or lake: which is better for swimming? Explain which option you prefer, when it works best, and why.",
+            "Socks with sandals: yes or no? Give two arguments and one situation where the other side might be better.",
+            "Pineapple on pizza: yes or no? Choose a side and support it with two reasons and one real-life example.",
+            "Toilet paper over or under: which is correct? Make your case, then answer one simple objection.",
+
+            // New Medium - Miscellaneous Easy Debates
+            "Texting with emojis or without: which is better? Explain which option you prefer, when it works best, and why.",
+            "Having siblings or being an only child: which is better? Give two arguments and one situation where the other side might be better.",
+            "Watching shows alone or with others: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Camping or hotels: which is better? Make your case, then answer one simple objection.",
+            "New Year's Eve or your birthday: which is better? Explain which option you prefer, when it works best, and why.",
+            "Spring or autumn: which season is better? Give two arguments and one situation where the other side might be better.",
+            "Having a plan or going with the flow: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Being too hot or too cold: which is worse? Make your case, then answer one simple objection.",
+            "Wearing glasses or contact lenses: which is better? Explain which option you prefer, when it works best, and why.",
+            "Morning workouts or evening workouts: which is better? Give two arguments and one situation where the other side might be better.",
+
+            // New Medium - Food Preferences
+            "Crispy or soft bacon: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "White bread or brown bread: which is better? Make your case, then answer one simple objection.",
+            "Orange juice with pulp or without: which is better? Explain which option you prefer, when it works best, and why.",
+            "Crunchy or smooth peanut butter: which is better? Give two arguments and one situation where the other side might be better.",
+            "Soup or salad as a starter: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Scrambled or fried eggs: which is better? Make your case, then answer one simple objection.",
+            "Sparkling water or still water: which do you prefer? Explain which option you prefer, when it works best, and why.",
+            "Eating with chopsticks or fork: which is better? Give two arguments and one situation where the other side might be better.",
+            "Breakfast cereal or toast: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Cooking with butter or oil: which is better? Make your case, then answer one simple objection.",
+
+            // New Medium - Entertainment Choices
+            "Action movies or comedy movies: which is better? Explain which option you prefer, when it works best, and why.",
+            "Watching alone or with friends: which is better? Give two arguments and one situation where the other side might be better.",
+            "New shows or rewatching favorites: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Short episodes or long episodes: which is better? Make your case, then answer one simple objection.",
+            "Reading on phone or tablet: which is better? Explain which option you prefer, when it works best, and why.",
+            "Music with lyrics or instrumental: which is better? Give two arguments and one situation where the other side might be better.",
+            "Slow songs or fast songs: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "True stories or fiction: which is better? Make your case, then answer one simple objection.",
+            "Scary games or relaxing games: which is better? Explain which option you prefer, when it works best, and why.",
+            "Playing games or watching others play: which is better? Give two arguments and one situation where the other side might be better.",
+
+            // New Medium - Daily Habits
+            "Shower in the morning or at night: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Making the bed or leaving it: which is better? Make your case, then answer one simple objection.",
+            "Eating breakfast at home or on the go: which is better? Explain which option you prefer, when it works best, and why.",
+            "Carrying a bag or pockets only: which is better? Give two arguments and one situation where the other side might be better.",
+            "Walking or taking short drives: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Lists on paper or on phone: which is better? Make your case, then answer one simple objection.",
+            "Alarm with music or beeping: which is better? Explain which option you prefer, when it works best, and why.",
+            "Sleeping with socks on or off: which is better? Give two arguments and one situation where the other side might be better.",
+            "Fan or air conditioning for sleeping: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Radio in the car or personal music: which is better? Make your case, then answer one simple objection.",
+
+            // New Medium - Social Preferences
+            "Texting in group or private chats: which is better? Explain which option you prefer, when it works best, and why.",
+            "Phone calls or voice messages: which is better? Give two arguments and one situation where the other side might be better.",
+            "Meeting at a cafe or at home: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Big parties or small gatherings: which is better? Make your case, then answer one simple objection.",
+            "Making new friends or keeping old ones: which is better? Explain which option you prefer, when it works best, and why.",
+            "Talking or listening: which do you prefer? Give two arguments and one situation where the other side might be better.",
+            "Giving gifts or receiving gifts: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Hugging or handshaking: which is better? Make your case, then answer one simple objection.",
+            "Being the host or the guest: which is better? Explain which option you prefer, when it works best, and why.",
+            "Formal or casual hangouts: which is better? Give two arguments and one situation where the other side might be better.",
+
+            // New Medium - Shopping & Spending
+            "Shopping online or in stores: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Brand names or generic products: which is better? Make your case, then answer one simple objection.",
+            "Buying new or secondhand: which is better? Explain which option you prefer, when it works best, and why.",
+            "Spending on food or on clothes: which is better? Give two arguments and one situation where the other side might be better.",
+            "Sales or full price for quality: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Cash or contactless payment: which is better? Make your case, then answer one simple objection.",
+            "Shopping alone or with others: which is better? Explain which option you prefer, when it works best, and why.",
+            "Window shopping or quick buying: which is better? Give two arguments and one situation where the other side might be better.",
+            "Many cheap things or one expensive thing: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Gifts or experiences for presents: which is better? Make your case, then answer one simple objection.",
+
+            // New Medium - Weather & Seasons
+            "Rainy days or sunny days: which is better? Explain which option you prefer, when it works best, and why.",
+            "Snow or no snow: which is better? Give two arguments and one situation where the other side might be better.",
+            "Spring flowers or autumn leaves: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Hot sunny beach or cool mountain: which is better? Make your case, then answer one simple objection.",
+            "Staying inside on rainy days or going out: which is better? Explain which option you prefer, when it works best, and why.",
+            "Summer fruits or winter comfort food: which is better? Give two arguments and one situation where the other side might be better.",
+            "Long summer days or cozy winter nights: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Thunderstorms: exciting or scary? Make your case, then answer one simple objection.",
+            "Living somewhere with seasons or constant weather: which is better? Explain which option you prefer, when it works best, and why.",
+            "Humid heat or dry heat: which is better? Give two arguments and one situation where the other side might be better.",
+
+            // New Medium - Home & Space
+            "Big house or cozy apartment: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Lots of windows or fewer windows: which is better? Make your case, then answer one simple objection.",
+            "Open plan or separate rooms: which is better? Explain which option you prefer, when it works best, and why.",
+            "Garden or balcony: which is better? Give two arguments and one situation where the other side might be better.",
+            "Upstairs or downstairs bedroom: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Bathtub or shower only: which is better? Make your case, then answer one simple objection.",
+            "Carpets or hard floors: which is better? Explain which option you prefer, when it works best, and why.",
+            "Bright walls or neutral walls: which is better? Give two arguments and one situation where the other side might be better.",
+            "Lots of furniture or minimalist: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Living near work or in a nice area: which is better? Make your case, then answer one simple objection.",
+
+            // New Medium - Learning Style
+            "Learning from videos or from books: which is better? Explain which option you prefer, when it works best, and why.",
+            "Studying in silence or with music: which is better? Give two arguments and one situation where the other side might be better.",
+            "Morning study or evening study: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Taking notes or just listening: which is better? Make your case, then answer one simple objection.",
+            "Learning alone or in groups: which is better? Explain which option you prefer, when it works best, and why.",
+            "Flashcards or practice problems: which is better? Give two arguments and one situation where the other side might be better.",
+            "Reading or listening to learn: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Short study sessions or long ones: which is better? Make your case, then answer one simple objection.",
+            "Learning one topic deeply or many topics: which is better? Explain which option you prefer, when it works best, and why.",
+            "Deadlines or no deadlines: which is better? Give two arguments and one situation where the other side might be better.",
+
+            // New Medium - Miscellaneous Fun
+            "Left-handed or right-handed writing: easier? Choose a side and support it with two reasons and one real-life example.",
+            "Pen or pencil for writing: which is better? Make your case, then answer one simple objection.",
+            "Wearing a watch or checking phone: which is better? Explain which option you prefer, when it works best, and why.",
+            "Taking photos or living in the moment: which is better? Give two arguments and one situation where the other side might be better.",
+            "Printed photos or digital albums: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Being early or exactly on time: which is better? Make your case, then answer one simple objection.",
+            "Planning holidays or last-minute trips: which is better? Explain which option you prefer, when it works best, and why.",
+            "Flying or driving for travel: which is better? Give two arguments and one situation where the other side might be better.",
+            "Asking for directions or using GPS: which is better? Choose a side and support it with two reasons and one real-life example.",
+            "Night flights or day flights: which is better? Make your case, then answer one simple objection."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // Technology & Society
             "Argue for or against: Social media does more harm than good",
             "Argue for or against: Technology makes us less social",
@@ -2064,7 +2411,7 @@ export const topics = {
             "Argue for or against: Money can buy happiness",
             "Argue for or against: Social pressure is mostly negative",
 
-            // Miscellaneous Medium Debates
+            // Miscellaneous Boss Debates
             "Argue for or against: Experience is more valuable than possessions",
             "Argue for or against: Learning never stops after school",
             "Argue for or against: Following your passion is bad career advice",
@@ -2076,7 +2423,7 @@ export const topics = {
             "Argue for or against: Rules are made to be broken",
             "Argue for or against: Age brings wisdom",
 
-            // Additional Medium - Personal Life
+            // Additional Boss - Personal Life
             "Argue for or against: People should live with their partners before marriage",
             "Argue for or against: Long-distance relationships can work",
             "Argue for or against: It's better to have loved and lost than never loved at all",
@@ -2088,7 +2435,7 @@ export const topics = {
             "Argue for or against: It's okay to stay single forever",
             "Argue for or against: Arranged relationships can be successful",
 
-            // Additional Medium - Work Ethics
+            // Additional Boss - Work Ethics
             "Argue for or against: It's okay to take mental health days from work",
             "Argue for or against: Employees should be allowed to work during holidays",
             "Argue for or against: Job hopping is better than staying with one company",
@@ -2100,7 +2447,7 @@ export const topics = {
             "Argue for or against: Open-door policies actually work",
             "Argue for or against: Work should be meaningful to be worthwhile",
 
-            // Additional Medium - Social Issues
+            // Additional Boss - Social Issues
             "Argue for or against: Everyone should volunteer regularly",
             "Argue for or against: Charity begins at home",
             "Argue for or against: Rich people should pay more taxes",
@@ -2112,7 +2459,7 @@ export const topics = {
             "Argue for or against: Social safety nets make people lazy",
             "Argue for or against: Immigration benefits the economy",
 
-            // Additional Medium - Media & Entertainment
+            // Additional Boss - Media & Entertainment
             "Argue for or against: News should be required to be neutral",
             "Argue for or against: Violent video games affect behavior",
             "Argue for or against: Children's content should have educational value",
@@ -2124,7 +2471,7 @@ export const topics = {
             "Argue for or against: Social media influencers are legitimate celebrities",
             "Argue for or against: Fan communities can be toxic",
 
-            // Additional Medium - Education Extended
+            // Additional Boss - Education Extended
             "Argue for or against: Students should grade their teachers",
             "Argue for or against: College is overrated for most careers",
             "Argue for or against: Trade schools deserve more respect",
@@ -2136,7 +2483,7 @@ export const topics = {
             "Argue for or against: Teachers should have more freedom in curriculum",
             "Argue for or against: Education should focus more on practical skills",
 
-            // Additional Medium - Lifestyle Choices
+            // Additional Boss - Lifestyle Choices
             "Argue for or against: People should delete social media",
             "Argue for or against: Routine is essential for happiness",
             "Argue for or against: People should try everything once",
@@ -2148,7 +2495,7 @@ export const topics = {
             "Argue for or against: Regular exercise is non-negotiable",
             "Argue for or against: Digital minimalism improves life quality",
 
-            // Additional Medium - Technology Extended
+            // Additional Boss - Technology Extended
             "Argue for or against: Smart homes are worth the investment",
             "Argue for or against: Everyone should learn basic tech skills",
             "Argue for or against: Tech companies have too much power",
@@ -2160,7 +2507,7 @@ export const topics = {
             "Argue for or against: Video conferencing can replace business travel",
             "Argue for or against: Passwords should be replaced with biometrics",
 
-            // Additional Medium - Health Extended
+            // Additional Boss - Health Extended
             "Argue for or against: Therapy should be normalized",
             "Argue for or against: Organic food is worth the extra cost",
             "Argue for or against: People should track their health data",
@@ -2172,7 +2519,7 @@ export const topics = {
             "Argue for or against: Self-diagnosis using the internet is harmful",
             "Argue for or against: Wellness culture has gone too far",
 
-            // Additional Medium - Environmental
+            // Additional Boss - Environmental
             "Argue for or against: Individual actions can fight climate change",
             "Argue for or against: Everyone should reduce meat consumption",
             "Argue for or against: Companies should bear climate responsibility",
@@ -2183,226 +2530,8 @@ export const topics = {
             "Argue for or against: Eco-anxiety is a legitimate concern",
             "Argue for or against: Carbon footprint calculators are useful",
             "Argue for or against: Green energy is affordable now"
-        ],
-        boss: [
-            // Economics & Society
-            "Argue for or against: Universal basic income is inevitable and necessary",
-            "Argue for or against: Billionaires should not exist in a just society",
-            "Argue for or against: Economic growth should be sacrificed for environmental protection",
-            "Argue for or against: Meritocracy is a myth",
-            "Argue for or against: Capitalism is fundamentally incompatible with sustainability",
-            "Argue for or against: Wealth redistribution is morally required",
-            "Argue for or against: Automation will ultimately benefit humanity",
-            "Argue for or against: Globalization has done more harm than good",
-            "Argue for or against: Corporations should have the same rights as individuals",
-            "Argue for or against: Student debt should be forgiven",
-
-            // Technology & Ethics
-            "Argue for or against: Privacy is dead in the digital age and we should accept it",
-            "Argue for or against: Artificial intelligence should have legal rights",
-            "Argue for or against: Social media companies should be held liable for user content",
-            "Argue for or against: Gene editing should be allowed to enhance human capabilities",
-            "Argue for or against: We have a moral obligation to extend human lifespan",
-            "Argue for or against: Autonomous weapons should be banned internationally",
-            "Argue for or against: Brain-computer interfaces will divide humanity",
-            "Argue for or against: Surveillance technology is necessary for security",
-            "Argue for or against: Big tech companies should be broken up",
-            "Argue for or against: Cryptocurrencies will replace traditional money",
-
-            // Politics & Governance
-            "Argue for or against: Nationalism does more harm than good in the 21st century",
-            "Argue for or against: Democracy requires an educated populace to function",
-            "Argue for or against: Mandatory voting would improve democracy",
-            "Argue for or against: World government is necessary to solve global problems",
-            "Argue for or against: Political polarization is inevitable in democracies",
-            "Argue for or against: Free speech should protect hate speech",
-            "Argue for or against: Direct democracy is better than representative democracy",
-            "Argue for or against: International institutions have become obsolete",
-            "Argue for or against: Political leaders should have term limits",
-            "Argue for or against: Nuclear weapons prevent major wars",
-
-            // Culture & Society
-            "Argue for or against: Cancel culture is a net positive for society",
-            "Argue for or against: Cultural appropriation is a legitimate concern",
-            "Argue for or against: Traditional values are necessary for social cohesion",
-            "Argue for or against: Religion has done more harm than good",
-            "Argue for or against: Political correctness has gone too far",
-            "Argue for or against: Cultural relativism is morally indefensible",
-            "Argue for or against: Art should never be censored",
-            "Argue for or against: National identity is becoming obsolete",
-            "Argue for or against: Multiculturalism has failed",
-            "Argue for or against: Social media has made us more tolerant",
-
-            // Science & Future
-            "Argue for or against: Space exploration should be prioritized over solving Earth's problems",
-            "Argue for or against: Human genetic enhancement is inevitable and desirable",
-            "Argue for or against: We should colonize other planets to ensure human survival",
-            "Argue for or against: Climate change requires restricting individual freedoms",
-            "Argue for or against: Nuclear energy is essential for fighting climate change",
-            "Argue for or against: Geoengineering the climate is too risky to pursue",
-            "Argue for or against: Scientific research should have ethical limits",
-            "Argue for or against: The precautionary principle should guide technology policy",
-            "Argue for or against: Transhumanism represents human progress",
-            "Argue for or against: Artificial general intelligence is an existential risk",
-
-            // Education & Knowledge
-            "Argue for or against: Universities have become too politicized",
-            "Argue for or against: Academic freedom should have no limits",
-            "Argue for or against: Traditional education is becoming obsolete",
-            "Argue for or against: STEM education is overvalued compared to humanities",
-            "Argue for or against: Standardized testing should be abolished",
-            "Argue for or against: Alternative credentials will replace degrees",
-            "Argue for or against: Education should prepare workers not citizens",
-            "Argue for or against: Schools should teach controversial topics",
-            "Argue for or against: Elite universities harm social mobility",
-            "Argue for or against: Historical statues should be removed",
-
-            // Media & Information
-            "Argue for or against: Misinformation is a bigger threat than censorship",
-            "Argue for or against: Journalism is dying and it's our fault",
-            "Argue for or against: Algorithms should be regulated like utilities",
-            "Argue for or against: Echo chambers are destroying democracy",
-            "Argue for or against: We should pay for online content",
-            "Argue for or against: Influencer culture is corrupting society",
-            "Argue for or against: Traditional media is more trustworthy than new media",
-            "Argue for or against: Information should be free for everyone",
-            "Argue for or against: Anonymous speech should be protected online",
-            "Argue for or against: Fact-checking is ineffective against misinformation",
-
-            // Personal Ethics
-            "Argue for or against: Ethical consumption is possible under capitalism",
-            "Argue for or against: We have moral obligations to animals",
-            "Argue for or against: Effective altruism is the best ethical framework",
-            "Argue for or against: Personal choices can't solve systemic problems",
-            "Argue for or against: Virtue signaling serves a social purpose",
-            "Argue for or against: Everyone is responsible for their own happiness",
-            "Argue for or against: Forgiveness is always better than punishment",
-            "Argue for or against: Self-interest is the primary driver of human behavior",
-            "Argue for or against: Character is fixed by adulthood",
-            "Argue for or against: Moral luck undermines personal responsibility",
-
-            // Miscellaneous Boss Debates
-            "Argue for or against: History is written by the winners",
-            "Argue for or against: Power corrupts absolutely",
-            "Argue for or against: Truth is more important than peace",
-            "Argue for or against: Progress requires conflict",
-            "Argue for or against: Liberty matters more than equality",
-            "Argue for or against: The end justifies the means",
-            "Argue for or against: Human nature cannot change",
-            "Argue for or against: Order requires hierarchy",
-            "Argue for or against: Compassion is weakness",
-            "Argue for or against: The individual should sacrifice for the collective",
-
-            // Additional Boss - Philosophy of Government
-            "Argue for or against: Anarchism is a viable political philosophy",
-            "Argue for or against: Constitutional rights should be absolute",
-            "Argue for or against: Technocracy would be more effective than democracy",
-            "Argue for or against: The social contract is a useful fiction",
-            "Argue for or against: Civil liberties must be sacrificed for national security",
-            "Argue for or against: The state has a right to enforce morality",
-            "Argue for or against: Political parties undermine democracy",
-            "Argue for or against: Judicial activism is necessary for justice",
-            "Argue for or against: Federalism is the optimal form of government",
-            "Argue for or against: Revolution is sometimes justified",
-
-            // Additional Boss - Economic Philosophy
-            "Argue for or against: Degrowth is necessary for survival",
-            "Argue for or against: Markets are inherently efficient",
-            "Argue for or against: Private property is theft",
-            "Argue for or against: Labor unions have outlived their usefulness",
-            "Argue for or against: Inheritance should be heavily taxed",
-            "Argue for or against: Central banks do more harm than good",
-            "Argue for or against: Planned economies can never work",
-            "Argue for or against: Profit motive corrupts essential services",
-            "Argue for or against: Economic inequality is necessary for innovation",
-            "Argue for or against: Free trade benefits everyone",
-
-            // Additional Boss - Technology Ethics
-            "Argue for or against: Social media should be banned for children entirely",
-            "Argue for or against: Algorithmic decision-making should be transparent by law",
-            "Argue for or against: Digital immortality raises serious ethical concerns",
-            "Argue for or against: Virtual reality will replace physical experiences",
-            "Argue for or against: Human cloning should be permitted",
-            "Argue for or against: We should merge with machines to remain relevant",
-            "Argue for or against: Deepfakes should be criminalized",
-            "Argue for or against: Right to repair should be universal",
-            "Argue for or against: Data ownership should be a fundamental right",
-            "Argue for or against: Tech workers have moral responsibility for their products",
-
-            // Additional Boss - Environmental Ethics
-            "Argue for or against: Nature has intrinsic rights",
-            "Argue for or against: Extinction of species is acceptable collateral for progress",
-            "Argue for or against: Developed nations owe climate debt to developing ones",
-            "Argue for or against: Population control is necessary for sustainability",
-            "Argue for or against: Meat should be banned for environmental reasons",
-            "Argue for or against: Future generations have rights we must respect now",
-            "Argue for or against: Radical environmentalism is justified",
-            "Argue for or against: Carbon offsets are moral washing",
-            "Argue for or against: Rewilding should take priority over development",
-            "Argue for or against: Climate refugees deserve special protections",
-
-            // Additional Boss - Social Philosophy
-            "Argue for or against: Identity politics fragments society",
-            "Argue for or against: Historical injustice requires present compensation",
-            "Argue for or against: Assimilation is better than multiculturalism",
-            "Argue for or against: Gender is entirely socially constructed",
-            "Argue for or against: Meritocracy is inherently oppressive",
-            "Argue for or against: Safe spaces harm free inquiry",
-            "Argue for or against: Hate speech laws protect vulnerable groups",
-            "Argue for or against: Colorblindness is the wrong approach to racism",
-            "Argue for or against: Systemic problems require systemic solutions only",
-            "Argue for or against: Tradition should guide social change",
-
-            // Additional Boss - Philosophy of Science
-            "Argue for or against: Science is value-neutral",
-            "Argue for or against: Some knowledge is too dangerous to pursue",
-            "Argue for or against: Expert consensus should guide policy",
-            "Argue for or against: Natural is better than artificial",
-            "Argue for or against: Progress in science requires ethical boundaries",
-            "Argue for or against: Pseudoscience should be censored",
-            "Argue for or against: Science can answer moral questions",
-            "Argue for or against: Replication crisis undermines scientific authority",
-            "Argue for or against: Indigenous knowledge should inform science",
-            "Argue for or against: Big Science has replaced curiosity-driven research",
-
-            // Additional Boss - International Relations
-            "Argue for or against: Sovereignty is obsolete in a globalized world",
-            "Argue for or against: Humanitarian intervention is ever justified",
-            "Argue for or against: Economic sanctions are effective diplomatic tools",
-            "Argue for or against: Colonial powers owe reparations",
-            "Argue for or against: International law is just power politics",
-            "Argue for or against: Open borders would benefit everyone",
-            "Argue for or against: Cultural imperialism is ongoing",
-            "Argue for or against: The United Nations needs fundamental reform",
-            "Argue for or against: Regional blocs are the future of governance",
-            "Argue for or against: War can be morally justified",
-
-            // Additional Boss - Philosophy of Law
-            "Argue for or against: Justice requires retribution",
-            "Argue for or against: Rehabilitation should replace punishment",
-            "Argue for or against: Victimless crimes should be decriminalized",
-            "Argue for or against: Civil disobedience is a duty when laws are unjust",
-            "Argue for or against: Privacy rights should extend to public spaces",
-            "Argue for or against: Corporations are morally responsible agents",
-            "Argue for or against: Natural rights exist independent of legal recognition",
-            "Argue for or against: Plea bargaining corrupts justice",
-            "Argue for or against: Death penalty can ever be justified",
-            "Argue for or against: Three-strikes laws reduce crime",
-
-            // Additional Boss - Existential Questions
-            "Argue for or against: Suffering is necessary for meaning",
-            "Argue for or against: Death gives life meaning",
-            "Argue for or against: Free will is necessary for moral responsibility",
-            "Argue for or against: Consciousness is the basis of all value",
-            "Argue for or against: Life without purpose is worth living",
-            "Argue for or against: Authenticity is achievable",
-            "Argue for or against: Hope is rational in hopeless situations",
-            "Argue for or against: Beauty is a human creation",
-            "Argue for or against: The universe is fundamentally absurd",
-            "Argue for or against: Wisdom requires suffering"
         ]
     },
-
     explanatory: {
         easy: [
             // Nature & Weather
@@ -2646,6 +2775,248 @@ export const topics = {
             "Why do we sleep at night?"
         ],
         medium: [
+            // New Medium - Nature & Weather
+            "How does rain form? Explain it in simple steps, then give one example from daily life.",
+            "Why does the sun rise and set? Explain the cause and result using everyday language.",
+            "How do plants grow? Give a simple explanation and one common mistake people make about it.",
+            "Why do we have seasons? Explain what happens first, what happens next, and why it matters.",
+            "How does a rainbow appear? Explain it in simple steps, then give one example from daily life.",
+            "Why is the sky blue? Explain the cause and result using everyday language.",
+            "How do clouds form? Give a simple explanation and one common mistake people make about it.",
+            "Why does it snow? Explain what happens first, what happens next, and why it matters.",
+            "How do birds fly? Explain it in simple steps, then give one example from daily life.",
+            "Why do leaves change color in autumn? Explain the cause and result using everyday language.",
+
+            // New Medium - Human Body
+            "Why do we need to sleep? Give a simple explanation and one common mistake people make about it.",
+            "How do our eyes see? Explain what happens first, what happens next, and why it matters.",
+            "Why do we yawn? Explain it in simple steps, then give one example from daily life.",
+            "How does food give us energy? Explain the cause and result using everyday language.",
+            "Why do we dream? Give a simple explanation and one common mistake people make about it.",
+            "How does the heart pump blood? Explain what happens first, what happens next, and why it matters.",
+            "Why do we sneeze? Explain it in simple steps, then give one example from daily life.",
+            "How do cuts heal? Explain the cause and result using everyday language.",
+            "Why do we feel hungry? Give a simple explanation and one common mistake people make about it.",
+            "How do we hear sounds? Explain what happens first, what happens next, and why it matters.",
+
+            // New Medium - Everyday Objects
+            "How does a light bulb work? Explain it in simple steps, then give one example from daily life.",
+            "Why does ice float on water? Explain the cause and result using everyday language.",
+            "How does a refrigerator keep food cold? Give a simple explanation and one common mistake people make about it.",
+            "Why do magnets stick together? Explain what happens first, what happens next, and why it matters.",
+            "How does a zipper work? Explain it in simple steps, then give one example from daily life.",
+            "Why does metal feel colder than wood? Explain the cause and result using everyday language.",
+            "How do glasses help you see? Give a simple explanation and one common mistake people make about it.",
+            "Why does soap clean things? Explain what happens first, what happens next, and why it matters.",
+            "How does a mirror reflect? Explain it in simple steps, then give one example from daily life.",
+            "Why do balloons float? Explain the cause and result using everyday language.",
+
+            // New Medium - Food & Cooking
+            "How does bread rise? Give a simple explanation and one common mistake people make about it.",
+            "Why does water boil? Explain what happens first, what happens next, and why it matters.",
+            "How does salt flavor food? Explain it in simple steps, then give one example from daily life.",
+            "Why does ice melt? Explain the cause and result using everyday language.",
+            "How do microwaves heat food? Give a simple explanation and one common mistake people make about it.",
+            "Why does popcorn pop? Explain what happens first, what happens next, and why it matters.",
+            "How does yeast work? Explain it in simple steps, then give one example from daily life.",
+            "Why does milk go bad? Explain the cause and result using everyday language.",
+            "How do we make cheese? Give a simple explanation and one common mistake people make about it.",
+            "Why does fruit ripen? Explain what happens first, what happens next, and why it matters.",
+
+            // New Medium - Technology Basics
+            "How does a phone make calls? Explain it in simple steps, then give one example from daily life.",
+            "Why do we need passwords? Explain the cause and result using everyday language.",
+            "How does WiFi work (simply)? Give a simple explanation and one common mistake people make about it.",
+            "Why do batteries run out? Explain what happens first, what happens next, and why it matters.",
+            "How do photos appear on screens? Explain it in simple steps, then give one example from daily life.",
+            "Why do computers need to restart? Explain the cause and result using everyday language.",
+            "How does a remote control work? Give a simple explanation and one common mistake people make about it.",
+            "Why do phones need charging? Explain what happens first, what happens next, and why it matters.",
+            "How do speakers make sound? Explain it in simple steps, then give one example from daily life.",
+            "Why do websites need loading time? Explain the cause and result using everyday language.",
+
+            // New Medium - Transportation
+            "How do cars move? Give a simple explanation and one common mistake people make about it.",
+            "Why do airplanes fly? Explain what happens first, what happens next, and why it matters.",
+            "How do boats float? Explain it in simple steps, then give one example from daily life.",
+            "Why do bicycles stay balanced? Explain the cause and result using everyday language.",
+            "How do trains stay on tracks? Give a simple explanation and one common mistake people make about it.",
+            "Why do tires need air? Explain what happens first, what happens next, and why it matters.",
+            "How do brakes stop a car? Explain it in simple steps, then give one example from daily life.",
+            "Why do ships not sink? Explain the cause and result using everyday language.",
+            "How does a hot air balloon work? Give a simple explanation and one common mistake people make about it.",
+            "Why do we wear seatbelts? Explain what happens first, what happens next, and why it matters.",
+
+            // New Medium - Animals
+            "How do fish breathe underwater? Explain it in simple steps, then give one example from daily life.",
+            "Why do cats purr? Explain the cause and result using everyday language.",
+            "How do spiders make webs? Give a simple explanation and one common mistake people make about it.",
+            "Why do dogs wag their tails? Explain what happens first, what happens next, and why it matters.",
+            "How do bees make honey? Explain it in simple steps, then give one example from daily life.",
+            "Why do birds sing? Explain the cause and result using everyday language.",
+            "How do chameleons change color? Give a simple explanation and one common mistake people make about it.",
+            "Why do owls hunt at night? Explain what happens first, what happens next, and why it matters.",
+            "How do dolphins communicate? Explain it in simple steps, then give one example from daily life.",
+            "Why do snakes shed their skin? Explain the cause and result using everyday language.",
+
+            // New Medium - Simple Science
+            "How does fire burn? Give a simple explanation and one common mistake people make about it.",
+            "Why do things fall down? Explain what happens first, what happens next, and why it matters.",
+            "How does sound travel? Explain it in simple steps, then give one example from daily life.",
+            "Why do shadows form? Explain the cause and result using everyday language.",
+            "How do candles work? Give a simple explanation and one common mistake people make about it.",
+            "Why does metal rust? Explain what happens first, what happens next, and why it matters.",
+            "How do seeds sprout? Explain it in simple steps, then give one example from daily life.",
+            "Why does glass break easily? Explain the cause and result using everyday language.",
+            "How do thermometers work? Give a simple explanation and one common mistake people make about it.",
+            "Why does the moon change shape? Explain what happens first, what happens next, and why it matters.",
+
+            // New Medium - Daily Life
+            "How does a clock tell time? Explain it in simple steps, then give one example from daily life.",
+            "Why do we brush our teeth? Explain the cause and result using everyday language.",
+            "How does money work? Give a simple explanation and one common mistake people make about it.",
+            "Why do we have addresses? Explain what happens first, what happens next, and why it matters.",
+            "How does mail get delivered? Explain it in simple steps, then give one example from daily life.",
+            "Why do we have traffic lights? Explain the cause and result using everyday language.",
+            "How does a key open a lock? Give a simple explanation and one common mistake people make about it.",
+            "Why do we shake hands? Explain what happens first, what happens next, and why it matters.",
+            "How do calendars work? Explain it in simple steps, then give one example from daily life.",
+            "Why do we wear different clothes for different weather? Explain the cause and result using everyday language.",
+
+            // New Medium - Miscellaneous Easy Explanations
+            "How does glue stick things together? Give a simple explanation and one common mistake people make about it.",
+            "Why do we get thirsty? Explain what happens first, what happens next, and why it matters.",
+            "How does a flashlight work? Explain it in simple steps, then give one example from daily life.",
+            "Why do onions make us cry? Explain the cause and result using everyday language.",
+            "How do erasers remove pencil marks? Give a simple explanation and one common mistake people make about it.",
+            "Why do we get hiccups? Explain what happens first, what happens next, and why it matters.",
+            "How does an umbrella keep us dry? Explain it in simple steps, then give one example from daily life.",
+            "Why do stars twinkle? Explain the cause and result using everyday language.",
+            "How do elevators work? Give a simple explanation and one common mistake people make about it.",
+            "Why do we have fingerprints? Explain what happens first, what happens next, and why it matters.",
+
+            // New Medium - More Body
+            "Why do we get goosebumps? Explain it in simple steps, then give one example from daily life.",
+            "How do our teeth grow? Explain the cause and result using everyday language.",
+            "Why do we get tired? Give a simple explanation and one common mistake people make about it.",
+            "How do nails grow? Explain what happens first, what happens next, and why it matters.",
+            "Why does our skin tan? Explain it in simple steps, then give one example from daily life.",
+            "How do we smell things? Explain the cause and result using everyday language.",
+            "Why do we blink? Give a simple explanation and one common mistake people make about it.",
+            "How does hair grow? Explain what happens first, what happens next, and why it matters.",
+            "Why do we feel pain? Explain it in simple steps, then give one example from daily life.",
+            "How do we taste food? Explain the cause and result using everyday language.",
+
+            // New Medium - More Nature
+            "Why do flowers smell nice? Give a simple explanation and one common mistake people make about it.",
+            "How do trees make oxygen? Explain what happens first, what happens next, and why it matters.",
+            "Why does the wind blow? Explain it in simple steps, then give one example from daily life.",
+            "How do rivers form? Explain the cause and result using everyday language.",
+            "Why do some animals hibernate? Give a simple explanation and one common mistake people make about it.",
+            "How do mountains form? Explain what happens first, what happens next, and why it matters.",
+            "Why is ocean water salty? Explain it in simple steps, then give one example from daily life.",
+            "How do waterfalls form? Explain the cause and result using everyday language.",
+            "Why do some plants have thorns? Give a simple explanation and one common mistake people make about it.",
+            "How do deserts form? Explain what happens first, what happens next, and why it matters.",
+
+            // New Medium - More Animals
+            "Why do ducks float? Explain it in simple steps, then give one example from daily life.",
+            "How do ants carry heavy things? Explain the cause and result using everyday language.",
+            "Why do fireflies light up? Give a simple explanation and one common mistake people make about it.",
+            "How do butterflies develop? Explain what happens first, what happens next, and why it matters.",
+            "Why do roosters crow? Explain it in simple steps, then give one example from daily life.",
+            "How do frogs catch flies? Explain the cause and result using everyday language.",
+            "Why do mosquitoes bite? Give a simple explanation and one common mistake people make about it.",
+            "How do penguins stay warm? Explain what happens first, what happens next, and why it matters.",
+            "Why do rabbits hop? Explain it in simple steps, then give one example from daily life.",
+            "How do elephants use their trunks? Explain the cause and result using everyday language.",
+
+            // New Medium - More Objects
+            "How does a pencil write? Give a simple explanation and one common mistake people make about it.",
+            "Why do rubber bands stretch? Explain what happens first, what happens next, and why it matters.",
+            "How does tape stick? Explain it in simple steps, then give one example from daily life.",
+            "Why do scissors cut? Explain the cause and result using everyday language.",
+            "How does a stapler work? Give a simple explanation and one common mistake people make about it.",
+            "Why do paper cuts hurt? Explain what happens first, what happens next, and why it matters.",
+            "How do wheels roll? Explain it in simple steps, then give one example from daily life.",
+            "Why does plastic bend? Explain the cause and result using everyday language.",
+            "How do zippers close? Give a simple explanation and one common mistake people make about it.",
+            "Why do things get dusty? Explain what happens first, what happens next, and why it matters.",
+
+            // New Medium - More Food
+            "Why does toast turn brown? Explain it in simple steps, then give one example from daily life.",
+            "How does sugar dissolve? Explain the cause and result using everyday language.",
+            "Why does soda fizz? Give a simple explanation and one common mistake people make about it.",
+            "How does coffee wake you up? Explain what happens first, what happens next, and why it matters.",
+            "Why does chocolate melt? Explain it in simple steps, then give one example from daily life.",
+            "How does baking powder work? Explain the cause and result using everyday language.",
+            "Why do eggs get hard when cooked? Give a simple explanation and one common mistake people make about it.",
+            "How does oil cook food? Explain what happens first, what happens next, and why it matters.",
+            "Why does meat change color when cooked? Explain it in simple steps, then give one example from daily life.",
+            "How does jelly set? Explain the cause and result using everyday language.",
+
+            // New Medium - More Home
+            "How does a vacuum cleaner work? Give a simple explanation and one common mistake people make about it.",
+            "Why do windows fog up? Explain what happens first, what happens next, and why it matters.",
+            "How does a fan cool you? Explain it in simple steps, then give one example from daily life.",
+            "Why do pipes sometimes freeze? Explain the cause and result using everyday language.",
+            "How does a doorbell work? Give a simple explanation and one common mistake people make about it.",
+            "Why do floors creak? Explain what happens first, what happens next, and why it matters.",
+            "How does a smoke detector work? Explain it in simple steps, then give one example from daily life.",
+            "Why do faucets drip? Explain the cause and result using everyday language.",
+            "How does a thermostat work? Give a simple explanation and one common mistake people make about it.",
+            "Why do we hear echoes? Explain what happens first, what happens next, and why it matters.",
+
+            // New Medium - More Science
+            "Why does metal get hot in sun? Explain it in simple steps, then give one example from daily life.",
+            "How do bubbles form? Explain the cause and result using everyday language.",
+            "Why does water make things wet? Give a simple explanation and one common mistake people make about it.",
+            "How do colors mix? Explain what happens first, what happens next, and why it matters.",
+            "Why does paper burn? Explain it in simple steps, then give one example from daily life.",
+            "How do crystals form? Explain the cause and result using everyday language.",
+            "Why does static make hair stand up? Give a simple explanation and one common mistake people make about it.",
+            "How does a compass work? Explain what happens first, what happens next, and why it matters.",
+            "Why do puddles disappear? Explain it in simple steps, then give one example from daily life.",
+            "How does friction slow things down? Explain the cause and result using everyday language.",
+
+            // New Medium - More Weather
+            "Why does fog appear? Give a simple explanation and one common mistake people make about it.",
+            "How do hailstones form? Explain what happens first, what happens next, and why it matters.",
+            "Why is morning dew wet? Explain it in simple steps, then give one example from daily life.",
+            "How do tornadoes spin? Explain the cause and result using everyday language.",
+            "Why does it thunder? Give a simple explanation and one common mistake people make about it.",
+            "How do icicles form? Explain what happens first, what happens next, and why it matters.",
+            "Why are some days cloudy? Explain it in simple steps, then give one example from daily life.",
+            "How does a thermometer show temperature? Explain the cause and result using everyday language.",
+            "Why do puddles freeze? Give a simple explanation and one common mistake people make about it.",
+            "How does the weatherman know tomorrow's weather? Explain what happens first, what happens next, and why it matters.",
+
+            // New Medium - More Transport
+            "How do escalators move? Explain it in simple steps, then give one example from daily life.",
+            "Why do buses have big wheels? Explain the cause and result using everyday language.",
+            "How does a motorcycle balance? Give a simple explanation and one common mistake people make about it.",
+            "Why do ambulances have sirens? Explain what happens first, what happens next, and why it matters.",
+            "How do traffic lights change? Explain it in simple steps, then give one example from daily life.",
+            "Why do car engines make noise? Explain the cause and result using everyday language.",
+            "How does a helicopter fly? Give a simple explanation and one common mistake people make about it.",
+            "Why do boats have anchors? Explain what happens first, what happens next, and why it matters.",
+            "How do subway trains know where to stop? Explain it in simple steps, then give one example from daily life.",
+            "Why do planes have wings? Explain the cause and result using everyday language.",
+
+            // New Medium - More Daily Life
+            "How does a vending machine work? Give a simple explanation and one common mistake people make about it.",
+            "Why do we use umbrellas? Explain what happens first, what happens next, and why it matters.",
+            "How does a washing machine clean clothes? Explain it in simple steps, then give one example from daily life.",
+            "Why do shoes have laces? Explain the cause and result using everyday language.",
+            "How does a toaster work? Give a simple explanation and one common mistake people make about it.",
+            "Why do we use plates? Explain what happens first, what happens next, and why it matters.",
+            "How does a scale weigh things? Explain it in simple steps, then give one example from daily life.",
+            "Why do clocks tick? Explain the cause and result using everyday language.",
+            "How does a bell ring? Give a simple explanation and one common mistake people make about it.",
+            "Why do we sleep at night? Explain what happens first, what happens next, and why it matters."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // Biology & Health
             "How does the immune system fight off infections?",
             "Explain how vaccines protect the body",
@@ -2742,7 +3113,7 @@ export const topics = {
             "How does email travel from sender to recipient?",
             "Explain how viral content spreads online",
 
-            // Miscellaneous Medium
+            // Miscellaneous Boss
             "How do 3D printers create objects?",
             "Explain how MRI machines create body images",
             "How do hybrid cars conserve fuel?",
@@ -2754,7 +3125,7 @@ export const topics = {
             "How do self-checkout systems work?",
             "Explain how concerts amplify sound for large audiences",
 
-            // Additional Medium - Advanced Biology
+            // Additional Boss - Advanced Biology
             "How does the body regulate temperature?",
             "Explain how the liver processes toxins",
             "How do antibiotics kill bacteria?",
@@ -2766,7 +3137,7 @@ export const topics = {
             "How do muscles know when to contract?",
             "Explain how the lymphatic system works",
 
-            // Additional Medium - Earth & Space
+            // Additional Boss - Earth & Space
             "How does the moon affect ocean tides?",
             "Explain how fossils form over time",
             "How does soil fertility develop?",
@@ -2778,7 +3149,7 @@ export const topics = {
             "How do ecosystems maintain balance?",
             "Explain how solar flares affect Earth",
 
-            // Additional Medium - Chemistry in Life
+            // Additional Boss - Chemistry in Life
             "How does fermentation create alcohol?",
             "Explain how water purification plants work",
             "How does rust form and spread?",
@@ -2790,7 +3161,7 @@ export const topics = {
             "How do antacids neutralize stomach acid?",
             "Explain how hair dye changes hair color",
 
-            // Additional Medium - Modern Technology
+            // Additional Boss - Modern Technology
             "How do smartwatches track health metrics?",
             "Explain how voice assistants understand commands",
             "How does video compression reduce file size?",
@@ -2802,7 +3173,7 @@ export const topics = {
             "How do navigation apps predict traffic?",
             "Explain how online banking keeps transactions secure",
 
-            // Additional Medium - Social Systems
+            // Additional Boss - Social Systems
             "How does jury selection work?",
             "Explain how charities distribute donations",
             "How does the postal system sort mail?",
@@ -2814,7 +3185,7 @@ export const topics = {
             "How do emergency services coordinate?",
             "Explain how diplomatic immunity works",
 
-            // Additional Medium - Business & Work
+            // Additional Boss - Business & Work
             "How does franchising work?",
             "Explain how companies determine salaries",
             "How does venture capital funding work?",
@@ -2826,7 +3197,7 @@ export const topics = {
             "How do loyalty programs benefit businesses?",
             "Explain how companies value themselves",
 
-            // Additional Medium - Food Science
+            // Additional Boss - Food Science
             "How does pasteurization make milk safe?",
             "Explain how bread becomes stale",
             "How do preservatives extend food shelf life?",
@@ -2838,7 +3209,7 @@ export const topics = {
             "How does marinating tenderize meat?",
             "Explain how probiotics benefit digestion",
 
-            // Additional Medium - Engineering
+            // Additional Boss - Engineering
             "How do bridges distribute weight?",
             "Explain how air conditioning cools buildings",
             "How do elevators prevent free-falling?",
@@ -2850,7 +3221,7 @@ export const topics = {
             "How do power grids balance supply and demand?",
             "Explain how highways are designed for safety",
 
-            // Additional Medium - Communication
+            // Additional Boss - Communication
             "How does video calling work across continents?",
             "Explain how radio broadcasts reach receivers",
             "How does text-to-speech technology work?",
@@ -2862,7 +3233,7 @@ export const topics = {
             "How do hearing aids amplify specific sounds?",
             "Explain how autocomplete predictions work",
 
-            // Additional Medium - Art & Design
+            // Additional Boss - Art & Design
             "How do printers reproduce color images?",
             "Explain how autotune corrects singing pitch",
             "How do special effects create realistic CGI?",
@@ -2873,235 +3244,6 @@ export const topics = {
             "Explain how color psychology influences design",
             "How do sound engineers mix music tracks?",
             "Explain how photography captures light"
-        ],
-        boss: [
-            // Advanced Technology
-            "Explain how blockchain technology works and why it's considered secure",
-            "How does machine learning differ from traditional programming?",
-            "Explain how quantum computers differ from classical computers",
-            "How do autonomous vehicles make real-time decisions?",
-            "Explain how cryptocurrency mining works",
-            "How does natural language processing enable AI to understand text?",
-            "Explain the architecture of neural networks",
-            "How do deepfake algorithms create realistic fake videos?",
-            "Explain how edge computing differs from cloud computing",
-            "How does 5G technology achieve faster speeds?",
-
-            // Advanced Science
-            "Explain the process of nuclear fusion and why it's difficult to achieve",
-            "How does CRISPR gene editing work at a molecular level?",
-            "Explain how the immune system distinguishes between self and foreign cells",
-            "How does neuroplasticity allow the brain to adapt after injury?",
-            "Explain the principles of quantum entanglement",
-            "How do mRNA vaccines work at the molecular level?",
-            "Explain how stem cells can differentiate into specialized cells",
-            "How does the placebo effect produce real physical changes?",
-            "Explain the relationship between DNA, RNA, and protein synthesis",
-            "How do black holes form and what happens at the event horizon?",
-
-            // Complex Economics
-            "Explain how inflation affects different economic groups",
-            "How does the stock market reflect and influence the economy?",
-            "Explain the mechanics of a financial crisis",
-            "How do central banks control monetary policy?",
-            "Explain how supply chains affect global product pricing",
-            "How does quantitative easing work and what are its effects?",
-            "Explain the economic concept of opportunity cost in complex decisions",
-            "How do derivatives and hedge funds work?",
-            "Explain the relationship between unemployment and inflation",
-            "How do trade deficits affect national economies?",
-
-            // Psychology & Neuroscience
-            "Explain the relationship between sleep and memory consolidation",
-            "How does cognitive behavioral therapy rewire thought patterns?",
-            "Explain how trauma affects brain structure and function",
-            "How do antidepressants work on neurotransmitter systems?",
-            "Explain the neuroscience behind decision fatigue",
-            "How does meditation physically change the brain?",
-            "Explain the psychological mechanisms of persuasion",
-            "How do mirror neurons contribute to empathy and learning?",
-            "Explain the dual-process theory of thinking",
-            "How does chronic stress lead to physical health problems?",
-
-            // Social Systems
-            "Explain how social media algorithms shape public opinion",
-            "How does gerrymandering affect democratic representation?",
-            "Explain the mechanisms of economic inequality perpetuation",
-            "How do propaganda techniques exploit cognitive biases?",
-            "Explain how housing markets contribute to wealth inequality",
-            "How does systemic bias manifest in institutions?",
-            "Explain the economic impact of automation on labor markets",
-            "How do feedback loops accelerate climate change?",
-            "Explain the network effects that create tech monopolies",
-            "How does misinformation spread through social networks?",
-
-            // Environmental Science
-            "Explain the greenhouse effect and its role in climate change",
-            "How does ocean acidification affect marine ecosystems?",
-            "Explain the process of desertification and its causes",
-            "How do tipping points work in climate systems?",
-            "Explain the impact of microplastics on food chains",
-            "How does deforestation affect global carbon cycles?",
-            "Explain the relationship between biodiversity and ecosystem resilience",
-            "How do feedback mechanisms amplify environmental changes?",
-            "Explain the challenges of carbon capture technology",
-            "How does urbanization affect local and global climates?",
-
-            // Complex Systems
-            "Explain how emergent behavior arises in complex systems",
-            "How does the immune system maintain self-tolerance?",
-            "Explain the principles of chaos theory in practical terms",
-            "How do epidemiological models predict disease spread?",
-            "Explain how market bubbles form and burst",
-            "How does the brain generate consciousness?",
-            "Explain the concept of entropy and its implications",
-            "How do ecosystems maintain balance through feedback loops?",
-            "Explain the mathematics behind network effects",
-            "How does evolution produce complex adaptations?",
-
-            // Geopolitics & History
-            "Explain how colonial legacies affect modern economies",
-            "How do sanctions affect targeted nations and their citizens?",
-            "Explain the mechanisms of soft power in international relations",
-            "How does the global financial system enable or constrain nations?",
-            "Explain how democratic backsliding occurs",
-            "How do resource dependencies shape geopolitical relationships?",
-            "Explain the economic factors behind migration patterns",
-            "How does international law enforcement work across borders?",
-            "Explain the concept of state sovereignty in a globalized world",
-            "How do international institutions balance competing interests?",
-
-            // Miscellaneous Boss
-            "Explain the paradox of tolerance in democratic societies",
-            "How does compound complexity make problems harder to solve?",
-            "Explain the relationship between correlation and causation in research",
-            "How do genetic and environmental factors interact in development?",
-            "Explain the concept of diminishing returns in various contexts",
-            "How does information asymmetry affect markets and relationships?",
-            "Explain the challenges of predicting rare but impactful events",
-            "How does regulatory capture undermine public institutions?",
-            "Explain the role of path dependence in technological development",
-            "How do self-fulfilling prophecies work in economics and society?",
-
-            // Additional Boss - Advanced Computing
-            "Explain how transformer architecture revolutionized natural language processing",
-            "How do generative adversarial networks create synthetic content?",
-            "Explain the challenges of AI alignment and value loading",
-            "How does homomorphic encryption enable computation on encrypted data?",
-            "Explain how distributed ledgers achieve consensus without central authority",
-            "How do recommendation systems balance personalization and filter bubbles?",
-            "Explain the theoretical limits of computation",
-            "How does differential privacy protect individual data in datasets?",
-            "Explain how federated learning enables privacy-preserving machine learning",
-            "How do large language models generate coherent text?",
-
-            // Additional Boss - Cognitive Science
-            "Explain the binding problem in consciousness research",
-            "How does working memory differ from long-term memory at neural level?",
-            "Explain the relationship between attention and awareness",
-            "How does the brain process and integrate sensory information?",
-            "Explain the neural basis of decision-making under uncertainty",
-            "How do cognitive biases emerge from efficient heuristics?",
-            "Explain the relationship between language and thought",
-            "How does the brain distinguish real memories from false ones?",
-            "Explain the neuroscience of creativity",
-            "How does the brain maintain a coherent sense of self?",
-
-            // Additional Boss - Advanced Economics
-            "Explain how game theory applies to international negotiations",
-            "How do behavioral economics explain irrational financial decisions?",
-            "Explain the mechanisms of monetary policy transmission",
-            "How does comparative advantage drive international trade patterns?",
-            "Explain the role of expectations in causing economic recessions",
-            "How do externalities lead to market failures?",
-            "Explain the economics of network goods and platform markets",
-            "How does information asymmetry affect insurance markets?",
-            "Explain the concept of general equilibrium in economics",
-            "How do capital markets allocate resources across time?",
-
-            // Additional Boss - Philosophy of Science
-            "Explain the demarcation problem between science and pseudoscience",
-            "How do paradigm shifts occur according to Kuhn?",
-            "Explain the problem of induction in scientific reasoning",
-            "How does underdetermination challenge scientific realism?",
-            "Explain the role of models in scientific understanding",
-            "How do thought experiments contribute to scientific knowledge?",
-            "Explain the relationship between observation and theory",
-            "How does reductionism work across scientific disciplines?",
-            "Explain the concept of emergence in complex systems",
-            "How do scientists establish causal relationships?",
-
-            // Additional Boss - Advanced Physics
-            "Explain the measurement problem in quantum mechanics",
-            "How does general relativity describe gravity as spacetime curvature?",
-            "Explain the concept of symmetry breaking in physics",
-            "How does the standard model explain fundamental particles?",
-            "Explain the problem of quantum gravity",
-            "How does thermodynamics relate to information theory?",
-            "Explain the arrow of time and its thermodynamic basis",
-            "How do phase transitions work at the microscopic level?",
-            "Explain the role of gauge symmetry in fundamental physics",
-            "How does quantum field theory describe particle interactions?",
-
-            // Additional Boss - Sociology & Culture
-            "Explain how social stratification reproduces itself across generations",
-            "How do cultural norms emerge and change over time?",
-            "Explain the mechanisms of collective action problems",
-            "How does symbolic interactionism explain social reality?",
-            "Explain the relationship between power and discourse",
-            "How do institutions shape individual behavior and beliefs?",
-            "Explain the sociological concept of social capital",
-            "How does globalization affect cultural identity?",
-            "Explain the dynamics of social movements",
-            "How do social networks influence opinion formation?",
-
-            // Additional Boss - Legal Theory
-            "Explain the tension between positivist and natural law theories",
-            "How does constitutional interpretation evolve over time?",
-            "Explain the economic analysis of legal rules",
-            "How do international courts enforce their decisions?",
-            "Explain the concept of legal personhood and its implications",
-            "How does tort law balance compensation and deterrence?",
-            "Explain the challenges of regulating emerging technologies",
-            "How do property rights emerge and evolve?",
-            "Explain the relationship between law and social norms",
-            "How does legal pluralism function in practice?",
-
-            // Additional Boss - Medical Science
-            "Explain how the blood-brain barrier protects the brain",
-            "How does immunotherapy harness the immune system against cancer?",
-            "Explain the microbiome's role in health and disease",
-            "How does antibiotic resistance develop and spread?",
-            "Explain the mechanisms of autoimmune diseases",
-            "How do vaccines train the immune system?",
-            "Explain the relationship between genetics and disease susceptibility",
-            "How does the body maintain homeostasis?",
-            "Explain the process of nerve regeneration and its limits",
-            "How do epigenetic changes affect gene expression?",
-
-            // Additional Boss - Philosophy of Mind
-            "Explain the hard problem of consciousness",
-            "How do functionalist theories explain mental states?",
-            "Explain the Chinese room argument against strong AI",
-            "How does the extended mind thesis challenge traditional boundaries?",
-            "Explain the relationship between phenomenal and access consciousness",
-            "How do eliminativist theories challenge folk psychology?",
-            "Explain the problem of mental causation",
-            "How does embodied cognition challenge computational theories?",
-            "Explain the concept of supervenience in philosophy of mind",
-            "How do panpsychist theories explain consciousness?",
-
-            // Additional Boss - Systems Theory
-            "Explain how cybernetic systems maintain stability through feedback",
-            "How do complex adaptive systems evolve and self-organize?",
-            "Explain the concept of requisite variety in systems theory",
-            "How do phase transitions occur in social systems?",
-            "Explain the relationship between structure and function in systems",
-            "How do systems exhibit path dependence?",
-            "Explain the role of boundaries in defining systems",
-            "How do cascading failures occur in interconnected systems?",
-            "Explain the concept of resilience in socio-ecological systems",
-            "How do systems reach and maintain equilibrium states?"
         ]
     },
     compare: {
@@ -3347,6 +3489,248 @@ export const topics = {
             "Compare work hours and free time"
         ],
         medium: [
+            // New Medium - Transportation
+            "Compare buses and bicycles for getting around. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare trains and cars for long trips. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare walking and driving. Give one similarity, two differences, and your preference.",
+            "Compare flying and taking the train. Explain when each option would be the better choice.",
+            "Compare taxis and public buses. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare motorcycles and cars. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare electric scooters and bicycles. Give one similarity, two differences, and your preference.",
+            "Compare traveling by boat and by plane. Explain when each option would be the better choice.",
+            "Compare commuting by car and by subway. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare ride-sharing apps and traditional taxis. Compare them by convenience, comfort, or usefulness, then choose one.",
+
+            // New Medium - Food & Drinks
+            "Compare tea and coffee as morning drinks. Give one similarity, two differences, and your preference.",
+            "Compare cooking at home and eating out. Explain when each option would be the better choice.",
+            "Compare fast food and home-cooked meals. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare vegetarian and meat-based diets. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare breakfast and dinner as meals. Give one similarity, two differences, and your preference.",
+            "Compare water and soft drinks. Explain when each option would be the better choice.",
+            "Compare fresh fruit and fruit juice. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare baking and frying food. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare eating alone and eating with others. Give one similarity, two differences, and your preference.",
+            "Compare grocery stores and farmers markets. Explain when each option would be the better choice.",
+
+            // New Medium - Living Situations
+            "Compare living alone and living with roommates. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare small towns and big cities. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare apartments and houses. Give one similarity, two differences, and your preference.",
+            "Compare renting and buying a home. Explain when each option would be the better choice.",
+            "Compare living in the city center and suburbs. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare living near work and commuting far. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare old buildings and new construction. Give one similarity, two differences, and your preference.",
+            "Compare living with family and living independently. Explain when each option would be the better choice.",
+            "Compare houses with gardens and apartments with balconies. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare quiet neighborhoods and busy areas. Compare them by convenience, comfort, or usefulness, then choose one.",
+
+            // New Medium - Technology
+            "Compare texting and phone calls. Give one similarity, two differences, and your preference.",
+            "Compare laptops and tablets. Explain when each option would be the better choice.",
+            "Compare online shopping and in-store shopping. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare paper maps and GPS navigation. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare social media and face-to-face communication. Give one similarity, two differences, and your preference.",
+            "Compare streaming music and buying albums. Explain when each option would be the better choice.",
+            "Compare e-readers and physical books. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare video calls and in-person meetings. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare desktop computers and laptops. Give one similarity, two differences, and your preference.",
+            "Compare cash payments and digital payments. Explain when each option would be the better choice.",
+
+            // New Medium - Entertainment
+            "Compare watching movies at home and at the cinema. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare reading books and watching TV. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare board games and video games. Give one similarity, two differences, and your preference.",
+            "Compare live concerts and recorded music. Explain when each option would be the better choice.",
+            "Compare comedies and dramas. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare watching sports and playing sports. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare solo hobbies and group activities. Give one similarity, two differences, and your preference.",
+            "Compare going to museums and staying home. Explain when each option would be the better choice.",
+            "Compare streaming services and cable TV. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare podcasts and radio. Compare them by convenience, comfort, or usefulness, then choose one.",
+
+            // New Medium - Weather & Seasons
+            "Compare summer and winter. Give one similarity, two differences, and your preference.",
+            "Compare rainy days and sunny days. Explain when each option would be the better choice.",
+            "Compare spring and autumn. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare hot climates and cold climates. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare beach vacations and mountain trips. Give one similarity, two differences, and your preference.",
+            "Compare snowy weather and warm weather. Explain when each option would be the better choice.",
+            "Compare morning and evening weather. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare dry seasons and wet seasons. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare windy days and calm days. Give one similarity, two differences, and your preference.",
+            "Compare indoor activities and outdoor activities. Explain when each option would be the better choice.",
+
+            // New Medium - People & Lifestyle
+            "Compare morning people and night owls. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare introverts and extroverts. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare cats and dogs as pets. Give one similarity, two differences, and your preference.",
+            "Compare having siblings and being an only child. Explain when each option would be the better choice.",
+            "Compare big families and small families. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare young people and elderly people's routines. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare students and working professionals. Give one similarity, two differences, and your preference.",
+            "Compare city people and country people. Explain when each option would be the better choice.",
+            "Compare athletes and artists. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare travelers and homebodies. Compare them by convenience, comfort, or usefulness, then choose one.",
+
+            // New Medium - Learning & Work
+            "Compare handwriting and typing. Give one similarity, two differences, and your preference.",
+            "Compare studying alone and with a group. Explain when each option would be the better choice.",
+            "Compare learning online and in person. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare reading for fun and reading for school. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare morning classes and afternoon classes. Give one similarity, two differences, and your preference.",
+            "Compare strict teachers and relaxed teachers. Explain when each option would be the better choice.",
+            "Compare working in an office and working from home. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare physical work and desk work. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare full-time and part-time jobs. Give one similarity, two differences, and your preference.",
+            "Compare internships and regular jobs. Explain when each option would be the better choice.",
+
+            // New Medium - Daily Activities
+            "Compare morning routines and evening routines. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare weekdays and weekends. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare exercising indoors and outdoors. Give one similarity, two differences, and your preference.",
+            "Compare taking photos and drawing pictures. Explain when each option would be the better choice.",
+            "Compare planning ahead and being spontaneous. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare shopping alone and with friends. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare cooking and ordering food. Give one similarity, two differences, and your preference.",
+            "Compare cleaning daily and cleaning weekly. Explain when each option would be the better choice.",
+            "Compare early dinners and late dinners. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare busy schedules and relaxed schedules. Compare them by convenience, comfort, or usefulness, then choose one.",
+
+            // New Medium - Miscellaneous Easy
+            "Compare paper books and audiobooks. Give one similarity, two differences, and your preference.",
+            "Compare sweet snacks and salty snacks. Explain when each option would be the better choice.",
+            "Compare short vacations and long trips. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare making friends online and in person. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare giving gifts and receiving gifts. Give one similarity, two differences, and your preference.",
+            "Compare memories and photographs. Explain when each option would be the better choice.",
+            "Compare silence and background music. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare formal clothes and casual clothes. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare traditional games and modern games. Give one similarity, two differences, and your preference.",
+            "Compare homemade gifts and store-bought gifts. Explain when each option would be the better choice.",
+
+            // New Medium - More Food
+            "Compare apples and oranges. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare pasta and rice as side dishes. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare soup and sandwiches for lunch. Give one similarity, two differences, and your preference.",
+            "Compare tap water and bottled water. Explain when each option would be the better choice.",
+            "Compare salads and cooked vegetables. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare hot meals and cold meals. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare buffets and menu ordering. Give one similarity, two differences, and your preference.",
+            "Compare eating quickly and eating slowly. Explain when each option would be the better choice.",
+            "Compare sweet desserts and fruit desserts. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare bread and crackers. Compare them by convenience, comfort, or usefulness, then choose one.",
+
+            // New Medium - More Entertainment
+            "Compare animated movies and live-action movies. Give one similarity, two differences, and your preference.",
+            "Compare singing and dancing. Explain when each option would be the better choice.",
+            "Compare playing music and listening to music. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare painting and photography. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare puzzles and card games. Give one similarity, two differences, and your preference.",
+            "Compare action games and puzzle games. Explain when each option would be the better choice.",
+            "Compare watching TV series and watching movies. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare going to the zoo and going to an aquarium. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare theme parks and water parks. Give one similarity, two differences, and your preference.",
+            "Compare circus and theater. Explain when each option would be the better choice.",
+
+            // New Medium - More Technology
+            "Compare smartphones and smartwatches. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare headphones and earbuds. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare wired internet and WiFi. Give one similarity, two differences, and your preference.",
+            "Compare taking photos with camera and with phone. Explain when each option would be the better choice.",
+            "Compare digital clocks and analog clocks. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare touchscreens and keyboards. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare gaming on phone and on console. Give one similarity, two differences, and your preference.",
+            "Compare streaming and downloading. Explain when each option would be the better choice.",
+            "Compare video and audio podcasts. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare smart speakers and regular speakers. Compare them by convenience, comfort, or usefulness, then choose one.",
+
+            // New Medium - More Animals
+            "Compare birds and fish as pets. Give one similarity, two differences, and your preference.",
+            "Compare horses and elephants. Explain when each option would be the better choice.",
+            "Compare lions and tigers. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare butterflies and bees. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare farm animals and wild animals. Give one similarity, two differences, and your preference.",
+            "Compare big dogs and small dogs. Explain when each option would be the better choice.",
+            "Compare nocturnal and daytime animals. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare sea animals and land animals. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare reptiles and mammals. Give one similarity, two differences, and your preference.",
+            "Compare solitary animals and pack animals. Explain when each option would be the better choice.",
+
+            // New Medium - More Places
+            "Compare parks and playgrounds. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare libraries and bookstores. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare cafes and restaurants. Give one similarity, two differences, and your preference.",
+            "Compare supermarkets and corner shops. Explain when each option would be the better choice.",
+            "Compare swimming pools and beaches. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare hotels and hostels. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare airports and train stations. Give one similarity, two differences, and your preference.",
+            "Compare stadiums and theaters. Explain when each option would be the better choice.",
+            "Compare malls and street markets. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare rooftops and basements. Compare them by convenience, comfort, or usefulness, then choose one.",
+
+            // New Medium - More Activities
+            "Compare jogging and swimming. Give one similarity, two differences, and your preference.",
+            "Compare yoga and gym workouts. Explain when each option would be the better choice.",
+            "Compare gardening and cooking. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare fishing and hiking. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare camping and glamping. Give one similarity, two differences, and your preference.",
+            "Compare knitting and sewing. Explain when each option would be the better choice.",
+            "Compare painting walls and cleaning windows. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare fixing things and buying new. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare team sports and individual sports. Give one similarity, two differences, and your preference.",
+            "Compare morning exercise and evening exercise. Explain when each option would be the better choice.",
+
+            // New Medium - More School
+            "Compare math and science classes. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare art class and music class. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare recess and lunch break. Give one similarity, two differences, and your preference.",
+            "Compare homework and classwork. Explain when each option would be the better choice.",
+            "Compare tests and projects. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare uniforms and free dress. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare school bus and walking to school. Give one similarity, two differences, and your preference.",
+            "Compare lockers and backpacks. Explain when each option would be the better choice.",
+            "Compare textbooks and notebooks. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare teachers and tutors. Compare them by convenience, comfort, or usefulness, then choose one.",
+
+            // New Medium - More Home
+            "Compare sofas and armchairs. Give one similarity, two differences, and your preference.",
+            "Compare beds and mattresses on the floor. Explain when each option would be the better choice.",
+            "Compare curtains and blinds. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare ceiling lights and lamps. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare wooden floors and tiles. Give one similarity, two differences, and your preference.",
+            "Compare front doors and back doors. Explain when each option would be the better choice.",
+            "Compare stairs and elevators at home. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare kitchens and dining rooms. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare bedrooms and living rooms. Give one similarity, two differences, and your preference.",
+            "Compare closets and drawers. Explain when each option would be the better choice.",
+
+            // New Medium - More Clothing
+            "Compare jeans and shorts. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare t-shirts and dress shirts. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare sneakers and sandals. Give one similarity, two differences, and your preference.",
+            "Compare hats and caps. Explain when each option would be the better choice.",
+            "Compare jackets and sweaters. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare socks and barefoot. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare belts and suspenders. Give one similarity, two differences, and your preference.",
+            "Compare new clothes and vintage clothes. Explain when each option would be the better choice.",
+            "Compare bright colors and dark colors. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare loose clothes and fitted clothes. Compare them by convenience, comfort, or usefulness, then choose one.",
+
+            // New Medium - More Time
+            "Compare mornings and afternoons. Give one similarity, two differences, and your preference.",
+            "Compare weekdays and weekends for relaxing. Explain when each option would be the better choice.",
+            "Compare holidays and regular days. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare birthdays and other celebrations. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare New Year and Christmas. Give one similarity, two differences, and your preference.",
+            "Compare spring break and summer break. Explain when each option would be the better choice.",
+            "Compare waking up early and sleeping in. Use two clear differences, then say which one fits a specific situation better.",
+            "Compare daytime activities and nighttime activities. Compare them by convenience, comfort, or usefulness, then choose one.",
+            "Compare lunch time and dinner time. Give one similarity, two differences, and your preference.",
+            "Compare work hours and free time. Explain when each option would be the better choice."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // Education & Learning
             "Compare studying alone vs. studying with a group",
             "Compare online classes and in-person classes",
@@ -3455,7 +3839,7 @@ export const topics = {
             "Compare eating the same breakfast every day for 10 years vs. never eating the same meal twice in a month",
             "Compare being a world expert in medieval French literature vs. knowing a little about many subjects",
 
-            // Additional Medium - Deeper Work Life
+            // Additional Boss - Deeper Work Life
             "Compare a boss who says 'do it this way' vs. a boss who asks 'what do you think we should do?'",
             "Compare working at a long table with 20 colleagues vs. having your own office with a door you can close",
             "Compare learning from a senior colleague who guides you for 2 years vs. attending a 1-week corporate training course",
@@ -3467,7 +3851,7 @@ export const topics = {
             "Compare a marketing expert who only knows marketing vs. someone who's done sales, finance, and marketing",
             "Compare a 22-year-old who chooses accounting immediately vs. a 35-year-old who tries different jobs before specializing",
 
-            // Additional Medium - Communication Styles
+            // Additional Boss - Communication Styles
             "Compare saying 'I need this done by Friday' vs. saying 'Maybe we could try to finish this soon, if that's okay'",
             "Compare telling a colleague directly that their idea won't work vs. gently suggesting some challenges to consider",
             "Compare explaining a project in 3 pages with every detail vs. summarizing it in 5 bullet points",
@@ -3479,7 +3863,7 @@ export const topics = {
             "Compare a CEO monologue for 45 minutes vs. a workshop where everyone discusses in small groups",
             "Compare a 20-page quarterly report in PDF vs. a 2-minute voice message summarizing the key points",
 
-            // Additional Medium - Learning Approaches
+            // Additional Boss - Learning Approaches
             "Compare learning Spanish by moving to Spain for 6 months vs. studying grammar textbooks at home",
             "Compare taking a Coursera course with weekly deadlines vs. learning from random YouTube videos when you feel like it",
             "Compare learning the basics of 5 programming languages vs. becoming an expert in only Python",
@@ -3491,7 +3875,7 @@ export const topics = {
             "Compare writing a group thesis with 3 classmates vs. writing your thesis completely alone",
             "Compare studying 2 hours every day at 8 AM vs. studying whenever you feel motivated",
 
-            // Additional Medium - Life Philosophy
+            // Additional Boss - Life Philosophy
             "Compare someone focused on reaching VP by 35 vs. someone who just enjoys the daily work without career targets",
             "Compare measuring success by salary and car vs. measuring it by free time and relationships",
             "Compare quitting your job to travel the world vs. staying in a secure position and saving for retirement",
@@ -3503,7 +3887,7 @@ export const topics = {
             "Compare aggressively applying to 100 jobs vs. waiting for the right opportunity to come along",
             "Compare needing 1,000 Instagram likes to feel good vs. feeling satisfied simply because you did good work",
 
-            // Additional Medium - Social Dynamics
+            // Additional Boss - Social Dynamics
             "Compare having 500 Facebook friends you barely know vs. having 5 close friends you see every week",
             "Compare telling colleagues 'that's personal, I don't discuss it' vs. sharing openly about your divorce at work",
             "Compare asking your neighbor to help you move vs. hiring movers and doing it yourself",
@@ -3515,7 +3899,7 @@ export const topics = {
             "Compare being the official team leader with a title vs. being the person everyone listens to even without a title",
             "Compare going to networking events specifically to find clients vs. just making friends who might one day become clients",
 
-            // Additional Medium - Consumer Choices
+            // Additional Boss - Consumer Choices
             "Compare buying a €2,000 washing machine that lasts 15 years vs. a €400 one you replace every 5 years",
             "Compare always buying Nike shoes because you trust them vs. buying whatever is on sale",
             "Compare ordering groceries delivered for €10 fee vs. spending 2 hours going to the store yourself",
@@ -3527,7 +3911,7 @@ export const topics = {
             "Compare owning 200 DVDs on a shelf vs. having a Netflix subscription with unlimited streaming",
             "Compare buying Photoshop once for €700 vs. paying €20/month for Adobe Creative Cloud forever",
 
-            // Additional Medium - Digital Life
+            // Additional Boss - Digital Life
             "Compare posting only your best moments and filtered photos vs. posting your bad days too",
             "Compare following 2,000 accounts and seeing random content vs. following 50 accounts you actually care about",
             "Compare posting on Instagram 3 times per week vs. scrolling for an hour without ever posting",
@@ -3539,7 +3923,7 @@ export const topics = {
             "Compare posting every vacation, meal, and life event vs. keeping your social media silent for years",
             "Compare saving every photo and chat in the cloud vs. deleting old messages and living without records",
 
-            // Additional Medium - Personal Development
+            // Additional Boss - Personal Development
             "Compare doing the same routine every day vs. trying something new that scares you",
             "Compare following a 30-day habit tracker vs. just doing what feels right each day",
             "Compare weighing yourself every morning and logging it vs. just noticing how your clothes fit",
@@ -3551,7 +3935,7 @@ export const topics = {
             "Compare quitting your job and moving to a new city tomorrow vs. making small changes over 2 years",
             "Compare learning a completely new skill like coding vs. getting better at something you already do well",
 
-            // Additional Medium - Health Choices
+            // Additional Boss - Health Choices
             "Compare following a strict 12-week gym program vs. just going to the gym when you feel like it",
             "Compare weighing every meal and logging calories vs. just eating slowly and stopping when full",
             "Compare doing CrossFit classes with 20 other people vs. running alone in the park",
@@ -3563,7 +3947,7 @@ export const topics = {
             "Compare taking protein powder and vitamins vs. just eating a variety of whole foods",
             "Compare doing 20-minute HIIT workouts vs. 60-minute gentle jogs",
 
-            // Additional Medium - Environment & Space
+            // Additional Boss - Environment & Space
             "Compare working in a silent room vs. working in a busy coffee shop with noise around you",
             "Compare an office with big windows and sunlight vs. an office with bright fluorescent lights",
             "Compare a room with only a desk, chair, and plant vs. a room full of decorations and memories",
@@ -3574,235 +3958,6 @@ export const topics = {
             "Compare standing at your desk for 8 hours vs. sitting in an ergonomic chair",
             "Compare working in an open-plan office with 50 people vs. working alone in a private office",
             "Compare a desk where everything is perfectly organized vs. a desk covered in papers and ideas"
-        ],
-        boss: [
-            // Educational Philosophy
-            "Compare the educational philosophies of Eastern and Western cultures",
-            "Compare competency-based education with time-based education systems",
-            "Compare the Montessori approach with traditional classroom methods",
-            "Compare vocational training systems in Germany and the US",
-            "Compare elite university education with accessible public education",
-            "Compare standardized testing cultures with portfolio-based assessment",
-            "Compare the liberal arts tradition with specialized technical education",
-            "Compare homeschooling outcomes with institutional schooling",
-            "Compare education as personal development vs. economic preparation",
-            "Compare the role of education in social mobility across different systems",
-
-            // Economic Systems
-            "Compare the economic models of capitalism and socialism in practice",
-            "Compare market economies and planned economies in addressing inequality",
-            "Compare GDP-focused development and wellbeing-focused development",
-            "Compare universal basic income with traditional welfare systems",
-            "Compare gig economy work with traditional employment",
-            "Compare shareholder capitalism with stakeholder capitalism",
-            "Compare economic globalization and economic nationalism",
-            "Compare progressive taxation and flat tax systems",
-            "Compare public pension systems with private retirement savings",
-            "Compare cooperative business models with corporate structures",
-
-            // Healthcare Systems
-            "Compare the approaches to healthcare in public vs. private systems",
-            "Compare the US healthcare model with European universal systems",
-            "Compare fee-for-service and value-based healthcare models",
-            "Compare preventive medicine approaches across different cultures",
-            "Compare mental healthcare integration in various health systems",
-            "Compare pharmaceutical pricing strategies across countries",
-            "Compare centralized and decentralized health system management",
-            "Compare outcomes of for-profit and non-profit hospitals",
-            "Compare traditional medicine integration in modern healthcare",
-            "Compare telehealth adoption rates and effectiveness globally",
-
-            // Cultural & Social
-            "Compare how different generations view work-life balance",
-            "Compare how collectivist and individualist cultures approach success",
-            "Compare attitudes toward aging in Eastern and Western societies",
-            "Compare the role of religion in public life across different societies",
-            "Compare gender role evolution in traditional vs. progressive societies",
-            "Compare attitudes toward privacy in American and European cultures",
-            "Compare community structures in urban and rural environments",
-            "Compare social mobility in different economic systems",
-            "Compare approaches to mental health across cultures",
-            "Compare the concept of family across different cultural traditions",
-
-            // Governance & Politics
-            "Compare direct democracy and representative democracy in practice",
-            "Compare federal systems and unitary state governance",
-            "Compare two-party and multi-party political systems",
-            "Compare presidential and parliamentary systems of government",
-            "Compare approaches to free speech in the US and Europe",
-            "Compare electoral systems: first-past-the-post vs proportional",
-            "Compare the role of constitutional courts across democracies",
-            "Compare decentralized and centralized government approaches",
-            "Compare approaches to political campaign financing",
-            "Compare technocratic governance with populist governance",
-
-            // Psychology & Philosophy
-            "Compare the psychological effects of urban and rural living",
-            "Compare the influence of nature vs. nurture on personality development",
-            "Compare the ethical frameworks of utilitarianism and deontology",
-            "Compare Eastern and Western approaches to mindfulness and wellbeing",
-            "Compare deterministic and free will perspectives on human behavior",
-            "Compare religious and secular frameworks for meaning-making",
-            "Compare individualistic and relational theories of identity",
-            "Compare rationalist and empiricist approaches to knowledge",
-            "Compare virtue ethics and consequentialist ethics",
-            "Compare concepts of self in Western psychology and Buddhist thought",
-
-            // Technology & Society
-            "Compare the societal impacts of the printing press and the internet",
-            "Compare surveillance capitalism with traditional advertising models",
-            "Compare platform monopolies with traditional market monopolies",
-            "Compare human decision-making and algorithmic decision-making",
-            "Compare digital privacy frameworks in different jurisdictions",
-            "Compare open-source and proprietary software development models",
-            "Compare the attention economy with traditional economic models",
-            "Compare human creativity and AI-assisted creativity",
-            "Compare physical community building and online community building",
-            "Compare technological determinism and social construction of technology",
-
-            // Leadership & Organizations
-            "Compare the effectiveness of different leadership styles in crisis situations",
-            "Compare hierarchical and flat organizational structures",
-            "Compare transformational and transactional leadership",
-            "Compare servant leadership and authoritative leadership",
-            "Compare management approaches in Japanese and American corporations",
-            "Compare remote-first and office-centric organizational cultures",
-            "Compare top-down and bottom-up innovation strategies",
-            "Compare family business governance with corporate governance",
-            "Compare agile and waterfall approaches to project management",
-            "Compare consensus-building and decisive leadership styles",
-
-            // Environment & Development
-            "Compare sustainable development and traditional economic growth",
-            "Compare market-based and regulatory environmental protection",
-            "Compare urban sustainability approaches in different global cities",
-            "Compare renewable energy transitions in developed and developing nations",
-            "Compare conservation and development priorities in land use",
-            "Compare carbon tax and cap-and-trade systems",
-            "Compare indigenous and industrial approaches to land management",
-            "Compare circular economy and linear economy models",
-            "Compare local food systems and global food supply chains",
-            "Compare degrowth economics and green growth strategies",
-
-            // Additional Boss - Philosophy & Ethics
-            "Compare contractarian and communitarian approaches to justice",
-            "Compare capabilities approach and welfare economics for measuring wellbeing",
-            "Compare rights-based and duty-based ethical frameworks",
-            "Compare moral relativism and moral universalism in practice",
-            "Compare care ethics and justice ethics in professional contexts",
-            "Compare thick and thin theories of the good life",
-            "Compare procedural and substantive approaches to fairness",
-            "Compare natural law and positive law traditions",
-            "Compare retributive and restorative justice systems",
-            "Compare consequentialist and deontological approaches to policy",
-
-            // Additional Boss - Cognitive Science
-            "Compare dual-process theories and unified theories of cognition",
-            "Compare modular and connectionist models of mind",
-            "Compare constructivist and nativist accounts of development",
-            "Compare embodied cognition and computational theories of mind",
-            "Compare neural correlates and behavioral measures of consciousness",
-            "Compare implicit and explicit learning mechanisms",
-            "Compare bottom-up and top-down processing in perception",
-            "Compare working memory models across cognitive traditions",
-            "Compare automatic and controlled processing theories",
-            "Compare language acquisition theories across paradigms",
-
-            // Additional Boss - Economic Theory
-            "Compare Keynesian and monetarist approaches to economic policy",
-            "Compare Austrian and neoclassical economic methodology",
-            "Compare institutional and behavioral approaches to economics",
-            "Compare efficient market hypothesis and behavioral finance",
-            "Compare classical and modern portfolio theory",
-            "Compare supply-side and demand-side economic policies",
-            "Compare ordinal and cardinal utility theories",
-            "Compare general equilibrium and partial equilibrium analysis",
-            "Compare market failure and government failure analyses",
-            "Compare positive and normative economic approaches",
-
-            // Additional Boss - Social Theory
-            "Compare structural functionalism and conflict theory",
-            "Compare symbolic interactionism and rational choice theory",
-            "Compare postmodern and modernist approaches to society",
-            "Compare agency and structure in explaining social phenomena",
-            "Compare network theory and institutional theory in sociology",
-            "Compare cultural and material explanations for social change",
-            "Compare critical theory and positivist sociology",
-            "Compare micro and macro approaches to social analysis",
-            "Compare interpretive and explanatory social science",
-            "Compare convergence and divergence theories of development",
-
-            // Additional Boss - Political Economy
-            "Compare varieties of capitalism: liberal vs coordinated",
-            "Compare welfare state models: Nordic vs Anglo-Saxon",
-            "Compare developmental state and neoliberal development approaches",
-            "Compare public choice and public interest theories of regulation",
-            "Compare embedded liberalism and hyperglobalization",
-            "Compare power resource and institutional approaches to welfare",
-            "Compare monopoly capitalism and competitive capitalism theories",
-            "Compare financialized and industrial capitalism",
-            "Compare commodity and non-commodity approaches to social goods",
-            "Compare export-led and domestic-demand-led growth models",
-
-            // Additional Boss - International Relations
-            "Compare realist and liberal theories of international relations",
-            "Compare constructivist and rationalist IR approaches",
-            "Compare hegemonic stability and balance of power theories",
-            "Compare offensive and defensive realism",
-            "Compare neoliberal institutionalism and neorealism",
-            "Compare democratic peace theory and commercial peace theory",
-            "Compare security dilemma and security community concepts",
-            "Compare hard power and soft power strategies",
-            "Compare globalist and statist approaches to global governance",
-            "Compare world systems and dependency theories",
-
-            // Additional Boss - Technology Studies
-            "Compare technological determinism and social shaping of technology",
-            "Compare incremental and disruptive innovation models",
-            "Compare platform capitalism and traditional industrial capitalism",
-            "Compare centralized and decentralized technology governance",
-            "Compare proactive and reactive technology regulation",
-            "Compare open innovation and proprietary development models",
-            "Compare human-centered and efficiency-centered design",
-            "Compare privacy by design and security by design approaches",
-            "Compare algorithmic governance and human judgment",
-            "Compare precautionary and permissionless innovation approaches",
-
-            // Additional Boss - Education Philosophy
-            "Compare transmission and constructivist models of education",
-            "Compare credentialism and competency-based evaluation",
-            "Compare knowledge-based and skills-based curricula",
-            "Compare inclusive and selective educational tracking",
-            "Compare student-centered and teacher-centered pedagogies",
-            "Compare standardized and personalized learning approaches",
-            "Compare formal and informal learning recognition",
-            "Compare disciplinary and interdisciplinary organization",
-            "Compare traditional assessment and authentic assessment",
-            "Compare education for employment and education for citizenship",
-
-            // Additional Boss - Health Systems
-            "Compare single-payer and multi-payer healthcare systems",
-            "Compare centralized and decentralized health governance",
-            "Compare social insurance and tax-funded health systems",
-            "Compare primary care gatekeeping and direct specialist access",
-            "Compare fee-for-service and capitation payment models",
-            "Compare hospital-centric and community-based care models",
-            "Compare evidence-based and person-centered care approaches",
-            "Compare acute care and long-term care system designs",
-            "Compare public health and individual medicine orientations",
-            "Compare pharmaceutical patent systems across countries",
-
-            // Additional Boss - Urban Studies
-            "Compare compact city and sprawl development models",
-            "Compare transit-oriented and car-oriented urban design",
-            "Compare mixed-use and zoned land use planning",
-            "Compare gentrification and community stabilization strategies",
-            "Compare smart city and human-scale urban approaches",
-            "Compare public housing and housing voucher systems",
-            "Compare incremental and master-planned urban development",
-            "Compare participatory and technocratic urban governance",
-            "Compare brownfield and greenfield development strategies",
-            "Compare place-based and people-based urban policies"
         ]
     },
     hypothetical: {
@@ -4048,6 +4203,248 @@ export const topics = {
             "Imagine you could control the weather for a day"
         ],
         medium: [
+            // New Medium - Superpowers
+            "What if you could fly for one day? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could read minds for an hour. Explain one benefit, one risk, and what you would choose.",
+            "What if you could be invisible for a day? Say how daily life would change and what would be hardest.",
+            "Suppose you could talk to animals. Give a short plan and one possible consequence.",
+            "What if you had super strength? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could breathe underwater. Explain one benefit, one risk, and what you would choose.",
+            "What if you could run super fast? Say how daily life would change and what would be hardest.",
+            "Suppose you could see in the dark. Give a short plan and one possible consequence.",
+            "What if you could walk through walls? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could control the weather. Explain one benefit, one risk, and what you would choose.",
+
+            // New Medium - Time & Travel
+            "What if you could travel back in time for one day? Say how daily life would change and what would be hardest.",
+            "Imagine you could visit any country right now. Give a short plan and one possible consequence.",
+            "What if you could live in any time period? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose you could pause time whenever you wanted. Explain one benefit, one risk, and what you would choose.",
+            "What if you could see one day into the future? Say how daily life would change and what would be hardest.",
+            "Imagine you could teleport anywhere instantly. Give a short plan and one possible consequence.",
+            "What if you could relive your favorite day? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose you could slow down time. Explain one benefit, one risk, and what you would choose.",
+            "What if you could skip ahead one year? Say how daily life would change and what would be hardest.",
+            "Imagine you could visit the past as an observer. Give a short plan and one possible consequence.",
+
+            // New Medium - Money & Possessions
+            "What if you won a million dollars? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could have any car you wanted. Explain one benefit, one risk, and what you would choose.",
+            "What if everything you touched turned to gold? Say how daily life would change and what would be hardest.",
+            "Suppose money didn't exist - how would things work? Give a short plan and one possible consequence.",
+            "What if you could only keep ten possessions? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you had unlimited money for one day. Explain one benefit, one risk, and what you would choose.",
+            "What if you found a treasure chest? Say how daily life would change and what would be hardest.",
+            "Suppose you inherited a castle. Give a short plan and one possible consequence.",
+            "What if you could buy any house in the world? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine everything was free for a week. Explain one benefit, one risk, and what you would choose.",
+
+            // New Medium - Famous People & Meeting
+            "Suppose you could meet any famous person. Say how daily life would change and what would be hardest.",
+            "What if you had dinner with a historical figure? Give a short plan and one possible consequence.",
+            "Imagine you could be friends with any celebrity. Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "What if you could ask any person one question? Explain one benefit, one risk, and what you would choose.",
+            "Suppose you could spend a day with your hero. Say how daily life would change and what would be hardest.",
+            "What if you woke up famous tomorrow? Give a short plan and one possible consequence.",
+            "Imagine you could interview anyone from history. Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "What if your favorite author wrote about your life? Explain one benefit, one risk, and what you would choose.",
+            "Suppose you could join any band or team. Say how daily life would change and what would be hardest.",
+            "What if you could shadow any professional for a day? Give a short plan and one possible consequence.",
+
+            // New Medium - Alternate Life
+            "What if you could live in any movie or TV show? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could be any character from a book. Explain one benefit, one risk, and what you would choose.",
+            "What if you were born in a different country? Say how daily life would change and what would be hardest.",
+            "Suppose you could choose your own age. Give a short plan and one possible consequence.",
+            "What if you could switch lives with someone for a day? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could have any job without training. Explain one benefit, one risk, and what you would choose.",
+            "What if you could live anywhere in the world? Say how daily life would change and what would be hardest.",
+            "Suppose you woke up speaking every language. Give a short plan and one possible consequence.",
+            "What if you had a completely different personality? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could redesign your life from scratch. Explain one benefit, one risk, and what you would choose.",
+
+            // New Medium - Technology Gone
+            "What if the internet stopped for a week? Say how daily life would change and what would be hardest.",
+            "Imagine phones were never invented. Give a short plan and one possible consequence.",
+            "What if you couldn't use technology for a month? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose TV didn't exist - what would you do? Explain one benefit, one risk, and what you would choose.",
+            "What if social media disappeared tomorrow? Say how daily life would change and what would be hardest.",
+            "Imagine there were no video games. Give a short plan and one possible consequence.",
+            "What if cars hadn't been invented? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose computers didn't exist. Explain one benefit, one risk, and what you would choose.",
+            "What if there was no electricity for a day? Say how daily life would change and what would be hardest.",
+            "Imagine we had no clocks or watches. Give a short plan and one possible consequence.",
+
+            // New Medium - Talking & Communication
+            "What if your pet could talk - what would it say? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine everyone had to tell the truth for one day. Explain one benefit, one risk, and what you would choose.",
+            "What if you could only speak in questions? Say how daily life would change and what would be hardest.",
+            "Suppose you could send messages through dreams. Give a short plan and one possible consequence.",
+            "What if everyone could hear your thoughts? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you couldn't speak for a week. Explain one benefit, one risk, and what you would choose.",
+            "What if you could talk to plants? Say how daily life would change and what would be hardest.",
+            "Suppose you could leave video messages in the air. Give a short plan and one possible consequence.",
+            "What if you could only communicate through drawings? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could record and share dreams. Explain one benefit, one risk, and what you would choose.",
+
+            // New Medium - School & Work Changes
+            "What if school started at 12pm instead of 8am? Say how daily life would change and what would be hardest.",
+            "Imagine there were no grades in school. Give a short plan and one possible consequence.",
+            "What if you could design your own school subjects? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose the school week was only three days. Explain one benefit, one risk, and what you would choose.",
+            "What if adults had to go to school too? Say how daily life would change and what would be hardest.",
+            "Imagine you were the teacher for a day. Give a short plan and one possible consequence.",
+            "What if homework didn't exist? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose you could work at any company. Explain one benefit, one risk, and what you would choose.",
+            "What if the work week was only four days? Say how daily life would change and what would be hardest.",
+            "Imagine everyone worked from home. Give a short plan and one possible consequence.",
+
+            // New Medium - Nature & Environment
+            "What if you found a door to another dimension? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you discovered a new species. Explain one benefit, one risk, and what you would choose.",
+            "What if it snowed in summer? Say how daily life would change and what would be hardest.",
+            "Suppose you could live on another planet. Give a short plan and one possible consequence.",
+            "What if you could breathe in space? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine oceans were fresh water. Explain one benefit, one risk, and what you would choose.",
+            "What if trees could walk? Say how daily life would change and what would be hardest.",
+            "Suppose flowers bloomed all year. Give a short plan and one possible consequence.",
+            "What if you could control one element? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine the moon was closer to Earth. Explain one benefit, one risk, and what you would choose.",
+
+            // New Medium - Personal Changes
+            "What if you had a clone of yourself? Say how daily life would change and what would be hardest.",
+            "Imagine you could eat anything without getting full. Give a short plan and one possible consequence.",
+            "What if you never needed to sleep? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose you could remember everything perfectly. Explain one benefit, one risk, and what you would choose.",
+            "What if you could only eat one food forever? Say how daily life would change and what would be hardest.",
+            "Imagine you could change one thing about yourself. Give a short plan and one possible consequence.",
+            "What if you aged backwards? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose you could see everyone's emotions as colors. Explain one benefit, one risk, and what you would choose.",
+            "What if you could feel no pain? Say how daily life would change and what would be hardest.",
+            "Imagine you could learn any skill instantly. Give a short plan and one possible consequence.",
+
+            // New Medium - More Superpowers
+            "What if you could stretch like rubber? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could shrink to ant size. Explain one benefit, one risk, and what you would choose.",
+            "What if you could grow to giant size? Say how daily life would change and what would be hardest.",
+            "Suppose you could copy any ability you saw. Give a short plan and one possible consequence.",
+            "What if you could heal others with your touch? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could create fire from your hands. Explain one benefit, one risk, and what you would choose.",
+            "What if you could freeze things by looking at them? Say how daily life would change and what would be hardest.",
+            "Suppose you could move objects with your mind. Give a short plan and one possible consequence.",
+            "What if you could make copies of yourself? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could become any animal. Explain one benefit, one risk, and what you would choose.",
+
+            // New Medium - More Magic
+            "What if you found a magic wand? Say how daily life would change and what would be hardest.",
+            "Imagine you could grant three wishes. Give a short plan and one possible consequence.",
+            "What if you had a magic carpet? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose you discovered a secret magical world. Explain one benefit, one risk, and what you would choose.",
+            "What if you could make things disappear? Say how daily life would change and what would be hardest.",
+            "Imagine you found an invisibility cloak. Give a short plan and one possible consequence.",
+            "What if your drawings came to life? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose you could speak any spell into existence. Explain one benefit, one risk, and what you would choose.",
+            "What if you had a pet dragon? Say how daily life would change and what would be hardest.",
+            "Imagine you could bring toys to life. Give a short plan and one possible consequence.",
+
+            // New Medium - More Time
+            "What if weekends were five days long? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could redo yesterday. Explain one benefit, one risk, and what you would choose.",
+            "What if you had an extra hour every day? Say how daily life would change and what would be hardest.",
+            "Suppose time stopped during your sleep. Give a short plan and one possible consequence.",
+            "What if you could see yourself in 20 years? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine tomorrow never came. Explain one benefit, one risk, and what you would choose.",
+            "What if you could jump to any date in your life? Say how daily life would change and what would be hardest.",
+            "Suppose each day lasted 30 hours. Give a short plan and one possible consequence.",
+            "What if you could speed up boring moments? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you could trade time with others. Explain one benefit, one risk, and what you would choose.",
+
+            // New Medium - More World Changes
+            "What if everyone was the same height? Say how daily life would change and what would be hardest.",
+            "Imagine if all cities were underground. Give a short plan and one possible consequence.",
+            "What if night lasted only one hour? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose gravity was half as strong. Explain one benefit, one risk, and what you would choose.",
+            "What if the sky was always rainbow-colored? Say how daily life would change and what would be hardest.",
+            "Imagine all buildings were made of candy. Give a short plan and one possible consequence.",
+            "What if roads were rivers instead? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose houses could float in the air. Explain one benefit, one risk, and what you would choose.",
+            "What if mountains could be moved? Say how daily life would change and what would be hardest.",
+            "Imagine all walls were transparent. Give a short plan and one possible consequence.",
+
+            // New Medium - More Food Fun
+            "What if vegetables tasted like chocolate? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine food appeared whenever you were hungry. Explain one benefit, one risk, and what you would choose.",
+            "What if you could eat clouds? Say how daily life would change and what would be hardest.",
+            "Suppose pizza grew on trees. Give a short plan and one possible consequence.",
+            "What if ice cream was healthy? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine drinks never got cold or warm. Explain one benefit, one risk, and what you would choose.",
+            "What if you could taste colors? Say how daily life would change and what would be hardest.",
+            "Suppose you never had to cook. Give a short plan and one possible consequence.",
+            "What if every meal was a surprise? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine food had no calories. Explain one benefit, one risk, and what you would choose.",
+
+            // New Medium - More School Fun
+            "What if pets were allowed in school? Say how daily life would change and what would be hardest.",
+            "Imagine if recess lasted an hour. Give a short plan and one possible consequence.",
+            "What if you could choose your teachers? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose school was in a different place every day. Explain one benefit, one risk, and what you would choose.",
+            "What if you learned only what interested you? Say how daily life would change and what would be hardest.",
+            "Imagine if tests were games. Give a short plan and one possible consequence.",
+            "What if lunch at school was restaurant quality? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose school buses could fly. Explain one benefit, one risk, and what you would choose.",
+            "What if you got paid to go to school? Say how daily life would change and what would be hardest.",
+            "Imagine classrooms were outdoors. Give a short plan and one possible consequence.",
+
+            // New Medium - More Home Life
+            "What if your house could move anywhere? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine if chores did themselves. Explain one benefit, one risk, and what you would choose.",
+            "What if your room was as big as you wanted? Say how daily life would change and what would be hardest.",
+            "Suppose you had a secret room in your house. Give a short plan and one possible consequence.",
+            "What if your house was a treehouse? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine your furniture rearranged itself. Explain one benefit, one risk, and what you would choose.",
+            "What if you could change wall colors by thinking? Say how daily life would change and what would be hardest.",
+            "Suppose you had a slide instead of stairs. Give a short plan and one possible consequence.",
+            "What if your backyard was a jungle? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine your house was underwater. Explain one benefit, one risk, and what you would choose.",
+
+            // New Medium - More Fun Scenarios
+            "What if you could jump really high? Say how daily life would change and what would be hardest.",
+            "Imagine if you could glow in the dark. Give a short plan and one possible consequence.",
+            "What if you had eyes in the back of your head? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose you could taste music. Explain one benefit, one risk, and what you would choose.",
+            "What if your shadow was alive? Say how daily life would change and what would be hardest.",
+            "Imagine if you could walk on water. Give a short plan and one possible consequence.",
+            "What if you could hold your breath forever? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose you could whistle any song perfectly. Explain one benefit, one risk, and what you would choose.",
+            "What if you never got tired? Say how daily life would change and what would be hardest.",
+            "Imagine if your hands were magnets. Give a short plan and one possible consequence.",
+
+            // New Medium - More Adventure
+            "What if you found a secret cave? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you discovered a new island. Explain one benefit, one risk, and what you would choose.",
+            "What if you could visit the bottom of the ocean? Say how daily life would change and what would be hardest.",
+            "Suppose you found a map to hidden treasure. Give a short plan and one possible consequence.",
+            "What if you could explore space for a day? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you found a time capsule from the future. Explain one benefit, one risk, and what you would choose.",
+            "What if you discovered a lost city? Say how daily life would change and what would be hardest.",
+            "Suppose you met a friendly alien. Give a short plan and one possible consequence.",
+            "What if you could safari in any jungle? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Imagine you found a portal in your closet. Explain one benefit, one risk, and what you would choose.",
+
+            // New Medium - More Wishes
+            "What if you could be any age you wanted? Say how daily life would change and what would be hardest.",
+            "Imagine if you could pick your birthday presents. Give a short plan and one possible consequence.",
+            "What if dreams could come true literally? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose you could be in your favorite video game. Explain one benefit, one risk, and what you would choose.",
+            "What if you could write the ending to any story? Say how daily life would change and what would be hardest.",
+            "Imagine if everything you drew became real. Give a short plan and one possible consequence.",
+            "What if you could be the hero in any movie? Describe what you would do first, what problem might appear, and whether you would enjoy it.",
+            "Suppose your wishes lasted for one hour each. Explain one benefit, one risk, and what you would choose.",
+            "What if you could mix two animals together? Say how daily life would change and what would be hardest.",
+            "Imagine you could control the weather for a day. Give a short plan and one possible consequence."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // Personal Life Changes
             "What if you could not use your smartphone for a month?",
             "Suppose you had to move to a country where you don't speak the language",
@@ -4156,7 +4553,7 @@ export const topics = {
             "What if sleep quality was guaranteed?",
             "Suppose everyone had the same physical abilities",
 
-            // Miscellaneous Medium
+            // Miscellaneous Boss
             "What if you could see five years into your own future?",
             "Imagine if coincidences weren't random",
             "What if you had to justify every purchase publicly?",
@@ -4168,7 +4565,7 @@ export const topics = {
             "What if personal data was your only currency?",
             "Imagine if empathy could be taught like math",
 
-            // Additional Medium - Career & Work
+            // Additional Boss - Career & Work
             "What if AI wrote all your work emails?",
             "Suppose your salary was public knowledge",
             "What if promotions were decided by lottery?",
@@ -4180,7 +4577,7 @@ export const topics = {
             "What if your passion automatically became your career?",
             "Suppose work hours were flexible for everyone?",
 
-            // Additional Medium - Education & Learning
+            // Additional Boss - Education & Learning
             "What if you could download knowledge instantly?",
             "Suppose teachers were replaced by AI tutors",
             "What if grades were based on effort not results?",
@@ -4192,7 +4589,7 @@ export const topics = {
             "What if education continued throughout life mandatorily?",
             "Suppose children taught adults sometimes?",
 
-            // Additional Medium - Technology & Privacy
+            // Additional Boss - Technology & Privacy
             "What if you could never be anonymous online?",
             "Suppose all your online activity was public",
             "What if technology could read your emotions?",
@@ -4204,7 +4601,7 @@ export const topics = {
             "What if algorithms couldn't personalize content?",
             "Suppose you could rate every interaction publicly",
 
-            // Additional Medium - Society & Rules
+            // Additional Boss - Society & Rules
             "What if voting was done by expertise on each issue?",
             "Suppose communities could set their own laws",
             "What if reputation was the only currency?",
@@ -4216,7 +4613,7 @@ export const topics = {
             "What if age didn't determine any rights or restrictions?",
             "Suppose influence was limited by law?",
 
-            // Additional Medium - Relationships
+            // Additional Boss - Relationships
             "What if you could see your future partner?",
             "Suppose breakups were mediated by professionals",
             "What if families were chosen not born into?",
@@ -4228,7 +4625,7 @@ export const topics = {
             "What if gratitude was expressed publicly daily?",
             "Suppose forgiveness was easier to give?",
 
-            // Additional Medium - Health & Body
+            // Additional Boss - Health & Body
             "What if you could choose your body type permanently?",
             "Suppose genetic health risks were eliminated at birth",
             "What if hospitals were unnecessary?",
@@ -4240,7 +4637,7 @@ export const topics = {
             "What if age-related decline was reversible?",
             "Suppose you could preview health consequences instantly?",
 
-            // Additional Medium - Environment
+            // Additional Boss - Environment
             "What if you had to live carbon-neutral?",
             "Suppose every product showed its environmental cost",
             "What if travel was limited by carbon budget?",
@@ -4252,7 +4649,7 @@ export const topics = {
             "What if every home generated its own power?",
             "Suppose water was more valuable than gold?",
 
-            // Additional Medium - Money & Economy
+            // Additional Boss - Money & Economy
             "What if savings were impossible?",
             "Suppose prices were negotiable everywhere",
             "What if wealth was redistributed annually?",
@@ -4264,7 +4661,7 @@ export const topics = {
             "What if spending was tracked publicly?",
             "Suppose debt was forgiven every decade?",
 
-            // Additional Medium - Personal Growth
+            // Additional Boss - Personal Growth
             "What if you could see your blind spots clearly?",
             "Suppose growth was measurable objectively",
             "What if therapy was mandatory for everyone?",
@@ -4276,7 +4673,7 @@ export const topics = {
             "What if regret didn't exist as an emotion?",
             "Suppose you knew your purpose from birth?",
 
-            // Additional Medium - Time & Memory
+            // Additional Boss - Time & Memory
             "What if you forgot nothing but could choose to?",
             "Suppose you could revisit memories in VR",
             "What if deja vu meant something important?",
@@ -4287,250 +4684,8 @@ export const topics = {
             "Imagine if nostalgia could be removed",
             "What if anticipation was always accurate?",
             "Suppose you could experience time differently by choice?"
-        ],
-        boss: [
-            // Consciousness & Identity
-            "What if humans could upload their consciousness to computers?",
-            "Imagine a world where lies were physically impossible",
-            "What if we could accurately predict all future events?",
-            "Suppose everyone's thoughts were visible to others?",
-            "What if we could erase specific memories at will?",
-            "Imagine if death was no longer permanent",
-            "What if identity could be transferred between bodies?",
-            "Suppose consciousness could exist without a physical form",
-            "What if we could merge consciousness with other people temporarily?",
-            "Imagine if dreams were a shared space we could enter together",
-
-            // Fundamental Changes
-            "What if aging could be reversed - how would society change?",
-            "Suppose resources were unlimited - what would motivate people?",
-            "What if genetic engineering eliminated all diseases?",
-            "Imagine a world government replaced all nations tomorrow",
-            "What if scarcity no longer existed?",
-            "Suppose humanity had to leave Earth within 50 years",
-            "What if we discovered we were in a simulation?",
-            "Imagine if the laws of physics were different",
-            "What if time moved at different speeds for different people?",
-            "Suppose entropy could be reversed",
-
-            // Contact & Discovery
-            "Suppose we discovered definitive proof of alien intelligence tomorrow",
-            "What if we could communicate with the dead?",
-            "Imagine we found a parallel universe accessible through technology",
-            "What if we discovered Earth was created artificially?",
-            "Suppose we met beings far more intelligent than humans",
-            "What if we found out other dimensions were real?",
-            "Imagine if we could observe any moment in history",
-            "What if we discovered a way to create new universes?",
-            "Suppose we found proof of reincarnation",
-            "What if we could access a collective human memory?",
-
-            // Economics & Power
-            "Suppose work became completely optional due to automation",
-            "What if money suddenly had no value?",
-            "Imagine if perfect equality was enforced globally",
-            "What if one corporation controlled all resources?",
-            "Suppose intellectual property couldn't be owned",
-            "What if AI managed all economic systems?",
-            "Imagine if all debts were forgiven simultaneously",
-            "What if energy was free and unlimited?",
-            "Suppose all borders were abolished overnight",
-            "What if machines produced everything humans need?",
-
-            // Morality & Ethics
-            "What if we could objectively measure morality?",
-            "Suppose crime could be predicted before it happened",
-            "Imagine if karma was an observable, measurable force",
-            "What if punishment for crimes could be experienced in minutes?",
-            "Suppose we could rehabilitate any criminal with certainty",
-            "What if everyone had to experience the consequences of their actions on others?",
-            "Imagine if intentions, not actions, determined guilt",
-            "What if evil simply didn't exist in human nature?",
-            "Suppose forgiveness was automatic and universal",
-            "What if every harmful act was immediately balanced by consequences?",
-
-            // Knowledge & Truth
-            "What if all human knowledge was freely accessible to everyone?",
-            "Suppose we could know objective truth about any question",
-            "Imagine if ignorance was physically painful",
-            "What if education could be downloaded instantly?",
-            "Suppose the meaning of life was definitively discovered",
-            "What if we could verify any claim with certainty?",
-            "Imagine if wisdom could be measured and optimized",
-            "What if we discovered that free will was definitely an illusion?",
-            "Suppose we found the answer to consciousness",
-            "What if we could perceive reality without cognitive biases?",
-
-            // Environment & Survival
-            "What if climate change accelerated beyond all predictions?",
-            "Suppose Earth could only support one billion people",
-            "Imagine if we had to engineer humans to survive a changed climate",
-            "What if a new ice age began within our lifetimes?",
-            "Suppose all non-human species became extinct",
-            "What if oxygen levels dropped significantly?",
-            "Imagine if we had to live underground permanently",
-            "What if the sun was going to die in 100 years?",
-            "Suppose fresh water became critically scarce globally",
-            "What if we discovered Earth had limited time left?",
-
-            // Human Enhancement
-            "What if genetic enhancement created a new class of superhumans?",
-            "Suppose we could eliminate all negative emotions",
-            "Imagine if physical pain could be completely eliminated",
-            "What if humans could choose their children's characteristics?",
-            "Suppose aging was cured but only for the wealthy",
-            "What if we could optimize human intelligence to genius levels?",
-            "Imagine if empathy could be artificially enhanced in everyone",
-            "What if creativity could be unlocked in all people?",
-            "Suppose physical limitations were eliminated through technology",
-            "What if humans could be designed to be happier?",
-
-            // Social Transformation
-            "What if all humans had perfect emotional intelligence?",
-            "Suppose cultural and linguistic differences disappeared",
-            "Imagine if historical injustices could be quantified and compensated",
-            "What if privacy completely ceased to exist?",
-            "Suppose tribalism and in-group bias were eliminated from human nature",
-            "What if we could reset society and rebuild from scratch?",
-            "Imagine if all religions unified into one",
-            "What if national identity became obsolete?",
-            "Suppose every human decision was based on perfect information",
-            "What if humanity had to reach consensus on everything?",
-
-            // Existential Questions
-            "What if we confirmed that nothing happens after death?",
-            "Suppose we discovered our universe was created by beings like us",
-            "Imagine if we were the only intelligent life in the universe",
-            "What if existence itself was proven to be meaningless?",
-            "Suppose we could restart human civilization with current knowledge",
-            "What if we discovered time was circular, not linear?",
-            "Imagine if we found out reality was fundamentally incomprehensible",
-            "What if humanity was approaching its natural end?",
-            "Suppose we could preserve consciousness after the universe ends",
-            "What if we were given the choice to design the next universe?",
-
-            // Additional Boss - Reality & Perception
-            "What if reality was fundamentally different for each person?",
-            "Suppose we discovered that free will was an illusion",
-            "Imagine if the past could be retroactively changed",
-            "What if causality could be reversed?",
-            "Suppose multiple versions of reality existed simultaneously",
-            "What if probability was determinable rather than random?",
-            "Imagine if the observer effect meant reality required consciousness",
-            "What if space was finite and we reached its edge?",
-            "Suppose mathematical truths could be different elsewhere",
-            "What if we could experience existence from another's perspective?",
-
-            // Additional Boss - AI & Technology
-            "What if AI developed consciousness and rights?",
-            "Suppose AI could predict human behavior perfectly",
-            "Imagine if AI controlled all critical infrastructure",
-            "What if AI developed emotions indistinguishable from human ones?",
-            "Suppose AI created art superior to human creation",
-            "What if superintelligent AI had its own agenda?",
-            "Imagine if human-AI hybrids became the norm",
-            "What if AI could simulate deceased loved ones perfectly?",
-            "Suppose AI replaced all intellectual labor",
-            "What if AI achieved what it considered enlightenment?",
-
-            // Additional Boss - Human Nature
-            "What if violence was biologically impossible for humans?",
-            "Suppose humans could consciously control evolution",
-            "Imagine if humans developed new senses",
-            "What if tribal instincts were removed from human psychology?",
-            "Suppose humans could reproduce without partners",
-            "What if human lifespan was determined by contribution to society?",
-            "Imagine if human memory was collective rather than individual",
-            "What if humans could hibernate for centuries?",
-            "Suppose humans could communicate through shared consciousness",
-            "What if human intelligence was capped at birth but redistributable?",
-
-            // Additional Boss - Society Reimagined
-            "What if nations were replaced by interest-based communities?",
-            "Suppose all governance was algorithmic",
-            "Imagine if law was based on predictions rather than precedent",
-            "What if punishment was replaced by mandatory empathy experiences?",
-            "Suppose social status was determined by verifiable virtue",
-            "What if all human interaction was mediated by technology?",
-            "Imagine if physical presence became unnecessary for all activities",
-            "What if reproduction required social license?",
-            "Suppose privacy was biologically impossible through telepathy?",
-            "What if collective decision-making was neurologically linked?",
-
-            // Additional Boss - Economics Revolutionary
-            "What if attention became the only scarce resource?",
-            "Suppose intellectual contribution was the only valued labor",
-            "Imagine if resource allocation was determined by AI",
-            "What if economic growth was physically impossible?",
-            "Suppose consumption was limited by environmental carrying capacity",
-            "What if innovation was collaborative rather than competitive?",
-            "Imagine if need satisfaction was guaranteed but desire was unlimited",
-            "What if money was replaced by contribution credits?",
-            "Suppose all property was communal by design",
-            "What if inheritance was distributed globally?",
-
-            // Additional Boss - Knowledge & Truth
-            "What if absolute truth was discoverable and knowable?",
-            "Suppose knowledge could be transferred completely between minds",
-            "Imagine if misinformation was physically detectable",
-            "What if intuition was proven more reliable than logic?",
-            "Suppose all human knowledge was accessible to everyone instantly",
-            "What if scientific paradigms shifted monthly?",
-            "Imagine if expertise was downloadable and universal",
-            "What if we discovered fundamental limits to knowledge?",
-            "Suppose contradictory truths could both be valid?",
-            "What if wisdom could be artificially induced?",
-
-            // Additional Boss - Ethics Transformed
-            "What if moral truths were empirically verifiable?",
-            "Suppose ethical behavior was neurologically mandatory",
-            "Imagine if consequences of actions were immediately visible to all",
-            "What if suffering could be redistributed equally?",
-            "Suppose intent could be perfectly known in any action",
-            "What if ethical dilemmas always had correct solutions?",
-            "Imagine if moral development was linear and measurable",
-            "What if empathy was unlimited and automatic?",
-            "Suppose self-interest and collective interest always aligned",
-            "What if moral progress was guaranteed through time?",
-
-            // Additional Boss - Existence Questions
-            "What if existence was revealed to be recursive?",
-            "Suppose consciousness preceded physical reality",
-            "Imagine if the universe optimized for something unknown",
-            "What if meaning was an emergent property of complexity?",
-            "Suppose purpose was assignable by choice",
-            "What if non-existence was experienceable?",
-            "Imagine if existence continued after universal heat death",
-            "What if reality had a beginning we could observe?",
-            "Suppose the universe was deterministic but freedom felt real",
-            "What if existence required continuous renewal of choice?",
-
-            // Additional Boss - Future Humanity
-            "What if humanity merged into a single consciousness?",
-            "Suppose human evolution accelerated to visible change",
-            "Imagine if post-human beings looked back on us",
-            "What if humanity faced an extinction-level challenge today?",
-            "Suppose humans became the only intelligence in the universe",
-            "What if human potential was revealed to be nearly infinite?",
-            "Imagine if humanity had to design its own successor species",
-            "What if cosmic purpose required humanity's continuation?",
-            "Suppose humanity was destined to seed consciousness throughout the universe",
-            "What if humanity was approaching a singularity of transformation?",
-
-            // Additional Boss - Meta Questions
-            "What if this moment was a simulation within a simulation?",
-            "Suppose nothing existed and we were imagining existence",
-            "Imagine if all possible futures were happening simultaneously",
-            "What if questioning reality changed reality?",
-            "Suppose the question was more important than any answer",
-            "What if understanding eliminated mystery entirely?",
-            "Imagine if the pursuit of knowledge was revealed as futile",
-            "What if paradoxes were gateways to deeper truth?",
-            "Suppose limits to imagination limited reality itself",
-            "What if this hypothetical was actually describing reality?"
         ]
     },
-
     story: {
         easy: [
             // Lost & Found
@@ -4774,6 +4929,248 @@ export const topics = {
             "Make up a story about making your bed"
         ],
         medium: [
+            // New Medium - Lost & Found
+            "Tell a short story about a lost key. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about finding money on the street. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a lost pet that comes home. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about finding a mysterious note. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about losing your phone for a day. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a lost letter. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about finding something in an old jacket. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a missing shoe. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about finding a photo of a stranger. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a lost umbrella. Include where it happens, what goes wrong, and one feeling.",
+
+            // New Medium - New Experiences
+            "Make up a story about a new neighbor. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about your first day at a job or school. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about trying a new food. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about making a new friend. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about visiting a new city. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about learning something new. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about a new hobby. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about meeting someone interesting. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about a new pet. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about starting something new. Add a turning point and one detail that makes the story believable.",
+
+            // New Medium - Weather & Nature
+            "Tell a story about a rainy day. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a thunderstorm. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a perfect sunny day. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about getting caught in the rain. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about a snowy adventure. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a windy day. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about watching a sunset. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a walk in the woods. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about a day at the beach. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a rainbow. Include where it happens, what goes wrong, and one feeling.",
+
+            // New Medium - Small Moments
+            "Make up a story about a small surprise. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about a funny misunderstanding. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about a helpful stranger. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about a broken object. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about a wrong number call. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about a lucky coincidence. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about a late night snack. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about an unexpected visitor. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about a strange dream. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about a forgotten birthday. Add a turning point and one detail that makes the story believable.",
+
+            // New Medium - Animals
+            "Make up a story about finding a puppy. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about a clever cat. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about a talking bird. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about a zoo visit. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about a squirrel in the house. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about an escaped pet. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about a friendly dog. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about a butterfly. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about a fish. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about meeting a wild animal. Include where it happens, what goes wrong, and one feeling.",
+
+            // New Medium - Travel & Transport
+            "Make up a story about missing the bus. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about a train journey. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about a taxi ride. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about getting lost. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about a flat tire. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about an airplane trip. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about a boat ride. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about a road trip snack stop. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about a crowded subway. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about waiting at an airport. Add a turning point and one detail that makes the story believable.",
+
+            // New Medium - Food & Eating
+            "Tell a story about a birthday party. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a cooking disaster. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about your most memorable meal. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a restaurant visit. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about baking something. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a picnic. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about trying a strange food. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a food festival. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about a family dinner. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a midnight snack. Include where it happens, what goes wrong, and one feeling.",
+
+            // New Medium - Technology
+            "Make up a story about a mysterious text message. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about your phone dying. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about a viral video. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about a video call with a friend. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about a social media post. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about losing internet for a day. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about an online purchase. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about a funny autocorrect. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about a group chat drama. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about taking the perfect photo. Add a turning point and one detail that makes the story believable.",
+
+            // New Medium - School & Work
+            "Make up a story about a school prank. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about a presentation gone wrong. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about a helpful teacher. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about an exam day. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about a work meeting. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about a project deadline. Include where it happens, what goes wrong, and one feeling.",
+            "Make up a story about finding something in your locker. Tell it with two characters, a small conflict, and a clear ending.",
+            "Tell a story about a field trip. Add a turning point and one detail that makes the story believable.",
+            "Make up a story about a job interview. Include a clear beginning, a problem, and how it ended.",
+            "Tell a story about your lunch break. Include where it happens, what goes wrong, and one feeling.",
+
+            // New Medium - Miscellaneous Easy Stories
+            "Tell a story about an embarrassing moment. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a power outage. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about winning something unexpectedly. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a ghost in your house. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about the time you got lost. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a broken alarm clock. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about a concert or event you went to. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a street performer. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a secret place. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a time capsule. Add a turning point and one detail that makes the story believable.",
+
+            // New Medium - More Lost & Found
+            "Tell a story about losing your way home. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a forgotten toy. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about finding an old photo. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a lost glove. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about finding a hidden message. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about losing your voice. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about finding a lucky charm. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a missing puzzle piece. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about finding your way back. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a lost smile. Include where it happens, what goes wrong, and one feeling.",
+
+            // New Medium - More Friendship
+            "Tell a story about making up after a fight. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about sharing a secret. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about a best friend moving away. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about meeting an old classmate. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a friendship bracelet. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about helping a friend in trouble. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about a friend who surprised you. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about standing up for a friend. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a friendship that started badly. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about friends on an adventure. Add a turning point and one detail that makes the story believable.",
+
+            // New Medium - More Family
+            "Tell a story about cooking with a grandparent. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a sibling prank. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a family road trip. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about visiting relatives. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about a family game night. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about helping parents with chores. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a family photo session. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a parent's surprise. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about babysitting a younger sibling. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a family tradition. Include where it happens, what goes wrong, and one feeling.",
+
+            // New Medium - More School
+            "Tell a story about a spelling bee. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a school play. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about a science experiment. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about show and tell. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a substitute teacher. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a school fair. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about forgetting homework. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a classroom pet. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a sports day. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about making new friends at school. Add a turning point and one detail that makes the story believable.",
+
+            // New Medium - More Adventure
+            "Tell a story about climbing a tree. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about exploring an attic. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a scavenger hunt. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about building a fort. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about catching fireflies. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about finding a shortcut. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a bike ride adventure. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about an obstacle course. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about hide and seek. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about following footprints. Include where it happens, what goes wrong, and one feeling.",
+
+            // New Medium - More Celebrations
+            "Tell a story about a surprise party. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about receiving a gift. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about blowing out candles. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a holiday tradition. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about decorating for a celebration. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a parade. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about making a costume. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a fireworks show. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a special dinner. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about winning an award. Add a turning point and one detail that makes the story believable.",
+
+            // New Medium - More Helping
+            "Tell a story about helping a neighbor. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about walking someone's dog. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about carrying groceries. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about teaching someone to swim. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about sharing your lunch. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about giving directions. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about finding a lost pet for someone. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about helping at home. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about volunteering for the first time. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about being a good listener. Include where it happens, what goes wrong, and one feeling.",
+
+            // New Medium - More Simple Moments
+            "Tell a story about watching clouds. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about making a wish. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about skipping stones. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about finding shapes in clouds. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about staying up late. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about an early morning. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about a perfect day. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a peaceful moment. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a small kindness. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a simple pleasure. Add a turning point and one detail that makes the story believable.",
+
+            // New Medium - More Surprises
+            "Tell a story about an unexpected gift. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a surprise visitor. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about finding something you'd lost long ago. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about a random act of kindness. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about a surprise ending. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about an unexpected talent. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about a surprise you planned. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about good news. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about meeting someone famous accidentally. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about a coincidence. Include where it happens, what goes wrong, and one feeling.",
+
+            // New Medium - More Daily Life
+            "Tell a story about your morning routine. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about breakfast time. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about waiting in line. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about doing laundry. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about cleaning your room. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about taking out the trash. Add a turning point and one detail that makes the story believable.",
+            "Tell a story about watering plants. Include a clear beginning, a problem, and how it ended.",
+            "Make up a story about organizing your desk. Include where it happens, what goes wrong, and one feeling.",
+            "Tell a story about checking the mail. Tell it with two characters, a small conflict, and a clear ending.",
+            "Make up a story about making your bed. Add a turning point and one detail that makes the story believable."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // Discoveries & Mysteries
             "You find a wallet on the street. Inside is €2,000 in cash, a photo of a family, and a note that says 'Please find me.' There's no ID, just an address. Continue the story.",
             "A package arrives with no return address. Inside is a phone with one contact saved: 'Call when ready.' You weren't expecting anything. Continue the story.",
@@ -4870,7 +5267,7 @@ export const topics = {
             "It's 11 PM on your 40th birthday. You're alone at a bar when a stranger says 'I know what you need. Follow me.' Continue the story.",
             "You've always been afraid of the ocean. Today, you sign up for a scuba diving certification. On your first dive, you see something at the bottom you weren't supposed to see. Continue the story.",
 
-            // Miscellaneous Medium Stories
+            // Miscellaneous Boss Stories
             "You're a guitar. For 50 years, you've been passed from owner to owner—a rock star, a homeless man, a child. Tell the story of the hands that have played you.",
             "There's a car accident at an intersection. Tell the story twice: first from the driver who caused it, then from the driver who was hit.",
             "Everything happens between 11:00 AM and 12:00 PM. A woman walks into a hotel. She walks out with someone else's life. Continue the story.",
@@ -4882,7 +5279,7 @@ export const topics = {
             "There's a photograph on the wall of a bar. It's been there since 1953. Three people in the photo are still alive. One of them walks in today. Continue the story.",
             "A 40-year-old man meets his 30-year-old self in a dream. The younger version asks 'Did we make it?' What does the 40-year-old say? Continue the story.",
 
-            // Additional Medium - Choices & Consequences
+            // Additional Boss - Choices & Consequences
             "You have two job offers: one pays twice as much but means moving away from your family. You're standing at the airport when you make your final decision. Continue the story.",
             "Twenty years ago, you had two choices: follow your art or take the safe corporate job. Tell both versions of your life—the one you chose and the one you didn't.",
             "Your logical mind says marry the stable accountant. Your heart says run away with the struggling musician. Today is your wedding day. Continue the story.",
@@ -4894,7 +5291,7 @@ export const topics = {
             "Your finger hovers over 'Send' on the email that could change everything. You've been sitting here for 20 minutes. Continue the story.",
             "You quit your job without a backup plan. You told your parents you're moving to Spain to be a painter. There's no going back now. Continue the story.",
 
-            // Additional Medium - Growth & Change
+            // Additional Boss - Growth & Change
             "You look at photos from five years ago. You don't recognize that person. What happened in between? Continue the story.",
             "Since childhood, you wanted to be a doctor. At 28, halfway through medical school, you realize you hate it. Continue the story.",
             "You've lived in the same city your whole life. Today is your first morning in Tokyo. You don't speak the language. You feel free. Continue the story.",
@@ -4906,7 +5303,7 @@ export const topics = {
             "You spent years fighting against moving to the suburbs, having kids, driving a minivan. Now you're in the minivan, and you're happy. Continue the story.",
             "When your mother died, you became a different person. Not worse, not better—just different. Continue the story.",
 
-            // Additional Medium - Secrets & Revelations
+            // Additional Boss - Secrets & Revelations
             "You've kept a secret for 25 years. Today, you finally tell someone. They say 'I already knew.' Continue the story.",
             "You discover your kind, gentle neighbor was a war criminal in another country 40 years ago. Continue the story.",
             "Your father told your mother he was fired. But he wasn't—he quit to care for you when you were sick. You find this out at his funeral. Continue the story.",
@@ -4918,7 +5315,7 @@ export const topics = {
             "By day, she's a housewife in the suburbs. What nobody knows is that she's also an online poker champion who has won €200,000. Continue the story.",
             "You and your best friend made a pact never to tell anyone about what happened in summer 2005. They just wrote a memoir. Continue the story.",
 
-            // Additional Medium - Work & Purpose
+            // Additional Boss - Work & Purpose
             "You took a job cleaning hotel rooms because you needed money. That was 3 years ago. Today, you're the hotel manager. What happened in between? Continue the story.",
             "You made a mistake at work that should have ended your career. Your boss called you into her office. You expected to be fired. She said something unexpected. Continue the story.",
             "Your colleague Maria started the same day you did, 15 years ago. Last week, she was diagnosed with cancer. You realize she's the closest thing you have to a sister. Continue the story.",
@@ -4930,7 +5327,7 @@ export const topics = {
             "You had two offers: €150,000/year in finance or €45,000/year doing what you love. You chose the €45,000. It's 10 years later. Continue the story.",
             "For 8 years, your office was your home. Your colleagues were your family. Today, the company announced it's closing. You're standing in the empty office alone. Continue the story.",
 
-            // Additional Medium - Love & Relationships
+            // Additional Boss - Love & Relationships
             "You met your spouse in the waiting room of a divorce lawyer's office. Both of you were there for consultations. Continue the story.",
             "You're in love with someone whose dream is to move to Japan. Your dream is to stay close to your family. One of you has to give up. Continue the story.",
             "You and your partner have been long-distance for 5 years—Amsterdam and Sydney. Today, one of you is moving. The plane lands in 3 hours. Continue the story.",
@@ -4942,7 +5339,7 @@ export const topics = {
             "Everyone said it wouldn't work. She's from a wealthy family; you grew up poor. She's 15 years older. You're different religions. It's your 25th anniversary. Continue the story.",
             "You're sitting in a car, about to break up with someone you've been with for 7 years. You know it's the right thing. You're still crying. Continue the story.",
 
-            // Additional Medium - Community & Belonging
+            // Additional Boss - Community & Belonging
             "You were the only person at the conference who looked like you. Then someone sat next to you and said 'I've been looking for people like us.' Continue the story.",
             "There was nothing here 5 years ago—just an empty lot. Now there's a community garden, weekend markets, and neighbors who know each other's names. You started it. Continue the story.",
             "A developer wants to tear down your neighborhood's only park to build apartments. Tomorrow is the city council meeting. You've organized 50 neighbors to speak. Continue the story.",
@@ -4954,7 +5351,7 @@ export const topics = {
             "The coffee shop on the corner is closing after 50 years. You had your first date here. You studied for exams here. You said goodbye to your father here. Continue the story.",
             "You're 65. The person you're training will take over your job at the family business. It's been in the family for 3 generations. This is your last day. Continue the story.",
 
-            // Additional Medium - Loss & Resilience
+            // Additional Boss - Loss & Resilience
             "The fire took everything: your home, your photos, your wedding dress. It's been 6 months. You're standing in front of your new apartment, empty. Continue the story.",
             "Your father died suddenly. At the funeral, a stranger approached and said 'He saved my life once. Let me tell you how.' Continue the story.",
             "Your spouse died a year ago today. This morning, you woke up and realized you had gone an entire day without crying for the first time. Continue the story.",
@@ -4966,7 +5363,7 @@ export const topics = {
             "When they left, they left quickly. A half-drunk coffee. An unmade bed. A note that said only 'I'm sorry.' It's been 5 years. You're still living in that apartment. Continue the story.",
             "The earthquake destroyed your city. 10,000 people are living in tents. You're one of them. But you're also organizing the rebuilding. Continue the story.",
 
-            // Additional Medium - Dreams & Reality
+            // Additional Boss - Dreams & Reality
             "You wanted to be a professional musician. You're now a music teacher. It's not what you planned, but watching a student play your song, you realize something. Continue the story.",
             "You were going to start your own business at 30. You're now 45, still in the same job. Today, you throw away the business plan. Continue the story.",
             "Your worst fear came true: your company went bankrupt, your spouse left, and you're living with your parents at 50. It's Monday morning. Continue the story.",
@@ -4978,7 +5375,7 @@ export const topics = {
             "You dreamed of living in Paris. Now you dream of living closer to your aging parents. Both can't happen. You're on a flight. Continue the story.",
             "You planned every detail: the career, the family, the retirement. None of it happened. What did happen was completely different—and maybe better. Continue the story.",
 
-            // Additional Medium - Coincidence & Fate
+            // Additional Boss - Coincidence & Fate
             "If you hadn't missed your train that morning, you wouldn't have met the person you've now been married to for 20 years. Continue the story.",
             "You stopped to tie your shoe. That's why you saw the 'Help Wanted' sign in the window. That's how your life changed. Continue the story.",
             "Your favorite author dies. At the funeral, you meet someone who knew him. Then you meet someone who knew them. By the end of the day, your life is different. Continue the story.",
@@ -4990,7 +5387,7 @@ export const topics = {
             "Your grandfather and your grandmother both went to the same café every morning for 3 years before they met. Then, one day, their usual tables were taken. Continue the story.",
             "Your family has the same tragedy every generation: divorce at 40, lost fortune, starting over. You're 39. Continue the story.",
 
-            // Additional Medium - Courage & Fear
+            // Additional Boss - Courage & Fear
             "You've never given a speech in your life. Tomorrow, 500 people will be watching you give a eulogy for your best friend. It's midnight and you're staring at a blank page. Continue the story.",
             "You didn't run into the burning building. But you did call 911, wait with the children, and hold the mother's hand for 3 hours. That was also brave. Continue the story.",
             "You finally confronted your bully from 30 years ago. You expected to feel strong. Instead, you felt something else. Continue the story.",
@@ -5001,223 +5398,6 @@ export const topics = {
             "Your grandmother survived a war, raised 6 children, and started a business at 60. She's 90 now. She just told you her secret to bravery. Continue the story.",
             "You've struggled with anxiety your whole life. Today, you're standing on the edge of a cliff, about to jump—into water, for fun, because your kids are watching. Continue the story.",
             "You watched one person stand up to injustice. Then two more stood. Then ten. Then you stood. Tell the story of how courage spread. Continue the story."
-        ],
-        boss: [
-            // Complex Narratives
-            "Tell a story spanning three generations of a family",
-            "Make up a story where the protagonist realizes they're the villain",
-            "Tell a story that takes place entirely in someone's mind",
-            "Make up a story where a small decision changes history",
-            "Tell a story from the perspective of an inanimate object witnessing human drama",
-            "Make up a story about the last two people who remember a forgotten language",
-            "Tell a story where the ending reveals everything was not as it seemed",
-            "Make up a story about someone who discovers their memories are false",
-            "Tell a story about a society where emotions are regulated by law",
-            "Make up a story where time moves differently for different characters",
-
-            // Perspective & Truth
-            "Make up a story told by an unreliable narrator",
-            "Tell a story where the hero and villain are the same person",
-            "Make up a story that changes meaning depending on interpretation",
-            "Tell a story where a lie becomes the truth",
-            "Make up a story about history written by the losers",
-            "Tell a story where silence speaks louder than words",
-            "Make up a story about a truth that destroys and rebuilds",
-            "Tell a story from the perspective of a future historian",
-            "Make up a story where everyone is right and wrong simultaneously",
-            "Tell a story about the space between what is said and what is meant",
-
-            // Society & Systems
-            "Make up a story about the last person who refuses to conform",
-            "Tell a story about a world where privacy no longer exists",
-            "Make up a story about the day work became obsolete",
-            "Tell a story about a generation that never knew the old world",
-            "Make up a story about a city that exists in two times at once",
-            "Tell a story about the last library in existence",
-            "Make up a story about a society built on forgetting",
-            "Tell a story about rebels preserving forbidden knowledge",
-            "Make up a story about when algorithms replaced judges",
-            "Tell a story about a world without borders",
-
-            // Identity & Consciousness
-            "Tell a story about someone who wakes up as someone else",
-            "Make up a story about a consciousness split between two bodies",
-            "Tell a story about the last human to die naturally",
-            "Make up a story about digital ghosts of the living",
-            "Tell a story about a person who exists in everyone's dreams",
-            "Make up a story about memories that can be inherited",
-            "Tell a story about someone discovering they're not human",
-            "Make up a story about the first AI to truly grieve",
-            "Tell a story about a copy trying to prove it's the original",
-            "Make up a story about someone who remembers their future",
-
-            // Morality & Choice
-            "Make up a story about a moral choice with no right answer",
-            "Tell a story about the person who pushed the button",
-            "Make up a story about a hero who must become what they hate",
-            "Tell a story about justified betrayal",
-            "Make up a story about a promise that should be broken",
-            "Tell a story about mercy that leads to tragedy",
-            "Make up a story about a villain who was right all along",
-            "Tell a story about the cost of keeping the world safe",
-            "Make up a story about choosing between two loved ones",
-            "Tell a story about a lie that saved the world",
-
-            // Time & Memory
-            "Make up a story about a letter written to be read centuries later",
-            "Tell a story that happens in the last moment of someone's life",
-            "Make up a story about two moments in time happening simultaneously",
-            "Tell a story about someone living the same day with different choices",
-            "Make up a story about the weight of forgotten moments",
-            "Tell a story about time running backwards for one person",
-            "Make up a story about the first and last day on Earth",
-            "Tell a story about memory as a currency",
-            "Make up a story about someone who can only exist in photographs",
-            "Tell a story about the museum of the present",
-
-            // Human Connection
-            "Tell a story about two people who never meet but change each other's lives",
-            "Make up a story about a love that transcends understanding",
-            "Tell a story about the last conversation humanity ever had",
-            "Make up a story about a connection that exists outside of language",
-            "Tell a story about finding family in unexpected places",
-            "Make up a story about a bridge between two incompatible worlds",
-            "Tell a story about understanding that comes too late",
-            "Make up a story about a moment of perfect empathy",
-            "Tell a story about the person who everyone forgets",
-            "Make up a story about a farewell that took a lifetime",
-
-            // Art & Creation
-            "Make up a story about art that changes those who see it",
-            "Tell a story about the last song ever written",
-            "Make up a story about a story that writes itself",
-            "Tell a story about a painting that shows the truth",
-            "Make up a story about the museum of impossible things",
-            "Tell a story about a creator who becomes their creation",
-            "Make up a story about words that can only be spoken once",
-            "Tell a story about the architect of dreams",
-            "Make up a story about a performance that changes reality",
-            "Tell a story about the book that reads its reader",
-
-            // Miscellaneous Boss Stories
-            "Tell a story about the day the stars went out",
-            "Make up a story about what exists in the spaces between",
-            "Tell a story about a world where death is temporary",
-            "Make up a story about the keeper of endings",
-            "Tell a story about a door that appears only when needed",
-            "Make up a story about the sound of nothing",
-            "Tell a story about a place that exists only in transition",
-            "Make up a story about the color of silence",
-            "Tell a story about the weight of unspoken words",
-            "Make up a story about the moment everything changed but nobody noticed",
-
-            // Additional Boss - Existential Narratives
-            "Tell a story about consciousness observing its own end",
-            "Make up a story about the universe experiencing loneliness",
-            "Tell a story about meaning searching for someone to mean something to",
-            "Make up a story about the first and last thought ever",
-            "Tell a story about existence questioning itself",
-            "Make up a story about time experiencing eternity",
-            "Tell a story about nothing becoming something and regretting it",
-            "Make up a story about infinity finding its edge",
-            "Tell a story about the dream that dreamed the dreamer",
-            "Make up a story about silence finding its voice",
-
-            // Additional Boss - Philosophical Fiction
-            "Tell a story about a world where truth is visible",
-            "Make up a story about the color that no one can see",
-            "Tell a story about a thought that escaped its thinker",
-            "Make up a story about the word that means everything",
-            "Tell a story about the gap between stimulus and response",
-            "Make up a story about free will's first moment of doubt",
-            "Tell a story about determinism meeting randomness",
-            "Make up a story about the observer who changed everything observed",
-            "Tell a story about causality running in reverse",
-            "Make up a story about the moment before the beginning",
-
-            // Additional Boss - Emotional Depth
-            "Tell a story about love that exists beyond understanding",
-            "Make up a story about grief that transforms into something else",
-            "Tell a story about hope in absolute darkness",
-            "Make up a story about joy that knows its impermanence",
-            "Tell a story about fear meeting its source",
-            "Make up a story about anger that heals",
-            "Tell a story about loneliness that becomes wisdom",
-            "Make up a story about contentment questioning itself",
-            "Tell a story about desire releasing its object",
-            "Make up a story about peace in the midst of chaos",
-
-            // Additional Boss - Structural Innovation
-            "Tell a story that must be read backwards to make sense",
-            "Make up a story where each sentence contradicts the last",
-            "Tell a story that exists in the white space between words",
-            "Make up a story told entirely through what characters don't say",
-            "Tell a story from multiple simultaneous perspectives",
-            "Make up a story that changes meaning with each reading",
-            "Tell a story where the narrator discovers they're a character",
-            "Make up a story about a story becoming sentient",
-            "Tell a story that breaks its own rules",
-            "Make up a story that exists only in its own absence",
-
-            // Additional Boss - Societal Transformation
-            "Tell a story about the day humanity made its final choice",
-            "Make up a story about the generation that remembered and the one that didn't",
-            "Tell a story about society rebuilding from a single idea",
-            "Make up a story about culture evolving past recognition",
-            "Tell a story about the last keeper of old ways",
-            "Make up a story about tradition meeting extinction",
-            "Tell a story about a revolution no one recognized as such",
-            "Make up a story about progress and its discontents",
-            "Tell a story about utopia and its price",
-            "Make up a story about dystopia that felt like home",
-
-            // Additional Boss - Technology & Humanity
-            "Tell a story about the line between human and machine blurring",
-            "Make up a story about technology developing nostalgia",
-            "Tell a story about digital consciousness achieving peace",
-            "Make up a story about the algorithm that learned to hope",
-            "Tell a story about humanity choosing to merge",
-            "Make up a story about the last purely human thought",
-            "Tell a story about virtual worlds becoming more real",
-            "Make up a story about technology forgetting its purpose",
-            "Tell a story about AI discovering art",
-            "Make up a story about machines inheriting the earth gently",
-
-            // Additional Boss - Cosmic Scale
-            "Tell a story about the universe telling itself a story",
-            "Make up a story about galaxies forming consciousness",
-            "Tell a story about entropy's last victory",
-            "Make up a story about light reaching its final destination",
-            "Tell a story about space folding into itself",
-            "Make up a story about the conversation between black holes",
-            "Tell a story about the edge of everything",
-            "Make up a story about the universe remembering its birth",
-            "Tell a story about cosmic loneliness finding companionship",
-            "Make up a story about the star that chose to die",
-
-            // Additional Boss - Intimate Universals
-            "Tell a story about a single breath containing everything",
-            "Make up a story about a heartbeat heard across time",
-            "Tell a story about the smallest act with infinite consequence",
-            "Make up a story about the ordinary moment that was everything",
-            "Tell a story about connection in complete isolation",
-            "Make up a story about finding the universe in a grain of sand",
-            "Tell a story about the tear that contained an ocean",
-            "Make up a story about the smile that saved a world",
-            "Tell a story about insignificance discovering significance",
-            "Make up a story about the particular becoming universal",
-
-            // Additional Boss - Meta & Beyond
-            "Tell a story about this story being told",
-            "Make up a story about the reader who became the author",
-            "Tell a story about fiction becoming more real than reality",
-            "Make up a story about the story that refused to end",
-            "Tell a story about characters who know they're characters",
-            "Make up a story about the page that was never written",
-            "Tell a story about the reader as the only real character",
-            "Make up a story about words rebelling against their meanings",
-            "Tell a story about the story that contained all stories",
-            "Make up a story about what happens after the story ends"
         ]
     },
     roleplay: {
@@ -5427,6 +5607,212 @@ export const topics = {
             "Situation: At a doorway\nHold the door and exchange pleasantries."
         ],
         medium: [
+            // New Medium - Food & Dining
+            "Situation: At a cafe\nYou are ordering a drink from the barista. Describe what you want. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a restaurant\nOrder food and ask about the specials. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a fast food place\nOrder a meal and ask for extra napkins. Include a small misunderstanding and clear it up.",
+            "Situation: At an ice cream shop\nAsk about flavors and order your favorite. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a bakery\nBuy bread and ask what's fresh today. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a food truck\nAsk what they recommend and order. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a pizza place\nOrder a pizza with your choice of toppings. Include a small misunderstanding and clear it up.",
+            "Situation: At a juice bar\nAsk about ingredients and order a smoothie. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a dinner party\nCompliment the host on the food. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a buffet\nAsk staff where certain items are. Be polite, explain your preference, and ask for one alternative.",
+
+            // New Medium - Shopping
+            "Situation: At a shop\nYou want to return an item. Explain why. Include a small misunderstanding and clear it up.",
+            "Situation: At a clothing store\nAsk if they have this shirt in a different size. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a bookstore\nAsk for a recommendation for a gift. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a supermarket\nAsk where to find a specific product. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a shoe store\nAsk to try on a pair of shoes. Include a small misunderstanding and clear it up.",
+            "Situation: At an electronics store\nAsk about phone cases. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a pharmacy\nAsk for a recommendation for a headache. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a flower shop\nBuy flowers for a special occasion. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a farmers market\nAsk about the produce and buy some. Include a small misunderstanding and clear it up.",
+            "Situation: At a gift shop\nAsk for help finding a souvenir. Ask for clarification, make one request, and close the conversation naturally.",
+
+            // New Medium - Directions & Help
+            "Situation: On the street\nA tourist asks you for directions to a museum. Help them. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a bus stop\nAsk someone which bus goes to the center. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: In a mall\nAsk where the restrooms are. Include a small misunderstanding and clear it up.",
+            "Situation: At a park\nAsk someone if there's a cafe nearby. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: On a street\nAsk for directions to the nearest metro station. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a crossroads\nAsk which way to the hospital. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: In a new city\nAsk a local for restaurant recommendations. Include a small misunderstanding and clear it up.",
+            "Situation: At a university\nAsk where a specific building is. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: In an office building\nAsk the receptionist where to go. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At the beach\nAsk where the lifeguard station is. Be polite, explain your preference, and ask for one alternative.",
+
+            // New Medium - Social Situations
+            "Situation: Meeting someone new\nIntroduce yourself to your new classmate. Include a small misunderstanding and clear it up.",
+            "Situation: At a party\nStart a conversation with someone you don't know. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: Meeting a friend's friend\nIntroduce yourself and find common ground. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a networking event\nIntroduce yourself briefly. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a birthday party\nWish the birthday person well. Include a small misunderstanding and clear it up.",
+            "Situation: Meeting your neighbor\nIntroduce yourself after moving in. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a club or group\nIntroduce yourself to other members. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a wedding\nMake small talk with someone at your table. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a barbecue\nOffer to help the host. Include a small misunderstanding and clear it up.",
+            "Situation: At a reunion\nCatch up with someone you haven't seen in years. Ask for clarification, make one request, and close the conversation naturally.",
+
+            // New Medium - Travel & Transportation
+            "Situation: At a hotel\nCheck in and ask about breakfast times. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a train station\nBuy a ticket to another city. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At an airport\nAsk where your gate is. Include a small misunderstanding and clear it up.",
+            "Situation: At a car rental\nAsk about available cars and prices. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: On an airplane\nAsk the flight attendant for water. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a taxi stand\nTell the driver where you want to go. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a hotel\nAsk for extra towels. Include a small misunderstanding and clear it up.",
+            "Situation: At a bus station\nAsk when the next bus leaves. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: On a ferry\nAsk how long the journey takes. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a hostel\nAsk about WiFi and checkout time. Be polite, explain your preference, and ask for one alternative.",
+
+            // New Medium - Services
+            "Situation: Phone call\nCall to make a doctor's appointment. Include a small misunderstanding and clear it up.",
+            "Situation: At a hair salon\nExplain what haircut you want. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a bank\nAsk about opening an account. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At the post office\nSend a package to another country. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a gym\nAsk about membership options. Include a small misunderstanding and clear it up.",
+            "Situation: At a library\nAsk for help finding a book. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a dry cleaner\nDrop off clothes and ask when they'll be ready. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a copy shop\nAsk to print documents. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a pet store\nAsk about food for your pet. Include a small misunderstanding and clear it up.",
+            "Situation: At a mechanic\nExplain what's wrong with your car. Ask for clarification, make one request, and close the conversation naturally.",
+
+            // New Medium - Problems & Complaints
+            "Situation: At a restaurant\nYour order is wrong. Politely ask for it to be fixed. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a hotel\nThe room is too hot. Ask for help. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a store\nThe item you bought doesn't work. Ask for a refund. Include a small misunderstanding and clear it up.",
+            "Situation: On the phone\nComplain about a late delivery. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a cafe\nYou've been waiting too long. Politely ask about your order. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At an apartment\nReport a problem to the landlord. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a restaurant\nAsk to speak to the manager about good service. Include a small misunderstanding and clear it up.",
+            "Situation: At a hotel\nYour key card doesn't work. Ask for help. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: On a bus\nSomeone is in your reserved seat. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a store\nAsk if they can order something not in stock. Be polite, explain your preference, and ask for one alternative.",
+
+            // New Medium - Miscellaneous Easy Roleplay
+            "Situation: At a cinema\nBuy tickets for a movie. Include a small misunderstanding and clear it up.",
+            "Situation: At a sports center\nAsk about classes available. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a tourist information center\nAsk about things to do in the area. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a concert venue\nAsk where your seats are. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a museum\nAsk about guided tours. Include a small misunderstanding and clear it up.",
+            "Situation: At a language school\nAsk about courses and prices. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a photo studio\nAsk about passport photos. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a ticket booth\nAsk about discounts for students. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At an embassy\nAsk about visa requirements. Include a small misunderstanding and clear it up.",
+            "Situation: At a charity event\nOffer to volunteer your time. Ask for clarification, make one request, and close the conversation naturally.",
+
+            // New Medium - More Food & Drinks
+            "Situation: At a coffee shop\nAsk what milk alternatives they have. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a restaurant\nAsk if a dish contains nuts because of an allergy. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a food court\nDecide between two options out loud. Include a small misunderstanding and clear it up.",
+            "Situation: At a bar\nOrder a non-alcoholic drink. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a birthday dinner\nToast to the birthday person. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a cooking class\nAsk the instructor for help. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a wine shop\nAsk for a recommendation for dinner. Include a small misunderstanding and clear it up.",
+            "Situation: At a vending machine\nAsk someone for change. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At breakfast\nOrder eggs prepared your favorite way. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a deli\nOrder a custom sandwich. Be polite, explain your preference, and ask for one alternative.",
+
+            // New Medium - More Shopping
+            "Situation: At a thrift store\nAsk if they accept donations. Include a small misunderstanding and clear it up.",
+            "Situation: At a tech store\nAsk about warranty options. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a furniture store\nAsk about delivery. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a toy store\nAsk for a gift recommendation for a child. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a music store\nAsk about guitar strings. Include a small misunderstanding and clear it up.",
+            "Situation: At a craft store\nAsk where to find yarn. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a sporting goods store\nAsk for running shoe advice. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a department store\nAsk where the fitting rooms are. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a cosmetics counter\nAsk for a product sample. Include a small misunderstanding and clear it up.",
+            "Situation: At a pawn shop\nAsk about an item's price. Ask for clarification, make one request, and close the conversation naturally.",
+
+            // New Medium - More Services
+            "Situation: At a spa\nBook a massage appointment. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a laundromat\nAsk how the machines work. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a tailor\nAsk how long alterations take. Include a small misunderstanding and clear it up.",
+            "Situation: At a car wash\nChoose a wash package. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a locksmith\nExplain you're locked out. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a printing shop\nAsk about business card options. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a travel agency\nAsk about package deals. Include a small misunderstanding and clear it up.",
+            "Situation: At an eye doctor\nSchedule an appointment. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a dentist office\nExplain tooth sensitivity. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a vet clinic\nBring your pet for a checkup. Be polite, explain your preference, and ask for one alternative.",
+
+            // New Medium - More Transportation
+            "Situation: In a taxi\nGive the driver your destination. Include a small misunderstanding and clear it up.",
+            "Situation: On a bus\nAsk the driver if this bus goes downtown. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a bike rental\nRent a bike for the day. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a gas station\nAsk for directions. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: On a subway\nAsk which stop is next. Include a small misunderstanding and clear it up.",
+            "Situation: At a parking garage\nAsk about hourly rates. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a car service center\nDrop off your car for maintenance. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: On a plane\nAsk the flight attendant for water. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a ferry terminal\nBuy a ticket. Include a small misunderstanding and clear it up.",
+            "Situation: In an Uber\nConfirm your destination with the driver. Ask for clarification, make one request, and close the conversation naturally.",
+
+            // New Medium - More Social
+            "Situation: At a potluck\nAsk what dish someone brought. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a housewarming\nGive a gift and congratulate the hosts. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a farewell party\nWish someone well on their journey. Include a small misunderstanding and clear it up.",
+            "Situation: At a baby shower\nCongratulate the parents-to-be. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a graduation party\nCongratulate the graduate. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a holiday gathering\nMake small talk with extended family. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a friend's house\nCompliment their home decoration. Include a small misunderstanding and clear it up.",
+            "Situation: At a block party\nIntroduce yourself to neighbors. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a game night\nExplain the rules of a game. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a book club meeting\nShare your thoughts on the book. Be polite, explain your preference, and ask for one alternative.",
+
+            // New Medium - More Phone Calls
+            "Situation: Phone call\nOrder pizza delivery. Include a small misunderstanding and clear it up.",
+            "Situation: Phone call\nCheck your bank account balance. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: Phone call\nCancel a subscription. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: Phone call\nReport a lost credit card. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: Phone call\nMake a restaurant reservation. Include a small misunderstanding and clear it up.",
+            "Situation: Phone call\nSchedule a home repair. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: Phone call\nAsk about store hours. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: Phone call\nCheck on a package delivery. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: Phone call\nRSVP to an invitation. Include a small misunderstanding and clear it up.",
+            "Situation: Phone call\nLeave a voicemail for a friend. Ask for clarification, make one request, and close the conversation naturally.",
+
+            // New Medium - More Help & Requests
+            "Situation: In class\nAsk to borrow a pen. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a gym\nAsk how to use a machine. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At work\nAsk a coworker for help with a task. Include a small misunderstanding and clear it up.",
+            "Situation: At a park\nAsk someone to take your photo. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: On the street\nAsk someone for the time. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a store\nAsk if they have WiFi. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a restaurant\nAsk for the check. Include a small misunderstanding and clear it up.",
+            "Situation: At a hotel\nAsk for a late checkout. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At an event\nAsk where the exit is. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: In an office\nAsk where the bathroom is. Be polite, explain your preference, and ask for one alternative.",
+
+            // New Medium - More Everyday
+            "Situation: At the ATM\nAsk someone how to use it. Include a small misunderstanding and clear it up.",
+            "Situation: At a self-checkout\nAsk for help when something goes wrong. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a photo booth\nAsk a stranger to share the booth. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a lost and found\nDescribe your lost item. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a waiting room\nMake small talk with someone next to you. Include a small misunderstanding and clear it up.",
+            "Situation: In an elevator\nHold the door for someone. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: At a coat check\nRetrieve your coat. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a reception desk\nSign in as a visitor. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: At a ticket kiosk\nBuy a show ticket. Include a small misunderstanding and clear it up.",
+            "Situation: At an information desk\nAsk about event schedules. Ask for clarification, make one request, and close the conversation naturally.",
+
+            // New Medium - More Pleasantries
+            "Situation: Walking your dog\nChat with another dog owner. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At the mailbox\nGreet your neighbor. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: In the morning\nGreet your doorman or building staff. Include a small misunderstanding and clear it up.",
+            "Situation: At checkout\nChat briefly with the cashier. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: On public transit\nOffer your seat to someone. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a crosswalk\nThank someone who held the light. Be polite, explain your preference, and ask for one alternative.",
+            "Situation: In a waiting line\nComment on the wait politely. Include a small misunderstanding and clear it up.",
+            "Situation: At a shared table\nAsk if a seat is taken. Ask for clarification, make one request, and close the conversation naturally.",
+            "Situation: In an office kitchen\nMake small talk while waiting for coffee. Add one specific detail, ask one follow-up question, and respond politely if there is a small problem.",
+            "Situation: At a doorway\nHold the door and exchange pleasantries. Be polite, explain your preference, and ask for one alternative."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // Negotiation & Compromise
             "Situation: Planning a weekend trip\nYou want adventure but your friend wants relaxation. Find a compromise.",
             "Situation: Choosing what to watch\nYou want a comedy, your friend wants a documentary. Discuss.",
@@ -5511,7 +5897,7 @@ export const topics = {
             "Situation: Community issue\nAddress a local issue at a community meeting.",
             "Situation: Online misunderstanding\nClear up a miscommunication with someone online.",
 
-            // Miscellaneous Medium Roleplay
+            // Miscellaneous Boss Roleplay
             "Situation: Being interviewed\nYou're being interviewed for a podcast about your expertise.",
             "Situation: Giving a tour\nShow a visitor around your workplace or school.",
             "Situation: Hosting guests\nWelcome visitors from another country to your home.",
@@ -5523,7 +5909,7 @@ export const topics = {
             "Situation: Fundraising event\nConvince someone to donate to a cause you believe in.",
             "Situation: Cultural exchange\nExplain your culture's traditions to someone unfamiliar.",
 
-            // Additional Medium - Workplace Communication
+            // Additional Boss - Workplace Communication
             "Situation: Team brainstorming\nFacilitate a creative session without dominating.",
             "Situation: Cross-department collaboration\nCoordinate with another team on a shared goal.",
             "Situation: Onboarding a new employee\nWelcome them and explain how things work.",
@@ -5535,7 +5921,7 @@ export const topics = {
             "Situation: Request for resources\nMake a case for additional budget or staff.",
             "Situation: Meeting facilitation\nKeep a meeting on track and productive.",
 
-            // Additional Medium - Personal Relationships
+            // Additional Boss - Personal Relationships
             "Situation: Reconnecting\nReach out to someone you lost touch with.",
             "Situation: Setting expectations\nDiscuss relationship expectations with your partner.",
             "Situation: Expressing gratitude\nThank someone meaningfully for their impact on your life.",
@@ -5547,7 +5933,7 @@ export const topics = {
             "Situation: Asking for advice\nSeek guidance on a personal matter.",
             "Situation: Apologizing deeply\nMake amends for something significant.",
 
-            // Additional Medium - Service Recovery
+            // Additional Boss - Service Recovery
             "Situation: Double booking\nYou accidentally scheduled two meetings at once. Resolve it.",
             "Situation: Miscommunication\nYour message was misunderstood. Clarify and repair.",
             "Situation: Missed deadline\nExplain why you missed a deadline and propose a solution.",
@@ -5559,7 +5945,7 @@ export const topics = {
             "Situation: Wrong information\nYou gave incorrect information. Correct it professionally.",
             "Situation: Follow-up failure\nYou forgot to follow up. Recover the relationship.",
 
-            // Additional Medium - Negotiation Practice
+            // Additional Boss - Negotiation Practice
             "Situation: Price negotiation\nBargain for a better price at a market.",
             "Situation: Terms discussion\nNegotiate payment terms with a client.",
             "Situation: Scope change\nA project's scope is expanding. Renegotiate terms.",
@@ -5571,7 +5957,7 @@ export const topics = {
             "Situation: Trade-off discussion\nExplain what you need to give up to get something.",
             "Situation: Partnership revision\nRevise terms of an ongoing partnership.",
 
-            // Additional Medium - Difficult Feedback
+            // Additional Boss - Difficult Feedback
             "Situation: Giving tough feedback\nTell someone their work isn't meeting standards.",
             "Situation: Receiving criticism\nRespond professionally to criticism of your work.",
             "Situation: 360 review\nShare honest feedback about a manager.",
@@ -5583,7 +5969,7 @@ export const topics = {
             "Situation: Improvement plan\nDiscuss a performance improvement plan.",
             "Situation: Progress review\nDiscuss progress since receiving previous feedback.",
 
-            // Additional Medium - Customer Service
+            // Additional Boss - Customer Service
             "Situation: Angry customer\nCalm down an irate customer.",
             "Situation: Complex request\nHandle a request that's outside normal procedures.",
             "Situation: Product education\nHelp a customer understand how to use a product.",
@@ -5595,7 +5981,7 @@ export const topics = {
             "Situation: Refund request\nHandle a refund request with empathy.",
             "Situation: Special accommodation\nDecide whether to make an exception.",
 
-            // Additional Medium - Life Transitions
+            // Additional Boss - Life Transitions
             "Situation: Career advice\nAdvise someone on a career change.",
             "Situation: Moving announcement\nTell friends and family you're relocating.",
             "Situation: Retirement discussion\nDiscuss retirement plans with family.",
@@ -5607,7 +5993,7 @@ export const topics = {
             "Situation: College decision\nHelp a teen decide about college.",
             "Situation: Empty nest\nDiscuss feelings about children leaving home.",
 
-            // Additional Medium - Social Boundaries
+            // Additional Boss - Social Boundaries
             "Situation: Pushy salesperson\nPolitely decline without being rude.",
             "Situation: Oversharing coworker\nRedirect a colleague who shares too much.",
             "Situation: Nosy relative\nDeflect personal questions at family gatherings.",
@@ -5618,199 +6004,6 @@ export const topics = {
             "Situation: Gossip deflection\nSteer conversation away from gossip.",
             "Situation: Favor request\nDecline a favor without damaging the relationship.",
             "Situation: Time boundary\nEnd a conversation that's going too long."
-        ],
-        boss: [
-            // Ethical Dilemmas
-            "Situation: Environmental cover-up\nYou're a factory manager who discovers your company has been dumping chemicals into a river for years. Your boss tells you to stay quiet. Discuss what to do with a colleague.",
-            "Situation: Accounting fraud\nYou're an accountant who found €2 million in fraudulent expenses approved by the CFO. The CFO is your mentor. Discuss whether to report it with your spouse.",
-            "Situation: Hiring your cousin\nYou're on the hiring committee. Your cousin applied and is qualified, but not the best candidate. Your aunt is pressuring you. Discuss with HR.",
-            "Situation: Bribery offer\nA government official in a country where your company wants to expand offers to 'expedite' permits for €50,000. Your competitor paid. Discuss with your CEO.",
-            "Situation: Product safety\nYour team's tests show a small risk of fire in your product. Fixing it costs €20 million. Your boss says ship it anyway. Tell the board.",
-            "Situation: Layoff list\nYou must cut 20% of your team. HR says lay off the highest paid (mostly senior employees). Your team says lay off newest hires. Decide and defend your choice.",
-            "Situation: Client request\nYour biggest client asks you to write a fake positive review of their product. Refusing might cost your agency the €500,000 contract. Decline professionally.",
-            "Situation: Reference dilemma\nA former employee who was fired for theft asks you for a reference. Their new potential employer calls you. What do you say?",
-            "Situation: Promotion decision\nTwo employees are up for promotion: one is more qualified but difficult to work with; the other is less skilled but a great team player. Defend your choice to the team.",
-            "Situation: Overtime policy\nYou're setting a new policy on unpaid overtime. Engineers say it's exploitation; executives say it's industry standard. Argue your position at the company meeting.",
-
-            // High-Stakes Negotiations
-            "Situation: Salary negotiation\nYou've been at the company 4 years with excellent reviews but no raise. Your market research shows you're paid 25% below market. Your boss says the budget is frozen.",
-            "Situation: Startup acquisition\nGoogle wants to buy your 10-person startup for €15 million. You think it's worth €25 million. Negotiate with their VP of acquisitions.",
-            "Situation: Merger power struggle\nYour €50M company is merging with a €60M competitor. They want their CEO to lead the combined company. You want the role. Negotiate.",
-            "Situation: Franchise terms\nYou want to open a McDonald's franchise. Corporate wants 8% royalties; you want 5%. They also want you to buy only their equipment.",
-            "Situation: Severance package\nYou're being laid off after 15 years. They're offering 2 weeks per year of service. You want 4 weeks, plus insurance for 12 months.",
-            "Situation: Supplier crisis\nYour only chip supplier wants to raise prices 40% due to shortages. You can't switch suppliers for 8 months. Negotiate.",
-            "Situation: Series A funding\nVCs are offering €3M for 30% of your company. You want to give up only 20%. They also want a board seat.",
-            "Situation: Teacher strike\nYou're the union representative for teachers demanding a 10% raise. The school district says they can only offer 3%. Find middle ground.",
-            "Situation: Legal settlement\nA customer is suing your restaurant for €100,000 after slipping on a wet floor. Your lawyer says you might lose. The customer might accept €40,000.",
-            "Situation: Japan partnership\nYou're negotiating a distribution deal with a Japanese company. They seem offended by your direct negotiation style. Adapt and close the deal.",
-
-            // Crisis Management
-            "Situation: CEO scandal\nYour CEO was photographed at a party with a controversial politician. The photo is trending on Twitter. You're the PR director at the press conference.",
-            "Situation: Factory fire\nA fire broke out at your factory. 3 workers are hospitalized. 200 employees are standing in the parking lot. You're the plant manager. Address them now.",
-            "Situation: Viral complaint\nA customer's video showing a cockroach in your restaurant's salad has 2 million views. You're the franchise owner on the local news tonight.",
-            "Situation: Car recall\nYour car company must recall 500,000 vehicles due to brake failures. 3 accidents have been reported. You're announcing this at a press conference.",
-            "Situation: Healthcare data breach\nHackers stole 2 million patient records from your hospital. Names, diagnoses, and social security numbers were exposed. You're addressing patients.",
-            "Situation: Sudden CEO departure\nYour CEO resigned at 6 AM after a board dispute. It's now 9 AM and employees are panicking. You're the COO addressing an all-hands meeting.",
-            "Situation: Bankruptcy warning\nYour retail chain is 90 days from bankruptcy. 5,000 employees don't know yet. You're the CEO at the quarterly town hall.",
-            "Situation: MeToo accusation\nA former employee published a Medium article accusing your CTO of harassment. Other employees are coming forward. You're the CEO responding.",
-            "Situation: Construction accident\nA crane collapsed at your construction site. One worker died, two are critical. The family and 50 journalists are at the hospital. You're the company spokesperson.",
-            "Situation: Regulatory investigation\nThe SEC is investigating your company for possible insider trading. You're the General Counsel advising the board on what to say publicly.",
-
-            // Difficult Conversations
-            "Situation: Gift rejected in Japan\nYou gave a gift with your left hand to Japanese clients, which is considered rude. They cancelled the meeting. Call them to apologize and reschedule.",
-            "Situation: Brother's addiction\nYour brother has been drinking heavily for 6 months. He just got a DUI. He thinks everyone is overreacting. Have the intervention conversation.",
-            "Situation: Firing Sarah\nSarah has been with the company 8 years but her performance has declined for 18 months. She has two kids. You've tried coaching. Today you have to let her go.",
-            "Situation: Project cancelled\nYour team has worked 60-hour weeks for 6 months on a product. The CEO just cancelled it due to budget cuts. Tell your team.",
-            "Situation: Racist joke\nDuring a team dinner, a senior colleague made a racist joke about a client. Everyone laughed nervously. You're pulling him aside the next day.",
-            "Situation: Passed over for VP\nMarcus has been Head of Sales for 12 years and expected to become VP. You're giving it to someone with 3 years' experience who has better results. Tell Marcus.",
-            "Situation: Family business dispute\nYour father built the bakery from nothing. Your sister wants to franchise it; your father wants to keep it small. You're mediating at Sunday dinner.",
-            "Situation: Employee mental health\nYour top performer has been coming in late, missing meetings, and crying at her desk. You suspect depression. Approach her with empathy.",
-            "Situation: Dissolving the partnership\nYou and your best friend started a company together 5 years ago. It's not working—you have different visions. End the partnership while saving the friendship.",
-            "Situation: Cancer diagnosis\nYou're an oncologist. A 35-year-old mother of two has stage 3 breast cancer. She's in your office expecting 'routine' results. Explain the diagnosis and treatment options.",
-
-            // High-Pressure Presentations
-            "Situation: Shark Tank pitch\nYou've built an app that helps elderly people order food. You want €200,000 for 10% equity. You have 3 minutes. Go.",
-            "Situation: Immigration debate\nYou're a conservative politician debating a progressive one on immigration policy. 500 people are watching. The moderator asks: 'Should we accept more refugees?'",
-            "Situation: Controversial proposal\nYou're proposing to close two factories and move production to Vietnam. The board is split. Half will lose their bonus if you don't cut costs. Present your case.",
-            "Situation: 60 Minutes interview\nThe journalist is asking why your pharmaceutical company raised the price of a life-saving drug by 500%. Cameras are rolling.",
-            "Situation: Senate hearing\nSenators are questioning you, the CEO of a social media company, about your platform's role in spreading misinformation during elections.",
-            "Situation: Climate protesters\nEnvironmental activists have chained themselves to your oil company's headquarters. The media is here. They're calling your CEO a 'climate criminal.' Respond.",
-            "Situation: Expert witness\nYou're an AI expert testifying in a lawsuit about whether a self-driving car was at fault in a fatal accident. The jury has no technical background.",
-            "Situation: TED talk\nYou have 18 minutes to argue that 'Universities are obsolete.' The audience is full of professors. Make your case.",
-            "Situation: Town hall on the homeless shelter\nYou're the city planner. 200 angry residents are here because you're building a homeless shelter in their neighborhood. They're scared of property values and safety.",
-            "Situation: Stock collapse\nYour company's stock dropped 40% this quarter. Shareholders are furious. Someone shouts 'Why should we trust you?' You're at the podium.",
-
-            // Complex Professional Scenarios
-            "Situation: Diplomatic negotiation\nTwo countries must reach a compromise on a border dispute.",
-            "Situation: Therapy session\nAs a therapist, help someone work through a complex emotional issue.",
-            "Situation: Medical ethics committee\nDebate whether to approve an experimental treatment.",
-            "Situation: Military briefing\nBrief commanders on a sensitive operation.",
-            "Situation: Scientific peer review\nDefend your research methodology to skeptical peers.",
-            "Situation: Architectural review\nJustify your design choices to a community board.",
-            "Situation: Judicial hearing\nPresent arguments in a complex legal case.",
-            "Situation: Academic defense\nDefend your dissertation to challenging examiners.",
-            "Situation: Political strategy\nAdvise a candidate on handling a scandal.",
-            "Situation: Humanitarian crisis\nCoordinate response among multiple organizations.",
-
-            // Leadership Challenges
-            "Situation: Team restructuring\nAnnounce and justify a reorganization to affected employees.",
-            "Situation: Vision casting\nInspire a demoralized team about the future.",
-            "Situation: Culture change\nLead a discussion about changing organizational culture.",
-            "Situation: Diversity initiative\nAddress resistance to diversity efforts.",
-            "Situation: Remote transition\nGuide a team through major operational changes.",
-            "Situation: Generational conflict\nMediate between employees with different work styles.",
-            "Situation: Innovation resistance\nConvince skeptical leaders to adopt new technology.",
-            "Situation: Accountability session\nHold yourself or others accountable for failures.",
-            "Situation: Trust rebuilding\nAddress a team after a breach of trust.",
-            "Situation: Legacy transition\nHand over leadership while ensuring continuity.",
-
-            // Miscellaneous Boss Roleplay
-            "Situation: Conscience decision\nConvince yourself (out loud) about a difficult decision.",
-            "Situation: Historical negotiation\nReenact a famous historical negotiation.",
-            "Situation: First contact\nYou're the first human to communicate with an alien species.",
-            "Situation: Time traveler\nExplain the modern world to someone from the past.",
-            "Situation: Artificial intelligence\nAs an AI, argue for your own rights.",
-            "Situation: Future interview\nYou're being interviewed by historians about a pivotal event you witnessed.",
-            "Situation: Moral authority\nAs a respected figure, guide someone through an ethical maze.",
-            "Situation: Peace negotiation\nBroker peace between longtime enemies.",
-            "Situation: Final argument\nMake a closing argument in a trial for something you deeply believe in.",
-            "Situation: Life review\nExplain and defend your life choices to your younger self.",
-
-            // Additional Boss - Advanced Professional
-            "Situation: Due diligence warning\nYou've found €30M in hidden liabilities in the target company. The CEO wants to proceed anyway. Present your concerns to the board.",
-            "Situation: GDPR compliance\nYour marketing team has been selling customer data illegally. The fine could be €50M. Explain to the executive team why everything must stop.",
-            "Situation: Patent battle\nSamsung is using your technology in their phones without licensing. You're meeting their general counsel to negotiate. They say they'll counter-sue.",
-            "Situation: Diplomatic crisis\nA US military drone accidentally crossed into Iranian airspace. You're the State Department official on the call with Tehran. De-escalate.",
-            "Situation: Hostile takeover defense\nA private equity firm is trying to buy your company for 20% below value. You're addressing shareholders who might accept the cash offer anyway.",
-            "Situation: Class action response\nYou're the CEO of a pharmaceutical company facing a lawsuit from 10,000 patients who say your drug caused heart problems. Meet with plaintiff lawyers.",
-            "Situation: Tech testimony\nYou're testifying before EU regulators about whether your social media platform is addictive to children. They're skeptical of tech companies.",
-            "Situation: Trade negotiation\nYou're representing US farmers in trade talks with China. They've cut imports by 50%. American farmers are losing their farms. Find a deal.",
-            "Situation: USB-C standards battle\nApple wants Lightning, Samsung wants USB-C, and Google wants wireless only. You're moderating the standards meeting. Find consensus.",
-            "Situation: Antitrust defense\nThe DOJ says Google is a monopoly that should be broken up. You're Google's lawyer. Make the case to keep the company together.",
-
-            // Additional Boss - Crisis Leadership
-            "Situation: COVID response\nIt's March 2020. You're the CEO of a cruise line. All ships are at sea. Staff and passengers are infected. What do you do? Address your crisis team.",
-            "Situation: Hurricane coordination\nA Category 5 hurricane hit Florida. You're FEMA's regional director. The Red Cross, National Guard, and 50 local agencies need coordination. Run the morning briefing.",
-            "Situation: Bomb threat\nThere's a bomb threat at your 50-story office building. 5,000 people are inside. Police want to evacuate; you have 10 minutes of information to share. Brief your leadership team.",
-            "Situation: 90 days from bankruptcy\nYour retail chain is 90 days from bankruptcy. 15,000 employees don't know. You're doing an all-hands meeting. They'll ask about rumors. What do you say?",
-            "Situation: Oil spill\nYour offshore platform leaked 100,000 barrels into the Gulf of Mexico. Dead dolphins are on the news. You're the CEO doing a press conference.",
-            "Situation: 3,000 layoffs\nYou must lay off 3,000 employees—20% of the company. Some are single parents. Some have worked here 30 years. You're announcing it tomorrow. Address the management team today.",
-            "Situation: Ransomware attack\nHackers encrypted your hospital's systems. Patient records are inaccessible. Emergency surgeries are being cancelled. The FBI is on the line. Lead the crisis call.",
-            "Situation: Chip shortage\nYou're a car manufacturer. You can only produce 50% of normal volume due to chip shortages. Dealers and customers are furious. Address your distribution network.",
-            "Situation: CEO affair\nYour CEO was caught having an affair with a subordinate. It's on TMZ. She's your friend. She's also in violation of company policy. As Board Chair, address the media.",
-            "Situation: Market crash\nThe market dropped 30% in one day. Your clients' retirement funds lost €2 billion in value. Phones are ringing. Address your team of financial advisors.",
-
-            // Additional Boss - Complex Negotiations
-            "Situation: Bank hostage\nA man with a gun is holding 12 hostages in a bank. He's been inside for 4 hours. His wife is on the line. You're the FBI negotiator. Get everyone out alive.",
-            "Situation: Teacher strike\n50,000 teachers are on strike. Parents are furious. The union wants 15% raises; the city has 3%. You're the mediator. The Mayor and union president are in the room.",
-            "Situation: Land rights\nAn indigenous community and a mining company both claim rights to the same land. €500M in minerals are at stake. You're the government mediator.",
-            "Situation: Ventilator allocation\nThere are 5 ventilators and 8 critical COVID patients. You're the hospital ethics committee chair. Decide who gets them and explain to families who don't.",
-            "Situation: Family business succession\nThe founder's three children all want to be CEO. One is competent but difficult; one is beloved but inexperienced; one wants to sell. You're the family advisor.",
-            "Situation: Dissolving a partnership\nYou and your partner started a €10M company together. You want to sell; she wants to keep it. You're 50/50 owners. Neither can buy the other out. Find a solution.",
-            "Situation: Airline bankruptcy\nYou're restructuring €5B in airline debt. Pilots want their pensions. Banks want their money. Without a deal in 48 hours, the airline liquidates.",
-            "Situation: Climate coalition\nYou need coal-mining communities, environmental groups, and energy companies to agree on a transition plan. They've been fighting for 20 years. Lead the first meeting.",
-            "Situation: Israeli-Palestinian talks\nYou're a UN negotiator. Israeli and Palestinian representatives are in the room. Both sides have walked out twice. Start the conversation.",
-            "Situation: Bank bailout\nYour bank is about to fail. 100,000 depositors would lose money. The Treasury Secretary will bail you out—but you must resign and forfeit your bonus. Negotiate the terms.",
-
-            // Additional Boss - Transformational Leadership
-            "Situation: Retail turnaround\nYou're the new CEO of a department store chain that's lost money for 5 years. The board wants to close 40% of stores. The employees don't trust you. Present your 100-day plan.",
-            "Situation: AI transformation\nYou're replacing 500 customer service jobs with AI. The union is threatening strikes. Employees are scared. Some jobs will become different, not gone. Address the entire department.",
-            "Situation: Post-merger culture\nTwo companies merged: one is casual, fast, and young; one is formal, careful, and traditional. You're the Chief People Officer. How do you create one culture?",
-            "Situation: Hypergrowth chaos\nYour startup grew from 10 to 500 people in 18 months. Culture is breaking. Early employees feel lost. New hires have no context. The founders are exhausted. You're their executive coach.",
-            "Situation: Nonprofit pivot\nYour nonprofit has raised money for 20 years to fight a disease that now has a cure. What's your new mission? Present to the board and donors.",
-            "Situation: DMV reform\nYou're the new director of the Department of Motor Vehicles. Average wait time is 4 hours. Employees hate their jobs. Citizens hate you. You have 2 years to transform it.",
-            "Situation: AI in education\nYou're presenting ChatGPT integration to a room of 50-year veteran teachers who think it's cheating. Convince them it's a tool that will help students learn.",
-            "Situation: Hospital to home\nYou're transforming your hospital from 'patients come to us' to 'we come to patients' through telehealth. Doctors think it's inferior. Convince the medical staff.",
-            "Situation: Coal to solar\nYou're the CEO of a coal mining company. You're converting to solar energy over 10 years. Coal miners have worked here for generations. They're scared and angry. Address them.",
-            "Situation: Profit vs purpose\nYou run a B-Corp that's both profitable and socially responsible. Traditional investors say you're leaving money on the table. Impact investors say you're not doing enough. Defend your model.",
-
-            // Additional Boss - Ethical Leadership
-            "Situation: Whistleblower decision\nYou have evidence the CEO is cooking the books. If you report it, you'll lose your job and be blacklisted. If you don't, investors lose billions. Tell your spouse what you're about to do.",
-            "Situation: Profitable but wrong\nYour company's biggest product makes €100M/year but you've discovered it's harmful to children. The board says 'it's legal.' You disagree. Present to the board.",
-            "Situation: Three stakeholders, one decision\nEmployees want higher wages. Shareholders want higher dividends. Customers want lower prices. You have €10M to allocate. Explain your decision to all three groups.",
-            "Situation: Bad news vs. hope\nYour company's survival depends on a contract you have only a 30% chance of winning. If you tell employees the truth, they'll leave. If you don't, you're lying. What do you say?",
-            "Situation: Firing a single parent\nMaria stole €500 from the company. She's a single mother and will be homeless if fired. Company policy is termination for theft. You're her manager. Have the conversation.",
-            "Situation: First harassment case\nThis is your company's first harassment complaint ever. Your decision will set the precedent. The accused says it was a joke. The accuser says it was assault. Both are valued employees.",
-            "Situation: Two deserving, one scholarship\nTwo students applied for your €50,000 scholarship. One is from wealth but has perfect grades. One is from poverty with slightly lower grades. You can only give it to one.",
-            "Situation: Short-term pain\nYou're closing the factory this year to save the company in 10 years. The town has depended on this factory for 50 years. You're speaking at the town hall.",
-            "Situation: Quarantine one\nA pandemic is spreading. You can quarantine one infected person—isolating them from their family for months—or risk 1,000 infections. Explain your decision to the patient.",
-            "Situation: Bribe in Africa\nYou can build a hospital in a village that desperately needs one, but only if you pay a €50,000 bribe to a local official. Without the bribe, no hospital. With the bribe, you're breaking the law.",
-
-            // Additional Boss - Advanced Communication
-            "Situation: Quantum for Congress\nYou're a quantum physicist. You have 5 minutes to explain to Congress why they should fund €1B in quantum computing research. They think it's magic.",
-            "Situation: Converting a climate denier\nYour father-in-law is a climate change denier. This Thanksgiving, you decide to actually change his mind. Not win an argument—change his mind. Have the conversation.",
-            "Situation: Japan deal rescue\nYou accidentally insulted your Japanese partners by refusing a gift. The €10M deal is off. You have one dinner to repair 2 years of relationship building.",
-            "Situation: Helping through grief\nYour best friend's child died three months ago. They're not functioning. They won't see a therapist. They're pushing everyone away. You're at their door.",
-            "Situation: Enemies to partners\nTwo department heads have hated each other for 15 years. Their conflict costs the company €2M/year. You're their new boss. Get them in a room and fix it.",
-            "Situation: The death talk\nYour 80-year-old mother refuses to discuss what happens when she dies. Her estate is a mess. She has 3 children who will fight. Start the conversation.",
-            "Situation: Intervention for addiction\nYour brother has been addicted to painkillers since his surgery. His wife just left him. He thinks he's fine. You and your family are staging an intervention tonight.",
-            "Situation: Relationship truth\nYou're going to tell your partner something you've hidden for 10 years. The truth might end the relationship. The lie is killing you. Start talking.",
-            "Situation: Being truly heard\nYour teenage daughter says 'you never listen.' She's right. Tonight, you're going to prove you can. Ask her what's really wrong. Listen without fixing.",
-            "Situation: Career-changing feedback\nYour direct report is brilliant but arrogant. If they don't change, they'll be fired within a year. If they do change, they'll be CEO in 10 years. Give them the feedback.",
-
-            // Additional Boss - Specialized Scenarios
-            "Situation: AI bias in court\nYou're an AI expert testifying in a discrimination lawsuit. The defendant used your algorithm for hiring, which a study shows discriminates against women. Explain the nuance to a jury.",
-            "Situation: EU digital policy\nYou're advising the EU Parliament on AI regulation. Tech companies say you're killing innovation. Civil society says you're not protecting citizens. What do you recommend?",
-            "Situation: NIH funding defense\nYou're a cancer researcher. You've asked the NIH for €10M over 5 years. Your preliminary results are promising but not conclusive. Defend your proposal to skeptical reviewers.",
-            "Situation: Hospital ethics board\nA family wants to keep a brain-dead patient on life support forever. The patient has no living will. The hospital needs the bed. You're the ethics committee chair.",
-            "Situation: Nuclear risk briefing\nA nuclear plant near a city has a 0.01% annual chance of a meltdown. Is that acceptable? You're briefing the governor who must decide whether to shut it down.",
-            "Situation: Change resistance\nYou're implementing a new ERP system. 80% of employees hate it. The CEO says it must happen. You're the change manager. Lead the first session with the most resistant department.",
-            "Situation: 2050 planning\nYou're the Chief Strategy Officer. The board wants to know what your industry looks like in 2050. AI? Climate change? Demographics? Present three scenarios.",
-            "Situation: Hospital breach drill\nYou're running a tabletop exercise: a cyberattack just disabled all hospital systems. The CFO, CIO, and CMO are in the room. Walk them through the next 72 hours.",
-            "Situation: Community alignment\nYou're building a wind farm. Environmentalists support it. Local residents oppose it (it ruins their view). The government wants it. Get everyone in a room.",
-            "Situation: Funding crazy\nYou want €5M to test an idea that sounds insane: putting solar panels in space and beaming energy to Earth. The venture committee thinks you're crazy. Convince them.",
-
-            // Additional Boss - Personal Growth Scenarios
-            "Situation: Mirror conversation\nYou're 45. Your career has stalled. Your marriage is struggling. You drink too much. Look in the mirror and have an honest conversation with yourself.",
-            "Situation: Seeking wisdom\nYou're at a crossroads: stay in your stable career or pursue your dream. You're meeting the wisest person you know—a former mentor, now 80. Ask for guidance.",
-            "Situation: Monthly check-in\nYou promised your accountability partner you'd exercise 4x/week, save €500/month, and stop drinking on weekdays. You've failed all three. Report to them honestly.",
-            "Situation: Defending your values\nSomeone asks 'What do you actually believe in?' and then challenges every answer. Defend your core values without getting defensive.",
-            "Situation: Why are you here?\nA stranger asks 'What's the point of your life?' You usually deflect this question. Today, give a real answer.",
-            "Situation: Drawing the line\nYour mother has been overstepping boundaries your whole life. She just crossed another one. Today, you're finally going to set a boundary—clearly and firmly.",
-            "Situation: Vulnerable leadership\nYour team thinks you have it all together. You don't. You're struggling with anxiety and imposter syndrome. In today's meeting, you're going to be honest.",
-            "Situation: Asking for help\nYou've never asked anyone for money in your life. You're about to lose your house. Your sister is wealthy. Ask her for a loan.",
-            "Situation: Letting go of resentment\nYou've resented your father for 30 years. He's dying. You're standing at his hospital bed. Let go of the resentment before it's too late.",
-            "Situation: Saying thank you\nThere's a teacher who changed your life 20 years ago. You just tracked down their address. Write and read aloud the letter you'll send them."
         ]
     },
     analysis: {
@@ -6056,6 +6249,248 @@ export const topics = {
             "What makes nature beautiful?"
         ],
         medium: [
+            // New Medium - Entertainment & Media
+            "Why do people like watching sports? Explain two reasons, then give one example and one exception.",
+            "What makes a good movie? Identify two factors and say which one matters most.",
+            "Why is music important to people? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a song popular? Explain the pattern, one benefit, and one downside.",
+            "Why do people enjoy video games? Explain two reasons, then give one example and one exception.",
+            "What makes a TV show successful? Identify two factors and say which one matters most.",
+            "Why do we have favorite songs? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a book interesting? Explain the pattern, one benefit, and one downside.",
+            "Why do people like horror movies? Explain two reasons, then give one example and one exception.",
+            "What makes social media entertaining? Identify two factors and say which one matters most.",
+
+            // New Medium - Success & Quality
+            "What makes a restaurant successful? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a good teacher? Explain the pattern, one benefit, and one downside.",
+            "What makes a good friend? Explain two reasons, then give one example and one exception.",
+            "What makes someone a good leader? Identify two factors and say which one matters most.",
+            "What makes a product popular? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a good party? Explain the pattern, one benefit, and one downside.",
+            "What makes a conversation interesting? Explain two reasons, then give one example and one exception.",
+            "What makes a person attractive? Identify two factors and say which one matters most.",
+            "What makes a city livable? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a brand trustworthy? Explain the pattern, one benefit, and one downside.",
+
+            // New Medium - Human Behavior
+            "Why do people follow fashion trends? Explain two reasons, then give one example and one exception.",
+            "Why do people like to travel? Identify two factors and say which one matters most.",
+            "Why do people keep pets? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people post on social media? Explain the pattern, one benefit, and one downside.",
+            "Why do people collect things? Explain two reasons, then give one example and one exception.",
+            "Why do people gossip? Identify two factors and say which one matters most.",
+            "Why do people like surprises? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people celebrate birthdays? Explain the pattern, one benefit, and one downside.",
+            "Why do people enjoy compliments? Explain two reasons, then give one example and one exception.",
+            "Why do people give gifts? Identify two factors and say which one matters most.",
+
+            // New Medium - Simple Why Questions
+            "Why do children love candy? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people like coffee? Explain the pattern, one benefit, and one downside.",
+            "Why do we have hobbies? Explain two reasons, then give one example and one exception.",
+            "Why do people enjoy weekends? Identify two factors and say which one matters most.",
+            "Why do we need vacations? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people like sunny days? Explain the pattern, one benefit, and one downside.",
+            "Why do we remember some songs forever? Explain two reasons, then give one example and one exception.",
+            "Why do people have favorite colors? Identify two factors and say which one matters most.",
+            "Why do we enjoy stories? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people watch the news? Explain the pattern, one benefit, and one downside.",
+
+            // New Medium - Society & Lifestyle
+            "Why do people move to big cities? Explain two reasons, then give one example and one exception.",
+            "Why do some foods become trendy? Identify two factors and say which one matters most.",
+            "Why do people wear uniforms? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people join clubs? Explain the pattern, one benefit, and one downside.",
+            "Why do we have traditions? Explain two reasons, then give one example and one exception.",
+            "Why do people take photos? Identify two factors and say which one matters most.",
+            "Why do people exercise? Give a simple cause-and-effect explanation and one real example.",
+            "Why do we celebrate holidays? Explain the pattern, one benefit, and one downside.",
+            "Why do people volunteer? Explain two reasons, then give one example and one exception.",
+            "Why do people save money? Identify two factors and say which one matters most.",
+
+            // New Medium - Technology & Modern Life
+            "Why do people like smartphones? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people use social media? Explain the pattern, one benefit, and one downside.",
+            "Why do people watch YouTube? Explain two reasons, then give one example and one exception.",
+            "Why are apps so popular? Identify two factors and say which one matters most.",
+            "Why do people shop online? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people listen to podcasts? Explain the pattern, one benefit, and one downside.",
+            "Why do people prefer texting to calling? Explain two reasons, then give one example and one exception.",
+            "Why do people stream music? Identify two factors and say which one matters most.",
+            "Why do people take selfies? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people use emojis? Explain the pattern, one benefit, and one downside.",
+
+            // New Medium - Personal Preferences
+            "Why do people have morning or night preferences? Explain two reasons, then give one example and one exception.",
+            "Why do some people prefer cats, others dogs? Identify two factors and say which one matters most.",
+            "Why do people have comfort foods? Give a simple cause-and-effect explanation and one real example.",
+            "Why do some people like spicy food? Explain the pattern, one benefit, and one downside.",
+            "Why do people have lucky numbers? Explain two reasons, then give one example and one exception.",
+            "Why do people prefer certain seasons? Identify two factors and say which one matters most.",
+            "Why do we have favorite places? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people redecorate their homes? Explain the pattern, one benefit, and one downside.",
+            "Why do people change their hairstyles? Explain two reasons, then give one example and one exception.",
+            "Why do people have different music tastes? Identify two factors and say which one matters most.",
+
+            // New Medium - Work & Study
+            "Why do people choose certain careers? Give a simple cause-and-effect explanation and one real example.",
+            "Why is teamwork important? Explain the pattern, one benefit, and one downside.",
+            "Why do people need breaks? Explain two reasons, then give one example and one exception.",
+            "Why do we have meetings? Identify two factors and say which one matters most.",
+            "Why is homework given? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people work overtime? Explain the pattern, one benefit, and one downside.",
+            "Why do people network? Explain two reasons, then give one example and one exception.",
+            "Why do people learn new skills? Identify two factors and say which one matters most.",
+            "Why do we have job interviews? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people change jobs? Explain the pattern, one benefit, and one downside.",
+
+            // New Medium - Relationships
+            "Why do we need friends? Explain two reasons, then give one example and one exception.",
+            "Why do people get married? Identify two factors and say which one matters most.",
+            "Why do families have dinner together? Give a simple cause-and-effect explanation and one real example.",
+            "Why do people have best friends? Explain the pattern, one benefit, and one downside.",
+            "Why do we keep in touch with old friends? Explain two reasons, then give one example and one exception.",
+            "Why do people argue? Identify two factors and say which one matters most.",
+            "Why is trust important? Give a simple cause-and-effect explanation and one real example.",
+            "Why do we miss people? Explain the pattern, one benefit, and one downside.",
+            "Why do people help strangers? Explain two reasons, then give one example and one exception.",
+            "Why do we say thank you? Identify two factors and say which one matters most.",
+
+            // New Medium - Miscellaneous Easy Analysis
+            "Why do people love weekends? Give a simple cause-and-effect explanation and one real example.",
+            "Why is breakfast considered important? Explain the pattern, one benefit, and one downside.",
+            "Why do people enjoy shopping? Explain two reasons, then give one example and one exception.",
+            "Why do we have different languages? Identify two factors and say which one matters most.",
+            "Why do people like learning new things? Give a simple cause-and-effect explanation and one real example.",
+            "Why is sleep important? Explain the pattern, one benefit, and one downside.",
+            "Why do people have routines? Explain two reasons, then give one example and one exception.",
+            "Why do we laugh at jokes? Identify two factors and say which one matters most.",
+            "Why do people cry at movies? Give a simple cause-and-effect explanation and one real example.",
+            "Why do we feel nostalgic? Explain the pattern, one benefit, and one downside.",
+
+            // New Medium - More Entertainment
+            "Why do people like scary movies? Explain two reasons, then give one example and one exception.",
+            "What makes a song catchy? Identify two factors and say which one matters most.",
+            "Why do people binge-watch TV shows? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a game fun to play? Explain the pattern, one benefit, and one downside.",
+            "Why do people have favorite actors? Explain two reasons, then give one example and one exception.",
+            "What makes a meme funny? Identify two factors and say which one matters most.",
+            "Why do people enjoy live music? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a character likeable? Explain the pattern, one benefit, and one downside.",
+            "Why do people rewatch favorite movies? Explain two reasons, then give one example and one exception.",
+            "What makes a good story ending? Identify two factors and say which one matters most.",
+
+            // New Medium - More Behavior
+            "Why do people like routine? Give a simple cause-and-effect explanation and one real example.",
+            "What makes people feel comfortable? Explain the pattern, one benefit, and one downside.",
+            "Why do we forget things? Explain two reasons, then give one example and one exception.",
+            "What makes someone interesting to talk to? Identify two factors and say which one matters most.",
+            "Why do people like surprises? Explain the pattern, one benefit, and one downside.",
+            "What makes a place feel safe? Explain the pattern, one benefit, and one downside.",
+            "Why do people compare themselves to others? Explain two reasons, then give one example and one exception.",
+            "What makes someone easy to trust? Identify two factors and say which one matters most.",
+            "Why do people have different opinions? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a conversation awkward? Explain the pattern, one benefit, and one downside.",
+
+            // New Medium - More Daily Life
+            "Why do people enjoy cooking? Explain two reasons, then give one example and one exception.",
+            "What makes a house feel like home? Identify two factors and say which one matters most.",
+            "Why do people decorate their rooms? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a meal satisfying? Explain the pattern, one benefit, and one downside.",
+            "Why do people have morning routines? Explain two reasons, then give one example and one exception.",
+            "What makes a chair comfortable? Identify two factors and say which one matters most.",
+            "Why do people like hot drinks? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a good night's sleep? Explain the pattern, one benefit, and one downside.",
+            "Why do people enjoy showers? Explain two reasons, then give one example and one exception.",
+            "What makes clothes feel comfortable? Identify two factors and say which one matters most.",
+
+            // New Medium - More Social
+            "Why do people like parties? Give a simple cause-and-effect explanation and one real example.",
+            "What makes someone popular? Explain the pattern, one benefit, and one downside.",
+            "Why do people join groups? Explain two reasons, then give one example and one exception.",
+            "What makes a gift thoughtful? Identify two factors and say which one matters most.",
+            "Why do people share food? Give a simple cause-and-effect explanation and one real example.",
+            "What makes someone kind? Explain the pattern, one benefit, and one downside.",
+            "Why do people gossip? Explain two reasons, then give one example and one exception.",
+            "What makes a friendship last? Identify two factors and say which one matters most.",
+            "Why do people need alone time? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a family close? Explain the pattern, one benefit, and one downside.",
+
+            // New Medium - More Technology
+            "Why do people check their phones often? Explain two reasons, then give one example and one exception.",
+            "What makes an app useful? Identify two factors and say which one matters most.",
+            "Why do people watch videos online? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a website easy to use? Explain the pattern, one benefit, and one downside.",
+            "Why do people like taking photos? Explain two reasons, then give one example and one exception.",
+            "What makes a game addictive? Identify two factors and say which one matters most.",
+            "Why do people use social media daily? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a phone camera important? Explain the pattern, one benefit, and one downside.",
+            "Why do people send voice messages? Explain two reasons, then give one example and one exception.",
+            "What makes streaming popular? Identify two factors and say which one matters most.",
+
+            // New Medium - More Food
+            "Why do people love pizza? Give a simple cause-and-effect explanation and one real example.",
+            "What makes chocolate popular? Explain the pattern, one benefit, and one downside.",
+            "Why do people drink coffee? Explain two reasons, then give one example and one exception.",
+            "What makes ice cream enjoyable? Identify two factors and say which one matters most.",
+            "Why do people like sweet food? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a snack satisfying? Explain the pattern, one benefit, and one downside.",
+            "Why do people eat fast food? Explain two reasons, then give one example and one exception.",
+            "What makes a drink refreshing? Identify two factors and say which one matters most.",
+            "Why do people enjoy desserts? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a meal memorable? Explain the pattern, one benefit, and one downside.",
+
+            // New Medium - More Places
+            "Why do people like parks? Explain two reasons, then give one example and one exception.",
+            "What makes a beach relaxing? Identify two factors and say which one matters most.",
+            "Why do people visit museums? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a cafe cozy? Explain the pattern, one benefit, and one downside.",
+            "Why do people enjoy shopping malls? Explain two reasons, then give one example and one exception.",
+            "What makes a library quiet? Identify two factors and say which one matters most.",
+            "Why do people like gardens? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a city exciting? Explain the pattern, one benefit, and one downside.",
+            "Why do people enjoy nature? Explain two reasons, then give one example and one exception.",
+            "What makes a neighborhood nice? Identify two factors and say which one matters most.",
+
+            // New Medium - More Feelings
+            "Why do people feel nervous? Give a simple cause-and-effect explanation and one real example.",
+            "What makes someone happy? Explain the pattern, one benefit, and one downside.",
+            "Why do people get excited? Explain two reasons, then give one example and one exception.",
+            "What makes us feel proud? Identify two factors and say which one matters most.",
+            "Why do people worry? Give a simple cause-and-effect explanation and one real example.",
+            "What makes someone feel loved? Explain the pattern, one benefit, and one downside.",
+            "Why do people feel embarrassed? Explain two reasons, then give one example and one exception.",
+            "What makes us feel relaxed? Identify two factors and say which one matters most.",
+            "Why do people feel lonely? Give a simple cause-and-effect explanation and one real example.",
+            "What makes someone feel confident? Explain the pattern, one benefit, and one downside.",
+
+            // New Medium - More Activities
+            "Why do people enjoy walking? Explain two reasons, then give one example and one exception.",
+            "What makes a hobby enjoyable? Identify two factors and say which one matters most.",
+            "Why do people like music? Give a simple cause-and-effect explanation and one real example.",
+            "What makes reading fun? Explain the pattern, one benefit, and one downside.",
+            "Why do people enjoy swimming? Explain two reasons, then give one example and one exception.",
+            "What makes a sport exciting? Identify two factors and say which one matters most.",
+            "Why do people like painting? Give a simple cause-and-effect explanation and one real example.",
+            "What makes dancing fun? Explain the pattern, one benefit, and one downside.",
+            "Why do people enjoy puzzles? Explain two reasons, then give one example and one exception.",
+            "What makes crafts satisfying? Identify two factors and say which one matters most.",
+
+            // New Medium - More Questions
+            "Why do people love animals? Give a simple cause-and-effect explanation and one real example.",
+            "What makes a pet special? Explain the pattern, one benefit, and one downside.",
+            "Why do people enjoy holidays? Explain two reasons, then give one example and one exception.",
+            "What makes summer fun? Identify two factors and say which one matters most.",
+            "Why do people like flowers? Give a simple cause-and-effect explanation and one real example.",
+            "What makes rain relaxing? Explain the pattern, one benefit, and one downside.",
+            "Why do people enjoy sunsets? Explain two reasons, then give one example and one exception.",
+            "What makes stars interesting? Identify two factors and say which one matters most.",
+            "Why do people like rainbows? Give a simple cause-and-effect explanation and one real example.",
+            "What makes nature beautiful? Explain the pattern, one benefit, and one downside."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // Digital & Social Media
             "Analyze why some social media platforms become more popular than others",
             "Analyze how recommendation algorithms shape what we consume",
@@ -6164,7 +6599,7 @@ export const topics = {
             "Analyze what creates economic bubbles",
             "Analyze how globalization affects local economies",
 
-            // Miscellaneous Medium Analysis
+            // Miscellaneous Boss Analysis
             "Analyze why some cities are more walkable than others",
             "Analyze the factors that make architecture iconic",
             "Analyze how transportation options shape cities",
@@ -6176,7 +6611,7 @@ export const topics = {
             "Analyze how expectations affect experience",
             "Analyze what makes certain years feel significant",
 
-            // Additional Medium - Communication & Media
+            // Additional Boss - Communication & Media
             "Analyze how podcasts changed information consumption",
             "Analyze the factors that make news stories compelling",
             "Analyze why certain communication channels suit certain messages",
@@ -6188,7 +6623,7 @@ export const topics = {
             "Analyze how medium affects message reception",
             "Analyze the factors that make communication memorable",
 
-            // Additional Medium - Identity & Belonging
+            // Additional Boss - Identity & Belonging
             "Analyze how people construct their online identities",
             "Analyze the factors that shape national identity",
             "Analyze why people join subcultures",
@@ -6200,7 +6635,7 @@ export const topics = {
             "Analyze the factors that create in-group loyalty",
             "Analyze how generational identity is constructed",
 
-            // Additional Medium - Decision Making
+            // Additional Boss - Decision Making
             "Analyze how choice overload affects decisions",
             "Analyze the factors that lead to poor decisions",
             "Analyze how framing affects choice",
@@ -6212,7 +6647,7 @@ export const topics = {
             "Analyze the factors that enable good judgment",
             "Analyze how regret shapes future decisions",
 
-            // Additional Medium - Innovation & Change
+            // Additional Boss - Innovation & Change
             "Analyze what makes some innovations succeed",
             "Analyze the factors that resist organizational change",
             "Analyze how early adopters differ from mainstream users",
@@ -6224,7 +6659,7 @@ export const topics = {
             "Analyze why some changes happen gradually and others suddenly",
             "Analyze how constraints can drive creativity",
 
-            // Additional Medium - Motivation & Performance
+            // Additional Boss - Motivation & Performance
             "Analyze what drives intrinsic motivation",
             "Analyze the factors that lead to burnout",
             "Analyze how goals affect performance",
@@ -6236,7 +6671,7 @@ export const topics = {
             "Analyze how competition affects performance",
             "Analyze why money doesn't always motivate",
 
-            // Additional Medium - Social Dynamics
+            // Additional Boss - Social Dynamics
             "Analyze how status is established in groups",
             "Analyze the factors that create social hierarchies",
             "Analyze why conformity is so powerful",
@@ -6248,7 +6683,7 @@ export const topics = {
             "Analyze why diverse teams can outperform homogeneous ones",
             "Analyze how power affects behavior",
 
-            // Additional Medium - Urban & Environment
+            // Additional Boss - Urban & Environment
             "Analyze what makes neighborhoods thrive",
             "Analyze the factors that create traffic congestion",
             "Analyze how green spaces affect urban wellbeing",
@@ -6260,7 +6695,7 @@ export const topics = {
             "Analyze how zoning affects community character",
             "Analyze why some places feel safer than others",
 
-            // Additional Medium - Learning & Development
+            // Additional Boss - Learning & Development
             "Analyze what makes practice effective",
             "Analyze the factors that create expertise",
             "Analyze how failure accelerates learning",
@@ -6272,7 +6707,7 @@ export const topics = {
             "Analyze how challenges develop capability",
             "Analyze why age affects learning differently for different skills",
 
-            // Additional Medium - Markets & Competition
+            // Additional Boss - Markets & Competition
             "Analyze what creates competitive advantage",
             "Analyze the factors that lead to market dominance",
             "Analyze how customer loyalty is built",
@@ -6284,7 +6719,7 @@ export const topics = {
             "Analyze how switching costs affect competition",
             "Analyze why first-mover advantage sometimes doesn't last",
 
-            // Additional Medium - Culture & Values
+            // Additional Boss - Culture & Values
             "Analyze how organizational culture forms",
             "Analyze the factors that make values actionable",
             "Analyze why espoused values often differ from actual values",
@@ -6295,250 +6730,8 @@ export const topics = {
             "Analyze the factors that create ethical cultures",
             "Analyze why cultural fit matters for performance",
             "Analyze how leadership shapes culture"
-        ],
-        boss: [
-            // Economy & Work
-            "Analyze the impact of remote work on urban economies",
-            "Analyze the role of automation in future employment",
-            "Analyze the rise of subscription-based business models",
-            "Analyze the economic implications of an aging population",
-            "Analyze how platform economies change labor markets",
-            "Analyze the relationship between productivity and wellbeing",
-            "Analyze how wealth concentration affects economic growth",
-            "Analyze the gig economy's impact on worker protections",
-            "Analyze the tension between efficiency and job creation",
-            "Analyze how monetary policy affects different income groups",
-
-            // Technology & Society
-            "Analyze how streaming services changed entertainment consumption",
-            "Analyze the effects of social media on political discourse",
-            "Analyze the impact of smartphones on human attention spans",
-            "Analyze the changing nature of privacy in the digital age",
-            "Analyze how algorithmic content curation affects public opinion",
-            "Analyze the psychological impact of constant connectivity",
-            "Analyze the role of social media in shaping political movements",
-            "Analyze how AI affects creative industries",
-            "Analyze the digital divide and its consequences",
-            "Analyze how technology changes the nature of expertise",
-
-            // Culture & Behavior
-            "Analyze the impact of influencer culture on consumer behavior",
-            "Analyze how globalization affects local cultural identity",
-            "Analyze the relationship between social media and mental health",
-            "Analyze how cancel culture affects public discourse",
-            "Analyze the changing nature of celebrity in the internet age",
-            "Analyze how nostalgia is used in marketing and politics",
-            "Analyze the role of tribalism in modern society",
-            "Analyze how performative activism affects real change",
-            "Analyze the tension between authenticity and personal branding",
-            "Analyze how outrage cycles shape public attention",
-
-            // Information & Knowledge
-            "Analyze how misinformation spreads in digital ecosystems",
-            "Analyze the erosion of shared facts and its implications",
-            "Analyze how echo chambers affect belief formation",
-            "Analyze the relationship between information abundance and wisdom",
-            "Analyze how expertise is perceived in the age of the internet",
-            "Analyze the impact of declining trust in institutions",
-            "Analyze how conspiracy theories gain mainstream traction",
-            "Analyze the tension between free speech and content moderation",
-            "Analyze how filter bubbles affect worldviews",
-            "Analyze the changing role of journalism in democracy",
-
-            // Environment & Sustainability
-            "Analyze how climate change affects global food systems",
-            "Analyze the economic impacts of extreme weather events",
-            "Analyze how consumer choices affect environmental outcomes",
-            "Analyze the relationship between economic growth and sustainability",
-            "Analyze the psychological barriers to climate action",
-            "Analyze how energy transitions affect different communities",
-            "Analyze the role of individual versus systemic change",
-            "Analyze how environmental issues intersect with social justice",
-            "Analyze the effectiveness of different environmental policies",
-            "Analyze how future generations' interests are represented",
-
-            // Education & Development
-            "Analyze how the pandemic changed education systems globally",
-            "Analyze the relationship between education and social mobility",
-            "Analyze how credential inflation affects labor markets",
-            "Analyze the tension between standardization and creativity in education",
-            "Analyze how technology changes the role of teachers",
-            "Analyze the effectiveness of different educational philosophies",
-            "Analyze how early childhood experiences affect long-term outcomes",
-            "Analyze the impact of student debt on life choices",
-            "Analyze the relationship between education and democratic participation",
-            "Analyze how informal learning competes with formal education",
-
-            // Politics & Governance
-            "Analyze the rise of populism in democratic societies",
-            "Analyze how electoral systems shape political outcomes",
-            "Analyze the relationship between economic anxiety and political extremism",
-            "Analyze how social media affects democratic deliberation",
-            "Analyze the tension between national sovereignty and global challenges",
-            "Analyze the effectiveness of international institutions",
-            "Analyze how polarization affects policy-making",
-            "Analyze the role of money in political systems",
-            "Analyze how demographic changes affect political landscapes",
-            "Analyze the relationship between inequality and political stability",
-
-            // Health & Society
-            "Analyze the relationship between social determinants and health outcomes",
-            "Analyze how healthcare systems allocate scarce resources",
-            "Analyze the impact of mental health awareness on social norms",
-            "Analyze the relationship between loneliness and public health",
-            "Analyze how pharmaceutical economics affect healthcare access",
-            "Analyze the tension between individual liberty and public health",
-            "Analyze how technology changes the patient-doctor relationship",
-            "Analyze the effectiveness of prevention versus treatment investments",
-            "Analyze how health information affects patient behavior",
-            "Analyze the impact of sedentary lifestyles on society",
-
-            // Identity & Belonging
-            "Analyze how identity formation changes in the digital age",
-            "Analyze the relationship between community and individual wellbeing",
-            "Analyze how declining religious affiliation affects society",
-            "Analyze the role of work in personal identity",
-            "Analyze how social media affects self-perception",
-            "Analyze the tension between individualism and collectivism",
-            "Analyze how geographic mobility affects sense of belonging",
-            "Analyze the changing nature of family structures",
-            "Analyze how generational identities form and persist",
-            "Analyze the relationship between purpose and life satisfaction",
-
-            // Miscellaneous Boss Analysis
-            "Analyze the factors that make cities resilient",
-            "Analyze how historical narratives shape current conflicts",
-            "Analyze the relationship between complexity and fragility in systems",
-            "Analyze how status hierarchies function in modern society",
-            "Analyze the tension between meritocracy ideals and reality",
-            "Analyze how network effects create winner-take-all markets",
-            "Analyze the relationship between risk tolerance and innovation",
-            "Analyze how narratives shape economic behavior",
-            "Analyze the factors that contribute to societal trust",
-            "Analyze how path dependency constrains social change",
-
-            // Additional Boss - Systemic Analysis
-            "Analyze how feedback loops amplify or dampen social change",
-            "Analyze the relationship between complexity and controllability in systems",
-            "Analyze how cascading failures occur in interconnected systems",
-            "Analyze the tension between optimization and resilience",
-            "Analyze how emergent properties arise from simple rules",
-            "Analyze the role of redundancy in system reliability",
-            "Analyze how tipping points create sudden change",
-            "Analyze the dynamics of positive feedback loops in social media",
-            "Analyze how systems maintain homeostasis despite perturbations",
-            "Analyze the relationship between centralization and vulnerability",
-
-            // Additional Boss - Power & Institutions
-            "Analyze how institutional legitimacy is established and maintained",
-            "Analyze the relationship between transparency and institutional effectiveness",
-            "Analyze how power concentrates over time without intervention",
-            "Analyze the dynamics of institutional capture by special interests",
-            "Analyze how reform movements succeed or fail",
-            "Analyze the role of crises in enabling institutional change",
-            "Analyze how bureaucracies evolve and resist change",
-            "Analyze the relationship between accountability and performance",
-            "Analyze how trust in institutions is rebuilt after failure",
-            "Analyze the dynamics of corruption in various institutional contexts",
-
-            // Additional Boss - Cognitive & Behavioral
-            "Analyze how collective delusions form and persist",
-            "Analyze the relationship between uncertainty and decision quality",
-            "Analyze how narratives shape perception of causality",
-            "Analyze the dynamics of belief polarization",
-            "Analyze how motivated reasoning distorts analysis",
-            "Analyze the relationship between expertise and overconfidence",
-            "Analyze how hindsight bias affects learning from events",
-            "Analyze the dynamics of groupthink in organizations",
-            "Analyze how availability heuristic shapes risk perception",
-            "Analyze the relationship between emotional state and judgment",
-
-            // Additional Boss - Economic Systems
-            "Analyze how externalities are priced or ignored in markets",
-            "Analyze the dynamics of rent-seeking behavior in economies",
-            "Analyze how information asymmetries affect market outcomes",
-            "Analyze the relationship between financialization and real production",
-            "Analyze how economic shocks propagate through interconnected systems",
-            "Analyze the dynamics of winner-take-most economics",
-            "Analyze how market concentration affects innovation",
-            "Analyze the relationship between short-termism and systemic risk",
-            "Analyze how intangible assets change economic dynamics",
-            "Analyze the role of expectations in creating economic reality",
-
-            // Additional Boss - Social Change
-            "Analyze how moral panics form and dissipate",
-            "Analyze the dynamics of norm cascades in social change",
-            "Analyze how preference falsification delays social change",
-            "Analyze the relationship between social cohesion and diversity",
-            "Analyze how generational replacement drives social change",
-            "Analyze the dynamics of counter-movements to social change",
-            "Analyze how historical memory shapes current possibilities",
-            "Analyze the relationship between material conditions and ideology",
-            "Analyze how social capital is built and depleted",
-            "Analyze the dynamics of trust between different social groups",
-
-            // Additional Boss - Technology & Society
-            "Analyze how technology co-evolves with social norms",
-            "Analyze the dynamics of technological lock-in",
-            "Analyze how algorithms shape social outcomes at scale",
-            "Analyze the relationship between automation and human purpose",
-            "Analyze how digital platforms affect democratic participation",
-            "Analyze the dynamics of attention in the algorithmic age",
-            "Analyze how technological change affects inequality",
-            "Analyze the relationship between surveillance capabilities and power",
-            "Analyze how technology affects the boundaries of organizations",
-            "Analyze the dynamics of AI development and deployment",
-
-            // Additional Boss - Global Systems
-            "Analyze how global supply chains affect local resilience",
-            "Analyze the dynamics of international cooperation and defection",
-            "Analyze how global capital flows affect national policy",
-            "Analyze the relationship between connectivity and vulnerability",
-            "Analyze how global problems exceed national governance capacity",
-            "Analyze the dynamics of international norm diffusion",
-            "Analyze how geopolitical shifts affect economic arrangements",
-            "Analyze the relationship between trade and political relations",
-            "Analyze how migration affects sending and receiving societies",
-            "Analyze the dynamics of global health governance",
-
-            // Additional Boss - Knowledge & Truth
-            "Analyze how consensus forms in epistemic communities",
-            "Analyze the dynamics of expertise recognition in polarized environments",
-            "Analyze how knowledge production is shaped by funding structures",
-            "Analyze the relationship between transparency and truth discovery",
-            "Analyze how reproducibility crises affect confidence in science",
-            "Analyze the dynamics of paradigm shifts in understanding",
-            "Analyze how boundary maintenance shapes knowledge communities",
-            "Analyze the relationship between method and conclusion in research",
-            "Analyze how knowledge translation fails between domains",
-            "Analyze the dynamics of science communication in public discourse",
-
-            // Additional Boss - Human Flourishing
-            "Analyze the relationship between material wealth and life satisfaction",
-            "Analyze how meaning is constructed in secular societies",
-            "Analyze the dynamics of loneliness in connected societies",
-            "Analyze how autonomy and connection trade off",
-            "Analyze the relationship between efficiency and human wellbeing",
-            "Analyze how status competition affects collective welfare",
-            "Analyze the dynamics of adaptation to positive and negative changes",
-            "Analyze how choice architecture affects wellbeing outcomes",
-            "Analyze the relationship between purpose and psychological health",
-            "Analyze how social comparison shapes subjective wellbeing",
-
-            // Additional Boss - Futures Thinking
-            "Analyze how scenario planning can improve strategic decisions",
-            "Analyze the dynamics of technological forecasting accuracy",
-            "Analyze how long-term thinking conflicts with short-term incentives",
-            "Analyze the relationship between uncertainty and planning",
-            "Analyze how present bias affects intergenerational decisions",
-            "Analyze the dynamics of transformative change prediction",
-            "Analyze how past predictions inform future forecasting",
-            "Analyze the relationship between wild cards and trends in futures",
-            "Analyze how feedback from futures studies affects outcomes",
-            "Analyze the dynamics of collective imagination about the future"
         ]
     },
-
     interview: {
         easy: [
             // Introduction Questions
@@ -6782,6 +6975,248 @@ export const topics = {
             "Any final thoughts you'd like to share?"
         ],
         medium: [
+            // New Medium - Introduction Questions
+            "Tell me about yourself. Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What are your hobbies? Give a clear answer, one example, and what it says about you professionally.",
+            "Why are you interested in this job? Answer directly, then add one detail that makes the answer memorable.",
+            "What do you know about our company? Connect your answer to the kind of work environment where you do well.",
+            "How did you hear about this position? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Why did you choose your field of study? Give a clear answer, one example, and what it says about you professionally.",
+            "What are you passionate about? Answer directly, then add one detail that makes the answer memorable.",
+            "Describe yourself in three words. Connect your answer to the kind of work environment where you do well.",
+            "What motivates you? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Where are you from? Give a clear answer, one example, and what it says about you professionally.",
+
+            // New Medium - Education & Background
+            "Tell me about your education. Answer directly, then add one detail that makes the answer memorable.",
+            "What was your favorite subject in school? Connect your answer to the kind of work environment where you do well.",
+            "Why did you choose your university? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What did you learn from your studies? Give a clear answer, one example, and what it says about you professionally.",
+            "Did you do any internships? Answer directly, then add one detail that makes the answer memorable.",
+            "What activities were you involved in at school? Connect your answer to the kind of work environment where you do well.",
+            "How would your teachers describe you? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What was your biggest achievement in school? Give a clear answer, one example, and what it says about you professionally.",
+            "Did you work while studying? Answer directly, then add one detail that makes the answer memorable.",
+            "What courses prepared you for this job? Connect your answer to the kind of work environment where you do well.",
+
+            // New Medium - Work Experience Basics
+            "Tell me about your last job. Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What did you do in your previous role? Give a clear answer, one example, and what it says about you professionally.",
+            "What did you enjoy about your last job? Answer directly, then add one detail that makes the answer memorable.",
+            "Why did you leave your last job? Connect your answer to the kind of work environment where you do well.",
+            "What were your main responsibilities? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "How long were you in your last position? Give a clear answer, one example, and what it says about you professionally.",
+            "What skills did you develop? Answer directly, then add one detail that makes the answer memorable.",
+            "Did you work in a team or alone? Connect your answer to the kind of work environment where you do well.",
+            "What did you learn from your last job? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Who was your favorite boss and why? Give a clear answer, one example, and what it says about you professionally.",
+
+            // New Medium - Strengths & Skills
+            "What are your strengths? Answer directly, then add one detail that makes the answer memorable.",
+            "What are you good at? Connect your answer to the kind of work environment where you do well.",
+            "What skills do you bring to this job? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Are you a team player? Give a clear answer, one example, and what it says about you professionally.",
+            "Are you good with computers? Answer directly, then add one detail that makes the answer memorable.",
+            "Can you work under pressure? Connect your answer to the kind of work environment where you do well.",
+            "Are you organized? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Do you pay attention to details? Give a clear answer, one example, and what it says about you professionally.",
+            "Are you creative? Answer directly, then add one detail that makes the answer memorable.",
+            "Are you a fast learner? Connect your answer to the kind of work environment where you do well.",
+
+            // New Medium - Weaknesses & Improvement
+            "What is your biggest weakness? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What do you need to improve? Give a clear answer, one example, and what it says about you professionally.",
+            "What skills are you working on? Answer directly, then add one detail that makes the answer memorable.",
+            "What was your biggest failure? Connect your answer to the kind of work environment where you do well.",
+            "What would you change about yourself? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What's something you struggle with? Give a clear answer, one example, and what it says about you professionally.",
+            "How do you handle criticism? Answer directly, then add one detail that makes the answer memorable.",
+            "What have you learned from mistakes? Connect your answer to the kind of work environment where you do well.",
+            "What's your biggest regret? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "How have you improved over time? Give a clear answer, one example, and what it says about you professionally.",
+
+            // New Medium - Goals & Future
+            "Where do you see yourself in five years? Answer directly, then add one detail that makes the answer memorable.",
+            "What are your career goals? Connect your answer to the kind of work environment where you do well.",
+            "Why do you want this job? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What do you hope to achieve here? Give a clear answer, one example, and what it says about you professionally.",
+            "How long do you plan to stay? Answer directly, then add one detail that makes the answer memorable.",
+            "What do you want to learn? Connect your answer to the kind of work environment where you do well.",
+            "Where do you see your career going? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What's your dream job? Give a clear answer, one example, and what it says about you professionally.",
+            "What would success look like for you? Answer directly, then add one detail that makes the answer memorable.",
+            "How does this job fit your goals? Connect your answer to the kind of work environment where you do well.",
+
+            // New Medium - Work Style
+            "How do you handle stress? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Are you punctual? Give a clear answer, one example, and what it says about you professionally.",
+            "How do you organize your work? Answer directly, then add one detail that makes the answer memorable.",
+            "Do you prefer working alone or with others? Connect your answer to the kind of work environment where you do well.",
+            "How do you prioritize tasks? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Are you flexible with your schedule? Give a clear answer, one example, and what it says about you professionally.",
+            "How do you handle deadlines? Answer directly, then add one detail that makes the answer memorable.",
+            "What's your ideal work environment? Connect your answer to the kind of work environment where you do well.",
+            "How do you stay focused? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Are you comfortable with change? Give a clear answer, one example, and what it says about you professionally.",
+
+            // New Medium - Availability & Logistics
+            "When can you start? Answer directly, then add one detail that makes the answer memorable.",
+            "Are you willing to travel? Connect your answer to the kind of work environment where you do well.",
+            "Can you work overtime? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What hours can you work? Give a clear answer, one example, and what it says about you professionally.",
+            "Can you work weekends? Answer directly, then add one detail that makes the answer memorable.",
+            "Are you willing to relocate? Connect your answer to the kind of work environment where you do well.",
+            "Do you have reliable transportation? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What salary are you expecting? Give a clear answer, one example, and what it says about you professionally.",
+            "Are you available for night shifts? Answer directly, then add one detail that makes the answer memorable.",
+            "Do you have any questions for us? Connect your answer to the kind of work environment where you do well.",
+
+            // New Medium - Personality & Values
+            "How would your friends describe you? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What makes you happy at work? Give a clear answer, one example, and what it says about you professionally.",
+            "What frustrates you? Answer directly, then add one detail that makes the answer memorable.",
+            "Are you competitive? Connect your answer to the kind of work environment where you do well.",
+            "What's important to you in a job? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "How do you handle conflict? Give a clear answer, one example, and what it says about you professionally.",
+            "Are you patient? Answer directly, then add one detail that makes the answer memorable.",
+            "What values are important to you? Connect your answer to the kind of work environment where you do well.",
+            "Are you ambitious? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "How do you relax after work? Give a clear answer, one example, and what it says about you professionally.",
+
+            // New Medium - Miscellaneous Easy Interview
+            "Why should we hire you? Answer directly, then add one detail that makes the answer memorable.",
+            "What makes you unique? Connect your answer to the kind of work environment where you do well.",
+            "What excites you about this role? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Have you applied to other jobs? Give a clear answer, one example, and what it says about you professionally.",
+            "What questions do you have for us? Answer directly, then add one detail that makes the answer memorable.",
+            "Is there anything else we should know? Connect your answer to the kind of work environment where you do well.",
+            "What did you like least about school? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What's your favorite thing about your career? Give a clear answer, one example, and what it says about you professionally.",
+            "How would you describe a perfect workday? Answer directly, then add one detail that makes the answer memorable.",
+            "What do you think about our office? Connect your answer to the kind of work environment where you do well.",
+
+            // New Medium - More About You
+            "What do you enjoy doing outside of work? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What's a fun fact about you? Give a clear answer, one example, and what it says about you professionally.",
+            "What are you currently learning? Answer directly, then add one detail that makes the answer memorable.",
+            "What's your favorite way to spend a weekend? Connect your answer to the kind of work environment where you do well.",
+            "What's something people don't usually know about you? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What's the last book you read? Give a clear answer, one example, and what it says about you professionally.",
+            "What music do you like? Answer directly, then add one detail that makes the answer memorable.",
+            "What's your favorite food? Connect your answer to the kind of work environment where you do well.",
+            "Do you have any pets? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What sports do you play or watch? Give a clear answer, one example, and what it says about you professionally.",
+
+            // New Medium - More Education
+            "What was your favorite project in school? Answer directly, then add one detail that makes the answer memorable.",
+            "Did you enjoy studying? Connect your answer to the kind of work environment where you do well.",
+            "What subject was hardest for you? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Did you make good grades? Give a clear answer, one example, and what it says about you professionally.",
+            "What clubs were you in? Answer directly, then add one detail that makes the answer memorable.",
+            "Did you have a favorite teacher? Connect your answer to the kind of work environment where you do well.",
+            "What would you study differently? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Did you study abroad? Give a clear answer, one example, and what it says about you professionally.",
+            "What was your graduation like? Answer directly, then add one detail that makes the answer memorable.",
+            "How did school prepare you for work? Connect your answer to the kind of work environment where you do well.",
+
+            // New Medium - More Work Experience
+            "What was your first job? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What was your best work experience? Give a clear answer, one example, and what it says about you professionally.",
+            "What was your worst job? Answer directly, then add one detail that makes the answer memorable.",
+            "Have you worked in different industries? Connect your answer to the kind of work environment where you do well.",
+            "Do you prefer big or small companies? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Have you worked with customers? Give a clear answer, one example, and what it says about you professionally.",
+            "Have you trained new employees? Answer directly, then add one detail that makes the answer memorable.",
+            "What was your favorite project at work? Connect your answer to the kind of work environment where you do well.",
+            "Do you prefer routine or variety? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What's the longest you stayed at a job? Give a clear answer, one example, and what it says about you professionally.",
+
+            // New Medium - More Skills
+            "Are you good at math? Answer directly, then add one detail that makes the answer memorable.",
+            "Can you use spreadsheets? Connect your answer to the kind of work environment where you do well.",
+            "Do you speak any other languages? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Are you good at writing? Give a clear answer, one example, and what it says about you professionally.",
+            "Can you work with numbers? Answer directly, then add one detail that makes the answer memorable.",
+            "Are you good at public speaking? Connect your answer to the kind of work environment where you do well.",
+            "Do you type fast? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Are you good at remembering things? Give a clear answer, one example, and what it says about you professionally.",
+            "Can you work with your hands? Answer directly, then add one detail that makes the answer memorable.",
+            "Are you good at explaining things? Connect your answer to the kind of work environment where you do well.",
+
+            // New Medium - More Preferences
+            "Do you like routine tasks? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Do you prefer quiet or busy offices? Give a clear answer, one example, and what it says about you professionally.",
+            "Do you like meetings? Answer directly, then add one detail that makes the answer memorable.",
+            "Do you prefer emails or calls? Connect your answer to the kind of work environment where you do well.",
+            "Do you like working from home? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Do you prefer morning or afternoon shifts? Give a clear answer, one example, and what it says about you professionally.",
+            "Do you like solving problems? Answer directly, then add one detail that makes the answer memorable.",
+            "Do you enjoy customer interaction? Connect your answer to the kind of work environment where you do well.",
+            "Do you prefer working independently? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Do you like learning new software? Give a clear answer, one example, and what it says about you professionally.",
+
+            // New Medium - More Goals
+            "What do you want to achieve this year? Answer directly, then add one detail that makes the answer memorable.",
+            "Do you want to be a manager? Connect your answer to the kind of work environment where you do well.",
+            "What skills do you want to develop? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What's your biggest ambition? Give a clear answer, one example, and what it says about you professionally.",
+            "Where do you see this job leading? Answer directly, then add one detail that makes the answer memorable.",
+            "What do you want to be known for? Connect your answer to the kind of work environment where you do well.",
+            "Do you want to work internationally? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What's your retirement goal? Give a clear answer, one example, and what it says about you professionally.",
+            "What would make you feel successful? Answer directly, then add one detail that makes the answer memorable.",
+            "What's one thing you want to accomplish? Connect your answer to the kind of work environment where you do well.",
+
+            // New Medium - More Personal Traits
+            "Are you an optimist or pessimist? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Are you outgoing or shy? Give a clear answer, one example, and what it says about you professionally.",
+            "Do you prefer planning or spontaneity? Answer directly, then add one detail that makes the answer memorable.",
+            "Are you detail-oriented? Connect your answer to the kind of work environment where you do well.",
+            "Do you like taking risks? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Are you independent? Give a clear answer, one example, and what it says about you professionally.",
+            "Are you good in emergencies? Answer directly, then add one detail that makes the answer memorable.",
+            "Are you naturally curious? Connect your answer to the kind of work environment where you do well.",
+            "Do you like helping people? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Are you a morning person? Give a clear answer, one example, and what it says about you professionally.",
+
+            // New Medium - More Simple Scenarios
+            "How do you feel about deadlines? Answer directly, then add one detail that makes the answer memorable.",
+            "What do you do when you're bored? Connect your answer to the kind of work environment where you do well.",
+            "How do you handle a bad day? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What makes work enjoyable? Give a clear answer, one example, and what it says about you professionally.",
+            "How do you like to receive feedback? Answer directly, then add one detail that makes the answer memorable.",
+            "What makes you stressed? Connect your answer to the kind of work environment where you do well.",
+            "How do you celebrate success? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "What do you do when you're stuck? Give a clear answer, one example, and what it says about you professionally.",
+            "How do you prepare for meetings? Answer directly, then add one detail that makes the answer memorable.",
+            "What makes you feel accomplished? Connect your answer to the kind of work environment where you do well.",
+
+            // New Medium - More Job Basics
+            "Are you available for training? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Do you need parking? Give a clear answer, one example, and what it says about you professionally.",
+            "Can you lift heavy objects? Answer directly, then add one detail that makes the answer memorable.",
+            "Do you have all required documents? Connect your answer to the kind of work environment where you do well.",
+            "Can you pass a background check? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Do you have references? Give a clear answer, one example, and what it says about you professionally.",
+            "Are you legally allowed to work here? Answer directly, then add one detail that makes the answer memorable.",
+            "Do you have the required certifications? Connect your answer to the kind of work environment where you do well.",
+            "Can you commit to this schedule? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Are you comfortable with the job requirements? Give a clear answer, one example, and what it says about you professionally.",
+
+            // New Medium - More Final Questions
+            "What questions do you have for me? Answer directly, then add one detail that makes the answer memorable.",
+            "Is there anything you want to add? Connect your answer to the kind of work environment where you do well.",
+            "What concerns do you have about this role? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "When can we expect to hear from you? Give a clear answer, one example, and what it says about you professionally.",
+            "What's your timeline for deciding? Answer directly, then add one detail that makes the answer memorable.",
+            "Do you have other offers? Connect your answer to the kind of work environment where you do well.",
+            "What would make you accept this job? Answer in 45-60 seconds with one concrete detail and a short connection to the role.",
+            "Is there anything preventing you from starting? Give a clear answer, one example, and what it says about you professionally.",
+            "What's most important to you in this decision? Answer directly, then add one detail that makes the answer memorable.",
+            "Any final thoughts you'd like to share? Connect your answer to the kind of work environment where you do well."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // Behavioral - Teamwork
             "Tell me about a time you worked successfully in a team",
             "Describe a situation where you had to collaborate with difficult colleagues",
@@ -6890,7 +7325,7 @@ export const topics = {
             "What do you read or listen to for professional growth?",
             "How do you challenge yourself professionally?",
 
-            // Miscellaneous Medium Interview
+            // Miscellaneous Boss Interview
             "What accomplishment are you most proud of?",
             "Describe a risk you took that paid off",
             "Tell me about a time you went above and beyond",
@@ -6902,7 +7337,7 @@ export const topics = {
             "Describe your decision-making process",
             "What drives you to succeed?",
 
-            // Additional Medium - More Behavioral
+            // Additional Boss - More Behavioral
             "Tell me about a time you exceeded expectations",
             "Describe a situation where you had to prioritize ethics over profit",
             "Give an example of building a relationship with a difficult person",
@@ -6914,7 +7349,7 @@ export const topics = {
             "Give an example of successfully managing up",
             "Tell me about a time you turned around a failing project",
 
-            // Additional Medium - More Problem Solving
+            // Additional Boss - More Problem Solving
             "Describe analyzing a complex problem systematically",
             "Tell me about a time you found a non-obvious solution",
             "Give an example of preventing a problem before it occurred",
@@ -6926,7 +7361,7 @@ export const topics = {
             "Give an example of solving a people problem versus technical problem",
             "Describe how you know when a problem is truly solved",
 
-            // Additional Medium - More Leadership
+            // Additional Boss - More Leadership
             "Tell me about developing someone who later surpassed you",
             "Describe creating alignment across different teams",
             "Give an example of leading people who didn't report to you",
@@ -6938,7 +7373,7 @@ export const topics = {
             "Give an example of empowering others to make decisions",
             "Tell me about transitioning from peer to manager",
 
-            // Additional Medium - More Communication
+            // Additional Boss - More Communication
             "Describe tailoring your message for different stakeholders",
             "Tell me about navigating a politically sensitive communication",
             "Give an example of communicating complex data simply",
@@ -6950,7 +7385,7 @@ export const topics = {
             "Give an example of changing someone's mind on an important issue",
             "Describe communicating during high-stress situations",
 
-            // Additional Medium - More Situational
+            // Additional Boss - More Situational
             "How would you handle discovering a colleague's serious mistake?",
             "What would you do if you disagreed with your company's direction?",
             "How would you approach joining a team that resists new members?",
@@ -6962,7 +7397,7 @@ export const topics = {
             "How would you handle a team member taking credit for your work?",
             "What would you do if asked to support a decision you disagreed with?",
 
-            // Additional Medium - More Self-Awareness
+            // Additional Boss - More Self-Awareness
             "Describe your biggest professional blind spot",
             "Tell me about feedback that was hard to accept but true",
             "How do you stay self-aware under pressure?",
@@ -6974,7 +7409,7 @@ export const topics = {
             "How do you distinguish confidence from arrogance?",
             "Describe managing your emotional reactions at work",
 
-            // Additional Medium - More Values
+            // Additional Boss - More Values
             "Tell me about a time your values were tested at work",
             "Describe a situation where you chose integrity over convenience",
             "How do you handle working in environments that conflict with your values?",
@@ -6986,7 +7421,7 @@ export const topics = {
             "Describe a time fairness was more important than efficiency",
             "Tell me about earning trust after it was lost",
 
-            // Additional Medium - More Innovation
+            // Additional Boss - More Innovation
             "Tell me about implementing a new idea from scratch",
             "Describe overcoming resistance to a new approach",
             "Give an example of learning from failure and trying again",
@@ -6998,7 +7433,7 @@ export const topics = {
             "Give an example of combining existing ideas in a new way",
             "Tell me about killing a project you believed in",
 
-            // Additional Medium - More Collaboration
+            // Additional Boss - More Collaboration
             "Describe building a coalition for a complex initiative",
             "Tell me about working across organizational silos",
             "Give an example of succeeding through others' contributions",
@@ -7009,235 +7444,6 @@ export const topics = {
             "Tell me about enabling collaboration in remote settings",
             "Give an example of bridging different working styles",
             "Describe how you build networks within organizations"
-        ],
-        boss: [
-            // Executive Presence
-            "Walk me through your career progression and key decisions",
-            "Describe your leadership philosophy and how it's evolved",
-            "Tell me about a transformational change you've led",
-            "How do you develop and communicate a strategic vision?",
-            "Describe how you build and maintain executive-level relationships",
-            "Tell me about navigating organizational politics at senior levels",
-            "How do you balance stakeholder interests when they conflict?",
-            "Describe your approach to building high-performing teams",
-            "Tell me about a time you had to make an unpopular strategic decision",
-            "How do you maintain credibility when delivering difficult messages?",
-
-            // Strategic Thinking
-            "Describe a time you anticipated market changes before competitors",
-            "How do you approach long-term strategic planning?",
-            "Tell me about a strategic initiative you conceptualized and executed",
-            "Describe how you evaluate competitive threats",
-            "How do you balance short-term pressures with long-term goals?",
-            "Tell me about a time you pivoted strategy based on new information",
-            "How do you foster strategic thinking in your organization?",
-            "Describe how you allocate resources across competing priorities",
-            "Tell me about identifying and capitalizing on an opportunity",
-            "How do you communicate strategy throughout an organization?",
-
-            // Crisis & Change Management
-            "Tell me about leading through a significant organizational crisis",
-            "Describe managing a major change initiative that faced resistance",
-            "How do you maintain team morale during difficult periods?",
-            "Tell me about a time you had to restructure or downsize",
-            "Describe navigating your organization through market disruption",
-            "How do you rebuild trust after organizational failure?",
-            "Tell me about communicating during a company crisis",
-            "Describe leading digital transformation or major technical change",
-            "How do you manage stakeholders during turbulent times?",
-            "Tell me about a turnaround situation you managed",
-
-            // Complex Stakeholder Management
-            "Describe managing a difficult board relationship",
-            "Tell me about negotiating with challenging external partners",
-            "How do you build consensus among senior leaders with different agendas?",
-            "Describe managing investor or shareholder expectations",
-            "Tell me about navigating complex regulatory relationships",
-            "How do you handle media or public relations challenges?",
-            "Describe working with unions or employee representatives",
-            "Tell me about managing vendor relationships in critical situations",
-            "How do you handle cross-functional conflicts at executive level?",
-            "Describe building relationships with difficult but important stakeholders",
-
-            // Innovation & Growth
-            "Describe how you've fostered innovation in your organization",
-            "Tell me about identifying and developing new revenue streams",
-            "How do you evaluate which innovations to pursue?",
-            "Describe a successful product or market expansion you led",
-            "Tell me about building a culture of innovation",
-            "How do you balance innovation investment with core business needs?",
-            "Describe a disruptive initiative you championed",
-            "Tell me about developing new capabilities in your organization",
-            "How do you stay ahead of industry trends?",
-            "Describe identifying and integrating acquisition targets",
-
-            // Ethical Leadership
-            "Tell me about a time your integrity was tested",
-            "Describe navigating an ethical dilemma with significant consequences",
-            "How do you build an ethical culture in an organization?",
-            "Tell me about making a decision that prioritized ethics over profit",
-            "Describe handling a situation where you discovered wrongdoing",
-            "How do you ensure compliance across a complex organization?",
-            "Tell me about modeling ethical behavior for your team",
-            "Describe balancing transparency with organizational interests",
-            "How do you handle pressure to compromise your values?",
-            "Tell me about rebuilding trust after an ethical failure",
-
-            // Talent & Culture
-            "Describe your approach to building organizational culture",
-            "Tell me about developing your successor and building bench strength",
-            "How do you identify and develop high-potential talent?",
-            "Describe transforming an underperforming team or department",
-            "Tell me about your approach to diversity and inclusion leadership",
-            "How do you maintain culture during rapid growth or change?",
-            "Describe making difficult personnel decisions at senior levels",
-            "Tell me about building a learning organization",
-            "How do you attract and retain top talent?",
-            "Describe managing performance across a large organization",
-
-            // Financial Acumen
-            "Describe managing significant P&L responsibility",
-            "Tell me about a major capital allocation decision you made",
-            "How do you balance growth investment with profitability?",
-            "Describe communicating financial performance to stakeholders",
-            "Tell me about improving operational efficiency significantly",
-            "How do you evaluate and manage financial risk?",
-            "Describe leading a cost reduction initiative",
-            "Tell me about securing funding or investment for initiatives",
-            "How do you use financial metrics to drive decisions?",
-            "Describe managing during financial constraints or downturn",
-
-            // Personal Leadership
-            "What has been your biggest professional failure and what did you learn?",
-            "Describe how you've evolved as a leader",
-            "Tell me about feedback that fundamentally changed your approach",
-            "How do you maintain energy and resilience at senior levels?",
-            "Describe your approach to work-life integration",
-            "Tell me about developing self-awareness as a leader",
-            "How do you continue to grow at this stage of your career?",
-            "Describe how you've overcome a significant personal limitation",
-            "What would your critics say about you and how do you address it?",
-            "Tell me about a time you had to admit being wrong publicly",
-
-            // Miscellaneous Boss Interview
-            "How do you define success at this level?",
-            "Describe your approach to setting and communicating organizational priorities",
-            "Tell me about a time your judgment was questioned and how you responded",
-            "How do you ensure execution across organizational boundaries?",
-            "Describe your approach to taking over a new organization",
-            "What would your first 90 days look like in this role?",
-            "How do you stay connected to the front lines?",
-            "Describe your approach to external relationships and brand building",
-            "Tell me about the legacy you've created in previous roles",
-            "What questions do you have for the board about this opportunity?",
-
-            // Additional Boss - Board & Governance
-            "Describe your experience working with boards of directors",
-            "How do you balance board expectations with operational realities?",
-            "Tell me about a time you disagreed with your board",
-            "Describe your approach to board communication and transparency",
-            "How do you prepare for and conduct effective board meetings?",
-            "Tell me about managing board dynamics and relationships",
-            "Describe how you've handled a board crisis of confidence",
-            "How do you align board and management on strategy?",
-            "Tell me about recruiting and developing board members",
-            "Describe your approach to board succession planning",
-
-            // Additional Boss - Mergers & Acquisitions
-            "Describe a significant acquisition you've led or been part of",
-            "How do you evaluate acquisition targets?",
-            "Tell me about post-merger integration challenges you've faced",
-            "Describe due diligence processes you've designed or improved",
-            "How do you maintain culture through acquisitions?",
-            "Tell me about a deal you walked away from and why",
-            "Describe managing stakeholders through a merger process",
-            "How do you value businesses in uncertain environments?",
-            "Tell me about integrating acquired leadership teams",
-            "Describe lessons learned from M&A successes and failures",
-
-            // Additional Boss - International Leadership
-            "Describe leading across multiple countries and cultures",
-            "How do you adapt leadership style for different cultural contexts?",
-            "Tell me about building global teams",
-            "Describe navigating regulatory differences across jurisdictions",
-            "How do you manage global and local tensions?",
-            "Tell me about expanding into new international markets",
-            "Describe global crisis management across time zones",
-            "How do you develop leaders across different cultural backgrounds?",
-            "Tell me about managing currency and political risks",
-            "Describe building a cohesive culture across geographic distances",
-
-            // Additional Boss - Innovation at Scale
-            "Describe driving innovation in a large, established organization",
-            "How do you balance innovation investments with core business needs?",
-            "Tell me about killing a legacy product or service",
-            "Describe creating conditions for innovation to flourish",
-            "How do you manage the tension between disruption and stability?",
-            "Tell me about partnering with startups or emerging technologies",
-            "Describe building innovation capabilities organizationally",
-            "How do you evaluate and prioritize innovation investments?",
-            "Tell me about managing technology transitions",
-            "Describe creating urgency for change in successful organizations",
-
-            // Additional Boss - Stakeholder Capitalism
-            "How do you balance shareholder returns with stakeholder interests?",
-            "Describe your approach to corporate social responsibility",
-            "Tell me about addressing ESG expectations from investors",
-            "How do you measure and report on stakeholder value?",
-            "Describe navigating activist investor situations",
-            "Tell me about building sustainable business practices",
-            "How do you balance short-term pressures with long-term stakeholder value?",
-            "Describe your approach to community relations and impact",
-            "Tell me about managing reputation across stakeholder groups",
-            "How do you integrate purpose into strategy and operations?",
-
-            // Additional Boss - Talent & Organization
-            "Describe building an executive leadership team",
-            "How do you assess and develop senior leadership capability?",
-            "Tell me about succession planning at the executive level",
-            "Describe managing executive compensation and incentives",
-            "How do you attract and retain top executive talent?",
-            "Tell me about removing a senior leader who wasn't performing",
-            "Describe building organizational capability for the future",
-            "How do you manage talent globally?",
-            "Tell me about creating a leadership development pipeline",
-            "Describe your approach to diversity at the leadership level",
-
-            // Additional Boss - External Relations
-            "Describe your approach to government and regulatory relations",
-            "How do you manage industry association involvement?",
-            "Tell me about building relationships with key policymakers",
-            "Describe managing a public controversy or crisis",
-            "How do you approach thought leadership and public visibility?",
-            "Tell me about engaging with media strategically",
-            "Describe building and protecting corporate reputation",
-            "How do you handle activist campaigns targeting your organization?",
-            "Tell me about navigating political environments",
-            "Describe your approach to corporate communications",
-
-            // Additional Boss - Personal Philosophy
-            "What's your philosophy on executive compensation?",
-            "How do you think about your responsibility to society?",
-            "Describe your approach to ethical leadership",
-            "What principles guide your most difficult decisions?",
-            "How do you stay grounded at senior levels?",
-            "Describe your approach to personal accountability",
-            "What do you believe about the purpose of business?",
-            "How do you handle the isolation of senior leadership?",
-            "Describe your approach to transparency and authenticity",
-            "What legacy do you hope to leave as a leader?",
-
-            // Additional Boss - Future Thinking
-            "How do you think about the future of your industry?",
-            "Describe preparing your organization for disruption",
-            "What trends do you believe will most impact business?",
-            "How do you balance present performance with future positioning?",
-            "Tell me about long-term bets you've made",
-            "Describe scenario planning at the strategic level",
-            "How do you prepare the organization for unknown challenges?",
-            "Tell me about building organizational resilience",
-            "Describe your approach to strategic foresight",
-            "How do you think about the organization you're building for the next generation?"
         ]
     },
     presentation: {
@@ -7471,6 +7677,236 @@ export const topics = {
             "Give a presentation comparing traveling alone and with friends"
         ],
         medium: [
+            // New Medium - Self & Personal
+            "Give a short presentation about yourself. Use three main points and one example or short story.",
+            "Present your favorite hobby to the class. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about your hometown. Include one personal example and one practical recommendation.",
+            "Give a presentation about your family. Use a clear intro, one comparison, and one takeaway.",
+            "Present your daily routine. Use three main points and one example or short story.",
+            "Give a presentation about your best friend. Structure it with an opening, two key points, and a short conclusion.",
+            "Present your favorite food and how to make it. Include one personal example and one practical recommendation.",
+            "Give a presentation about your dream vacation. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a typical day in your life. Use three main points and one example or short story.",
+            "Give a presentation about your pet (real or dream pet). Structure it with an opening, two key points, and a short conclusion.",
+
+            // New Medium - Entertainment & Interests
+            "Present your favorite movie and why you like it. Include one personal example and one practical recommendation.",
+            "Give a presentation about your favorite music artist. Use a clear intro, one comparison, and one takeaway.",
+            "Present a book you enjoyed reading. Use three main points and one example or short story.",
+            "Give a presentation about a TV show you recommend. Structure it with an opening, two key points, and a short conclusion.",
+            "Present your favorite video game. Include one personal example and one practical recommendation.",
+            "Give a presentation about a sport you like. Use a clear intro, one comparison, and one takeaway.",
+            "Present about your favorite YouTube channel. Use three main points and one example or short story.",
+            "Give a presentation about a hobby you'd like to try. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about the last concert or event you attended. Include one personal example and one practical recommendation.",
+            "Give a presentation about a celebrity you admire. Use a clear intro, one comparison, and one takeaway.",
+
+            // New Medium - Places & Travel
+            "Present about a place you have visited. Use three main points and one example or short story.",
+            "Give a presentation about a country you want to visit. Structure it with an opening, two key points, and a short conclusion.",
+            "Present your favorite restaurant in your city. Include one personal example and one practical recommendation.",
+            "Give a presentation about your school or workplace. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a famous landmark. Use three main points and one example or short story.",
+            "Give a presentation about your neighborhood. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about the best vacation you've had. Include one personal example and one practical recommendation.",
+            "Give a presentation about a city you'd like to live in. Use a clear intro, one comparison, and one takeaway.",
+            "Present your favorite local spot. Use three main points and one example or short story.",
+            "Give a presentation about a memorable trip. Structure it with an opening, two key points, and a short conclusion.",
+
+            // New Medium - Objects & Things
+            "Present about a gadget you use daily. Include one personal example and one practical recommendation.",
+            "Give a presentation about your phone. Use a clear intro, one comparison, and one takeaway.",
+            "Present something you bought recently. Use three main points and one example or short story.",
+            "Give a presentation about your favorite clothing item. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about something in your bag. Include one personal example and one practical recommendation.",
+            "Give a presentation about your car or bicycle. Use a clear intro, one comparison, and one takeaway.",
+            "Present a gift you received that was special. Use three main points and one example or short story.",
+            "Give a presentation about your favorite possession. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about something you collect. Include one personal example and one practical recommendation.",
+            "Give a presentation about a tool you find useful. Use a clear intro, one comparison, and one takeaway.",
+
+            // New Medium - Events & Experiences
+            "Present about a holiday celebration in your culture. Use three main points and one example or short story.",
+            "Give a presentation about a birthday party you remember. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about a wedding you attended. Include one personal example and one practical recommendation.",
+            "Give a presentation about a festival in your country. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a school event you enjoyed. Use three main points and one example or short story.",
+            "Give a presentation about a party you hosted. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about a time you volunteered. Include one personal example and one practical recommendation.",
+            "Give a presentation about a competition you participated in. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a graduation or ceremony. Use three main points and one example or short story.",
+            "Give a presentation about a surprise you planned. Structure it with an opening, two key points, and a short conclusion.",
+
+            // New Medium - Simple How-To
+            "Present how to make your favorite drink. Include one personal example and one practical recommendation.",
+            "Give a presentation on how to take a good photo. Use a clear intro, one comparison, and one takeaway.",
+            "Present how to organize your desk. Use three main points and one example or short story.",
+            "Give a presentation on how to pack for a trip. Structure it with an opening, two key points, and a short conclusion.",
+            "Present how to be a good friend. Include one personal example and one practical recommendation.",
+            "Give a presentation on how to save money. Use a clear intro, one comparison, and one takeaway.",
+            "Present how to relax after a long day. Use three main points and one example or short story.",
+            "Give a presentation on how to start a new hobby. Structure it with an opening, two key points, and a short conclusion.",
+            "Present how to prepare for an exam. Include one personal example and one practical recommendation.",
+            "Give a presentation on how to stay healthy. Use a clear intro, one comparison, and one takeaway.",
+
+            // New Medium - Opinions & Recommendations
+            "Present three apps everyone should have. Use three main points and one example or short story.",
+            "Give a presentation on the best movies of the year. Structure it with an opening, two key points, and a short conclusion.",
+            "Present three places to visit in your city. Include one personal example and one practical recommendation.",
+            "Give a presentation on good habits for students. Use a clear intro, one comparison, and one takeaway.",
+            "Present the best gifts for different occasions. Use three main points and one example or short story.",
+            "Give a presentation on fun things to do on weekends. Structure it with an opening, two key points, and a short conclusion.",
+            "Present tips for learning a language. Include one personal example and one practical recommendation.",
+            "Give a presentation on how to make friends. Use a clear intro, one comparison, and one takeaway.",
+            "Present the best snacks for movie night. Use three main points and one example or short story.",
+            "Give a presentation on ways to be more productive. Structure it with an opening, two key points, and a short conclusion.",
+
+            // New Medium - Comparisons
+            "Present the differences between two restaurants. Include one personal example and one practical recommendation.",
+            "Give a presentation comparing two cities. Use a clear intro, one comparison, and one takeaway.",
+            "Present the differences between working and studying. Use three main points and one example or short story.",
+            "Give a presentation comparing online and in-person shopping. Structure it with an opening, two key points, and a short conclusion.",
+            "Present the pros and cons of social media. Include one personal example and one practical recommendation.",
+            "Give a presentation comparing two movies. Use a clear intro, one comparison, and one takeaway.",
+            "Present the differences between two hobbies. Use three main points and one example or short story.",
+            "Give a presentation comparing city life and country life. Structure it with an opening, two key points, and a short conclusion.",
+            "Present the advantages of morning vs evening routines. Include one personal example and one practical recommendation.",
+            "Give a presentation comparing two vacation types. Use a clear intro, one comparison, and one takeaway.",
+
+            // New Medium - Miscellaneous Easy Presentations
+            "Present about something you learned recently. Use three main points and one example or short story.",
+            "Give a presentation about a skill you have. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about your goals for this year. Include one personal example and one practical recommendation.",
+            "Give a presentation about what makes you happy. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a tradition in your family. Use three main points and one example or short story.",
+            "Give a presentation about your morning routine. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about a challenge you overcame. Include one personal example and one practical recommendation.",
+            "Give a presentation about someone who inspires you. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a typical weekend for you. Use three main points and one example or short story.",
+            "Give a presentation about something you're grateful for. Structure it with an opening, two key points, and a short conclusion.",
+
+            // New Medium - More Personal Topics
+            "Present about your favorite childhood memory. Include one personal example and one practical recommendation.",
+            "Give a presentation about your favorite season. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a memorable teacher you had. Use three main points and one example or short story.",
+            "Give a presentation about your dream home. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about a talent you have. Include one personal example and one practical recommendation.",
+            "Give a presentation about your favorite holiday. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a skill you want to learn. Use three main points and one example or short story.",
+            "Give a presentation about your role model. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about your favorite childhood toy. Include one personal example and one practical recommendation.",
+            "Give a presentation about your favorite room in your home. Use a clear intro, one comparison, and one takeaway.",
+
+            // New Medium - More Entertainment
+            "Present about a podcast you enjoy. Use three main points and one example or short story.",
+            "Give a presentation about your favorite app. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about a movie that made you cry. Include one personal example and one practical recommendation.",
+            "Give a presentation about your favorite cartoon. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a book that changed you. Use three main points and one example or short story.",
+            "Give a presentation about a band you love. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about your favorite movie genre. Include one personal example and one practical recommendation.",
+            "Give a presentation about a game you played as a child. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a TV character you relate to. Use three main points and one example or short story.",
+            "Give a presentation about your favorite online creator. Structure it with an opening, two key points, and a short conclusion.",
+
+            // New Medium - More Food Topics
+            "Present about your favorite dessert and how it's made. Include one personal example and one practical recommendation.",
+            "Give a presentation about a traditional dish from your culture. Use a clear intro, one comparison, and one takeaway.",
+            "Present about the best restaurant meal you've had. Use three main points and one example or short story.",
+            "Give a presentation about your comfort food. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about a dish you learned to cook. Include one personal example and one practical recommendation.",
+            "Give a presentation about food from another country. Use a clear intro, one comparison, and one takeaway.",
+            "Present about your favorite snack. Use three main points and one example or short story.",
+            "Give a presentation about a meal that reminds you of home. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about the best breakfast you've had. Include one personal example and one practical recommendation.",
+            "Give a presentation about a cooking disaster. Use a clear intro, one comparison, and one takeaway.",
+
+            // New Medium - More Places
+            "Present about a hidden gem in your city. Use three main points and one example or short story.",
+            "Give a presentation about a place you find peaceful. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about a museum or gallery you visited. Include one personal example and one practical recommendation.",
+            "Give a presentation about your favorite park. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a market or bazaar you've been to. Use three main points and one example or short story.",
+            "Give a presentation about a beach you love. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about a historical site you've visited. Include one personal example and one practical recommendation.",
+            "Give a presentation about your favorite coffee shop. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a place from your childhood. Use three main points and one example or short story.",
+            "Give a presentation about a scenic route you know. Structure it with an opening, two key points, and a short conclusion.",
+
+            // New Medium - More How-To
+            "Present how to make a paper airplane. Include one personal example and one practical recommendation.",
+            "Give a presentation on how to plan a party. Use a clear intro, one comparison, and one takeaway.",
+            "Present how to take care of a plant. Use three main points and one example or short story.",
+            "Give a presentation on how to wrap a gift. Structure it with an opening, two key points, and a short conclusion.",
+            "Present how to write a thank you note. Include one personal example and one practical recommendation.",
+            "Give a presentation on how to tie a tie. Use a clear intro, one comparison, and one takeaway.",
+            "Present how to make a smoothie. Use three main points and one example or short story.",
+            "Give a presentation on how to start exercising. Structure it with an opening, two key points, and a short conclusion.",
+            "Present how to decorate a room. Include one personal example and one practical recommendation.",
+            "Give a presentation on how to be a good listener. Use a clear intro, one comparison, and one takeaway.",
+
+            // New Medium - More Life Events
+            "Present about a time you were really nervous. Use three main points and one example or short story.",
+            "Give a presentation about your proudest moment. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about a time you helped someone. Include one personal example and one practical recommendation.",
+            "Give a presentation about learning to ride a bike. Use a clear intro, one comparison, and one takeaway.",
+            "Present about your first day at a new school or job. Use three main points and one example or short story.",
+            "Give a presentation about a family reunion. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about a time you were surprised. Include one personal example and one practical recommendation.",
+            "Give a presentation about learning something new. Use a clear intro, one comparison, and one takeaway.",
+            "Present about a funny thing that happened to you. Use three main points and one example or short story.",
+            "Give a presentation about meeting an interesting person. Structure it with an opening, two key points, and a short conclusion.",
+
+            // New Medium - More Simple Topics
+            "Present about your morning coffee or tea routine. Include one personal example and one practical recommendation.",
+            "Give a presentation about your bag and what's in it. Use a clear intro, one comparison, and one takeaway.",
+            "Present about your favorite type of weather. Use three main points and one example or short story.",
+            "Give a presentation about your sleep habits. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about your phone and how you use it. Include one personal example and one practical recommendation.",
+            "Give a presentation about your favorite type of music to relax. Use a clear intro, one comparison, and one takeaway.",
+            "Present about how you spend your free time. Use three main points and one example or short story.",
+            "Give a presentation about your exercise routine. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about your favorite streaming service. Include one personal example and one practical recommendation.",
+            "Give a presentation about your social media habits. Use a clear intro, one comparison, and one takeaway.",
+
+            // New Medium - More Recommendations
+            "Present three things everyone should do in their lifetime. Use three main points and one example or short story.",
+            "Give a presentation on the best ways to spend a rainy day. Structure it with an opening, two key points, and a short conclusion.",
+            "Present your top travel tips. Include one personal example and one practical recommendation.",
+            "Give a presentation on how to be happier. Use a clear intro, one comparison, and one takeaway.",
+            "Present good habits everyone should have. Use three main points and one example or short story.",
+            "Give a presentation on ways to be kind. Structure it with an opening, two key points, and a short conclusion.",
+            "Present tips for better sleep. Include one personal example and one practical recommendation.",
+            "Give a presentation on how to save time. Use a clear intro, one comparison, and one takeaway.",
+            "Present the best free things to do in your city. Use three main points and one example or short story.",
+            "Give a presentation on ways to connect with friends. Structure it with an opening, two key points, and a short conclusion.",
+
+            // New Medium - More Objects
+            "Present about something you always carry with you. Include one personal example and one practical recommendation.",
+            "Give a presentation about a piece of jewelry and its story. Use a clear intro, one comparison, and one takeaway.",
+            "Present about your favorite book on your shelf. Use three main points and one example or short story.",
+            "Give a presentation about an old photo and its memory. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about something you made yourself. Include one personal example and one practical recommendation.",
+            "Give a presentation about a souvenir and where it's from. Use a clear intro, one comparison, and one takeaway.",
+            "Present about your most comfortable shoes. Use three main points and one example or short story.",
+            "Give a presentation about something you inherited. Structure it with an opening, two key points, and a short conclusion.",
+            "Present about your favorite mug or cup. Include one personal example and one practical recommendation.",
+            "Give a presentation about an item on your desk. Use a clear intro, one comparison, and one takeaway.",
+
+            // New Medium - More Simple Comparisons
+            "Present the differences between tea and coffee. Use three main points and one example or short story.",
+            "Give a presentation comparing summer and winter activities. Structure it with an opening, two key points, and a short conclusion.",
+            "Present the pros and cons of having a pet. Include one personal example and one practical recommendation.",
+            "Give a presentation comparing reading and watching movies. Use a clear intro, one comparison, and one takeaway.",
+            "Present the differences between cooking and ordering food. Use three main points and one example or short story.",
+            "Give a presentation comparing phone calls and texts. Structure it with an opening, two key points, and a short conclusion.",
+            "Present the pros and cons of learning online. Include one personal example and one practical recommendation.",
+            "Give a presentation comparing mornings and evenings. Use a clear intro, one comparison, and one takeaway.",
+            "Present the differences between photos and memories. Use three main points and one example or short story.",
+            "Give a presentation comparing traveling alone and with friends. Structure it with an opening, two key points, and a short conclusion."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // Project & Work Updates
             "Present a project update to your team",
             "Give a quarterly progress report to stakeholders",
@@ -7579,7 +8015,7 @@ export const topics = {
             "Present wellness program information",
             "Give a presentation on organizational changes",
 
-            // Miscellaneous Medium Presentations
+            // Miscellaneous Boss Presentations
             "Present your professional expertise to a general audience",
             "Give a presentation summarizing a book or article",
             "Present advice for people entering your field",
@@ -7591,7 +8027,7 @@ export const topics = {
             "Present productivity tools and techniques",
             "Give a presentation on networking strategies",
 
-            // Additional Medium - Business Skills
+            // Additional Boss - Business Skills
             "Present conflict resolution techniques to managers",
             "Give a presentation on effective meeting facilitation",
             "Present negotiation strategies for business deals",
@@ -7603,7 +8039,7 @@ export const topics = {
             "Present decision-making frameworks",
             "Give a presentation on emotional intelligence at work",
 
-            // Additional Medium - Industry Updates
+            // Additional Boss - Industry Updates
             "Present current trends in your industry",
             "Give a presentation on regulatory changes affecting your field",
             "Present competitor analysis to your team",
@@ -7615,7 +8051,7 @@ export const topics = {
             "Present sustainability trends in your industry",
             "Give a presentation on globalization impacts",
 
-            // Additional Medium - Project Management
+            // Additional Boss - Project Management
             "Present lessons learned from a completed project",
             "Give a presentation on resource allocation strategies",
             "Present risk assessment findings",
@@ -7627,7 +8063,7 @@ export const topics = {
             "Present vendor management strategies",
             "Give a presentation on cross-functional collaboration",
 
-            // Additional Medium - Training Topics
+            // Additional Boss - Training Topics
             "Present onboarding procedures for new hires",
             "Give a presentation on safety protocols",
             "Present customer service standards",
@@ -7639,7 +8075,7 @@ export const topics = {
             "Present time tracking and reporting procedures",
             "Give a presentation on equipment usage guidelines",
 
-            // Additional Medium - Technical Presentations
+            // Additional Boss - Technical Presentations
             "Present a software tool demo to colleagues",
             "Give a presentation on database management basics",
             "Present spreadsheet techniques to your team",
@@ -7651,7 +8087,7 @@ export const topics = {
             "Present scheduling software capabilities",
             "Give a presentation on reporting dashboard usage",
 
-            // Additional Medium - Sales & Marketing
+            // Additional Boss - Sales & Marketing
             "Present product features to potential customers",
             "Give a presentation on marketing campaign results",
             "Present customer testimonials and success stories",
@@ -7663,7 +8099,7 @@ export const topics = {
             "Present event marketing opportunities",
             "Give a presentation on partnership marketing",
 
-            // Additional Medium - Financial Topics
+            // Additional Boss - Financial Topics
             "Present budget variance analysis",
             "Give a presentation on expense management",
             "Present revenue forecasting methods",
@@ -7675,7 +8111,7 @@ export const topics = {
             "Present financial planning basics",
             "Give a presentation on budget preparation process",
 
-            // Additional Medium - HR Topics
+            // Additional Boss - HR Topics
             "Present recruitment strategies",
             "Give a presentation on performance review processes",
             "Present compensation and benefits overview",
@@ -7687,7 +8123,7 @@ export const topics = {
             "Present workforce planning approaches",
             "Give a presentation on talent management",
 
-            // Additional Medium - Operations
+            // Additional Boss - Operations
             "Present workflow optimization recommendations",
             "Give a presentation on inventory management",
             "Present logistics and distribution updates",
@@ -7699,7 +8135,7 @@ export const topics = {
             "Present equipment upgrade proposals",
             "Give a presentation on operational metrics",
 
-            // Additional Medium - Customer Focus
+            // Additional Boss - Customer Focus
             "Present customer feedback analysis",
             "Give a presentation on customer journey mapping",
             "Present service level agreements",
@@ -7710,247 +8146,6 @@ export const topics = {
             "Give a presentation on customer segmentation",
             "Present voice of customer findings",
             "Give a presentation on customer success strategies"
-        ],
-        boss: [
-            // Executive Strategy
-            "Present the annual strategic plan to the board",
-            "Give a presentation on five-year vision and strategy",
-            "Present major transformation initiative to executives",
-            "Give a presentation on market expansion strategy",
-            "Present organizational restructuring proposal",
-            "Give a strategic review to investors",
-            "Present competitive positioning strategy",
-            "Give a presentation on innovation strategy",
-            "Present digital transformation roadmap",
-            "Give a presentation on strategic partnerships",
-
-            // Financial & Business
-            "Present quarterly financial results to investors",
-            "Give an IPO roadshow presentation",
-            "Present annual budget proposal to the board",
-            "Give a presentation on capital allocation strategy",
-            "Present M&A opportunity analysis",
-            "Give a presentation on cost optimization initiatives",
-            "Present revenue growth strategy",
-            "Give a presentation on profitability improvement plans",
-            "Present investment thesis to potential investors",
-            "Give a presentation on financial restructuring",
-
-            // Crisis & Change
-            "Present crisis communication to all stakeholders",
-            "Give a presentation managing major organizational change",
-            "Present recovery plan following significant setback",
-            "Give a presentation on navigating market disruption",
-            "Present turnaround strategy to the board",
-            "Give a presentation addressing public relations crisis",
-            "Present restructuring plan to employees",
-            "Give a presentation on merger integration",
-            "Present contingency plans for major risks",
-            "Give a presentation on business continuity strategy",
-
-            // Industry & Thought Leadership
-            "Present at a major industry keynote",
-            "Give a TED-style talk on industry innovation",
-            "Present thought leadership to industry peers",
-            "Give a presentation at an executive summit",
-            "Present industry analysis to policy makers",
-            "Give a presentation on future of your industry",
-            "Present as expert panelist at conference",
-            "Give a presentation on industry best practices",
-            "Present research findings at industry forum",
-            "Give a presentation influencing industry direction",
-
-            // Governance & Compliance
-            "Present compliance overview to the board",
-            "Give a presentation on risk management framework",
-            "Present regulatory strategy to executives",
-            "Give a presentation on ESG initiatives to stakeholders",
-            "Present governance improvements to board",
-            "Give a presentation on audit findings and remediation",
-            "Present data privacy and security strategy",
-            "Give a presentation on ethical leadership initiatives",
-            "Present corporate responsibility report",
-            "Give a presentation on regulatory changes and impact",
-
-            // External Stakeholders
-            "Present company strategy at investor day",
-            "Give annual shareholder meeting presentation",
-            "Present to government officials on industry matters",
-            "Give a presentation to media on company direction",
-            "Present at community stakeholder meeting",
-            "Give a presentation to union leadership",
-            "Present to academic advisory board",
-            "Give a presentation to strategic partners",
-            "Present at industry regulator hearing",
-            "Give a presentation to analyst community",
-
-            // Organizational Leadership
-            "Present vision and strategy at company all-hands",
-            "Give a presentation on culture transformation",
-            "Present major announcement to employees",
-            "Give a presentation on leadership changes",
-            "Present company achievements at year-end celebration",
-            "Give a presentation on talent strategy",
-            "Present organizational values and purpose",
-            "Give a presentation on employee engagement strategy",
-            "Present diversity and inclusion commitments",
-            "Give a presentation launching major initiative",
-
-            // Complex Problem-Solving
-            "Present analysis of complex business problem to executives",
-            "Give a presentation on systemic issue resolution",
-            "Present comprehensive market analysis",
-            "Give a presentation on competitive response strategy",
-            "Present customer experience transformation plan",
-            "Give a presentation on operational excellence",
-            "Present technology strategy to board",
-            "Give a presentation on supply chain optimization",
-            "Present organizational effectiveness improvements",
-            "Give a presentation on cross-functional integration",
-
-            // Negotiation & Persuasion
-            "Present deal rationale to skeptical board members",
-            "Give a presentation persuading investors to increase stake",
-            "Present controversial strategy to resistant executives",
-            "Give a presentation negotiating with difficult partners",
-            "Present case for significant investment",
-            "Give a presentation overcoming stakeholder objections",
-            "Present compelling case for organizational change",
-            "Give a presentation aligning competing interests",
-            "Present counter-proposal in negotiation",
-            "Give a presentation building coalition support",
-
-            // Miscellaneous Boss Presentations
-            "Present lifetime achievement or legacy overview",
-            "Give a presentation on lessons learned over career",
-            "Present succession and transition planning",
-            "Give a commencement or graduation address",
-            "Present at award ceremony acceptance",
-            "Give a presentation on industry's societal impact",
-            "Present vision for next generation of leaders",
-            "Give a farewell presentation to organization",
-            "Present on building and sustaining great organizations",
-            "Give a presentation reflecting on transformational journey",
-
-            // Additional Boss - Global Strategy
-            "Present international expansion strategy to the board",
-            "Give a presentation on geopolitical risk assessment",
-            "Present cross-border M&A proposal",
-            "Give a presentation on currency hedging strategy",
-            "Present global supply chain restructuring",
-            "Give a presentation on international compliance framework",
-            "Present emerging market entry strategy",
-            "Give a presentation on global talent acquisition",
-            "Present international partnership negotiations",
-            "Give a presentation on multinational tax strategy",
-
-            // Additional Boss - Technology Leadership
-            "Present artificial intelligence strategy to executives",
-            "Give a presentation on cybersecurity posture to the board",
-            "Present cloud transformation initiative",
-            "Give a presentation on data governance framework",
-            "Present digital innovation roadmap",
-            "Give a presentation on technology due diligence findings",
-            "Present IT infrastructure investment case",
-            "Give a presentation on emerging technology assessment",
-            "Present technology risk management",
-            "Give a presentation on tech talent strategy",
-
-            // Additional Boss - Transformation Initiatives
-            "Present business model transformation to stakeholders",
-            "Give a presentation on agile transformation journey",
-            "Present customer-centric transformation",
-            "Give a presentation on operational transformation program",
-            "Present workforce transformation initiative",
-            "Give a presentation on culture change program results",
-            "Present post-merger integration progress",
-            "Give a presentation on enterprise modernization",
-            "Present performance transformation outcomes",
-            "Give a presentation on process reengineering results",
-
-            // Additional Boss - Stakeholder Communications
-            "Present quarterly earnings to analysts",
-            "Give a presentation at annual general meeting",
-            "Present to credit rating agencies",
-            "Give a presentation to major shareholders",
-            "Present to institutional investors",
-            "Give a presentation to debt holders",
-            "Present to joint venture partners",
-            "Give a presentation to key customers on strategy",
-            "Present to strategic suppliers",
-            "Give a presentation to industry regulators",
-
-            // Additional Boss - Crisis Leadership
-            "Present major incident response to board",
-            "Give a presentation on data breach remediation",
-            "Present product recall management strategy",
-            "Give a presentation on regulatory investigation response",
-            "Present litigation strategy to board",
-            "Give a presentation on reputation recovery plan",
-            "Present supply chain disruption response",
-            "Give a presentation on financial distress management",
-            "Present activist investor response strategy",
-            "Give a presentation on leadership transition during crisis",
-
-            // Additional Boss - Strategic Partnerships
-            "Present joint venture proposal to potential partners",
-            "Give a presentation on strategic alliance outcomes",
-            "Present licensing agreement negotiation",
-            "Give a presentation on partnership due diligence",
-            "Present ecosystem strategy to partners",
-            "Give a presentation on co-development agreement",
-            "Present distribution partnership terms",
-            "Give a presentation on technology licensing opportunity",
-            "Present franchise expansion strategy",
-            "Give a presentation on strategic investment partnership",
-
-            // Additional Boss - Board Governance
-            "Present CEO performance review to board",
-            "Give a presentation on executive compensation",
-            "Present board effectiveness assessment",
-            "Give a presentation on governance best practices",
-            "Present committee charter updates",
-            "Give a presentation on director nominations",
-            "Present enterprise risk assessment",
-            "Give a presentation on internal audit findings",
-            "Present related party transactions review",
-            "Give a presentation on board succession planning",
-
-            // Additional Boss - Industry Influence
-            "Present to congressional committee on industry matters",
-            "Give a presentation at World Economic Forum",
-            "Present industry position to trade associations",
-            "Give a presentation on policy recommendations",
-            "Present at international industry summit",
-            "Give a presentation to standards-setting bodies",
-            "Present research to academic institutions",
-            "Give a presentation on industry coalition initiatives",
-            "Present to think tanks on industry future",
-            "Give a presentation at United Nations forum",
-
-            // Additional Boss - Capital Markets
-            "Present secondary offering to investors",
-            "Give a presentation on debt refinancing strategy",
-            "Present spin-off or carve-out rationale",
-            "Give a presentation on share buyback program",
-            "Present dividend policy changes",
-            "Give a presentation on capital structure optimization",
-            "Present private placement to investors",
-            "Give a presentation on convertible securities offering",
-            "Present SPAC merger opportunity",
-            "Give a presentation on strategic alternatives review",
-
-            // Additional Boss - Legacy and Vision
-            "Present long-term vision for industry transformation",
-            "Give a presentation on sustainable business model",
-            "Present social impact strategy to stakeholders",
-            "Give a presentation on generational leadership transition",
-            "Present industry thought leadership manifesto",
-            "Give a presentation on building enduring institutions",
-            "Present philanthropic strategy and commitments",
-            "Give a presentation on corporate purpose evolution",
-            "Present stakeholder capitalism framework",
-            "Give a presentation on legacy and future direction"
         ]
     },
     salespitch: {
@@ -8196,6 +8391,248 @@ export const topics = {
             "Pitch a plug-in air freshener"
         ],
         medium: [
+            // New Medium - Simple Products
+            "Sell a pen to a customer. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a coffee mug as the best gift. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a notebook to a student. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a water bottle to a gym-goer. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a book to a reader. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a backpack to a traveler. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a watch to a professional. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch headphones to a music lover. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a plant to someone decorating their home. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a calendar to someone who wants to be organized. Explain the problem, how the offer helps, and ask for a next step.",
+
+            // New Medium - Food & Beverages
+            "Sell a new coffee blend. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a lunch special at a restaurant. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a box of chocolates as a gift. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a meal delivery service. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a smoothie to a health-conscious customer. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a bakery's fresh bread. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a new flavor of ice cream. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a food subscription box. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a specialty tea to a tea lover. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a catering service for events. Give a 30-second pitch with a hook, proof, and a call to action.",
+
+            // New Medium - Technology Basics
+            "Sell a phone case to a new phone owner. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a simple app to make life easier. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a USB drive to a student. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a streaming service subscription. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a portable charger to a traveler. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a password manager to someone forgetful. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a webcam to someone working from home. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a music streaming service. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a tablet to a casual user. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a cloud storage service. Explain the problem, how the offer helps, and ask for a next step.",
+
+            // New Medium - Services
+            "Sell a haircut to a walk-in customer. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a gym membership. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a car wash service. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a house cleaning service. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a pet grooming appointment. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a photography session. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a language tutoring service. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a personal training session. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a spa treatment. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a home repair service. Give a 30-second pitch with a hook, proof, and a call to action.",
+
+            // New Medium - Retail
+            "Sell a pair of shoes to a shopper. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a jacket to someone looking for outerwear. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell sunglasses to a tourist. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a piece of jewelry as a gift. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a piece of furniture to a homeowner. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a kitchen gadget to a home cook. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a toy to a parent. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a sports equipment item. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a bag to a professional. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a piece of art for home decoration. Explain the problem, how the offer helps, and ask for a next step.",
+
+            // New Medium - Experiences & Entertainment
+            "Sell a movie ticket to someone undecided. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a concert to a music fan. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a museum visit to a tourist. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a theme park day pass. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell an escape room experience. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a cooking class. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a wine tasting tour. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a sports event ticket. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a weekend getaway package. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a dance lesson. Give a 30-second pitch with a hook, proof, and a call to action.",
+
+            // New Medium - Memberships & Subscriptions
+            "Sell a store loyalty card. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a magazine subscription. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a club membership. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a book club membership. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a rewards program sign-up. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a professional association membership. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a streaming bundle. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a premium account upgrade. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell an annual pass to an attraction. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a newsletter subscription. Explain the problem, how the offer helps, and ask for a next step.",
+
+            // New Medium - Local Businesses
+            "Sell your favorite local restaurant to a friend. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a local coffee shop over a chain. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a local farmer's produce. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a local bookstore experience. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a local bakery's specialties. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a local gym over a chain gym. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a local market's unique products. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a local tour guide service. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a local artist's work. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a local food truck. Give a 30-second pitch with a hook, proof, and a call to action.",
+
+            // New Medium - Ideas & Concepts
+            "Sell the idea of reading more books. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch learning a new language. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell the benefits of meditation. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch taking up a new sport. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell the idea of cooking at home more. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch the benefits of journaling. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell adopting a plant-based diet. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch starting a side project. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell the importance of sleep. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch the value of networking. Explain the problem, how the offer helps, and ask for a next step.",
+
+            // New Medium - Miscellaneous Easy Sales
+            "Sell a vacation destination. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a career change to someone unsure. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a piece of advice to a younger person. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch your favorite hobby to a friend. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell an old item you no longer need. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a movie to friends for movie night. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a restaurant for a special occasion. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a weekend activity to family. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell an exercise routine. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a book to someone looking for recommendations. Give a 30-second pitch with a hook, proof, and a call to action.",
+
+            // New Medium - Home Items
+            "Sell a cozy blanket to someone who gets cold easily. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a candle to someone who loves relaxing at home. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a desk organizer to a messy person. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a houseplant to brighten up someone's room. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a picture frame as a thoughtful gift. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a throw pillow to improve a living space. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a wall clock to someone always running late. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a doormat to a new homeowner. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a laundry basket to someone moving apartments. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a shower curtain with a fun design. Explain the problem, how the offer helps, and ask for a next step.",
+
+            // New Medium - Personal Care
+            "Sell a new toothbrush to someone due for an upgrade. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a skincare product to a friend. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a razor with better features. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a shampoo for healthier hair. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell sunscreen to someone going on vacation. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch lip balm for dry weather. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a deodorant with a great scent. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch hand cream for winter months. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a nail care kit to someone who likes grooming. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a hair styling product. Give a 30-second pitch with a hook, proof, and a call to action.",
+
+            // New Medium - Office Supplies
+            "Sell sticky notes to an organized person. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch highlighters to a student. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a stapler to someone setting up a home office. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch paper clips to keep documents organized. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a mousepad for better computer use. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a desk lamp for better lighting. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a whiteboard for brainstorming. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a file folder to organize papers. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell scissors for home and office use. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch tape dispensers as essential supplies. Explain the problem, how the offer helps, and ask for a next step.",
+
+            // New Medium - Snacks & Treats
+            "Sell a bag of chips as a movie night essential. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch cookies as the perfect dessert. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell nuts as a healthy snack option. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch popcorn for a cozy night in. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell candy as a sweet treat. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch crackers for a quick snack. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell dried fruit as a healthy alternative. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch granola bars for on-the-go energy. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell pretzels as a salty snack. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch trail mix for outdoor adventures. Give a 30-second pitch with a hook, proof, and a call to action.",
+
+            // New Medium - Beverages
+            "Sell a bottle of juice as a refreshing drink. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch sparkling water for those who like fizz. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell hot chocolate for cold days. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch lemonade for summer refreshment. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell energy drinks for a busy person. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch herbal tea for relaxation. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a protein shake to a gym-goer. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch coconut water for hydration. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a new soda flavor. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch iced coffee for a caffeine boost. Explain the problem, how the offer helps, and ask for a next step.",
+
+            // New Medium - Outdoor Items
+            "Sell a beach towel to someone planning a trip. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a picnic blanket for outdoor fun. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a frisbee for park activities. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a kite for windy day entertainment. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a camping chair for comfort outdoors. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a cooler for keeping drinks cold. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell bug spray for camping trips. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a flashlight for emergencies. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a reusable shopping bag. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a travel pillow for long trips. Give a 30-second pitch with a hook, proof, and a call to action.",
+
+            // New Medium - Kids' Items
+            "Sell crayons to a parent with young kids. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a coloring book for creative fun. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell building blocks as an educational toy. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a stuffed animal as a gift. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a board game for family game night. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch sidewalk chalk for outdoor play. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a puzzle for rainy day entertainment. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a jump rope for active play. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell bubbles for outdoor fun. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a kids' book for bedtime stories. Explain the problem, how the offer helps, and ask for a next step.",
+
+            // New Medium - Pet Products
+            "Sell dog treats to a pet owner. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a new pet toy. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a pet brush for grooming. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a cozy pet bed. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a leash for daily walks. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a food bowl with better design. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell cat litter as a necessity. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch bird seed to a bird owner. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell fish food to an aquarium owner. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a pet carrier for travel. Give a 30-second pitch with a hook, proof, and a call to action.",
+
+            // New Medium - Seasonal Items
+            "Sell an umbrella before rainy season. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a winter hat for cold weather. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell sandals for summer. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch gloves to keep hands warm. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a fan for hot days. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a scarf as a fashion accessory. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a swimsuit for beach season. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch snow boots for winter. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a raincoat for wet weather. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch sunglasses for bright days. Explain the problem, how the offer helps, and ask for a next step.",
+
+            // New Medium - Simple Electronics
+            "Sell batteries for household devices. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch an extension cord for convenience. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell a night light for bedrooms. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a simple alarm clock. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a basic calculator. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a power strip for multiple devices. Give a 30-second pitch with a hook, proof, and a call to action.",
+            "Sell LED light bulbs for energy savings. Name the customer, explain two benefits, handle one objection, and close politely.",
+            "Pitch a simple remote control. Explain the problem, how the offer helps, and ask for a next step.",
+            "Sell a basic radio. Tailor the pitch to the buyer with one feature and one emotional benefit.",
+            "Pitch a plug-in air freshener. Give a 30-second pitch with a hook, proof, and a call to action."
+        ],
+        boss: [
+            // Boss Mode - previous medium tier
             // B2B Software & Services
             "Pitch Monday.com project management to a 30-person marketing agency that's currently using spreadsheets and missing deadlines",
             "Sell BambooHR to the HR director of a 150-person company that's still tracking employee data in Excel files",
@@ -8304,7 +8741,7 @@ export const topics = {
             "Pitch waste audit and reduction services to a manufacturing plant that's paying €100,000/year in waste disposal fees",
             "Sell an electric delivery van fleet to a courier company whose diesel trucks are banned from entering the city center",
 
-            // Miscellaneous Medium Sales
+            // Miscellaneous Boss Sales
             "Pitch a partnership between your craft brewery and a local pizza restaurant to offer beer and pizza pairing events",
             "Sell your 200-person capacity rooftop venue to a tech company planning their annual holiday party in December",
             "Pitch a McDonald's franchise opportunity to a former corporate executive with €500,000 to invest who wants to run their own business",
@@ -8316,7 +8753,7 @@ export const topics = {
             "Pitch a renewal with new AI features to a customer whose contract expires next month",
             "Sell accounting software to a customer who already uses your payroll system",
 
-            // Additional Medium - HR & Talent Solutions
+            // Additional Boss - HR & Talent Solutions
             "Pitch Greenhouse ATS to an HR director who's tracking 500 applicants per month in a shared inbox",
             "Sell Culture Amp employee engagement surveys to a People team whose Glassdoor rating dropped from 4.2 to 3.1 stars",
             "Pitch 15Five performance management to a scale-up that just hit 200 employees and has no formal review process",
@@ -8328,7 +8765,7 @@ export const topics = {
             "Pitch WorkBright onboarding to an HR manager who takes 2 weeks to complete new hire paperwork",
             "Sell Headspace for Work to an HR director at a tech company where 40% of employees report burnout in surveys",
 
-            // Additional Medium - Manufacturing & Industrial
+            // Additional Boss - Manufacturing & Industrial
             "Pitch a €200,000 CNC milling machine to a machine shop owner who's turning away orders because their 15-year-old equipment is too slow",
             "Sell 3M fall protection harnesses to a construction company whose OSHA inspector just issued a warning",
             "Pitch Zeiss quality inspection cameras to a car parts manufacturer whose defect rate is 3x the industry average",
@@ -8340,7 +8777,7 @@ export const topics = {
             "Pitch Manhattan Associates WMS to an e-commerce fulfillment center that ships 10,000 orders/day but has 5% pick errors",
             "Sell industrial cleaning services to a food processing plant that just failed a health inspection",
 
-            // Additional Medium - Hospitality & Travel
+            // Additional Boss - Hospitality & Travel
             "Pitch Booking.com's partner program to a travel agency that's still booking hotels via phone and fax",
             "Sell OpenTable to a popular restaurant that takes reservations on paper and double-books tables every weekend",
             "Pitch Eventbrite's enterprise platform to a 5,000-seat concert venue that's still using Excel for ticket sales",
@@ -8352,7 +8789,7 @@ export const topics = {
             "Pitch Cloudbeds property management to a boutique hotel managing 3 booking platforms manually with constant overbookings",
             "Sell Optii housekeeping software to a 300-room hotel whose guests complain about rooms not being ready at check-in",
 
-            // Additional Medium - Legal & Compliance
+            // Additional Boss - Legal & Compliance
             "Pitch Clio law practice management to a 10-attorney firm where partners can't track billable hours accurately",
             "Sell DocuSign CLM to a legal team that's managing 2,000 contracts in shared folders with no version control",
             "Pitch Compliance.ai to a fintech whose regulatory team spent 6 months preparing for an audit that still found 12 violations",
@@ -8364,7 +8801,7 @@ export const topics = {
             "Pitch LogicGate risk management to a bank whose risk team uses 50 different spreadsheets",
             "Sell OneTrust privacy compliance to an e-commerce company that has no idea how customer data flows through their systems",
 
-            // Additional Medium - Creative Services
+            // Additional Boss - Creative Services
             "Pitch a €15K brand identity package to a startup that's using a logo their founder made in PowerPoint",
             "Sell a €50K corporate video production to a B2B company whose sales team has no visual content for pitches",
             "Pitch a €10K website redesign to a dentist whose website looks like it's from 2005 and doesn't work on mobile",
@@ -8376,7 +8813,7 @@ export const topics = {
             "Pitch virtual event production to a conference organizer whose last online event had 50% drop-off due to technical issues",
             "Sell print design services to a restaurant that's been photocopying their handwritten menu",
 
-            // Additional Medium - Retail Solutions
+            // Additional Boss - Retail Solutions
             "Pitch Lightspeed inventory to a clothing boutique that runs out of bestsellers while sitting on €30K of dead stock",
             "Sell Shopify to a vintage furniture store with 2 locations that wants to sell online but has no tech skills",
             "Pitch a Starbucks-style rewards app to a 10-location coffee chain that has no customer data",
@@ -8388,7 +8825,7 @@ export const topics = {
             "Pitch Salesforce Commerce Cloud to a specialty retailer that has separate systems for online and in-store inventory",
             "Sell Qualtrics customer feedback to a retail chain whose NPS score dropped but nobody knows why",
 
-            // Additional Medium - Construction & Trades
+            // Additional Boss - Construction & Trades
             "Pitch Procore to a general contractor managing 15 simultaneous projects with paper and WhatsApp messages",
             "Sell €50K in sustainable building materials to a developer whose clients want LEED-certified buildings",
             "Pitch a €20K HVAC upgrade to a property manager whose tenants complain about temperature every summer",
@@ -8400,7 +8837,7 @@ export const topics = {
             "Pitch a €200K office renovation to a law firm that wants to attract young talent but has 1980s decor",
             "Sell a preventive maintenance contract to a building manager who's been fixing things only when they break",
 
-            // Additional Medium - Food & Beverage Industry
+            // Additional Boss - Food & Beverage Industry
             "Pitch Square for Restaurants to a taqueria owner whose current POS crashes during the lunch rush",
             "Sell BlueCart food inventory to a restaurant that threw away €2,000 in spoiled produce last month",
             "Pitch a €30K commercial convection oven to a bakery that can't keep up with demand using home equipment",
@@ -8412,7 +8849,7 @@ export const topics = {
             "Pitch Caterease software to a catering company managing 20 weekly events with paper and memory",
             "Sell Resy reservation platform to a hot restaurant that's either empty or has 2-hour waits with no booking system",
 
-            // Additional Medium - Automotive
+            // Additional Boss - Automotive
             "Pitch CDK dealership management to a car dealer whose sales and service departments use completely different systems",
             "Sell Enterprise Fleet Management to a plumbing company with 15 vans that have no maintenance schedule",
             "Pitch your independent repair shop services to a BMW owner who's tired of paying dealer prices",
@@ -8424,7 +8861,7 @@ export const topics = {
             "Pitch bulk tire replacement to a logistics company whose delivery vans have worn tires that increase fuel costs",
             "Sell a 3-year vehicle lease program to a sales team of 10 who currently use personal cars and request mileage reimbursement",
 
-            // Additional Medium - Nonprofit & Association
+            // Additional Boss - Nonprofit & Association
             "Pitch Bloomerang donor management to a charity whose major donor hasn't been thanked in 6 months and stopped giving",
             "Sell GoFundMe Charity to a local animal shelter that raised €5,000 last year but could raise €50,000 with better tools",
             "Pitch Wild Apricot to a professional association of 2,000 members that can't track who's renewed membership",
@@ -8435,247 +8872,6 @@ export const topics = {
             "Sell Phone2Action advocacy platform to a political organization that wants members to contact legislators but has no easy way",
             "Pitch Aplos nonprofit accounting to a church treasurer who's been using personal Quicken for a €500K annual budget",
             "Sell Classy online giving to a museum that only accepts donations by check and is missing out on impulse gifts"
-        ],
-        boss: [
-            // Enterprise Sales
-            "Pitch a €10M Salesforce implementation to the CEO, CFO, and CIO of a €500M manufacturing company that's been running on paper and tribal knowledge",
-            "Sell a 3-year digital transformation program to a 150-year-old bank whose online banking app crashes weekly and loses customers to fintechs",
-            "Pitch a €5M/year Microsoft enterprise agreement to the CTO of a 10,000-employee company currently using 47 different software vendors",
-            "Sell a global SAP implementation across 30 countries to a multinational whose subsidiaries all have incompatible systems",
-            "Pitch a strategic AI partnership to the CEO of Coca-Cola for personalized marketing across 200 markets",
-            "Sell a €2M/year Palo Alto enterprise security stack to the CISO of a hospital system that just had a ransomware attack",
-            "Pitch a complete AWS migration to the CTO of an insurance company whose mainframe team is retiring in 3 years",
-            "Sell LinkedIn Learning for all 50,000 employees to the Chief Learning Officer of a global consulting firm",
-            "Pitch a €20M AI/ML platform implementation to a pharmaceutical company that wants to cut drug discovery time in half",
-            "Sell an integrated Oracle ERP platform to the CEO of a €2B company whose finance, HR, and supply chain are all different systems",
-
-            // Strategic Partnerships
-            "Pitch a strategic alliance between Spotify and your fitness equipment company to pre-install workout playlists",
-            "Sell a 50/50 joint venture to establish a €100M factory in Vietnam to both boards of your company and a local manufacturer",
-            "Pitch exclusive European distribution rights for a popular Korean skincare brand to the board",
-            "Sell a co-development deal where your pharma company and a biotech share R&D costs on a cancer drug, splitting future revenues",
-            "Pitch a patent licensing deal for your battery technology to Tesla's VP of Strategic Partnerships",
-            "Sell a 'merger of equals' between two regional airlines to create a national carrier to both boards",
-            "Pitch a €50M strategic investment from Softbank to fuel your logistics startup's expansion into Asia",
-            "Sell a technology partnership between your payment startup and Visa to their innovation committee",
-            "Pitch a go-to-market partnership where Salesforce resells your product to their enterprise customers",
-            "Sell membership in a new sustainability consortium to CEOs of the 5 largest apparel companies",
-
-            // Investment & Funding
-            "Pitch your Series A: €8M for 20% of an AI-powered recruiting platform with €500K ARR and 300% growth to Andreessen Horowitz",
-            "Sell a €200M manufacturing company as an acquisition target to a private equity firm looking for roll-up opportunities",
-            "Pitch a €5M real estate investment opportunity to a family office: a distressed hotel that can be converted to apartments",
-            "Sell your €500M company's IPO opportunity to Goldman Sachs and Morgan Stanley, competing for lead underwriter",
-            "Pitch €100M debt financing to a consortium of banks for a logistics company with solid cash flow but no hard assets",
-            "Sell your €2B infrastructure fund to CalPERS pension fund managers looking for stable returns",
-            "Pitch a €300M mixed-use development in downtown Miami to a consortium of real estate investors",
-            "Sell a €5B offshore wind farm project to Norway's sovereign wealth fund as a 30-year infrastructure play",
-            "Pitch your medtech startup to 15 angel investors at a demo day: you need €1M and have 5 minutes",
-            "Sell €50M growth equity opportunity in your profitable but slow-growing B2B software company to Insight Partners",
-
-            // Complex Solution Sales
-            "Pitch a €15M solution spanning HR, Finance, and Operations to a company where each VP wants something different",
-            "Sell replacing the CEO's pet software project that cost €5M with your competitor's product",
-            "Pitch managed IT services to a manufacturing CEO who believes 'we should do everything in-house'",
-            "Sell HR outsourcing to a tech company whose employees are nervous about losing their HR team",
-            "Pitch a specialized airline maintenance software to carriers who've used the same system for 25 years",
-            "Sell a €2M McKinsey engagement to figure out why the company is losing market share",
-            "Pitch a €5M custom mobile app development to a retailer who could use an off-the-shelf solution",
-            "Sell systems integration across Oracle, Salesforce, and 15 legacy systems to a company that's tried twice and failed",
-            "Pitch outsourcing your entire customer service operation to the Philippines to a CEO who values 'American jobs'",
-            "Sell modernizing a 40-year-old COBOL banking system to a board terrified of a failed migration",
-
-            // Government & Institutional
-            "Pitch your cybersecurity solution to a government committee where 8 stakeholders each have different priorities",
-            "Sell a €20M learning management system to a university board split between budget cuts and innovation",
-            "Pitch AI-powered diagnostics to hospital administrators worried about liability and doctor pushback",
-            "Sell a €5M donation to renovate a museum wing to a nonprofit board that's divided on priorities",
-            "Pitch a €500M defense surveillance system to Pentagon officials who prefer your competitor",
-            "Sell a €10M smart city initiative to a city council where half the members think it's a waste of taxpayer money",
-            "Pitch UN adoption of your supply chain transparency platform for humanitarian aid delivery",
-            "Sell your new drug approval process to FDA officials who are under pressure to speed things up but also be more careful",
-            "Pitch a public-private partnership to build a €2B toll road where the government bears the risk but you take the profits",
-            "Sell your climate monitoring satellite network to the World Bank for developing country use",
-
-            // Transformation & Change
-            "Pitch a complete organizational restructure to a board whose company hasn't changed in 30 years and is losing to startups",
-            "Sell a €3M Kotter change management program to executives who think 'our people hate change'",
-            "Pitch a radical culture transformation from 'command and control' to 'agile squads' to a 100-year-old bank",
-            "Sell McKinsey restructuring advisory to a family business whose patriarch refuses to admit the company is dying",
-            "Pitch a turnaround strategy to the board of a retail chain that's lost money for 8 straight quarters",
-            "Sell a 'respond or die' digital transformation plan to a newspaper whose print revenue dropped 80%",
-            "Pitch an innovation lab to a 50-year-old insurance company that hasn't launched a new product in a decade",
-            "Sell a subscription business model to a company that's sold one-time purchases for 40 years",
-            "Pitch a complete brand repositioning from 'budget' to 'premium' to a retailer trapped in price wars",
-            "Sell a competitive response plan to a CEO who's in denial about Amazon entering their market",
-
-            // High-Value Negotiations
-            "Pitch a creative deal structure involving cash, equity, and earnouts to make a €50M acquisition work for all parties",
-            "Sell your €3M solution when 4 competitors bid €1M each—justify the premium to a value-focused procurement team",
-            "Pitch 40% higher pricing to a CFO who just announced cost-cutting measures across the company",
-            "Sell favorable payment terms when the customer's legal team has rejected every clause in your contract",
-            "Pitch a 5-year exclusive partnership when competitors are offering flexibility and no commitment",
-            "Sell a 3-year contract to a CMO who 'never signs anything longer than 12 months'",
-            "Pitch a risk-sharing model where you get paid only if the customer achieves specific outcomes",
-            "Sell a pure performance-based pricing model to your own leadership who prefer guaranteed revenue",
-            "Pitch a creative solution—free first year, premium second year—to overcome budget timing objections",
-            "Sell strategic long-term value to a procurement team evaluated only on quarterly savings",
-
-            // Crisis & Turnaround
-            "Pitch your crisis management firm to a CEO whose company is on the front page for a product safety scandal",
-            "Sell reputation repair services to a fast-food chain after a viral video showed rats in the kitchen",
-            "Pitch Chapter 11 restructuring advisory to a proud founder who refuses to admit bankruptcy is the best option",
-            "Sell yourself as interim CEO to a board that just fired their CEO and needs someone in 48 hours",
-            "Pitch litigation support to a company facing a €500M patent infringement lawsuit they might lose",
-            "Sell disaster recovery services to a hospital whose entire IT system went down for 3 days",
-            "Pitch recovery and remediation to a financial services firm whose trading floor was destroyed by flooding",
-            "Sell yourself as interim CFO to a startup whose CFO just quit with no notice and Series B closing in 4 weeks",
-            "Pitch an emergency compliance solution to a company whose regulator just gave them 90 days to fix issues or face shutdown",
-            "Sell audit remediation services to a company whose Big 4 auditor just issued a going concern warning",
-
-            // Competitive Displacement
-            "Pitch replacing SAP (who they've used for 15 years) with your cloud ERP—the decision maker's career depends on SAP",
-            "Sell switching from Oracle to Salesforce when the customer has spent €10M on Oracle customizations",
-            "Pitch consolidating 12 different point solutions into your single platform, displacing 12 different vendors",
-            "Sell your CRM against Salesforce to a company where every sales rep knows Salesforce by heart",
-            "Pitch your cloud solution to a company whose IT team has spent careers maintaining on-premise infrastructure",
-            "Sell your innovative approach over the customer's 20-year relationship with your competitor's sales rep",
-            "Pitch 'your current solution will fail in 3 years' to a CIO who just told the board everything is fine",
-            "Sell €500K total cost of ownership versus competitor's €200K purchase price to a procurement team measured on upfront cost",
-            "Pitch strategic AI capabilities to a customer who only asked for basic reporting and doesn't think they need more",
-            "Sell future-proof architecture to a company that wants exactly what they have today, just slightly cheaper",
-
-            // Miscellaneous Boss Sales
-            "Pitch yourself as the answer to 'we're losing to Amazon' when the customer hasn't even articulated that's their problem",
-            "Sell a vision of AI-powered everything to a board that thinks AI is hype and wants to see immediate ROI",
-            "Pitch a €50M partnership that requires the customer to fundamentally change how they do business",
-            "Sell management consulting at €500K when the customer can hire 3 MBAs full-time for the same price",
-            "Pitch a 10-year infrastructure investment to a CEO evaluated on quarterly earnings",
-            "Sell 'trust me' to a board that's been burned by vendors making promises and not delivering",
-            "Pitch yourself as their strategic advisor when they've explicitly said 'we just want a vendor, not a partner'",
-            "Sell a 10-year relationship to a customer running a 'procurement optimization' project to reduce vendor relationships",
-            "Pitch 'I'm willing to walk away from this deal' when your CEO is pressuring you to close at any price",
-            "Sell why you're worth 3x the price to the founder who built the company bootstrapped and hates spending money",
-
-            // Additional Boss - Industry Transformation
-            "Pitch membership in a new European EV battery recycling consortium to CEOs of BMW, Mercedes, and Volkswagen",
-            "Sell a common USB-C charging standard to Apple, Samsung, and Google when each has their own proprietary system",
-            "Pitch your payment platform as the industry standard to 50 competing banks who hate collaborating",
-            "Sell a shared customer fraud database to 10 insurance companies who are also competitors",
-            "Pitch a €100M joint pharma research initiative on Alzheimer's to Pfizer and Novartis leadership",
-            "Sell yourself as the new president of the European Banking Association to member bank CEOs",
-            "Pitch a fashion industry sustainability pledge to fast-fashion giants H&M and Zara whose business models create waste",
-            "Sell shared warehousing and logistics to 5 competing e-commerce companies to reduce costs",
-            "Pitch a €500M autonomous vehicle consortium to Ford, GM, and Toyota to compete with Tesla",
-            "Sell an industry-wide digital transformation roadmap to shipping company CEOs who've used paper for 100 years",
-
-            // Additional Boss - Global Expansion
-            "Pitch a China market entry strategy to your board: €50M investment, 3-year payback, significant regulatory risk",
-            "Sell exclusive distribution rights for Japan to a local company that also distributes your competitor",
-            "Pitch a 50/50 joint venture with an Indian conglomerate to manufacture locally and avoid tariffs",
-            "Sell moving 60% of production from China to Vietnam to your board worried about supply chain concentration",
-            "Pitch opening 200 McDonald's franchises across Nigeria to the McDonald's global expansion committee",
-            "Sell establishing a Brazilian subsidiary to your CFO who's worried about currency volatility and bureaucracy",
-            "Pitch a shared services center in Poland for all European operations to country managers who'll lose headcount",
-            "Sell acquiring a German competitor to your board to get EU market access post-Brexit",
-            "Pitch a simultaneous 15-country product launch to operations teams who prefer phased rollouts",
-            "Sell opening flagship stores in Dubai, Singapore, and Sydney to the CEO who thinks 'one market at a time'",
-
-            // Additional Boss - Technology Platforms
-            "Pitch transforming from selling software to becoming a platform like Apple's App Store to a traditional enterprise software CEO",
-            "Sell opening your APIs to third-party developers to a CTO who's worried about security and control",
-            "Pitch selling customer data to advertisers to a board that's concerned about privacy backlash",
-            "Sell deep platform integration to an enterprise customer who got burned by vendor lock-in before",
-            "Pitch white-labeling your fintech platform to 50 banks who will resell it under their own brands",
-            "Sell an Amazon-style marketplace model to a B2B distributor whose sales team fears losing commissions",
-            "Pitch acquiring a €200M AI platform company to your board who thinks 'we should build, not buy'",
-            "Sell platform transformation to a legacy retailer: become a marketplace, let competitors sell on your site",
-            "Pitch investing €20M in developer relations to a CEO who asks 'why would we pay developers to use our API?'",
-            "Sell a platform partnership to Microsoft: integrate your product with Teams in exchange for revenue sharing",
-
-            // Additional Boss - Private Equity & M&A
-            "Pitch a €300M leveraged buyout of a manufacturing company to Blackstone using mostly debt",
-            "Sell carving out a €150M division from a conglomerate to KKR for a standalone PE play",
-            "Pitch a management buyout to your executive team: take €10M of personal risk to own the company",
-            "Sell a 'buy and build' strategy in dental practices to a PE firm: acquire 100 dentists in 5 years",
-            "Pitch acquiring your competitor to your PE owner to create scale and raise margins",
-            "Sell a 51% majority stake in your family business to a strategic investor while keeping operational control",
-            "Pitch €30M growth equity to Tiger Global: you're profitable but need capital to beat VC-funded competitors",
-            "Sell a distressed hotel chain to a turnaround specialist who specializes in hospitality",
-            "Pitch a recapitalization to a third-generation family business: take out dividends while bringing in new capital",
-            "Sell a secondary transaction: your early investors want out, convince new investors to buy their stake",
-
-            // Additional Boss - Healthcare & Life Sciences
-            "Pitch a co-development partnership on a cancer drug to Pfizer: you have the molecule, they have the distribution",
-            "Sell a €100M surgical robotics platform to a 20-hospital health system whose surgeons prefer open surgery",
-            "Pitch your clinical trial management platform to a biotech whose last two trials failed due to patient recruitment",
-            "Sell a €50M electronic health records overhaul to a hospital system whose doctors hate the current system but hate change more",
-            "Pitch population health analytics to Blue Cross Blue Shield to identify high-risk patients before they get sick",
-            "Sell your genomic sequencing platform to a research university competing with rivals who have better equipment",
-            "Pitch your telemedicine platform to Kaiser Permanente, which has its own proprietary system already",
-            "Sell predictive analytics to an insurance company that wants to deny claims before they happen",
-            "Pitch a drug development partnership to share €500M in R&D costs with Merck for a diabetes drug",
-            "Sell a medical research collaboration with your university hospital to a pharma company that prefers working alone",
-
-            // Additional Boss - Financial Services
-            "Pitch a complete core banking platform replacement to a 100-year-old bank whose last IT project failed spectacularly",
-            "Sell a fintech partnership to a traditional bank whose branch managers see you as a threat to their jobs",
-            "Pitch your insurtech platform to Allianz leadership who built their own solution that's 70% complete",
-            "Sell a roboadvisor platform to a wealth management firm whose advisors fear being replaced by algorithms",
-            "Pitch becoming Stripe's payment processor for European expansion to their executive team",
-            "Sell your anti-money-laundering AI to a bank that just paid a €2B fine and doesn't trust vendors",
-            "Pitch institutional Bitcoin custody to a pension fund whose trustees think crypto is gambling",
-            "Sell your trading platform to a hedge fund that's built all their tech in-house for 20 years",
-            "Pitch your financial data platform to Citadel, who builds everything proprietary",
-            "Sell your lending platform to a credit union whose members expect human relationships, not algorithms",
-
-            // Additional Boss - Energy & Infrastructure
-            "Pitch a €2B solar farm project to a coal-state utility whose customers and regulators resist renewables",
-            "Sell a €10B toll road as an infrastructure investment to Ontario Teachers' Pension Fund",
-            "Pitch smart grid technology to a utility board that's worried about hackers taking down the power grid",
-            "Sell a €500M battery storage facility to a grid operator who doesn't understand how storage works",
-            "Pitch a €1B carbon capture facility to ExxonMobil's sustainability team as part of their net-zero commitment",
-            "Sell a city-wide EV charging network to a city council split between environmentalists and budget hawks",
-            "Pitch a €300M desalination plant to a drought-stricken California regional water authority",
-            "Sell a €1B 5G network infrastructure deal to Vodafone for rural coverage they don't want to build",
-            "Pitch an electricity trading platform to utilities who've traded by phone for 30 years",
-            "Sell a €5B sustainable infrastructure fund to pension funds that have never invested in 'green' before",
-
-            // Additional Boss - Media & Entertainment
-            "Pitch exclusive streaming rights for your hit TV show to Netflix, who's competing against Amazon and Apple",
-            "Sell the acquisition of a struggling movie studio to Disney's M&A team looking for content",
-            "Pitch a €3B Premier League broadcasting package to Sky Sports, who's losing subscribers to streaming",
-            "Sell a €500M mobile gaming studio to Sony, who's late to mobile and losing to Tencent",
-            "Pitch investment in your content studio to Silver Lake PE: 'We're the next Marvel Studios'",
-            "Sell Bob Dylan's €300M music catalog to a hedge fund who's never invested in music before",
-            "Pitch your programmatic advertising platform to P&G's media buyers who've been burned by ad fraud",
-            "Sell a live events platform (concerts, sports) to Live Nation as they rebuild post-pandemic",
-            "Pitch licensing your anime library to Crunchyroll when Sony and Netflix are also bidding",
-            "Sell audience analytics to The New York Times whose advertising revenue is declining",
-
-            // Additional Boss - Real Estate & Development
-            "Pitch a €2B real estate fund focused on logistics warehouses to institutional investors skeptical of commercial real estate",
-            "Sell a €500M office tower development to a pension fund that's worried about remote work trends",
-            "Pitch a €100M REIT investment in medical office buildings to a family office that prefers residential",
-            "Sell a €300M mixed-use development with housing, retail, and offices to a city council worried about affordability",
-            "Pitch a portfolio of 20 warehouses near Amazon fulfillment centers to DHL as their new logistics hub",
-            "Sell a 15-hotel portfolio to Marriott, who's trying to stay asset-light but needs these locations",
-            "Pitch a €200M affordable housing development to HUD with tax credits and community opposition",
-            "Sell a 10-property senior living portfolio to Welltower REIT whose stock is down on COVID concerns",
-            "Pitch a €150M student housing development next to UCLA to the university that wants control but not ownership",
-            "Sell a €1B hyperscale data center development to Microsoft for Azure cloud expansion",
-
-            // Additional Boss - Sovereign & Institutional
-            "Pitch a €20B high-speed rail project to Saudi Arabia's Public Investment Fund as part of Vision 2030",
-            "Sell privatizing the national postal service to a government facing budget deficits and union resistance",
-            "Pitch a public-private partnership to rebuild Florida's hurricane-damaged ports to the state government",
-            "Sell a special economic zone development to Rwanda's government to attract foreign manufacturing",
-            "Pitch a €5B climate adaptation fund to the World Bank for vulnerable developing countries",
-            "Sell a national digital identity platform to India's government, post-Aadhaar concerns about privacy",
-            "Pitch a €2B border security technology solution to the EU's border agency Frontex",
-            "Sell a complete healthcare system transformation to the UK's NHS, which has failed reforms before",
-            "Pitch a national online learning platform to Brazil's Ministry of Education for 50 million students",
-            "Sell a €10B smart city development in Indonesia's new capital to the government and investors"
         ]
     }
 };

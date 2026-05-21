@@ -50,29 +50,29 @@ const getPageSeo = ({ isTalkTheTalkOpen, landingPageType, language }) => {
 
   if (landingPageType === 'local') {
     return {
-      title: 'Clases de Inglés Online y Presenciales en Castelldefels, Gavà y Viladecans',
-      description: 'Clases de inglés online con opción presencial en Castelldefels, Gavà y Viladecans. Conversación, confianza, preparación Cambridge e inglés para el trabajo con Auris.',
+      title: 'Clases Particulares de Inglés en Castelldefels | English with Auris',
+      description: 'Clases particulares de inglés online y en Castelldefels, Gavà y Viladecans con Auris. Conversación, confianza, Cambridge e inglés para el trabajo.',
       canonical: 'https://englishwithauris.com/clases-ingles-castelldefels',
     };
   }
 
   if (landingPageType === 'business') {
     return {
-      title: 'Inglés para Empresas y Profesionales en Castelldefels | English with Auris',
-      description: 'Clases prácticas de inglés para empresas, equipos y profesionales. Formación online o local cerca de Castelldefels, con factura con NIF disponible.',
+      title: 'Clases de Inglés para Empresas y Profesionales | English with Auris',
+      description: 'Clases prácticas de inglés para profesionales, autónomos y pequeños equipos. Online o local cerca de Castelldefels, con factura con NIF disponible.',
       canonical: 'https://englishwithauris.com/ingles-empresas-castelldefels',
     };
   }
 
   return language === 'es'
     ? {
-        title: 'Clases de Inglés Online y en Castelldefels | English with Auris',
-        description: 'Clases de inglés online centradas en conversación real, confianza y mejora constante. Presenciales por Castelldefels cuando encaja.',
+        title: 'Clases Particulares de Inglés Online y en Castelldefels | English with Auris',
+        description: 'Clases particulares de inglés online con Auris, profesor bilingüe criado en Irlanda. Conversación, confianza, Cambridge e inglés para el trabajo.',
         canonical: 'https://englishwithauris.com/',
       }
     : {
-        title: 'English Classes Online & in Castelldefels | English with Auris',
-        description: 'Online English classes focused on real conversation, confidence and steady progress. In-person available around Castelldefels when it fits.',
+        title: 'Private English Classes Online & in Castelldefels | English with Auris',
+        description: 'Private English classes with Auris, a bilingual teacher raised in Ireland. Conversation, confidence, Cambridge preparation and English for work.',
         canonical: 'https://englishwithauris.com/',
       };
 };

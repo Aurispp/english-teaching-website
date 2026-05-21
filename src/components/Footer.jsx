@@ -2,7 +2,14 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
-    const { t } = useLanguage();
+    const { language, t } = useLanguage();
+    const footerLinks = [
+        { href: '/', label: language === 'es' ? 'Inicio' : 'Home' },
+        { href: '/clases-ingles-castelldefels', label: language === 'es' ? 'Clases particulares' : 'Private classes' },
+        { href: '/ingles-empresas-castelldefels', label: language === 'es' ? 'Empresas y profesionales' : 'Business English' },
+        { href: '/talkthetalk', label: 'Talk the Talk' },
+        { href: '#contact', label: language === 'es' ? 'Contacto' : 'Contact' },
+    ];
 
     return (
         <footer className="py-8 sm:py-12 text-center bg-gradient-to-b from-white to-primary-50/30 border-t border-primary-100">
@@ -10,6 +17,18 @@ const Footer = () => {
                 <div className="flex items-center justify-center mb-4 sm:mb-5">
                     <span className="text-primary-600 font-medium">{t('nav.brand')}</span>
                 </div>
+
+                <nav aria-label="Footer navigation" className="mb-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-600">
+                    {footerLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            className="transition-colors hover:text-primary-700"
+                        >
+                            {link.label}
+                        </a>
+                    ))}
+                </nav>
 
                 {/* Student Portal Link */}
                 <div className="mb-5 sm:mb-6">

@@ -372,7 +372,7 @@ export const translations = {
         }
       },
       private: {
-        title: "Clases Privadas",
+        title: "Clases Particulares",
         description: "Clases 1-a-1 adaptadas a ti",
         price: "40€",
         features: [
