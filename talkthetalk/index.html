@@ -6,11 +6,9 @@
   <title>Free English Speaking Practice Tool | Talk the Talk</title>
 
   <!-- Google Analytics 4 (with Consent Mode v2 — starts denied, banner promotes to granted) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDW7H0VQBC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
     gtag('consent', 'default', {
       'ad_storage': 'denied',
@@ -28,8 +26,10 @@
       }
     } catch (e) {}
 
+    gtag('js', new Date());
     gtag('config', 'G-VDW7H0VQBC', { anonymize_ip: true });
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDW7H0VQBC"></script>
 
   <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16" />
