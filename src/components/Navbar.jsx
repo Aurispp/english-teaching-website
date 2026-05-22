@@ -8,8 +8,6 @@ const Navbar = ({ onTalkTheTalkClick }) => {
   const { language, setLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef(null);
-  const localClassesLabel = language === 'es' ? 'Clases particulares' : 'Private classes';
-  const businessClassesLabel = language === 'es' ? 'Empresas' : 'Business English';
   const talkTheTalkLabel = 'Talk the Talk';
 
   // Close menu when clicking outside
@@ -102,21 +100,6 @@ const Navbar = ({ onTalkTheTalkClick }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="/clases-ingles-castelldefels"
-              className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-[#FF914D] rounded-lg transition-colors"
-            >
-              {localClassesLabel}
-            </a>
-            <a
-              href="/ingles-empresas-castelldefels"
-              className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-[#FF914D] rounded-lg transition-colors"
-            >
-              {businessClassesLabel}
-            </a>
-
-            <div className="w-px h-6 bg-gray-200" />
-
             {/* Talk the Talk - Free Practice Tool */}
             <a
               href="/talkthetalk"
@@ -211,22 +194,6 @@ const Navbar = ({ onTalkTheTalkClick }) => {
                       <div className="font-semibold text-gray-900">{talkTheTalkLabel}</div>
                       <div className="text-xs text-gray-500">Free speaking practice</div>
                     </div>
-                  </a>
-
-                  <a
-                    href="/clases-ingles-castelldefels"
-                    className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <span className="font-medium">{localClassesLabel}</span>
-                  </a>
-
-                  <a
-                    href="/ingles-empresas-castelldefels"
-                    className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <span className="font-medium">{businessClassesLabel}</span>
                   </a>
 
                   <a
