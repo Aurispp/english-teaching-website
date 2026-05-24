@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Calendar, Play, RotateCcw, Shuffle, Check, Phone, Mail, GraduationCap, LogIn, X, ChevronRight } from 'lucide-react';
+import { Play, RotateCcw, Shuffle, Check, Mail, GraduationCap, LogIn, X, ChevronRight } from 'lucide-react';
 import { themes, difficulties, getRandomTopic } from '../data/speakingTopics';
 import { getThemeIcon, getDifficultyIcon } from './ThemeIcons';
 import { useLanguage } from '../context/LanguageContext';
@@ -7,9 +7,8 @@ import Hourglass from './Hourglass';
 import whatsappIcon from '../whatsapp.webp';
 import { trackEvent } from '../utils/analytics';
 
-const CALENDLY_TRIAL_URL =
-    import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/aurienglish/trial-class';
-const TALK_TRIAL_URL = `${CALENDLY_TRIAL_URL}${CALENDLY_TRIAL_URL.includes('?') ? '&' : '?'}utm_source=talkthetalk&utm_medium=tool&utm_campaign=completion_cta`;
+const TALK_CONTACT_URL =
+    'https://wa.me/34684082221?text=Hi%20Auris%2C%20I%20tried%20Talk%20the%20Talk%20and%20wanted%20to%20ask%20about%20English%20classes.';
 
 /**
  * Talk the Talk - Free Speech Practice Tool
@@ -302,11 +301,6 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
     const contactLinks = [
-        {
-            icon: <Phone className="w-5 h-5" />,
-            href: "tel:+34684082221",
-            label: "Call"
-        },
         {
             icon: <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5 object-contain" />,
             href: "https://wa.me/34684082221",
@@ -714,16 +708,16 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                 New topic
                             </button>
                             <a
-                                href={TALK_TRIAL_URL}
+                                href={TALK_CONTACT_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                onClick={() => trackTalkEvent('talk_trial_click', {
+                                onClick={() => trackTalkEvent('talk_contact_click', {
                                     practiced_seconds: duration - timeRemaining,
                                 })}
-                                className="flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 text-white font-medium rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl transition-all"
+                                className="flex items-center justify-center gap-2 rounded-xl bg-primary-50 py-4 font-medium text-primary-700 ring-1 ring-primary-200 transition-all hover:bg-primary-100"
                             >
-                                <Calendar className="w-4 h-4" />
-                                Book a free trial
+                                <img src={whatsappIcon} alt="" className="w-4 h-4 object-contain" />
+                                Message Auris
                             </a>
                         </div>
                         <button

@@ -12,7 +12,7 @@ export const translations = {
       journey: "Your English Journey Starts Here",
       title: "Hello! I'm Auris, and I help Spanish speakers speak English with confidence",
       subtitle: "Online English classes focused on real conversation, confidence and steady progress. In-person available around Castelldefels when it fits.",
-      cta: "Book your free trial class",
+      cta: "Send me a message",
       alreadyStudent: "Already a student?",
       loginLink: "Log in to your portal",
       badges: {
@@ -23,9 +23,11 @@ export const translations = {
     },
     pricing: {
       title: "Classes & Pricing",
-      trialCta: "Book your free trial",
-      mostPopular: "Most popular",
+      trialCta: "Send me a message",
       perHour: "per hour",
+      availability: {
+        note: "I’m usually close to full, but you can message me about future availability."
+      },
       included: {
         title: "Included with every class",
         items: [
@@ -38,17 +40,6 @@ export const translations = {
       billing: {
         title: "Professional billing available",
         description: "For companies, teams and freelancers, I work professionally as a registered autónomo in Spain and can issue invoices with NIF."
-      },
-      contact: {
-        button: "Book free trial",
-        dialog: {
-          title: "Let's get in touch",
-          description: "Choose how you'd like to connect:",
-          phone: "Give me a call",
-          whatsapp: "WhatsApp me",
-          email: "Send an email",
-          close: "Close"
-        }
       },
       private: {
         title: "Private Classes",
@@ -65,7 +56,7 @@ export const translations = {
         title: "Group Classes",
         description: "Small groups of 2–4 motivated learners",
         price: "20€",
-        waitlist: "Book a placement call",
+        waitlist: "Message me about groups",
         features: [
           "Small groups (2–4 students)",
           "Lower price per person",
@@ -253,33 +244,16 @@ export const translations = {
     },
     contact: {
       title: 'Curious to learn more?',
-      subtitle: "Let's have a friendly chat about your goals and see if I can help",
-      cta: 'schedule a conversation',
-      form: {
-        name: 'Name',
-        email: 'Email',
-        message: 'Message',
-        namePlaceholder: 'Your name',
-        emailPlaceholder: 'your@email.com',
-        messagePlaceholder: 'What would you like to know?',
-        sending: 'Sending...',
-        send: 'Send Message',
-        successMessage: "Message sent successfully! We'll get back to you soon.",
-        errorMessage: 'Failed to send message: '
+      subtitle: "Send me a WhatsApp or email with your goals, and I’ll let you know honestly if I can help.",
+      whatsapp: {
+        title: 'WhatsApp me',
+        description: 'Usually the easiest way to ask about classes or future availability.'
       },
-      directContact: 'Contact Information',
-      sendMessage: 'Send Message',
-      bookTrial: 'Book',
-      bookTrialHeading: 'Pick a time for your free 1-hour trial class',
-      bookTrialSub: "First class is free — a chance for us to meet and see if we're a good fit.",
-      bookGroupHeading: 'Book a group placement call',
-      bookGroupSub: 'A 30-minute chat to find the right group and schedule for you.',
-      booking: {
-        trial: 'Free trial (1-on-1)',
-        group: 'Placement call (groups)'
+      email: {
+        title: 'Email me',
+        description: 'Best if you want to explain your goals or ask about invoices, groups, or work English.'
       },
-      switchToForm: 'Or send a message instead',
-      switchToDirect: 'Or contact me directly'
+      availabilityNote: "I’m usually close to full, so this is just a simple way to start the conversation and see whether a future slot fits.",
     },
     images: {
       barcelona: 'Barcelona cityscape',
@@ -333,7 +307,7 @@ export const translations = {
       journey: "Tu camino con el inglés empieza aquí",
       title: "¡Hola! Soy Auris y ayudo a hispanohablantes a hablar inglés con confianza",
       subtitle: "Clases de inglés online centradas en conversación real, confianza y mejora constante. Presenciales por Castelldefels cuando encaja.",
-      cta: "Reserva tu clase de prueba gratis",
+      cta: "Escríbeme",
       alreadyStudent: "¿Ya eres estudiante?",
       loginLink: "Accede a tu portal",
       badges: {
@@ -344,9 +318,11 @@ export const translations = {
     },
     pricing: {
       title: "Clases y Precios",
-      trialCta: "Reserva tu prueba gratis",
-      mostPopular: "Más popular",
+      trialCta: "Escríbeme",
       perHour: "por hora",
+      availability: {
+        note: "Normalmente tengo la agenda bastante llena, pero puedes escribirme para futuras plazas."
+      },
       included: {
         title: "Incluido en cada clase",
         items: [
@@ -359,17 +335,6 @@ export const translations = {
       billing: {
         title: "Factura con NIF disponible",
         description: "Trabajo como autónomo dado de alta, así que para empresas, equipos y profesionales puedo emitir factura con NIF."
-      },
-      contact: {
-        button: "Reserva prueba gratis",
-        dialog: {
-          title: "Ponte en contacto",
-          description: "Elige cómo quieres conectar:",
-          phone: "Llámame",
-          whatsapp: "WhatsApp",
-          email: "Enviar un email",
-          close: "Cerrar"
-        }
       },
       private: {
         title: "Clases Particulares",
@@ -386,7 +351,7 @@ export const translations = {
         title: "Clases en Grupo",
         description: "Grupos pequeños de 2–4 estudiantes motivados",
         price: "20€",
-        waitlist: "Reserva llamada de nivel",
+        waitlist: "Pregúntame por grupos",
         features: [
           "Grupos pequeños (2–4 estudiantes)",
           "Precio más bajo por persona",
@@ -561,33 +526,16 @@ export const translations = {
     },
     contact: {
       title: '¿Quieres saber más?',
-      subtitle: "Tengamos una charla sobre tus objetivos y vemos si puedo ayudarte",
-      cta: 'agenda una conversación',
-      form: {
-        name: 'Nombre',
-        email: 'Correo electrónico',
-        message: 'Mensaje',
-        namePlaceholder: 'Tu nombre',
-        emailPlaceholder: 'tu@correo.com',
-        messagePlaceholder: '¿Qué te gustaría saber?',
-        sending: 'Enviando...',
-        send: 'Enviar Mensaje',
-        successMessage: '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.',
-        errorMessage: 'Error al enviar el mensaje: '
+      subtitle: "Escríbeme por WhatsApp o email con tus objetivos y te diré con sinceridad si puedo ayudarte.",
+      whatsapp: {
+        title: 'Escríbeme por WhatsApp',
+        description: 'Normalmente es la forma más fácil de preguntar por clases o futuras plazas.'
       },
-      directContact: 'Información de Contacto',
-      sendMessage: 'Enviar Mensaje',
-      bookTrial: 'Reservar',
-      bookTrialHeading: 'Elige un horario para tu clase de prueba gratis (1 hora)',
-      bookTrialSub: 'La primera clase es gratis — para conocernos y ver si encajamos.',
-      bookGroupHeading: 'Reserva una llamada de nivel',
-      bookGroupSub: 'Una charla de 30 minutos para encontrar el grupo y horario que te encaja.',
-      booking: {
-        trial: 'Prueba gratis (1-a-1)',
-        group: 'Llamada de nivel (grupos)'
+      email: {
+        title: 'Envíame un email',
+        description: 'Mejor si quieres explicar tus objetivos o preguntar por facturas, grupos o inglés profesional.'
       },
-      switchToForm: 'O envía un mensaje',
-      switchToDirect: 'O contáctame directamente'
+      availabilityNote: 'Normalmente tengo la agenda bastante llena, así que esto es simplemente una forma de empezar la conversación y ver si encaja una plaza futura.',
     },
     images: {
       barcelona: 'Vista de Barcelona',

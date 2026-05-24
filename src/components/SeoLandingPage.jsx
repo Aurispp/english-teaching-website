@@ -5,7 +5,6 @@ import {
   BarChart3,
   Briefcase,
   Building2,
-  Calendar,
   Check,
   FileText,
   Globe,
@@ -28,7 +27,7 @@ const landingCopy = {
       title: 'Private English classes online and around Castelldefels',
       intro:
         'I grew up in Ireland, I am bilingual, and I have been teaching English in Barcelona for 11 years. I help students and professionals feel more comfortable using English in real situations, mainly online and sometimes in person around Castelldefels, Gavà and Viladecans.',
-      primaryCta: 'Book your free trial class',
+      primaryCta: 'Send me a message',
       secondaryCta: 'Try Talk the Talk',
       badges: ['Online classes', 'Castelldefels area', 'Private and small groups'],
       proofTitle: 'Real classes, real progress',
@@ -72,7 +71,7 @@ const landingCopy = {
       title: 'Clases particulares de inglés online y en Castelldefels',
       intro:
         'Me crié en Irlanda, soy bilingüe y llevo 11 años enseñando inglés en Barcelona. Ayudo a estudiantes y profesionales a ganar soltura y claridad al usar el inglés en situaciones reales, principalmente online y a veces presencial en Castelldefels, Gavà y Viladecans.',
-      primaryCta: 'Reserva tu prueba gratis',
+      primaryCta: 'Escríbeme',
       secondaryCta: 'Prueba Talk the Talk',
       badges: ['Clases online', 'Zona Castelldefels', 'Individuales y grupos pequeños'],
       proofTitle: 'Clases reales, progreso real',
@@ -118,7 +117,7 @@ const landingCopy = {
       title: 'Business English classes for companies and professionals',
       intro:
         'Practical English classes with a bilingual teacher for professionals, teams and freelancers who need to use English more clearly in meetings, presentations, interviews and day-to-day work.',
-      primaryCta: 'Book a first call',
+      primaryCta: 'Message me about classes',
       secondaryCta: 'Ask about company classes',
       badges: ['Invoice with NIF', 'Online or local', 'Teams and professionals'],
       proofTitle: 'Online and in-person classes',
@@ -162,7 +161,7 @@ const landingCopy = {
       title: 'Inglés para empresas y profesionales',
       intro:
         'Clases prácticas con un profesor bilingüe para profesionales, equipos y autónomos que necesitan usar el inglés con más claridad en reuniones, presentaciones, entrevistas y situaciones reales de trabajo.',
-      primaryCta: 'Reserva una primera llamada',
+      primaryCta: 'Escríbeme',
       secondaryCta: 'Consulta clases para empresa',
       badges: ['Factura con NIF', 'Online o presencial', 'Equipos y profesionales'],
       proofTitle: 'Clases online y presenciales',
@@ -229,7 +228,7 @@ const pageMeta = {
     ],
     supportVisual: classMomentOnlineTeam,
     supportAlt: 'Online English class with adult students',
-    finalIcon: Calendar,
+    finalIcon: MessageCircle,
   },
   business: {
     talkHref: 'https://wa.me/34684082221?text=Hola%20Auris%2C%20queria%20consultar%20clases%20de%20ingles%20para%20empresa%20o%20profesionales.',

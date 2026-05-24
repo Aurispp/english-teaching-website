@@ -14,7 +14,6 @@ import FAQSection from './components/FAQSection';
 import SeoLandingPage from './components/SeoLandingPage';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import CalendlyBadge from './components/CalendlyBadge';
 import ConsentBanner from './components/ConsentBanner';
 import { trackEvent } from './utils/analytics';
 
@@ -170,21 +169,6 @@ function App() {
     canonicals.slice(1).forEach((node) => node.remove());
   }, [pageSeo]);
 
-  // Calendly conversion tracking — fires when a visitor completes a booking
-  useEffect(() => {
-    const onMessage = (e) => {
-      if (e?.data?.event === 'calendly.event_scheduled' && typeof window.gtag === 'function') {
-        trackEvent('trial_booked', {
-          event_category: 'conversion',
-          event_label: 'Calendly',
-          value: 30,
-        });
-      }
-    };
-    window.addEventListener('message', onMessage);
-    return () => window.removeEventListener('message', onMessage);
-  }, []);
-
   const openTalkTheTalk = () => {
     trackEvent('talk_opened', {
       event_category: 'engagement',
@@ -238,7 +222,6 @@ function App() {
       <ContactSection />
       <Footer />
       <ScrollToTop />
-      {!isTalkTheTalkOpen && <CalendlyBadge />}
       <ConsentBanner />
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Sparkles, UserCircle, Users, BookOpen, BarChart3, Mic, Layers, FileText } from 'lucide-react';
+import { Check, UserCircle, Users, BookOpen, BarChart3, Mic, Layers, FileText, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const FeatureItem = ({ text }) => (
@@ -20,25 +20,8 @@ const PriceCard = ({
   features,
   ctaLabel,
   ctaHref,
-  popular,
-  popularLabel,
 }) => (
-  <div
-    className={`relative rounded-3xl bg-white transition-all duration-300 hover:-translate-y-1 ${
-      popular
-        ? 'shadow-2xl ring-2 ring-primary-500 md:scale-[1.02]'
-        : 'shadow-md hover:shadow-xl ring-1 ring-gray-100'
-    }`}
-  >
-    {popular && (
-      <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-        <span className="inline-flex items-center gap-1 bg-gradient-to-r from-primary-500 to-primary-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
-          <Sparkles className="w-3 h-3" />
-          {popularLabel}
-        </span>
-      </div>
-    )}
-
+  <div className="relative rounded-3xl bg-white shadow-md ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
     <div className="p-8 sm:p-10">
       <div className="flex items-center gap-3 mb-2">
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 text-primary-600">
@@ -61,12 +44,9 @@ const PriceCard = ({
 
       <a
         href={ctaHref}
-        className={`group inline-flex w-full items-center justify-center px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 ${
-          popular
-            ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 hover:shadow-lg'
-            : 'bg-gray-900 text-white hover:bg-gray-800'
-        }`}
+        className="group inline-flex w-full items-center justify-center px-6 py-3 rounded-full bg-white font-medium text-sm text-gray-900 ring-1 ring-gray-200 transition-all duration-300 hover:bg-gray-50 hover:ring-gray-300"
       >
+        <MessageCircle className="mr-2 h-4 w-4" />
         {ctaLabel}
       </a>
     </div>
@@ -96,6 +76,9 @@ const PricingSection = () => {
           <h2 className="text-3xl sm:text-4xl font-display font-light mb-3">
             {t('pricing.title')}
           </h2>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-gray-600">
+            {t('pricing.availability.note')}
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -108,8 +91,6 @@ const PricingSection = () => {
             features={t('pricing.private.features')}
             ctaLabel={t('pricing.trialCta')}
             ctaHref="#contact"
-            popular
-            popularLabel={t('pricing.mostPopular')}
           />
           <PriceCard
             icon={Users}
@@ -119,7 +100,7 @@ const PricingSection = () => {
             perHour={t('pricing.perHour')}
             features={t('pricing.group.features')}
             ctaLabel={t('pricing.group.waitlist')}
-            ctaHref="#book-group"
+            ctaHref="#contact"
           />
         </div>
 
