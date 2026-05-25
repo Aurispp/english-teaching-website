@@ -267,8 +267,8 @@ export const translations = {
           answer: 'I work with teenagers, adults and professionals who want to feel more confident using English in real situations.'
         },
         {
-          question: 'Do you offer a free trial class?',
-          answer: 'Yes! I offer a free first class so we can get to know each other and see if we\'re a good fit for working together.'
+          question: 'Can I message you before starting?',
+          answer: 'Yes. Send me a WhatsApp or email with your goals and timing. If I can help, we can arrange a first class or keep it in mind for a future slot.'
         },
         {
           question: 'Are your classes online or in-person?',
@@ -549,8 +549,8 @@ export const translations = {
           answer: 'Trabajo con adolescentes, adultos y profesionales que quieren sentirse más cómodos usando el inglés en situaciones reales.'
         },
         {
-          question: '¿Ofreces una clase de prueba gratuita?',
-          answer: '¡Sí! Ofrezco una primera clase gratuita para que podamos conocernos y ver si somos una buena opción para trabajar juntos.'
+          question: '¿Puedo escribirte antes de empezar?',
+          answer: 'Sí. Escríbeme por WhatsApp o email con tus objetivos y disponibilidad. Si puedo ayudarte, podemos organizar una primera clase o tenerlo en cuenta para una plaza futura.'
         },
         {
           question: '¿Las clases son online o presenciales?',

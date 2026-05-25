@@ -62,9 +62,9 @@ const landingCopy = {
       localTitle: 'Local areas',
       localText:
         'The idea is not to give a generic class, but to understand what you need and find a way to move forward that feels useful and realistic.',
-      finalTitle: 'Start with a free first class',
+      finalTitle: 'Start with a first conversation',
       finalText:
-        'It gives us time to meet, check your level, talk about your goals and decide whether I can help.',
+        'Send me a message with your goals and timing. If I can help, we can arrange a first class or keep it in mind for a future slot.',
     },
     es: {
       eyebrow: '',
@@ -106,9 +106,9 @@ const landingCopy = {
       localTitle: 'Zonas cercanas',
       localText:
         'La idea no es dar una clase genérica, sino entender qué necesitas tú y encontrar una forma de avanzar que sea clara, útil y realista.',
-      finalTitle: 'Empieza con una primera clase gratuita',
+      finalTitle: 'Empieza con una primera conversación',
       finalText:
-        'Nos sirve para conocernos, ver tu nivel, hablar de tus objetivos y decidir si puedo ayudarte.',
+        'Escríbeme con tus objetivos y disponibilidad. Si puedo ayudarte, organizamos una primera clase o lo dejamos encaminado para una plaza futura.',
     },
   },
   business: {
