@@ -9,6 +9,7 @@ import { trackEvent } from '../utils/analytics';
 
 const TALK_CONTACT_URL =
     'https://wa.me/34684082221?text=Hi%20Auris%2C%20I%20tried%20Talk%20the%20Talk%20and%20wanted%20to%20ask%20about%20English%20classes.';
+const DEFAULT_DURATION_SECONDS = 60;
 
 /**
  * Talk the Talk - Free Speech Practice Tool
@@ -19,16 +20,16 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
     const [screen, setScreen] = useState('select');
     const [selectedTheme, setSelectedTheme] = useState('relatable');
     const [selectedDifficulty, setSelectedDifficulty] = useState('easy');
-    const [duration, setDuration] = useState(90);
+    const [duration, setDuration] = useState(DEFAULT_DURATION_SECONDS);
     const [topic, setTopic] = useState('');
-    const [timeRemaining, setTimeRemaining] = useState(90);
+    const [timeRemaining, setTimeRemaining] = useState(DEFAULT_DURATION_SECONDS);
     const [isTimerRunning, setIsTimerRunning] = useState(false);
     const [hasStarted, setHasStarted] = useState(false);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [readyHidden, setReadyHidden] = useState(false);
     const [showDone, setShowDone] = useState(false);
     const [customMinutes, setCustomMinutes] = useState('01');
-    const [customSeconds, setCustomSeconds] = useState('30');
+    const [customSeconds, setCustomSeconds] = useState('00');
     const [transitionMs, setTransitionMs] = useState(200);
 
     const timerRef = useRef(null);
