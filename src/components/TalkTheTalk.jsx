@@ -7,8 +7,6 @@ import Hourglass from './Hourglass';
 import whatsappIcon from '../whatsapp.webp';
 import { trackEvent } from '../utils/analytics';
 
-const TALK_CONTACT_URL =
-    'https://wa.me/34684082221?text=Hi%20Auris%2C%20I%20tried%20Talk%20the%20Talk%20and%20wanted%20to%20ask%20about%20English%20classes.';
 const DEFAULT_DURATION_SECONDS = 60;
 
 /**
@@ -685,15 +683,8 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                             <p className="text-gray-700 leading-relaxed whitespace-pre-line">{topic}</p>
                         </div>
 
-                        <div className="max-w-lg mx-auto p-5 bg-orange-50/80 rounded-xl border border-orange-100 text-left">
-                            <p className="text-sm font-semibold text-orange-700 mb-2">Want personal feedback?</p>
-                            <p className="text-gray-600 leading-relaxed">
-                                I offer practical guidance to help you speak with more fluency and clarity.
-                            </p>
-                        </div>
-
                         {/* Action Buttons */}
-                        <div className="grid gap-3 max-w-2xl mx-auto sm:grid-cols-3">
+                        <div className="grid gap-3 max-w-md mx-auto sm:grid-cols-2">
                             <button
                                 onClick={repeatSameTopic}
                                 className="flex items-center justify-center gap-2 py-4 bg-white border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all"
@@ -708,18 +699,6 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
                                 <Shuffle className="w-4 h-4" />
                                 New topic
                             </button>
-                            <a
-                                href={TALK_CONTACT_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={() => trackTalkEvent('talk_contact_click', {
-                                    practiced_seconds: duration - timeRemaining,
-                                })}
-                                className="flex items-center justify-center gap-2 rounded-xl bg-primary-50 py-4 font-medium text-primary-700 ring-1 ring-primary-200 transition-all hover:bg-primary-100"
-                            >
-                                <img src={whatsappIcon} alt="" className="w-4 h-4 object-contain" />
-                                Message Auris
-                            </a>
                         </div>
                         <button
                             onClick={() => {
