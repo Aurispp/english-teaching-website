@@ -44,7 +44,7 @@ export const translations = {
       private: {
         title: "Private Classes",
         description: "1-on-1 lessons tailored to you",
-        price: "40€",
+        price: "35€",
         features: [
           "Focused on your specific goals",
           "Flexible scheduling",
@@ -55,7 +55,7 @@ export const translations = {
       group: {
         title: "Group Classes",
         description: "Small groups of 2–4 motivated learners",
-        price: "20€",
+        price: "15€",
         waitlist: "Message me about groups",
         features: [
           "Small groups (2–4 students)",
@@ -339,7 +339,7 @@ export const translations = {
       private: {
         title: "Clases Particulares",
         description: "Clases 1-a-1 adaptadas a ti",
-        price: "40€",
+        price: "35€",
         features: [
           "Enfocadas en tus objetivos específicos",
           "Horario flexible",
@@ -350,7 +350,7 @@ export const translations = {
       group: {
         title: "Clases en Grupo",
         description: "Grupos pequeños de 2–4 estudiantes motivados",
-        price: "20€",
+        price: "15€",
         waitlist: "Pregúntame por grupos",
         features: [
           "Grupos pequeños (2–4 estudiantes)",
