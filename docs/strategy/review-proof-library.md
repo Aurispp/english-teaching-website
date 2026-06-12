@@ -1,13 +1,13 @@
 # Review Proof Library
 
 Created: 2026-05-21 Cycle 02
-Last updated: 2026-05-24 Cycle 48
+Last updated: 2026-06-02 Cycle 116
 
 Purpose: turn public review themes into concise proof assets for website, Google Business Profile replies, and social content without dumping long reviews onto the page.
 
 ## Source Summary
 
-- Google reviews endpoint on `englishwithauris.com`: 5.0 rating, 16 reviews in both Spanish and English public endpoint checks on 2026-05-23; Cycle 10 confirmed that `language=es` and `language=en` return different visible review sets, giving 10 review texts/themes to mine without owner-side GBP access.
+- Google reviews endpoint on `englishwithauris.com`: 5.0 rating, 17 reviews in both Spanish and English public endpoint checks on 2026-06-02; owner-side newest-review and reply truth still require GBP owner view.
 - Superprof: 5.0 rating, 7 opinions, verified profile, 20 students.
 - Tusclasesparticulares search result: 4.9 rating, 15 ratings.
 
@@ -92,6 +92,71 @@ English with Auris has a 5.0 Google rating from 16 student reviews, with student
 ```
 
 Do not use review replies to sell. Use them to show real attention.
+
+## Cycle 56 Review Reply Trust Maintenance
+
+Artifact:
+
+`/Users/aurisp/repos/teacher-website/docs/strategy/review-reply-trust-maintenance-cycle56.md`
+
+Decision:
+
+- Review count truth is no longer the main missing piece; owner/public evidence has repeatedly shown `5.0 / 16`.
+- Review replies are the default Trust Maintenance Mode action while Auris is nearly full.
+- Replying is better than only liking/reacting because the reply is public, appears as the business, and gives future readers a small proof of care and specificity.
+- Likes/reactions are fine as a supplement, but they do not create owner voice, method proof or future-reader context.
+
+Reply quality rule:
+
+1. Thank the reviewer.
+2. Name one specific thing they mentioned.
+3. Keep it short.
+4. Avoid selling, keyword stuffing, city stuffing, promises or private details.
+5. Reply in the review's language when natural.
+
+Best current Teresa-style reply:
+
+```text
+The classes with you fly by for me too, Teresa. Thank you so much for your kind words and for all these years learning together.
+```
+
+Slightly more method-specific version:
+
+```text
+The classes with you fly by for me too, Teresa. Thank you for your kind words and for all these years learning together. I am really happy the online classes, resources and steady practice have helped.
+```
+
+Operating rule:
+
+- If replies are live, stop revisiting review-copy theory and rotate to first inquiry row or monthly GBP snapshot.
+- If replies are pending/hidden, log the status once and recheck; do not keep rewriting unless Google rejects the reply or the wording is clearly off.
+- If a future review mentions professional confidence, Spanish-speaker correction, portal continuity or referral trust, add the theme to proof copy only after it is repeated or strategically important.
+
+## Cycle 116 Review Count 17 Owner Reply Gate
+
+Artifact:
+
+`/Users/aurisp/repos/teacher-website/docs/strategy/review-count-17-owner-reply-gate-cycle116.md`
+
+Decision:
+
+- Public proof improved: the live Places-backed endpoint now returns `5.0 / 17` in both `language=es` and `language=en`.
+- The website review component reads the dynamic endpoint count, so no public website edit is needed for the count to remain current.
+- The public endpoint still returns only a limited visible review list and does not expose owner reply metadata.
+- The next owner ask is one row, not a dashboard project: `does GBP owner view also show 17 reviews, what is the newest review about, and is it replied to?`
+- If the newest review is unreplied, reply warmly in the review's language before using the review count as a proof-post prompt.
+
+Best count-neutral proof line remains:
+
+```text
+Students often mention confidence, practical conversation, personal adaptation and useful follow-up between classes.
+```
+
+Optional count-specific line, only after owner-view truth confirms 17:
+
+```text
+English with Auris has a 5.0 Google rating from 17 student reviews, with students often mentioning confidence, practical conversation and personal follow-up.
+```
 
 ## Core Proof Themes
 

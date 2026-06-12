@@ -11,6 +11,13 @@ Cycle 46 refresh:
 - The key decision is now `build / soften / keep manual / pause`.
 - Reference artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/next-15-proof-pilot-cycle46.md`.
 
+Cycle 57 continuity refresh:
+
+- If a 3-5 student pilot feels like too much, start with the smaller 2-row continuity proof in `/Users/aurisp/repos/teacher-website/docs/strategy/current-student-continuity-proof-cycle57.md`.
+- Pick one portal/SRS-active student and one notes-first, WhatsApp-first, busy adult or lower-portal-use student.
+- The row is successful only if the small step creates a next-class evidence signal, not merely because the message was sent.
+- Keep the decision labels aligned: `build_next15 / keep_manual / soften_copy / pause`.
+
 ## Decision
 
 Auris has not explicitly approved a platform edit yet, so the right next move is the manual pilot, not implementation.

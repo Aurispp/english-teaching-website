@@ -4,12 +4,16 @@ import { useLanguage } from '../context/LanguageContext';
 import { trackEvent } from '../utils/analytics';
 
 const ContactSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const whatsappMessage = language === 'es'
+    ? 'Hola Auris, me interesan las clases de inglés. Mi objetivo es...'
+    : "Hi Auris, I'm interested in English classes. My goal is...";
 
   const contactOptions = [
     {
       key: 'whatsapp',
-      href: 'https://wa.me/34684082221',
+      href: `https://wa.me/34684082221?text=${encodeURIComponent(whatsappMessage)}`,
       title: t('contact.whatsapp.title'),
       description: t('contact.whatsapp.description'),
       meta: '+34 684 082 221',

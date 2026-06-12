@@ -1,6 +1,6 @@
 # Content Strategy
 
-Last updated: 2026-05-24 Cycle 51
+Last updated: 2026-05-24 Cycle 56
 
 ## Strategic Role
 
@@ -1136,3 +1136,146 @@ If Auris actively wants to fill slots within 30 days, switch to `Measured Acquis
 - one lead-source note for any inquiry.
 
 Do not let content volume become the work. The long-game content system is: fresh replies, accurate profile, occasional proof, and a lightweight note when a real future lead appears.
+
+## Cycle 55 GBP Booking Link Cleanup Rule
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/gbp-calendly-removal-handoff-cycle55.md`
+
+Before any GBP post, ad, or capacity-opening content:
+
+1. Confirm the GBP booking/appointment link is either removed or intentionally kept.
+2. If removed/pending/blocked, log the status in the owner evidence ledger.
+3. Ignore Google Ads credit prompts while Auris is close to full.
+4. Keep the CTA in public content as direct contact:
+
+```text
+Message me about your goals and timing, and I will tell you honestly whether I can help now or whether a future slot makes more sense.
+```
+
+Do not use:
+
+- `Book now`
+- `Reserve your slot`
+- Google Ads into a profile that may still show stale booking
+- a GBP appointment link to a generic contact page unless Google accepts it as a booking URL
+
+## Cycle 56 Review Reply Maintenance Rule
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/review-reply-trust-maintenance-cycle56.md`
+
+While Auris is nearly full, review replies are content. They are quieter and more useful than another generic post because they sit beside the proof future students already read.
+
+Use replies to show:
+
+- the student was heard
+- Auris is personally present
+- the class has a real method: practice, correction, resources, review, confidence
+- the tone is warm, not academy/corporate
+
+Do not use replies to:
+
+- sell a free class
+- push `book now`
+- stuff `Castelldefels`, `English teacher`, `business English` or service keywords
+- promise the same result to future students
+- reveal private details that the reviewer did not already publish
+
+Like/react rule:
+
+- A reaction is fine as a small acknowledgement.
+- A public reply is the trust asset.
+- If time is scarce, write one short specific reply rather than drafting a post.
+
+Current cadence in Trust Maintenance Mode:
+
+| Action | Rule |
+| --- | --- |
+| New review | Reply briefly when possible; log status only if strategically relevant. |
+| Review reaction | Optional, not a substitute for reply. |
+| GBP/LinkedIn post | Only when a slot is opening, a real class moment is worth sharing, or a review theme needs amplification. |
+| Review ask | Honest, non-directive and only after a real outcome. No incentives, star requests, keywords or suggested wording. |
+
+Reusable reply line:
+
+```text
+Thank you so much, [Name]. I am really happy the classes have helped with [specific outcome]. That steady progress is exactly what the practice, correction and review are for.
+```
+
+## Cycle 57 Current-Student Proof Before More Content
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/current-student-continuity-proof-cycle57.md`
+
+While Auris is close to full, current-student continuity proof can be more valuable than another GBP/LinkedIn post.
+
+Use content only after there is a real proof moment:
+
+| Proof Moment | Content Use |
+| --- | --- |
+| Student used a phrase/word from a tiny between-class step | Possible anonymized class reflection later, no names/details. |
+| Student says one small suggestion helped | Keep as private product evidence first. |
+| Student says it feels like homework | Do not post; soften the approach. |
+| No action before class | Do not turn the portal into a public claim. |
+
+Safe internal wording:
+
+```text
+The portal should make the next class easier to start, not give students another pile of homework.
+```
+
+Safe public wording for now:
+
+```text
+Vocabulary, materials and review stay organised between classes.
+```
+
+Do not use yet:
+
+- `The portal always tells you exactly what to do next.`
+- `Students practise more because of the portal.`
+- `AI-powered homework between classes.`
+- a public "student success story" before it has been anonymized and permission-safe.
+
+## Cycle 58 Content Ignore List While Full
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/strategic-ignore-list-cycle58.md`
+
+For the next 30 days, content is mostly something to not do.
+
+Default content mode:
+
+```text
+Trust Maintenance + Evidence Waiting
+```
+
+Allowed:
+
+| Content Surface | Rule |
+| --- | --- |
+| Review replies | Reply briefly to new reviews when useful. This is the default proof maintenance habit. |
+| GBP/profile updates | Only when a real detail changes or Auris supplies a profile-status snapshot. |
+| LinkedIn/GBP post | Only if capacity opens, a real proof moment appears, or an owner baseline exists. |
+| Short-form reuse | Optional and low priority; never the anchor. |
+| Website copy | Only if Auris approves Packet BC/AT or a real inquiry exposes confusion. |
+
+Ignore by default:
+
+- Google Ads
+- TikTok/Instagram-first content
+- weekly GBP or LinkedIn posting
+- new local/city SEO pages
+- new Work-English package posts
+- portal success claims before current-student rows
+- waitlist/CRM/routing-form copy
+- AI speaking homework content
+
+Unpark triggers:
+
+| Trigger | Content Response |
+| --- | --- |
+| A slot opens within 30 days | One measured GBP or LinkedIn post with owner baseline and inquiry row. |
+| A new review appears | One warm reply; no campaign unless it signals a new proof theme. |
+| A student continuity row creates a useful class moment | Keep as private proof first; later consider anonymized content only if permission-safe. |
+| A prospect says Auris seems closed | Clarify "message me about future availability" without adding urgency. |
+| A prospect mentions a low price anchor | Improve premium proof before adding channel volume. |
+
+Do not let "content strategy" become a substitute for missing evidence. If no trigger changes, silence is acceptable.

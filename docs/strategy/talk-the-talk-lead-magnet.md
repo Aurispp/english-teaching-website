@@ -1,13 +1,52 @@
 # Talk the Talk Lead Magnet Strategy
 
 Created: 2026-05-21 Cycle 04
-Last updated: 2026-05-23 Cycle 39
+Last updated: 2026-05-25 Cycle 61
 
 ## Executive Read
 
 Talk the Talk should be treated first as a trust, practice, and retention asset, not as the main SEO growth bet.
 
-The tool is valuable because it lets a potential student feel Auris's method before booking: speak out loud, face the blank-mind moment, repeat, then see that personal feedback would help. The weaker idea is expecting `/talkthetalk` to bring meaningful organic search traffic by itself. Search Console currently shows no Talk the Talk queries, the URL is crawled but not indexed, and the global "free speaking practice" market is much broader than Auris's premium local/private teaching market.
+The tool is valuable because it lets a potential student feel Auris's method before contacting him: speak out loud, face the blank-mind moment, repeat, then see that personal feedback would help. The weaker idea is expecting `/talkthetalk` to bring meaningful organic search traffic by itself. Search Console currently shows no Talk the Talk queries, the URL is crawled but not indexed, and the global "free speaking practice" market is much broader than Auris's premium local/private teaching market.
+
+## Cycle 61 Current Supersession
+
+Current public mode: direct-contact, one-minute first rep, no Calendly, no free-first-class funnel.
+
+This supersedes older references below to "book a trial", Calendly links, `talk_trial_click`, and a default 90-second first round. Those references are historical evidence of the previous funnel, not the current recommendation.
+
+Current public source evidence:
+
+| Surface | Current State | Strategic Meaning |
+| --- | --- | --- |
+| Public Talk default | `src/components/TalkTheTalk.jsx` initializes `duration` and `timeRemaining` to `DEFAULT_DURATION_SECONDS = 60`; custom inputs open at `01:00`. | The first rep now feels lower-pressure and better matched to a hesitant adult/professional. |
+| Public Talk CTA | Completion card links to WhatsApp and tracks `talk_contact_click`; live chunk contains `Message Auris` and no Calendly/free-first-class strings. | Talk is now a personal feedback bridge, not a booking widget. |
+| Public Talk options | 60, 90, 120, 180 and 300 seconds remain available. | 90 seconds remains useful for confident users, but should not be the default first ask. |
+| Student portal Talk | `teacher-assistant/classroom-hub/src/pages/TalkTheTalk.tsx` still defaults to 90 seconds / `01:30`. | Leave this as a separate pedagogical decision unless Auris explicitly wants current students to mirror the public one-minute start. |
+| Live route | `/talkthetalk` returns HTTP 200 with the correct canonical; live bundle is `TalkTheTalk-b73dc496.js`. | Public route is healthy enough for GBP/LinkedIn/referral use, but still not a clean SEO asset. |
+| Sitemap | Live sitemap lists `/talkthetalk` with `lastmod` `2026-05-21` even though public Talk changed on 2026-05-25. | Minor future hygiene item; not urgent enough to reopen SEO work by itself. |
+| Copy mismatch | How-it-works still says recording/listenback are optional, but no actual recording flow is implemented. | Fix before using Talk as a bigger public campaign, because it promises a feature the tool does not provide. |
+
+Current measurement loop:
+
+1. Visitor reaches `/talkthetalk` from GBP, LinkedIn, referral, a post, or direct site browsing.
+2. Visitor chooses a prompt and does a one-minute first rep.
+3. Events can show `talk_started`, `talk_ready_clicked`, `talk_completed` and `talk_contact_click`.
+4. The only real lead proof is a private WhatsApp/email reply plus a redacted owner row.
+5. Do not use `trial_booked` or `generate_lead` for raw Talk clicks in the current mode.
+
+Keep Talk if:
+
+- Several users start/complete prompts without support burden.
+- At least one high-fit reply mentions the Talk prompt, getting stuck while speaking, confidence, meetings/interviews, or wanting human feedback.
+- Auris can answer the follow-up personally without it feeling like a campaign funnel.
+
+Do not scale Talk yet if:
+
+- `talk_contact_click` appears but no real replies arrive.
+- Visitors ask for a free trial/free class because old external/profile copy primed that expectation.
+- The recording/listenback mismatch creates confusion.
+- AI speaking apps continue to own the generic "free speaking practice" category without evidence that Auris's personal feedback bridge is being noticed.
 
 ## Evidence Snapshot
 

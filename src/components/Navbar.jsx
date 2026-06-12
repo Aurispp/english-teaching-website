@@ -21,6 +21,10 @@ const Navbar = ({ onTalkTheTalkClick }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const whatsappMessage = language === 'es'
+    ? 'Hola Auris, me interesan las clases de inglés. Mi objetivo es...'
+    : "Hi Auris, I'm interested in English classes. My goal is...";
+
   const contactLinks = [
     {
       icon: <Phone className="w-5 h-5" />,
@@ -29,7 +33,7 @@ const Navbar = ({ onTalkTheTalkClick }) => {
     },
     {
       icon: <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5 object-contain" />,
-      href: "https://wa.me/34684082221",
+      href: `https://wa.me/34684082221?text=${encodeURIComponent(whatsappMessage)}`,
       label: "WhatsApp"
     },
     {

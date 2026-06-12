@@ -43,12 +43,12 @@ export const translations = {
       },
       private: {
         title: "Private Classes",
-        description: "1-on-1 lessons tailored to you",
+        description: "1-on-1 with a bilingual teacher — 11 years teaching Spanish speakers",
         price: "35€",
         features: [
+          "Speaking-centred classes with direct correction",
           "Focused on your specific goals",
           "Flexible scheduling",
-          "Continuous feedback and progress tracking",
           "Full access to the student portal"
         ]
       },
@@ -338,12 +338,12 @@ export const translations = {
       },
       private: {
         title: "Clases Particulares",
-        description: "Clases 1-a-1 adaptadas a ti",
+        description: "Clases 1-a-1 con un profesor bilingüe — 11 años enseñando a hispanohablantes",
         price: "35€",
         features: [
+          "Clases centradas en hablar, con corrección directa",
           "Enfocadas en tus objetivos específicos",
           "Horario flexible",
-          "Seguimiento y feedback continuo",
           "Acceso completo al portal de estudiante"
         ]
       },

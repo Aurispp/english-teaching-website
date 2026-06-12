@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ExternalLink, Star } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-
-const FALLBACK_REVIEWS_URL = 'https://search.google.com/local/reviews?placeid=ChIJZVelFN8UvY4RnXmuix7pudg';
+import { useGoogleReviews } from '../hooks/useGoogleReviews';
+import { GOOGLE_REVIEWS_URL as FALLBACK_REVIEWS_URL, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEW_RATING } from '../constants';
 
 const copy = {
   en: {
@@ -12,7 +12,7 @@ const copy = {
     reviews: 'reviews',
     viewOnGoogle: 'See all reviews on Google',
     fallbackTitle: 'Read my Google reviews',
-    fallbackText: 'The live Google review feed is not connected yet, but you can still open the reviews directly on Google.',
+    fallbackText: `My students rate me ${GOOGLE_REVIEW_RATING} on Google, based on ${GOOGLE_REVIEW_COUNT} reviews. Read what they say about the classes.`,
     sourceLabel: 'Google Business Profile',
   },
   es: {
@@ -22,7 +22,7 @@ const copy = {
     reviews: 'reseñas',
     viewOnGoogle: 'Ver todas las reseñas en Google',
     fallbackTitle: 'Lee mis reseñas en Google',
-    fallbackText: 'La conexión automática con Google todavía no está configurada, pero puedes abrir las reseñas directamente en Google.',
+    fallbackText: `Mis estudiantes me valoran con un ${GOOGLE_REVIEW_RATING} en Google, con ${GOOGLE_REVIEW_COUNT} reseñas. Lee lo que dicen de las clases.`,
     sourceLabel: 'Perfil de Empresa de Google',
   },
 };
@@ -74,37 +74,7 @@ const GoogleReviewsFallback = ({ t }) => (
 const GoogleReviewsSection = () => {
   const { language } = useLanguage();
   const t = copy[language] || copy.en;
-  const [state, setState] = useState({
-    loading: true,
-    error: null,
-    data: null,
-  });
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    const loadReviews = async () => {
-      try {
-        const response = await fetch(`/.netlify/functions/google-reviews?language=${language}`, {
-          signal: controller.signal,
-        });
-
-        if (!response.ok) {
-          throw new Error(`Google reviews endpoint returned ${response.status}`);
-        }
-
-        const data = await response.json();
-        setState({ loading: false, error: null, data });
-      } catch (error) {
-        if (error.name === 'AbortError') return;
-        setState({ loading: false, error, data: null });
-      }
-    };
-
-    loadReviews();
-
-    return () => controller.abort();
-  }, [language]);
+  const state = useGoogleReviews(language);
 
   if (state.loading) {
     return (

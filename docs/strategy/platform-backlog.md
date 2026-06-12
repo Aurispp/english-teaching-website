@@ -1,7 +1,20 @@
 # Teaching Platform Strategy Backlog
 
-Last updated: 2026-05-24 Cycle 46
+Last updated: 2026-05-24 Cycle 57
 Source repo inspected: `/Users/aurisp/repos/teacher-assistant/`
+
+Cycle 57 artifact:
+
+`/Users/aurisp/repos/teacher-website/docs/strategy/current-student-continuity-proof-cycle57.md`
+
+Cycle 57 decision:
+
+- Do not write another `Your next 15 minutes` spec before there are current-student rows.
+- Run a 2-row continuity proof sprint instead: one portal/SRS-active student and one notes-first, WhatsApp-first, busy adult or lower-portal-use student.
+- The proof question is whether one tiny optional step after class creates something Auris can naturally use in the next class.
+- Use the existing homework log only when convenient; it is a support record, not a new admin obligation.
+- Keep the public portal promise modest: vocabulary, materials, review and practice stay organised between classes. Stronger "clear next step" claims should wait until students show that the suggestion helps.
+- If both rows are helpful and at least one produces in-class evidence, implementation becomes low-risk. If students prefer WhatsApp/manual reminders, keep the guidance personal.
 
 Cycle 46 artifact:
 

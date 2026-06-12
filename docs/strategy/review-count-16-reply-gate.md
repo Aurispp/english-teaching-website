@@ -17,6 +17,8 @@ The next action remains tiny:
 
 Do not request credentials. Screenshots or one-line owner notes are enough.
 
+Cycle 56 update: the gate has moved from "should Auris reply?" to "is the reply live enough to stop thinking about it?" A like/reaction can be a small acknowledgement, but it is not the trust asset. The public reply is the trust asset because it shows owner voice beside the review. Once recent replies are live or owner-visible with no issue, rotate away from reply copy and toward monthly GBP snapshot or first inquiry truth.
+
 ## Current Public Evidence
 
 Live checks on 2026-05-23:
@@ -218,6 +220,13 @@ If Auris sends owner review truth:
 2. Update `review-proof-library.md` count decision.
 3. If unreplied, draft exactly one reply and log status.
 4. Ask for GBP Day 0 only after reply/count truth is recorded.
+
+If Auris sends reply-status evidence:
+
+1. Fill `review_reply_status`.
+2. If live, mark the review-maintenance action complete and do not keep rewriting.
+3. If pending/hidden, recheck once before editing.
+4. If rejected, edit for policy/tone, not for keywords.
 
 If Auris sends GBP Performance instead:
 

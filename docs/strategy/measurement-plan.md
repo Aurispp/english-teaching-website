@@ -1,21 +1,41 @@
 # Measurement Plan
 
 Created: 2026-05-21 Cycle 05
-Last updated: 2026-05-24 Cycle 51
+Last updated: 2026-05-25 Cycle 61
 
 ## Primary Question
 
 Can we measure the direct WhatsApp/email path well enough to decide whether content, GBP, SEO, referrals or Talk the Talk are producing qualified future-demand leads?
 
-Current answer: partially.
+Current answer: partially, with production now verified in direct-contact mode.
 
 Cycle 51 supersedes the earlier Calendly-first funnel. Calendly has been intentionally removed from the current local website. The site can now measure `contact_click` and `talk_contact_click`, but it cannot prove that a WhatsApp/email click became a real qualified lead. The truth layer is the private reply plus a tiny owner-side row.
+
+Cycle 52 verifies that this is no longer local-only: production now serves the direct-contact bundle from commit `a304f9c`, with no active Calendly strings found in the live homepage or Talk bundles.
+
+Cycle 53 adds one owner-side caveat: the website can be direct-contact while Google Business Profile still has a separate appointment/booking link. Owner-provided Google Search evidence from 2026-05-24 showed `Appointments: calendly.com`; this needs a `gbp_contact_link_truth` row before interpreting GBP contact behavior.
+
+Cycle 54 added one message-coherence caveat: at the time, the site was direct-contact but some live/source surfaces still mentioned `free first class` / `clase de prueba gratuita`. Cycle 61 source checks now show the current public bundle has no `free first`, `free trial` or `primera clase gratuita` strings; keep the expectation field only to catch residual external/profile/marketplace expectations.
+
+Cycle 55 adds one GBP cleanup caveat: removing or ignoring Calendly in Google Business Profile is profile hygiene, not lead generation. Record the removal state before interpreting future GBP calls, website clicks, bookings or direct inquiries.
+
+Cycle 56 adds one review-reply caveat: a review reply is trust maintenance, not conversion proof. Record reply status only when useful, and judge acquisition only when owner GBP Performance or a real inquiry row exists.
+
+Cycle 57 adds one retention-proof caveat: while Auris is close to full, current-student continuity evidence can be a valid success signal. A portal/SRS/homework action is not proof by itself; the proof row needs next-class evidence such as a remembered word, used phrase, student reaction, or a useful follow-up in class.
+
+Cycle 59 adds an evidence-router caveat: future screenshots, owner notes, lead notes, capacity changes and student observations should be classified before they are measured. Use `evidence-trigger-router-cycle59.md` to decide whether the evidence is a lead row, owner snapshot, review-reply status, profile-link truth, current-student row, capacity change, channel-visible signal, public readiness check or no new evidence.
+
+Cycle 60 adds a no-new-evidence caveat: stable public checks are not measurement progress. If homepage headers, reviews endpoint, sitemap/robots and teaching API health are stable and no owner/student/prospect/capacity/access row exists, the correct measurement state is `no_new_evidence`. Do not reinterpret stable checks as acquisition, retention or pricing proof.
+
+Cycle 61 adds a public Talk calibration caveat: the owner-approved public code path now removes free-first-class language, keeps direct WhatsApp/email contact, and sets public Talk the Talk to a 60-second default. This is a `public_readiness` plus `approval_arrived` signal, not conversion evidence. Measure Talk as low-pressure intent (`talk_started`, `talk_completed`, `talk_contact_click`) until a real reply row proves qualified demand.
 
 ## Cycle 51 Direct-Contact Supersession
 
 Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/direct-contact-simplification-gate-cycle51.md`
 
-Current local mode: `direct_contact_future_availability`.
+Current production mode: `direct_contact_future_availability`.
+
+Cycle 52 production artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/direct-contact-production-gate-cycle52.md`
 
 Deprecated for the current local site:
 
@@ -35,6 +55,27 @@ Current lead-intent signals:
 | GBP website click/call/message where owner-visible | Profile visitor took an action. | Buyer trust reason, fit or availability timing. |
 | Manual direct-contact row | The real lead truth: source, need, fit, timing, proof, reply and outcome. | Perfect attribution; self-report can still be incomplete. |
 
+Cycle 61 Talk defaults:
+
+| Field | Current Public Value | Measurement Meaning |
+| --- | --- | --- |
+| `default_duration_seconds` | `60` | Start/completion rates should be compared only after 2026-05-25 against the one-minute default. |
+| `talk_contact_click` CTA destination | WhatsApp direct contact | Intent to ask Auris personally; not a lead until a reply arrives. |
+| `free_first_class_expectation` | Still keep as an inquiry field | Source copy has been cleaned locally, but external/profile/old-memory surfaces may still create that expectation. |
+| Portal Talk default | `90` seconds in `teacher-assistant` | Separate current-student product decision; do not merge with public lead measurement unless Auris asks to align it. |
+
+## Cycle 52 Production Verification
+
+| Check | Result | Measurement Meaning |
+| --- | --- | --- |
+| Public deploy | `englishwithauris.com` serves `assets/main-c144a168.js`, matching the local direct-contact build. | The measurement mode is live, not hypothetical. |
+| Live Calendly scan | No live matches for `Calendly`, `calendly`, `trial_booked`, `Disponibilidad limitada`, or `Limited availability`. | Calendly booking/source data is inactive unless restored later. |
+| Live contact scan | Main bundle contains `contact_click`, WhatsApp, email and quiet availability copy. | Website can measure click intent. |
+| Live Talk scan | Talk chunk contains `talk_contact_click`, `Message Auris` and WhatsApp. | Talk completion can measure follow-up click intent. |
+| Review endpoint | Places New returns `5.0 / 16`. | Public proof intact, but owner reply/newest-review truth still owner-side. |
+| Search Console API | Current token returned `403 PERMISSION_DENIED`. | Do not promise query/page/API verification until access is restored. |
+| Sitemap | All route `lastmod` values remain `2026-05-21`. | Minor SEO hygiene caveat for a future public-code pass. |
+
 Minimum row for a real inquiry:
 
 | Field | Why It Exists |
@@ -45,9 +86,165 @@ Minimum row for a real inquiry:
 | `proof_mentioned` | Tests whether reviews/portal/personal method are creating trust. |
 | `need_type` | Keeps adult/professional/teen/company demand distinct. |
 | `future_timing` | Tests whether the nearly-full posture captures future demand. |
+| `first_contact_surface` | Separates `gbp_appointment_link`, `gbp_website`, `gbp_call`, `website_whatsapp`, `website_email`, `referral`, `marketplace`, and `unknown`. |
 | `availability_confusion` | Detects whether softer copy makes people think Auris is closed. |
+| `free_first_class_expectation` | Separates `asked_for_free_class`, `expected_free_trial`, `not_mentioned`, and `unknown`. |
+| `message_copy_seen` | Records whether the person mentions future availability, free first class, reviews, pricing, local page, Talk, or unknown. |
 | `price_anchor_seen` and `quoted_price_expected` | Captures marketplace/category price pressure. |
 | `lead_quality` and `outcome` | Stops clicks from masquerading as growth. |
+
+## Cycle 54 Public-Message Coherence Measurement
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/public-message-coherence-cycle54.md`
+
+Production state:
+
+- Direct contact is live.
+- Old immediate-booking strings are absent: `Calendly`, `trial_booked`, `Book now`.
+- Free-first-class language remains on FAQ/schema/local landing surfaces.
+- Private-class offer schema still uses `InStock`; sitemap dates still show `2026-05-21`.
+
+Interpretation:
+
+- Do not treat free-first-class mentions as bad by default. They are a possible expectation signal.
+- If high-fit prospects ask mainly for the free/trial class, reframe the copy before driving more traffic.
+- If prospects message calmly about future slots, leave the direct-contact posture stable.
+- If no inquiries arrive while Auris is full and no public push is running, do not call the copy a failure.
+
+## Cycle 55 GBP Calendly Removal Measurement
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/gbp-calendly-removal-handoff-cycle55.md`
+
+Owner-side fields:
+
+| Field | Values |
+| --- | --- |
+| `appointment_link_visible_before` | yes / no / unknown |
+| `appointment_link_domain_before` | calendly.com / englishwithauris.com / other / none / unknown |
+| `action_taken` | removed_link / removed_provider / requested_provider_removal / kept_intentionally / not_found |
+| `profile_edit_status` | live / pending / not_approved / blocked / unknown |
+| `appointment_link_visible_after` | yes / no / unknown |
+| `appointment_link_domain_after` | calendly.com / englishwithauris.com / other / none / unknown |
+| `ad_promo_visible` | yes / no / ignored |
+
+Interpretation:
+
+- `appointment_link_visible_after=no` means the profile-contact mismatch is resolved, not that GBP is producing leads.
+- `pending` or `blocked` means hold profile/content experiments until the contact path is clear or intentionally classified.
+- `kept_intentionally` means future GBP bookings should be interpreted as a deliberate booking exception.
+- A Google Ads credit box is owner-dashboard noise unless Auris creates a campaign.
+- If an inquiry arrives after removal, still use the direct-contact inquiry row. The cleanup row only explains the available surface, not the buyer's trust reason.
+
+## Cycle 56 Review Reply Measurement
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/review-reply-trust-maintenance-cycle56.md`
+
+Review replies are public trust signals, but they are not a standalone acquisition metric.
+
+Owner-side fields:
+
+| Field | Values |
+| --- | --- |
+| `review_theme` | confidence / work_moment / long_term / referral / child_progress / resources / general |
+| `reply_status` | live / owner_visible_live / pending / edited / rejected / unknown |
+| `publicly_seen` | yes / no / owner_only / unknown |
+| `reply_age_bucket` | same_day / under_7d / older |
+| `next_action` | none / recheck / edit / ask_owner_snapshot |
+
+Interpretation:
+
+- `reply_status=live` means a maintenance action is complete, not that leads increased.
+- `owner_visible_live` should not be overread; it only proves Auris posted the reply in the owner surface.
+- If no slot is opening, do not chase weekly metrics after a reply.
+- If a slot opens, pair one review-led GBP/LinkedIn action with a Day 0/Day 7 or Day 28 owner snapshot and a lead-source row.
+- If a prospect mentions a review/reply, record it under `proof_specificity` and `first_thing_mentioned`.
+
+## Cycle 57 Current-Student Continuity Measurement
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/current-student-continuity-proof-cycle57.md`
+
+Use this only for current students and only anonymously.
+
+Continuity rows are not lead rows. They measure whether the existing class-plus-portal system is creating visible value between classes.
+
+Minimum row:
+
+| Field | Why It Exists |
+| --- | --- |
+| `student_type` | Separates SRS-active students from notes-first, WhatsApp-first, busy adult or lower-portal-use students. |
+| `suggested_step` | Shows which action was offered: flashcards, notes phrase, correction sentence, assignment or Talk. |
+| `portal_surface` | Tests whether the portal itself mattered or the step was mostly manual/WhatsApp. |
+| `sent_channel` | Separates WhatsApp, email, in-class mention and homework log. |
+| `did_action` | Separates polite agreement from behavior. |
+| `student_reaction` | Detects whether the step felt helpful, like homework, neutral or ignored. |
+| `in_class_evidence` | The real proof: used phrase, remembered word, mentioned portal, asked follow-up or no sign. |
+| `teacher_effort` | Prevents a useful idea from becoming hidden admin. |
+| `decision` | Build Next 15, keep manual, soften copy or pause. |
+
+Interpretation:
+
+- `did_action=yes` plus `in_class_evidence` is stronger than SRS totals alone.
+- `helpful` without behavior is permission, not proof.
+- `homework` from one student means soften before any dashboard build.
+- `keep_manual` is a valid success if WhatsApp/personal prompting beats app UI.
+- Do not put names, private replies, phone numbers, homework answers or sensitive student notes in strategy files.
+
+## Cycle 59 Evidence Router Measurement Layer
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+
+Measurement priority:
+
+| Priority | Trigger | Measurement Meaning | Primary Row |
+| --- | --- | --- | --- |
+| 1 | `capacity_changed` | The success metric changes: trust maintenance, soft future availability, measured acquisition or capacity expansion. | Roadmap / strategic ignore list / measurement plan |
+| 2 | `first_inquiry_arrived` | Buyer truth: source, proof, need, price/availability friction and outcome. | Owner evidence ledger Inquiry Row |
+| 3 | `student_row_arrived` | Retention/proof truth: whether a tiny step helped before the next class. | Next 15 pilot tracker |
+| 4 | `owner_snapshot_arrived` | Owner-side profile movement: views, searches and interactions by range. | Owner evidence ledger GBP Performance Row |
+| 5 | `gbp_contact_link_truth` | Contact-path coherence between GBP and the website. | Owner evidence ledger GBP Contact Link Truth Row |
+| 6 | `review_reply_status` | Trust-maintenance action status. | Owner evidence ledger Action Log |
+| 7 | `channel_visible_signal` | Attention or click intent, not lead truth. | Action Log or measurement note |
+| 8 | `public_readiness` | Destination/system health only. | Research log / Public Proof Row |
+| 9 | `no_new_evidence` | No new decision evidence. | Research log only if a cycle is run |
+
+Privacy rule:
+
+- Do not save private names, emails, phone numbers, company names, full private messages, screenshots with identifiable data, cookies, credentials or private account URLs.
+- Save only aggregate numbers, source/status labels and anonymized short phrases.
+
+GA4 event rule:
+
+- Keep `contact_click` and `talk_contact_click` as intent events.
+- Do not send `generate_lead` for a raw WhatsApp/email click.
+- If a future form/request or deliberate offline lead capture exists, `generate_lead` can be used for that stronger lead event, with no personally identifiable information in event parameters.
+
+Interpretation:
+
+- A click can trigger a follow-up question, but it cannot prove a lead.
+- A review reply can prove maintenance, but not acquisition.
+- A public endpoint can prove readiness, but not owner performance.
+- One or two student rows can reveal whether the next tiny step is worth continuing, but they do not prove market demand.
+
+## Cycle 60 Quiet Cycle Measurement Boundary
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+
+When the router returns `no_new_evidence`, measure only whether a state changed.
+
+| Stable Signal | Measurement Meaning | Do Not Interpret As |
+| --- | --- | --- |
+| Homepage 200 from Netlify | Destination is reachable. | Demand, trust, conversion or SEO improvement. |
+| Reviews endpoint still `5.0 / 16` | Public proof remains available. | Newest review truth, reply status or GBP performance. |
+| Sitemap/robots unchanged | Crawl plumbing remains stable. | Indexing improvement or buyer intent. |
+| Teaching API health 200 | Platform is reachable. | Student retention or portal adoption. |
+| No Search Console/GBP owner access change | Owner/API layer remains gated. | Channel failure. |
+| No inquiry/current-student/capacity row | Decision evidence has not arrived. | A reason to create another system. |
+
+Interpretation:
+
+- Quiet cycles should check for public/system regressions, not chase proof that cannot exist without owner/student/prospect rows.
+- A stable quiet cycle should normally end with `DONT_NOTIFY`.
+- Repeated quiet cycles should not update the measurement plan again unless a stable signal becomes misleading or a new evidence type appears.
 
 ## Current Measurement Stack
 
@@ -63,7 +260,7 @@ Minimum row for a real inquiry:
   - Public ID `G-VDW7H0VQBC`
   - Tag IDs: `G-VDW7H0VQBC`, `GT-TXZ4FPK3`
   - Default workspace has 0 tags, 0 triggers, 0 variables.
-- Search Console API works for performance and URL inspection.
+- Search Console API worked in earlier cycles for performance and URL Inspection, but Cycle 52's current token returned `403 PERMISSION_DENIED` on the sites list. Treat Search Console as currently unavailable until access is restored, and preserve older Search Console baselines as historical evidence only.
 - GA4 Admin/Data API is not currently accessible from local tokens. Existing tokens only have Search Console, Tag Manager read-only, or Docs scopes.
 
 GTM access is not the same as GA4 reporting access. I can inspect the Google tag container, but I cannot currently read GA4 events, key events, or reports through the API.
@@ -250,6 +447,8 @@ Stop or downgrade the loop if:
 - Do not mark every micro-event as a key event.
 - Do not restore Calendly just for attribution while Auris is close to full and intentionally using direct contact.
 - Do not fire `generate_lead` on a WhatsApp/email click alone; reserve it for an actual form/request capture or a deliberately logged offline/direct lead.
+- Do not restore Calendly only because it was easier to measure. Restore it only if Auris changes from `direct_contact_future_availability` into a deliberate scheduling/acquisition mode.
+- Do not assume Calendly is gone from Google Business Profile just because it is gone from the website; GBP appointment/action links are owner-side profile surfaces.
 
 ## Cycle 49 Availability-Copy Measurement
 
@@ -967,3 +1166,26 @@ Interpretation:
 - Treat UTMs as useful support, not full attribution.
 - Do not build CRM/product tracking until 5-10 manual rows show repeated fields.
 - Do not send private inquiry notes or free-text buyer language to GA4.
+
+## Cycle 58 Evidence Waiting Measurement Rule
+
+Added: 2026-05-24 Cycle 58.
+
+Artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/strategic-ignore-list-cycle58.md`
+
+When Auris is close to full and no new lead/student row exists, do not invent new measurement systems. Classify the cycle first:
+
+| State | What To Measure | What Not To Measure |
+| --- | --- | --- |
+| `no_new_evidence` | Light live health: reviews count/rating, site 200, API health if relevant. | No dashboards, no new CRM, no social scrape, no extra ledgers. |
+| `owner_snapshot_arrived` | GBP views, searches, interactions, website clicks, calls/messages/bookings, top terms and range. | Do not infer buyer quality from profile metrics alone. |
+| `first_inquiry_arrived` | One anonymized row: source, proof, need, timing, fit, price anchor, response, follow-up and outcome. | Do not overfit channel strategy from one weak row. |
+| `student_row_arrived` | One continuity row: suggested step, reaction, behavior, in-class evidence and decision. | Do not send private content or names to analytics. |
+| `capacity_changed` | Capacity state, CTA state, one measured public action and same-range owner metrics. | Do not judge old Trust Maintenance data as an acquisition sprint. |
+
+Interpretation:
+
+- Public health checks are readiness evidence only.
+- Owner/platform analytics are channel-visible signal.
+- Inquiry and current-student rows are the human truth layer.
+- If there is no human truth layer, the correct measurement action can be "wait."

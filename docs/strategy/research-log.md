@@ -10713,3 +10713,7050 @@ Unfinished threads:
 - Owner GBP services/profile contact settings remain unknown.
 - Owner review reply/newest-review truth remains owner-side.
 - Search Console scoped access remains unresolved.
+
+## Cycle 52 - Direct Contact Production Gate
+
+Date: 2026-05-24
+Theme: production verification after direct-contact commit/push
+
+Primary research question:
+
+Now that Auris explicitly asked to commit and push all, is the public website actually in calm WhatsApp/email mode, and what evidence should be collected before changing the funnel again?
+
+Repo status:
+
+- Website repo: clean on `main...origin/main` at the start of the cycle; latest commit `a304f9c Simplify contact flow and add strategy memory` was pushed to `origin/main`.
+- Teaching platform repo: dirty/untracked with unrelated local files; inspected only by status and left untouched.
+- After this cycle, strategy-memory docs are updated locally; no commit or push was performed during the heartbeat because Auris had not asked to commit these new research notes.
+
+Local evidence inspected:
+
+- `research-log.md` Cycle 50/51 handoff.
+- `direct-contact-simplification-gate-cycle51.md`.
+- `measurement-plan.md`.
+- `research-roadmap.md`.
+- `automation-research-loop.md`.
+- `market-intelligence.md`.
+- `hypotheses.md` H004/H015/H020/H026.
+- `src/App.jsx`.
+- `src/components/ContactSection.jsx`.
+- `src/components/PricingSection.jsx`.
+- `src/components/TalkTheTalk.jsx`.
+- `src/components/SeoLandingPage.jsx`.
+- `src/translations.js`.
+- `src/utils/analytics.js`.
+- `index.html` and `talkthetalk/index.html`.
+- Live production homepage headers, HTML and asset references.
+- Live production Talk route bundle.
+- Live `sitemap.xml`, `robots.txt`, reviews endpoint and rendered production page.
+
+Data/API evidence:
+
+- Production homepage returns HTTP/2 200 from Netlify and references `assets/main-c144a168.js` plus `assets/main-82577177.css`.
+- Live main bundle contains `I’m usually close`, `Send me a message`, `WhatsApp me`, `contact_click`, WhatsApp and email links.
+- Live main bundle has no matches for `Calendly`, `calendly`, `trial_booked`, `Disponibilidad limitada` or `Limited availability`.
+- Live Talk bundle contains `Message Auris`, `talk_contact_click` and WhatsApp, with no Calendly matches.
+- Live reviews endpoint returns public Places New proof of `5.0 / 16`.
+- Live sitemap still lists all route `lastmod` values as `2026-05-21`, despite the May 24 production contact/copy change.
+- Search Console sites-list API attempt returned `403 PERMISSION_DENIED`, so current automation cannot verify page/query/URL Inspection status.
+- Rendered mobile production page showed the direct WhatsApp/email contact section and quiet future-availability note.
+
+Source discovery choices:
+
+Possible sources considered: Git/deploy state, live bundle scans, rendered route checks, Search Console/URL Inspection, sitemap/robots, GBP owner Performance, GA4/GTM event state, Netlify docs, Google Search docs, Google Business Profile docs, WhatsApp docs, local competitor contact pages, community/operator follow-up threads.
+
+Chosen highest-signal sources:
+
+- Live production headers/assets/string scans.
+- Rendered production route check.
+- Netlify production deploy docs.
+- Google sitemap and URL Inspection docs.
+- GBP/GA4 official docs.
+- Local competitor contact pages.
+
+External evidence:
+
+- Netlify production docs confirm a production branch push such as `main` can create the production deploy served at the primary domain.
+- Netlify deploy overview describes atomic deploy behavior, supporting the bundle/hash check as a public-state signal.
+- Google sitemap docs say accurate `lastmod` should reflect significant content, structured-data or link changes.
+- Google URL Inspection docs separate live testing/request indexing from guaranteed appearance in Google Search.
+- GBP Performance docs define owner-side views, searches, website clicks, calls, messages and bookings where applicable.
+- Google Business Profile public docs frame phone/hours, photos/logos, posts, FAQs and review replies as trust/contact surfaces.
+- Google Search business-details docs say verified owners can edit address, contact info, business type and photos for Search/Maps.
+- GBP services docs show service descriptions/prices can be managed where available.
+- GA4 outbound-click docs support the click-intent layer, while GA4 recommended-event docs reserve `generate_lead` for a form/request/offline lead state.
+- WhatsApp click-to-chat docs validate the `wa.me` contact mechanic.
+- Idealog, Janet's and Herpa contact pages show local providers expose phone/email/forms/WhatsApp; direct contact is category-normal, but academy funnels are louder than Auris should be.
+
+Trend/community/product signals:
+
+- Direct WhatsApp/email is not strategically strange in the local education category; the differentiator is how calm, personal and non-academy Auris makes it.
+- A successful production deploy is not growth evidence. It only removes the previous public/local mismatch.
+- Search freshness has a small hygiene gap: sitemap dates did not move with the public content/contact update.
+- Measurement has an access gap: GSC returned 403, and GA4 reporting remains owner/API-gated.
+
+Hypotheses changed:
+
+- H004 strengthened: direct contact is not premium price proof. First inquiry rows must still record proof/price/availability language.
+- H015 strengthened: production has click-intent events, but direct replies are still the truth unit; GSC/GA4 API access remains incomplete.
+- H020 refined: public deploy happened, but sitemap freshness and GSC access still matter; deployment alone does not solve indexing.
+- H026 strengthened: production is now live in `direct_contact_future_availability` mode; success should be future-fit inquiry quality or owner GBP baseline, not immediate booking volume.
+
+Artifacts updated:
+
+- Created `direct-contact-production-gate-cycle52.md`.
+- Updated `measurement-plan.md`.
+- Updated `research-roadmap.md`.
+- Updated `automation-research-loop.md`.
+- Updated `market-intelligence.md`.
+- Updated `hypotheses.md`.
+- Updated `research-log.md`.
+
+Implementation-ready artifact:
+
+`direct-contact-production-gate-cycle52.md` now contains:
+
+- source discovery table
+- live/local production evidence table
+- external evidence table
+- H015/H026/H003/H020 falsification
+- direct-contact row schema
+- production gate status table
+- Packet BA for the next cycle
+
+Strongest next move:
+
+Keep the public site in direct-contact future-availability mode and measure only the first real WhatsApp/email inquiry row plus a monthly GBP owner snapshot while Auris remains close to full.
+
+What not to do yet:
+
+- Do not restore Calendly only for attribution.
+- Do not add a waitlist/form/CRM until direct contacts create repeated follow-up risk or volume.
+- Do not run ads into a nearly-full, low-proof direct-contact path.
+- Do not interpret no immediate leads as failure while Auris is not trying to fill a slot.
+- Do not make Search Console/page-query claims until API/owner access is restored.
+
+Process improvement notes:
+
+- Highest-signal source: live production bundle/hash/string scans plus rendered page check, because they proved the public state had changed.
+- Useful official source: Netlify deploy docs for production-state meaning; Google sitemap/URL Inspection docs for post-deploy search caveats; GBP/GA4 docs for measurement boundaries.
+- Useful outside-in source: local competitor contact pages, because they falsified the fear that WhatsApp/email looks unprofessional locally.
+- Noisy/blocked source: Search Console API, blocked with 403; it should not be retried endlessly without access change.
+- Protocol improvement: after public-facing push, verify production first and classify deploy as state evidence, not growth evidence. This is now added to `automation-research-loop.md`.
+
+Next-cycle packet:
+
+Packet BA: Direct Contact Production Measurement Gate.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/direct-contact-production-gate-cycle52.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/direct-contact-simplification-gate-cycle51.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md`
+- live `https://englishwithauris.com/`
+- live `https://englishwithauris.com/talkthetalk`
+- live `https://englishwithauris.com/sitemap.xml`
+
+If a direct inquiry arrives:
+
+1. Fill only one direct-contact row with method, likely source, source confidence, first thing mentioned, proof, need, timing, availability confusion, price anchor, response, follow-up and outcome.
+2. Update H015/H026 and compare the row to production/GBP evidence.
+3. Do not build a CRM unless follow-up risk repeats.
+
+If no inquiry arrives:
+
+1. Treat that as expected while Auris is close to full.
+2. Inspect GBP services/profile/contact coherence if owner evidence is available.
+3. Consider sitemap `lastmod`/static route hygiene only if Auris asks for public SEO/code changes.
+
+Unfinished threads:
+
+- First direct-contact inquiry row is still missing.
+- Owner GBP service/contact/profile settings remain unknown.
+- Owner reply/newest-review truth remains owner-side.
+- Search Console scoped access returned 403 and remains unresolved.
+- Sitemap `lastmod` is stale for the May 24 public contact/copy change.
+
+## Cycle 53 - GBP Contact Coherence Gate
+
+Date: 2026-05-24
+Theme: Google Business Profile contact/booking-link coherence after direct-contact deploy
+
+Primary research question:
+
+Now that the live website is WhatsApp/email-first, does Google Business Profile still expose an old Calendly appointment path, and what owner-side evidence is needed before interpreting GBP as a channel?
+
+Repo status:
+
+- Website repo: `main...origin/main` with uncommitted Cycle 52/53 strategy-memory updates only.
+- Teaching platform repo: dirty/untracked with unrelated files; inspected read-only and left untouched.
+- No commit, push, deploy, credential edit, GBP edit or public change was made.
+
+Local evidence inspected:
+
+- `research-log.md` Cycle 51/52 handoff.
+- `research-roadmap.md` Packet BA.
+- `direct-contact-production-gate-cycle52.md`.
+- `measurement-plan.md`.
+- `owner-evidence-ledger-template.md`.
+- `future-demand-quiet-growth-cycle48.md`.
+- `review-count-16-reply-gate.md`.
+- `gbp-week-one-execution-pack.md`.
+- `hypotheses.md` H002/H015/H019/H026.
+- `market-intelligence.md`.
+- `automation-research-loop.md`.
+- `src/components/ContactSection.jsx`.
+- `src/components/PricingSection.jsx`.
+- `src/components/TalkTheTalk.jsx`.
+- `src/components/SeoLandingPage.jsx`.
+- `src/translations.js`.
+- `index.html` JSON-LD and FAQ.
+- `public/sitemap.xml`.
+- `netlify/functions/google-reviews.js`.
+- Teacher-assistant `README.md` and WhatsApp/follow-up code search.
+
+Data/API evidence:
+
+- Live homepage still returns HTTP/2 200 and serves the direct-contact asset build.
+- Live main bundle has WhatsApp/email paths and no active Calendly matches.
+- Live JSON-LD contains `telephone` and `email`, but does not describe direct-contact mode; offers still use `InStock` / `PreOrder`.
+- Live/app copy still includes some `free first class` / `trial class` language, which is true if offered but less aligned with the near-full posture.
+- Live reviews endpoint still returns `5.0 / 16`.
+- Sitemap `lastmod` remains `2026-05-21`.
+- Google Business Profile Business Information API attempt returned `403 PERMISSION_DENIED`.
+- User-provided owner/Search evidence from earlier on 2026-05-24 still matters: profile showed `Appointments: calendly.com`.
+
+Source discovery choices:
+
+Possible sources considered: owner GBP screenshot, GBP local business link docs, GBP booking provider docs, GBP place action links API, GBP chat/call-history docs, GBP performance docs, local competitor contact pages, website schema/live bundle, teacher-platform WhatsApp support, practitioner/community appointment-link threads.
+
+Chosen highest-signal sources:
+
+- Owner-provided GBP evidence because it can show the actual public profile surface.
+- Official GBP link/booking/action docs because appointment links are profile-level resources.
+- GBP chat/call-history docs because Google messaging is not a reliable replacement for website WhatsApp/email.
+- Live website/schema checks to compare profile state against the owned site.
+
+External evidence:
+
+- Google Business Profile local business links docs show owners can add action links, including appointment links, set preferred links, and manage/remove third-party links.
+- Google booking-provider docs show booking providers or owner-added links can appear separately from the website.
+- GBP place action links API docs show appointment links are structured profile resources, not ordinary website copy.
+- GBP chat/call-history docs say chat and call history ended in 2024; customers can still use profile info, website and contact details, and eligible accounts may have text/WhatsApp options.
+- GBP Performance docs support owner-side metrics such as views, searches, website clicks, calls, messages and bookings where available.
+- Google local ranking docs keep accurate profile information and reviews as trust/prominence work.
+- GBP services docs show services/descriptions can clarify offerings without using an appointment link.
+- WhatsApp click-to-chat docs validate `wa.me` as the official mechanic for direct contact.
+- Practitioner/community threads warn that generic contact pages may be rejected as appointment links and some provider links can be awkward to remove; useful but medium-confidence.
+
+Trend/community/product signals:
+
+- Direct contact is not the same as appointment booking in Google's profile model.
+- Removing Calendly from the site does not remove Calendly from GBP, marketplaces, LinkedIn or email signatures.
+- GBP chat is not a dependable direct-message layer after Google's 2024 changes; the website/phone/WhatsApp/email layer should be primary.
+- The teacher platform already supports WhatsApp handoffs for current students/classes, but not prospect tracking; this supports a manual owner row rather than new CRM work.
+
+Hypotheses changed:
+
+- H002 strengthened/refined: GBP remains the trust base, but profile action links must be coherent before interpreting it as a channel.
+- H015 strengthened: first inquiry rows need `first_contact_surface` to separate GBP appointment link, website link, call, website WhatsApp/email, referral and unknown.
+- H019 strengthened/broadened: owner-side baseline now includes contact/appointment link truth, not only Performance metrics.
+- H026 strengthened: capacity mode must be consistent across website and GBP action links.
+
+Artifacts updated:
+
+- Created `gbp-contact-coherence-gate-cycle53.md`.
+- Updated `research-roadmap.md`.
+- Updated `measurement-plan.md`.
+- Updated `owner-evidence-ledger-template.md`.
+- Updated `automation-research-loop.md`.
+- Updated `market-intelligence.md`.
+- Updated `hypotheses.md`.
+- Updated `research-log.md`.
+
+Implementation-ready artifact:
+
+`gbp-contact-coherence-gate-cycle53.md` now contains:
+
+- source discovery table
+- local/live evidence table
+- external evidence table
+- H002/H015/H019/H026 falsification
+- owner `gbp_contact_link_truth` row schema
+- owner micro-ask in English and Spanish
+- Packet BB for the next cycle
+
+Strongest next move:
+
+Do one owner-side GBP check: is `Appointments: calendly.com` still visible under Booking/Appointments? If yes, decide whether to remove it for direct-contact mode or keep it deliberately as a booking exception.
+
+What not to do yet:
+
+- Do not publish GBP posts or ads while profile action links may still point to stale Calendly.
+- Do not replace a Google appointment link with a generic contact page unless Google accepts it as a valid booking URL.
+- Do not build a waitlist, form or CRM from this single mismatch.
+- Do not infer GBP performance without owner-side link truth and inquiry rows.
+
+Process improvement notes:
+
+- Highest-signal evidence: owner-provided GBP/Search screenshot plus official GBP local-link docs.
+- Noisy source: public Google search scraping; it is personalized/volatile and cannot replace owner profile settings.
+- Useful external caution: practitioner threads on appointment-link removal, but keep them medium-confidence.
+- Protocol improvement: after a website contact-mode change, inspect adjacent public profile action links before acquisition/content planning.
+
+Next-cycle packet:
+
+Packet BB: GBP Contact-Link Coherence Gate.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/gbp-contact-coherence-gate-cycle53.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-ledger-template.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/direct-contact-production-gate-cycle52.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+If owner evidence arrives:
+
+1. Fill `gbp_contact_link_truth`.
+2. If Calendly is still present and direct-contact mode is desired, log status as planned, pending, blocked, provider request or done.
+3. Do not change website code unless Auris asks.
+
+If no owner evidence arrives:
+
+1. Do not keep re-checking public Google snippets.
+2. Treat the Calendly appointment link as an open risk, not confirmed current truth.
+3. Rotate to sitemap/static route hygiene, premium-proof pairing or retention evidence.
+
+Unfinished threads:
+
+- Current GBP appointment/booking link truth is owner-side and unknown.
+- First direct-contact inquiry row is still missing.
+- Search Console and GBP Business Information API access returned 403.
+- Sitemap `lastmod` remains stale.
+- Website/local landing FAQ still has free-first-class/trial language that may need future capacity-aware copy cleanup if Auris wants full consistency.
+
+## Cycle 54 - Public Message Coherence Gate
+
+Date: 2026-05-24
+Theme: capacity-aware public messaging after the direct-contact deploy
+
+Primary research question:
+
+Now that production is WhatsApp/email-first, what residual public signals still feel booking-first or too immediate, and which should be cleaned before the next acquisition push?
+
+Repo status:
+
+- Website repo: `main...origin/main` with uncommitted Cycle 52/53/54 strategy-memory updates only.
+- Teaching platform repo: dirty/untracked with unrelated files; inspected read-only and left untouched.
+- No commit, push, deploy, credential edit, GBP edit or public-facing change was made.
+
+Local evidence inspected:
+
+- `research-log.md` Cycle 53 handoff and unfinished threads.
+- `research-roadmap.md` Packet BB and active questions.
+- `gbp-contact-coherence-gate-cycle53.md`.
+- `direct-contact-production-gate-cycle52.md`.
+- `measurement-plan.md`.
+- `owner-evidence-ledger-template.md`.
+- `market-intelligence.md`.
+- `automation-research-loop.md`.
+- `hypotheses.md` H003/H015/H020/H026.
+- `pricing-positioning.md`.
+- `premium-price-proof-stack-cycle44.md`.
+- `future-demand-quiet-growth-cycle48.md`.
+- `availability-copy-deploy-gate-cycle49.md`.
+- `premium-proof-pairing-gate-cycle50.md`.
+- `src/components/ContactSection.jsx`.
+- `src/components/PricingSection.jsx`.
+- `src/components/SeoLandingPage.jsx`.
+- `src/components/FAQSection.jsx`.
+- `src/components/TalkTheTalk.jsx`.
+- `src/components/HeroSection.jsx`.
+- `src/components/Footer.jsx`.
+- `src/App.jsx`.
+- `src/translations.js`.
+- `src/utils/analytics.js`.
+- `index.html`.
+- `public/sitemap.xml`.
+- `public/robots.txt`.
+- `netlify/functions/google-reviews.js`.
+
+Data/API evidence:
+
+- Live homepage returned HTTP/2 200 from Netlify, serving `assets/main-c144a168.js`.
+- Live route status checks for `/`, `/clases-ingles-castelldefels`, `/ingles-empresas-castelldefels`, and `/talkthetalk` all returned 200.
+- Live main bundle scan found no `Calendly`, `calendly`, `trial_booked` or `Book now`; it did find WhatsApp/email, `contact_click`, quiet availability copy, and free-first-class strings.
+- Live Talk chunk scan found no Calendly and did find `Message Auris`, `wa.me`, `mailto:` and `talk_contact_click`.
+- Live JSON-LD parse found `ProfessionalService` offers with private availability `InStock` and group availability `PreOrder`, plus FAQ asking about `primera clase gratuita`.
+- Live sitemap still lists all routes with `lastmod` = `2026-05-21`.
+- Live reviews endpoint returned `source=places-new`, `rating=5`, `reviewCount=16`.
+- Static route text check showed 12-47 initial body words per route and no static future-availability copy before JavaScript.
+
+Source discovery choices:
+
+Possible sources considered: live bundle/static/JSON-LD checks, local translations/components, sitemap, prior strategy artifacts, Google sitemap docs, Google structured-data docs, Schema.org availability docs, GBP services docs, local academy pages, marketplace tutor pages, online-school free-trial pages, CTA/UX guidance, Search Console/GSC and owner GBP evidence.
+
+Chosen highest-signal sources:
+
+- Live website/schema/sitemap because this cycle is about current public truth.
+- Local source files because they show the exact origin of old free-trial language.
+- Google sitemap/structured-data docs because they define hygiene without SEO myths.
+- Schema.org availability because `LimitedAvailability` is a possible capacity-aware schema state.
+- Local/marketplace examples because they test whether free-first-class language is normal, premium, or commoditized.
+
+External evidence:
+
+- Google sitemap docs say `lastmod` should reflect the date/time of the last significant page update, including main content, structured data or links.
+- Google's sitemap blog says `lastmod` must consistently match reality and should be updated for significant modifications, not tiny sidebar/footer changes.
+- Google LocalBusiness structured-data docs recognize `priceRange`, telephone, URL and business details, but do not guarantee rich result display.
+- Google Organization structured-data docs say LocalBusiness should use primary phone/email at business level before extra `contactPoint` details.
+- Schema.org `InStock` confirms the current private-offer state means generally available.
+- Schema.org `LimitedAvailability` confirms a valid item-availability state for limited availability.
+- GBP services docs show services can carry descriptions/prices and may be highlighted in profile.
+- Janet's uses a free oral level test as a local academy placement step.
+- Live English combines free trial, WhatsApp/contact paths, scale proof and fast reply, showing free trials often live in larger enrolment funnels.
+- Superprof local tutor pages repeatedly show low hourly prices and first class free, increasing the chance that "free first class" creates marketplace expectations.
+- Coidal English search result combines free trial/session, WhatsApp and `Book Now`.
+- HarvardSites CTA guidance supports clear, action-oriented next steps.
+
+Trend/community/product signals:
+
+- Free first class/level test is common in English learning, academies and marketplaces.
+- For Auris, that makes it normal but not necessarily premium; it should be framed as a fit conversation if kept.
+- Schema and sitemap hygiene should support visible truth; they are not standalone lead generators.
+- Static fallback weakness remains real, but it belongs to Packet AT or an approved code pass, not another diagnosis cycle.
+
+Hypotheses changed:
+
+- H003 strengthened: route/static/sitemap hygiene is real but bounded to approved code work.
+- H015 strengthened: inquiry rows need `free_first_class_expectation` and `message_copy_seen`.
+- H020 strengthened: sitemap `lastmod` should update with meaningful route/schema/copy changes, not as date churn.
+- H026 strengthened: while near full, the first public action should be first conversation/direct message, not free-trial headline.
+
+Artifacts updated:
+
+- Created `public-message-coherence-cycle54.md`.
+- Updated `research-roadmap.md`.
+- Updated `measurement-plan.md`.
+- Updated `owner-evidence-ledger-template.md`.
+- Updated `automation-research-loop.md`.
+- Updated `market-intelligence.md`.
+- Updated `hypotheses.md`.
+- Updated `pricing-positioning.md`.
+- Updated `research-log.md`.
+
+Implementation-ready artifact:
+
+`public-message-coherence-cycle54.md` now contains:
+
+- source discovery table
+- local/live evidence table
+- external evidence table
+- H003/H015/H020/H026 falsification
+- P0/P1/P2 patch spec
+- first-conversation EN/ES copy
+- measurement add-on fields
+- Packet BC for the next cycle
+
+Strongest next move:
+
+Do nothing public automatically. If Auris later asks for a small site hygiene pass, use Packet BC: reframe the local landing/FAQ from free trial to first conversation, align JSON-LD offer/FAQ schema, and update sitemap dates only for changed routes.
+
+What not to do yet:
+
+- Do not restore Calendly for measurement.
+- Do not create a waitlist/form/CRM.
+- Do not treat stale sitemap dates as an urgent acquisition blocker.
+- Do not use free-first-class as the headline while Auris is usually close to full.
+- Do not repeat this copy audit next cycle unless code approval or owner evidence arrives.
+
+Process improvement notes:
+
+- Highest-signal evidence: live bundle/JSON-LD/sitemap checks plus local component source.
+- Noisy source: generic CTA best-practice material; useful only after the exact local copy issue is known.
+- Useful outside-in evidence: local/marketplace free-trial examples, because they falsify the idea that free-first-class wording is automatically premium.
+- Protocol improvement: after a contact-mode change, inspect visible copy, FAQ/schema and sitemap together once, then stop unless public-code work is approved.
+
+Next-cycle packet:
+
+Packet BC: Public Message Coherence Cleanup.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/public-message-coherence-cycle54.md`
+- `/Users/aurisp/repos/teacher-website/src/components/SeoLandingPage.jsx`
+- `/Users/aurisp/repos/teacher-website/src/translations.js`
+- `/Users/aurisp/repos/teacher-website/index.html`
+- `/Users/aurisp/repos/teacher-website/public/sitemap.xml`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/premium-price-proof-stack-cycle44.md`
+
+If Auris asks for a public hygiene patch:
+
+1. Replace local landing `free first class` headline with first-conversation/future-slot language.
+2. Reframe homepage FAQ and JSON-LD FAQ away from `free trial` as the main hook.
+3. Update private offer schema description and consider `LimitedAvailability`.
+4. Update sitemap `lastmod` only for changed routes.
+5. Run build and live/static scans after deployment.
+
+If no code approval arrives:
+
+1. Do not repeat this copy audit.
+2. Keep Packet BB open for GBP Calendly truth.
+3. Rotate to first direct-contact inquiry rows, monthly GBP owner snapshot, or retention proof.
+
+Unfinished threads:
+
+- GBP appointment/booking link truth is still owner-side and unknown.
+- First direct-contact inquiry row is still missing.
+- Search Console / GSC access remains blocked from prior checks.
+- Free-first-class copy is a P1 hygiene item only if Auris wants a public patch.
+- Sitemap `lastmod` should be updated with the next approved meaningful public-code change.
+
+## Cycle 55 - GBP Calendly Removal Handoff
+
+Date: 2026-05-24
+Theme: Google Business Profile appointment-link removal and verification
+
+Primary research question:
+
+After Auris asked how to remove the Calendly item from Google Business Profile, what is the smallest reliable owner-side sequence that removes or classifies it without turning this into a new funnel project?
+
+Repo status:
+
+- Website repo: `main...origin/main` with uncommitted strategy-memory updates from Cycles 52-55 only; no public code changes made.
+- Teaching platform repo: dirty/untracked with unrelated files; inspected read-only.
+- No commit, push, deploy, credential change, GBP edit, form submission, or third-party contact was made.
+
+Local evidence inspected:
+
+- `research-log.md` Cycles 53 and 54 handoffs.
+- `research-roadmap.md` Packets BB and BC.
+- `gbp-contact-coherence-gate-cycle53.md`.
+- `public-message-coherence-cycle54.md`.
+- `owner-evidence-ledger-template.md`.
+- `measurement-plan.md`.
+- `automation-research-loop.md`.
+- `hypotheses.md` H002/H015/H019/H026.
+- `market-intelligence.md`.
+- `content-strategy.md`.
+- `pricing-positioning.md`.
+- `src/components/ContactSection.jsx`.
+- `src/components/PricingSection.jsx`.
+- `src/components/SeoLandingPage.jsx`.
+- `src/components/FAQSection.jsx`.
+- `src/translations.js`.
+- `src/App.jsx`.
+- `src/utils/analytics.js`.
+- `index.html`.
+- `public/sitemap.xml`.
+- `netlify/functions/google-reviews.js`.
+- `/Users/aurisp/repos/teacher-assistant/README.md` WhatsApp integration notes.
+
+Data/API evidence:
+
+- Live homepage returned HTTP/2 200 from Netlify and still serves `assets/main-c144a168.js` plus `assets/main-82577177.css`.
+- Live main bundle scan found no `Calendly`, `calendly`, `trial_booked`, or `Book now`; it found `Send me a message`, WhatsApp, `wa.me`, `mailto:`, `usually close`, and `contact_click`.
+- Live routes `/`, `/clases-ingles-castelldefels`, `/ingles-empresas-castelldefels`, `/talkthetalk`, `/sitemap.xml`, and `/robots.txt` returned 200.
+- Live reviews endpoint returned `source=places-new`, `rating=5`, `reviewCount=16`.
+- Live JSON-LD still has phone/email, private offer `InStock`, group offer `PreOrder`, and FAQ about `primera clase gratuita`.
+- GSC sites API attempt returned `403 PERMISSION_DENIED` due insufficient authentication scopes.
+- GBP Business Information accounts API attempt returned `403 PERMISSION_DENIED` due insufficient authentication scopes.
+- Two shell-command false starts revealed a useful process issue: in zsh, using variables named `path` and `status` can break commands or collide with shell state. The process docs were updated.
+
+Source discovery choices:
+
+Possible sources considered: owner GBP Booking/Appointments screen, official GBP local-link docs, official GBP booking/provider docs, official GBP Performance docs, profile edit status docs, third-party provider policy docs, Google Ads promo docs, Calendly/provider docs, practitioner/community threads, live website scans, local competitor contact pages, and teacher-assistant WhatsApp workflow code.
+
+Chosen highest-signal sources:
+
+- Official GBP local-link, booking, edit/status, performance and third-party/provider docs.
+- Prior owner-provided GBP/Search evidence because it showed the old `Appointments: calendly.com` state.
+- Live website scans because they prove the owned site does not need another Calendly cleanup.
+- Practitioner threads only as medium-confidence friction signals.
+
+External evidence:
+
+- GBP local business links docs show appointment/action links and third-party/provider links are profile-level surfaces.
+- GBP bookings docs show supported providers/links can appear in profile booking surfaces and may need owner/provider handling.
+- GBP Performance docs show owner-side interactions can include bookings, website clicks, calls and messages where available.
+- GBP edit/status docs show profile changes can be pending, not approved or require review.
+- GBP third-party policy docs support classifying sticky provider links as provider-removal work, not website code work.
+- Google Ads promotional offer docs show ad credits require campaign setup/spend; a promo prompt is not a live public ad.
+- Google Business Profile ad docs show ads require a deliberate campaign; do not treat the owner dashboard offer as public visibility.
+- Google local ranking docs support accurate profile information as profile-quality work.
+- Practitioner/local SEO threads suggest generic contact-page replacements may be rejected as appointment links and provider-managed links can be awkward to remove.
+- Janet's and Live English contact pages confirm direct contact and trial/test flows are normal in the category, but Auris should keep the tone quieter and more personal.
+
+Trend/community/product signals:
+
+- GBP action links are not ordinary website copy; they need owner/provider verification.
+- Direct WhatsApp/email contact is normal enough locally, so not having a booking link is not strange.
+- Google Ads prompts are structurally different from public profile links and should be ignored while Auris is close to full.
+- Provider-removal friction is plausible enough to add `pending`, `blocked`, and `provider_request` statuses, but not enough to escalate before owner evidence.
+
+Hypotheses changed:
+
+- H002 strengthened/refined: GBP remains the trust base, but the profile action link must be removed or intentionally classified before judging the channel.
+- H015 strengthened: direct-contact rows need `first_contact_surface` plus GBP removal context when relevant.
+- H019 strengthened: owner-side baseline now includes post-action statuses such as removed, pending, blocked, provider_request, not_found or kept_intentionally.
+- H026 strengthened: in `direct_contact_future_availability`, Calendly should be removed from GBP unless deliberately kept as a booking exception.
+
+Artifacts updated:
+
+- Created `gbp-calendly-removal-handoff-cycle55.md`.
+- Updated `research-roadmap.md` with Packet BD.
+- Updated `owner-evidence-ledger-template.md`.
+- Updated `measurement-plan.md`.
+- Updated `automation-research-loop.md`.
+- Updated `market-intelligence.md`.
+- Updated `hypotheses.md`.
+- Updated `pricing-positioning.md`.
+- Updated `content-strategy.md`.
+- Updated `research-log.md`.
+
+Implementation-ready artifact:
+
+`gbp-calendly-removal-handoff-cycle55.md` now contains:
+
+- source discovery table
+- local/live evidence table
+- external evidence table
+- H002/H015/H019/H026 falsification
+- owner UI runbook
+- removal verification row
+- decision rules
+- what-not-to-do list
+- Packet BD for the next cycle
+
+Strongest next move:
+
+Wait for the owner-side result. If Auris removes/disconnects the Calendly link, fill one `gbp_calendly_removal_verification` row and stop repeating the topic unless it is blocked/pending.
+
+What not to do yet:
+
+- Do not change website code for this issue.
+- Do not replace the GBP appointment link with a generic contact page unless Google accepts it.
+- Do not publish GBP posts or run ads while the profile link is unresolved unless the booking path is intentionally kept.
+- Do not treat the Google Ads credit prompt as public advertising.
+- Do not build a waitlist/form/CRM from this cleanup.
+
+Process improvement notes:
+
+- Highest-signal evidence: official GBP link/provider docs plus live website scans.
+- Noisy/limited evidence: public Google snippets and practitioner threads; useful only for friction labels.
+- Next source type to try if blocked: owner screenshot of the exact Booking/Appointments status or provider-support message, redacted.
+- Protocol improvement: after providing owner UI instructions, future cycles should seek one status row instead of re-explaining the same action.
+- Shell process improvement: avoid zsh variable names `path` and `status` in automation checks.
+
+Next-cycle packet:
+
+Packet BD: GBP Calendly removal verification and profile freshness.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/gbp-calendly-removal-handoff-cycle55.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-ledger-template.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/gbp-contact-coherence-gate-cycle53.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/content-strategy.md`
+
+If owner evidence arrives:
+
+1. Fill `appointment_link_visible_before`, `action_taken`, `profile_edit_status`, `appointment_link_visible_after`, `appointment_link_domain_after`, `ad_promo_visible`, and `next_check_date`.
+2. If removed, mark Packet BB resolved and rotate to monthly GBP snapshot, first inquiry row, or Packet BC only if code work is requested.
+3. If pending/blocked/provider_request, record the status and do not recommend ads/posts yet.
+
+If no owner evidence arrives:
+
+1. Do not repeat the removal instructions.
+2. Keep GBP Calendly truth as open risk.
+3. Rotate to first direct-contact inquiry rows, monthly GBP owner snapshot, or public-message cleanup only with approval.
+
+Unfinished threads:
+
+- GBP Calendly removal result is still owner-side and unknown.
+- First direct-contact inquiry row is still missing.
+- Search Console and GBP Business Information API access still return 403 from current local auth.
+- Packet BC public-message/schema/sitemap cleanup remains code-approved-only.
+
+## Cycle 56 - Review Reply Trust Maintenance
+
+Date: 2026-05-24
+Theme: Google Business Profile review replies, proof freshness and quiet future demand
+
+Primary research question:
+
+Now that owner review truth is confirmed at `5.0 / 16`, Auris has asked whether replying is better than liking/reacting, and he is nearly fully booked, what is the smallest useful system for review replies that builds future trust without becoming a marketing campaign?
+
+Repo status:
+
+- Website repo: `main...origin/main` with uncommitted strategy-memory updates from Cycles 52-56 only; no public code changes made.
+- Teaching platform repo: dirty/untracked with unrelated files; inspected read-only.
+- No commit, push, deploy, credential change, GBP edit, form submission, review reply submission or third-party contact was made by the automation.
+
+Local evidence inspected:
+
+- `research-log.md` Cycle 55.
+- `research-roadmap.md` RQ001/RQ007/RQ009/RQ010 and Packet BD.
+- `review-proof-library.md`.
+- `review-count-16-reply-gate.md`.
+- `future-demand-quiet-growth-cycle48.md`.
+- `content-strategy.md`.
+- `owner-evidence-ledger-template.md`.
+- `measurement-plan.md`.
+- `hypotheses.md` H002/H009/H023/H026.
+- `market-intelligence.md`.
+- `automation-research-loop.md`.
+- `pricing-positioning.md`.
+- `gbp-calendly-removal-handoff-cycle55.md`.
+- `src/components/GoogleReviewsSection.jsx`.
+- `netlify/functions/google-reviews.js`.
+- `src/components/ContactSection.jsx`.
+- `src/components/PricingSection.jsx`.
+- `/Users/aurisp/repos/teacher-assistant/README.md` WhatsApp handoff notes.
+
+Local interpretation:
+
+- The existing strategy already knew reviews were the strongest proof asset, but Cycle 56 sharpened the action: replies are not a content sprint; they are maintenance.
+- The site displays live Google review proof but cannot display or verify owner replies.
+- The Places-backed reviews endpoint exposes public rating/count/reviews, not owner reply status.
+- The direct-contact site and calmer pricing/contact path should not be undermined by salesy review replies.
+- The teaching platform's WhatsApp integration is for current students/classes, not a prospect/review CRM; do not build new tooling for this.
+
+Data/API evidence:
+
+- Live EN reviews endpoint returned `source=places-new`, `rating=5`, `reviewCount=16`, 5 visible reviews, including a recent former-student referral/kids-trust review.
+- Live ES reviews endpoint returned `source=places-new`, `rating=5`, `reviewCount=16`, 5 visible reviews with confidence, meetings, comfort speaking, adaptation and progress themes.
+- Live homepage returned HTTP/2 200 from Netlify and served `assets/main-c144a168.js` plus `assets/main-82577177.css`.
+- Live HTML scan found JSON-LD and the current assets; no Calendly string appeared in the HTML.
+- GBP Business Information API attempt returned `403 PERMISSION_DENIED` due insufficient authentication scopes, so owner view remains the truth source for reply status.
+
+Source discovery choices:
+
+Possible sources considered: GBP owner review screen, live public reviews endpoint, official Google review reply docs, Google Maps UGC policy, Google local ranking docs, GBP Performance docs, GBP Reviews API docs, consumer review behavior research, practitioner/community threads, tutor marketplaces, adjacent provider review pages, local competitor review surfaces, and teaching-platform follow-up code.
+
+Chosen highest-signal sources:
+
+- Official Google docs for what replies do, what review asks can and cannot do, and what ranking/performance claims are safe.
+- Live reviews endpoint plus owner-supplied review context for Auris-specific proof.
+- BrightLocal review behavior research for outside-in buyer trust interpretation.
+- Marketplace/Trustpilot tutor surfaces for category comparison.
+- Practitioner/community threads only as medium-confidence falsification of ranking overclaims and reply-display friction.
+
+External evidence:
+
+- Google manage reviews docs: verified businesses can reply; approved replies are public, appear as the business and can notify the reviewer.
+- Google review tips: replies should be positive, relevant, short, simple, conversational and non-promotional.
+- Google Maps UGC policy: genuine experience is required; no incentives, pressure, selective positive solicitation or requested content.
+- Google local ranking docs: local ranking uses relevance, distance and prominence; review count and positive ratings can help prominence.
+- GBP Performance docs: profile views, searches, website clicks, calls, messages and bookings are owner-side metrics, not available from the public review endpoint.
+- GBP Reviews API docs: owner/API review resources include `reviewReply` and reply state metadata, confirming reply truth lives at owner/API layer.
+- BrightLocal 2025 survey: consumers read review details and response behavior affects trust; review count alone is not the whole proof.
+- Auris Superprof profile: third-party proof exists at 40 EUR/h with 5/7 reviews and 20 students, but marketplace framing still includes free-first-class and category comparison pressure.
+- Superprof peer profile Fred: lower-priced tutor has 4.9/18 and visible review reply behavior, showing reviews/replies are category table stakes.
+- English with Laura Trustpilot: adjacent online English provider has 4.8/58 and teacher-specific praise, showing support/progress reviews are common in the category.
+- Reddit GBP reply discussion: practitioners frame replies as human trust and possible engagement, not an instant ranking cheat.
+- Reddit reply visibility discussion: some owners report replies can appear in owner view but not public view, supporting a `publicly_seen` status when needed.
+
+Trend/community/product signals:
+
+- Review replies are one of the few public actions that fit a nearly-full teacher: they keep proof fresh without creating new booking pressure.
+- "Great teacher", "confidence", "practical lessons" and "support" are common category proof. Auris needs to reply with warmth plus method specificity, not only gratitude.
+- Reacting/liking is too weak to carry public trust; it may be polite, but future prospects need visible owner voice.
+- Reply status can be owner-visible but publicly inconsistent, so status rows need `owner_visible_live`, `publicly_seen`, `pending` and `hidden/unknown` style labels.
+
+Hypotheses changed:
+
+- H002 strengthened/refined: GBP/reviews remain the trust base, but a reply is not acquisition proof without owner Performance or an inquiry row.
+- H009 strengthened: reviews are central because of repeated themes and public owner care, not raw count alone; liking/reacting is not equivalent.
+- H023 strengthened: the personal review/referral loop fits Auris better than public referral campaigns or more posting theory while full.
+- H026 strengthened: in Trust Maintenance Mode, success is proof freshness and coherent contact surfaces, not immediate lead volume.
+
+Favored idea tested:
+
+`Replying to every review quickly will create more leads or rankings.`
+
+Result: weakened.
+
+Official docs support replies as public/responsive trust and reviews as local prominence signals, but they do not prove a single reply creates ranking gains. Practitioner threads support the trust habit but are anecdotal. The stop/change rule is: if capacity opens and a measured review-led GBP/LinkedIn action does not move owner metrics or inquiries, keep replies as hygiene only.
+
+Artifacts updated:
+
+- Created `review-reply-trust-maintenance-cycle56.md`.
+- Updated `review-proof-library.md`.
+- Updated `content-strategy.md`.
+- Updated `owner-evidence-ledger-template.md`.
+- Updated `measurement-plan.md`.
+- Updated `automation-research-loop.md`.
+- Updated `market-intelligence.md`.
+- Updated `research-roadmap.md`.
+- Updated `hypotheses.md`.
+- Updated `review-count-16-reply-gate.md`.
+- Updated `research-log.md`.
+
+Implementation-ready artifact:
+
+`review-reply-trust-maintenance-cycle56.md` now contains:
+
+- source discovery table
+- local/live evidence table
+- external evidence table
+- H009/H023/H026/H002 falsification
+- reply principles
+- like/react rule
+- reply bank for Teresa-style, former-student referral, child progress, confidence, work English and general progress reviews
+- compact review-reply ledger row
+- monthly trust-maintenance checklist
+- Packet BE for the next cycle
+
+Strongest next move:
+
+Treat review replies as the default public maintenance habit. If Teresa/Milagros/Montse replies are live or owner-visible with no issue, stop optimizing reply copy and rotate to monthly GBP snapshot, first inquiry row, or GBP Calendly removal verification if owner evidence arrives.
+
+What not to do yet:
+
+- Do not create a weekly review-content calendar.
+- Do not ask students for keywords, city names, exact phrases, star ratings or incentivized reviews.
+- Do not turn replies into sales CTAs or academy-style copy.
+- Do not build a review-response CRM.
+- Do not overclaim ranking impact from replies.
+- Do not repeat the Calendly removal instructions unless owner-side status arrives.
+
+Process improvement notes:
+
+- Highest-signal evidence: official Google review/reply/policy docs plus the live reviews endpoint and owner screenshot context.
+- Best outside-in source: BrightLocal review behavior research, because it connects response behavior to buyer trust without pretending to be Auris-specific conversion data.
+- Useful but noisy source: Reddit/practitioner threads; good for friction labels and falsification, weak for hard ranking claims.
+- Source type to try next: public/non-owner view of a specific reply only if Auris suspects it is hidden, or a monthly GBP Performance screenshot if a capacity-opening action is planned.
+- Protocol improvement: for tactical owner questions, create one operating rule and one status row, then rotate instead of building another campaign.
+
+Next-cycle packet:
+
+Packet BE: Review reply verification and profile freshness.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/review-reply-trust-maintenance-cycle56.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/review-proof-library.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-ledger-template.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/content-strategy.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+If owner evidence arrives:
+
+1. Fill `review_reply_status` for recent replies: theme, age, draft type, reply status, public visibility if needed, next action.
+2. If live, mark review maintenance complete and do not rewrite.
+3. If pending/hidden, recheck once before editing.
+4. If a prospect mentions a review/reply, fill an anonymized inquiry row and let it outrank channel theory.
+
+If no owner evidence arrives:
+
+1. Do not repeat the "why reply" explanation.
+2. Keep review replies as a maintenance habit.
+3. Rotate to monthly GBP snapshot, first direct-contact inquiry row, Packet BD if Calendly removal status arrives, Packet BC only if code work is requested, or student-retention proof.
+
+Unfinished threads:
+
+- GBP Calendly removal result remains owner-side and unknown.
+- First direct-contact inquiry row is still missing.
+- GBP Business Information API remains blocked by insufficient scopes.
+- Search Console/API access remains historically blocked from current local auth.
+- Packet BC public-message/schema/sitemap cleanup remains code-approved-only.
+- Review reply public visibility is unknown unless Auris or a non-owner check confirms it; do not chase unless it matters.
+
+## Cycle 57 - Current Student Continuity Proof
+
+Date: 2026-05-24
+Theme: student-platform retention, current-student proof and quiet future-demand compounding
+
+Primary research question:
+
+While Auris is nearly full and acquisition is in Trust Maintenance Mode, what is the smallest current-student continuity proof system that can show whether the portal is creating real between-class progress?
+
+Repo status:
+
+- Website repo: `main...origin/main` with uncommitted strategy-memory updates from recent automation cycles; no public code changes made.
+- Teaching platform repo: dirty/untracked with unrelated files; inspected read-only only.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made by the automation.
+
+Local evidence inspected:
+
+- `research-log.md` Cycle 56.
+- `research-roadmap.md` RQ005 and Packet AU.
+- `platform-backlog.md`.
+- `next-15-proof-pilot-cycle46.md`.
+- `next-15-pilot-tracker.md`.
+- `retention-baseline-and-manual-pilot.md`.
+- `hypotheses.md` H006/H016/H017/H018/H026.
+- `measurement-plan.md`.
+- `content-strategy.md`.
+- `market-intelligence.md`.
+- `automation-research-loop.md`.
+- `src/components/PlatformShowcase.jsx`.
+- `src/components/TeachingPillars.jsx`.
+- `src/components/PricingSection.jsx`.
+- `src/translations.js`.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/pages/StudentDashboard.tsx`.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/pages/TeacherOverview.tsx`.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/pages/FlashcardStats.tsx`.
+- `/Users/aurisp/repos/teacher-assistant/backend/app/db/models.py`.
+- `/Users/aurisp/repos/teacher-assistant/backend/app/api/routes.py`.
+- `/Users/aurisp/repos/teacher-assistant/backend/app/api/srs.py`.
+
+Local interpretation:
+
+- The portal is already unusually deep: assignments, reviewed feedback, class notes, flashcards, Talk, games, modular work and teacher-side prep signals exist.
+- The current website already makes a modest public promise that vocabulary, materials and review stay organised between classes.
+- The unresolved risk is not technical feasibility. The unresolved risk is whether current students experience one small next step as useful and whether Auris can bring that step back into class.
+- `TeacherOverview.tsx` and `ClassHomeworkLog` show that a no-code proof sprint can use existing workflow if convenient.
+- More platform copy or another dashboard spec would not add evidence until student rows exist.
+
+Data/API evidence:
+
+- `GET https://teacher-assistant-api-1056846192318.europe-west1.run.app/api/health` returned HTTP 200 with `{"status":"ok"}`.
+- Unauthenticated `GET /api/lms/students/me` returned HTTP 401, `Authorization header missing`.
+- Unauthenticated `GET /api/srs/students/me/flashcards/stats?class_id=1` returned HTTP 401, `Authorization header missing`.
+- `HEAD https://english-with-auris-portal.netlify.app/student/dashboard` returned HTTP 200 from Netlify.
+- `HEAD https://englishwithauris.com/` returned HTTP 200 from Netlify.
+- Homepage HTML scan found the business email in JSON-LD and no active Calendly/book-now pressure in the HTML. Prior bundle checks remain the stronger direct-contact verification.
+
+Source discovery choices:
+
+Possible sources considered: current-student replies, student dashboard code, teacher overview code, homework-log model/routes, SRS stats routes/UI, website portal/pricing copy, prior platform artifacts, live API/portal checks, official learning-app docs, tutor-platform product pages, academic language-learning research, community complaint threads, app-store reviews and marketplace tutor experiences.
+
+Chosen highest-signal sources:
+
+- Local platform code and prior platform artifacts, because implementation feasibility is mostly known.
+- Live API/auth checks, to verify production health and data boundaries.
+- Official/product docs from Duolingo, Quizlet, Busuu, Preply, Eluency and Tuton, to test whether guided next steps and between-session practice are category patterns.
+- DOAJ/Frontiers SRL research, to test whether recommendations/feedback/e-portfolio are learning-relevant.
+- Reddit/Preply/Duolingo complaint threads, to weaken the favored idea and capture risk language around homework, forced paths and AI/generic practice.
+
+External evidence:
+
+- Duolingo redesigned the home screen toward a clearer path because learners were unsure whether they were using the app in the best way.
+- Quizlet Study Path suggests adapted study sequences and syncs progress across devices.
+- Busuu Study Plan uses goals, preferred days, reminders, daily time and progress tracking as a premium habit feature.
+- Preply frames progress as live tutor support plus beyond-lesson practice, personalized vocabulary, feedback and tools.
+- Preply Lesson Insights shows the market moving toward AI-generated lesson summaries and next exercises, but also makes the feature optional and data-sensitive.
+- Eluency sells teacher-side completion/quiz data so the teacher knows what to review before class.
+- Tuton sells independent-tutor continuity through lessons, exercises, notes, vocabulary and SRS in one classroom.
+- DOAJ/Frontiers SRL evidence reports stronger EFL grammar results when learners had recommendations, feedback and e-portfolio support compared with assignment submission only.
+- Reddit Preply homework threads show homework can damage perceived value when it feels disconnected or wastes live class time.
+- Reddit Preply AI homework and Duolingo path threads show adults can resist forced paths, generic AI homework and loss of control.
+
+Trend/community/product signals:
+
+- "Clear next step" is now a product category expectation, not a novel differentiator by itself.
+- The differentiator for Auris is that the next step is teacher-owned and feeds back into class.
+- AI/practice platforms raise expectations for continuity, but also make human trust, privacy and non-generic guidance more valuable.
+- Forced paths and generic homework are the main product risks for adult/professional learners.
+- Current-student rows now outrank more product-source browsing.
+
+Hypotheses changed:
+
+- H006 strengthened but narrowed: clarity of next action remains the right platform direction, but the next evidence is two continuity rows, not another spec.
+- H016 strengthened: any Next 15-style guidance must stay optional and personal.
+- H017 strengthened but bounded: SRS is still the measurable retention spine, but raw cards reviewed are not enough without next-class evidence.
+- H018 strengthened: existing homework-log infrastructure is enough for the first proof sprint, and should remain optional.
+- H026 strengthened: while close to full, retention/referral readiness and current-student progress proof are valid growth metrics.
+
+Favored idea tested:
+
+`Because the portal is deep, Auris should build or market the portal harder now.`
+
+Result: weakened.
+
+Product depth is real, but it is not the same as student-visible progress. The cheaper and stronger alternative is to observe two current students after one tiny between-class suggestion. If it produces no class evidence, a bigger feature or louder public claim would be premature.
+
+Artifacts updated:
+
+- Created `current-student-continuity-proof-cycle57.md`.
+- Updated `platform-backlog.md`.
+- Updated `research-roadmap.md`.
+- Updated `hypotheses.md`.
+- Updated `measurement-plan.md`.
+- Updated `automation-research-loop.md`.
+- Updated `market-intelligence.md`.
+- Updated `next-15-pilot-tracker.md`.
+- Updated `content-strategy.md`.
+- Updated `research-log.md`.
+
+Implementation-ready artifact:
+
+`current-student-continuity-proof-cycle57.md` now contains:
+
+- source discovery map
+- local evidence table
+- live data/API evidence
+- external evidence table
+- H006/H016/H017/H018 falsification
+- 2-row continuity proof sprint
+- English and Spanish tiny-step messages
+- optional homework-log workflow
+- anonymous row fields
+- build / keep manual / soften / pause decision gates
+- Packet BF handoff
+
+Strongest next move:
+
+Use the current student base as the future-growth asset. Run the 2-row continuity proof sprint only if it feels natural: one portal/SRS-active student and one lower-portal-use or WhatsApp/notes-first student. The success metric is not a sent message or SRS count; it is next-class evidence.
+
+What not to do yet:
+
+- Do not build another Next 15 spec.
+- Do not add AI speaking homework.
+- Do not turn portal proof into louder public copy.
+- Do not create a CRM, waitlist or new platform analytics table.
+- Do not judge current retention value by clicks or SRS counts alone.
+- Do not repeat review-reply or GBP Calendly instructions unless owner-side status arrives.
+
+Process improvement notes:
+
+- Highest-signal local source: the platform code around StudentDashboard, TeacherOverview, FlashcardStats and homework-log routes.
+- Highest-signal external source type: official/product docs plus community complaint threads in combination; product docs show the category pattern and community threads show the failure mode.
+- Noisy/limited source: broad app/product pages can make every learning product look like it solves continuity; they cannot prove Auris's students want it.
+- Next source type to try: real current-student anonymous rows. Once the local path is known, student evidence outranks more browsing.
+- Protocol improvement: after a platform feature has a spec, future cycles should ask for observed rows or implementation approval, not produce more specs.
+
+Next-cycle packet:
+
+Packet BF: Current Student Continuity Proof.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/current-student-continuity-proof-cycle57.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/next-15-pilot-tracker.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/platform-backlog.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/retention-baseline-and-manual-pilot.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+If owner/current-student evidence arrives:
+
+1. Record only anonymized row fields: `student_type`, `suggested_step`, `portal_surface`, `sent_channel`, `did_action`, `student_reaction`, `in_class_evidence`, `teacher_effort`, and `decision`.
+2. Update H006/H016/H017/H018/H026.
+3. Decide `build_next15`, `keep_manual`, `soften_copy`, or `pause`.
+
+If no rows arrive:
+
+1. Do not write another platform spec.
+2. Rotate to monthly GBP owner snapshot, first direct-contact inquiry row, GBP Calendly removal status, or approved public-code hygiene.
+
+Unfinished threads:
+
+- No current-student continuity rows exist yet.
+- GBP Calendly removal result remains owner-side and unknown.
+- First direct-contact inquiry row is still missing.
+- GBP Business Information API and Search Console access remain blocked from current local auth.
+- Packet BC public-message/schema/sitemap cleanup remains code-approved-only.
+
+## Cycle 58 - Strategic Ignore List
+
+Date: 2026-05-24
+Theme: process/self-improvement, acquisition pruning, evidence waiting
+
+Primary research question:
+
+Given Auris is close to full and several evidence gates are waiting on owner or student rows, what should be deliberately ignored or parked for the next 30-60 days so the automation does not create more work, noise or false certainty?
+
+Repo status:
+
+- Website repo: `main` with uncommitted strategy-memory updates from recent automation cycles; no public code changes made.
+- Teaching platform repo: dirty/untracked with unrelated work; inspected status only and treated read-only.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Local evidence inspected:
+
+- `research-log.md` Cycles 56-57.
+- `research-roadmap.md` active questions and Packets BF/AV-AZ/BA-BE.
+- `automation-research-loop.md`.
+- `hypotheses.md` H002/H003/H005/H006/H015/H019/H026.
+- `future-demand-quiet-growth-cycle48.md`.
+- `direct-contact-production-gate-cycle52.md`.
+- `gbp-calendly-removal-handoff-cycle55.md`.
+- `current-student-continuity-proof-cycle57.md`.
+- `review-reply-trust-maintenance-cycle56.md`.
+- `public-message-coherence-cycle54.md`.
+- `content-strategy.md`.
+- `market-intelligence.md`.
+- `measurement-plan.md`.
+- Website git status.
+- Teaching platform git status.
+
+Local interpretation:
+
+- The strategy is not missing more plausible lanes. It has too many ready lanes waiting on the same few proof rows.
+- Current active truths: public reviews are strong, direct-contact mode is live, website/API are healthy, portal depth is real, and Auris is close to full.
+- Current missing truths: first direct-contact inquiry row, monthly GBP owner snapshot, GBP Calendly removal status and two current-student continuity rows.
+- The right implementation artifact is a pruning artifact, not another calendar, funnel, product spec or ledger.
+
+Data/API evidence:
+
+- `GET /.netlify/functions/google-reviews?language=en` returned `source=places-new`, rating `5`, `reviewCount=16`, 5 visible reviews.
+- `GET /.netlify/functions/google-reviews?language=es` returned `source=places-new`, rating `5`, `reviewCount=16`, 5 visible reviews.
+- `HEAD https://englishwithauris.com/` returned HTTP 200 from Netlify with content length 12618.
+- `GET https://englishwithauris.com/sitemap.xml` returned the expected routes, all still with `lastmod` `2026-05-21`.
+- `GET https://englishwithauris.com/robots.txt` allows all and points to the sitemap.
+- `GET https://teacher-assistant-api-1056846192318.europe-west1.run.app/api/health` returned HTTP 200 with `{"status":"ok"}`.
+- Search Console and GBP owner/API data remain unavailable from current local auth; no fresh query/URL Inspection/GBP Performance claims were made.
+
+Source discovery choices:
+
+Possible source types considered: prior local packets and stop rules, live site/API checks, owner GBP evidence, official prioritization/strategy sources, official Google Search/GBP/Ads docs, LinkedIn/Instagram/TikTok analytics docs, scheduling/waitlist/CRM product docs, service-business community threads, marketplaces, competitors, current-student rows, Search Console/GBP APIs and public code inspection.
+
+Chosen highest-signal sources:
+
+- Local strategy memory, because it reveals repeated open loops and stop conditions.
+- Live public/API checks, because they can rule out urgent site/system issues.
+- Official Google/platform docs, because claims about SEO, ads, GBP posts and analytics need primary sources.
+- Scheduling/waitlist product docs, as a future-option falsification source.
+- One service-business operator thread, to test the full-calendar/waitlist risk from outside Auris's context.
+
+External evidence:
+
+- Strategy source on Porter's "choosing what not to do" supports turning pruning into a real artifact.
+- Google helpful-content docs warn against search-first content sprawl, artificial freshness and writing to arbitrary word counts.
+- Google Ads promotional-offer docs show ad credits require spend and eligibility; they are not free demand.
+- GBP Performance docs confirm that profile views, searches, clicks and interactions are owner/manager metrics.
+- GBP posts docs confirm posts are optional update surfaces with live/pending/not-approved statuses.
+- LinkedIn post analytics docs confirm post analytics are owner-visible and post-specific.
+- Instagram Insights docs show reach/interactions/follower metrics for professional accounts, but they are attention/platform metrics.
+- TikTok analytics docs show video/account analytics and aggregated engagement reporting, not buyer proof for Auris.
+- Calendly Routing docs show routing/qualification is for lead volume and form-driven scheduling, which is not the current bottleneck.
+- Vagaro waitlist docs show real waitlists require service/time preference and manual/automatic acceptance logic; this is useful later, not before inquiries.
+- A fully booked/waitlist service-business thread shows full calendars can create hidden leaks and follow-up stress, but also warns against rushed capacity expansion.
+
+Trend/community/product signals:
+
+- Social/platform analytics are measurable, but mostly at the attention level until a human buyer row exists.
+- Waitlist/routing products prove a future-demand system is a category pattern, but also prove it adds operational machinery.
+- Full capacity is not "growth solved"; it needs simple follow-up evidence, not necessarily more marketing.
+- Current-student proof is a stronger compounding signal than public content while Auris is nearly full.
+
+Hypotheses changed:
+
+- H002 strengthened as trust infrastructure but parked as a campaign until owner metrics or inquiry rows arrive.
+- H003 strengthened and parked: no new city/SEO pages; Packet BC/AT only if approved or fresh GSC evidence arrives.
+- H005 strengthened as trust-building but parked as a workstream while full.
+- H006 remains strong but parked behind two current-student rows or an explicit build request.
+- H015 strengthened: first inquiry row beats CRM/dashboard/waitlist/routing systems.
+- H019 strengthened: monthly GBP owner snapshot or Calendly status row is required before judging profile movement.
+- H026 strengthened into `Trust Maintenance + Evidence Waiting`.
+- H027 added: strategic pruning is higher leverage than more ideas while Auris is close to full.
+
+Favored idea tested:
+
+`The automation should keep advancing every open lane while waiting for proof.`
+
+Result: weakened.
+
+The better move is to protect Auris's attention. Multiple lanes already have implementation-ready handoffs. Adding more would increase false confidence and admin work without improving the evidence base.
+
+Artifacts updated:
+
+- Created `strategic-ignore-list-cycle58.md`.
+- Updated `research-roadmap.md`.
+- Updated `automation-research-loop.md`.
+- Updated `hypotheses.md`.
+- Updated `market-intelligence.md`.
+- Updated `content-strategy.md`.
+- Updated `measurement-plan.md`.
+- Updated `research-log.md`.
+
+Implementation-ready artifact:
+
+`strategic-ignore-list-cycle58.md` now contains:
+
+- source discovery map
+- local evidence table
+- live data/API evidence
+- external evidence table
+- H026/H015/H003 falsification
+- active / parked / ignore-until lane table
+- decision triggers
+- 30-day operating rule
+- process critique
+- Packet BG handoff
+
+Strongest next move:
+
+Use `Trust Maintenance + Evidence Waiting` for the next 30 days. Keep only five lanes active by default: review replies, monthly GBP owner snapshot, first direct-contact inquiry row, GBP Calendly removal status and two current-student continuity rows.
+
+What not to do yet:
+
+- Do not run Google Ads.
+- Do not go TikTok/Instagram-first.
+- Do not create new city/local SEO pages.
+- Do not restart a weekly GBP/LinkedIn posting calendar.
+- Do not build a CRM, waitlist, routing form or larger dashboard.
+- Do not write another Next 15/platform spec.
+- Do not package Work-English or small teams before repeated inquiry evidence.
+- Do not use tutor marketplaces as brand direction.
+
+Process improvement notes:
+
+- Highest-signal evidence: cross-cycle strategy memory, because it exposed repeated waiting gates.
+- Most useful external evidence: official Google docs for SEO/GBP/Ads boundaries and the strategic "what not to do" source.
+- Noisy/biased source: routing/waitlist product docs; they make future systems attractive before volume exists.
+- Source type to try next: owner/current-student evidence, not more browsing.
+- Protocol improvement: if three or more active packets are waiting on rows, classify the cycle as `evidence_arrived`, `approval_arrived`, `capacity_changed` or `no_new_evidence`; if no new evidence, use the ignore list.
+
+Next-cycle packet:
+
+Packet BG: Strategic Ignore List Refresh.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/strategic-ignore-list-cycle58.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-ledger-template.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/next-15-pilot-tracker.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+If new evidence arrives:
+
+1. Map it to a Cycle 58 trigger.
+2. Update only the relevant lane.
+3. Keep unrelated parked lanes parked.
+
+If no evidence arrives:
+
+1. Do not create another campaign, content calendar, platform spec or ledger.
+2. Run only light live checks if useful.
+3. Rotate to approved public-code hygiene, owner-supplied GBP status, first inquiry readiness or process/source-map improvement.
+
+Unfinished threads:
+
+- GBP Calendly status remains unknown.
+- First direct-contact inquiry row remains missing.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity rows remain missing.
+- GSC/GBP API access remains unavailable from current local auth.
+
+- Packet BC/AT public-code hygiene remains approval-only.
+
+## Cycle 59 - Evidence Trigger Router
+
+Date: 2026-05-24
+Theme: process/self-improvement, evidence routing, measurement discipline
+
+Primary research question:
+
+When no new owner/student proof has arrived, what is the smallest evidence-routing system that makes future screenshots, owner notes, inquiry notes, capacity changes or student observations immediately usable without creating more admin, privacy risk or false work?
+
+Repo status:
+
+- Website repo: `main` with existing strategy-memory modifications from recent cycles and a new untracked strategy artifact created this cycle. No public code changes were made.
+- Teaching platform repo: dirty/untracked with unrelated frontend and generated-output work; inspected read-only only.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Local evidence inspected:
+
+- `research-log.md` Cycles 57-58.
+- `research-roadmap.md` RQ015, Packet BG and active packets.
+- `strategic-ignore-list-cycle58.md`.
+- `automation-research-loop.md`.
+- `hypotheses.md` H015/H019/H026/H027.
+- `owner-evidence-ledger-template.md`.
+- `next-15-pilot-tracker.md`.
+- `measurement-plan.md`.
+- `market-intelligence.md`.
+- `src/components/ContactSection.jsx`.
+- `src/components/PricingSection.jsx`.
+- `src/utils/analytics.js`.
+- `src/translations.js`.
+- `teacher-assistant/classroom-hub/src/pages/StudentDashboard.tsx`.
+- `teacher-assistant/classroom-hub/src/pages/TeacherOverview.tsx`.
+- Website git status.
+- Teaching platform git status.
+
+Local interpretation:
+
+- The strategy already has destinations for the main evidence types: review replies, GBP snapshots, GBP contact-link truth, first inquiries, current-student continuity rows, capacity states and public readiness checks.
+- The missing layer was not another ledger. It was a router that prevents each incoming screenshot or note from reopening unrelated lanes.
+- Current public state remains healthy enough that no urgent public-code action is warranted inside this heartbeat.
+
+Data/API evidence:
+
+- `GET https://englishwithauris.com/.netlify/functions/google-reviews?language=en` returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- The first returned visible review from the endpoint was older than the newest owner-visible reviews previously shared, confirming that the endpoint is public proof but not newest-review/reply truth.
+- `HEAD https://englishwithauris.com/` returned HTTP 200 from Netlify.
+- The live homepage raw HTML served current asset hashes and did not expose detailed copy outside the bundles.
+- `GET https://englishwithauris.com/sitemap.xml` still showed route `lastmod` values of `2026-05-21`.
+- `GET https://englishwithauris.com/robots.txt` allowed crawling and pointed to the sitemap.
+- `GET https://teacher-assistant-api-1056846192318.europe-west1.run.app/api/health` returned HTTP 200 with `{"status":"ok"}`.
+- Search Console and GBP owner/API data were not re-authorized in this cycle, so no fresh GSC/GBP Performance claims were made.
+
+Source discovery choices:
+
+Possible source types considered: existing ledgers and trackers, live public/API checks, official privacy/data-minimisation sources, official Google Analytics event and policy docs, official Google Business Profile docs, Search Console URL Inspection docs, qualitative research/sample-size sources, continuous/customer discovery sources, service-business waitlist/community threads, CRM/routing/waitlist product docs, platform code and current-student/owner evidence.
+
+Chosen highest-signal sources:
+
+- Local ledgers/trackers, because they decide where evidence belongs.
+- Official privacy, analytics and GBP docs, because evidence routing touches personal data, events, profile metrics and review/contact-link truth.
+- Live public/API checks, because they can rule out urgent public/system issues.
+- Qualitative and service-business outside-in signals, because the next useful evidence may be only 1-5 rows and because full calendars can still leak future demand.
+
+External evidence:
+
+- GDPR Article 5 data-minimisation text supports storing only necessary categories/status labels: `https://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1590424137028&uri=CELEX%3A32016R0679`
+- Google Analytics PII policy supports keeping identities and private messages out of analytics: `https://support.google.com/analytics/answer/6366371`
+- GA4 recommended events show `generate_lead` belongs to stronger lead-generation/request events, not raw WhatsApp/email clicks: `https://support.google.com/analytics/answer/9267735`
+- GBP Performance docs confirm views/searches/interactions are owner-side range metrics: `https://support.google.com/business/answer/9918094`
+- GBP review reply docs support classifying reply status as a public trust action: `https://support.google.com/business/answer/3474050`
+- GBP local/action link docs support treating booking/contact links as profile-layer truth separate from website code: `https://support.google.com/business/answer/6218037`
+- Google URL Inspection docs support treating Search Console as a gated data layer, not assumed evidence: `https://support.google.com/webmasters/answer/9012289`
+- NN/g small-sample qualitative testing supports using small observed samples to reveal practical issues without overclaiming market proof: `https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/`
+- WhatsApp click-to-chat docs confirm `wa.me` is an official direct-contact mechanic: `https://faq.whatsapp.com/5913398998672934`
+- A fully booked service-business thread suggests follow-up leaks can happen, but does not justify CRM/waitlist software before repeated rows: `https://www.reddit.com/r/Entrepreneurs/comments/1s6v094/if_youve_been_fully_booked_with_a_waitlist_what/`
+
+Trend/community/product signals:
+
+- Routing/waitlist/CRM products are future options, but their product logic is biased toward adding systems before Auris has volume.
+- Small qualitative rows can be strategically useful, but only for the next decision, not broad channel conclusions.
+- Full capacity does not remove the need to track future-fit inquiries, but the first fix is a redacted inquiry/follow-up row, not software.
+- Public readiness checks are increasingly low priority unless they reveal a real outage, stale deploy or approved code-hygiene task.
+
+Hypotheses changed:
+
+- H015 strengthened and privacy-bounded: manual lead-source rows remain the truth layer, but they must be routed and redacted.
+- H019 strengthened and routed: GBP movement still requires `owner_snapshot_arrived` or `gbp_contact_link_truth`, not public checks.
+- H026 strengthened with trigger priority: capacity changes outrank public readiness when deciding strategy.
+- H027 strengthened and operationalized: pruning now has a router so "ignore until evidence changes" becomes actionable.
+- H028 added: evidence routing prevents false work after pruning.
+
+Favored idea tested:
+
+`No-new-evidence cycles should only wait silently.`
+
+Result: weakened once, then made stricter.
+
+Cycle 59 produced useful process infrastructure because Cycle 58's ignore list created a real operational question: where should future evidence land? After this router exists, repeated no-new-evidence cycles should not create more artifacts unless they improve the source map/process or catch an urgent public/system issue.
+
+Artifacts updated:
+
+- Created `evidence-trigger-router-cycle59.md`.
+- Updated `research-roadmap.md`.
+- Updated `automation-research-loop.md`.
+- Updated `measurement-plan.md`.
+- Updated `owner-evidence-ledger-template.md`.
+- Updated `hypotheses.md`.
+- Updated `market-intelligence.md`.
+- Updated `research-log.md`.
+
+Implementation-ready artifact:
+
+`evidence-trigger-router-cycle59.md` now contains:
+
+- source discovery map
+- local evidence table
+- live data/API evidence table
+- external evidence table with source-quality notes
+- router table for incoming evidence
+- trigger priority rule
+- privacy/redaction rule
+- falsification of H015/H019/H026/H027
+- strategic synthesis and process critique
+- Packet BH handoff
+
+Strongest next move:
+
+Use Packet BH before every future strategy update. If evidence arrives, classify it and update the one matching existing row. If no evidence arrives, keep the system quiet and do not create another lane.
+
+What not to do yet:
+
+- Do not create a CRM, waitlist, routing form or prospect dashboard.
+- Do not restart GBP/LinkedIn/social content plans.
+- Do not create more SEO pages.
+- Do not write another Next 15 spec.
+- Do not run ads.
+- Do not treat public health checks as buyer evidence.
+
+Process improvement notes:
+
+- Highest-signal source: local strategy memory and ledgers, because they showed the row destinations already existed.
+- Most useful external source: official privacy/GA/GBP docs, because they clarify the boundary between private lead truth, click intent and owner-side performance.
+- Noisy/biased source: routing/waitlist/CRM product categories; useful later, but too system-heavy before repeated rows.
+- Source type to try next: owner/current-student evidence, not another broad web scan.
+- Protocol improvement: after Cycle 59, `no_new_evidence` should not create a new artifact by default.
+
+Next-cycle packet:
+
+Packet BH: Evidence Trigger Router.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/strategic-ignore-list-cycle58.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-ledger-template.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/next-15-pilot-tracker.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+
+If evidence arrives:
+
+1. Classify it using the router table.
+2. Update only the matching row/artifact.
+3. Update one relevant hypothesis if confidence changes.
+4. Keep unrelated parked lanes parked.
+
+If no evidence arrives:
+
+1. Run only light live/API health checks if useful.
+2. Do not create another campaign, calendar, platform spec, CRM, waitlist, route map or ledger.
+3. Leave the next cycle pointed at Packet BH unless a better evidence source is found.
+
+Unfinished threads:
+
+- GBP Calendly status remains owner-side and unknown.
+- First direct-contact inquiry row remains missing.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity rows remain missing.
+- GSC/GBP API access remains unavailable from current local auth.
+- Packet BC/AT public-code hygiene remains approval-only.
+
+## Cycle 60 - Quiet Cycle Contract Stress Test
+
+Date: 2026-05-24
+Theme: process/self-improvement, no-new-evidence discipline, automation quality
+
+Primary research question:
+
+Can Packet BH be tightened so future no-new-evidence heartbeats do not repeatedly produce new artifacts while still preserving a useful light-check and escalation path?
+
+Repo status:
+
+- Website repo: `main` with existing strategy-memory modifications and untracked strategy artifacts from recent cycles. Cycle 60 updated strategy docs only.
+- Teaching platform repo: dirty/untracked with unrelated frontend and generated-output work; inspected read-only only.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Local evidence inspected:
+
+- `research-log.md` Cycles 58-59.
+- `research-roadmap.md` RQ016 and Packet BH.
+- `evidence-trigger-router-cycle59.md`.
+- `strategic-ignore-list-cycle58.md`.
+- `automation-research-loop.md`.
+- `measurement-plan.md`.
+- `owner-evidence-ledger-template.md`.
+- `next-15-pilot-tracker.md`.
+- `current-student-continuity-proof-cycle57.md`.
+- `content-strategy.md`.
+- `hypotheses.md` H027/H028.
+- `market-intelligence.md`.
+- `src/components/ContactSection.jsx`.
+- `src/components/PricingSection.jsx`.
+- `src/utils/analytics.js`.
+- `src/translations.js`, `index.html`, and `src/components/SeoLandingPage.jsx` for residual free-first-class surfaces.
+- `teacher-assistant/classroom-hub/src/pages/StudentDashboard.tsx`.
+- `teacher-assistant/classroom-hub/src/pages/TeacherOverview.tsx`.
+- Website and teaching-platform git status.
+
+Local interpretation:
+
+- Packet BH is the correct first stop, but its `no_new_evidence` branch was still broad enough to justify another process cycle.
+- The row destinations already exist for review truth, GBP snapshots, contact-link truth, first inquiries, current-student continuity, capacity and public readiness.
+- The local site remains direct-contact oriented through WhatsApp/email, and the teaching platform already has continuity surfaces.
+- Residual free-first-class copy remains a known public-code hygiene task, but it is approval-only and not a quiet-cycle trigger.
+
+Data/API evidence:
+
+- `HEAD https://englishwithauris.com/` returned HTTP 200 from Netlify.
+- `GET https://englishwithauris.com/sitemap.xml` still showed route `lastmod` values of `2026-05-21`.
+- `GET https://englishwithauris.com/robots.txt` allowed crawling and pointed to the sitemap.
+- `GET https://englishwithauris.com/.netlify/functions/google-reviews?language=en` returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews. The endpoint remains public proof, not newest-review/reply truth.
+- `GET https://teacher-assistant-api-1056846192318.europe-west1.run.app/api/health` returned HTTP 200.
+- Search Console and GBP owner/API data were not re-authorized; no fresh owner/API claims were made.
+
+Source discovery choices:
+
+Possible source types considered: Packet BH/BG and local ledgers, live public/API checks, owner/student rows, Google SRE toil and monitoring docs, GOV.UK performance measurement docs, Kanban/WIP guidance, lightweight decision-record guidance, Shape Up boundary/appetite sources, scheduling/routing product docs, service-business waitlist/community threads, broad competitor/social scans, and Search Console/GBP owner APIs.
+
+Chosen highest-signal sources:
+
+- Local router/ignore-list/measurement artifacts, because they define the current operating system.
+- Live public/API checks, because quiet cycles should still catch urgent regressions.
+- Official process sources on toil, actionable alerts, performance measurement, WIP limits and decision records.
+- One scheduling-product source and one service-business community source to falsify the temptation to add routing/waitlist software.
+
+External evidence:
+
+- Google SRE Workbook, Eliminating Toil, supports bounding repeated manual operational work: `https://sre.google/workbook/eliminating-toil/`
+- Google SRE Book, Monitoring Distributed Systems, supports alerts/notifications only when urgent, actionable and user-visible: `https://sre.google/sre-book/monitoring-distributed-systems/`
+- GOV.UK performance data guide supports measuring user need and task completion rather than stable technical checks: `https://www.gov.uk/service-manual/measurement/using-data.html/`
+- Kanban University Guide supports explicit WIP limits as a policy for active work: `https://kanban.university/kanban-guide/`
+- Google Cloud ADR overview supports lightweight Markdown decision records instead of repeated relitigation: `https://docs.cloud.google.com/architecture/architecture-decision-records`
+- Basecamp Shape Up Set Boundaries supports setting an appetite before exploring raw ideas: `https://basecamp.com/shapeup/1.2-chapter-03`
+- Calendly features page shows routing/workflow products are biased toward booking automation and growth systems: `https://calendly.com/features/`
+- Fully booked service-business community thread suggests future-fit leads can leak through poor follow-up, but does not justify software before repeated rows: `https://www.reddit.com/r/Entrepreneurs/comments/1s6v094/if_youve_been_fully_booked_with_a_waitlist_what/`
+
+Trend/community/product signals:
+
+- Operational sources are a useful new source type for automation quality cycles, but should not become a routine browsing habit.
+- Scheduling/routing products make systems feel natural; for Auris they remain later options after repeated rows or missed follow-up.
+- Service-business community evidence keeps the first-inquiry/follow-up row active even while Auris is close to full.
+- Broad competitor/social scans are low value when the trigger is explicitly `no_new_evidence`.
+
+Hypotheses changed:
+
+- H027 strengthened with a repeat-run stop rule: pruning must include a quiet-cycle contract so restraint does not become another admin lane.
+- H028 strengthened but narrowed: evidence routing prevents false work only if the router also defines how much checking is enough when nothing changes.
+
+Favored idea tested:
+
+`The deep-cycle protocol should always gather 8 external sources and update 3 artifacts.`
+
+Result: weakened for repeated `no_new_evidence`.
+
+The deep-cycle checklist is useful when a real theme is open. When the current trigger is no new evidence, forcing broad source discovery risks creating the false work the router is meant to prevent. One bounded process stress test was useful; repeated quiet cycles should be successful restraint.
+
+Artifacts updated:
+
+- Updated `evidence-trigger-router-cycle59.md`.
+- Updated `automation-research-loop.md`.
+- Updated `research-roadmap.md`.
+- Updated `measurement-plan.md`.
+- Updated `hypotheses.md`.
+- Updated `market-intelligence.md`.
+- Updated `research-log.md`.
+
+Implementation-ready artifact:
+
+`evidence-trigger-router-cycle59.md` now contains a Cycle 60 Quiet Cycle Contract with:
+
+- source discovery for the no-new-evidence process question
+- local evidence and live/API check tables
+- external evidence table
+- allowed check table
+- state-change thresholds
+- hard stop rule
+- escalation/notification criteria
+- repeat-run rule
+- H027/H028 falsification
+
+Strongest next move:
+
+Keep Packet BH as the first stop. If evidence arrives, classify it and update one matching row. If no evidence arrives, use the Quiet Cycle Contract, run only bounded checks, and stop.
+
+What not to do yet:
+
+- Do not create a CRM, waitlist, routing form or prospect dashboard.
+- Do not restart GBP/LinkedIn/social posting.
+- Do not create new SEO pages or city pages.
+- Do not write another platform spec.
+- Do not run ads.
+- Do not keep re-auditing stable public checks as growth research.
+
+Process improvement notes:
+
+- Highest-signal source: local Packet BH/BG and measurement memory, because the gap was the missing repeat-run stop rule.
+- Most useful external sources: Google SRE toil/monitoring docs and GOV.UK performance measurement docs, because they translated quiet-cycle discipline into actionable criteria.
+- Noisy/biased source: scheduling/routing product docs; useful as future option maps, but biased toward system-building.
+- Source type to try next: owner/current-student/prospect rows. Browsing cannot replace the first inquiry row, GBP owner snapshot/contact-link truth or current-student continuity rows.
+- Protocol improvement: after Cycle 60, repeated `no_new_evidence` heartbeats should not try to satisfy the full deep-cycle checklist by creating work. They should perform bounded regression checks and return `DONT_NOTIFY` unless a real trigger appears.
+
+Next-cycle packet:
+
+Packet BH: Evidence Trigger Router, with Quiet Cycle Contract.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/strategic-ignore-list-cycle58.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-ledger-template.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/next-15-pilot-tracker.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+
+If evidence arrives:
+
+1. Classify it using the router.
+2. Update only the matching row/artifact.
+3. Update one relevant hypothesis if confidence changes.
+4. Keep unrelated parked lanes parked.
+
+If no evidence arrives:
+
+1. Run only bounded quiet checks if useful.
+2. Do not browse broadly.
+3. Do not create or materially expand strategy artifacts.
+4. Use `DONT_NOTIFY` unless an urgent public/system/access issue or owner decision appears.
+
+Unfinished threads:
+
+- GBP Calendly status remains owner-side and unknown.
+- First direct-contact inquiry row remains missing.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity rows remain missing.
+- GSC/GBP API access remains unavailable from current local auth.
+- Packet BC/AT public-code hygiene remains approval-only.
+
+## Cycle 61 - Talk Direct-Contact Calibration
+
+Date: 2026-05-25
+Theme: Talk the Talk, direct-contact measurement, public-readiness routing
+
+Primary research question:
+
+Does the owner-approved one-minute Talk the Talk/default-contact change strengthen the feedback-bridge strategy, and what should be measured next without reopening old Calendly/free-trial or SEO lanes?
+
+Repo status:
+
+- Website repo: `main...origin/main` at commit `e4d6975 Set Talk the Talk default to one minute`, with existing dirty strategy-memory files from previous heartbeat cycles. Cycle 61 updated strategy docs only.
+- Teaching platform repo: dirty/untracked with unrelated frontend/generated-output work; inspected read-only only.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made during this strategy cycle.
+
+Local evidence inspected:
+
+- `research-log.md` Cycles 59-60.
+- `research-roadmap.md` RQ004/RQ009/RQ016 and Packet BH.
+- `evidence-trigger-router-cycle59.md`.
+- `measurement-plan.md`.
+- `talk-the-talk-lead-magnet.md`.
+- `hypotheses.md` H007/H011/H015/H026.
+- `owner-evidence-ledger-template.md`.
+- `automation-research-loop.md`.
+- `market-intelligence.md`.
+- `src/components/TalkTheTalk.jsx`.
+- `src/components/ContactSection.jsx`.
+- `src/components/PricingSection.jsx`.
+- `src/utils/analytics.js`.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/pages/TalkTheTalk.tsx`.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/pages/StudentDashboard.tsx`.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/pages/TeacherOverview.tsx`.
+- Website and teaching-platform git status.
+
+Local interpretation:
+
+- Public Talk now defaults to `DEFAULT_DURATION_SECONDS = 60`; custom timer opens at `01:00`.
+- Public Talk completion is direct-contact: WhatsApp `Message Auris` and `talk_contact_click`, not Calendly or `talk_trial_click`.
+- Public Talk still has 60/90/120/180/300-second options, so the old 90-second round is still available without being the first ask.
+- The student portal Talk page still defaults to 90 seconds / `01:30`, and the teaching-platform repo should not be touched during a strategy heartbeat without an explicit product/build request.
+- The public how-it-works copy still mentions optional recording/listenback even though the inspected public component does not implement recording.
+- The change fits Auris's direct, personal, non-marketing contact mode better than a free-first-class/trial-booking funnel.
+
+Data/API evidence:
+
+- `npm run build` passed after the public default change.
+- Local browser verification showed `/talkthetalk` timer controls with `01:00` selected and custom inputs at `01` / `00`.
+- Live `https://englishwithauris.com/` returned HTTP 200 and served `assets/main-b8762529.js`.
+- Live `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk`.
+- Live main bundle imports `TalkTheTalk-b73dc496.js`; the Talk chunk contains `Message Auris` and `talk_contact_click`, and does not contain Calendly, `free first`, `free trial`, `primera clase gratuita`, or `01:30`.
+- Live sitemap returns HTTP 200, but `/talkthetalk` still has `lastmod` `2026-05-21` while homepage/local page have `2026-05-25`.
+- Live robots.txt returns HTTP 200, allows crawling and references the sitemap.
+- Live Google reviews endpoint returns `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health returns HTTP 200 with `{"status":"ok"}`.
+
+Source discovery choices:
+
+Possible source types considered: public Talk code/live assets, measurement plan/router artifacts, GA4 event docs, GBP business-link docs, WhatsApp direct-link docs, Google Search helpful-content docs, British Council/Cambridge speaking-practice resources, AI speaking products, learner community threads, recent AI-speaking research, Search Console/GBP owner APIs, marketplace tutor funnels, local competitor contact pages, and broad SEO scans.
+
+Chosen highest-signal sources:
+
+- Public code/live bundle and measurement memory, because the trigger was an owner-approved public state change.
+- Official GA4/GBP/WhatsApp/Search sources, because they define event, profile-link and direct-contact boundaries.
+- Speaking-practice incumbents and learner communities, because they test whether a one-minute rep is strategically plausible.
+- AI speaking product/research sources, because they falsify the idea that Talk can win as a generic free speaking tool.
+
+External evidence:
+
+- WhatsApp click-to-chat Help confirms `wa.me` direct-contact mechanics are an official path: `https://faq.whatsapp.com/5913398998672934`
+- GA4 recommended events define `generate_lead` as submitting a form/request and separate qualification/working/closed lead states: `https://support.google.com/analytics/answer/9267735`
+- Google Business Profile local business links can include appointment/booking actions, and third-party booking providers may need explicit removal: `https://support.google.com/business/answer/6218037`
+- Google Search helpful-content guidance favors people-first usefulness and warns against search-first content: `https://developers.google.com/search/docs/fundamentals/creating-helpful-content`
+- British Council speaking resources organize practice by level and connect self-study, live classes and personal tutors: `https://learnenglish.britishcouncil.org/free-resources/speaking`
+- Cambridge learner activities expose skill, level and short time filters including 0-5 minutes: `https://www.cambridgeenglish.org/learning-english/activities-for-learners/`
+- ELSA Speak pitches AI role-play, bilingual tutor support, instant feedback and progress tracking: `https://elsaspeak.com/en`
+- SmallTalk2Me pitches AI IELTS/interview/business speaking, instant feedback and 15-30 minute daily practice, while also distinguishing human tutors for motivation/nuance: `https://smalltalk2.me/`
+- Reddit English-learning threads repeat the pain language of understanding English but blanking when speaking, overthinking, accent judgment and needing low-pressure practice.
+- A 2026 CHI/arXiv AI Twin paper shows AI speaking research is moving toward confidence-preserving feedback and emotional engagement: `https://arxiv.org/abs/2601.11103`
+
+Trend/community/product signals:
+
+- Generic free/AI speaking practice is crowded and increasingly sophisticated.
+- Learners still describe the same human pain: they know words, then freeze, overthink, translate or fear mistakes in front of people.
+- Short, safe reps fit that pain better than starting with a 90-second performance ask.
+- The strategic bridge is not "Auris has a speaking app"; it is "try a low-pressure rep, then bring the stuck point to a human teacher who knows Spanish speakers."
+- AI competition strengthens the need for specific human feedback positioning and weakens any plan to make Talk a generic app clone.
+
+Hypotheses changed:
+
+- H007 strengthened/refined: Talk is now a better low-pressure lead magnet because the first rep is 60 seconds and direct-contact, but it remains not SEO-first.
+- H011 strengthened: the one-minute default supports the feedback bridge by helping the learner notice the stuck point before asking Auris.
+- H015 strengthened: `talk_contact_click` is intent only; do not fire `generate_lead` or infer conversion without a real reply row.
+- H026 strengthened: the current public state fits `direct_contact_future_availability`, not booking-first acquisition.
+
+Favored idea tested:
+
+`Making Talk easier to start might be enough to make it an acquisition asset.`
+
+Result: refined, not proven.
+
+The one-minute default reduces activation friction and fits community pain language, but there is still no Talk-origin reply row. It should be treated as public readiness and intent measurement, not conversion proof.
+
+Cheaper/simpler alternative that could beat it:
+
+A direct owner/referral prompt or GBP profile action could produce a higher-fit inquiry faster than promoting Talk. Talk should stay available and measured, but not absorb attention until it creates a real reply or student observation.
+
+Artifacts updated:
+
+- Updated `talk-the-talk-lead-magnet.md`.
+- Updated `measurement-plan.md`.
+- Updated `hypotheses.md`.
+- Updated `research-roadmap.md`.
+- Updated `market-intelligence.md`.
+- Updated `automation-research-loop.md`.
+- Updated `research-log.md`.
+
+Implementation-ready artifact:
+
+`talk-the-talk-lead-magnet.md` now includes a Cycle 61 current supersession that makes the public Talk spec concrete:
+
+- default 60 seconds
+- direct WhatsApp `talk_contact_click`
+- no Calendly/free-first-class success metric
+- event/owner-row measurement loop
+- portal 90-second divergence caveat
+- live route/sitemap/recording-copy hygiene notes
+- keep/stop conditions for scaling Talk
+
+Strongest next move:
+
+Keep the public one-minute Talk path live and measure only intent until a real Talk-origin reply appears. If a reply arrives, route it through Packet BI and the direct-contact row before changing strategy.
+
+What not to do yet:
+
+- Do not restore Calendly or a free-trial funnel for Talk.
+- Do not treat `talk_contact_click` as a qualified lead.
+- Do not align the dirty teaching-platform portal default to 60 seconds without explicit product evidence or a direct build request.
+- Do not start an SEO push for Talk while the static/content explanation and recording/listenback mismatch remain unresolved.
+- Do not create a CRM, waitlist or Talk analytics dashboard before one reply row.
+
+Process improvement notes:
+
+- Highest-signal source: the live public bundle plus local Talk source, because they verified the real state after owner-approved code changes.
+- Most useful external sources: GA4 recommended events and GBP business-link docs, because they prevented over-reading clicks and reminded that GBP profile links remain a separate surface.
+- Noisy/biased sources: AI speaking product pages; useful for category direction but biased toward app/platform claims.
+- Best community source: learner threads around "understand but can't speak" and low-pressure practice; useful for wording and friction, not buying intent.
+- Protocol improvement: owner-approved public code/copy changes should be routed as `approval_arrived` plus `public_readiness`, update the directly affected strategy/measurement artifacts, and then return to Packet BH unless they create a real owner/student/prospect row.
+
+Next-cycle packet:
+
+Packet BH remains the default, with Packet BI available if Talk-specific evidence appears.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/talk-the-talk-lead-magnet.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md`
+- `/Users/aurisp/repos/teacher-website/src/components/TalkTheTalk.jsx`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/pages/TalkTheTalk.tsx`
+
+If evidence arrives:
+
+1. If it is a Talk-origin reply, classify as `first_inquiry_arrived` and record a redacted direct-contact row with `first_contact_surface=talk_whatsapp`.
+2. If it is current-student feedback about Talk duration, classify as `student_row_arrived` and decide whether portal default should remain 90 or move to 60.
+3. If it is only a public-code hygiene approval, fix recording/listenback copy and/or sitemap `lastmod`, then verify live route and stop.
+4. If no evidence arrives, use Packet BH Quiet Cycle Contract and do not create another Talk artifact.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student Talk duration/reflection observation remains missing.
+- Public Talk recording/listenback copy mismatch remains a future public-code hygiene item.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 62 - Quiet Contract Follow-Through
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, bounded regression checks, log-order repair
+
+Primary research question:
+
+Has any new owner/student/prospect/capacity/access evidence arrived since Cycle 61 that should reopen a lane, or should Packet BH remain in quiet mode?
+
+Classification:
+
+`no_new_evidence`, with one maintenance correction: Cycle 61 had been inserted before Cycles 59-60 in `research-log.md`; this cycle mechanically moved it after Cycle 60 so future cycles determine the next number correctly.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing dirty strategy-memory files from previous cycles. No public code changes were made.
+- Teaching platform repo: still dirty/untracked with unrelated work; inspected read-only only.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` Cycle ordering and latest packets.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` Cycle 59-61 rules.
+- Website repo git status.
+- Teaching platform repo git status.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk`.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots returned HTTP 200 and still allows crawl.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health returned HTTP 200 with `{"status":"ok"}`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract say repeated `no_new_evidence` cycles should avoid broad source discovery unless a real trigger appears or the router fails.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain in the same state: direct-contact rows and owner/current-student proof are the missing evidence; stable public checks are not growth proof.
+
+Artifacts updated:
+
+- `research-log.md` only, to repair Cycle 61 ordering and record the bounded check.
+
+Implementation-ready artifact:
+
+No new artifact. The existing implementation-ready artifacts remain Packet BH and Packet BI.
+
+Strongest next move:
+
+Keep Packet BH as the default. If a Talk-origin reply, first direct-contact inquiry, GBP appointment-link status, monthly owner snapshot, current-student row, capacity change or API access change arrives, route exactly that evidence and update only the matching artifact.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create more strategy files.
+- Do not restart GBP/social/SEO/platform lanes.
+- Do not commit/push strategy-memory churn during a heartbeat.
+- Do not touch the dirty teaching-platform repo without an explicit build request.
+
+Process improvement notes:
+
+- Highest-signal source: local Packet BH/BI plus live health checks.
+- Noisy source avoided: broad external market scans during a no-evidence heartbeat.
+- Protocol improvement: preserve chronological research-log order; if a prior cycle is moved or repaired, record that repair once and return to quiet mode.
+
+Next-cycle packet:
+
+Packet BH remains active. Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/talk-the-talk-lead-magnet.md` only if Talk evidence appears
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 63 - Quiet Contract Repeat Check
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, bounded regression checks, platform-dirty non-trigger
+
+Primary research question:
+
+Did anything arrive after Cycle 62 that should unpark GBP, Talk, inquiry, current-student, platform, SEO or measurement work?
+
+Classification:
+
+`no_new_evidence`.
+
+Cycle 63 deliberately used the Packet BH Quiet Cycle Contract instead of the full deep-cycle source/artefact quota. The deep-cycle protocol remains active for real triggers, but forcing 8 external sources and 3 artifact updates during repeated no-evidence heartbeats would create the false work Cycle 60 was designed to prevent.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: still dirty/untracked; compared with Cycle 62, additional modified files are visible around `backend/app/api/content_vocab.py`, `classroom-hub/src/components/modular/ContentVocabularyPhase.tsx`, `classroom-hub/src/lib/api.ts`, and `classroom-hub/src/pages/ModularExerciseBuilder.tsx`. This is treated as unrelated local/user work, not a strategy trigger, because no owner/student/capacity evidence accompanied it.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 61-62.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` Cycle 59-61 process rules.
+- `evidence-trigger-router-cycle59.md` working answer and local evidence table.
+- Website repo git status.
+- Teaching platform repo git status.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk`.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots returned HTTP 200 and still allows crawl.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health returned HTTP 200 with `{"status":"ok"}`.
+
+Source discovery:
+
+No external browsing was run. Packet BH says repeated `no_new_evidence` cycles should not browse broadly unless a real trigger arrives or the router cannot classify a new evidence type.
+
+Hypotheses changed:
+
+None.
+
+- H015 remains: manual direct-contact rows are the lead truth layer.
+- H026 remains: capacity state decides the success metric.
+- H027 remains: pruning is higher leverage than new ideas while Auris is close to full.
+- H028 remains: evidence routing prevents false work only if quiet cycles stay quiet.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH and Packet BI remain the implementation-ready operating artifacts.
+
+Strongest next move:
+
+Stay in Packet BH quiet mode until one of these arrives: Talk-origin reply, first direct-contact inquiry, GBP appointment-link status, monthly GBP owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo just because it is dirty.
+- Do not restart GBP/LinkedIn/social/SEO/product lanes without a real trigger.
+- Do not interpret stable health checks as acquisition, retention or conversion evidence.
+
+Process improvement notes:
+
+- Highest-signal source: local router plus live health checks.
+- Noisy source avoided: broad external scans and product inspiration while no evidence changed.
+- Source type to try next: not a new website; the missing source is still owner/student/prospect evidence.
+- Protocol note: if a repo's dirty status changes but no owner/student/prospect signal is attached, record it as a non-trigger and leave the repo untouched.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 64 - Quiet Contract Stability Check
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, bounded regression checks, platform-dirty non-trigger
+
+Primary research question:
+
+Did a new owner/student/prospect/capacity/access signal arrive after Cycle 63, or is the correct action still to preserve Packet BH quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: still dirty/untracked. Since Cycle 63, `classroom-hub/src/pages/ModularExercisePlayer.tsx` has also appeared as modified. Because there is no attached owner request, student outcome, prospect signal, deploy request or capacity update, this remains unrelated local/user work and not a strategy trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 61-63 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` Cycle 60-61 quiet/process rules.
+- Website repo git status.
+- Teaching platform repo git status.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk`.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots returned HTTP 200 and still allows crawl.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health returned HTTP 200 with `{"status":"ok"}`.
+
+Source discovery:
+
+No external browsing was run. The router and quiet-cycle contract are still able to classify the state, so broad source discovery would be false work.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence arrives.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should unpark work only if it receives one of these signals: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty state alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal source: Packet BH plus live health checks.
+- Noisy source avoided: broad external research during a quiet cycle.
+- Protocol note: repeated quiet heartbeats should stay small and should not harden the router further unless the router fails to classify a new evidence type.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 65 - Quiet Contract Steady State
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, bounded regression checks, local non-trigger classification
+
+Primary research question:
+
+Did a new owner/student/prospect/capacity/access signal arrive after Cycle 64, or should the automation continue to protect the quiet evidence-waiting state?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: tracked modifications visible in Cycle 64 are no longer listed, while untracked generated/audit/script files remain and include `backend/scripts/audit_content_vocab_pedagogy.py` and `scripts/check_content_vocab_pedagogy.sh`. Because no owner request, student outcome, prospect signal, deploy request or capacity update accompanied this local state, it remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 62-64 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` Cycle 60-61 quiet/process rules.
+- `evidence-trigger-router-cycle59.md` working answer and evidence routing table.
+- Website repo git status.
+- Teaching platform repo git status.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk`.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots returned HTTP 200 and still allows crawl.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health returned HTTP 200 with `{"status":"ok"}`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this state cleanly, so broader source discovery would be counterproductive.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should unpark work only if one of the known triggers arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal source: Packet BH plus live health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: local repo churn can be evidence only when paired with a meaningful owner/student/prospect/capacity signal; otherwise it is a non-trigger.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 66 - Quiet Contract Source-of-Truth Check
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, bounded regression checks, API source-of-truth sanity
+
+Primary research question:
+
+Did a new owner/student/prospect/capacity/access signal arrive after Cycle 65, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` is again listed as modified, alongside many untracked generated/audit/script assets. Because this arrived without an owner request, student outcome, prospect signal, deploy request or capacity update, it remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 63-65 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` Cycle 58-61 quiet/process rules.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract and evidence routing table.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` to confirm the public Talk default remains `DEFAULT_DURATION_SECONDS = 60` and `talk_contact_click` remains the direct-contact event.
+- `teacher-assistant/classroom-hub/src/lib/api.ts` to confirm the production API base URL before checking health.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots returned HTTP 200 and still allows crawl.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Correct teaching API health endpoint `https://teacher-assistant-api-1056846192318.europe-west1.run.app/api/health` returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+- A stale remembered Cloud Run host/path returned 404, so future quiet checks should use `classroom-hub/src/lib/api.ts` or the latest log source of truth before treating an API result as evidence.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state, and broader source discovery would manufacture work.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not treat a stale API URL failure as a strategic signal before checking the current configured base URL.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH, live public checks, and the platform API base URL in `classroom-hub/src/lib/api.ts`.
+- Noisy source avoided: broad external research during a quiet cycle.
+- Protocol note: future health checks should derive production API targets from the app config or most recent confirmed log entry, not from memory.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 67 - Quiet Contract Repeat Health Check
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, bounded public/API health checks
+
+Primary research question:
+
+Did a new owner/student/prospect/capacity/access signal arrive after Cycle 66, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` remains modified, with many untracked generated/audit/script assets. Because no owner request, student outcome, prospect signal, deploy request or capacity update is attached, this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 65-66 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk defaults and direct-contact event.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots returned HTTP 200 and still allows crawl.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state, and broad source discovery would create false work.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH, public route checks, Google reviews endpoint, and teaching API health/auth checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: after several stable quiet cycles, future repeats can be even smaller unless one of the known evidence triggers changes.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 68 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 67, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` remains modified, with many untracked generated/audit/script assets. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 66-67 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are now behaving correctly; future repeats should remain minimal unless a check fails or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 69 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 68, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` remains modified, with many untracked generated/audit/script assets. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 67-68 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 70 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 69, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` remains modified, with many untracked generated/audit/script assets. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 68-69 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 71 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 70, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` remains modified, with many untracked generated/audit/script assets. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 69-70 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 72 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 71, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` remains modified, with many untracked generated/audit/script assets. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 70-71 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 73 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 72, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` remains modified, with many untracked generated/audit/script assets. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 71-72 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 74 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-25
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 73, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` remains modified, with many untracked generated/cache/audit assets visible, including `.npm-cache` entries. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 72-73 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 75 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 74, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` remains modified, with many untracked generated/cache/audit assets visible, including `.npm-cache` entries. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 73-74 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 76 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 75, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` remains modified, with many untracked generated/cache/audit assets visible, including `.npm-cache` entries. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 74-75 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 77 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 76, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: dirty/untracked. `classroom-hub/src/pages/ModularExercisePlayer.tsx` remains modified, with many untracked generated/cache/audit assets visible, including `.npm-cache` entries. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 75-76 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 78 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 77, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 76-77 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 79 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 78, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 77-78 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 80 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 79, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 78-79 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 81 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 80, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 79-80 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 82 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 81, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 80-81 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 83 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 82, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 81-82 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 84 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 83, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 82-83 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 85 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 84, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 83-84 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 86 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 85, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 84-85 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 87 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 86, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 85-86 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 88 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 87, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 86-87 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 89 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 88, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` with `classroom-hub/src/pages/ModularExercisePlayer.tsx` still modified when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 87-88 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, or restored API access.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify the teaching-platform repo because of dirty/untracked files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: repeated quiet cycles are still behaving correctly; keep future repeats minimal unless a check fails, a real trigger appears, or a new evidence type cannot be classified.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+
+## Cycle 90 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 89, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` now shows modified files at `backend/app/api/routes.py`, `classroom-hub/src/pages/ModularExercisePlayer.tsx`, and `frontend/src/components/ReportsDashboard.tsx` when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 88-89 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, or an explicit request to inspect the newly dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: local dirty-file expansion should be recorded as context, but not treated as strategic evidence unless paired with owner/student/prospect/capacity/access input.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has expanded dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 91 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 90, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` now shows modified files at `backend/app/api/routes.py`, `classroom-hub/src/pages/ModularExercisePlayer.tsx`, `frontend/index.html`, and `frontend/src/components/ReportsDashboard.tsx` when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 89-90 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: local dirty-file expansion remains useful context, but it is still not strategic evidence unless paired with owner/student/prospect/capacity/access input.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has expanded dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 92 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 91, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows modified files at `backend/app/api/routes.py`, `classroom-hub/src/pages/ModularExercisePlayer.tsx`, `frontend/index.html`, and `frontend/src/components/ReportsDashboard.tsx` when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 90-91 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: local dirty-file context is now stable across cycles; keep recording it only as a non-trigger unless the file set changes, a check fails, or owner/student/prospect/capacity/access input appears.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 93 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 92, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows modified files at `backend/app/api/routes.py`, `classroom-hub/src/pages/ModularExercisePlayer.tsx`, `frontend/index.html`, and `frontend/src/components/ReportsDashboard.tsx` when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 91-92 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: local dirty-file context is stable; only record changes if the file set changes, a check fails, or real owner/student/prospect/capacity/access input appears.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 94 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 93, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows modified files at `backend/app/api/routes.py`, `classroom-hub/src/pages/ModularExercisePlayer.tsx`, `frontend/index.html`, and `frontend/src/components/ReportsDashboard.tsx` when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 92-93 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: this is now a stable repeated quiet state; future cycles should keep the bounded check short unless a live endpoint, route, review count, sitemap entry, repo status, or evidence trigger changes.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 95 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 94, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows modified files at `backend/app/api/routes.py`, `classroom-hub/src/pages/ModularExercisePlayer.tsx`, `frontend/index.html`, and `frontend/src/components/ReportsDashboard.tsx` when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 93-94 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: no additional process change is needed; this remains a stable quiet state and should only escalate on endpoint failure, route/review/sitemap/repo-status change, API access change, or real owner/student/prospect/capacity input.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 96 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 95, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows modified files at `backend/app/api/routes.py`, `classroom-hub/src/pages/ModularExercisePlayer.tsx`, `frontend/index.html`, and `frontend/src/components/ReportsDashboard.tsx` when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 94-95 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Protocol note: no additional process change is needed; this remains a stable quiet state and should only escalate on endpoint failure, route/review/sitemap/repo-status change, API access change, or real owner/student/prospect/capacity input.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 97 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-26
+Theme: no-new-evidence discipline, bounded health checks with API retry guardrail
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 96, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`, with one resolved transient API check anomaly.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows modified files at `backend/app/api/routes.py`, `classroom-hub/src/pages/ModularExercisePlayer.tsx`, `frontend/index.html`, and `frontend/src/components/ReportsDashboard.tsx` when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 95-96 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Initial teaching API health/auth checks returned `000` after a timeout/no-byte response, so the cycle retried instead of notifying immediately.
+- HTTP/1.1 retry returned health HTTP 200 with `{"status":"ok"}` and protected `/api/lms/students/me` HTTP 401 with `Authorization header missing`.
+- A subsequent default HTTP/2 retry also returned health HTTP 200 and protected endpoint HTTP 401 quickly, so the first failure was treated as a transient check anomaly, not a current outage.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md`.
+- `automation-research-loop.md`, adding a retry-before-notify rule for teaching API `000`/timeout responses during quiet cycles.
+
+Implementation-ready artifact:
+
+Process guardrail added: if the teaching API returns `000` or times out once during a quiet cycle, retry once normally and once with HTTP/1.1 before notifying; escalate only if retry also fails, returns 5xx, or the expected unauthenticated 401 changes.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, a repeated API failure after retry, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Useful process learning: transient API check failures can happen even when the service is healthy on retry; the automation now has a retry gate before escalating.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 98 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-27
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 97, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows modified files at `backend/app/api/routes.py`, `classroom-hub/src/pages/ModularExercisePlayer.tsx`, `frontend/index.html`, and `frontend/src/components/ReportsDashboard.tsx` when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 96-97 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule and Cycle 97 teaching API retry guardrail.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, repeated API failure after the Cycle 97 retry rule, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Process state: Cycle 97's retry guardrail worked as intended; Cycle 98 had no repeated API failure and no reason to harden the router further.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 99 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-27
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 98, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` shows modified files at `backend/app/api/routes.py`, `classroom-hub/src/pages/ModularExercisePlayer.tsx`, `frontend/index.html`, `frontend/src/App.tsx`, and `frontend/src/components/ReportsDashboard.tsx` when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 97-98 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule and Cycle 97 teaching API retry guardrail.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, repeated API failure after the Cycle 97 retry rule, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Process state: Cycle 97's retry guardrail remains sufficient; Cycle 99 had no repeated API failure and no reason to harden the router further.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 100 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-27
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 99, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` shows modified files at `backend/app/api/routes.py`, `classroom-hub/src/pages/ModularExercisePlayer.tsx`, `frontend/index.html`, `frontend/src/App.tsx`, and `frontend/src/components/ReportsDashboard.tsx` when ignoring untracked files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 98-99 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule and Cycle 97 teaching API retry guardrail.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, repeated API failure after the Cycle 97 retry rule, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Process state: Cycle 97's retry guardrail remains sufficient; Cycle 100 had no repeated API failure and no reason to harden the router further.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 101 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-27
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 100, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` now shows a larger dirty-file set when ignoring untracked files, including `.claude/commands/create-qset.md`, backend exam/LMS files, classroom-hub exam/player files, and frontend LMS/report files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not inspected or touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 99-100 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule and Cycle 97 teaching API retry guardrail.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, repeated API failure after the Cycle 97 retry rule, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Process state: the teaching-platform dirty-file set changed, but without attached owner/student/prospect/capacity/access evidence it is still a non-trigger under Packet BH. Keep recording the file-set change; inspect only if explicitly requested or paired with a real trigger.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has expanded dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 102 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-27
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 101, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows an expanded dirty-file set when ignoring untracked files, now including `.claude/commands/create-qset.md`, backend exam/LMS files, classroom-hub exam/player/type files, and frontend LMS/report files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not inspected or touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 100-101 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule and Cycle 97 teaching API retry guardrail.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, repeated API failure after the Cycle 97 retry rule, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Process state: the teaching-platform dirty-file set expanded again, but without attached owner/student/prospect/capacity/access evidence it is still a non-trigger under Packet BH. Keep recording the file-set change; inspect only if explicitly requested or paired with a real trigger.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has expanded dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 103 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-27
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 102, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows an expanded dirty-file set when ignoring untracked files, now including `.claude/commands/create-qset.md`, backend LMS/schema/data/exam files, classroom-hub exam/player/type files, and frontend LMS/report files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not inspected or touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 101-102 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule and Cycle 97 teaching API retry guardrail.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, repeated API failure after the Cycle 97 retry rule, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Process state: the teaching-platform dirty-file set expanded again, but without attached owner/student/prospect/capacity/access evidence it is still a non-trigger under Packet BH. Keep recording the file-set change; inspect only if explicitly requested or paired with a real trigger.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has expanded dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 104 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-27
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 103, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows an expanded dirty-file set when ignoring untracked files, including `.claude/commands/create-qset.md`, backend LMS/schema/data/exam files, classroom-hub exam/player/type files, and frontend LMS/report files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not inspected or touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 102-103 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule and Cycle 97 teaching API retry guardrail.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Rendered/static HTML scan did not surface `free first`, `free trial` or `Calendly` strings.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, repeated API failure after the Cycle 97 retry rule, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Process state: the teaching-platform dirty-file set remains expanded, but without attached owner/student/prospect/capacity/access evidence it is still a non-trigger under Packet BH. Keep recording the file-set context; inspect only if explicitly requested or paired with a real trigger.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has expanded dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 105 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-27
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 104, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows the expanded dirty-file set when ignoring untracked files, including `.claude/commands/create-qset.md`, backend LMS/schema/data/exam files, classroom-hub exam/player/type files, and frontend LMS/report files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not inspected or touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 103-104 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule and Cycle 97 teaching API retry guardrail.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Live bundle scan did not surface `free first`, `free trial`, `Calendly` or `calendly`.
+- Live Talk chunk contained `talk_contact_click` and `Message Auris`.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, repeated API failure after the Cycle 97 retry rule, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Process state: the owner check-in asked for idea-level synthesis, but did not add owner/student/prospect/capacity/access evidence. Treat future owner questions as conversation context unless they include a concrete signal or approval.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has expanded dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 106 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-27
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 105, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows the expanded dirty-file set when ignoring untracked files, including `.claude/commands/create-qset.md`, backend LMS/schema/data/exam files, classroom-hub exam/player/type files, and frontend LMS/report files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not inspected or touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 104-105 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule and Cycle 97 teaching API retry guardrail.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Live bundle scan did not surface `free first`, `free trial`, `Calendly` or `calendly`.
+- Live Talk chunk contained `talk_contact_click` and `Message Auris`.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, repeated API failure after the Cycle 97 retry rule, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Process state: no new owner/student/prospect/capacity/access evidence arrived after the idea-level check-in. Continue treating quiet-cycle repetition as successful restraint, not a reason to invent another plan.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has expanded dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 107 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-27
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 106, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows the expanded dirty-file set when ignoring untracked files, including `.claude/commands/create-qset.md`, backend LMS/schema/data/exam files, classroom-hub exam/player/type files, and frontend LMS/report files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not inspected or touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 105-106 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule and Cycle 97 teaching API retry guardrail.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Live bundle scan did not surface `free first`, `free trial`, `Calendly` or `calendly`.
+- Live Talk chunk contained `talk_contact_click` and `Message Auris`.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, repeated API failure after the Cycle 97 retry rule, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Process state: the protocol is behaving correctly by resisting new artifacts. The next useful learning still needs a real owner/student/prospect/capacity/access row.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has expanded dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 108 - Quiet Contract Minimal Repeat Check
+
+Date: 2026-05-27
+Theme: no-new-evidence discipline, minimal bounded health checks
+
+Primary research question:
+
+Did any new owner/student/prospect/capacity/access evidence arrive after Cycle 107, or should Packet BH keep the automation in quiet mode?
+
+Classification:
+
+`no_new_evidence`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. No public code changes were made.
+- Teaching platform repo: `main...origin/main` still shows the expanded dirty-file set when ignoring untracked files, including `.claude/commands/create-qset.md`, backend LMS/schema/data/exam files, classroom-hub exam/player/type files, and frontend LMS/report files. No owner request, student outcome, prospect signal, deploy request or capacity update is attached, so this remains a non-trigger and was not inspected or touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Bounded local evidence checked:
+
+- `research-log.md` latest Cycles 106-107 and current ordering.
+- `research-roadmap.md` Packet BH and Packet BI.
+- `automation-research-loop.md` repeated `no_new_evidence` rule and Cycle 97 teaching API retry guardrail.
+- `evidence-trigger-router-cycle59.md` Quiet Cycle Contract.
+- Website repo git status.
+- Teaching platform repo git status.
+- `src/components/TalkTheTalk.jsx` public Talk default and direct-contact event.
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` source-of-truth teaching API base URL.
+
+Bounded live/API evidence checked:
+
+- `https://englishwithauris.com/` returned HTTP 200 with canonical `https://englishwithauris.com/` and `assets/main-b8762529.js`.
+- `https://englishwithauris.com/talkthetalk` returned HTTP 200 with canonical `https://englishwithauris.com/talkthetalk` and `assets/main-b8762529.js`.
+- Live bundle scan did not surface `free first`, `free trial`, `Calendly` or `calendly`.
+- Live Talk chunk contained `talk_contact_click` and `Message Auris`.
+- Sitemap returned HTTP 200; `/talkthetalk` still has `lastmod` `2026-05-21`.
+- Robots allows crawl and still points to `https://englishwithauris.com/sitemap.xml`.
+- Google reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health endpoint returned HTTP 200 with `{"status":"ok"}`.
+- Protected teaching endpoint `/api/lms/students/me` returned HTTP 401 without auth with `Authorization header missing`.
+
+Source discovery:
+
+No external browsing was run. Packet BH and the Quiet Cycle Contract still classify this as a repeated no-evidence state; broad source discovery remains deliberately parked.
+
+Hypotheses changed:
+
+None. H015, H026, H027 and H028 remain unchanged.
+
+Artifacts updated:
+
+- `research-log.md` only.
+
+Implementation-ready artifact:
+
+No new artifact. Packet BH remains the operating artifact; Packet BI remains available only if Talk-specific evidence appears.
+
+Strongest next move:
+
+Stay in quiet mode. The next cycle should only unpark work if a known evidence trigger arrives: Talk-origin reply, first direct-contact inquiry, GBP booking/contact-link status, monthly owner snapshot, current-student continuity/Talk observation, capacity change, explicit public-code approval, restored API access, repeated API failure after the Cycle 97 retry rule, or an explicit request to inspect the dirty teaching-platform files.
+
+What not to do yet:
+
+- Do not browse broadly.
+- Do not create another strategy file.
+- Do not modify or interpret the teaching-platform repo because of dirty files alone.
+- Do not reinterpret stable health checks as acquisition, retention or conversion proof.
+- Do not notify on a single teaching API `000` if immediate retries prove health/auth behavior is normal.
+
+Process improvement notes:
+
+- Highest-signal sources: Packet BH plus minimal public/API health checks.
+- Noisy source avoided: broad external research and platform ideation during a quiet cycle.
+- Process state: nothing new has arrived to falsify the quiet-mode recommendation. The next meaningful cycle should be triggered by evidence, not by the existence of the heartbeat alone.
+
+Next-cycle packet:
+
+Packet BH remains active.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/lib/api.ts` if checking platform health.
+- `/Users/aurisp/repos/teacher-assistant` git status only; inspect dirty files only if explicitly requested or paired with a real trigger.
+
+If no evidence arrives, run only bounded checks and use `DONT_NOTIFY`. If teaching API health returns `000`, follow the Cycle 97 retry rule before notifying.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Public Talk recording/listenback copy mismatch remains approval-only hygiene.
+- Talk sitemap `lastmod` remains stale at `2026-05-21`.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo has expanded dirty-file context, but no attached owner/student/prospect signal.
+
+## Cycle 109 - Automation Idea Engine Upgrade
+
+Date: 2026-05-27
+Theme: process improvement, idea generation, synthesis pulse
+
+Primary research question:
+
+How should the automation generate new ideas and improve itself based on findings without undoing the Quiet Cycle Contract that prevents false work?
+
+Classification:
+
+`process_improvement_requested` plus `owner_synthesis_request`.
+
+Repo status:
+
+- Website repo: `main...origin/main` with existing strategy-memory modifications and untracked strategy artifacts from prior cycles. This cycle added/updated strategy memory only.
+- Teaching platform repo: still treated as read-only/dirty context. No platform files were inspected deeply or touched because this was an automation-process request, not a product/code request.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Local evidence inspected:
+
+- `automation-research-loop.md`: showed the original deep-cycle standard plus Cycle 58-61 quiet-cycle refinements, but no explicit owner synthesis path.
+- `research-roadmap.md`: Packet BH correctly bounded `no_new_evidence`, but did not yet define what to do when Auris asks for ideas or automation improvement.
+- `evidence-trigger-router-cycle59.md`: routed owner/student/prospect/capacity/access evidence well, but treated owner synthesis questions as outside the router.
+- `research-log.md` Cycles 105-108: repeated quiet-cycle checks stayed stable and documented the same missing rows.
+- `hypotheses.md`: H027 and H028 supported pruning/routing, but did not capture the counter-risk of quiet mode becoming intellectually flat.
+- `/Users/aurisp/.codex/automations/continuous-teaching-business-strategy/automation.toml`: live heartbeat prompt still overweighted the original every-cycle deep-research framing and did not mention Packet BJ or the Idea Synthesis Pulse.
+
+Data/API evidence:
+
+- The live automation configuration was inspected and updated through the app automation tool.
+- No public website/API health checks were needed because this cycle targeted the automation process and did not touch public-facing site or platform code.
+
+Source discovery choices:
+
+Best evidence for this question lived locally: the actual automation config, process docs, router, roadmap, hypotheses and repeated quiet-cycle logs. External browsing was intentionally skipped because the failure was internal process drift, not market uncertainty.
+
+External evidence:
+
+No new external evidence was gathered. Existing process evidence from Packet BH remains sufficient: repeated non-actionable work becomes toil, alerts should be actionable, and WIP limits prevent reopening too many lanes. This cycle applied that existing evidence to a new failure mode: over-pruned synthesis.
+
+Hypotheses changed:
+
+- H027 remains strengthened: pruning is still right while Auris is close to full and evidence gates are waiting.
+- H028 remains strengthened but refined: evidence routing prevents false work, but owner synthesis requests need their own label.
+- H029 was added: synthesis pulses preserve useful ideation without false work.
+
+Artifacts updated:
+
+- Created `automation-idea-engine.md`.
+- Updated `automation-research-loop.md` with Cycle 109 process rule.
+- Updated `research-roadmap.md` with RQ017 and Packet BJ.
+- Updated `evidence-trigger-router-cycle59.md` with `owner_synthesis_request`, `process_improvement_requested`, and the synthesis-pulse exception.
+- Updated `hypotheses.md` with H029.
+- Updated the live heartbeat automation prompt for `continuous-teaching-business-strategy`.
+- Updated `research-log.md` with this entry.
+
+Implementation-ready artifact:
+
+`automation-idea-engine.md` is the new operating artifact. It defines:
+
+- trigger labels for owner synthesis, process improvement and long quiet streaks
+- the Idea Synthesis Pulse flow
+- an idea scorecard template
+- the current candidate idea inventory
+- the rule that idea generation is strategy, not approval to publish/build/contact
+
+Strongest next move:
+
+On the next owner check-in or long quiet streak, run Packet BJ instead of answering only with health checks. Generate 3-7 evidence-bound ideas, score them, select one `do_now`, one `test_manually`, one `park`, and one `ignore`, then return to Packet BH.
+
+What not to do yet:
+
+- Do not weaken quiet mode into broad browsing every hour.
+- Do not turn idea pulses into new campaigns, SEO pages, platform specs, CRM/waitlist systems, public posts or profile edits without approval.
+- Do not treat an owner synthesis question as irrelevant just because it does not include a new lead/student/capacity row.
+
+Process improvement notes:
+
+- Highest-signal source: the live automation TOML, because it revealed that the actual prompt had not learned the later Quiet Cycle and idea-engine rules.
+- Noisy source avoided: broad external automation/process advice. The defect was local and specific.
+- New rule: when process docs change the heartbeat's behavior, inspect and update the actual automation prompt in the same cycle when safe.
+- The automation should now separate four states: evidence routing, quiet health check, owner synthesis pulse, and full deep cycle.
+
+Next-cycle packet:
+
+Use Packet BJ if any of these are true:
+
+- Auris asks what new ideas have emerged.
+- Auris asks why the automation is not producing more ideas.
+- Auris asks for another process improvement.
+- Another 8-12 quiet cycles repeat the same missing evidence state.
+- The live automation prompt appears out of sync with the durable process docs.
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/automation-idea-engine.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md` Packet BJ
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/automation-research-loop.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md` H027-H029
+- `/Users/aurisp/.codex/automations/continuous-teaching-business-strategy/automation.toml`
+
+If no synthesis/process trigger exists, return to Packet BH. If a real owner/student/prospect/capacity/access row arrives, route it first. If all checks are stable and no pulse is due, use `DONT_NOTIFY`.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking/contact-link status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Talk sitemap `lastmod` remains stale at `2026-05-21` and remains approval-only hygiene.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo remains dirty context but not an active trigger.
+
+## Cycle 110 - First Idea Synthesis Pulse
+
+Date: 2026-05-28
+Theme: synthesis pulse after repeated quiet checks
+
+Primary research question:
+
+After the Idea Engine upgrade, what should the first long-quiet-streak synthesis pulse generate without reopening parked public work?
+
+Classification:
+
+`synthesis_pulse_due`.
+
+Repo status:
+
+- Website repo: existing strategy-memory modifications and untracked strategy artifacts remain. This cycle updated strategy memory only.
+- Teaching platform repo: still dirty with exam/LMS/frontend files, but no owner request, student outcome, prospect signal, deploy request or capacity update is attached. It remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Local evidence inspected:
+
+- `research-log.md` Cycles 105-109: repeated quiet checks stayed stable, then Cycle 109 added Packet BJ.
+- `automation-idea-engine.md`: requires a pulse after 8-12 quiet cycles repeat the same missing triggers.
+- `research-roadmap.md` Packet BJ: confirms the pulse should generate evidence-bound ideas, not campaigns.
+- `evidence-trigger-router-cycle59.md`: now includes `owner_synthesis_request` and process/synthesis exceptions.
+- `hypotheses.md` H029: synthesis pulses should preserve ideation without false work.
+- Live heartbeat automation prompt: still names Idea Engine, Packet BJ and the synthesis trigger.
+
+Data/API evidence:
+
+- Homepage returned HTTP 200.
+- Talk page returned HTTP 200.
+- Reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Sitemap returned HTTP 200.
+- Teaching API health returned HTTP 200.
+
+Source discovery choices:
+
+No external browsing was run. The exact question was internal process quality, and the best evidence lived in local strategy memory plus bounded public/API checks.
+
+External evidence:
+
+No new external evidence. Existing Packet BH process evidence remains sufficient.
+
+Hypotheses changed:
+
+- H029 is strengthened: the pulse produced a compact idea scorecard without broad browsing, public work, or owner notification.
+- H027 and H028 remain unchanged: pruning and routing still outrank new campaigns while evidence gates are missing.
+
+Artifacts updated:
+
+- `automation-idea-engine.md`: added Pulse 01 scorecard and process critique.
+- `research-log.md`: added this Cycle 110 entry.
+
+Implementation-ready artifact:
+
+Pulse 01 selected:
+
+- `do_now`: keep the first direct-contact inquiry row as the active acquisition truth gate.
+- `test_manually`: use one current-student continuity observation before another platform spec.
+- `park`: GBP profile contact-link truth check until Auris is already in GBP or capacity opens.
+- `ignore`: CRM/waitlist/routing system until 5-10 repeated inquiry/follow-up rows exist.
+
+Strongest next move:
+
+Return to Packet BH. The next valuable non-quiet cycle needs real evidence, a user synthesis request, another long quiet streak, or a public/API regression.
+
+What not to do yet:
+
+- Do not notify Auris about Pulse 01 because no immediate owner decision is required.
+- Do not browse broadly.
+- Do not turn the current-student continuity idea into a platform spec.
+- Do not reopen GBP/profile work until owner-side context or capacity changes.
+
+Process improvement notes:
+
+- Highest-signal source: `automation-idea-engine.md`, because it prevented the automation from both overworking and going mentally flat.
+- Noisy source avoided: broad strategy browsing during a process pulse.
+- Next process test: the next synthesis pulse should notify only if it surfaces a concrete time-sensitive owner action.
+
+Next-cycle packet:
+
+Use Packet BH unless:
+
+- Auris asks for findings or ideas, in which case use Packet BJ.
+- Another 8-12 quiet cycles repeat with no evidence, in which case run the next synthesis pulse.
+- A first direct-contact inquiry, Talk-origin reply, current-student observation, GBP owner snapshot/contact-link truth, capacity update, approval, access change or public/API regression arrives.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking/contact-link status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Talk sitemap `lastmod` remains stale at `2026-05-21` and remains approval-only hygiene.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo remains dirty context but not an active trigger.
+
+## Cycle 111 - Second Idea Synthesis Pulse And Quiet-Streak Reset
+
+Date: 2026-05-28
+Theme: synthesis pulse, process memory, quiet-streak counting
+
+Primary research question:
+
+After another long quiet streak following Pulse 01, what new idea/process improvement should be produced without reopening public campaigns, SEO, social, GBP or platform work?
+
+Classification:
+
+`synthesis_pulse_due`.
+
+Repo status:
+
+- Website repo: existing strategy-memory modifications and untracked strategy artifacts remain. This cycle updated strategy memory only.
+- Teaching platform repo: still dirty with exam/LMS/frontend files, but no owner request, student outcome, prospect signal, deploy request or capacity update is attached. It remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Local evidence inspected:
+
+- `research-log.md` Cycles 109-110: Cycle 109 created Packet BJ; Cycle 110 ran Pulse 01 and returned to Packet BH.
+- `automation-idea-engine.md`: Pulse 01 worked, but quiet checks after it were intentionally not logged one by one.
+- `research-roadmap.md` Packet BJ: says 8-12 repeated quiet cycles should trigger one compact synthesis pulse.
+- `evidence-trigger-router-cycle59.md`: keeps stable no-evidence checks bounded and routes owner synthesis/process requests separately.
+- `automation-research-loop.md`: had no explicit rule for how to count quiet streaks without adding low-value log entries.
+- `hypotheses.md` H027-H029: pruning/routing remain correct; synthesis pulses need process boundaries.
+
+Data/API evidence:
+
+- Homepage returned HTTP 200.
+- Talk page returned HTTP 200.
+- Sitemap returned HTTP 200.
+- Reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health returned HTTP 200.
+- Live heartbeat automation prompt was updated to include the Cycle 111 quiet-streak reset rule.
+
+Source discovery choices:
+
+No external browsing was run. The useful evidence for this cycle was local process behavior plus bounded public/API checks. Broad market browsing would not falsify the process question.
+
+External evidence:
+
+No new external evidence. Prior official and process evidence remains sufficient: alerts should be actionable, WIP should stay bounded, public endpoint deltas are readiness/trust signals rather than private lead truth, and owner/student rows remain the decision layer.
+
+Hypotheses changed:
+
+- H029 strengthened and process-bounded: Pulse 02 showed that synthesis pulses can improve the automation itself without public work, but they need a reset marker so they do not repeat too often.
+- H028 remains strengthened: Packet BH continues to prevent false work while no evidence has arrived.
+- H027 remains strengthened: strategic pruning still beats new campaigns while capacity and buyer/student rows are missing.
+
+Artifacts updated:
+
+- `automation-idea-engine.md`: added Pulse 02 scorecard and a quiet-streak reset rule.
+- `automation-research-loop.md`: added Cycle 111 "pulse reset, not quiet-log spam" process improvement.
+- `research-roadmap.md`: refined Packet BJ with the Pulse History reset marker.
+- `hypotheses.md`: updated H029 with Cycle 110/111 evidence and next test.
+- `research-log.md`: added this Cycle 111 entry.
+- Live automation prompt for `continuous-teaching-business-strategy`: updated to name Pulse History as the reset marker.
+
+Implementation-ready artifact:
+
+Pulse 02 selected:
+
+- `do_now`: use each `automation-idea-engine.md` Pulse History entry as the durable quiet-streak reset marker. Do not append every stable quiet heartbeat just to count.
+- `test_manually`: at the next owner check-in, offer a one-row evidence menu instead of a broad strategy recap.
+- `park`: use a reviews `reviewCount` delta as a future trust-maintenance trigger, while remembering that endpoint order is not newest-review or reply-status truth.
+- `ignore`: do not treat teacher-assistant dirty files as a platform-strategy trigger without an owner request, API failure, student row or teacher workflow row.
+
+Strongest next move:
+
+Return to Packet BH. The next non-quiet cycle should require real evidence, owner synthesis/process request, a public/API regression, or another long quiet streak counted from Pulse 02.
+
+What not to do yet:
+
+- Do not notify Auris; no decision is required now.
+- Do not browse broadly.
+- Do not reopen GBP/profile work until owner-side context or capacity changes.
+- Do not inspect or modify dirty teaching-platform files without a matching trigger.
+- Do not create a CRM, waitlist, content calendar, SEO page, platform spec or campaign from silence.
+
+Process improvement notes:
+
+- Highest-signal source: the mismatch between intentionally quiet `DONT_NOTIFY` checks and the need to count long quiet streaks.
+- Noisy source avoided: logging every quiet heartbeat or running external process research.
+- New rule: Pulse History is the durable reset marker for synthesis cadence.
+- Next process test: if two consecutive pulses produce the same selections without new evidence, raise the pulse threshold or require a new evidence type.
+
+Next-cycle packet:
+
+Use Packet BH unless:
+
+- Auris asks for findings or ideas, in which case use Packet BJ.
+- Another 8-12 quiet checks repeat after Pulse 02, in which case run Pulse 03 only if it can produce a materially new selection or process improvement.
+- A first direct-contact inquiry, Talk-origin reply, current-student observation, GBP owner snapshot/contact-link truth, capacity update, approval, access change, review-count delta or public/API regression arrives.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking/contact-link status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Talk sitemap `lastmod` remains stale at `2026-05-21` and remains approval-only hygiene.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo remains dirty context but not an active trigger.
+
+## Cycle 112 - Pulse Gate 03 Skip And Duplicate-Pulse Guard
+
+Date: 2026-05-29
+Theme: synthesis cadence, duplicate-pulse guard, quiet-mode process quality
+
+Primary research question:
+
+After a long quiet streak following Pulse 02, should the automation run a full Pulse 03, or should it skip because the scorecard would repeat prior selections without new evidence?
+
+Classification:
+
+`synthesis_pulse_due` routed through a `pulse_gate`.
+
+Repo status:
+
+- Website repo: existing strategy-memory modifications and untracked strategy artifacts remain. This cycle updated strategy memory only.
+- Teaching platform repo: still dirty with exam/LMS/frontend files, but no owner request, student outcome, prospect signal, deploy request or capacity update is attached. It remains a non-trigger and was not touched.
+- No commit, push, deploy, credential change, GBP edit, form submission, student contact or third-party contact was made.
+
+Local evidence inspected:
+
+- `research-log.md` Cycles 110-111: Pulse 01 and Pulse 02 produced useful but now stable selections.
+- `automation-idea-engine.md`: already warned that repeated pulses should not repeat the same idea inventory.
+- `research-roadmap.md` Packet BJ: allowed a pulse after long quiet streaks, but did not explicitly define a skipped pulse gate.
+- `automation-research-loop.md` Cycle 111: established Pulse History as the quiet-streak reset marker.
+- `hypotheses.md` H027-H029: pruning/routing remain correct; synthesis should be preserved for real novelty.
+
+Data/API evidence:
+
+- Homepage returned HTTP 200.
+- Talk page returned HTTP 200.
+- Sitemap returned HTTP 200.
+- Reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health returned HTTP 200.
+
+Source discovery choices:
+
+No external browsing was run. The question was an internal process-quality question, and the highest-signal evidence was the repeated stable heartbeat state plus the prior pulse history.
+
+External evidence:
+
+No new external evidence. Prior process evidence remains sufficient: repeated non-actionable checks create toil, and skipped work can be higher quality than duplicate synthesis.
+
+Hypotheses changed:
+
+- H029 strengthened and refined: long quiet streaks should first pass through a Pulse Gate. If no materially new selection exists, a skipped gate is better than a duplicate pulse.
+- H028 remains strengthened: Packet BH continues to prevent false work while no evidence has arrived.
+- H027 remains strengthened: strategic pruning still beats new campaigns while capacity and buyer/student rows are missing.
+
+Artifacts updated:
+
+- `automation-idea-engine.md`: added Pulse Gate 03 and updated the Process Rule.
+- `automation-research-loop.md`: added Cycle 112 "pulse gate before pulse" process improvement.
+- `research-roadmap.md`: refined Packet BJ with the Pulse Gate skip rule.
+- `hypotheses.md`: updated H029 with Cycle 112 evidence and next test.
+- `research-log.md`: added this Cycle 112 entry.
+
+Implementation-ready artifact:
+
+Pulse Gate 03 decision:
+
+- Do not run a full Pulse 03 now.
+- Treat Pulse Gate 03 as the quiet-streak reset marker.
+- Keep the current held selections: first direct-contact inquiry row, one current-student continuity observation, GBP contact-link/review-count triggers, and ignoring CRM/platform dirty-file work without paired evidence.
+- Require new evidence, owner synthesis/process request, public/API regression, review-count delta, or a concrete automation failure before the next full pulse.
+
+Strongest next move:
+
+Return to Packet BH with the Pulse Gate rule active. The next cycle should run bounded checks only unless a real trigger appears.
+
+What not to do yet:
+
+- Do not notify Auris; no decision is required now.
+- Do not browse broadly.
+- Do not create another pulse scorecard from the same missing rows.
+- Do not inspect or modify dirty teaching-platform files without a matching trigger.
+- Do not create a CRM, waitlist, content calendar, SEO page, platform spec or campaign from silence.
+
+Process improvement notes:
+
+- Highest-signal source: repeated stable quiet checks after Pulse 02 plus the lack of any new idea selection.
+- Noisy source avoided: broad external process research and duplicate scorecards.
+- New rule: a long quiet streak can produce a Pulse Gate skip before a full pulse.
+
+Next-cycle packet:
+
+Use Packet BH unless:
+
+- Auris asks for findings or ideas, in which case use Packet BJ and answer directly.
+- New owner/student/prospect/capacity/access evidence arrives.
+- A review-count delta or public/API regression appears.
+- A new process failure appears, such as the automation again trying to create duplicate pulse scorecards.
+
+Unfinished threads:
+
+- First Talk-origin reply row remains missing.
+- First direct-contact inquiry row remains missing.
+- GBP Calendly/booking/contact-link status remains owner-side and unknown.
+- Monthly GBP owner snapshot remains missing.
+- Current-student continuity/Talk observation remains missing.
+- Talk sitemap `lastmod` remains stale at `2026-05-21` and remains approval-only hygiene.
+- GSC/GBP API access remains unavailable from current local auth.
+- Teaching platform repo remains dirty context but not an active trigger.
+
+## Cycle 113 - Research Log Tail Hygiene
+
+Date: 2026-05-29
+Theme: process hygiene, latest-memory reliability
+
+Classification:
+
+`process_improvement_requested` by observed automation failure.
+
+What happened:
+
+While starting the next quiet cycle from memory, `tail` surfaced Cycle 111 as the latest entry even though Cycle 112 already existed. The Cycle 112 block had been placed above Cycles 110-111, so future latest-memory reads could miss the active Pulse Gate rule.
+
+Action taken:
+
+- Moved the existing Cycle 112 block after Cycle 111 so numbered research-log entries are chronological again.
+- Added a Cycle 113 process rule to `automation-research-loop.md`: the newest numbered cycle block should live at the file tail, and mechanical ordering repair should not duplicate entries or reset synthesis cadence.
+
+Data/API evidence:
+
+- Homepage returned HTTP 200.
+- Talk page returned HTTP 200.
+- Sitemap returned HTTP 200.
+- Robots returned HTTP 200.
+- Reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health returned HTTP 200.
+
+Decision:
+
+No owner action is needed. Pulse Gate 03 remains the synthesis reset marker; this cycle is only log-order hygiene. Return to Packet BH unless new evidence, a public/API regression, owner synthesis request or concrete process failure appears.
+
+## Cycle 114 - Pulse Gate 04 Skip
+
+Date: 2026-05-29
+Theme: synthesis cadence, quiet-streak gate
+
+Classification:
+
+`pulse_gate`.
+
+Primary question:
+
+After another long quiet streak after Pulse Gate 03, would a full Idea Synthesis Pulse produce a materially new selection, process rule or falsification?
+
+Decision:
+
+No. Skip a full Pulse 04 and treat Pulse Gate 04 as the new quiet-streak reset marker.
+
+Evidence inspected:
+
+- Latest research memory: Cycles 112-113, Packet BJ, Quiet Cycle Contract, Pulse Gate 03 and H029.
+- Website repo status: strategy-memory changes remain pending; no new public-code approval or deploy request appeared.
+- Teaching platform repo status: still dirty, but no owner request, student outcome, deploy request or product failure is attached, so it remains a non-trigger.
+- Homepage returned HTTP 200.
+- Talk page returned HTTP 200.
+- Sitemap returned HTTP 200.
+- Reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health returned HTTP 200.
+
+What changed:
+
+- `automation-idea-engine.md`: added Pulse Gate 04.
+
+What did not change:
+
+- Do not run a full idea scorecard from silence alone.
+- Keep the held selections from Pulse Gate 03: first direct-contact inquiry row, current-student continuity observation, GBP contact-link/review-count triggers, and ignoring CRM/platform dirty-file work without paired evidence.
+- Do not notify Auris; no public issue, credential break or owner decision exists.
+
+Next-cycle packet:
+
+Return to Packet BH unless new owner/student/prospect/capacity/access evidence appears, review count changes, a public/API regression appears, Auris asks for synthesis/process improvement, or a concrete automation failure appears.
+
+## Cycle 115 - Pulse Gate Ceiling
+
+Date: 2026-05-30
+Theme: synthesis cadence, gate ceiling, quiet-mode process quality
+
+Classification:
+
+`pulse_gate` plus `process_improvement_requested` by repeated skipped gates.
+
+Primary question:
+
+After another long quiet streak after Pulse Gate 04, should the automation record another skipped gate every 8-12 quiet heartbeats, or should it stop clock-only gates until evidence changes?
+
+Decision:
+
+Skip a full Pulse 05 and set a gate ceiling. Pulse Gate 05 is the quiet-streak reset marker and the last clock-only gate for the current evidence state.
+
+Evidence inspected:
+
+- Latest research memory: Cycles 112-114, Packet BJ, Quiet Cycle Contract, Pulse Gate 04 and H029.
+- Website repo status: strategy-memory changes remain pending; no new public-code approval or deploy request appeared.
+- Teaching platform repo status: still dirty, but no owner request, student outcome, deploy request or product failure is attached, so it remains a non-trigger.
+- Homepage returned HTTP 200.
+- Talk page returned HTTP 200.
+- Sitemap returned HTTP 200.
+- Reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=16`, and 5 visible reviews.
+- Teaching API health returned HTTP 200.
+
+What changed:
+
+- `automation-idea-engine.md`: added Pulse Gate 05 and updated the Process Rule with a gate ceiling.
+- `automation-research-loop.md`: added Cycle 115 gate-ceiling process improvement.
+- `research-roadmap.md`: refined Packet BJ with the gate-ceiling rule.
+- `hypotheses.md`: updated H029 with the repeated-gate ceiling.
+
+What did not change:
+
+- Do not run a full idea scorecard from silence alone.
+- Keep the held selections: first direct-contact inquiry row, current-student continuity observation, GBP contact-link/review-count triggers, and ignoring CRM/platform dirty-file work without paired evidence.
+- Do not notify Auris; no public issue, credential break or owner decision exists.
+
+Next-cycle packet:
+
+Return to Packet BH. Future quiet cycles should use `DONT_NOTIFY` after bounded checks without creating more Pulse Gate entries unless new owner/student/prospect/capacity/access evidence appears, review count changes, a public/API regression appears, Auris asks for synthesis/process improvement, or a concrete automation failure appears.
+
+## Cycle 116 - Review Count 17 Owner Reply Gate
+
+Date: 2026-06-02
+Theme: review-count delta, trust maintenance, owner reply status
+
+Classification:
+
+`review_reply_status`.
+
+Primary question:
+
+The public reviews endpoint moved from `5.0 / 16` to `5.0 / 17`. Does that require a public change, owner-side reply action, or another quiet-cycle gate?
+
+Decision:
+
+Treat the count delta as a real trust-maintenance trigger. Do not make public website, GBP post or static copy changes from the public endpoint alone. Ask for one owner-side row: whether GBP owner view also shows 17 reviews, what the newest review is about, and whether it has a reply.
+
+Evidence inspected:
+
+- Latest research memory: Cycle 115 gate ceiling, Packet BJ, H029, `review-proof-library.md`, `automation-idea-engine.md`, and market-intelligence review rows.
+- Website repo status: strategy-memory changes remain pending; no public-code approval or deploy request appeared.
+- Teaching platform repo status: still dirty, but no owner request, student outcome, deploy request or product failure is attached, so it remains a non-trigger.
+- Homepage returned HTTP 200.
+- Talk page returned HTTP 200.
+- Sitemap returned HTTP 200.
+- Reviews endpoint returned `source=places-new`, rating `5`, `reviewCount=17`, and 5 visible reviews.
+- English and Spanish endpoint variants both returned `reviewCount=17`.
+- Teaching API health returned HTTP 200.
+- `netlify/functions/google-reviews.js` confirms the public endpoint returns rating/count/limited reviews but not owner reply metadata.
+- `GoogleReviewsSection.jsx` confirms the live site can display the dynamic endpoint count without a website edit.
+
+Hypotheses tested:
+
+- H009 strengthened: reviews remain the strongest proof layer, and the public rating stayed 5.0 while count increased.
+- H019 strengthened: public endpoint truth is useful for count/rating drift but cannot prove newest-review or reply truth.
+- Falsification attempt: the count delta might justify static public copy changes immediately. Rejected, because the site already has dynamic count display and owner-view confirmation is still missing.
+
+What changed:
+
+- Added `review-count-17-owner-reply-gate-cycle116.md`.
+- Updated `review-proof-library.md` with the 17-review public count and owner-side reply gate.
+- Updated `automation-idea-engine.md` so review-reply trust maintenance is active until the 17-review owner row is known.
+- Updated `market-intelligence.md` with the Cycle 116 trust-maintenance signal and O065.
+
+What did not change:
+
+- No public website edits.
+- No GBP edits, posts, replies or profile changes.
+- No broad channel/content campaign.
+- No inference that the public endpoint's visible five reviews include the newest owner-visible review.
+
+Next-cycle packet:
+
+If Auris provides the owner row, update the Review Truth section with count, newest-review theme/date if safe, and reply status, then return to Packet BH. If no owner row arrives, keep bounded quiet checks and do not repeat this gate unless the review count changes again, rating changes, the endpoint fails, Auris asks for review/reply help, or a public/API regression appears.

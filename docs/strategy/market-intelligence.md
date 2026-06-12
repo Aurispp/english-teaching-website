@@ -1,7 +1,7 @@
 # Market Intelligence
 
 Created: 2026-05-21
-Last updated: 2026-05-24 Cycle 51
+Last updated: 2026-06-02 Cycle 116
 
 Purpose: maintain an outside-in memory of trends, community signals, competitor moves, content opportunities, source discoveries, and expansion ideas for English with Auris.
 
@@ -21,6 +21,7 @@ Prioritize sources that reveal demand, objections, buying intent, or student pai
 | Marketplaces | Superprof, Tusclases, Preply, Classgap, AmazingTalker | Pricing, profile claims, review language, student objections | Marketplace pricing can pull perceived value down. |
 | App/product reviews | App Store, Google Play, Trustpilot, Product Hunt, G2/Capterra for language tools | Complaints about AI apps, missing feedback, motivation problems, feature expectations | Users may be self-study oriented, not premium tutor buyers. |
 | Course/class reviews | Google Business Profiles, language school reviews, Preply/Classgap reviews, testimonials | What students praise/resent about teachers, academies, scheduling, homework, price | Reviews are biased toward extremes. |
+| Review reply behavior | Google Business Profile replies, Trustpilot replies, marketplace tutor replies, owner/community reports of pending/hidden replies | Whether the business sounds human, responsive and trustworthy after the review is left | Reply visibility can differ between owner/public views; ranking impact is usually inferred, not directly proven. |
 | Direct-contact and follow-up signals | WhatsApp/email replies, owner inbox notes, small-business lead-tracking discussions, GBP calls/messages | Buying language, timing, fit, trust reason, and whether leads get lost after first contact | Private and low-volume; must be anonymized and paired with source-confidence labels. |
 | Job/course demand signals | LinkedIn jobs, InfoJobs, business-English requirements, local professional groups | Work contexts where English matters and companies mention requirements | Demand for English skill is not automatically demand for classes. |
 | Local/community directories | Google Maps, Meetup, Eventbrite, local Facebook groups, Barcelona/Castelldefels directories | Local communities, networking groups, possible partnerships, unmet local needs | May require manual validation and should not involve contacting people without permission. |
@@ -69,6 +70,7 @@ Use this structure when adding signals:
 | O024 | LinkedIn profile-to-owned-site funnel | Turns the cleaned personal profile into a measured route to the owned website and Talk the Talk without adding LinkedIn as a public website proof link too early | Can add tracking clutter or distract from GBP if profile cleanup/results do not happen | Contact-info link, Featured Talk link, exact UTMs, profile metrics and first-post result | Ready after cleanup |
 | O025 | Personal review/referral request loop | Uses the strongest existing trust layer: students who can describe real outcomes and introduce similar people | Can feel transactional if asked at the wrong time; review requests must avoid incentives, pressure and requested wording | 2 review asks, 2 referral prompts, reply rate, new reviews, warm intros, booked trials, proof language | Ready |
 | O026 | Local professional referral source map | Identifies warm community/referral contexts around Castelldefels, Gava, Viladecans and Barcelona without cold outreach | Can become institutional/cold if activated too early or framed like an academy partnership | Owner-side referral results, one observed high-fit event/source, lead-source notes, job-demand scan | Mapped |
+| O027 | Review reply trust maintenance | Keeps GBP proof alive with low pressure while Auris is nearly full; shows future readers a warm personal teacher is active | Can be over-optimized into keyword stuffing or mistaken for a growth lever | Reply status, public visibility if needed, monthly GBP snapshot, first inquiry proof mention | Active maintenance |
 
 ## Research Rules
 
@@ -121,6 +123,9 @@ Use this to improve future research.
 | 2026-05-22 | RQ005 | Habit/SRL research | Medium-high | Keep | Supports small, clear, repeated actions and recommendation/feedback scaffolding. Must be validated with current students. |
 | 2026-05-22 | RQ005 | Clear-path product examples | High | Keep | Duolingo, Quizlet and Busuu all make a guided next step central to learning-product UX. Use for structure, not for forced linearity. |
 | 2026-05-22 | RQ005 | Negative app-review/community reactions to forced paths | Medium-high | Keep | Useful falsification source: learners like guidance but may resent loss of review/control. Product decisions should preserve autonomy. |
+| 2026-05-24 | RQ010/RQ007 | Official Google review docs plus review-reply behavior sources | High | Keep | Best source layer for reply rules: public replies, reviewer notification, moderation/pending states, short non-promotional tone and no incentive/requested wording. |
+| 2026-05-24 | RQ010/RQ007 | Practitioner/community threads on whether review replies help | Medium | Retry cautiously | Useful falsification: replies are human trust maintenance and maybe engagement, but not a guaranteed ranking button. |
+| 2026-05-24 | RQ010/RQ014 | Marketplace/Trustpilot tutor review surfaces | Medium-high | Keep | Shows review proof and teacher-specific praise are category-standard; Auris needs warm personal replies plus method specificity, not count-only proof. |
 | 2026-05-22 | RQ002 | Official Google JS/link/helpful-content docs | High | Keep | Best constraint layer for indexing diagnostics. It points to useful static/rendered content and crawlable links, not resubmission or schema tricks. |
 | 2026-05-22 | RQ002 | Live static HTML body-word audit | High | Keep | Best local diagnostic for SPA routes. It revealed that indexed/discoverable pages have thin pre-render/fallback content, especially homepage 0 words and route fallbacks under 40 words. |
 | 2026-05-22 | RQ002/RQ008 | Local competitor page comparison | High | Keep | Castle/Kilkenny/Janet's show route-specific trust density: years, students, Cambridge, groups, business situations, follow-up. Use to differentiate Auris, not mimic academy scale. |
@@ -1486,3 +1491,359 @@ Opportunity added:
 | ID | Opportunity | Why It Might Work | Why It Might Fail | Evidence Needed | Status |
 | --- | --- | --- | --- | --- | --- |
 | O055 | Direct Contact Measurement Gate | Lets Auris stay personal and non-salesy while close to full, while still preserving the minimum source/proof/timing evidence from real WhatsApp/email replies. | Clicks may be mistaken for leads; conversations can get buried; prospects wanting instant scheduling may bounce. | First 5 direct-contact rows with source confidence, proof mentioned, future timing, availability confusion, lead quality, response and follow-up date | Ready after deploy or first inquiry |
+
+## Cycle 52 Direct Contact Production Gate Signals
+
+Artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/direct-contact-production-gate-cycle52.md`
+
+Source discovery update:
+
+| Source Type | Usefulness This Cycle | Keep/Change |
+| --- | --- | --- |
+| Live production assets | Highest-signal proof that the pushed code reached the public domain. | Use immediately after any public-facing push. |
+| Negative stale-string scans | High-signal for removed flows such as Calendly and highlighted scarcity copy. | Keep in deploy-verification cycles. |
+| Rendered public route check | Useful guard against bundle-only confidence. | Keep one mobile plus one target route where possible. |
+| Search Console/GSC API | High-signal when available, but blocked this cycle with 403. | Record failure; do not substitute speculation. |
+| Netlify deploy docs | Useful for interpreting `main` push -> production behavior. | Keep for production-state gates. |
+| Google sitemap/URL Inspection docs | Useful for separating deploy, recrawl and index visibility. | Keep for post-deploy SEO caveats. |
+| GA4/GBP official docs | Highest-signal for event/profile metric boundaries. | Keep: clicks are intent, owner metrics are owner-side. |
+| Local competitor contact pages | Useful outside-in signal that phone/email/form/WhatsApp are normal locally. | Keep for contact-mode norm checks. |
+| WhatsApp official docs | Useful only for link-format mechanics. | Keep light. |
+
+| Date | Source | Signal | Audience/Pain | Supports | Weakens | Opportunity | Confidence | Next Test |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-24 | Production homepage assets | Live HTML serves `assets/main-c144a168.js` and `assets/main-82577177.css`, matching the direct-contact build. | Public visitors | H015, H026 | Local-only patch assumption | Production measurement gate | High | Watch first real inquiry row. |
+| 2026-05-24 | Live main bundle scan | Live bundle has quiet availability copy, WhatsApp/email links and `contact_click`; no Calendly or highlighted scarcity strings. | Future-fit prospects | H015, H026 | Booking-first attribution | Direct contact truth layer | High | Do not restore Calendly by default. |
+| 2026-05-24 | Live Talk bundle scan | Talk completion has `Message Auris`, `talk_contact_click` and WhatsApp, with no Calendly matches. | Talk users | H007, H015 | Talk trial booking as current metric | Talk contact intent | High | Pair click with reply row only. |
+| 2026-05-24 | Rendered production contact section | Mobile render shows WhatsApp/email copy and a calm future-availability note. | Mobile visitors | H026 | Stale public UI | Calm capacity truth | High | Revise only if prospects think closed. |
+| 2026-05-24 | Live sitemap | Routes remain listed but `lastmod` is still `2026-05-21` after the May 24 contact/copy change. | Search crawlers | H003, H020 | Deploy equals SEO freshness | Sitemap hygiene | Medium-high | Update during next approved public-code/SEO pass. |
+| 2026-05-24 | Search Console API attempt | Sites list returned `403 PERMISSION_DENIED`. | Measurement process | H015, H020 | API-verifiable query/page claims | Owner/API access gate | High | Restore GSC access or use owner screenshots. |
+| 2026-05-24 | Reviews endpoint | Public Places endpoint still returns `5.0 / 16`. | Trust-sensitive prospects | H009 | Public endpoint as reply truth | Proof intact, owner truth still private | High | Owner reply/newest status only if needed. |
+| 2026-05-24 | Netlify docs | Production deploys from a production branch push are served at the primary domain and replace the previous production version. | Deployment QA | H015 | Treating push as uncertain forever | Production state check | High | Use asset hash and live scans after pushes. |
+| 2026-05-24 | Google sitemap/URL Inspection docs | Significant page changes should have accurate `lastmod`; URL Inspection can test live/rendered URLs, but indexing is not guaranteed. | SEO/search visibility | H003, H020 | Deploy as instant search impact | Post-deploy search gate | High | Inspect only when GSC access returns. |
+| 2026-05-24 | Google GBP/GA4 docs | GBP owner Performance can show views/searches/actions; GA4 outbound clicks/recommended lead events separate clicks from real lead requests. | Measurement | H015, H026 | Clicks as leads | Direct-contact row | High | Do not fire `generate_lead` on click alone. |
+| 2026-05-24 | WhatsApp click-to-chat docs | `wa.me` is an official low-friction direct-contact mechanic. | WhatsApp-ready prospects | H026 | Custom form first | Personal direct contact | High for mechanics | Validate with real replies. |
+| 2026-05-24 | Idealog / Janet's / Herpa contact pages | Local providers expose phone/email/forms/WhatsApp and often level-test/enrolment CTAs. | Local class shoppers | H001, H026 | Direct contact as strange | Non-academy direct path | Medium-high | Keep Auris warmer, quieter and personal. |
+
+Opportunity added:
+
+| ID | Opportunity | Why It Might Work | Why It Might Fail | Evidence Needed | Status |
+| --- | --- | --- | --- | --- | --- |
+| O056 | Direct Contact Production Measurement Gate | Confirms the calm, future-availability contact surface is live while preventing the team from mistaking click-intent for leads. | Without owner-side rows, the automation can only verify surface readiness; no inquiry volume may be normal while Auris is close to full. | First direct-contact row or monthly GBP owner Performance snapshot; optional sitemap freshness patch if SEO work is approved. | Active |
+
+## Cycle 53 GBP Contact Coherence Signals
+
+Artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/gbp-contact-coherence-gate-cycle53.md`
+
+Source discovery update:
+
+| Source Type | Usefulness This Cycle | Keep/Change |
+| --- | --- | --- |
+| Owner GBP/Search screenshot | Highest-signal clue that GBP may still show `Appointments: calendly.com`. | Ask for one owner truth row; do not request credentials. |
+| GBP local links and bookings docs | Highest-signal official source for appointment/booking link behavior. | Keep for profile-contact cycles. |
+| GBP place action links API docs | Useful structural proof that appointment links are profile resources. | Keep when API access exists; current token is blocked. |
+| GBP chat/call-history docs | Useful current-platform caveat: Google chat/call history is not the simple direct-contact solution. | Keep. |
+| Live website bundle/schema | High-signal owned-site coherence check. | Keep after deploys. |
+| Local competitor contact pages | Useful norm check for phone/email/forms/WhatsApp. | Use lightly; voice should remain personal. |
+| GBP practitioner threads | Useful warning about appointment-link removal friction, but not official proof. | Mark medium confidence. |
+
+| Date | Source | Signal | Audience/Pain | Supports | Weakens | Opportunity | Confidence | Next Test |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-24 | Owner/Search GBP evidence | Profile previously showed `Appointments: calendly.com` while the website now has WhatsApp/email only. | Google searchers ready to act | H002, H026 | Website-only cleanup | GBP contact coherence row | High for prior state; current state owner-side | Owner checks Booking/Appointments. |
+| 2026-05-24 | Live website bundle | Production remains direct-contact, with no Calendly strings and active WhatsApp/email paths. | Website visitors | H015, H026 | Need to change website again | Profile-link cleanup before more copy | High | Keep website stable. |
+| 2026-05-24 | GBP local links docs | Google supports appointment/action links and third-party link removal workflows. | GBP profile visitors | H019 | Assuming profile links follow website code | Owner action-link truth | High | Fill `gbp_contact_link_truth`. |
+| 2026-05-24 | GBP booking provider docs | Booking providers/links can be added or stopped through GBP/provider flows. | Prospects who prefer scheduling | H026 | Calendly gone everywhere | Deliberate exception or removal | High | Decide keep/remove. |
+| 2026-05-24 | GBP place action links API docs | Appointment links are structured resources with provider/action metadata. | Measurement/process | H019 | Treating appointment URL as normal web copy | API/owner surface | High | Use only if access is granted. |
+| 2026-05-24 | GBP chat/call-history change docs | GBP chat/call history was discontinued; profile contact still depends on website links, phone and eligible text/WhatsApp options. | Direct-contact prospects | H015, H026 | GBP chat as main direct path | Website/phone/WhatsApp clarity | High | Do not rely on GBP messages unless owner sees it. |
+| 2026-05-24 | Business Information API attempt | Current token returned `403 PERMISSION_DENIED`. | Automation process | H019 | API-verifiable GBP links now | One owner screenshot row | High | Do not retry without access change. |
+| 2026-05-24 | Live JSON-LD/index | Telephone/email present; FAQ/local pages still mention free first/trial class; sitemap dates stale. | Search/profile visitors | H003, H026 | Perfect post-deploy coherence | Later public-code hygiene | Medium-high | Defer unless code work approved. |
+| 2026-05-24 | Teacher-assistant README/code | Platform supports WhatsApp handoffs for current students/classes, not prospect CRM. | Auris workflow | H015, H026 | Build prospect CRM now | Manual owner row | High | Wait for 5-10 rows. |
+| 2026-05-24 | GBP practitioner threads | Some operators report appointment links can be hard to remove or generic contact pages may be rejected as booking links. | Profile owners | H019 | Cleanup as instant/always easy | Status labels | Medium | Log `pending` / `blocked` if needed. |
+
+Opportunity added:
+
+| ID | Opportunity | Why It Might Work | Why It Might Fail | Evidence Needed | Status |
+| --- | --- | --- | --- | --- | --- |
+| O057 | GBP Contact-Link Coherence Gate | Aligns the Google profile with the live website before any acquisition push, preventing high-intent searchers from seeing stale Calendly booking while Auris is nearly full. | Owner-side only; Google/provider link removal can be awkward; keeping Calendly may be intentional if Auris wants a booking exception. | One `gbp_contact_link_truth` row plus optional removal/status note. | Ready |
+
+## Cycle 54 Public Message Coherence Signals
+
+Artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/public-message-coherence-cycle54.md`
+
+Source discovery update:
+
+| Source Type | Usefulness This Cycle | Keep/Change |
+| --- | --- | --- |
+| Live bundle/static/JSON-LD checks | Highest-signal for current public truth after a deploy. | Keep after copy/contact-mode changes. |
+| Local translations/components | Highest-signal for exact source of residual free-trial language. | Keep. |
+| Google sitemap/schema docs | Useful to decide hygiene vs SEO myth. | Keep; do not overclaim impact. |
+| Schema.org availability docs | Useful for capacity-aware offer states. | Use only with visible copy alignment. |
+| Local academy/free-trial examples | Useful outside-in evidence that free level tests are common locally. | Keep as contrast, not brand direction. |
+| Marketplace free-first-class examples | Useful falsification for premium expectations. | Keep when price/offer copy is being touched. |
+
+| Date | Source | Signal | Audience/Pain | Supports | Weakens | Opportunity | Confidence | Next Test |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-24 | Live main bundle check | No Calendly, no `trial_booked`, no `Book now`; yes WhatsApp/email, `contact_click`, quiet availability, and free-first-class strings. | Website visitors | H015, H026 | Perfect copy coherence | Public-message cleanup | High | Track `free_first_class_expectation`. |
+| 2026-05-24 | Live Talk chunk check | No Calendly; yes `Message Auris`, `wa.me`, mailto and `talk_contact_click`. | Talk users | H007, H015 | Talk booking metric | Talk contact intent | High | Pair clicks with replies only. |
+| 2026-05-24 | Live JSON-LD parse | Private offer is `InStock`; group is `PreOrder`; FAQ still says `primera clase gratuita`. | Search/result visitors | H020, H026 | Schema fully aligned | Schema hygiene patch | Medium-high | If edited, align visible FAQ and schema together. |
+| 2026-05-24 | Live sitemap | All routes still show `2026-05-21` after May 24 contact/copy changes. | Search crawlers | H003, H020 | Deploy equals sitemap freshness | Sitemap hygiene | Medium-high | Update only during approved code pass. |
+| 2026-05-24 | Google sitemap docs | `lastmod` should reflect significant content, structured data or link updates. | SEO process | H020 | Lastmod churn or neglect | Accurate deploy metadata | High | Update after meaningful edits, not tiny tweaks. |
+| 2026-05-24 | Google sitemap blog | Google says false `lastmod` eventually loses trust; significant changes should update. | SEO process | H020 | Cosmetic date updates | Honest freshness | High | Keep dates reality-based. |
+| 2026-05-24 | Google LocalBusiness/Organization docs | Phone/email at business level are acceptable; rich results are not guaranteed. | Search/profile visitors | H026 | Schema as conversion lever | Contact/schema coherence | High | Do not add schema-only growth work. |
+| 2026-05-24 | Schema.org LimitedAvailability | `LimitedAvailability` is a valid availability value. | Machine-readable offer | H026 | `InStock` as only choice | Capacity-aware offer schema | Medium-high | Use only if visible copy stays near-full. |
+| 2026-05-24 | GBP services docs | Services can include descriptions/prices and may be highlighted. | GBP profile visitors | H002, H026 | Booking link as only service surface | Service/profile clarity | High | Use after GBP appointment truth. |
+| 2026-05-24 | Janet's contact page | Local academy uses a free oral level test to place students. | Local class shoppers | H001, H026 | Free first class as inherently wrong | Reframe as fit check | Medium-high | Keep Auris personal, not academy-coded. |
+| 2026-05-24 | Live English contact page | Larger online school combines free trial, WhatsApp, scale proof and fast reply. | Online English shoppers | H026 | Free trial as personal/premium by default | Avoid scale-funnel tone | Medium | Keep direct-contact copy warmer. |
+| 2026-05-24 | Superprof tutor page | Marketplace repeats 20 EUR/h, WhatsApp/contact and first class free. | Price-sensitive prospects | H004, H021 | Free first class as premium proof | Expectation tracking | High | Record if leads mention free/trial/marketplace. |
+
+Opportunity added:
+
+| ID | Opportunity | Why It Might Work | Why It Might Fail | Evidence Needed | Status |
+| --- | --- | --- | --- | --- | --- |
+| O058 | Public Message Coherence Cleanup | Removes residual immediate-trial pressure while preserving a warm first conversation path, and aligns FAQ/schema/sitemap with the direct-contact posture. | Could over-soften a real free-first-class offer or distract from owner-side GBP truth. | Approved code pass, live post-deploy scans, first inquiry row with `free_first_class_expectation` and `message_copy_seen`. | Ready if Auris asks |
+
+## Cycle 55 GBP Calendly Removal Signals
+
+Artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/gbp-calendly-removal-handoff-cycle55.md`
+
+Source discovery update:
+
+| Source Type | Usefulness This Cycle | Keep/Change |
+| --- | --- | --- |
+| Owner GBP Booking/Appointments screen | Highest-signal current truth; automation cannot replace it. | Use one verification row only. |
+| Official GBP local-link and booking docs | Highest-signal for link/provider removal and propagation. | Keep for profile-contact cycles. |
+| Official GBP Performance docs | Useful after cleanup, but only owner-side. | Keep as monthly snapshot source. |
+| Official Ads docs | Useful to separate an ad-credit prompt from a public profile link. | Keep when owner UI shows promo modules. |
+| Practitioner threads | Medium-confidence friction source: generic appointment replacements and provider links can be awkward. | Use only for status labels. |
+| Live website scans | Highest-signal for owned-site truth; currently no Calendly. | Stop repeating unless code deploys. |
+| Local competitor contact pages | Useful norm check that direct WhatsApp/email/contact is ordinary. | Use lightly; keep Auris personal. |
+
+| Date | Source | Signal | Audience/Pain | Supports | Weakens | Opportunity | Confidence | Next Test |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-24 | Live website scan | Production has no Calendly strings and does have WhatsApp/email/direct-contact events. | Website visitors | H015, H026 | Website needs another contact edit | GBP-only cleanup | High | Keep site stable. |
+| 2026-05-24 | GBP local business links docs | Action links and third-party/provider links are separate profile surfaces and may require removal/provider handling. | Google profile visitors | H019 | Website code controls GBP links | Owner verification row | High | Fill removal status. |
+| 2026-05-24 | GBP bookings docs | Booking providers and owner links can appear in profile booking surfaces and need profile/provider management. | Prospects ready to schedule | H002, H026 | Calendly gone everywhere | Removal or deliberate exception | High | Recheck after a few days. |
+| 2026-05-24 | GBP Performance docs | Owner can later see profile interactions, including bookings where available. | Measurement | H015, H019 | Public scans as performance proof | Monthly owner snapshot | High | Record same-range metrics only if needed. |
+| 2026-05-24 | GBP edit/status docs | Edits can be pending, not approved or need review. | Owner workflow | H019 | Instant certainty after click | Status labels | High | Log pending/blocked. |
+| 2026-05-24 | Google Ads promo docs | Ad credits require campaign setup/spend; owner-panel promos are not public ads by default. | Owner UI interpretation | H026 | Panic about ad box | Ignore ad prompt while full | High | Do not run Ads now. |
+| 2026-05-24 | Reddit/local SEO threads | Practitioners report appointment-link removal and generic replacement friction. | Profile owners | H019 | Easy replacement with contact page | Use no appointment link if direct-contact mode | Medium | Only use if blocked. |
+| 2026-05-24 | Janet's / Live English contact pages | Local/online schools expose direct contact routes and free-test/trial funnels. | Local class shoppers | H001, H026 | Direct contact is abnormal | Direct-contact is acceptable; keep Auris quieter | Medium-high | Avoid scale-school tone. |
+
+Opportunity added:
+
+| ID | Opportunity | Why It Might Work | Why It Might Fail | Evidence Needed | Status |
+| --- | --- | --- | --- | --- | --- |
+| O059 | GBP Calendly Removal Verification | Resolves the last high-intent public-contact mismatch after the website moved to WhatsApp/email. | Owner-side only; provider removal can lag; Calendly could be intentionally kept later if acquisition mode changes. | One `gbp_calendly_removal_verification` row and a follow-up check if pending/blocked. | Active |
+
+## Cycle 57 Current Student Continuity Signals
+
+Artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/current-student-continuity-proof-cycle57.md`
+
+Source discovery update:
+
+| Source Type | Usefulness This Cycle | Keep/Change |
+| --- | --- | --- |
+| Student dashboard and teacher overview code | Highest-signal local source because it showed the portal already has continuity ingredients. | Keep for platform cycles. |
+| Homework-log model/routes | High-signal proof that a manual pilot can use existing workflow. | Keep; do not invent tables first. |
+| Live API/auth checks | Useful boundary check: API is healthy and student/SRS data is protected. | Keep in platform cycles. |
+| Official product docs from Duolingo/Quizlet/Busuu/Preply | Useful category evidence for guided next steps, study plans and progress memory. | Keep, but do not treat as Auris proof. |
+| Tutor-platform pages such as Eluency/Tuton | Good outside-in proof that independent-teacher tools sell between-session practice and prep. | Keep as category lens. |
+| Academic SRL/mobile-learning research | Useful to validate recommendations/feedback/e-portfolio as learning-relevant. | Use sparingly; not buyer proof. |
+| Reddit/Preply/Duolingo complaint threads | Highest-signal risk language around forced paths, generic homework and AI-assigned practice. | Keep as falsification, lower confidence. |
+| Current-student anonymous rows | Missing and now highest priority. | Try next before more product scans. |
+
+| Date | Source | Signal | Audience/Pain | Supports | Weakens | Opportunity | Confidence | Next Test |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-24 | `StudentDashboard.tsx` | Dashboard exposes feedback, class notes, flashcards, tasks and practice routes, but not one obvious first step. | Current students between classes | H006, H016 | More feature sprawl | 2-row continuity proof | High | Observe whether one tiny step helps next class. |
+| 2026-05-24 | `TeacherOverview.tsx` | Teacher view already shows pending feedback, SRS recall, practice activity and homework-log workflow. | Auris prep/admin load | H018 | New teacher CRM | Existing workflow proof | High | Use homework log only when convenient. |
+| 2026-05-24 | Live teaching API | `/api/health` returned 200 while student/SRS endpoints returned 401 without auth. | Platform trust/safety | H017 | Public data scrape | Healthy protected platform | High | Use only authorized aggregates if needed. |
+| 2026-05-24 | Website portal copy | Public copy already promises vocabulary, materials, review and progress between classes. | Prospects/current students | H004, H026 | Louder portal claims now | Keep copy modest | High | Upgrade claims only after rows. |
+| 2026-05-24 | Duolingo home-screen redesign | Large learning product moved toward a clearer path because learners were unsure of the best way to use the app. | Self-directed learners | H006 | Open-ended portal library | One clear step | Medium-high | Preserve choice. |
+| 2026-05-24 | Quizlet Study Path | Suggested sequence adapts to learner level and syncs progress. | Vocabulary learners | H006, H017 | Random flashcard use | Guided review | Medium-high | Keep as small suggestion, not full plan. |
+| 2026-05-24 | Busuu Study Plan | Premium study plans include goals, schedule, reminders, daily time and progress. | Habit builders | H006 | Heavy planning for Auris | Tiny continuity habit | Medium | Avoid large planning UX. |
+| 2026-05-24 | Preply how-it-works / Lesson Insights | Marketplace frames progress as human tutor plus beyond-lesson practice, vocabulary, feedback and optional AI insights. | Adult language learners | H012, H026 | Pure class-only value | Human plus continuity | Medium-high | Keep Auris-owned, not generic AI. |
+| 2026-05-24 | Eluency / Tuton | Tutor platforms sell trackable practice, SRS vocabulary, notes and knowing what to review before class. | Independent tutors | H018, H017 | Build custom LMS features now | Existing portal differentiation | Medium | Use current platform proof first. |
+| 2026-05-24 | DOAJ/Frontiers SRL study | Recommendations, feedback and e-portfolio beat assignment-only control in an EFL grammar study. | Language learners | H006 | Assignment-only practice | Recommendation plus feedback | Medium | Validate with Auris students. |
+| 2026-05-24 | Preply/Duolingo Reddit threads | Learners resist homework, forced paths and AI-assigned practice when it feels detached from the teacher or wastes class time. | Adults/tutor learners | H016 | Locked path, AI homework | Personal optional guidance | Medium | Classify `helpful` vs `homework`. |
+
+Opportunity added:
+
+| ID | Opportunity | Why It Might Work | Why It Might Fail | Evidence Needed | Status |
+| --- | --- | --- | --- | --- | --- |
+| O060 | Current Student Continuity Proof Sprint | Turns the existing portal into retention/referral proof while Auris is close to full, with no public marketing pressure and no code. | Students may see it as homework, prefer WhatsApp/manual prompts, or not act before class. | Two anonymous rows with student type, suggested step, reaction, behavior, in-class evidence and decision. | Ready |
+
+## Cycle 58 Strategic Pruning Signals
+
+Artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/strategic-ignore-list-cycle58.md`
+
+Source discovery update:
+
+| Source Type | Usefulness This Cycle | Keep/Change |
+| --- | --- | --- |
+| Prior packets/stop rules | Highest-signal source; showed the problem is waiting evidence, not missing ideas. | Use before creating new workstreams. |
+| Live site/reviews/API checks | Useful to rule out urgent public/system issues. | Keep light in pruning cycles. |
+| Official Google Search/GBP/Ads docs | High-signal boundaries for SEO, posts, owner metrics and ad prompts. | Keep for platform-mechanic claims. |
+| LinkedIn/Instagram/TikTok analytics docs | Useful to show social metrics are owner/platform-side and mostly attention-level. | Use to prevent social-first overreach. |
+| Calendly/waitlist product docs | Useful future-pattern sources, but biased toward adding systems. | Defer until inquiry volume exists. |
+| Service-business waitlist threads | Useful risk language around full calendars, hidden leaks and follow-up stress. | Treat as medium-confidence outside-in signal. |
+| Owner/current-student rows | Still the highest-signal missing source. | Try next; browsing cannot substitute. |
+
+| Date | Source | Signal | Audience/Pain | Supports | Weakens | Opportunity | Confidence | Next Test |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-24 | Local strategy packets Cycles 48-57 | Multiple lanes already have stop rules and are waiting on owner/student rows. | Auris / automation process | H026, H027 | More packet creation | Strategic ignore list | High | Use Packet BG before opening new lanes. |
+| 2026-05-24 | Live reviews endpoint | Public reviews remain `5.0 / 16` in EN/ES. | Trust-sensitive prospects | H002, H009 | Urgent review-count work | Trust maintenance | High | Reply only to new/pending reviews. |
+| 2026-05-24 | Live site and sitemap | Homepage 200, robots open, sitemap dates still `2026-05-21`. | Search/profile visitors | H003 | SEO emergency | Approved hygiene pass only | High for state, medium for impact | Packet BC only if approved. |
+| 2026-05-24 | Teaching API health | API returned HTTP 200. | Current-student experience | H006 | Urgent platform firefighting | Evidence waiting | High | Current-student rows, not code by default. |
+| 2026-05-24 | Strategy source on choosing what not to do | Strategy can be expressed as deliberate non-action. | Business focus | H027 | Always-add mentality | Pruning artifact | Medium-high | Maintain ignore list. |
+| 2026-05-24 | Google helpful content docs | Search-first content sprawl and artificial freshness are warning signs. | SEO/content | H003 | New local/city pages | People-first restraint | High | Only improve existing pages if approved. |
+| 2026-05-24 | Google Ads promo docs | Promo credits require spend/eligibility and are future ad credit, not free demand. | GBP owner prompt | H026 | Ads while full | Ignore ad prompt | High | Unpark only in measured acquisition mode. |
+| 2026-05-24 | GBP Performance docs | Owners can view searches, views and interactions by range; these are owner-side. | Local profile strategy | H019 | Public scraping as proof | Monthly snapshot | High | One owner snapshot if available. |
+| 2026-05-24 | GBP posts docs | Posts can help share updates but may be live/pending/not approved. | GBP content | H002, H005 | Weekly posting by default | Real-event posting | High | Post only for capacity/proof moment. |
+| 2026-05-24 | LinkedIn/Instagram/TikTok analytics docs | Social platforms provide reach/engagement/video/account analytics, but not Auris-specific buyer proof. | Social/content | H005 | Social-first acquisition | Light proof reuse | Medium-high | Lead row or owner analytics to unpark. |
+| 2026-05-24 | Calendly routing and Vagaro waitlist docs | Routing/waitlists solve lead qualification, full-calendar slots and notifications. | Future demand handling | H015, H026 | CRM/waitlist now | Later system trigger | Medium-high | Build only after repeated inquiry rows. |
+| 2026-05-24 | Fully booked service-business thread | Operators describe hidden waitlist leaks, follow-up stress and capacity-expansion risks. | Solo/service operators | H026, H027 | "Full means solved" | Simple inquiry/follow-up row | Medium | Track future-fit inquiries before scaling. |
+
+Opportunity added:
+
+| ID | Opportunity | Why It Might Work | Why It Might Fail | Evidence Needed | Status |
+| --- | --- | --- | --- | --- | --- |
+| O061 | Trust Maintenance + Evidence Waiting Mode | Prevents the automation from creating unnecessary content, code, CRM or platform work while Auris is close to full and proof rows are missing. | Could become too passive if capacity opens or high-fit inquiries start arriving. | One of the Cycle 58 triggers: capacity opening, first inquiry row, monthly GBP snapshot, GBP Calendly status, two current-student rows, code approval or restored API access. | Active for next 30 days |
+
+## Cycle 59 Evidence Routing Signals
+
+Artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+
+Source discovery update:
+
+| Source Type | Usefulness This Cycle | Keep/Change |
+| --- | --- | --- |
+| Existing ledgers and trackers | Highest-signal source; showed every likely proof type already has a destination. | Use before creating new artifacts. |
+| Live public/API checks | Useful to confirm there is no urgent public/system problem. | Keep light in no-new-evidence cycles. |
+| Official privacy and analytics docs | High-signal guardrail for redacted rows and not sending PII to analytics. | Keep for any owner/prospect/student evidence cycle. |
+| Official GBP docs | High-signal for profile performance, review replies and action-link truth. | Keep for owner-evidence cycles. |
+| Qualitative research sources | Useful for treating 1-5 rows as discovery evidence, not scale proof. | Keep, but pair with Auris-specific rows. |
+| Waitlist/CRM/routing product sources | Useful future option map, but biased toward adding systems. | Defer until repeated inquiry rows or missed follow-up. |
+| Current-student and owner rows | Still the highest-signal missing source. | Try next; browsing cannot substitute. |
+
+| Date | Source | Signal | Audience/Pain | Supports | Weakens | Opportunity | Confidence | Next Test |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-24 | Local owner ledger | Review truth, GBP performance, contact-link truth, action log, inquiry and decision rows already exist. | Auris / automation process | H015, H019, H027 | New ledger/CRM | Evidence router | High | Route next proof to existing row. |
+| 2026-05-24 | Local Next 15 tracker | Current-student continuity proof already has row fields. | Current students | H006, H016, H027 | More platform spec writing | Student evidence route | High | Two anonymous rows. |
+| 2026-05-24 | Live reviews endpoint | Public proof still returns `5.0 / 16`, but endpoint order is not newest-review truth. | Trust-sensitive prospects | H002, H019 | Public endpoint as owner truth | Owner review/status row | High | Owner screenshot/status only if needed. |
+| 2026-05-24 | Live site/sitemap/robots | Site and crawl plumbing are healthy; sitemap dates remain a hygiene caveat. | Search/profile visitors | H003, H027 | Urgent public-code work | Public readiness only | High for state | Code hygiene only if approved. |
+| 2026-05-24 | Teaching API health | API health returned OK while platform rows remain owner/student gated. | Current students | H006, H027 | Platform firefighting | Evidence waiting | High | Observe current-student behavior. |
+| 2026-05-24 | GDPR Article 5 | Data minimisation supports storing only necessary categories/status labels. | Prospects/students | H015, H028 | Saving private messages/screenshots | Redacted evidence route | High | Keep rows anonymous. |
+| 2026-05-24 | Google Analytics PII policy | Analytics should not receive personally identifiable information. | Measurement process | H015, H028 | Passing lead message text to events | Intent vs lead truth | High | Keep `contact_click` generic. |
+| 2026-05-24 | GA4 recommended events | `generate_lead` belongs to stronger lead-generation events, not raw contact clicks. | Measurement process | H015 | Clicks as leads | Offline/manual lead truth | High | Use only if a real request capture exists later. |
+| 2026-05-24 | GBP Performance docs | Profile views/searches/actions are owner-side range metrics. | Local profile strategy | H019 | Public scraping as performance proof | Owner snapshot route | High | Monthly snapshot if available. |
+| 2026-05-24 | GBP review/local-link docs | Review replies and appointment/action links live in the profile layer. | Google profile visitors | H019, H026 | Website changes clean every profile surface | Contact-link truth route | High | Record Calendly/link status. |
+| 2026-05-24 | NN/g small-sample guidance | Small observed rows can reveal practical issues, but should not be treated as conversion certainty. | Students/prospects | H006, H028 | Waiting for large samples before learning | Tiny proof rows | Medium-high | Route 1-2 rows, then decide only the next tiny step. |
+| 2026-05-24 | Fully booked service-business thread | Future-fit leads can leak through poor follow-up, but software is not automatically the first fix. | Solo/service operators | H026, H027 | CRM/waitlist now | Redacted inquiry row | Medium | Add follow-up only after repeated rows. |
+
+Opportunity added:
+
+| ID | Opportunity | Why It Might Work | Why It Might Fail | Evidence Needed | Status |
+| --- | --- | --- | --- | --- | --- |
+| O062 | Evidence Trigger Router | Keeps future screenshots, owner notes, inquiries, capacity updates and student observations from spawning new workstreams; it turns them into the right existing row and decision. | Could become another artifact if future cycles ignore it; labels may need updating if evidence arrives that does not fit. | Next real owner/student/prospect/capacity/access item classified through Packet BH. | Active |
+
+## Cycle 60 Quiet Cycle Discipline Signals
+
+Artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+
+Source discovery update:
+
+| Source Type | Usefulness This Cycle | Keep/Change |
+| --- | --- | --- |
+| Packet BH/BG and local ledgers | Highest-signal; they showed the quiet-cycle problem is process discipline, not missing market ideas. | Use first for repeated no-evidence heartbeats. |
+| Live homepage/reviews/sitemap/API checks | Useful only as regression checks. | Keep bounded; do not convert stable checks into growth insight. |
+| Official SRE/toil/monitoring sources | High-signal process analogy for eliminating repeated, non-actionable work. | Keep for automation quality cycles. |
+| GOV.UK performance measurement sources | Good guardrail for measuring user-task evidence rather than vanity/stable checks. | Keep for measurement-process cycles. |
+| Kanban/WIP and lightweight decision-record sources | Useful support for explicit limits and durable decisions. | Use sparingly; local router remains the source of truth. |
+| Scheduling/routing product docs | Useful future-option map, but biased toward software and growth automation. | Defer until repeated inquiry rows. |
+| Fully booked service-business community threads | Useful outside-in warning about missed follow-up, but not proof that Auris needs a CRM. | Keep as medium-confidence falsification only. |
+| Broad competitor/social scans | Low signal when no trigger changed. | Skip by default in quiet cycles. |
+
+| Date | Source | Signal | Audience/Pain | Supports | Weakens | Opportunity | Confidence | Next Test |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-24 | Packet BH / Packet BG | Evidence destinations already exist, but `no_new_evidence` needed a bounded stop rule. | Automation process | H027, H028 | New artifact each cycle | Quiet Cycle Contract | High | Next quiet heartbeat should avoid new artifacts. |
+| 2026-05-24 | Live public checks | Homepage, reviews, sitemap, robots and teaching API were stable. | Prospects/current students | H027 | Public emergency | Regression-only checking | High | Recheck only if deploy/access/state changes. |
+| 2026-05-24 | Google SRE toil source | Repetitive manual operational work should be bounded and reduced. | Automation process | H027, H028 | Full research pass for stable state | No-evidence stop rule | High | Treat repeated quiet research as toil. |
+| 2026-05-24 | Google SRE monitoring source | Alerts should be urgent, actionable and user-visible. | Automation notifications | H028 | NOTIFY on stable checks | DONT_NOTIFY default | High | Notify only on urgent public/API/access decision. |
+| 2026-05-24 | GOV.UK performance data guide | Data should show user need, task completion and service performance. | Measurement process | H015, H027 | Stable headers as growth proof | Row-based measurement | High | Measure inquiries/students/owner snapshots. |
+| 2026-05-24 | Kanban University Guide | Explicit WIP limits help control active work. | Strategy process | H027 | Reopening parked lanes | Work-lane limits | Medium-high | Keep only active evidence lanes open. |
+| 2026-05-24 | Google Cloud ADR overview | Lightweight decision records prevent repeated relitigation. | Strategy memory | H028 | New docs for every quiet check | Router as durable decision | High | Amend router only when it fails. |
+| 2026-05-24 | Shape Up boundaries | Raw ideas need appetite and scope before exploration. | Automation focus | H027 | Open-ended process research | Bounded hardening pass | Medium-high | One process pass, then stop. |
+| 2026-05-24 | Calendly features | Routing/workflow tools are built to automate booking and growth flows. | Future operations | H015, H026 | Build routing now | Later software trigger | Medium, biased | Require repeated rows or missed follow-up. |
+| 2026-05-24 | Fully booked service-business thread | Full calendars can still leak future-fit leads through poor follow-up. | Solo service operators | H026, H027 | "Full means no tracking" | First-inquiry/follow-up row | Medium | Track first future-fit inquiry manually. |
+
+Opportunity added:
+
+| ID | Opportunity | Why It Might Work | Why It Might Fail | Evidence Needed | Status |
+| --- | --- | --- | --- | --- | --- |
+| O063 | Quiet Cycle Contract | Stops repeated no-evidence heartbeats from generating more campaigns, ledgers, route maps or platform specs while still allowing regression checks and urgent escalation. | Could become too quiet if capacity opens, a first inquiry arrives, or an owner/student row is missed. | Next heartbeat classified through Packet BH; any state-changing row should unpark exactly one lane. | Active |
+
+## Cycle 61 Talk Direct-Contact Calibration Signals
+
+Artifact updates: `/Users/aurisp/repos/teacher-website/docs/strategy/talk-the-talk-lead-magnet.md`, `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`, `/Users/aurisp/repos/teacher-website/docs/strategy/research-roadmap.md`.
+
+Source discovery update:
+
+| Source Type | Usefulness This Cycle | Keep/Change |
+| --- | --- | --- |
+| Public Talk code and live bundle | Highest-signal; showed the real state changed to 60 seconds and direct contact. | Use after owner-approved public edits. |
+| Measurement/analytics official docs | High-signal for separating click intent from lead proof. | Keep for any CTA/event change. |
+| GBP/action-link docs | Useful because Calendly/profile links can remain separate from website code. | Keep only for profile-link truth checks. |
+| Speaking-practice incumbents | Useful to position Talk against free/AI practice tools. | Use to keep Talk human-feedback-first. |
+| Learner community threads | High signal for pain language around blank mind, confidence and low-pressure practice; low for buying intent. | Keep as language input, not channel proof. |
+| Current-student portal code | Useful caveat: portal still defaults to 90 seconds. | Inspect before aligning student/product behavior. |
+| Broad SEO scans | Low value for this trigger. | Skip unless Search Console or public-code approval changes. |
+
+| Date | Source | Signal | Audience/Pain | Supports | Weakens | Opportunity | Confidence | Next Test |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-25 | Public Talk source code | `DEFAULT_DURATION_SECONDS = 60`, custom time opens at `01:00`, and CTA tracks `talk_contact_click`. | Hesitant prospects trying a speaking rep | H007, H011, H015 | 90-second/trial-booking default memory | One-minute first rep | High | Watch starts/completions and real replies. |
+| 2026-05-25 | Live Talk bundle | Live `TalkTheTalk-b73dc496.js` contains WhatsApp `Message Auris` and `talk_contact_click`; no `free first`, `free trial`, `primera clase gratuita`, `01:30` or Calendly strings. | Public website visitors | H007, H015, H026 | Local-only assumption | Production direct-contact Talk | High | Pair click intent with reply row. |
+| 2026-05-25 | Live sitemap | `/talkthetalk` still has `lastmod` `2026-05-21` while homepage/local page show `2026-05-25`. | Search crawlers | H003, H007 | Perfect public hygiene | Small future sitemap fix | Medium-high | Fix only in approved public-code pass. |
+| 2026-05-25 | Student portal Talk code | Portal still defaults to 90 seconds and `01:30`, with no reflection/teacher signal. | Current students | H011 | Public default equals portal default | Separate student timer decision | High | Ask/observe one student before aligning. |
+| 2026-05-25 | WhatsApp click-to-chat Help | Official `wa.me` click-to-chat supports direct message mechanics. | WhatsApp-ready prospects | H026 | Need a custom form now | Low-friction personal contact | High for mechanics | Validate with actual replies. |
+| 2026-05-25 | GA4 recommended events | `generate_lead` is for submitted requests/information, and lead funnel events include qualification/working/close states. | Measurement | H015 | Click equals lead | Intent-vs-lead separation | High | Do not fire lead event from raw Talk click. |
+| 2026-05-25 | Google Business Profile business links | Profile links can include appointment/booking actions and third-party provider links may need explicit removal. | GBP searchers ready to act | H002, H026 | Website cleanup removes every profile action | GBP link truth row | High | Owner checks current Booking/Appointments state. |
+| 2026-05-25 | Google Search helpful content | Search guidance favors people-first usefulness and warns against search-first pages. | Search visitors | H007 | SEO-first free tool page | Human feedback bridge copy | High | Add explanatory route content only if approved. |
+| 2026-05-25 | British Council speaking resources | Speaking practice is organized by level and paired with self-study, live classes and personal tutors. | Adult learners needing confidence | H007, H011 | Random prompt alone is enough | Levelled low-pressure practice plus tutor bridge | Medium-high | Keep difficulty choices clear. |
+| 2026-05-25 | Cambridge learner activities | Activities can be filtered by skill, level and short time bands. | Self-directed learners | H007 | Long default as better | Short-time practice units | Medium-high | Keep 60 seconds as first rep. |
+| 2026-05-25 | ELSA Speak | AI role-play, bilingual tutor flows, instant feedback and progress dashboards are now mainstream. | Speaking-practice shoppers | H012 | Generic speaking app lane | Auris human diagnosis | Medium-high | Position apps for reps, Auris for feedback. |
+| 2026-05-25 | SmallTalk2Me | AI speaking tools pitch IELTS, interviews, business English, instant CEFR feedback and 15-30 minute daily practice; page itself says human tutors add motivation and nuance. | Work/interview learners | H012 | Build a generic AI speaking tool | Human + tool bridge | Medium-high, marketing-biased | Avoid competing on AI features. |
+| 2026-05-25 | Reddit EnglishLearning "understand but can't speak" | Learners describe understanding English but blanking when speaking, fear of mistakes and needing practice/native support. | Adult English learners | H010, H011 | Grammar-only framing | Low-pressure one-minute speaking rep | Medium, anecdotal | Use pain language carefully. |
+| 2026-05-25 | Reddit LearningEnglish awkwardness thread | Repeated theme: overthinking, accent judgment and needing safe low-pressure practice. | Confidence-sensitive learners | H010, H011 | More vocabulary as only fix | Confidence-first Talk framing | Medium, anecdotal | Compare against current-student language. |
+| 2026-05-25 | Reddit AI tutor thread | Some learners say AI helps because it gets them talking and is available whenever needed. | AI-comfortable learners | H012 | Human-only practice volume | AI/reps are normal; human feedback must be specific | Low-medium, small thread | Do not ignore AI competition. |
+| 2026-05-25 | CHI 2026 AI Twin paper | AI speaking practice research is moving toward confidence-preserving feedback and emotional engagement. | Adult ESL learners | H012 | AI as only pronunciation checker | Human emotional/diagnostic positioning | Medium-high research signal | Keep Talk supportive, not evaluative. |
+
+Opportunity added:
+
+| ID | Opportunity | Why It Might Work | Why It Might Fail | Evidence Needed | Status |
+| --- | --- | --- | --- | --- | --- |
+| O064 | One-Minute Talk Feedback Bridge | A 60-second first rep lowers activation energy, fits the "blank mind" pain, and leads naturally to direct WhatsApp feedback without booking pressure. | Could remain a toy if no one replies, or confuse users while recording/listenback copy remains unimplemented. | One real Talk-origin reply row, plus a later decision on portal 60 vs 90 seconds. | Active, evidence-gated |
+
+## Cycle 116 Review Count 17 Trust-Maintenance Signal
+
+Artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/review-count-17-owner-reply-gate-cycle116.md`
+
+Source discovery update:
+
+| Source Type | Usefulness This Cycle | Keep/Change |
+| --- | --- | --- |
+| Live public reviews endpoint | Highest-signal for count/rating drift; it confirmed `5.0 / 17` in both English and Spanish variants. | Keep as bounded proof QA. |
+| Review function and website review component | High-signal for separating dynamic public count display from owner-side reply truth. | Use before recommending any copy change. |
+| Owner GBP view | Still the missing source for newest review and reply status. | Ask for one row only. |
+| Broad GBP/content research | Low signal for a simple count delta. | Skip unless owner row changes the action. |
+
+| Date | Source | Signal | Audience/Pain | Supports | Weakens | Opportunity | Confidence | Next Test |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-06-02 | Live reviews endpoint EN/ES | Public Places-backed proof moved from `5.0 / 16` to `5.0 / 17`, with both language variants agreeing. | Trust-sensitive prospects | H009, H019 | Static review-count assumptions | Review reply trust maintenance | High for count/rating | Confirm owner-view newest/reply status. |
+| 2026-06-02 | `netlify/functions/google-reviews.js` | Endpoint requests rating, user rating count, limited reviews and Google Maps URI; it does not expose owner reply metadata. | Measurement/process | H019 | Public endpoint as complete review truth | Owner Review Truth row | High | Record count/theme/reply row only. |
+| 2026-06-02 | `GoogleReviewsSection.jsx` | The public review component already displays dynamic endpoint rating/count. | Website visitors | H009 | Website code edit for every count change | Count-neutral static copy | High | No public copy edit unless owner confirms and approves. |
+
+Opportunity added:
+
+| ID | Opportunity | Why It Might Work | Why It Might Fail | Evidence Needed | Status |
+| --- | --- | --- | --- | --- | --- |
+| O065 | Review Count 17 Reply Gate | Converts the new public review-count signal into the smallest useful trust-maintenance action: owner checks newest review and replies if needed. | Could become noisy if repeated without owner rows; public endpoint may not show the newest review text. | One owner Review Truth row: count, newest review theme/date if safe, reply status. | Active, owner-gated |

@@ -1,7 +1,7 @@
 # Pricing and Offer Positioning
 
 Created: 2026-05-21 Cycle 03
-Last updated: 2026-05-24 Cycle 51
+Last updated: 2026-05-24 Cycle 55
 
 ## Current Price
 
@@ -256,6 +256,40 @@ Stop/change rule:
 - If two qualified prospects ask for instant scheduling, add a lightweight scheduling option only for that mode.
 - If two qualified prospects think Auris is closed, keep the honesty but make the direct contact line clearer.
 - If two qualified prospects mention lower marketplace prices before committing, revisit marketplace price alignment before driving more traffic.
+
+## Cycle 54 Free-First-Class Coherence
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/public-message-coherence-cycle54.md`
+
+The direct-contact posture is now live, but a few surfaces still lead with `free first class` / `clase de prueba gratuita`.
+
+Interpretation:
+
+- A free first class can still be true and useful.
+- While Auris is usually close to full, it should not be the headline or primary acquisition hook.
+- The premium path should frame the first step as a first conversation / fit check / future-slot discussion.
+- Marketplace and academy examples make free-first-class language normal, but also lower the perceived bar and may increase price-shopping expectations.
+
+If Auris asks for a small site hygiene patch:
+
+- Reframe local landing and FAQ copy from `free trial` to `first conversation`.
+- Keep the 40 EUR/h price transparent.
+- Strengthen the private-offer proof mechanism near price and in JSON-LD description.
+- Add `free_first_class_expectation` to the first inquiry row before deciding whether the free-class promise should stay visible.
+
+## Cycle 55 GBP Calendly Price/Offer Interpretation
+
+Related artifact: `/Users/aurisp/repos/teacher-website/docs/strategy/gbp-calendly-removal-handoff-cycle55.md`
+
+Removing Calendly from Google Business Profile is not a pricing or premium-proof move. It is profile coherence.
+
+Decision:
+
+- Keep the owned-site price anchor at 40 EUR/h.
+- Do not use Calendly removal as a scarcity signal.
+- Do not run Google Ads into the current nearly-full posture.
+- If GBP services show prices, they should match the owned-site 40 EUR/h private anchor and describe the personal follow-up mechanism.
+- If Calendly is intentionally kept later, treat it as `measured_acquisition` mode and track source/timing separately.
 
 ## Cycle 09 Marketplace Alignment Finding
 

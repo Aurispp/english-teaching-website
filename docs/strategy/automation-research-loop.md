@@ -1,7 +1,7 @@
 # Continuous Strategy Automation Loop
 
 Created: 2026-05-21
-Updated: 2026-05-24 Cycle 51
+Updated: 2026-05-30 Cycle 115
 Automation id: `continuous-teaching-business-strategy`
 Cadence: hourly active thread heartbeat.
 
@@ -42,6 +42,7 @@ The automation should treat these files as shared memory:
 - `pricing-positioning.md`: offer, pricing, and channel logic.
 - `review-proof-library.md`: public-proof themes and review usage.
 - `market-intelligence.md`: outside-in trends, community signals, competitor moves, opportunities, and open market questions.
+- `automation-idea-engine.md`: idea synthesis and process-improvement rules for owner check-ins and long quiet streaks.
 - Theme-specific files, such as `talk-the-talk-lead-magnet.md`.
 
 If a useful memory file is missing, create it with a clear purpose and maintain it.
@@ -139,6 +140,105 @@ Cycle 51 process rule:
   - private lead truth: WhatsApp/email/phone/DM reply content and outcome
   - follow-up risk: next action/date so future leads do not disappear in inboxes
 - If no direct-contact row exists, do not build a larger CRM, waitlist or form. Rotate to GBP profile/service coherence, review freshness, or student-retention evidence.
+
+Cycle 52 process rule:
+
+- After an owner-approved commit/push of public-facing acquisition/contact changes, the next cycle must verify production state before doing more strategy.
+- Production verification should include live headers, live asset hashes, live positive string scans, live negative stale-string scans, one rendered route check, public proof endpoint status, and at least one data/API attempt.
+- Treat a successful deploy as a state change, not as growth proof. The first success metric remains a real lead/private reply row or owner GBP Performance row.
+- If Search Console/GA4 access fails after deploy, record the failure and use production artifacts plus owner-side screenshots/rows; do not infer query, event-count or conversion results.
+- If the sitemap `lastmod` is stale after meaningful content/contact changes, log it as SEO hygiene for the next approved public-code pass, not as an emergency.
+
+Cycle 53 process rule:
+
+- After a website contact-mode change, inspect or request owner evidence for adjacent public profile action links, especially Google Business Profile appointment/booking links.
+- Do not assume removing Calendly from website code removes it from GBP, LinkedIn, marketplace profiles, email signatures or other public surfaces.
+- If GBP/profile access is blocked, create a one-row owner truth gate (`gbp_contact_link_truth`) instead of asking for credentials or repeatedly scraping public search.
+- Keep profile-link cleanup separate from acquisition experiments. A stale appointment link is a coherence issue first, not proof that GBP is working or failing.
+
+Cycle 55 process rule:
+
+- When Auris asks how to complete an owner-side platform action, turn the answer into a verification row and a stop rule.
+- For GBP booking/appointment cleanup, distinguish:
+  - owner-added link removal
+  - provider-managed removal/disconnect
+  - pending profile edits
+  - blocked/provider-request states
+  - intentional exceptions
+  - owner-only ad-credit prompts
+- Do not keep researching the same owner UI after giving the instruction unless Auris provides the result or an error state.
+- Do not use a generic public Google scrape as proof of owner-side GBP truth.
+- When running zsh shell checks, avoid variable names such as `path` and `status`; they can mutate `PATH` or collide with readonly shell variables and create false command failures.
+
+Cycle 56 process rule:
+
+- When Auris asks a tactical public-trust question, such as whether to reply to reviews or only react, convert the answer into a lightweight operating rule and one status row, not a new campaign.
+- For review replies, separate:
+  - public trust action: warm, short, specific reply
+  - weak acknowledgement: like/react
+  - owner truth: reply status in GBP owner view
+  - public visibility: whether the reply appears to non-owner viewers
+  - growth proof: GBP Performance or an anonymized inquiry row
+- Do not overclaim ranking impact from replies. Use official Google docs for public/review-policy facts, and require owner metrics or lead notes for acquisition conclusions.
+- If the reply is live and no capacity is opening, stop revisiting reply copy and rotate to first inquiry rows, monthly GBP snapshot, or student-retention evidence.
+
+Cycle 57 process rule:
+
+- When the platform-retention idea is already specified and no pilot rows exist, do not create another feature spec.
+- Convert the question into a current-student proof row that can be observed in the next class.
+- For continuity proof, separate:
+  - portal action: flashcards, notes, feedback, assignment or Talk
+  - sent channel: WhatsApp, email, in-class mention or homework log
+  - student reaction: helpful, homework, neutral or ignored
+  - behavior: did the student act before class
+  - class evidence: remembered word, used phrase, mentioned portal, asked follow-up or no sign
+  - implementation decision: build, keep manual, soften or pause
+- Current-student rows outrank product pages, app examples and research papers once the local implementation path is known.
+- In Trust Maintenance Mode, retention and referral readiness are valid growth evidence; do not force every cycle back into public acquisition unless a slot is opening or a lead row appears.
+
+Cycle 58 process rule:
+
+- When three or more active packets are waiting on owner-side, lead-side or current-student rows, stop creating new campaign/platform/content artifacts by default.
+- First classify the cycle as `evidence_arrived`, `approval_arrived`, `capacity_changed` or `no_new_evidence`.
+- If `no_new_evidence`, use the strategic ignore list before choosing work:
+  - active maintenance: review replies, monthly GBP snapshot, first inquiry row, GBP Calendly status, current-student continuity rows
+  - parked: public-code hygiene, static route SEO, GBP/LinkedIn sprint, Work-English package, Talk Reflection, Next 15 build
+  - ignored by default: ads, TikTok/Instagram-first, new city pages, CRM/waitlist/routing form, AI homework and bigger analytics panels
+- The implementation-ready artifact may be a pruning/stop-rule artifact when it prevents unnecessary work.
+- Treat "do not act yet" as a strategic conclusion only when it names the exact evidence that would unpark the lane.
+
+Cycle 59 process rule:
+
+- After the strategic ignore list exists, classify incoming evidence with `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md` before creating a new artifact or reopening a parked lane.
+- Accepted trigger labels are `review_reply_status`, `owner_snapshot_arrived`, `gbp_contact_link_truth`, `first_inquiry_arrived`, `student_row_arrived`, `capacity_changed`, `approval_arrived`, `api_access_changed`, `channel_visible_signal`, `public_readiness` and `no_new_evidence`.
+- For screenshots, owner notes and student/prospect observations, record only redacted categories and aggregate/status fields. Do not store names, phone numbers, emails, company names, full private messages or screenshots with identifiable student/prospect data.
+- If `no_new_evidence` follows this router, do not create another campaign, content calendar, platform spec, CRM, waitlist, route map or ledger by default. Run a light health check if useful, log the missing trigger, and leave the next cycle pointed at the router.
+- Capacity changes, first inquiry rows and current-student rows outrank public readiness checks when deciding what to do next.
+
+Cycle 60 process rule:
+
+- For repeated `no_new_evidence` cycles after Packet BH, use the Quiet Cycle Contract inside `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`.
+- A quiet cycle is useful when it confirms no trigger has changed, not when it creates more artifacts.
+- Run at most a bounded set of light checks: git status, homepage header, reviews endpoint, sitemap/robots, teaching API health, and owner/API access only if access changed or Auris asks.
+- If the teaching API returns `000` or times out once during a quiet cycle, retry once with the normal request and once with HTTP/1.1 before notifying. Escalate only if the retry also fails, returns a 5xx, or a protected unauthenticated endpoint stops returning the expected 401.
+- If all checks are stable, do not browse broadly, do not update multiple artifacts, and do not create another strategy file. A `DONT_NOTIFY` heartbeat is the correct outcome.
+- A one-time process stress test is allowed when the router itself is incomplete. After this cycle, router hardening requires evidence that the quiet-cycle contract failed or that a new evidence type cannot be classified.
+- The deep-cycle standard still applies when a real theme opens, but it should not force false work when the current trigger is explicitly `no_new_evidence`.
+
+Cycle 61 process rule:
+
+- Owner-approved public copy/tool changes are real evidence, but they should be classified narrowly as `approval_arrived` plus `public_readiness`.
+- Do not let a small public-code calibration reopen content, SEO, GBP, pricing or platform lanes by default.
+- Update the directly affected artifact, measurement rule and hypotheses; then return to Packet BH unless the change produces a real prospect reply, owner snapshot, capacity update or current-student row.
+- When public and student versions of a tool diverge, record the divergence as a product question rather than silently aligning the dirty teaching-platform repo during a strategy heartbeat.
+
+Cycle 109 process rule:
+
+- Owner questions such as "what have you found?", "what new ideas do you have?", or "improve the automation" are not ordinary `no_new_evidence` cycles. Classify them as `owner_synthesis_request` or `process_improvement_requested`.
+- Use `/Users/aurisp/repos/teacher-website/docs/strategy/automation-idea-engine.md` for these moments. Run an Idea Synthesis Pulse: generate 3-7 evidence-bound ideas, score each by upside, risk, smallest test, stop condition and cheaper alternative, then pick at most one `do_now`, one `test_manually`, one `park`, and one `ignore`.
+- Keep the Quiet Cycle Contract intact. The synthesis pulse exists to turn accumulated learning into sharper options, not to reopen every parked campaign or browse broadly.
+- If the process itself failed, update the durable process artifacts and the live heartbeat prompt. Do not let the strategy docs and the actual automation config drift apart.
+- Treat idea generation as strategy, not permission. Do not publish, deploy, contact, edit GBP/profile surfaces, or build product changes unless Auris explicitly approves that action.
 
 ## Cycle Flow
 
@@ -1043,6 +1143,112 @@ Source-quality update:
 - Official docs are useful for measurement surfaces and status labels, not for proving conversion.
 - Waitlist/scheduling product pages validate patterns but are biased toward software adoption.
 - The first inquiry after deploy is more important than another generic CTA best-practice source.
+
+## Cycle 54 Process Improvement
+
+After a public contact-mode change, do one public-message coherence pass before recommending more acquisition activity.
+
+New rule:
+
+- Check four adjacent surfaces:
+  - visible CTA/contact copy
+  - FAQ and local landing final CTAs
+  - JSON-LD offer/FAQ schema
+  - sitemap `lastmod`
+- Separate urgent issues from hygiene:
+  - broken contact path, wrong public price, or active stale booking link = urgent/owner-facing
+  - old free-trial wording, stale `lastmod`, generic offer schema = next approved code pass
+- Do not keep repeating this audit if no code approval or owner evidence arrives.
+- If the business is near full, measure whether people understood future availability and whether they expected a free/trial class before editing again.
+
+Source-quality update:
+
+- Live bundles and JSON-LD are high-signal for public truth.
+- Official sitemap/schema docs are high-signal for hygiene rules, not proof that a change will generate leads.
+- Competitor free-trial examples are useful falsification: free first class is normal in the market, but it often carries academy/marketplace expectations.
+
+## Cycle 55 Process Improvement
+
+After owner-side platform instructions, add a "verification, not repetition" rule.
+
+New rule:
+
+- If the cycle has already produced exact owner UI steps, the next cycle should ask only whether the outcome is `done`, `pending`, `blocked`, `provider_request`, `not_found`, or `kept_intentionally`.
+- Do not create more explanations, screenshots, or strategy artifacts unless the owner reports a blocked state.
+- Distinguish owner-dashboard advertisements from public business-profile links. Ads prompts are usually ignorable while Auris is close to full.
+- Shell hygiene matters for automation reliability: in zsh, do not use `path` or `status` as temporary variable names in data/API checks.
+
+Source-quality update:
+
+- Official GBP local-link and booking docs are high-signal for what can be edited.
+- Owner screenshots remain highest-signal for whether a profile link is currently visible.
+- Practitioner threads are useful for anticipating friction but should not override official docs or owner truth.
+
+## Cycle 111 Process Improvement
+
+After repeated quiet checks following the first Idea Synthesis Pulse, add a "pulse reset, not quiet-log spam" rule.
+
+New rule:
+
+- Treat each `automation-idea-engine.md` Pulse History entry as the durable reset marker for quiet-streak counting.
+- Do not append every stable quiet heartbeat to `research-log.md` just to prove the streak exists.
+- If 8-12 quiet checks repeat after the latest pulse, run one compact synthesis pulse, record the pulse, and reset the count again.
+- If two consecutive pulses produce the same selections without new evidence, raise the threshold or require a new evidence type before another synthesis pulse.
+- A public reviews `reviewCount` change is a trust-maintenance trigger, but endpoint ordering is not newest-review or reply-status truth; route any count change through the review row instead of broad GBP/content work.
+
+Source-quality update:
+
+- Pulse History is higher-signal than repeated quiet logs for process memory.
+- Public endpoint deltas are useful for detecting proof changes, but owner-side screenshots/notes remain highest-signal for review reply status and GBP contact-link truth.
+- Stable teaching API health is readiness evidence, not a reason to inspect dirty platform files.
+
+## Cycle 112 Process Improvement
+
+After a second long quiet streak, add a "pulse gate before pulse" rule.
+
+New rule:
+
+- If 8-12 quiet checks repeat after the latest Pulse History entry, first ask whether a full pulse would produce a materially new selection or process rule.
+- If the answer is no, record a compact `Pulse Gate` skip in `automation-idea-engine.md` instead of producing a duplicate scorecard.
+- Treat that gate as the new reset marker for quiet-streak counting.
+- Require one of these before the next full pulse: owner synthesis/process request, new owner/student/prospect/capacity/access row, public/API regression, review-count delta, or a concrete automation failure.
+- Do not use a pulse gate as permission to browse broadly, create public work, or change the automation schedule.
+
+Source-quality update:
+
+- The highest-signal evidence for a pulse gate is repetition of the exact same missing rows plus stable bounded checks.
+- A skipped pulse can be higher-quality than a repeated pulse because it preserves the Idea Engine for actual synthesis.
+
+## Cycle 113 Process Improvement
+
+Keep the research log tail truthful.
+
+New rule:
+
+- When adding a numbered cycle entry, verify that the newest cycle block is at the end of `research-log.md`.
+- If a valid recent entry exists but is above older cycles, move the existing block rather than duplicating it.
+- Do not treat mechanical log ordering repair as a new synthesis pulse or quiet-streak reset marker; the latest Pulse History or Pulse Gate entry still controls synthesis cadence.
+
+Source-quality update:
+
+- `tail` only works as a latest-memory source if cycle order is chronological.
+- A small ordering repair is process hygiene, not new market evidence.
+
+## Cycle 115 Process Improvement
+
+Add a gate ceiling after repeated skipped Pulse Gates.
+
+New rule:
+
+- If a long quiet streak produces two or more consecutive Pulse Gate skips with the same held selections and no new evidence, stop creating more clock-only Pulse Gate entries.
+- Treat the latest gate as a ceiling for that evidence state, not just another reset marker.
+- Future quiet cycles should return `DONT_NOTIFY` after bounded checks until one of these appears: owner synthesis/process request, new owner/student/prospect/capacity/access row, review-count delta, public/API regression, or a concrete automation failure.
+- Do not confuse "no more gate entries" with "no more monitoring"; keep the Quiet Cycle Contract active.
+
+Source-quality update:
+
+- Repeated skipped gates are useful once or twice to validate the cadence rule.
+- After that, they become the same low-value quiet-log spam the Idea Engine was designed to avoid.
 
 ## Research Style
 

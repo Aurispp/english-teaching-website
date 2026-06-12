@@ -1,6 +1,6 @@
 # Hypothesis Tracker
 
-Last updated: 2026-05-24 Cycle 51
+Last updated: 2026-06-02 Cycle 116
 
 ## H001: The core positioning should be "personal alternative to academies."
 
@@ -68,6 +68,51 @@ Cycle 48 update:
 - What this weakens: interpreting no contacts as channel failure before capacity mode and action status are known.
 - Next test: classify the next month as `Trust Maintenance Mode` unless a slot is opening. Track review reply status plus one monthly GBP snapshot; only judge acquisition after a deliberate capacity-opening action and at least one inquiry row.
 
+Cycle 53 update:
+
+- Status: strengthened as a trust/profile channel, refined around contact-link coherence.
+- Confidence: high for GBP as the trust base; medium-low for near-term lead engine while full.
+- Evidence: the live website is now direct-contact, but prior owner/Search evidence showed `Appointments: calendly.com` on the Google profile. Official GBP docs treat booking/appointment links as profile-level action links, so website changes do not automatically update that surface.
+- What this strengthens: before any GBP post/ad/sprint, the profile should show a coherent path to contact Auris.
+- What this weakens: judging GBP by leads or clicks while the profile may be pointing to an old booking path.
+- Next test: fill `gbp_contact_link_truth`: whether an appointment link is visible, domain, action taken, status and reason.
+
+Cycle 55 update:
+
+- Status: strengthened and made removal-verification specific.
+- Confidence: high for GBP as the trust base; medium-low for near-term lead engine while full.
+- Evidence: live site remains direct-contact and official GBP docs show booking/appointment links are owner/profile-layer links. The next proof is not another public scrape; it is whether the owner UI status is removed, pending, blocked, provider-request, not found or intentionally kept.
+- What this strengthens: GBP should be cleaned or intentionally classified before any post/ad interpretation.
+- What this weakens: treating the Google Ads promo box or old Calendly link as evidence of demand.
+- Next test: use Packet BD and fill one GBP Calendly removal verification row.
+
+Cycle 56 update:
+
+- Status: strengthened as a trust base, not a reply-driven lead engine.
+- Confidence: high for GBP/reviews as trust infrastructure; medium-low for near-term leads while full.
+- Evidence: live reviews endpoint still returns `5.0 / 16`, Google official docs make review replies public and reviewer-visible, and owner context says Auris is nearly full. Community/practitioner evidence supports replies as human trust and possibly engagement, but not as a guaranteed ranking button.
+- What this strengthens: review replies are a useful low-pressure GBP maintenance action.
+- What this weakens: interpreting a completed reply as acquisition progress without owner Performance or an inquiry row.
+- Next test: use Packet BE to record reply status only if useful, then rotate to monthly GBP snapshot or first direct-contact inquiry row.
+
+Cycle 58 update:
+
+- Status: strengthened as trust infrastructure and explicitly parked as an acquisition sprint.
+- Confidence: high for GBP/reviews as the right local trust base; low for any new GBP post/ad conclusion without owner metrics or inquiry rows.
+- Evidence: live reviews endpoint still returns `5.0 / 16`, live site/API checks are healthy, and official GBP Performance docs confirm that profile views/searches/interactions are owner-side metrics. The remaining GBP items are owner evidence: monthly snapshot and Calendly removal status.
+- What this strengthens: keep GBP in trust-maintenance mode.
+- What this weakens: another GBP post calendar or Google Ads prompt while Auris is close to full.
+- Next test: monthly owner snapshot or first direct-contact inquiry row; no new GBP campaign until capacity changes.
+
+Cycle 116 update:
+
+- Status: strengthened as a trust-maintenance trigger, not an acquisition sprint.
+- Confidence: high for public proof, medium until owner-side reply truth arrives.
+- Evidence: the live public reviews endpoint now returns `5.0 / 17` in both English and Spanish variants while homepage, Talk, sitemap and teaching API remain healthy. The public count changed, but owner-side newest-review and reply status are still gated.
+- What this strengthens: GBP/reviews remain the right local trust base and should be maintained with timely, human replies.
+- What this weakens: treating the new count as a reason for a GBP post/calendar, static copy edit, or acquisition interpretation.
+- Next test: one owner Review Truth row for `17`, newest-review theme/date if safe, and reply status.
+
 ## H003: More landing pages alone will not solve acquisition.
 
 - Status: strengthened.
@@ -99,6 +144,24 @@ Cycle 45 update:
 - What this strengthens: improve existing routes before adding pages, but only if site work is approved.
 - What this weakens: another broad indexing diagnostic without public changes, fresh GSC access or route-level impressions.
 - Next test: apply Packet AT P0 if approved; otherwise rotate away from indexing until a deploy, GSC restoration or page-level query rows change the evidence.
+
+Cycle 54 update:
+
+- Status: strengthened with a post-deploy hygiene caveat.
+- Confidence: high.
+- Evidence: production now has a meaningful contact/copy deploy, but the sitemap still shows `2026-05-21` for every route and static fallbacks remain thin. Google docs support accurate `lastmod` for significant content/schema/link changes, while the route plumbing still returns 200.
+- What this strengthens: sitemap/static cleanup belongs in an approved code pass, not another diagnosis cycle.
+- What this weakens: treating stale `lastmod` as an urgent acquisition blocker.
+- Next test: if code work is approved, use Packet BC for message/schema/sitemap cleanup or Packet AT for the larger static fallback experiment.
+
+Cycle 58 update:
+
+- Status: strengthened and parked.
+- Confidence: high.
+- Evidence: Google helpful-content guidance warns against lots of search-first content and artificial freshness. Cycle 58 live checks still show healthy crawlability with stale `2026-05-21` sitemap dates, which is hygiene rather than proof of lost leads.
+- What this strengthens: no new city/local SEO pages and no repeated indexing diagnosis without approval, deploy or fresh GSC data.
+- What this weakens: using spare automation cycles to create more landing-page ideas.
+- Next test: only run Packet BC/AT if Auris approves code work or GSC access/page-query evidence changes.
 
 ## H004: 40 EUR/h is viable only if the premium is visible in the first minute.
 
@@ -159,6 +222,15 @@ Cycle 51 update:
 - What this weakens: treating direct contact, "close to full", or lower booking pressure as price proof.
 - Next test: after any deploy, record whether direct inquiries mention proof, price anchors and availability confusion before changing price or adding scheduling back.
 
+Cycle 52 update:
+
+- Status: strengthened with production evidence.
+- Confidence: high.
+- Evidence: commit `a304f9c` is live on production; the live bundle contains quiet availability/contact strings and no Calendly/highlighted-scarcity strings. This proves the calmer contact path is public, but the private-class value proof still remains separate from the contact mode.
+- What this strengthens: direct contact is a tone/fit improvement, not proof of 40 EUR/h by itself.
+- What this weakens: assuming a successful deploy or fewer booking prompts will resolve price-proof risk.
+- Next test: in the first direct-contact row, record whether the prospect mentions reviews, portal/follow-up, Spanish-speaker help, price, availability or marketplace anchors.
+
 ## H005: Social should be used as trust-building, not mass-funnel entertainment.
 
 - Status: strengthened and refined into a measurement sprint.
@@ -190,6 +262,15 @@ Cycle 43 update:
 - What this strengthens: keep LinkedIn/Talk as a measured trust test, not a scale channel.
 - What this weakens: declaring social success from impressions, reactions or `talk_started` alone.
 - Next test: only continue LinkedIn/Talk after either a Level 4 lead note or repeated Level 3 intent plus one plausible source/proof note.
+
+Cycle 58 update:
+
+- Status: strengthened as trust-building but parked as a workstream.
+- Confidence: high for proof reuse; low-medium for acquisition while Auris is close to full.
+- Evidence: LinkedIn, Instagram and TikTok docs all place meaningful metrics behind owner/platform analytics and mostly measure attention/reach/engagement. No lead row currently points to social.
+- What this strengthens: use social only for light proof reuse when a real class/review/capacity moment exists.
+- What this weakens: TikTok/Instagram-first or weekly LinkedIn/GBP posting as default work.
+- Next test: unpark only if capacity opens, owner analytics are captured, or a high-fit lead mentions social.
 
 ## H006: The student platform's next improvement should be "clarity of next action."
 
@@ -223,6 +304,24 @@ Cycle 46 update:
 - What this weakens: building because the spec is ready. Current-student acceptance and teacher-use proof are now the missing evidence.
 - Next test: use `next-15-proof-pilot-cycle46.md` and run 3-5 anonymous concierge pilot rows. Build only if 2 of 3 students show need/behavior, or Auris explicitly asks to ship the low-risk card.
 
+Cycle 57 update:
+
+- Status: strengthened but narrowed to a 2-row continuity proof gate.
+- Confidence: high for product direction, medium for immediate behavior change.
+- Evidence: the platform still has the core ingredients: student feedback, class notes, assignments, SRS stats, Talk the Talk and teacher homework logs. Live checks show the API and portal are reachable while student/SRS data stays protected. External sources from Duolingo, Quizlet, Busuu, Preply, Eluency and Tuton keep validating guided between-session continuity, while Reddit/Preply signals warn against heavy, generic or AI-assigned homework.
+- What this strengthens: clarity of next action is still the best platform-retention direction.
+- What this weakens: another spec or public copy upgrade before current students produce one real continuity moment.
+- Next test: use `current-student-continuity-proof-cycle57.md` and capture two anonymous rows: one portal/SRS-active student and one notes-first/WhatsApp-first/busy/lower-portal-use student. Decide `build_next15`, `keep_manual`, `soften_copy`, or `pause`.
+
+Cycle 58 update:
+
+- Status: still strengthened but parked.
+- Confidence: high for product direction; medium for current-student acceptance.
+- Evidence: Cycle 58 found no new student rows, and the strategic ignore list confirms the local path is specified enough. The next useful evidence is behavior/reaction in the next class.
+- What this strengthens: wait for current-student proof rather than building or marketing the portal harder.
+- What this weakens: using research cycles to produce another platform spec.
+- Next test: Packet BF rows only, or explicit build request from Auris.
+
 ## H007: Talk the Talk can be a lead magnet, but not yet a clean SEO asset.
 
 - Status: strengthened and refined.
@@ -254,6 +353,15 @@ Cycle 45 update:
 - What this strengthens: Talk should be promoted as a low-pressure practice action from GBP/LinkedIn/referrals, not as an organic SEO asset yet.
 - What this weakens: expecting a free tool route to index or convert without explaining who it is for, example prompts and why Auris feedback matters.
 - Next test: if editing Talk, add the Packet AT fallback text and optional rendered block `Use the tool for reps; use class for diagnosis`; judge by `talk_started`, `talk_completed`, `talk_trial_click` and any real lead-source row.
+
+Cycle 61 update:
+
+- Status: strengthened and updated for the direct-contact public state.
+- Confidence: high for not SEO-first, medium-high for low-pressure lead-magnet fit.
+- Evidence: public Talk now defaults to 60 seconds, keeps 90 seconds as an option, removes the Calendly/free-first-class path, and ends with WhatsApp `talk_contact_click`. Live `/talkthetalk` returns 200 with correct canonical, no Calendly strings and no `free first` / `free trial` strings in the current Talk chunk. The sitemap still lists `/talkthetalk` with `lastmod` `2026-05-21`, and the recording/listenback copy mismatch remains.
+- What this strengthens: Talk is better as a one-minute confidence rep from GBP/LinkedIn/referrals than as a free SEO page or booking-first funnel.
+- What this weakens: judging the tool by `trial_booked`, or promoting it hard before the feature-copy mismatch is fixed.
+- Next test: judge by `talk_started`, `talk_completed`, `talk_contact_click` and one redacted reply row that mentions Talk, speaking confidence, a prompt, or wanting Auris's feedback.
 
 ## H008: Business English should focus on professionals/autonomos/small teams, not corporate procurement.
 
@@ -403,6 +511,24 @@ Cycle 48 update:
 - What this weakens: replacing replies with only likes/reactions, or launching a bigger content push before review freshness is handled.
 - Next test: log review reply status as `live`, `pending`, or `unknown`; do not create more proof copy until capacity mode changes.
 
+Cycle 56 update:
+
+- Status: strengthened with reply-quality rules.
+- Confidence: high.
+- Evidence: Google says approved replies are public and appear as the business; Google reply tips favor short, relevant, conversational and non-promotional replies; the public Places endpoint still confirms `5.0 / 16` but cannot expose owner reply state. BrightLocal review research and tutor marketplace surfaces show students read details and teacher-specific proof is common.
+- What this strengthens: reviews are central because of repeated themes and visible owner care, not because of a static count badge.
+- What this weakens: liking/reacting as an equivalent action, keyword-stuffed replies, or turning every reply into a sales CTA.
+- Next test: maintain `review_reply_status` only when there is a recent/strategic review; stop optimizing once the reply is live.
+
+Cycle 116 update:
+
+- Status: strengthened and reactivated by public count drift.
+- Confidence: high for proof value, medium until owner-side newest/reply truth arrives.
+- Evidence: `review-count-17-owner-reply-gate-cycle116.md` confirms the public endpoint moved from `5.0 / 16` to `5.0 / 17`, with both English and Spanish variants agreeing. The website review component can display the dynamic count, while the Places endpoint still returns only limited public reviews and no owner reply state.
+- What this strengthens: reviews are still the central proof asset, but the useful action is reply maintenance, not count-badge promotion.
+- What this weakens: changing static public copy or inferring newest-review status from the public endpoint's visible review order.
+- Next test: owner confirms whether GBP owner view also shows 17 and whether the newest review is replied to.
+
 ## H010: Content around Spanish-speaker confidence beats generic grammar tips.
 
 - Status: strengthened.
@@ -453,6 +579,15 @@ Cycle 46 update:
 - What this strengthens: Talk is a premium feedback bridge later, not a reason to postpone the simpler concierge Next 15 proof sprint.
 - What this weakens: adding Talk Reflection before confirming whether students need one general next step.
 - Next test: run Talk Reflection only after the Next 15 decision, or if pilot replies show students choose Talk/speaking practice over cards, notes, feedback and assignments.
+
+Cycle 61 update:
+
+- Status: strengthened for public acquisition; unchanged for portal build timing.
+- Confidence: high for strategic role, medium for current-student timing.
+- Evidence: moving the public default from 90 to 60 seconds makes the first rep less intimidating, but the portal version still defaults to 90 seconds and still has no reflection/save/teacher signal. External AI speaking tools increasingly offer instant feedback, role play and progress tracking, while community language-learning signals keep repeating the human problem: speaking anxiety, overthinking and needing low-pressure reps.
+- What this strengthens: Talk's public job is to create the moment where a learner notices "I can practise, but I want human feedback."
+- What this weakens: building AI scoring or treating a longer timer as proof of better learning.
+- Next test: if a current student mentions Talk or speaking practice, decide whether to align portal default to 60 seconds or keep 90 seconds for enrolled-student stamina.
 
 ## H012: AI speaking tools increase the value of human diagnostic feedback rather than replacing Auris outright.
 
@@ -749,6 +884,60 @@ Cycle 51 update:
 - What this weakens: using contact clicks, outbound clicks or GBP profile interactions as channel conclusions without a real reply.
 - Next test: fill the first direct-contact row with method, likely source, source confidence, first thing mentioned, proof mentioned, need type, future timing, availability confusion, price anchor, response, follow-up and outcome.
 
+Cycle 52 update:
+
+- Status: strengthened with production verification and an API caveat.
+- Confidence: high.
+- Evidence: production now contains `contact_click` and `talk_contact_click`, but live verification also showed Search Console API access returning `403 PERMISSION_DENIED`; GA4 reporting access still is not available. Official GA4 docs separate outbound clicks from real lead/request events, and the live WhatsApp/email paths cannot reveal sent-message content.
+- What this strengthens: click-intent and owner-profile metrics are supporting evidence only; the first serious WhatsApp/email reply row is still the truth unit.
+- What this weakens: treating the pushed site as automatically measurable through dashboards.
+- Next test: fill the first direct-contact row; if API access is restored, compare event counts only as a secondary layer.
+
+Cycle 53 update:
+
+- Status: strengthened with a profile-surface refinement.
+- Confidence: high.
+- Evidence: the site can track `contact_click` and `talk_contact_click`, but GBP may still expose a separate appointment link. GBP Performance may show website clicks, calls, messages or bookings, but not the buyer's source/proof/timing without an owner note.
+- What this strengthens: direct-contact rows should include `first_contact_surface` so old Calendly, GBP website, phone, website WhatsApp and email are not blended together.
+- What this weakens: treating "GBP interaction" as one clean source category.
+- Next test: add `first_contact_surface` to the first inquiry row.
+
+Cycle 54 update:
+
+- Status: strengthened with a copy-expectation field.
+- Confidence: high.
+- Evidence: live/source checks show direct-contact mode is public, but FAQ/schema/local landing surfaces still mention free first/trial class. Click data cannot tell whether a prospect expected a free class, immediate booking, or future availability.
+- What this strengthens: the first inquiry row should include `free_first_class_expectation` and `message_copy_seen`.
+- What this weakens: assuming softer contact copy is enough to know the visitor's expectation.
+- Next test: if any inquiry arrives, record whether they mention free class, future slot, price, reviews, portal/follow-up or marketplace.
+
+Cycle 55 update:
+
+- Status: strengthened with a GBP profile-action layer.
+- Confidence: high.
+- Evidence: `contact_click` and `talk_contact_click` still only measure site intent, while the owner GBP profile may have a separate Booking/Appointments action. GSC and GBP API attempts returned 403, so owner verification is the only current truth layer.
+- What this strengthens: inquiry rows need `first_contact_surface` and, when relevant, the GBP removal status that shaped available actions.
+- What this weakens: blending `GBP` into one source category without knowing whether the user saw booking, website, call, or contact.
+- Next test: after Calendly removal, classify the first inquiry by `first_contact_surface`, `appointment_link_visible_after`, and `source_confidence`.
+
+Cycle 59 update:
+
+- Status: strengthened and privacy-bounded.
+- Confidence: high.
+- Evidence: the evidence trigger router separates raw clicks, owner snapshots, public readiness and private inquiry truth. Official GA policy and GDPR data-minimisation guidance reinforce that the manual row should store only categories/status labels and anonymized short phrases, not private messages or identities.
+- What this strengthens: manual lead-source rows are still the truth layer, but they need routing and redaction before analysis.
+- What this weakens: adding a CRM, form, waitlist or analytics event before the first real inquiry row.
+- Next test: classify the first incoming inquiry with `first_inquiry_arrived` and fill only the minimum redacted fields.
+
+Cycle 61 update:
+
+- Status: strengthened with Talk-specific intent/lead separation.
+- Confidence: high.
+- Evidence: GA4 recommended events define stronger lead events around submitted requests, qualification, working leads and converted leads, while current public Talk only records a WhatsApp click. The live Talk chunk contains `talk_contact_click` and no booking/free-trial path; that click is useful intent but not a qualified lead.
+- What this strengthens: `talk_contact_click` should stay a custom intent event, paired with a manual reply row before any channel conclusion.
+- What this weakens: firing `generate_lead` from a Talk CTA click or claiming Talk converted before a message arrives.
+- Next test: if a Talk-origin reply arrives, fill `first_contact_surface=talk_whatsapp`, `first_thing_mentioned`, `future_timing`, `proof_mentioned`, `availability_confusion`, `free_first_class_expectation`, `response`, `follow_up`, and `outcome`.
+
 ## H016: The Next 15 card must preserve autonomy, not force a locked path.
 
 - Status: new.
@@ -790,6 +979,15 @@ Cycle 46 update:
 - What this weakens: a single locked recommendation, streak/badge pressure, or AI-ish copy that sounds detached from Auris.
 - Next test: classify pilot replies as `helpful`, `homework` or `unsure`; if 2 students say homework, keep the concept manual or soften it before building.
 
+Cycle 57 update:
+
+- Status: strengthened.
+- Confidence: high for design constraint, medium for student reaction.
+- Evidence: Cycle 57 found the same pattern from stronger source triangulation: guided paths and study plans are a category norm, but community signals around Duolingo paths, Preply homework and AI speaking homework show adult learners push back when guidance feels forced, disconnected or not teacher-owned.
+- What this strengthens: the next-step language should be optional and personal: `choose one thing, not all of them`.
+- What this weakens: locked paths, streak pressure, generic AI homework, or hiding the student's normal routes behind a single recommendation.
+- Next test: classify both continuity rows by `student_reaction`: helpful / homework / neutral / ignored. If either student calls it homework, soften before implementation.
+
 ## H017: SRS is the current measurable retention spine.
 
 - Status: new.
@@ -822,6 +1020,15 @@ Cycle 46 update:
 - What this weakens: claiming the portal caused practice without student replies or event data.
 - Next test: after a pilot or card, compare 14-day SRS/modular context with anonymous in-class evidence rather than relying on raw counts alone.
 
+Cycle 57 update:
+
+- Status: strengthened but bounded.
+- Confidence: high for measurement, medium for retention causality.
+- Evidence: `FlashcardStats.tsx` exposes due cards, recall score, total cards and assigned decks; `/api/srs/students/me/flashcards/stats` remains protected in production; prior safe baselines still show SRS as the clearest between-class behavior. But this cycle's falsification keeps SRS from becoming a vanity metric: reviewed cards only matter commercially if Auris can connect them to next-class speech, memory or confidence.
+- What this strengthens: SRS is the easiest context metric for the continuity proof.
+- What this weakens: public claims that the portal creates progress based on SRS counts alone.
+- Next test: record whether a flashcard or vocabulary action creates `used_phrase`, `remembered_word`, `mentioned_portal` or `asked_followup` in the next class.
+
 ## H018: The existing homework log is enough for the first manual pilot.
 
 - Status: new.
@@ -846,6 +1053,24 @@ Cycle 46 update:
 - What this strengthens: use WhatsApp plus the homework log as the first proof mechanism.
 - What this weakens: building `student_next_action_events`, a pilot-response table, or a teacher analytics panel before any student rows exist.
 - Next test: if Auris sends the pilot, paste the same message into the homework log only when convenient and record anonymous outcomes in `next-15-pilot-tracker.md`.
+
+Cycle 57 update:
+
+- Status: strengthened and made lower-friction.
+- Confidence: high for manual pilot infrastructure, medium for actual adoption.
+- Evidence: `TeacherOverview.tsx` still loads and saves recent homework-log messages, and backend routes/model store source, targets and assigned date. Cycle 57 reframes the homework log as optional support, not an obligation; the real proof is next-class evidence.
+- What this strengthens: use the existing homework log if it helps Auris remember what he sent.
+- What this weakens: creating a new platform analytics table, a student-response form, or a teacher workflow before two manual rows exist.
+- Next test: if the row is run, record only anonymized outcomes in strategy memory and keep private messages outside the repo.
+
+Cycle 58 update:
+
+- Status: strengthened and compressed into a first-row rule.
+- Confidence: high.
+- Evidence: live review/site/API checks can show readiness, but not why a person contacts Auris, which proof mattered, whether price was expected, or whether availability confused them. Official GBP, LinkedIn, Instagram and TikTok docs keep the most useful channel metrics owner/platform-side; Calendly/waitlist products solve later qualification volume, not current proof.
+- What this strengthens: the next acquisition evidence should be one anonymized direct-contact inquiry row, not another dashboard, CRM or larger ledger.
+- What this weakens: treating click-intent, profile views or social views as buyer truth.
+- Next test: first inquiry row only. Build tracking software only after 5-10 rows show repeated fields or missed follow-up.
 
 ## H019: GBP owner-side baseline is required before judging posts.
 
@@ -925,6 +1150,24 @@ Cycle 47 update:
 - What this weakens: another live route audit or endpoint check as a substitute for owner data.
 - Next test: if owner sends Performance, fill only `gbp_day0`; if owner sends count/reply status, fill only `review_truth`.
 
+Cycle 53 update:
+
+- Status: strengthened and broadened from performance baseline to profile-link truth.
+- Confidence: high.
+- Evidence: current Google Business Information API access returned `403 PERMISSION_DENIED`, and official GBP docs show appointment/action links are owner/profile-layer resources. The automation cannot prove from the website whether GBP still shows Calendly.
+- What this strengthens: owner-side baseline now includes `gbp_contact_link_truth` before interpreting profile actions.
+- What this weakens: relying on public website scans as a substitute for profile action-link truth.
+- Next test: owner checks Booking/Appointments and records visible link/domain/status.
+
+Cycle 55 update:
+
+- Status: strengthened and made operational.
+- Confidence: high.
+- Evidence: fresh GSC and GBP Business Information API checks still returned `403 PERMISSION_DENIED`. Official GBP local-link/booking docs and prior owner evidence make owner UI verification the only reliable source.
+- What this strengthens: owner-side baseline now includes status after action: `removed`, `pending`, `blocked`, `provider_request`, `not_found`, or `kept_intentionally`.
+- What this weakens: retrying the same API or public scrape without an access/status change.
+- Next test: fill Packet BD; if blocked, record provider/support path instead of changing website code.
+
 Cycle 48 update:
 
 - Status: strengthened but changed from sprint gate to baseline habit.
@@ -933,6 +1176,33 @@ Cycle 48 update:
 - What this strengthens: owner-side GBP data is the right baseline, but while full it should be monthly context, not a Day 7 sprint obsession.
 - What this weakens: running a measured GBP post before a capacity-opening trigger.
 - Next test: take one same-range owner snapshot after review replies or at month end; compare only if a real action and capacity-opening goal exist.
+
+Cycle 58 update:
+
+- Status: strengthened, with the broad Day 0 requirement narrowed to monthly snapshot or status row.
+- Confidence: high.
+- Evidence: GBP Performance docs confirm owner-side views/searches/interactions are the measurement layer, while Cycle 58 public checks only confirm public proof and route health. GBP Calendly removal status also remains owner-side.
+- What this strengthens: do not judge GBP posts, profile interactions or action-link cleanup without owner rows.
+- What this weakens: repeated public Google scraping or more profile theories.
+- Next test: one monthly GBP Performance snapshot, or one Calendly removal status row if owner evidence arrives.
+
+Cycle 59 update:
+
+- Status: strengthened and routed.
+- Confidence: high.
+- Evidence: the Cycle 59 router confirms public checks can prove profile/site readiness, but GBP movement still requires owner-side `owner_snapshot_arrived` or `gbp_contact_link_truth` rows. The live reviews endpoint remained healthy but did not prove newest-review order or reply truth.
+- What this strengthens: GBP evidence should land in the existing owner ledger before any post/ad/content interpretation.
+- What this weakens: repeating public review/sitemap/header checks as a substitute for owner Performance screenshots.
+- Next test: use the router to classify either the next monthly GBP screenshot or the GBP Calendly removal status.
+
+Cycle 116 update:
+
+- Status: strengthened and applied to review truth.
+- Confidence: high.
+- Evidence: public count/rating moved to `5.0 / 17`, but `netlify/functions/google-reviews.js` confirms the public endpoint returns rating, count, limited reviews and Google URI, not owner reply metadata. That means public count drift can route the lane, but owner view still decides newest-review and reply status.
+- What this strengthens: `review_reply_status` should be a one-row owner check when count changes.
+- What this weakens: treating public endpoint ordering, public visible-review count, or a healthy website route as owner GBP truth.
+- Next test: fill the 17-review owner row; if unavailable, return to bounded Packet BH checks until the count/rating changes again or owner evidence arrives.
 
 ## H020: The current indexing gap is quality/uniqueness/priority, not discovery.
 
@@ -958,6 +1228,24 @@ Cycle 45 update:
 - What this strengthens: the next SEO action is a bounded existing-page quality experiment, not discovery repair.
 - What this weakens: continuing to spend cycles on sitemap/canonical/schema diagnostics while no public change or fresh GSC data exists.
 - Next test: implement Packet AT only if approved, then inspect each changed URL once and wait 14-28 days for URL Inspection/page-level GSC signals. If no approval or GSC access arrives, rotate themes.
+
+Cycle 52 update:
+
+- Status: refined after a real public deploy.
+- Confidence: high for "not solved by deploy alone"; medium for current page/query status because GSC API returned 403.
+- Evidence: production now serves the direct-contact build, but `sitemap.xml` still has `2026-05-21` lastmod values after a May 24 content/contact change. Google's sitemap docs say `lastmod` should be accurate for significant changes, while URL Inspection docs say live tests/request indexing do not guarantee search appearance.
+- What this strengthens: post-deploy SEO hygiene should include accurate sitemap freshness and one URL Inspection pass once access works.
+- What this weakens: treating production deployment as the indexing fix.
+- Next test: if Auris approves a public SEO/code pass, update sitemap `lastmod` with meaningful route changes and inspect the changed URLs once after deployment.
+
+Cycle 54 update:
+
+- Status: strengthened and kept bounded.
+- Confidence: high for hygiene; medium for search impact without GSC access.
+- Evidence: Google sitemap docs and blog both support updating `lastmod` only for significant page changes. The May 24 contact-mode deploy changed visible copy and schema-adjacent meaning, but no Search Console access exists to judge search impact.
+- What this strengthens: update sitemap dates in the next approved public patch, especially if FAQ/schema/local landing copy changes.
+- What this weakens: resubmitting or date-churning sitemaps as a standalone growth tactic.
+- Next test: update dates only alongside real route changes, then inspect changed URLs once if GSC access returns.
 
 ## H021: Marketplace profiles are useful proof only when the price policy is intentional.
 
@@ -1164,6 +1452,15 @@ Cycle 48 update:
 - What this weakens: public referral programs or review campaigns while nearly full.
 - Next test: if a future lead says they came from a student/review, classify fit and timing before expanding the loop.
 
+Cycle 56 update:
+
+- Status: strengthened and narrowed to personal trust maintenance.
+- Confidence: high for trust, medium for future lead volume.
+- Evidence: the recent former-student referral review remains a high-quality trust signal, and Cycle 56 external tutor/community evidence reinforces that reviews are often a main trust layer for tutors while marketplace volume itself is noisy.
+- What this strengthens: a warm public reply plus natural private referrals fit Auris better than a public referral campaign.
+- What this weakens: asking students for specific review wording, review velocity tactics, or a broad social push while full.
+- Next test: if a referral or review-led inquiry arrives, record only anonymized source, first thing mentioned, timing, fit and proof theme.
+
 ## H024: Local professional-community referrals are promising, but should stay mapped before outreach.
 
 - Status: new.
@@ -1315,3 +1612,153 @@ Cycle 51 update:
 - What this weakens: loud scarcity badges, "book now" language, or restoring Calendly simply because it is easier to measure.
 - Stop/change evidence: if Auris opens a slot and wants a student within 30 days, switch to `measured_acquisition`; if direct conversations get lost, add a lightweight follow-up tracker before adding a public form.
 - Next test: after deploy or first inquiry, classify `capacity_state`, `contact_method`, `future_timing`, `availability_confusion`, `lead_quality` and `next_follow_up_date`.
+
+Cycle 52 update:
+
+- Status: strengthened and moved from local candidate to live public state.
+- Confidence: high.
+- Evidence: production now serves direct-contact mode: live assets contain quiet future-availability language and WhatsApp/email CTAs, Talk completion routes to WhatsApp, and no active Calendly or highlighted scarcity strings remain. Local competitor contact pages show direct phone/email/form/WhatsApp paths are normal, but Auris's path should stay quieter and more personal than academy enrolment funnels.
+- What this strengthens: while Auris is close to full, the success metric is future-fit private contact quality, not booking volume.
+- What this weakens: judging zero immediate leads as failure, or restoring scheduling only because it was easier to attribute.
+- Stop/change evidence: if a high-fit prospect thinks Auris is closed, clarify the contact copy; if a slot opens within 30 days, switch to measured acquisition; if conversations are missed, add a small follow-up tracker before adding a form.
+- Next test: capture the first direct-contact row or one monthly GBP owner snapshot; do not add a waitlist/CRM until repeated rows prove the need.
+
+Cycle 53 update:
+
+- Status: strengthened.
+- Confidence: high.
+- Evidence: if GBP still shows `calendly.com` while the site says WhatsApp/email and Auris is close to full, the profile is partly in booking-first mode and partly in future-availability mode.
+- What this strengthens: capacity mode must be consistent across website and profile action links, not only homepage copy.
+- What this weakens: leaving old appointment links live by accident.
+- Stop/change evidence: if Auris intentionally wants Calendly as a back-pocket exception, log it and keep it; if he wants direct-contact mode everywhere, remove/disconnect the GBP appointment link.
+- Next test: fill `gbp_contact_link_truth`, then wait for one real inquiry or monthly owner snapshot.
+
+Cycle 54 update:
+
+- Status: strengthened with copy hierarchy.
+- Confidence: high.
+- Evidence: the booking-pressure strings are gone, but `free first class` remains in local landing/FAQ/schema. External local and marketplace examples show free level tests and free first classes are common, but often tied to academy or marketplace enrolment funnels.
+- What this strengthens: while Auris is close to full, the first public action should be `message me / first conversation`, not a free-trial headline.
+- What this weakens: treating `free first class` as always wrong. If Auris still offers it, keep it as a fit-check detail rather than the main CTA.
+- Stop/change evidence: if Auris wants to fill a slot soon, clearer first-class/trial language can return; if he remains nearly full, reframe to future slot/first conversation.
+- Next test: Packet BC if Auris asks for public hygiene work; otherwise wait for `free_first_class_expectation` in the first inquiry row.
+
+Cycle 55 update:
+
+- Status: strengthened with profile-level contact mode.
+- Confidence: high.
+- Evidence: Calendly may be useful in a future `measured_acquisition` mode, but while Auris is close to full and the site says direct contact, a GBP booking link creates mixed public intent. A Google Ads prompt is also misaligned with current capacity.
+- What this strengthens: remove/disconnect Calendly from GBP unless it is intentionally kept as a booking exception.
+- What this weakens: restoring booking or running ads for measurement while full.
+- Stop/change evidence: if Auris opens a slot and wants bookings within 30 days, a booking link can return deliberately with UTM/source tracking.
+- Next test: record whether the GBP link is gone, pending, blocked or intentionally kept.
+
+Cycle 56 update:
+
+- Status: strengthened with review-reply success metric.
+- Confidence: high.
+- Evidence: while Auris is nearly full, a review reply is a low-pressure trust action that keeps the profile human without inviting a large immediate lead flow. Official Google docs and BrightLocal research support reply visibility and trust, but GBP Performance and inquiry rows remain required for acquisition conclusions.
+- What this strengthens: in Trust Maintenance Mode, success means fresh, coherent proof and a clear future-contact path.
+- What this weakens: judging zero leads as failure after maintenance replies, or creating a content calendar before capacity changes.
+- Stop/change evidence: if Auris opens capacity or replies generate no public visibility, switch from maintenance to either measured acquisition or reply-status troubleshooting.
+- Next test: use Packet BE until replies are live/settled, then rotate to monthly snapshot or first inquiry.
+
+Cycle 57 update:
+
+- Status: strengthened with a retention/proof metric.
+- Confidence: high.
+- Evidence: Auris is close to full, so the best compounding work may happen inside current student experience rather than public acquisition. The site already uses calmer direct-contact/future-availability posture, and the platform already has continuity surfaces. Cycle 57's external sources support between-session guidance as valuable, but the stop rule is clear: do not optimize for more immediate leads or bigger platform claims until a current-student proof row or first inquiry row changes the evidence.
+- What this strengthens: in Trust Maintenance Mode, retention, referral readiness and current-student progress proof are valid success metrics.
+- What this weakens: treating no new leads as failure, or using spare automation cycles to generate more public content while the current student proof loop is untested.
+- Stop/change evidence: if a slot opens within 30 days, return to measured acquisition; if current-student continuity rows show progress, consider a low-risk Next 15 build or quiet proof copy later; if rows show homework friction, keep the portal guidance personal/manual.
+- Next test: Packet BF, then monthly GBP snapshot or first direct-contact inquiry row if owner-side data appears.
+
+Cycle 58 update:
+
+- Status: strengthened into a pruning rule.
+- Confidence: high.
+- Evidence: Cycle 58 shows the site, reviews endpoint and teaching API are healthy; the open loops are mostly owner/student rows. Official docs confirm that ads, posts, social analytics, routing and waitlist tools all create work or metrics that are premature while capacity is tight.
+- What this strengthens: the default mode is now `Trust Maintenance + Evidence Waiting`.
+- What this weakens: using automation cycles to create more content, SEO, social, CRM or platform ideas just because no inquiry has arrived.
+- Stop/change evidence: capacity opens within 30 days, first inquiry row appears, GBP status arrives, current-student rows arrive, code approval arrives, or GSC/GBP API access changes.
+- Next test: Packet BG strategic ignore list refresh.
+
+Cycle 59 update:
+
+- Status: strengthened with trigger priority.
+- Confidence: high.
+- Evidence: the router makes `capacity_changed` the top priority trigger because the same signals mean different things when Auris is full, softly open, actively filling, or expanding. Public readiness checks remain lower priority than capacity, inquiry and student behavior.
+- What this strengthens: capacity mode must be classified before reopening content, SEO, GBP or platform lanes.
+- What this weakens: treating healthy site/review/API checks as a reason to start acquisition while no capacity trigger has changed.
+- Stop/change evidence: a slot opens, Auris wants leads within 30 days, or repeated future-fit inquiries are being missed.
+- Next test: if Auris gives any capacity update, route it as `capacity_changed` before any channel recommendation.
+
+Cycle 61 update:
+
+- Status: strengthened by public-contact consistency.
+- Confidence: high.
+- Evidence: the public site now carries direct contact, calm availability, no highlighted scarcity, no free-first-class wording and a one-minute Talk default. This matches `direct_contact_future_availability` better than the older Calendly/trial funnel. The only live mismatch found is minor technical/message hygiene: Talk sitemap `lastmod` is stale and the recording/listenback copy remains.
+- What this strengthens: while close to full, the right success metric is high-fit future-contact quality, not booking volume.
+- What this weakens: restoring Calendly or louder availability language purely for attribution.
+- Stop/change evidence: if Auris opens capacity within 30 days, switch back to measured acquisition; if high-fit prospects think the site is closed, clarify contact copy without turning it into scarcity marketing.
+- Next test: first direct-contact row or owner GBP snapshot; keep Talk edits limited to feature-copy/sitemap hygiene unless a reply row changes priorities.
+
+## H027: Strategic pruning is higher leverage than more ideas while Auris is close to full.
+
+- Status: new.
+- Confidence: medium-high.
+- Evidence: Cycles 48-57 created mature gates across capacity, direct contact, GBP Calendly status, review replies and current-student continuity. Cycle 58 live checks found no urgent public/site/API issue, and external official sources show that ads, posts, social analytics, routing forms and waitlists only become useful after capacity or lead volume justifies them.
+- What this strengthens: the automation should treat "ignore until evidence changes" as an implementation-ready outcome, not as a shallow cycle.
+- What this weakens: broadening into more acquisition channels, public copy drafts or product specs while the missing proof rows are unchanged.
+- Stop/change evidence: any of the named triggers in `strategic-ignore-list-cycle58.md` arrives, especially capacity opening, a first inquiry row, two current-student rows, GBP owner status or explicit code/build approval.
+- Next test: in the next cycle, first classify `evidence_arrived`, `approval_arrived`, `capacity_changed` or `no_new_evidence`. If `no_new_evidence`, keep parked lanes parked and avoid creating a new strategy lane.
+
+Cycle 59 update:
+
+- Status: strengthened and operationalized.
+- Confidence: high.
+- Evidence: Cycle 59 shows that after pruning, the next missing process is routing. Without a router, any screenshot or owner note could reopen unrelated lanes. With the router, "ignore until evidence changes" becomes actionable instead of passive.
+- What this strengthens: pruning is now paired with a concrete intake system.
+- What this weakens: another broad source scan or strategy artifact after `no_new_evidence`.
+- Stop/change evidence: if the next real evidence item cannot be routed cleanly, update the router rather than widening the strategy.
+- Next test: use Packet BH on the next owner/student/prospect/capacity/access signal.
+
+Cycle 60 update:
+
+- Status: strengthened with a repeat-run stop rule.
+- Confidence: high.
+- Evidence: Cycle 60 found no public/site/API state change and no owner/student/prospect row, while process sources on toil, actionable monitoring, WIP limits and performance measurement support bounding repeated stable checks.
+- What this strengthens: pruning must include a quiet-cycle contract so restraint does not become its own admin lane.
+- What this weakens: treating the deep-cycle checklist as a reason to create artifacts when the trigger is explicitly `no_new_evidence`.
+- Stop/change evidence: capacity changes, first inquiry row, current-student rows, GBP owner/contact-link evidence, access restoration, or a real public/system regression.
+- Next test: the next `no_new_evidence` heartbeat should run only bounded checks and avoid new durable artifacts.
+
+## H028: Evidence routing prevents false work after pruning.
+
+- Status: new.
+- Confidence: medium-high.
+- Evidence: Cycle 58 created a useful ignore list, but it left a practical question: where should new evidence go when it appears? Cycle 59 maps each incoming proof type to an existing row, including review reply status, owner snapshot, GBP contact-link truth, first inquiry, current-student row, capacity change, access change, channel-visible signal and public readiness.
+- What this strengthens: the automation can stay proactive without inventing more work.
+- What this weakens: assuming `no_new_evidence` cycles should always create a new process artifact.
+- Stop/change evidence: if 3 consecutive evidence items do not fit the router, the labels are incomplete; if the next cycle creates a new campaign despite `no_new_evidence`, the process rule failed.
+- Next test: classify the next piece of owner/student/prospect evidence using `evidence-trigger-router-cycle59.md` and update only one existing destination.
+
+Cycle 60 update:
+
+- Status: strengthened but narrowed.
+- Confidence: high.
+- Evidence: Packet BH routed the quiet cycle away from campaigns, content, SEO and platform work. The only weakness was that the `no_new_evidence` branch did not yet define how much checking is enough, so Cycle 60 added a Quiet Cycle Contract inside the existing router.
+- What this strengthens: a router can prevent false work only if it also contains a stop rule for stable, repeated quiet cycles.
+- What this weakens: repeatedly improving the router after each quiet heartbeat.
+- Stop/change evidence: a future evidence item cannot be classified, or a quiet cycle creates broad new work despite stable checks.
+- Next test: if no new evidence appears, the next run should `DONT_NOTIFY`; if evidence appears, update exactly one matching row.
+
+## H029: Synthesis pulses preserve useful ideation without false work.
+
+- Status: strengthened and process-bounded.
+- Confidence: medium-high.
+- Evidence: Cycles 100-108 show the Quiet Cycle Contract successfully prevented false campaigns, platform specs and broad browsing while public checks stayed stable and owner/student/prospect rows remained missing. Auris's later check-in exposed the counter-risk: the automation can become too quiet and fail to synthesize accumulated findings into new options when explicitly asked. Cycle 110 produced a first compact scorecard without owner notification or public work. Cycle 111 added the reset-marker rule so long quiet streaks can trigger synthesis without filling `research-log.md` with low-value quiet entries. Cycle 112 added a Pulse Gate skip because the next full pulse would have repeated Pulse 01/02 without new evidence. Cycle 115 added a gate ceiling because repeated skipped gates can become their own low-value artifact.
+- What this strengthens: quiet cycles and idea generation need separate modes. `no_new_evidence` should stay bounded, owner requests should trigger synthesis, long quiet streaks should trigger either a compact Idea Synthesis Pulse or a Pulse Gate skip if no materially new selection exists, and repeated skipped gates should stop until a real trigger appears.
+- What this weakens: treating every owner check-in without a new data row as irrelevant conversation context.
+- Stop/change evidence: if synthesis pulses repeatedly create public-work recommendations without new evidence, lower confidence and tighten the scorecard; if Auris reports that the pulses surface useful decisions without admin load, strengthen confidence.
+- Next test: the next owner synthesis/process request should use Packet BJ, generate an evidence-bound scorecard, update one process rule if needed, and leave the next cycle pointed back to Packet BH. Quiet cycles after the latest gate ceiling should `DONT_NOTIFY` without creating more gate entries unless new evidence, review-count delta, public/API regression, owner synthesis/process request or concrete automation failure appears.

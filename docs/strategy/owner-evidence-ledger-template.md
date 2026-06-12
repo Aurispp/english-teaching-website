@@ -1,7 +1,7 @@
 # Owner Evidence Ledger Template
 
 Created: 2026-05-23 Cycle 31
-Last updated: 2026-05-24 Cycle 48
+Last updated: 2026-05-24 Cycle 59
 
 Purpose: make any owner-side screenshot or short note immediately usable. This template turns GBP, LinkedIn, Calendly and inquiry evidence into evidence levels without asking Auris for credentials or private message exports.
 
@@ -12,6 +12,7 @@ The strategy is no longer blocked by not knowing what to do. It is blocked by no
 Use this ledger whenever Auris sends:
 
 - a Google Business Profile review count or review screenshot
+- a Google Business Profile appointment/booking/contact-link screenshot or note
 - a GBP Performance screenshot or note
 - a review reply/post/action note
 - a LinkedIn analytics screenshot
@@ -71,6 +72,34 @@ Interpretation:
 - If Day 7 has more website clicks/messages/calls but no inquiry note, inspect proof/CTA/contact path before adding more posts.
 - If searches/views move but actions do not, do not call it acquisition.
 
+## GBP Contact Link Truth Row
+
+Use when Auris checks whether Google Business Profile still exposes an appointment, booking, website, phone, text or WhatsApp path.
+
+| Date | Evidence Level | Profile Surface | Appointment Link Visible | Link Domain | Action Taken | Status | Reason | Next Check Date | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-__-__ | 2 | Google Search / Google Maps / GBP manager | yes / no / unknown | calendly.com / englishwithauris.com / other / none | keep / remove / remove_provider / replace / no_action | live / pending / blocked / not_found | direct_contact_mode / measured_acquisition / unclear |  |  |
+
+Interpretation:
+
+- If `calendly.com` is still visible and the current mode is `direct_contact_future_availability`, remove or disconnect it unless Auris deliberately wants Calendly as an exception.
+- If Google will not accept a generic contact page as an appointment link, do not force the homepage into a booking slot. Use the normal website link, phone, services and profile description instead.
+- If link removal is pending or blocked, record that status instead of creating another public campaign.
+
+Cycle 55 removal-verification add-on:
+
+| Field | Values | Why |
+| --- | --- | --- |
+| `appointment_link_visible_before` | yes / no / unknown | Separates prior owner evidence from current truth. |
+| `appointment_link_domain_before` | calendly.com / englishwithauris.com / other / none / unknown | Records the old action target. |
+| `action_taken` | removed_link / removed_provider / requested_provider_removal / kept_intentionally / not_found | Distinguishes owner-added links from provider-managed links. |
+| `profile_edit_status` | live / pending / not_approved / blocked / unknown | Google profile edits can lag or be rejected. |
+| `appointment_link_visible_after` | yes / no / unknown | The actual cleanup proof. |
+| `appointment_link_domain_after` | calendly.com / englishwithauris.com / other / none / unknown | Prevents a generic replacement from being mistaken for removal. |
+| `ad_promo_visible` | yes / no / ignored | Separates Google Ads credit prompts from public profile links. |
+
+If the only remaining item is a Google Ads credit/promo prompt, mark `ad_promo_visible=yes` and `ignored`; it is not a public booking link unless Auris creates an ad campaign.
+
 ## Action Log Row
 
 Use for review replies, GBP posts, review asks, referral asks, LinkedIn posts or profile edits.
@@ -79,6 +108,7 @@ Use for review replies, GBP posts, review asks, referral asks, LinkedIn posts or
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2026-__-__ | 3 | review_reply / GBP_post / review_ask / referral_ask / LinkedIn_post / profile_edit |  |  |  | planned / live / pending / edited / rejected / sent / no_reply | confidence / work_moment / correction / portal / review |  |
 | 2026-05-24 | 3 | review_reply | GBP | replies to 2 newest reviews | Google Business Profile reviews | planned | long-term learner trust / care / productive online classes / former-student referral | Auris confirmed he has not responded yet. Reply before posting more content. |
+| 2026-05-24 Cycle 56 | 3 | review_reply | GBP | Teresa-style long-term learner reply | Google Business Profile reviews | owner_visible_live / public_unknown | long-term learner trust / productive online 90-minute classes / resources / care | Owner screenshot showed a warm reply just after posting. Public visibility should be checked only once if needed; do not rework the reply unless Google marks it pending/hidden/rejected. |
 
 Required status detail:
 
@@ -86,6 +116,21 @@ Required status detail:
 - Review reply: live, pending, edited, rejected or unknown.
 - Review/referral ask: sent, not sent, no reply, positive reply, review left, referral made or awkward.
 - LinkedIn post/profile edit: published/edited plus 24h, 72h and 7d analytics if available.
+
+Cycle 56 review-reply add-on:
+
+Use this compact row when the useful evidence is reply status, not a new public campaign.
+
+| Date | Review Theme | Review Age | Reply Draft Type | Reply Status | Publicly Seen | Next Action |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2026-__-__ | confidence / work_moment / long_term / referral / child_progress / resources / general | same_day / under_7d / older | short_thanks / method_specific / hold | live / owner_visible_live / pending / edited / rejected / unknown | yes / no / owner_only / unknown | none / recheck / edit / ask_owner_snapshot |
+
+Interpretation:
+
+- `owner_visible_live` is enough for a first action row, but not the same as public proof.
+- `publicly_seen=yes` is only needed if the reply matters for a measured GBP action or if Google display issues are suspected.
+- If a reply is `pending` or `owner_only`, recheck once before editing.
+- If the reply is warm, short and specific, do not keep optimizing it.
 
 ## Inquiry Row
 
@@ -105,6 +150,16 @@ Interpretation:
 - If two qualified direct leads mention a 30 EUR marketplace anchor before booking, marketplace price alignment becomes a fix-before-more-content task.
 - If marketplace-origin leads accept 40 EUR/h or become good students without friction, keep marketplace cleanup secondary.
 - If leads ask mainly for exams, children, low-price groups or certificates, do not overfit the adult/professional message to them.
+
+Cycle 54 add-on fields for direct-contact mode:
+
+| Field | Values | Why |
+| --- | --- | --- |
+| `free_first_class_expectation` | asked_for_free_class / expected_free_trial / not_mentioned / unknown | Tests whether old free-trial wording is shaping expectations. |
+| `message_copy_seen` | future_availability / free_first_class / reviews / pricing / local_page / Talk / unknown | Shows which public message actually reached the person. |
+| `schema_or_search_surface_seen` | website / GBP / Google_result / marketplace / unknown | Separates owned-site copy from Google/profile/marketplace surfaces. |
+
+If two high-fit prospects ask mainly for a free trial or instant first class while Auris is nearly full, reframe the public FAQ/local page before adding more traffic. If they mention reviews, portal/follow-up or future timing instead, keep the calmer direct-contact posture.
 
 ## Decision Output Row
 
@@ -154,8 +209,32 @@ Use `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-micro-inta
 | `lead_note` | Inquiry | Source plus first thing mentioned, anonymized. |
 | `day7_compare` | GBP Performance | Same Performance view and range after one action. |
 | `decision_output` | Decision Output | Continue, adjust or pause after evidence reaches Level 2+. |
+| `gbp_contact_link_truth` | GBP Contact Link Truth | Whether Calendly/booking/contact links still appear in the owner profile and what action/status applies. |
+| `gbp_calendly_removal_verification` | GBP Contact Link Truth | Whether the Calendly appointment link was removed, is pending, blocked, provider-managed, or intentionally kept. |
+| `review_reply_status` | Action Log | Review theme, reply status, whether publicly seen if relevant, and next action. |
 
 If no owner evidence arrives after two micro-asks, do not make the ledger larger. Stop shrinking the request, wait for owner-side data, or rotate the next cycle to another strategic question.
+
+## Cycle 59 Router Labels
+
+Use `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md` before adding any new row type. These labels route incoming proof to existing rows.
+
+| Label | Existing Destination | Use When |
+| --- | --- | --- |
+| `public_readiness` | Public Proof Row or research log | Live endpoint, sitemap, headers, rendered route or API health changes. |
+| `review_reply_status` | Action Log / Cycle 56 review-reply add-on | Auris replies to a review, sees a reply status, or notices a public/private display issue. |
+| `owner_snapshot_arrived` | GBP Performance Row | Auris sends or summarizes GBP Performance views/searches/interactions. |
+| `gbp_contact_link_truth` | GBP Contact Link Truth Row | GBP shows or removes appointment, booking, website, phone, text or WhatsApp paths. |
+| `gbp_calendly_removal_verification` | GBP Contact Link Truth Row | Calendly status is removed, pending, blocked, provider-managed, not found or intentionally kept. |
+| `first_inquiry_arrived` | Inquiry Row | A prospect contacts Auris through WhatsApp, email, phone, GBP, DM, referral or marketplace. |
+| `student_row_arrived` | `next-15-pilot-tracker.md` | A current-student continuity observation arrives. Use this ledger only for related owner/channel context. |
+| `capacity_changed` | Decision Output Row plus roadmap/measurement plan | Auris opens a slot, wants leads now, or changes from nearly full to active filling. |
+| `approval_arrived` | Relevant roadmap packet | Auris explicitly approves code, deploy, API/access work or public changes. |
+| `api_access_changed` | Relevant roadmap packet or measurement plan | Search Console, GBP, GA4 or GTM access changes. |
+| `channel_visible_signal` | Action Log or measurement note | Social/GBP/website analytics show attention/clicks without private lead truth. |
+| `no_new_evidence` | Research log only if needed | No owner/student/prospect/capacity/access evidence arrived. |
+
+Do not add a new ledger, CRM, waitlist or dashboard for these labels unless 5-10 anonymized rows show repeated fields or Auris explicitly asks to build one.
 
 ## Cycle 43 Lead-Source Proof Labels
 

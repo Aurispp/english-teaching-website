@@ -299,10 +299,14 @@ const TalkTheTalk = ({ isOpen, onClose }) => {
 
     if (!isOpen) return null;
 
+    const whatsappMessage = language === 'es'
+        ? 'Hola Auris, he probado Talk the Talk y me interesan las clases de inglés.'
+        : "Hi Auris, I tried Talk the Talk and I'm interested in English classes.";
+
     const contactLinks = [
         {
             icon: <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5 object-contain" />,
-            href: "https://wa.me/34684082221",
+            href: `https://wa.me/34684082221?text=${encodeURIComponent(whatsappMessage)}`,
             label: "WhatsApp"
         },
         {

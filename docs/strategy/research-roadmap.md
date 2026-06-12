@@ -1,7 +1,7 @@
 # Research Roadmap
 
 Created: 2026-05-21
-Last updated: 2026-05-24 Cycle 51
+Last updated: 2026-05-27 Cycle 109
 
 Purpose: keep the recurring research automation cumulative. Each cycle should pick from this queue, update what was learned, and leave a sharper next-cycle packet.
 
@@ -9,20 +9,23 @@ Purpose: keep the recurring research automation cumulative. Each cycle should pi
 
 | ID | Question | Why It Matters | Current Confidence | Next Evidence Needed |
 | --- | --- | --- | --- | --- |
-| RQ001 | What is the fastest credible acquisition channel: GBP, local SEO pages, social, tutor marketplaces, referrals, or local professional communities? | Auris has limited time; effort should go where qualified leads are most likely. | Medium-high for GBP/reviews/referrals as trust base; lower confidence for "near-term leads" while Auris is nearly full | Cycle 51 replaces the Calendly proof path with direct WhatsApp/email. Judge any future public action by owner GBP/contact-click signals plus one direct-contact inquiry row, not raw lead volume or booking counts. |
-| RQ002 | Can `/clases-ingles-castelldefels`, `/ingles-empresas-castelldefels`, and `/talkthetalk` become indexable, useful pages without diluting the personal tone? | New pages are discovered/crawled but not indexed yet. | High for diagnosis, medium for impact | Cycle 45 says the issue is stable: routes are live and crawlable, but static fallbacks remain 29/38/36 words with zero static links. Next evidence is Packet AT implementation approval, restored GSC/URL Inspection access, or page-level rows after a deploy; do not keep re-diagnosing unchanged routes. |
-| RQ003 | What proof best justifies 40 EUR/h: reviews, personal story, portal, professional outcomes, or specialization with Spanish speakers? | Premium pricing needs visible trust before price shock. | High for proof categories, medium for live conversion impact | Cycle 50 turns this into Packet AY: if the availability patch deploys or public traffic resumes, pair it with the premium proof stack so `limited availability` does not have to justify 40 EUR/h by itself. |
-| RQ004 | What should Talk the Talk be: SEO page, social lead magnet, student-retention habit, or teacher-prep signal? | It touches acquisition and product, but the wrong success metric could waste time. | High for feedback-bridge role, medium for current-student adoption | Cycle 40 produced a no-audio Talk Reflection V0 technical spec. Next evidence: manual or implemented 3-student pilot, save/skip rate, one teacher-used reflection, student reaction to whether it feels helpful or like homework. |
-| RQ005 | Which student-platform improvement most improves retention and perceived premium value? | The portal is deep, but students need clarity and visible progress. | High for "Next 15 minutes", medium for immediate behavior change | Cycle 46 says the implementation path is ready but the missing evidence is current-student acceptance and teacher-use proof. Next evidence is Packet AU: 3-5 anonymous concierge Next 15 pilot rows, then decide build / soften / keep manual / pause. |
+| RQ001 | What is the fastest credible acquisition channel: GBP, local SEO pages, social, tutor marketplaces, referrals, or local professional communities? | Auris has limited time; effort should go where qualified leads are most likely. | Medium-high for GBP/reviews/referrals as trust base; lower confidence for "near-term leads" while Auris is nearly full | Cycle 56 keeps GBP/reviews in Trust Maintenance Mode: reply freshness is useful, but acquisition still requires a capacity-opening action plus owner metrics or an inquiry row. |
+| RQ002 | Can `/clases-ingles-castelldefels`, `/ingles-empresas-castelldefels`, and `/talkthetalk` become indexable, useful pages without diluting the personal tone? | New pages are discovered/crawled but not indexed yet. | High for diagnosis, medium for impact | Cycle 54 says sitemap/static hygiene is still real, but do not re-diagnose SEO. If code work is approved, use Packet BC for a small message/schema/sitemap cleanup or Packet AT for the larger static route experiment. |
+| RQ003 | What proof best justifies 40 EUR/h: reviews, personal story, portal, professional outcomes, or specialization with Spanish speakers? | Premium pricing needs visible trust before price shock. | High for proof categories, medium for live conversion impact | Cycle 54 adds a small copy caveat: `free first class` should not carry the first-view offer while Auris is nearly full. If edited, reframe it as a first conversation and use mechanism proof near price. |
+| RQ004 | What should Talk the Talk be: SEO page, social lead magnet, student-retention habit, or teacher-prep signal? | It touches acquisition and product, but the wrong success metric could waste time. | High for public feedback-bridge role, medium for current-student adoption | Cycle 61 updates the public path: default 60 seconds, direct WhatsApp `talk_contact_click`, no Calendly/free-first-class funnel. Next evidence: one real Talk-origin reply row, or one current-student observation before aligning the portal default from 90 to 60 seconds. |
+| RQ005 | Which student-platform improvement most improves retention and perceived premium value? | The portal is deep, but students need clarity and visible progress. | High for "Next 15 minutes", medium for immediate behavior change | Cycle 57 narrows the next evidence to Packet BF: 2 anonymous current-student continuity rows, pairing one tiny optional step with next-class evidence. Do not write another spec unless rows arrive or Auris asks to build. |
 | RQ006 | How should Auris talk about being personal/not-an-academy without sounding small or less professional? | This is core positioning and affects local SEO, trust, and premium pricing. | High | Competitor comparison, review language, homepage/local page copy alternatives. |
-| RQ007 | What content format best fits Auris: confidence-led reels, professional English posts, review/proof posts, prompt posts, or platform behind-the-scenes? | Social should build trust, not become generic teacher-influencer work. | Medium | Cycle 48 says use maintenance cadence while nearly full: review replies, occasional real proof, and no weekly/3x content push unless a slot is opening. Next evidence is a capacity-opening trigger or a real inquiry note. |
+| RQ007 | What content format best fits Auris: confidence-led reels, professional English posts, review/proof posts, prompt posts, or platform behind-the-scenes? | Social should build trust, not become generic teacher-influencer work. | Medium | Cycle 56 says review replies are the default content while nearly full. A like/reaction is fine, but a public reply is the trust asset. Do not resume weekly posting unless capacity opens or a real proof moment appears. |
 | RQ008 | How should business English be packaged for professionals/autonomos/small teams? | Potentially supports premium pricing and invoice/NIF advantage. | Medium-high for personal work moments; medium-low for company/team packaging | Cycle 41 says keep Work-English inside personal 40 EUR/h classes, test Meeting Voice first, and only package after two professional inquiries mention the same moment and accept the price anchor. |
-| RQ009 | What measurement stack is actually working: gtag, GTM, GA4 events, Search Console, GBP owner metrics, and direct-contact notes? | Future strategy needs conversion evidence, not vibes. | High that direct-contact notes are now required; medium for dashboard access | Cycle 51 says `contact_click` / `talk_contact_click` are intent only. The real lead signal is a WhatsApp/email reply row with `proof_mentioned`, `future_timing`, `availability_confusion`, `price_anchor_seen`, `lead_quality` and outcome. |
-| RQ010 | Which review themes should be made visible first on the website/GBP/social? | Reviews are the clearest proof source. | High for confidence/adaptation/follow-up; medium for exact conversion impact | Cycle 42 says use confidence only with a method bridge: exact practice, Spanish-to-English correction and review between classes. Use honest non-directive review asks only. |
+| RQ009 | What measurement stack is actually working: gtag, GTM, GA4 events, Search Console, GBP owner metrics, and direct-contact notes? | Future strategy needs conversion evidence, not vibes. | High that direct-contact notes are now required; medium-low for dashboard/API access | Cycle 61 keeps `talk_contact_click` as intent only. GA4 lead events require a request/qualification layer; acquisition still needs owner metrics or an inquiry row. |
+| RQ010 | Which review themes should be made visible first on the website/GBP/social? | Reviews are the clearest proof source. | High for confidence/adaptation/follow-up; medium for exact conversion impact | Cycle 56 turns review replies into a trust-maintenance system: name one real theme, keep it warm and short, avoid sales/keywords, and stop optimizing once live. |
 | RQ011 | What are Spanish speakers/adults/professionals publicly complaining about in English learning communities right now? | Strategy should be pulled by real pain language, not only site audits. | Medium-high for pain, low for buying intent | Cycle 06 found strong output-gap/freezing language. Next: direct social comments and current-student validation. |
 | RQ012 | Which social/content channels show the best fit for Auris: LinkedIn, Instagram/TikTok, YouTube Shorts, GBP posts, Reddit/community, or marketplaces? | Auris needs a sustainable channel, not generic "post more." | Medium-high for GBP-first, medium for LinkedIn acquisition | Cycle 43 says LinkedIn/Talk fit should be judged by owner post metrics plus Level 4 inquiry rows, not impressions or Talk starts alone. |
 | RQ013 | Are AI speaking tools replacing parts of the market or creating demand for human feedback? | Positioning should exploit what AI cannot do well for Spanish speakers. | Medium-high that AI creates demand for human diagnosis while commoditizing generic reps | Cycle 39 found AI speaking apps have made instant role-play/pronunciation/business practice mainstream; Cycle 40 translated the response into no-audio Talk reflection. Next evidence: 3 current-student AI-use answers, one `AI for reps / Auris for diagnosis` positioning test, and one reflection used in class. |
 | RQ014 | What expansion lane has the best strategic upside: local premium private classes, professional/autonomo English, small teams, exam support, content-led lead magnet, platform-assisted retention, or local professional referrals? | The business should grow around the strongest wedge, not every possible offer. | High for premium personal trust; medium for acquisition until lead rows exist | Cycle 48 says expansion should wait behind capacity mode. If full, build trust and future-intent capture. If a slot opens, use review-led GBP/LinkedIn. If demand exceeds desired hours repeatedly, consider pricing, waitlist, small groups or productized retention before adding delivery complexity. |
+| RQ015 | What should be deliberately ignored while Auris is close to full and evidence gates are waiting? | The automation now has several ready lanes; continuing to add ideas can create admin load and false certainty. | High that pruning is higher leverage than ideation for the next 30 days | Cycle 58 creates Packet BG: Trust Maintenance + Evidence Waiting. Keep review replies, monthly GBP snapshot, first inquiry row, GBP Calendly status and 2 current-student rows active. Park or ignore ads, social-first pivots, new SEO pages, CRM/waitlist/routing systems, more platform specs and new packages until a trigger changes. |
+| RQ016 | How should incoming owner/student evidence be routed without creating admin/privacy risk or reopening parked lanes? | The next useful evidence may arrive as a screenshot, short note, inquiry, capacity update or student observation; it needs to land in the right existing row fast. | High that routing beats new artifacts; medium until the next real evidence item tests it | Cycle 60 stress-tested Packet BH: classify incoming proof first; if `no_new_evidence`, use the Quiet Cycle Contract, run only bounded checks, and do not repeatedly harden the router or create new artifacts. |
+| RQ017 | How should the automation generate new ideas and improve itself without undoing strategic pruning? | Auris's check-in exposed a gap: quiet mode prevented false work but also made the automation under-synthesize accumulated learning when asked. | Medium-high that a bounded idea pulse is the right correction | Cycle 109 creates Packet BJ: run an Idea Synthesis Pulse for owner synthesis/process requests or long quiet streaks; generate evidence-bound ideas with stop conditions, update the live automation prompt when process rules change, then return to Packet BH. |
 
 ## Next-Cycle Packets
 
@@ -164,6 +167,224 @@ If no pilot or implementation evidence exists:
 
 - Do not write another Next 15 spec.
 - Rotate to owner Review Truth / GBP Day 0, first lead-source row, Talk Reflection if speaking proof is explicitly chosen, or approved pricing/site implementation.
+
+### Packet BF: Current Student Continuity Proof
+
+Cycle 57 status: created because the portal idea is mature enough locally, but still missing current-student proof.
+
+Primary question: can one tiny optional step after class create a visible progress moment in the next class?
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/current-student-continuity-proof-cycle57.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/next-15-pilot-tracker.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/platform-backlog.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/retention-baseline-and-manual-pilot.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+If Auris has two anonymous rows:
+
+1. Record `student_type`, `suggested_step`, `portal_surface`, `sent_channel`, `did_action`, `student_reaction`, `in_class_evidence`, `teacher_effort`, and `decision`.
+2. Update H006/H016/H017/H018.
+3. Decide `build_next15`, `keep_manual`, `soften_copy`, or `pause`.
+
+If no rows exist:
+
+1. Do not create another platform spec or dashboard idea.
+2. Keep current public copy modest: the portal organises vocabulary, materials and review between classes.
+3. Rotate to monthly GBP snapshot, first direct-contact inquiry row, GBP Calendly removal status, or approved public-code hygiene.
+
+Hypotheses:
+
+- H006 Next 15 / clarity of next action.
+- H016 autonomy.
+- H017 SRS retention spine.
+- H018 homework-log/manual pilot.
+- H026 capacity mode decides success metric.
+
+### Packet BG: Strategic Ignore List Refresh
+
+Cycle 58 status: created after multiple mature packets were waiting on owner-side or current-student proof rather than more strategy.
+
+Cycle 59 refinement: Packet BH now supersedes Packet BG as the first stop when any new screenshot, owner note, student observation or access change arrives. Use BG to keep lanes parked; use BH to route evidence.
+
+Primary question: what should be deliberately ignored or parked for the next 30-60 days while Auris is close to full?
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/strategic-ignore-list-cycle58.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-ledger-template.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/next-15-pilot-tracker.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+Current default:
+
+- `Trust Maintenance + Evidence Waiting`.
+- Active lanes: review replies if new, monthly GBP owner snapshot if available, first inquiry row if a prospect appears, GBP Calendly removal status if owner evidence arrives, and 2 current-student continuity rows if natural.
+- Parked lanes: Packet BC public-code hygiene, Packet AT static route SEO, GBP/LinkedIn posting sprint, Work-English package, Talk Reflection V0, Next 15 build.
+- Ignored by default: Google Ads, TikTok/Instagram-first, marketplace-as-brand-north-star, new city pages, CRM/waitlist/routing form, AI speaking homework and bigger platform analytics.
+
+If new evidence arrives:
+
+1. Map it to the decision trigger in `strategic-ignore-list-cycle58.md`.
+2. Update only that lane.
+3. Keep unrelated parked lanes parked.
+
+If no evidence arrives:
+
+1. Do not create another campaign, content calendar, platform spec or ledger.
+2. Run only light live checks if useful.
+3. Use Packet BH first. Rotate only to an approved code hygiene pass, owner-supplied GBP status, first inquiry readiness, or a process/source-map improvement.
+
+Hypotheses:
+
+- H003 more landing pages alone will not solve acquisition.
+- H015 manual lead-source notes.
+- H019 owner-side GBP baseline.
+- H026 capacity-state success metric.
+- H027 strategic pruning while full.
+- H028 evidence routing prevents false work after pruning.
+
+### Packet BH: Evidence Trigger Router
+
+Cycle 60 status: created in Cycle 59 and stress-tested in Cycle 60. Packet BH remains the first stop, now with a Quiet Cycle Contract for repeated `no_new_evidence` heartbeats.
+
+Cycle 109 refinement: Packet BJ is the exception path when Auris explicitly asks for findings, new ideas, or automation improvement. That is a synthesis/process trigger, not permission to reopen parked channels.
+
+Cycle 61 refinement: owner-approved public code/copy changes count as `approval_arrived` plus `public_readiness`, but should update only the affected artifact unless they create a real prospect/student/capacity row.
+
+Primary question: how should incoming owner/student evidence be classified and recorded without creating admin/privacy risk or reopening parked lanes?
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/strategic-ignore-list-cycle58.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-ledger-template.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/next-15-pilot-tracker.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md`
+
+Decision:
+
+- Classify evidence before researching or writing.
+- Use existing rows: review reply, GBP performance, GBP contact-link truth, inquiry, current-student continuity, capacity state, API/access state, channel-visible signal or public readiness.
+- Do not store private names, full messages, screenshots with personal data, emails, phone numbers or company names.
+- If the classification is `no_new_evidence`, do not create another artifact by default. Run only bounded checks unless the router itself has demonstrably failed.
+
+If evidence arrives:
+
+1. Map it to the router table.
+2. Update only the matching artifact.
+3. Update one relevant hypothesis if the evidence changes confidence.
+4. Keep unrelated parked lanes parked.
+
+If no evidence arrives:
+
+1. Use the Quiet Cycle Contract inside `evidence-trigger-router-cycle59.md`.
+2. Run at most the allowed light checks: git status, homepage header, reviews endpoint, sitemap/robots after relevant deploy/code work, teaching API health, and owner/API access only if access changed.
+3. If Auris asked for findings/new ideas/process improvement, switch to Packet BJ for one synthesis pulse.
+4. If all checks are stable and no synthesis pulse is due, use `DONT_NOTIFY`, do not browse broadly, and do not create or materially expand strategy artifacts.
+5. Leave the next cycle pointed at this router unless a real trigger appears, a synthesis pulse is due, or the router fails to classify a new evidence type.
+
+Hypotheses:
+
+- H015 manual lead-source notes.
+- H019 owner-side GBP baseline.
+- H026 capacity-state success metric.
+- H027 strategic pruning while full.
+- H028 evidence routing after pruning.
+
+### Packet BJ: Automation Idea Engine And Synthesis Pulse
+
+Cycle 109 status: created after Auris explicitly asked the automation to generate ideas and improve itself based on findings.
+
+Cycle 111 refinement: each Pulse History entry is now the quiet-streak reset marker. Do not log every stable quiet heartbeat just to count toward the next pulse; if two pulses repeat the same selections without new evidence, raise the threshold or require a new evidence type.
+
+Cycle 112 refinement: long quiet streaks now pass through a `Pulse Gate` first. If a full pulse would only repeat the prior selections, record the gate as a reset marker and require new evidence, a process failure, a public/API regression, or an owner synthesis request before another full pulse.
+
+Cycle 115 refinement: repeated skipped Pulse Gates should not become quiet-log spam. After two or more consecutive gate skips with the same held selections and no new evidence, stop creating clock-only gate entries and wait for a real trigger.
+
+Primary question: how can the recurring automation produce genuinely useful new ideas while preserving the evidence gates that prevent false work?
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/automation-idea-engine.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/evidence-trigger-router-cycle59.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/automation-research-loop.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/research-log.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md`
+- `/Users/aurisp/.codex/automations/continuous-teaching-business-strategy/automation.toml`
+
+Use when:
+
+- Auris asks what the automation has found, what new ideas it has, or how the automation should improve.
+- 8-12 quiet cycles repeat the same no-evidence result.
+- A process failure appears, such as treating an owner synthesis question as mere `no_new_evidence`.
+
+Cycle flow:
+
+1. Read the latest 5-10 cycles and the current parked/active lanes.
+2. Generate 3-7 candidate ideas from accumulated evidence only.
+3. Score each idea by evidence basis, Auris-specific fit, upside, cost/risk, smallest test, stop condition and cheaper alternative.
+4. Select at most one `do_now`, one `test_manually`, one `park`, and one `ignore`.
+5. Update one process rule if the automation failed or learned a better evidence standard.
+6. Update the live automation prompt if the actual heartbeat behavior needs to change.
+7. Return the next cycle to Packet BH unless a real evidence trigger arrives.
+
+If a pulse would be duplicative:
+
+1. Record a `Pulse Gate` skip instead of a full scorecard.
+2. Treat the gate as the quiet-streak reset marker.
+3. Require new evidence or a concrete process failure before the next full pulse.
+4. If repeated gates keep skipping for the same evidence state, stop creating gate entries from silence alone.
+
+Do not:
+
+- Treat an idea pulse as approval to publish, contact, deploy, edit GBP, or build product changes.
+- Browse broadly unless one targeted source can falsify a specific idea.
+- Create a new campaign, content calendar, SEO plan, platform spec, CRM or waitlist from synthesis alone.
+
+Hypotheses:
+
+- H027 strategic pruning while full.
+- H028 evidence routing after pruning.
+- H029 synthesis pulses preserve useful ideation without false work.
+
+### Packet BI: Talk Direct-Contact Calibration
+
+Cycle 61 status: created after public Talk was moved from a 90-second/trial-booking memory state to a 60-second/direct-contact production state.
+
+Primary question: does the one-minute Talk path create a useful personal feedback bridge without reviving booking-first or free-trial expectations?
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/talk-the-talk-lead-magnet.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md#h007-talk-the-talk-can-be-a-lead-magnet-but-not-yet-a-clean-seo-asset`
+- `/Users/aurisp/repos/teacher-website/src/components/TalkTheTalk.jsx`
+- `/Users/aurisp/repos/teacher-assistant/classroom-hub/src/pages/TalkTheTalk.tsx`
+
+Decision:
+
+- Public Talk stays 60 seconds by default unless completion or reply evidence shows users want a longer first rep.
+- Keep 90 seconds as an option and as the current portal default until a current-student row supports changing it.
+- Do not use `trial_booked` as a success metric; use `talk_contact_click` plus redacted reply rows.
+- Treat the recording/listenback copy mismatch and stale Talk sitemap `lastmod` as small public-code hygiene, not a strategy lane.
+
+Next evidence:
+
+1. One real WhatsApp/email reply where `first_contact_surface=talk_whatsapp` or the prospect mentions the prompt/tool.
+2. One current-student observation about whether 60 or 90 seconds feels more useful.
+3. A post-deploy/live check after any future Talk copy or sitemap hygiene edit.
+
+Hypotheses:
+
+- H007 Talk is a lead magnet but not SEO-first.
+- H011 Talk is the feedback bridge.
+- H015 manual notes separate intent from leads.
+- H026 capacity state controls CTA intensity.
 
 ### Packet AV: Owner Proof Action Gate
 
@@ -374,6 +595,181 @@ Hypotheses:
 - H004 premium proof.
 - H015 manual lead-source notes.
 - H026 capacity-aware acquisition metrics.
+
+### Packet BA: Direct Contact Production Measurement Gate
+
+Cycle 52 status: created after Auris explicitly asked to commit and push all. The direct-contact commit `a304f9c` is now live on production.
+
+Primary question: now that WhatsApp/email mode is public, what evidence proves whether the calm future-availability path is working without creating a bigger admin system?
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/direct-contact-production-gate-cycle52.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/direct-contact-simplification-gate-cycle51.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/hypotheses.md`
+- live `https://englishwithauris.com/`
+- live `https://englishwithauris.com/talkthetalk`
+- live `https://englishwithauris.com/sitemap.xml`
+
+Decision:
+
+- Production is coherent enough; do not restore Calendly or add a waitlist/form/CRM by default.
+- `contact_click` and `talk_contact_click` are click intent only.
+- Search Console is currently blocked from this automation with `403 PERMISSION_DENIED`; use owner Search Console or restore API access before making page/query claims.
+- Sitemap `lastmod` is a minor hygiene caveat for the next public-code/SEO pass, not an urgent user action.
+
+If a direct inquiry exists:
+
+1. Fill only one direct-contact row: method, likely source, confidence, first thing mentioned, proof, need, future timing, availability confusion, price anchor, response, follow-up and outcome.
+2. Compare that row against production source: website, GBP, referral, LinkedIn, marketplace, unknown.
+3. Update H015/H026 and the measurement plan.
+
+If no direct inquiry exists:
+
+1. Treat that as expected while Auris is nearly full and not running a lead push.
+2. Inspect GBP service/contact/profile coherence if owner evidence is available.
+3. Rotate to premium proof, sitemap/static route hygiene, or retention evidence only if there is an approval/new signal.
+
+Hypotheses:
+
+- H003 landing pages alone.
+- H015 manual direct-contact notes.
+- H020 indexing gap.
+- H026 capacity-aware acquisition metrics.
+
+### Packet BB: GBP Contact-Link Coherence Gate
+
+Cycle 53 status: created after the website deployed direct-contact mode while prior owner/search evidence still showed `Appointments: calendly.com` on Google.
+
+Primary question: does Google Business Profile still expose an old booking/appointment path that conflicts with the website's WhatsApp/email posture?
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/gbp-contact-coherence-gate-cycle53.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-ledger-template.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/direct-contact-production-gate-cycle52.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+Decision:
+
+- If the GBP appointment link still points to Calendly and Auris wants direct-contact mode everywhere, remove or disconnect it from GBP.
+- If Auris wants Calendly as a deliberate exception, log that exception and keep the website calm.
+- Do not replace a Google appointment link with a generic contact page unless Google accepts it as a valid booking URL.
+
+If owner evidence arrives:
+
+1. Fill `gbp_contact_link_truth` in the owner evidence ledger.
+2. Record action/status: keep, remove, provider-removal requested, pending, blocked or done.
+3. Update H002/H015/H019/H026.
+
+If no owner evidence arrives:
+
+1. Do not keep scraping public Google search for the profile.
+2. Treat the old Calendly appointment link as an open risk, not confirmed current truth.
+3. Rotate to sitemap/static route hygiene, premium-proof pairing, or retention evidence.
+
+Hypotheses:
+
+- H002 GBP trust base.
+- H015 manual lead-source notes.
+- H019 owner-side GBP baseline.
+- H026 capacity-aware metrics.
+
+### Packet BC: Public Message Coherence Cleanup
+
+Cycle 54 status: created after production entered WhatsApp/email direct-contact mode but live/source checks still found `free first class` / `clase de prueba gratuita`, `InStock` offer schema, and stale sitemap dates.
+
+Primary question: should the next small public-code pass clean old immediate-trial signals without making Auris sound closed?
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/public-message-coherence-cycle54.md`
+- `/Users/aurisp/repos/teacher-website/src/components/SeoLandingPage.jsx`
+- `/Users/aurisp/repos/teacher-website/src/translations.js`
+- `/Users/aurisp/repos/teacher-website/index.html`
+- `/Users/aurisp/repos/teacher-website/public/sitemap.xml`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/premium-price-proof-stack-cycle44.md`
+
+Decision:
+
+- If Auris asks for a small hygiene patch, replace the local landing `free first class` headline with first-conversation/future-slot language, align FAQ/JSON-LD, improve private-offer schema proof, and update sitemap `lastmod` for changed routes.
+- If no code approval arrives, do not repeat the audit. Keep the current direct-contact site stable.
+- If Auris opens capacity and wants a student within 30 days, restore clearer measured-acquisition wording instead of over-softening.
+
+Hypotheses:
+
+- H003 and H020 search hygiene but not SEO panic.
+- H015 manual inquiry truth.
+- H026 capacity-aware CTA intensity.
+
+### Packet BD: GBP Calendly Removal Verification
+
+Cycle 55 status: created after Auris asked how to remove the Calendly item from Google Business Profile.
+
+Primary question: did the owner-side GBP booking/appointment surface actually stop showing Calendly, or is it pending/blocked/provider-managed?
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/gbp-calendly-removal-handoff-cycle55.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-ledger-template.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/gbp-contact-coherence-gate-cycle53.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+Decision:
+
+- If `appointment_link_visible_after=no`, Packet BB can be marked resolved and the next GBP work is monthly snapshot or first inquiry row.
+- If status is `pending`, wait before interpreting profile actions.
+- If status is `blocked` or `provider_request`, use provider/GBP support logic, not website code.
+- If status is `kept_intentionally`, interpret future GBP bookings as a deliberate exception to direct-contact mode.
+
+Do not do:
+
+- Do not repeat public Google scraping.
+- Do not add a generic contact page as an appointment link unless Google accepts it.
+- Do not run ads or GBP posts while the action link is unresolved unless Auris intentionally wants that path.
+
+Hypotheses:
+
+- H002 GBP trust base.
+- H015 manual source notes.
+- H019 GBP owner-side truth.
+- H026 capacity-aware contact mode.
+
+### Packet BE: Review Reply Verification And Profile Freshness
+
+Cycle 56 status: created after Auris asked about replying versus liking/reacting to Google reviews and showed a live owner reply.
+
+Primary question: are recent review replies live enough to count as trust maintenance, and what should the next low-pressure profile action be while Auris is nearly full?
+
+Start with:
+
+- `/Users/aurisp/repos/teacher-website/docs/strategy/review-reply-trust-maintenance-cycle56.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/review-proof-library.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/owner-evidence-ledger-template.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/content-strategy.md`
+- `/Users/aurisp/repos/teacher-website/docs/strategy/measurement-plan.md`
+
+Decision:
+
+- If Teresa/Milagros/Montse replies are live or owner-visible with no issue, stop revisiting reply copy and rotate to monthly GBP snapshot or first inquiry row.
+- If a reply is pending/hidden, recheck once and only edit if Google rejects it or the wording is clearly off.
+- If a slot opens, pair one review-led GBP or LinkedIn action with owner Day 0/Day 7 or Day 28 metrics.
+- If no capacity is opening, review replies plus accurate profile/contact surfaces are enough.
+
+Do not do:
+
+- Do not treat likes/reactions as equivalent to public replies.
+- Do not ask for review keywords, city names, service names, exact wording, incentives or star ratings.
+- Do not build a review-response CRM.
+- Do not overclaim ranking impact from replies without owner metrics or lead notes.
+
+Hypotheses:
+
+- H009 review proof.
+- H023 referral/review loop.
+- H026 capacity-state success metric.
+- H002 GBP as trust base.
 
 ### Packet D: Premium Proof And Pricing
 
