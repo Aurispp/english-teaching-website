@@ -44,7 +44,7 @@ export const translations = {
       private: {
         title: "Private Classes",
         description: "1-on-1 with a bilingual teacher — 11 years teaching Spanish speakers",
-        price: "35€",
+        price: "40€",
         features: [
           "Speaking-centred classes with direct correction",
           "Focused on your specific goals",
@@ -55,7 +55,7 @@ export const translations = {
       group: {
         title: "Group Classes",
         description: "Small groups of 2–4 motivated learners",
-        price: "15€",
+        price: "20€",
         waitlist: "Message me about groups",
         features: [
           "Small groups (2–4 students)",
@@ -339,7 +339,7 @@ export const translations = {
       private: {
         title: "Clases Particulares",
         description: "Clases 1-a-1 con un profesor bilingüe — 11 años enseñando a hispanohablantes",
-        price: "35€",
+        price: "40€",
         features: [
           "Clases centradas en hablar, con corrección directa",
           "Enfocadas en tus objetivos específicos",
@@ -350,7 +350,7 @@ export const translations = {
       group: {
         title: "Clases en Grupo",
         description: "Grupos pequeños de 2–4 estudiantes motivados",
-        price: "15€",
+        price: "20€",
         waitlist: "Pregúntame por grupos",
         features: [
           "Grupos pequeños (2–4 estudiantes)",
