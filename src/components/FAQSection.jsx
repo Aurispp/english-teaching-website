@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
@@ -43,9 +43,6 @@ const FAQSection = () => {
     <section id="faq" className="py-16 sm:py-24 bg-gradient-to-b from-primary-50/30 to-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center p-2 bg-primary-100 rounded-full mb-4">
-            <HelpCircle className="w-6 h-6 text-primary-500" />
-          </div>
           <h2 className="text-3xl sm:text-4xl font-display font-light mb-4">
             {faqData.title}
           </h2>

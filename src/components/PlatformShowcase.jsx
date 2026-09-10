@@ -76,7 +76,7 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
     <section className="flex flex-col justify-center py-12 md:py-16 px-4 bg-gradient-to-b from-white via-amber-50/40 to-primary-50/30 overflow-hidden">
       <div className="w-full max-w-6xl mx-auto flex flex-col">
         <div className="text-center mb-4 md:mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 md:mb-3">{t('showcase.title')}</h2>
+          <h2 className="text-3xl sm:text-4xl font-display font-light text-gray-900 mb-3">{t('showcase.title')}</h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">{t('showcase.subtitle')}</p>
         </div>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Sparkles, ArrowRight, Globe, Users, LogIn } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import aurisPhoto from '../auris-hero-2026.jpg';
+import aurisPhoto from '../auris-hero-2026.webp';
 
 const Badge = ({ icon: Icon, text }) => (
   <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white rounded-full shadow-sm ring-1 ring-primary-100 hover:shadow-md transition-all">

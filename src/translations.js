@@ -34,7 +34,7 @@ export const translations = {
       },
       private: {
         title: "Private Classes",
-        description: "1-on-1 with a bilingual teacher — 11 years teaching Spanish speakers",
+        description: "1-on-1 with a bilingual teacher — over a decade teaching Spanish speakers",
         price: "30€",
         features: [
           "Speaking-centred classes with direct correction",
@@ -156,7 +156,7 @@ export const translations = {
     },
     about: {
       title: 'About Me',
-      intro: "Hi! I'm Auris. I grew up in Ireland and have been teaching English in Barcelona for 11 years. I am bilingual, and I help students and professionals gain fluency, confidence and clarity when using English in real situations.",
+      intro: "Hi! I'm Auris. I grew up in Ireland and have been teaching English in Barcelona for over a decade. I am bilingual, and I help students and professionals gain fluency, confidence and clarity when using English in real situations.",
       method: "My classes are practical and adapted to each person: conversation, pronunciation, useful vocabulary, practical grammar, Cambridge preparation or English for work. After years teaching Spanish speakers, I know common difficulties like translating in your head, freezing when speaking or using Spanish structures in English.",
       approach: "I also built a simple student platform, where you can review vocabulary, save materials, practise with personalised flashcards and follow your progress between classes."
     },
@@ -317,7 +317,7 @@ export const translations = {
       },
       private: {
         title: "Clases Particulares",
-        description: "Clases 1-a-1 con un profesor bilingüe — 11 años enseñando a hispanohablantes",
+        description: "Clases 1-a-1 con un profesor bilingüe — más de una década enseñando a hispanohablantes",
         price: "30€",
         features: [
           "Clases centradas en hablar, con corrección directa",
@@ -356,7 +356,7 @@ export const translations = {
     },
     about: {
       title: 'Sobre mí',
-      intro: "¡Hola! Soy Auris. Me crié en Irlanda, soy bilingüe y llevo 11 años enseñando inglés en Barcelona. Ayudo a estudiantes y profesionales a ganar soltura, confianza y claridad al usar el inglés en situaciones reales.",
+      intro: "¡Hola! Soy Auris. Me crié en Irlanda, soy bilingüe y llevo más de una década enseñando inglés en Barcelona. Ayudo a estudiantes y profesionales a ganar soltura, confianza y claridad al usar el inglés en situaciones reales.",
       method: "Mis clases son prácticas y adaptadas a cada persona: conversación, pronunciación, vocabulario, gramática útil, preparación Cambridge o inglés para el trabajo. Después de años enseñando a hispanohablantes, conozco bien dificultades como traducir mentalmente, bloquearse al hablar o usar estructuras del español en inglés.",
       approach: "También he creado una plataforma sencilla para estudiantes, donde puedes repasar vocabulario, guardar materiales, practicar con tarjetas personalizadas y seguir tu progreso entre clases."
     },

@@ -26,7 +26,7 @@ const landingCopy = {
       eyebrow: '',
       title: 'Private English classes online and around Castelldefels',
       intro:
-        'I grew up in Ireland, I am bilingual, and I have been teaching English in Barcelona for 11 years. I help students and professionals feel more comfortable using English in real situations, mainly online and sometimes in person around Castelldefels, Gavà and Viladecans.',
+        'I grew up in Ireland, I am bilingual, and I have been teaching English in Barcelona for over a decade. I help students and professionals feel more comfortable using English in real situations, mainly online and sometimes in person around Castelldefels, Gavà and Viladecans.',
       primaryCta: 'Send me a message',
       secondaryCta: 'Try Talk the Talk',
       badges: ['Online classes', 'Castelldefels area', 'Private and small groups'],
@@ -70,7 +70,7 @@ const landingCopy = {
       eyebrow: '',
       title: 'Clases particulares de inglés online y en Castelldefels',
       intro:
-        'Me crié en Irlanda, soy bilingüe y llevo 11 años enseñando inglés en Barcelona. Ayudo a estudiantes y profesionales a ganar soltura y claridad al usar el inglés en situaciones reales, principalmente online y a veces presencial en Castelldefels, Gavà y Viladecans.',
+        'Me crié en Irlanda, soy bilingüe y llevo más de una década enseñando inglés en Barcelona. Ayudo a estudiantes y profesionales a ganar soltura y claridad al usar el inglés en situaciones reales, principalmente online y a veces presencial en Castelldefels, Gavà y Viladecans.',
       primaryCta: 'Escríbeme',
       secondaryCta: 'Prueba Talk the Talk',
       badges: ['Clases online', 'Zona Castelldefels', 'Individuales y grupos pequeños'],
