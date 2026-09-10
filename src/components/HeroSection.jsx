@@ -4,11 +4,9 @@ import { useLanguage } from '../context/LanguageContext';
 import aurisPhoto from '../auris-hero-2026.webp';
 
 const Badge = ({ icon: Icon, text }) => (
-  <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white rounded-full shadow-sm ring-1 ring-primary-100 hover:shadow-md transition-all">
-    <div className="bg-[#FF914D] bg-opacity-10 p-1 rounded-full mr-1.5 sm:mr-2">
-      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF914D]" />
-    </div>
-    <span className="text-xs sm:text-sm text-gray-700 font-medium">{text}</span>
+  <div className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-sm text-gray-700 ring-1 ring-primary-100">
+    <Icon className="h-4 w-4 text-primary-500" strokeWidth={1.75} aria-hidden="true" />
+    <span>{text}</span>
   </div>
 );
 
@@ -18,9 +16,7 @@ const HeroSection = () => {
 
   const heroImage = (
     <div className="relative">
-      {/* Offset brand block behind the photo */}
-      <div className="absolute -z-10 top-3 left-3 h-full w-full rounded-[2rem] bg-primary-100/70 sm:top-4 sm:left-4" aria-hidden="true" />
-      <div className="relative overflow-hidden rounded-[2rem] bg-amber-50/60 shadow-xl ring-1 ring-black/5">
+      <div className="relative overflow-hidden rounded-[2rem] bg-amber-50/60 shadow-md ring-1 ring-black/5">
         <div
           className={`absolute inset-0 bg-gradient-to-br from-primary-100 via-amber-50 to-white transition-opacity duration-500 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`}
           aria-hidden="true"
@@ -53,12 +49,12 @@ const HeroSection = () => {
               {heroImage}
             </div>
 
-            <p className="text-lg sm:text-xl text-gray-600 mb-4 md:mb-6 font-light max-w-[90%] md:max-w-full">
+            <p className="mb-6 max-w-[46ch] text-lg text-gray-600 sm:text-xl">
               {t('hero.subtitle')}
             </p>
 
             {/* Custom Badges */}
-            <div className="flex flex-wrap gap-2.5 mb-8 sm:mb-10">
+            <div className="mb-8 flex flex-wrap gap-2">
               <Badge
                 icon={Globe}
                 text={t('hero.badges.online')}
@@ -76,10 +72,10 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
               <a
                 href="#contact"
-                className="group inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-600"
               >
-                <span className="text-sm font-medium mr-2">{t('hero.cta')}</span>
-                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                <span>{t('hero.cta')}</span>
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <div className="flex items-center gap-1.5 text-sm text-gray-600">
                 <span>{t('hero.alreadyStudent')}</span>
@@ -87,10 +83,10 @@ const HeroSection = () => {
                   href="https://english-with-auris-portal.netlify.app/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1 font-medium text-primary-600 hover:text-primary-700 underline underline-offset-4 decoration-primary-300 hover:decoration-primary-600 transition-colors"
+                  className="inline-flex items-center gap-1 font-medium text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-800 hover:decoration-primary-500"
                 >
                   {t('hero.loginLink')}
-                  <LogIn className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
+                  <LogIn className="h-3.5 w-3.5" aria-hidden="true" />
                 </a>
               </div>
             </div>

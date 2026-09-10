@@ -4,106 +4,62 @@ import { MessageCircle, TrendingUp, Layers } from 'lucide-react';
 import claudeIcon from '../claude.webp';
 import meetsIcon from '../meets.png';
 
+const tools = [
+  { type: 'lucide', Icon: Layers, label: 'Flashcards in the student portal I built' },
+  { type: 'image', src: claudeIcon, label: 'AI support for tailored materials when useful', rounded: true },
+  { type: 'image', src: meetsIcon, label: 'Interactive online classes from anywhere' },
+];
+
 const TeachingPillars = () => {
   const { t } = useLanguage();
 
-  const techIcons = [
-    {
-      type: 'lucide',
-      Icon: Layers,
-      alt: 'Flashcards',
-      tooltip: 'Flashcards in the student portal I built',
-    },
-    {
-      type: 'image',
-      src: claudeIcon,
-      alt: 'Claude',
-      className: 'rounded-lg',
-      tooltip: 'AI support for tailored materials when useful',
-    },
-    {
-      type: 'image',
-      src: meetsIcon,
-      alt: 'Google Meet',
-      tooltip: 'Interactive online classes from anywhere',
-    },
-  ];
-
   const pillars = [
     {
-      icon: <MessageCircle className="w-12 h-12 text-primary-500" />,
-      title: t('pillars.learnBySpeaking.title'),
-      description: t('pillars.learnBySpeaking.description'),
+      key: 'learnBySpeaking',
+      icon: <MessageCircle className="h-7 w-7 text-primary-500" strokeWidth={1.5} aria-hidden="true" />,
     },
     {
-      icon: <TrendingUp className="w-12 h-12 text-primary-500" />,
-      title: t('pillars.steadyProgress.title'),
-      description: t('pillars.steadyProgress.description'),
+      key: 'steadyProgress',
+      icon: <TrendingUp className="h-7 w-7 text-primary-500" strokeWidth={1.5} aria-hidden="true" />,
     },
     {
-      title: t('pillars.modernApproach.title'),
-      description: t('pillars.modernApproach.description'),
-      customIcons: true
+      key: 'modernApproach',
+      icon: (
+        <ul className="flex items-center gap-3" aria-label="Tools used in class">
+          {tools.map((tool) => (
+            <li key={tool.label} title={tool.label} className="flex h-7 w-7 items-center justify-center">
+              {tool.type === 'lucide' ? (
+                <tool.Icon className="h-7 w-7 text-primary-500" strokeWidth={1.5} aria-hidden="true" />
+              ) : (
+                <img
+                  src={tool.src}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  className={`h-6 w-6 object-contain ${tool.rounded ? 'rounded-md' : ''}`}
+                />
+              )}
+              <span className="sr-only">{tool.label}</span>
+            </li>
+          ))}
+        </ul>
+      ),
     },
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-display font-light text-center mb-12 sm:mb-16">
+    <section className="bg-white py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 className="mb-12 text-center font-display text-3xl font-light sm:mb-16 sm:text-4xl">
           {t('pillars.title')}
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {pillars.map((pillar, index) => (
-            <div
-              key={index}
-              className="group bg-white rounded-xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col items-center hover:-translate-y-2 hover:scale-[1.02] border border-transparent hover:border-primary-100"
-            >
-              <div className="flex flex-col items-center mb-6">
-                {pillar.customIcons ? (
-                  <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 max-w-full">
-                    {techIcons.map((icon, i) => (
-                      <div
-                        key={i}
-                        className="relative"
-                      >
-                        <div className="peer flex items-center justify-center bg-[#FF914D]/10 rounded-full p-2 sm:p-2.5 md:p-3 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 hover:bg-[#FF914D]/20 hover:scale-110 transition-all duration-300 cursor-pointer">
-                          {icon.type === 'lucide' ? (
-                            <icon.Icon
-                              className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-[#FF914D]"
-                              aria-label={icon.alt}
-                            />
-                          ) : (
-                            <img
-                              src={icon.src}
-                              alt={icon.alt}
-                              loading="lazy"
-                              decoding="async"
-                              className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 object-contain ${icon.className || ''}`}
-                            />
-                          )}
-                        </div>
-                        {/* Tooltip */}
-                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 peer-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
-                          {icon.tooltip}
-                          <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-900"></div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="flex items-center justify-center bg-primary-50 rounded-lg p-4 w-20 h-20 mb-2 group-hover:bg-primary-100 group-hover:scale-110 transition-all duration-300">
-                    {pillar.icon}
-                  </div>
-                )}
-                <h3 className="text-xl font-semibold mt-4 text-center group-hover:text-primary-600 transition-colors">
-                  {pillar.title}
-                </h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed text-center group-hover:text-gray-700 transition-colors">
-                {pillar.description}
-              </p>
+        <div className="grid gap-5 md:grid-cols-3">
+          {pillars.map((pillar) => (
+            <div key={pillar.key} className="rounded-2xl bg-white p-7 ring-1 ring-primary-100/60 shadow-sm sm:p-8">
+              <div className="flex h-7 items-center">{pillar.icon}</div>
+              <h3 className="mt-5 text-xl font-semibold text-gray-900">{t(`pillars.${pillar.key}.title`)}</h3>
+              <p className="mt-3 leading-relaxed text-gray-600">{t(`pillars.${pillar.key}.description`)}</p>
             </div>
           ))}
         </div>

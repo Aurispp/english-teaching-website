@@ -104,7 +104,7 @@ const ScrollToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-24 right-8 z-50 hidden p-3 bg-primary-500 text-white rounded-full shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-primary-600 md:block animate-fade-in-up"
+      className="fixed bottom-8 right-8 z-40 hidden h-11 w-11 items-center justify-center rounded-full bg-white text-gray-700 shadow-md ring-1 ring-gray-200 transition-colors hover:bg-gray-50 md:flex"
       aria-label="Scroll to top"
     >
       <ArrowUp className="w-6 h-6" />
@@ -189,7 +189,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50/70 to-white flex flex-col">
+    <div className="flex min-h-screen flex-col bg-white">
       <Helmet>
         <title>{pageSeo.title}</title>
         <meta name="theme-color" content="#ED8936" />

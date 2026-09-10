@@ -73,18 +73,18 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
   };
 
   return (
-    <section className="flex flex-col justify-center py-12 md:py-16 px-4 bg-gradient-to-b from-white via-amber-50/40 to-primary-50/30 overflow-hidden">
+    <section className="overflow-hidden bg-white px-4 py-16 sm:py-24">
       <div className="w-full max-w-6xl mx-auto flex flex-col">
-        <div className="text-center mb-4 md:mb-6">
-          <h2 className="text-3xl sm:text-4xl font-display font-light text-gray-900 mb-3">{t('showcase.title')}</h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">{t('showcase.subtitle')}</p>
+        <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
+          <h2 className="font-display text-3xl font-light text-gray-900 sm:text-4xl">{t('showcase.title')}</h2>
+          <p className="mt-4 leading-relaxed text-gray-600">{t('showcase.subtitle')}</p>
         </div>
 
         {/* Mobile: single pill showing the current feature */}
-        <div className="md:hidden flex justify-center mb-4">
+        <div className="mb-5 flex justify-center md:hidden">
           <div
             key={activeFeature.id}
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary-500 text-white text-sm font-semibold shadow-lg shadow-primary-500/30 animate-fade-in-up"
+            className="inline-flex items-center gap-2 rounded-full bg-primary-500 px-5 py-2 text-sm font-medium text-white animate-fade-in-up"
             aria-live="polite"
           >
             <span className="text-xs font-medium opacity-80">
@@ -97,7 +97,7 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
 
         {/* Desktop: full tab chips */}
         <div
-          className="hidden md:flex justify-center gap-2 mb-6"
+          className="mb-8 hidden flex-wrap justify-center gap-2 md:flex"
           role="tablist"
           aria-label="Platform features"
         >
@@ -108,10 +108,10 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
               aria-selected={activeIndex === index}
               aria-controls={`panel-${f.id}`}
               onClick={() => setActiveIndex(index)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 ${
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 ${
                 activeIndex === index
-                  ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30 scale-105'
-                  : 'bg-white text-gray-700 hover:bg-primary-50 active:bg-primary-100 border border-gray-200 hover:border-primary-200'
+                  ? 'bg-primary-500 text-white'
+                  : 'bg-white text-gray-700 ring-1 ring-gray-200 hover:bg-primary-50'
               }`}
             >
               {t(`showcase.${f.id}.title`)}
@@ -131,12 +131,9 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
           onTouchEnd={handleTouchEnd}
           aria-label="Feature showcase carousel - use left and right arrows to navigate"
         >
-          {/* Ambient glow */}
-          <div className="pointer-events-none absolute inset-x-6 -inset-y-3 rounded-[3rem] bg-primary-500/15 opacity-70 blur-[40px] md:inset-x-12 md:blur-[60px]" aria-hidden="true" />
-
           {/* Browser window: the screenshots are all 1600x1005, so the viewport keeps that exact ratio */}
-          <div className="relative z-10 overflow-hidden rounded-xl border border-gray-200/60 bg-white shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] ring-1 ring-black/5 md:rounded-2xl">
-            <div className="relative z-20 flex items-center gap-2 border-b border-gray-200/80 bg-gradient-to-b from-gray-50 to-gray-200/50 px-4 py-2.5 md:py-3">
+          <div className="relative z-10 overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-black/10 md:rounded-2xl">
+            <div className="relative z-20 flex items-center gap-2 border-b border-gray-200 bg-gray-50 px-4 py-2.5 md:py-3">
               <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56] md:h-3 md:w-3" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E] md:h-3 md:w-3" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F] md:h-3 md:w-3" />
@@ -146,7 +143,7 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
               <div className="absolute left-2 top-1/2 z-30 -translate-y-1/2 md:left-4">
                 <button
                   onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-100/50 bg-white/95 text-gray-700 shadow-lg backdrop-blur transition-colors hover:text-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 md:h-11 md:w-11"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-gray-700 shadow-md ring-1 ring-black/5 transition-colors hover:text-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 md:h-11 md:w-11"
                   aria-label="Previous screenshot"
                 >
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
@@ -155,7 +152,7 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
               <div className="absolute right-2 top-1/2 z-30 -translate-y-1/2 md:right-4">
                 <button
                   onClick={(e) => { e.stopPropagation(); handleNext(); }}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-100/50 bg-white/95 text-gray-700 shadow-lg backdrop-blur transition-colors hover:text-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 md:h-11 md:w-11"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-gray-700 shadow-md ring-1 ring-black/5 transition-colors hover:text-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 md:h-11 md:w-11"
                   aria-label="Next screenshot"
                 >
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
@@ -204,9 +201,9 @@ const PlatformShowcase = ({ autoAdvance = true, autoAdvanceInterval = 6000 }) =>
             key={activeFeature.id}
             id={`panel-${activeFeature.id}`}
             role="tabpanel"
-            className="mt-4 md:mt-5 text-center max-w-3xl mx-auto animate-fade-in-up"
+            className="mx-auto mt-5 max-w-[60ch] text-center animate-fade-in-up"
           >
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+            <p className="leading-relaxed text-gray-600">
               {t(`showcase.${activeFeature.id}.description`)}
             </p>
           </div>

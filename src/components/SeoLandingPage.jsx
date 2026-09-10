@@ -1,10 +1,8 @@
 import React from 'react';
 import {
   ArrowRight,
-  BadgeCheck,
   BarChart3,
   Briefcase,
-  Building2,
   Check,
   FileText,
   Globe,
@@ -213,7 +211,6 @@ const pageMeta = {
       landscape: { src: classMomentInPersonRoom, alt: 'In-person English class in Castelldefels', ratio: '1400 / 1050' },
       wide: { src: classMomentOnlineLesson, alt: 'Online English class with Auris and a student', ratio: '1200 / 585' },
     },
-    finalIcon: MessageCircle,
   },
   business: {
     talkHref: 'https://wa.me/34684082221?text=Hola%20Auris%2C%20queria%20consultar%20clases%20de%20ingles%20para%20empresa%20o%20profesionales.',
@@ -223,24 +220,21 @@ const pageMeta = {
       { src: classMomentInPersonRoom, alt: 'Professional English class with Auris in a meeting room', ratio: '1400 / 1050' },
       { src: classMomentOnlineTeam, alt: 'Online English class with professionals', ratio: '1200 / 551' },
     ],
-    finalIcon: Building2,
   },
 };
 
-const LandingBadge = ({ children, type }) => (
-  <span className={`inline-flex items-center gap-1.5 rounded-full bg-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-sm ring-1 ${type === 'business' ? 'text-gray-700 ring-gray-200/80' : 'text-gray-700 ring-primary-100/80'}`}>
-    <Check className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${type === 'business' ? 'text-gray-900' : 'text-primary-600'}`} />
+const LandingBadge = ({ children }) => (
+  <span className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-sm text-gray-700 ring-1 ring-primary-100">
+    <Check className="h-4 w-4 text-primary-500" strokeWidth={2} aria-hidden="true" />
     {children}
   </span>
 );
 
 const FeatureCard = ({ icon: Icon, title, text }) => (
-  <article className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100">
-    <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-600">
-      <Icon className="h-5 w-5" />
-    </span>
-    <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
-    <p className="mt-3 text-sm leading-relaxed text-gray-600">{text}</p>
+  <article className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-primary-100/60">
+    <Icon className="h-7 w-7 text-primary-500" strokeWidth={1.5} aria-hidden="true" />
+    <h2 className="mt-5 text-lg font-semibold text-gray-900">{title}</h2>
+    <p className="mt-3 leading-relaxed text-gray-600">{text}</p>
   </article>
 );
 
@@ -290,11 +284,10 @@ const SeoLandingPage = ({ type = 'local' }) => {
   const { language } = useLanguage();
   const content = landingCopy[type]?.[language] || landingCopy[type]?.es || landingCopy.local.es;
   const meta = pageMeta[type] || pageMeta.local;
-  const FinalIcon = meta.finalIcon;
 
   return (
     <>
-      <section className={`px-4 py-10 sm:px-6 sm:py-14 lg:px-8 ${type === 'business' ? 'bg-slate-50/60' : 'bg-amber-50/70'}`}>
+      <section className="bg-amber-50/70 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
           <div>
             {content.eyebrow && (
@@ -312,20 +305,20 @@ const SeoLandingPage = ({ type = 'local' }) => {
             </p>
             <div className="mt-6 sm:mt-8 flex flex-wrap gap-2.5">
               {content.badges.map((badge) => (
-                <LandingBadge key={badge} type={type}>{badge}</LandingBadge>
+                <LandingBadge key={badge}>{badge}</LandingBadge>
               ))}
             </div>
             <div className="mt-8 sm:mt-10 flex flex-col gap-3 sm:flex-row">
               <a
                 href={meta.contactHash}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-7 py-3 sm:px-8 sm:py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/20 transition hover:-translate-y-0.5 hover:from-primary-600 hover:to-primary-700"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-600"
               >
                 {content.primaryCta}
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href={meta.talkHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 sm:px-8 sm:py-3.5 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-gray-200 transition hover:-translate-y-0.5 hover:text-primary-700 hover:ring-primary-200"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-gray-900 ring-1 ring-gray-200 transition-colors hover:bg-gray-50 hover:ring-gray-300"
               >
                 {type === 'business' ? <Users className="h-4 w-4" /> : <MessageCircle className="h-4 w-4" />}
                 {content.secondaryCta}
@@ -337,7 +330,7 @@ const SeoLandingPage = ({ type = 'local' }) => {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-white px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
           {content.sections.map((section) => (
             <FeatureCard key={section.title} {...section} />
@@ -345,7 +338,7 @@ const SeoLandingPage = ({ type = 'local' }) => {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-white via-amber-50/50 to-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-amber-50/70 px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <h2 className="font-display text-3xl font-light text-gray-900 sm:text-4xl">
@@ -357,10 +350,8 @@ const SeoLandingPage = ({ type = 'local' }) => {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {content.workItems.map((item) => (
-              <div key={item} className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-100">
-                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-700">
-                  <BadgeCheck className="h-4 w-4" />
-                </span>
+              <div key={item} className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-primary-100/60">
+                <Check className="mt-1 h-4 w-4 flex-shrink-0 text-primary-500" strokeWidth={2.25} aria-hidden="true" />
                 <p className="text-sm leading-relaxed text-gray-700">{item}</p>
               </div>
             ))}
@@ -368,32 +359,12 @@ const SeoLandingPage = ({ type = 'local' }) => {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <GoogleReviewsSection />
         </div>
       </section>
 
-      <section className="bg-amber-50/70 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-4xl rounded-[2rem] bg-white p-7 text-center shadow-sm ring-1 ring-primary-100 sm:p-10">
-          <span className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-600">
-            <FinalIcon className="h-6 w-6" />
-          </span>
-          <h2 className="font-display text-3xl font-light text-gray-900 sm:text-4xl">
-            {content.finalTitle}
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-600">
-            {content.finalText}
-          </p>
-          <a
-            href="#contact"
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-500/20 transition hover:-translate-y-0.5 hover:from-primary-600 hover:to-primary-700"
-          >
-            {content.primaryCta}
-            <ArrowRight className="h-4 w-4" />
-          </a>
-        </div>
-      </section>
     </>
   );
 };

@@ -44,7 +44,7 @@ const Navbar = ({ onTalkTheTalkClick }) => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-primary-100 shadow-sm">
+    <nav className="sticky top-0 z-50 border-b border-primary-100 bg-white/90 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex justify-between items-center h-16 gap-2">
           {/* Logo and Language Selection */}
@@ -111,7 +111,7 @@ const Navbar = ({ onTalkTheTalkClick }) => {
                 event.preventDefault();
                 onTalkTheTalkClick();
               }}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 text-white rounded-lg transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-100"
+              className="inline-flex items-center gap-1.5 rounded-full bg-primary-50 px-4 py-2 text-sm font-medium text-primary-700 ring-1 ring-primary-100 transition-colors hover:bg-primary-100"
               aria-label="Talk the Talk - Free Speaking Practice"
             >
               <MessageCircle className="w-4 h-4" />
@@ -191,8 +191,8 @@ const Navbar = ({ onTalkTheTalkClick }) => {
                     }}
                     className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-orange-50 transition-colors"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 flex items-center justify-center">
-                      <MessageCircle className="w-4 h-4 text-white" />
+                    <div className="w-8 h-8 rounded-lg bg-primary-50 flex items-center justify-center">
+                      <MessageCircle className="w-4 h-4 text-primary-600" />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">{talkTheTalkLabel}</div>

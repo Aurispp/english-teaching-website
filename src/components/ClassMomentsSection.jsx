@@ -265,14 +265,14 @@ const ClassMomentsSection = () => {
     <section
       ref={sectionRef}
       aria-label={sectionCopy.sectionLabel}
-      className="bg-amber-50/70 pb-16 sm:pb-24 pt-0 sm:pt-4"
+      className="bg-amber-50/70 pb-16 sm:pb-24"
     >
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-4 sm:gap-5 lg:grid-cols-[minmax(0,0.68fr)_minmax(0,1.32fr)] lg:items-stretch">
           {/* Review: a single quote that rotates through the live Google reviews */}
           <figure
             key={`${review.authorName}-${reviewIndex}`}
-            className="flex flex-col justify-between rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-primary-100/60 motion-safe:animate-fade-up sm:p-8"
+            className="flex flex-col justify-between rounded-2xl bg-white p-6 shadow-sm ring-1 ring-primary-100/60 motion-safe:animate-fade-up sm:p-8"
           >
             <div ref={quoteWrapperRef} className="min-h-0 flex-1">
               <blockquote

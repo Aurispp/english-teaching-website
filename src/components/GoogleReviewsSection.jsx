@@ -98,14 +98,14 @@ const GoogleReviewsFallback = ({ t }) => (
       href={FALLBACK_REVIEWS_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col sm:flex-row sm:items-center gap-4 bg-white rounded-2xl shadow-sm border border-gray-100 p-5 hover:shadow-lg hover:border-primary-200 transition-all duration-300"
+      className="flex flex-col gap-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-primary-100/60 transition-colors hover:bg-primary-50/40 sm:flex-row sm:items-center"
     >
       <GoogleLogo className="w-10 h-10 flex-shrink-0" />
       <div className="flex-1 text-left">
         <h3 className="font-semibold text-gray-900">{t.fallbackTitle}</h3>
         <p className="text-sm text-gray-500 mt-1">{t.fallbackText}</p>
       </div>
-      <span className="inline-flex items-center gap-2 text-primary-600 group-hover:text-primary-700 text-sm font-medium">
+      <span className="inline-flex items-center gap-2 text-sm font-medium text-primary-700">
         {t.viewOnGoogle}
         <ExternalLink className="w-4 h-4" />
       </span>
@@ -153,9 +153,6 @@ const GoogleReviewsSection = () => {
         <div className="flex items-center gap-4">
           <GoogleLogo className="w-10 h-10 flex-shrink-0" />
           <div className="text-left">
-            <p className="text-xs font-medium uppercase tracking-[0.16em] text-primary-600">
-              {t.sourceLabel}
-            </p>
             <h3 className="text-2xl font-display font-light text-gray-900">
               {t.title}
             </h3>
@@ -184,7 +181,7 @@ const GoogleReviewsSection = () => {
         {reviews.slice(0, 3).map((review, index) => (
           <article
             key={`${review.authorName}-${review.publishTime || index}`}
-            className="rounded-2xl bg-white p-6 text-left border border-gray-100 shadow-sm"
+            className="rounded-2xl bg-white p-6 text-left ring-1 ring-primary-100/60 shadow-sm"
           >
             <div className="flex items-center gap-3 mb-4">
               {review.profilePhotoUrl ? (
@@ -205,7 +202,7 @@ const GoogleReviewsSection = () => {
                     href={review.authorUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[15px] font-semibold text-gray-900 hover:text-primary-600 truncate block"
+                    className="block truncate text-[15px] font-semibold text-gray-900 hover:text-primary-700"
                   >
                     {review.authorName}
                   </a>
@@ -225,7 +222,7 @@ const GoogleReviewsSection = () => {
         href={googleReviewsUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 text-primary-600 hover:text-primary-700 font-medium text-sm mt-5"
+        className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-800 hover:decoration-primary-500"
       >
         {t.viewOnGoogle}
         <ExternalLink className="w-4 h-4" />

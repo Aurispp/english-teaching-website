@@ -1,18 +1,15 @@
 import React from 'react';
-import { Check, UserCircle, Users, FileText, MessageCircle } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const FeatureItem = ({ text }) => (
   <li className="flex items-start gap-3">
-    <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center">
-      <Check className="w-3 h-3" strokeWidth={3} />
-    </span>
+    <Check className="mt-1 h-4 w-4 flex-shrink-0 text-primary-500" strokeWidth={2.25} aria-hidden="true" />
     <span className="text-gray-700">{text}</span>
   </li>
 );
 
 const PriceCard = ({
-  icon: Icon,
   title,
   description,
   price,
@@ -21,15 +18,10 @@ const PriceCard = ({
   ctaLabel,
   ctaHref,
 }) => (
-  <div className="relative rounded-3xl bg-white shadow-md ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+  <div className="rounded-2xl bg-white shadow-sm ring-1 ring-primary-100/60">
     <div className="p-8 sm:p-10">
-      <div className="flex items-center gap-3 mb-2">
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-primary-50 text-primary-600">
-          <Icon className="w-5 h-5" />
-        </span>
-        <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-      </div>
-      <p className="text-sm text-gray-500 mb-6">{description}</p>
+      <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
+      <p className="mt-2 mb-6 text-sm text-gray-500">{description}</p>
 
       <div className="flex items-baseline gap-1 mb-8">
         <span className="text-5xl font-display font-light text-gray-900">{price}</span>
@@ -44,9 +36,8 @@ const PriceCard = ({
 
       <a
         href={ctaHref}
-        className="group inline-flex w-full items-center justify-center px-6 py-3 rounded-full bg-white font-medium text-sm text-gray-900 ring-1 ring-gray-200 transition-all duration-300 hover:bg-gray-50 hover:ring-gray-300"
+        className="inline-flex w-full items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-gray-900 ring-1 ring-gray-200 transition-colors hover:bg-gray-50 hover:ring-gray-300"
       >
-        <MessageCircle className="mr-2 h-4 w-4" />
         {ctaLabel}
       </a>
     </div>
@@ -61,27 +52,19 @@ const PricingSection = () => {
     : 'See English for companies and professionals';
 
   return (
-    <section
-      id="pricing"
-      className="relative py-20 sm:py-28 px-4 overflow-hidden bg-gradient-to-b from-white via-amber-50/30 to-white"
-    >
-      {/* Decorative background */}
-      <div className="pointer-events-none absolute -top-32 -right-32 w-96 h-96 bg-primary-100 rounded-full blur-3xl opacity-40" />
-      <div className="pointer-events-none absolute -bottom-32 -left-32 w-96 h-96 bg-amber-100 rounded-full blur-3xl opacity-40" />
-
-      <div className="relative max-w-6xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-display font-light mb-3">
+    <section id="pricing" className="bg-amber-50/70 px-4 py-16 sm:px-6 sm:py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
+          <h2 className="font-display text-3xl font-light sm:text-4xl">
             {t('pricing.title')}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-gray-600">
+          <p className="mx-auto mt-4 max-w-xl leading-relaxed text-gray-600">
             {t('pricing.availability.note')}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
           <PriceCard
-            icon={UserCircle}
             title={t('pricing.private.title')}
             description={t('pricing.private.description')}
             price={t('pricing.private.price')}
@@ -91,7 +74,6 @@ const PricingSection = () => {
             ctaHref="#contact"
           />
           <PriceCard
-            icon={Users}
             title={t('pricing.group.title')}
             description={t('pricing.group.description')}
             price={t('pricing.group.price')}
@@ -102,26 +84,15 @@ const PricingSection = () => {
           />
         </div>
 
-        <div className="mt-10 max-w-4xl mx-auto rounded-2xl bg-white/80 ring-1 ring-primary-100 shadow-sm p-5 sm:p-6">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-center sm:text-left">
-            <span className="mx-auto sm:mx-0 inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary-600">
-              <FileText className="h-5 w-5" />
-            </span>
-            <div>
-              <p className="text-sm font-semibold text-gray-900">
-                {t('pricing.billing.title')}
-              </p>
-              <p className="mt-1 text-sm leading-relaxed text-gray-600">
-                {t('pricing.billing.description')}
-              </p>
-              <a
-                href="/ingles-empresas-castelldefels"
-                className="mt-2 inline-flex text-sm font-medium text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-800 hover:decoration-primary-500"
-              >
-                {businessLinkLabel}
-              </a>
-            </div>
-          </div>
+        <div className="mx-auto mt-14 max-w-[56ch] border-t border-primary-100 pt-8 text-center">
+          <p className="text-sm font-semibold text-gray-900">{t('pricing.billing.title')}</p>
+          <p className="mt-2 text-sm leading-relaxed text-gray-600">{t('pricing.billing.description')}</p>
+          <a
+            href="/ingles-empresas-castelldefels"
+            className="mt-3 inline-flex text-sm font-medium text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-800 hover:decoration-primary-500"
+          >
+            {businessLinkLabel}
+          </a>
         </div>
       </div>
     </section>
