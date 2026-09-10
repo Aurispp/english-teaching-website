@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, UserCircle, Users, BookOpen, BarChart3, Mic, Layers, FileText, MessageCircle } from 'lucide-react';
+import { Check, UserCircle, Users, FileText, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const FeatureItem = ({ text }) => (
@@ -56,8 +56,6 @@ const PriceCard = ({
 const PricingSection = () => {
   const { t, language } = useLanguage();
 
-  const includedIcons = [Layers, BookOpen, Mic, BarChart3];
-  const includedItems = t('pricing.included.items');
   const businessLinkLabel = language === 'es'
     ? 'Ver inglés para empresas y profesionales'
     : 'See English for companies and professionals';
@@ -104,27 +102,7 @@ const PricingSection = () => {
           />
         </div>
 
-        {/* Included-with-every-class strip */}
-        <div className="mt-14 max-w-4xl mx-auto rounded-2xl bg-white ring-1 ring-gray-100 shadow-sm p-6 sm:p-8">
-          <p className="text-center text-sm font-semibold text-gray-500 uppercase tracking-wider mb-5">
-            {t('pricing.included.title')}
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-            {includedItems.map((item, i) => {
-              const Icon = includedIcons[i] || Check;
-              return (
-                <div key={i} className="flex flex-col items-center text-center gap-2">
-                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-50 text-primary-600">
-                    <Icon className="w-5 h-5" />
-                  </span>
-                  <span className="text-sm text-gray-700 leading-snug">{item}</span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="mt-6 max-w-4xl mx-auto rounded-2xl bg-white/80 ring-1 ring-primary-100 shadow-sm p-5 sm:p-6">
+        <div className="mt-10 max-w-4xl mx-auto rounded-2xl bg-white/80 ring-1 ring-primary-100 shadow-sm p-5 sm:p-6">
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-center sm:text-left">
             <span className="mx-auto sm:mx-0 inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary-600">
               <FileText className="h-5 w-5" />

@@ -28,15 +28,6 @@ export const translations = {
       availability: {
         note: "I’m usually close to full, but you can message me about future availability."
       },
-      included: {
-        title: "Included with every class",
-        items: [
-          "Personal student portal access",
-          "Custom flashcard decks in your portal",
-          "Tailored materials prepared for you",
-          "Progress tracking & reviews"
-        ]
-      },
       billing: {
         title: "Professional billing available",
         description: "For companies, teams and freelancers, I work professionally as a registered autónomo in Spain and can issue invoices with NIF."
@@ -319,15 +310,6 @@ export const translations = {
       perHour: "por hora",
       availability: {
         note: "Normalmente tengo la agenda bastante llena, pero puedes escribirme para futuras plazas."
-      },
-      included: {
-        title: "Incluido en cada clase",
-        items: [
-          "Acceso a tu portal de estudiante",
-          "Tarjetas de memoria personalizadas en tu portal",
-          "Materiales adaptados preparados para ti",
-          "Seguimiento de progreso y repasos"
-        ]
       },
       billing: {
         title: "Factura con NIF disponible",
