@@ -15,7 +15,6 @@ const ContactSection = () => {
       key: 'whatsapp',
       href: `https://wa.me/34684082221?text=${encodeURIComponent(whatsappMessage)}`,
       title: t('contact.whatsapp.title'),
-      description: t('contact.whatsapp.description'),
       meta: '+34 684 082 221',
       Icon: MessageCircle,
       className: 'hover:border-[#25D366]/40 hover:bg-[#25D366]/5',
@@ -26,7 +25,6 @@ const ContactSection = () => {
       key: 'email',
       href: 'mailto:aurienglish@gmail.com',
       title: t('contact.email.title'),
-      description: t('contact.email.description'),
       meta: 'aurienglish@gmail.com',
       Icon: Mail,
       className: 'hover:border-primary-200 hover:bg-primary-50/40',
@@ -50,7 +48,7 @@ const ContactSection = () => {
 
         <div className="rounded-3xl bg-white p-5 shadow-lg ring-1 ring-gray-100 sm:p-7">
           <div className="grid gap-4 sm:grid-cols-2">
-            {contactOptions.map(({ key, href, title, description, meta, Icon, className, iconClassName, external }) => (
+            {contactOptions.map(({ key, href, title, meta, Icon, className, iconClassName, external }) => (
               <a
                 key={key}
                 href={href}
@@ -61,21 +59,18 @@ const ContactSection = () => {
                   contact_method: key,
                   location: 'contact_section',
                 })}
-                className={`group flex h-full flex-col rounded-2xl border border-gray-100 p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-md ${className}`}
+                className={`group flex items-center gap-4 rounded-2xl border border-gray-100 p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-md sm:flex-col sm:items-start sm:gap-0 sm:p-6 ${className}`}
               >
-                <span className={`mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full ${iconClassName}`}>
+                <span className={`inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full sm:mb-5 ${iconClassName}`}>
                   <Icon className="h-5 w-5 transition-transform group-hover:scale-110" />
                 </span>
-                <span className="text-base font-semibold text-gray-900">{title}</span>
-                <span className="mt-2 text-sm leading-relaxed text-gray-600">{description}</span>
-                <span className="mt-4 text-sm font-medium text-gray-900">{meta}</span>
+                <span className="flex min-w-0 flex-col">
+                  <span className="text-base font-semibold text-gray-900">{title}</span>
+                  <span className="mt-1 truncate text-sm text-gray-600">{meta}</span>
+                </span>
               </a>
             ))}
           </div>
-
-          <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-gray-500">
-            {t('contact.availabilityNote')}
-          </p>
         </div>
       </div>
     </section>

@@ -138,22 +138,22 @@ const GoogleReviewsSection = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 gap-5">
         {reviews.slice(0, 3).map((review, index) => (
           <article
             key={`${review.authorName}-${review.publishTime || index}`}
-            className="rounded-xl bg-white p-5 text-left border border-gray-100 shadow-sm"
+            className="rounded-2xl bg-white p-6 text-left border border-gray-100 shadow-sm"
           >
             <div className="flex items-center gap-3 mb-4">
               {review.profilePhotoUrl ? (
                 <img
                   src={review.profilePhotoUrl}
                   alt={review.authorName}
-                  className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                  className="w-12 h-12 rounded-full object-cover flex-shrink-0 ring-2 ring-white"
                   referrerPolicy="no-referrer"
                 />
               ) : (
-                <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-medium flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center text-base font-semibold flex-shrink-0 ring-2 ring-white">
                   {review.authorName.charAt(0)}
                 </div>
               )}
@@ -163,18 +163,18 @@ const GoogleReviewsSection = () => {
                     href={review.authorUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-gray-900 hover:text-primary-600 truncate block"
+                    className="text-[15px] font-semibold text-gray-900 hover:text-primary-600 truncate block"
                   >
                     {review.authorName}
                   </a>
                 ) : (
-                  <p className="font-medium text-gray-900 truncate">{review.authorName}</p>
+                  <p className="text-[15px] font-semibold text-gray-900 truncate">{review.authorName}</p>
                 )}
-                <p className="text-xs text-gray-400">{review.relativeTimeDescription}</p>
+                <p className="text-xs text-gray-500 mt-0.5">{review.relativeTimeDescription}</p>
               </div>
             </div>
             <div className="mb-3">{renderStars(review.rating)}</div>
-            <p className="text-sm text-gray-600 leading-relaxed line-clamp-6">
+            <p className="text-base text-gray-700 leading-relaxed line-clamp-8">
               {review.text}
             </p>
           </article>

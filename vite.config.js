@@ -16,7 +16,14 @@ export default defineConfig({
     },
     headers: {
       'Cache-Control': 'no-store',
-    }
+    },
+    // Serve the live Google reviews in dev, where Netlify functions don't run.
+    proxy: {
+      '/.netlify/functions': {
+        target: 'https://englishwithauris.com',
+        changeOrigin: true,
+      },
+    },
   },
   build: {
     rollupOptions: {

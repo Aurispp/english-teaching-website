@@ -246,14 +246,11 @@ export const translations = {
       title: 'Curious to learn more?',
       subtitle: "Send me a WhatsApp or email with your goals, and I’ll let you know honestly if I can help.",
       whatsapp: {
-        title: 'WhatsApp me',
-        description: 'Usually the easiest way to ask about classes or future availability.'
+        title: 'WhatsApp me'
       },
       email: {
-        title: 'Email me',
-        description: 'Best if you want to explain your goals or ask about invoices, groups, or work English.'
+        title: 'Email me'
       },
-      availabilityNote: "I’m usually close to full, so this is just a simple way to start the conversation and see whether a future slot fits.",
     },
     images: {
       barcelona: 'Barcelona cityscape',
@@ -529,13 +526,10 @@ export const translations = {
       subtitle: "Escríbeme por WhatsApp o email con tus objetivos y te diré con sinceridad si puedo ayudarte.",
       whatsapp: {
         title: 'Escríbeme por WhatsApp',
-        description: 'Normalmente es la forma más fácil de preguntar por clases o futuras plazas.'
       },
       email: {
         title: 'Envíame un email',
-        description: 'Mejor si quieres explicar tus objetivos o preguntar por facturas, grupos o inglés profesional.'
       },
-      availabilityNote: 'Normalmente tengo la agenda bastante llena, así que esto es simplemente una forma de empezar la conversación y ver si encaja una plaza futura.',
     },
     images: {
       barcelona: 'Vista de Barcelona',

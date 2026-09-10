@@ -144,6 +144,25 @@ const MomentSlot = ({ moments, activeIndex }) => (
   </div>
 );
 
+const ReviewAvatar = ({ review }) => (
+  review.profilePhotoUrl ? (
+    <img
+      src={review.profilePhotoUrl}
+      alt=""
+      loading="lazy"
+      referrerPolicy="no-referrer"
+      className="h-11 w-11 flex-shrink-0 rounded-full object-cover ring-2 ring-white"
+    />
+  ) : (
+    <div
+      className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-base font-semibold text-primary-700 ring-2 ring-white"
+      aria-hidden="true"
+    >
+      {review.authorName.charAt(0)}
+    </div>
+  )
+);
+
 const renderStars = () => (
   <div className="flex items-center gap-0.5" aria-label="5 out of 5 stars">
     {[1, 2, 3, 4, 5].map((star) => (
@@ -225,26 +244,30 @@ const ClassMomentsSection = () => {
           <div className="max-w-md">
             <figure
               key={`${review.authorName}-${reviewIndex}`}
-              className="rounded-2xl bg-white/80 p-5 shadow-sm ring-1 ring-primary-100/60 motion-safe:animate-fade-up"
+              className="rounded-2xl bg-white/80 p-5 shadow-sm ring-1 ring-primary-100/60 motion-safe:animate-fade-up sm:p-6"
             >
-              {renderStars()}
-              <blockquote className="mt-3 text-sm leading-relaxed text-gray-700 line-clamp-6">
+              <div className="flex items-center gap-3">
+                <ReviewAvatar review={review} />
+                <figcaption className="min-w-0">
+                  <p className="truncate text-[15px] font-semibold text-gray-900">
+                    {review.authorName}
+                  </p>
+                  <div className="mt-0.5 flex items-center gap-2">
+                    {renderStars()}
+                    <a
+                      href={GOOGLE_REVIEWS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-gray-500 underline decoration-gray-300 underline-offset-2 transition-colors hover:text-gray-700 hover:decoration-gray-500"
+                    >
+                      {sectionCopy.reviewSource}
+                    </a>
+                  </div>
+                </figcaption>
+              </div>
+              <blockquote className="mt-4 text-base leading-relaxed text-gray-700 line-clamp-6">
                 “{review.text}”
               </blockquote>
-              <figcaption className="mt-3 text-xs text-gray-500">
-                <span className="font-medium text-gray-700">
-                  {review.authorName}
-                </span>
-                {' · '}
-                <a
-                  href={GOOGLE_REVIEWS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-gray-300 underline-offset-2 transition-colors hover:text-gray-700 hover:decoration-gray-500"
-                >
-                  {sectionCopy.reviewSource}
-                </a>
-              </figcaption>
             </figure>
             <a
               href="/clases-ingles-castelldefels"
