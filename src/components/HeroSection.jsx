@@ -17,44 +17,39 @@ const HeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const heroImage = (
-    <div className="relative group">
-      {/* Blur placeholder - shows while image loads */}
-      <div
-        className={`absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary-200 via-primary-100 to-amber-50 transition-opacity duration-500 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`}
-      />
-      <div className="overflow-hidden rounded-[2rem] shadow-xl ring-1 ring-black/5 bg-amber-50/50 relative z-10">
-        <img
-          src={aurisPhoto}
-          alt=""
+    <div className="relative">
+      {/* Offset brand block behind the photo */}
+      <div className="absolute -z-10 top-3 left-3 h-full w-full rounded-[2rem] bg-primary-100/70 sm:top-4 sm:left-4" aria-hidden="true" />
+      <div className="relative overflow-hidden rounded-[2rem] bg-amber-50/60 shadow-xl ring-1 ring-black/5">
+        <div
+          className={`absolute inset-0 bg-gradient-to-br from-primary-100 via-amber-50 to-white transition-opacity duration-500 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`}
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-[72%_20%] blur-2xl scale-110 opacity-50 saturate-125 md:hidden"
         />
-        <div className="absolute inset-0 bg-amber-50/25 md:hidden" />
         <img
           src={aurisPhoto}
           alt={t('images.teacher')}
+          width={1185}
+          height={1008}
           fetchpriority="high"
           decoding="async"
           onLoad={() => setImageLoaded(true)}
-          className={`relative z-10 w-full aspect-[1185/1008] md:aspect-auto md:h-[460px] lg:h-[520px] object-cover object-center md:object-[72%_center] transform transition-transform duration-700 group-hover:scale-[1.02] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`relative block aspect-[1185/1008] h-auto w-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
         />
       </div>
-      {/* Decorative elements */}
-      <div className="absolute -z-10 top-3 right-3 sm:top-4 sm:right-4 w-full h-full bg-primary-50 rounded-[2rem] transition-transform duration-700 group-hover:translate-x-1 group-hover:translate-y-1"></div>
     </div>
   );
 
   return (
     <section className="relative flex min-h-[calc(100svh-7rem)] items-center bg-amber-50/70 py-10 sm:py-12">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-14">
+        <div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:justify-between md:gap-12 lg:gap-16">
           {/* Content */}
-          <div className="flex-1 animate-fade-up md:max-w-[640px] lg:max-w-[800px] order-1">
+          <div className="order-1 w-full animate-fade-up md:flex-1 md:max-w-[600px]">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-light text-gray-900 mb-6 md:mb-8 leading-[1.15]">
               {t('hero.title')}
             </h1>
 
-            <div className="mb-6 md:hidden">
+            <div className="mb-8 md:hidden">
               {heroImage}
             </div>
 

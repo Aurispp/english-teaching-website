@@ -54,94 +54,80 @@ const copy = {
   en: {
     sectionLabel: 'Student reviews and class moments',
     reviewSource: 'Google review',
+    readFull: 'Read the full review',
     localLink: 'See classes in Castelldefels, Gavà and Viladecans',
   },
   es: {
     sectionLabel: 'Reseñas de estudiantes y momentos de clase',
     reviewSource: 'Reseña de Google',
+    readFull: 'Leer la reseña completa',
     localLink: 'Ver clases en Castelldefels, Gavà y Viladecans',
   },
 };
 
-// Slots rotate so the two visible photos never share an age range.
-const adultMoments = [
-  {
-    src: classMomentInPersonRoom,
-    alt: 'In-person English class in Castelldefels with Auris',
-    objectPosition: '50% 44%',
-  },
-  {
-    src: classMomentOnlineLesson,
-    alt: 'Online English class with Auris and a student',
-    contain: true,
-  },
-  {
-    src: classMomentOnlineTeam,
-    alt: 'Online English class with adult students',
-    contain: true,
-  },
-];
+// Every photo is shown at its own proportions: a 3:4 portrait, a 4:3 room shot,
+// and a wide slot that rotates through the online-class screenshots (all ~2.1:1).
+const portraitMoment = {
+  src: classMomentInPerson,
+  alt: 'Small in-person English class with students and Auris',
+  ratio: '900/1200',
+};
 
-const teenMoments = [
-  {
-    src: classMomentInPerson,
-    alt: 'Small in-person English class with students and Auris',
-    objectPosition: '50% 62%',
-  },
-  {
-    src: classMomentOnlineGroup,
-    alt: 'Online English group class with teenage students',
-    contain: true,
-  },
+const roomMoment = {
+  src: classMomentInPersonRoom,
+  alt: 'In-person English class in Castelldefels with Auris',
+  ratio: '1400/1050',
+};
+
+const onlineMoments = [
+  { src: classMomentOnlineLesson, alt: 'Online English class with Auris and a student' },
+  { src: classMomentOnlineTeam, alt: 'Online English class with adult students' },
+  { src: classMomentOnlineGroup, alt: 'Online English group class with teenage students' },
 ];
 
 const ROTATION_INTERVAL_MS = 5200;
 const REVIEW_ROTATION_MS = 8500;
 
-const MomentImage = ({ moment, active }) => (
+const Frame = ({ ratio, className = '', children }) => (
   <div
-    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${active ? 'opacity-100' : 'opacity-0'}`}
-    aria-hidden={!active}
+    className={`relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-primary-100/60 ${className}`}
+    style={{ aspectRatio: ratio }}
   >
-    {moment.contain ? (
-      <>
-        <div className="absolute inset-0 overflow-hidden bg-amber-50/50">
-          <img
-            src={moment.src}
-            alt=""
-            className="w-full h-full object-cover blur-2xl scale-[1.2] opacity-50 saturate-150"
-            aria-hidden="true"
-          />
-        </div>
-        <img
-          src={moment.src}
-          alt={active ? moment.alt : ''}
-          loading="lazy"
-          decoding="async"
-          draggable="false"
-          className="relative w-full h-full object-contain"
-        />
-      </>
-    ) : (
-      <img
-        src={moment.src}
-        alt={active ? moment.alt : ''}
-        loading="lazy"
-        decoding="async"
-        draggable="false"
-        className="w-full h-full object-cover"
-        style={{ objectPosition: moment.objectPosition }}
-      />
-    )}
+    {children}
   </div>
 );
 
-const MomentSlot = ({ moments, activeIndex }) => (
-  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#FDFBF7] shadow-sm ring-1 ring-primary-100/60">
-    {moments.map((moment, index) => (
-      <MomentImage key={moment.alt} moment={moment} active={index === activeIndex} />
-    ))}
-  </div>
+const StillMoment = ({ moment, className = '' }) => (
+  <Frame ratio={moment.ratio} className={className}>
+    <img
+      src={moment.src}
+      alt={moment.alt}
+      loading="lazy"
+      decoding="async"
+      draggable="false"
+      className="block h-full w-full object-cover"
+    />
+  </Frame>
+);
+
+const RotatingMoment = ({ moments, activeIndex, className = '' }) => (
+  <Frame ratio="2.1 / 1" className={`bg-gray-900 ${className}`}>
+    {moments.map((moment, index) => {
+      const active = index === activeIndex;
+      return (
+        <img
+          key={moment.alt}
+          src={moment.src}
+          alt={active ? moment.alt : ''}
+          aria-hidden={!active}
+          loading="lazy"
+          decoding="async"
+          draggable="false"
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-in-out ${active ? 'opacity-100' : 'opacity-0'}`}
+        />
+      );
+    })}
+  </Frame>
 );
 
 const ReviewAvatar = ({ review }) => (
@@ -171,24 +157,66 @@ const renderStars = () => (
   </div>
 );
 
+// Bigger type for short quotes, tighter for long ones, so the card reads as full either way.
+const quoteSizeClass = (text) => {
+  const length = text.length;
+  if (length < 260) return 'text-[21px] leading-[1.4] lg:text-[24px] lg:leading-[1.4]';
+  if (length < 420) return 'text-[18px] leading-[1.5] lg:text-[20px] lg:leading-[1.45]';
+  return 'text-[17px] leading-[1.55] lg:text-[18px] lg:leading-[1.5]';
+};
+
+// On large screens the card is stretched to the mosaic's height; clamp the quote to the
+// whole lines that fit. On smaller screens the card is as tall as its content, so cap it.
+const useFittedLineClamp = (wrapperRef, deps) => {
+  const [lines, setLines] = useState(null);
+  const [overflows, setOverflows] = useState(false);
+
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return undefined;
+
+    const measure = () => {
+      const quote = wrapper.firstElementChild;
+      if (!quote) return;
+      const stretched = window.matchMedia('(min-width: 1024px)').matches;
+      const lineHeight = parseFloat(window.getComputedStyle(quote).lineHeight);
+      if (!lineHeight) return;
+      // Leave room for the 'read full review' link beneath the clamped quote.
+      const LINK_ALLOWANCE = 40;
+      const next = stretched ? Math.max(3, Math.floor((wrapper.clientHeight - LINK_ALLOWANCE) / lineHeight)) : 10;
+      setLines(next);
+      // Measure after the clamp applies.
+      window.requestAnimationFrame(() => {
+        setOverflows(quote.scrollHeight > quote.clientHeight + 1);
+      });
+    };
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(wrapper);
+    return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
+
+  return { lines, overflows };
+};
+
 const ClassMomentsSection = () => {
   const { language } = useLanguage();
   const sectionCopy = copy[language] || copy.en;
   const { data } = useGoogleReviews(language);
   const sectionRef = useRef(null);
-  const [tick, setTick] = useState(0);
+  const [onlineIndex, setOnlineIndex] = useState(0);
   const [reviewIndex, setReviewIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const quoteWrapperRef = useRef(null);
 
   const liveReviews = (data?.reviews || []).filter((review) => review.text && review.rating >= 5);
   const reviewPool = liveReviews.length
     ? liveReviews
     : (fallbackReviews[language] || fallbackReviews.es);
   const review = reviewPool[reviewIndex % reviewPool.length];
-
-  // Alternate which slot advances so only one photo changes at a time.
-  const adultIndex = Math.floor((tick + 1) / 2) % adultMoments.length;
-  const teenIndex = Math.floor(tick / 2) % teenMoments.length;
+  const { lines: quoteLines, overflows: quoteOverflows } = useFittedLineClamp(quoteWrapperRef, [review.text]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return undefined;
@@ -217,7 +245,7 @@ const ClassMomentsSection = () => {
     if (!isVisible) return undefined;
 
     const rotation = window.setInterval(() => {
-      setTick((value) => value + 1);
+      setOnlineIndex((value) => (value + 1) % onlineMoments.length);
     }, ROTATION_INTERVAL_MS);
 
     return () => window.clearInterval(rotation);
@@ -240,12 +268,36 @@ const ClassMomentsSection = () => {
       className="bg-amber-50/70 pb-16 sm:pb-24 pt-0 sm:pt-4"
     >
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-5 sm:gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <div className="max-w-md">
-            <figure
-              key={`${review.authorName}-${reviewIndex}`}
-              className="rounded-2xl bg-white/80 p-5 shadow-sm ring-1 ring-primary-100/60 motion-safe:animate-fade-up sm:p-6"
-            >
+        <div className="grid gap-4 sm:gap-5 lg:grid-cols-[minmax(0,0.68fr)_minmax(0,1.32fr)] lg:items-stretch">
+          {/* Review: a single quote that rotates through the live Google reviews */}
+          <figure
+            key={`${review.authorName}-${reviewIndex}`}
+            className="flex flex-col justify-between rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-primary-100/60 motion-safe:animate-fade-up sm:p-8"
+          >
+            <div ref={quoteWrapperRef} className="min-h-0 flex-1">
+              <blockquote
+                className={`text-gray-800 ${quoteSizeClass(review.text)}`}
+                style={quoteLines ? {
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
+                  WebkitLineClamp: quoteLines,
+                  overflow: 'hidden',
+                } : undefined}
+              >
+                “{review.text}”
+              </blockquote>
+              {quoteOverflows && (
+                <a
+                  href={review.googleMapsUri || GOOGLE_REVIEWS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex text-sm font-medium text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-800 hover:decoration-primary-500"
+                >
+                  {sectionCopy.readFull}
+                </a>
+              )}
+            </div>
+            <div className="mt-6 border-t border-primary-100/70 pt-5">
               <div className="flex items-center gap-3">
                 <ReviewAvatar review={review} />
                 <figcaption className="min-w-0">
@@ -265,21 +317,24 @@ const ClassMomentsSection = () => {
                   </div>
                 </figcaption>
               </div>
-              <blockquote className="mt-4 text-base leading-relaxed text-gray-700 line-clamp-6">
-                “{review.text}”
-              </blockquote>
-            </figure>
-            <a
-              href="/clases-ingles-castelldefels"
-              className="mt-4 inline-flex text-sm font-medium text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-800 hover:decoration-primary-500"
-            >
-              {sectionCopy.localLink}
-            </a>
-          </div>
+              <a
+                href="/clases-ingles-castelldefels"
+                className="mt-5 inline-flex text-sm font-medium text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-800 hover:decoration-primary-500"
+              >
+                {sectionCopy.localLink}
+              </a>
+            </div>
+          </figure>
 
-          <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
-            <MomentSlot moments={adultMoments} activeIndex={adultIndex} />
-            <MomentSlot moments={teenMoments} activeIndex={teenIndex} />
+          {/* Photo mosaic. Phones: portrait beside the room shot (9:16 widths give equal heights),
+              online call full width below. Desktop: portrait spans both rows on the left; column
+              widths (0.92 / 1) make the stacked room shot + call match the portrait's height. */}
+          <div
+            className="grid grid-cols-[9fr_16fr] gap-4 [grid-template-areas:'portrait_room'_'wide_wide'] sm:gap-5 lg:grid-cols-[0.92fr_1fr] lg:grid-rows-[auto_auto] lg:[grid-template-areas:'portrait_room'_'portrait_wide']"
+          >
+            <StillMoment moment={portraitMoment} className="[grid-area:portrait] lg:h-full lg:[aspect-ratio:auto]" />
+            <StillMoment moment={roomMoment} className="[grid-area:room]" />
+            <RotatingMoment moments={onlineMoments} activeIndex={onlineIndex} className="[grid-area:wide]" />
           </div>
         </div>
       </div>

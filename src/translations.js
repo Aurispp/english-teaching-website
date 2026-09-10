@@ -244,7 +244,7 @@ export const translations = {
     },
     contact: {
       title: 'Curious to learn more?',
-      subtitle: "Send me a WhatsApp or email with your goals, and I’ll let you know honestly if I can help.",
+      subtitle: "Send me a WhatsApp or email with your goals, and I’ll let you know if I can help.",
       whatsapp: {
         title: 'WhatsApp me'
       },
@@ -523,7 +523,7 @@ export const translations = {
     },
     contact: {
       title: '¿Quieres saber más?',
-      subtitle: "Escríbeme por WhatsApp o email con tus objetivos y te diré con sinceridad si puedo ayudarte.",
+      subtitle: "Escríbeme por WhatsApp o email con tus objetivos y te diré si puedo ayudarte.",
       whatsapp: {
         title: 'Escríbeme por WhatsApp',
       },

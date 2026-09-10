@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Star } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useGoogleReviews } from '../hooks/useGoogleReviews';
@@ -14,6 +14,8 @@ const copy = {
     fallbackTitle: 'Read my Google reviews',
     fallbackText: `My students rate me ${GOOGLE_REVIEW_RATING} on Google, based on ${GOOGLE_REVIEW_COUNT} reviews. Read what they say about the classes.`,
     sourceLabel: 'Google Business Profile',
+    readMore: 'Read more',
+    readLess: 'Show less',
   },
   es: {
     title: 'Reseñas de Google',
@@ -24,6 +26,8 @@ const copy = {
     fallbackTitle: 'Lee mis reseñas en Google',
     fallbackText: `Mis estudiantes me valoran con un ${GOOGLE_REVIEW_RATING} en Google, con ${GOOGLE_REVIEW_COUNT} reseñas. Lee lo que dicen de las clases.`,
     sourceLabel: 'Perfil de Empresa de Google',
+    readMore: 'Leer más',
+    readLess: 'Mostrar menos',
   },
 };
 
@@ -49,6 +53,44 @@ const GoogleLogo = ({ className = 'w-8 h-8' }) => (
     className={className}
   />
 );
+
+// Long reviews are clamped to six lines; the toggle only appears when text was actually cut.
+const ReviewText = ({ text, t }) => {
+  const ref = useRef(null);
+  const [expanded, setExpanded] = useState(false);
+  const [truncated, setTruncated] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+    const check = () => setTruncated(el.scrollHeight > el.clientHeight + 1);
+    check();
+    const observer = new ResizeObserver(check);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [text]);
+
+  return (
+    <div>
+      <p
+        ref={ref}
+        className={`text-base text-gray-700 leading-relaxed ${expanded ? '' : 'line-clamp-6'}`}
+      >
+        {text}
+      </p>
+      {(truncated || expanded) && (
+        <button
+          type="button"
+          onClick={() => setExpanded((value) => !value)}
+          aria-expanded={expanded}
+          className="mt-2 text-sm font-medium text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-800 hover:decoration-primary-500"
+        >
+          {expanded ? t.readLess : t.readMore}
+        </button>
+      )}
+    </div>
+  );
+};
 
 const GoogleReviewsFallback = ({ t }) => (
   <div className="w-full max-w-4xl mx-auto mb-12">
@@ -138,7 +180,7 @@ const GoogleReviewsSection = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-5">
+      <div className="grid md:grid-cols-3 gap-5 items-start">
         {reviews.slice(0, 3).map((review, index) => (
           <article
             key={`${review.authorName}-${review.publishTime || index}`}
@@ -174,9 +216,7 @@ const GoogleReviewsSection = () => {
               </div>
             </div>
             <div className="mb-3">{renderStars(review.rating)}</div>
-            <p className="text-base text-gray-700 leading-relaxed line-clamp-8">
-              {review.text}
-            </p>
+            <ReviewText text={review.text} t={t} />
           </article>
         ))}
       </div>

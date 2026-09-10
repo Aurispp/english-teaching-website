@@ -207,36 +207,22 @@ const pageMeta = {
   local: {
     talkHref: '/talkthetalk?utm_source=local_landing&utm_medium=site&utm_campaign=local_classes',
     contactHash: '#contact',
-    visual: classMomentInPersonRoom,
-    visualAlt: 'In-person English class in Castelldefels',
-    visualGallery: [
-      {
-        src: classMomentInPerson,
-        alt: 'Small in-person English class with students and Auris',
-        objectPosition: '50% 58%',
-        featured: true,
-      },
-      {
-        src: classMomentOnlineLesson,
-        alt: 'Online English class with Auris and a student',
-      },
-      {
-        src: classMomentInPersonRoom,
-        alt: 'In-person English class in Castelldefels',
-        objectPosition: '50% 46%',
-      },
-    ],
-    supportVisual: classMomentOnlineTeam,
-    supportAlt: 'Online English class with adult students',
+    // Mosaic: portrait on the left, room shot and online call stacked on the right.
+    mosaic: {
+      portrait: { src: classMomentInPerson, alt: 'Small in-person English class with students and Auris', ratio: '900 / 1200' },
+      landscape: { src: classMomentInPersonRoom, alt: 'In-person English class in Castelldefels', ratio: '1400 / 1050' },
+      wide: { src: classMomentOnlineLesson, alt: 'Online English class with Auris and a student', ratio: '1200 / 585' },
+    },
     finalIcon: MessageCircle,
   },
   business: {
     talkHref: 'https://wa.me/34684082221?text=Hola%20Auris%2C%20queria%20consultar%20clases%20de%20ingles%20para%20empresa%20o%20profesionales.',
     contactHash: '#contact',
-    visual: classMomentInPersonRoom,
-    visualAlt: 'Professional English class with Auris in a meeting room',
-    supportVisual: classMomentOnlineTeam,
-    supportAlt: 'Online English class with professionals',
+    // Stack: meeting-room class above an online team call, each at its own ratio.
+    stack: [
+      { src: classMomentInPersonRoom, alt: 'Professional English class with Auris in a meeting room', ratio: '1400 / 1050' },
+      { src: classMomentOnlineTeam, alt: 'Online English class with professionals', ratio: '1200 / 551' },
+    ],
     finalIcon: Building2,
   },
 };
@@ -258,86 +244,47 @@ const FeatureCard = ({ icon: Icon, title, text }) => (
   </article>
 );
 
-const HeroVisual = ({ meta, type, content, className = '' }) => {
-  const hasSupportGallery = Array.isArray(meta.supportGallery) && meta.supportGallery.length > 1;
-  const hasVisualGallery = Array.isArray(meta.visualGallery) && meta.visualGallery.length > 1;
-  const proofGridClass = hasSupportGallery
-    ? 'grid-cols-[126px_1fr] sm:grid-cols-[180px_1fr]'
-    : type === 'business'
-      ? 'grid-cols-[112px_1fr] sm:grid-cols-[154px_1fr]'
-      : 'grid-cols-[72px_1fr] sm:grid-cols-[88px_1fr]';
+const Photo = ({ image, className = '' }) => (
+  <div
+    className={`overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 ${className}`}
+    style={{ aspectRatio: image.ratio }}
+  >
+    <img
+      src={image.src}
+      alt={image.alt}
+      loading="eager"
+      decoding="async"
+      className="block h-full w-full object-cover"
+    />
+  </div>
+);
 
-  return (
-    <div className={`relative ${className}`}>
-      <div className={`overflow-hidden shadow-2xl ring-1 ${type === 'business' ? 'rounded-2xl ring-gray-900/5' : 'rounded-[2rem] ring-primary-100 bg-white'}`}>
-        {hasVisualGallery ? (
-          <div className="grid aspect-[4/3] w-full grid-cols-[0.95fr_1.05fr] gap-2 bg-white p-2 sm:aspect-[16/10] lg:aspect-[4/3]">
-            <img
-              src={meta.visualGallery[0].src}
-              alt={meta.visualGallery[0].alt}
-              className="h-full w-full rounded-[1.4rem] object-cover"
-              style={meta.visualGallery[0].objectPosition ? { objectPosition: meta.visualGallery[0].objectPosition } : undefined}
-              loading="eager"
-              decoding="async"
-            />
-            <div className="grid h-full grid-rows-2 gap-2">
-              {meta.visualGallery.slice(1, 3).map((image) => (
-                <img
-                  key={image.src}
-                  src={image.src}
-                  alt={image.alt}
-                  className="h-full w-full min-h-0 rounded-[1.25rem] object-cover"
-                  style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
-                  loading="eager"
-                  decoding="async"
-                />
-              ))}
-            </div>
-          </div>
-        ) : (
-          <img
-            src={meta.visual}
-            alt={meta.visualAlt}
-            className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full object-cover"
-            loading="eager"
-            decoding="async"
-          />
-        )}
-      </div>
-      <div className="absolute -bottom-5 left-4 right-4 sm:-bottom-6 sm:left-8 sm:right-8 overflow-hidden rounded-2xl bg-white/95 p-3 sm:p-4 shadow-xl ring-1 ring-gray-900/5 backdrop-blur">
-        <div className={`grid items-center gap-3 sm:gap-4 ${proofGridClass}`}>
-          {hasSupportGallery ? (
-            <div className="grid h-16 sm:h-20 grid-cols-3 gap-1 overflow-hidden rounded-xl bg-amber-50/70">
-              {meta.supportGallery.map((image) => (
-                <img
-                  key={image.src}
-                  src={image.src}
-                  alt={image.alt}
-                  className="h-full w-full min-w-0 object-cover"
-                  style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
-                  loading="lazy"
-                  decoding="async"
-                />
-              ))}
-            </div>
-          ) : (
-            <img
-              src={meta.supportVisual}
-              alt={meta.supportAlt}
-              className="h-16 sm:h-20 w-full rounded-xl object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-          )}
-          <div>
-            <p className="text-xs sm:text-sm font-semibold text-gray-900">{content.proofTitle}</p>
-            <p className="mt-0.5 sm:mt-1 line-clamp-2 sm:line-clamp-3 text-[11px] sm:text-xs leading-relaxed text-gray-500">{content.proofText}</p>
-          </div>
+const HeroVisual = ({ meta, content, className = '' }) => (
+  <div className={className}>
+    {meta.mosaic ? (
+      // Column widths chosen so both columns end at the same height:
+      // portrait 3:4 on the left; 4:3 over 2.05:1 on the right.
+      <div className="grid grid-cols-[0.93fr_1fr] gap-3 sm:gap-4">
+        <Photo image={meta.mosaic.portrait} />
+        <div className="grid gap-3 sm:gap-4">
+          <Photo image={meta.mosaic.landscape} />
+          <Photo image={meta.mosaic.wide} />
         </div>
       </div>
-    </div>
-  );
-};
+    ) : (
+      <div className="grid gap-3 sm:gap-4">
+        {meta.stack.map((image) => (
+          <Photo key={image.src} image={image} />
+        ))}
+      </div>
+    )}
+    <p className="mt-4 text-sm text-gray-600">
+      <span className="font-semibold text-gray-900">{content.proofTitle}</span>
+      <span className="text-gray-400"> — </span>
+      {content.proofText}
+    </p>
+  </div>
+);
 
 const SeoLandingPage = ({ type = 'local' }) => {
   const { language } = useLanguage();
@@ -359,7 +306,7 @@ const SeoLandingPage = ({ type = 'local' }) => {
             <h1 className="font-display text-[2.5rem] font-light leading-[1.1] text-gray-900 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.12]">
               {content.title}
             </h1>
-            <HeroVisual meta={meta} type={type} content={content} className="mt-7 mb-12 lg:hidden" />
+            <HeroVisual meta={meta} content={content} className="mt-8 mb-2 lg:hidden" />
             <p className="mt-5 sm:mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
               {content.intro}
             </p>
@@ -386,7 +333,7 @@ const SeoLandingPage = ({ type = 'local' }) => {
             </div>
           </div>
 
-          <HeroVisual meta={meta} type={type} content={content} className="hidden lg:block" />
+          <HeroVisual meta={meta} content={content} className="hidden lg:block" />
         </div>
       </section>
 
